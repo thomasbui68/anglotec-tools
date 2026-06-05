@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="600" viewBox="0 0 1920 600">
+  <defs>
+    <linearGradient id="ieltsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8BA888"/>
+      <stop offset="25%" style="stop-color:#A8C5A5"/>
+      <stop offset="50%" style="stop-color:#D4653B"/>
+      <stop offset="75%" style="stop-color:#E8895A"/>
+      <stop offset="100%" style="stop-color:#8BA888"/>
+    </linearGradient>
+    <linearGradient id="ieltsBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F7F5F2"/>
+      <stop offset="100%" style="stop-color:#FDF6E3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#ieltsBg)"/>
+  <!-- Abstract scoring bands -->
+  <rect x="100" y="150" width="280" height="40" rx="8" fill="url(#ieltsGrad)" opacity="0.15"/>
+  <rect x="100" y="210" width="380" height="40" rx="8" fill="url(#ieltsGrad)" opacity="0.25"/>
+  <rect x="100" y="270" width="480" height="40" rx="8" fill="url(#ieltsGrad)" opacity="0.35"/>
+  <rect x="100" y="330" width="580" height="40" rx="8" fill="url(#ieltsGrad)" opacity="0.45"/>
+  <rect x="100" y="390" width="680" height="40" rx="8" fill="url(#ieltsGrad)" opacity="0.55"/>
+  <!-- Score labels -->
+  <text x="120" y="178" font-family="monospace" font-size="14" fill="#2C4A3E" opacity="0.4">Band 1.0</text>
+  <text x="120" y="238" font-family="monospace" font-size="14" fill="#2C4A3E" opacity="0.5">Band 3.0</text>
+  <text x="120" y="298" font-family="monospace" font-size="14" fill="#2C4A3E" opacity="0.6">Band 5.0</text>
+  <text x="120" y="358" font-family="monospace" font-size="14" fill="#2C4A3E" opacity="0.7">Band 7.0</text>
+  <text x="120" y="418" font-family="monospace" font-size="14" fill="#2C4A3E" opacity="0.8">Band 9.0</text>
+  <!-- Right side decorative -->
+  <circle cx="1600" cy="200" r="120" fill="#8BA888" opacity="0.08"/>
+  <circle cx="1700" cy="350" r="80" fill="#D4653B" opacity="0.06"/>
+</svg>

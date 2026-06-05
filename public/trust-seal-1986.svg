@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <linearGradient id="sealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C4A3E"/>
+      <stop offset="100%" style="stop-color:#1E3830"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="40" cy="40" r="38" fill="url(#sealGrad)" stroke="#A68B6B" stroke-width="1.5"/>
+  <circle cx="40" cy="40" r="33" fill="none" stroke="#A68B6B" stroke-width="0.5" opacity="0.5"/>
+  <!-- Laurel wreath left -->
+  <path d="M18,40 Q14,28 22,20 Q20,30 24,38" fill="none" stroke="#A68B6B" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M18,40 Q14,52 22,60 Q20,50 24,42" fill="none" stroke="#A68B6B" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Laurel wreath right -->
+  <path d="M62,40 Q66,28 58,20 Q60,30 56,38" fill="none" stroke="#A68B6B" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M62,40 Q66,52 58,60 Q60,50 56,42" fill="none" stroke="#A68B6B" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Center text -->
+  <text x="40" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#A68B6B" letter-spacing="0.1em">EST.</text>
+  <text x="40" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#FDF6E3">1986</text>
+  <!-- Decorative dots -->
+  <circle cx="40" cy="18" r="1.5" fill="#A68B6B" opacity="0.6"/>
+  <circle cx="40" cy="62" r="1.5" fill="#A68B6B" opacity="0.6"/>
+</svg>

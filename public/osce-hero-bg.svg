@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="600" viewBox="0 0 1920 600">
+  <defs>
+    <linearGradient id="osceBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F7F5F2"/>
+      <stop offset="100%" style="stop-color:#F0EDE8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#osceBg)"/>
+  <!-- Geometric room layout - OSCE stations -->
+  <rect x="200" y="150" width="200" height="150" rx="4" fill="none" stroke="#2C4A3E" stroke-width="1" opacity="0.12"/>
+  <rect x="450" y="150" width="200" height="150" rx="4" fill="none" stroke="#2C4A3E" stroke-width="1" opacity="0.12"/>
+  <rect x="200" y="320" width="200" height="150" rx="4" fill="none" stroke="#2C4A3E" stroke-width="1" opacity="0.12"/>
+  <rect x="450" y="320" width="200" height="150" rx="4" fill="none" stroke="#2C4A3E" stroke-width="1" opacity="0.12"/>
+  <!-- Hallway -->
+  <line x1="400" y1="150" x2="400" y2="470" stroke="#2C4A3E" stroke-width="2" opacity="0.1"/>
+  <line x1="200" y1="320" x2="650" y2="320" stroke="#2C4A3E" stroke-width="2" opacity="0.1"/>
+  <!-- Station labels -->
+  <text x="300" y="235" text-anchor="middle" font-family="monospace" font-size="12" fill="#2C4A3E" opacity="0.3">STATION 1</text>
+  <text x="550" y="235" text-anchor="middle" font-family="monospace" font-size="12" fill="#2C4A3E" opacity="0.3">STATION 2</text>
+  <text x="300" y="405" text-anchor="middle" font-family="monospace" font-size="12" fill="#2C4A3E" opacity="0.3">STATION 3</text>
+  <text x="550" y="405" text-anchor="middle" font-family="monospace" font-size="12" fill="#2C4A3E" opacity="0.3">STATION 4</text>
+  <!-- Right side decorative -->
+  <rect x="1200" y="100" width="500" height="400" rx="8" fill="#2C4A3E" opacity="0.03"/>
+  <circle cx="1450" cy="300" r="60" fill="#8BA888" opacity="0.06"/>
+</svg>

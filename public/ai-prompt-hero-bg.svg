@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="600" viewBox="0 0 1920 600">
+  <defs>
+    <linearGradient id="promptBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDF6E3"/>
+      <stop offset="100%" style="stop-color:#F7F5F2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#promptBg)"/>
+  <!-- Floating text fragments / code brackets -->
+  <text x="200" y="200" font-family="monospace" font-size="48" fill="#D4653B" opacity="0.08">&lt;/&gt;</text>
+  <text x="500" y="300" font-family="monospace" font-size="36" fill="#D4653B" opacity="0.06">{ }</text>
+  <text x="800" y="180" font-family="monospace" font-size="42" fill="#D4653B" opacity="0.07">[ ]</text>
+  <text x="1100" y="350" font-family="monospace" font-size="32" fill="#D4653B" opacity="0.08">( )</text>
+  <text x="1400" y="220" font-family="monospace" font-size="40" fill="#D4653B" opacity="0.06">&lt;?&gt;</text>
+  <text x="1600" y="400" font-family="monospace" font-size="28" fill="#D4653B" opacity="0.07">//</text>
+  <!-- Creative sparks -->
+  <circle cx="350" cy="350" r="4" fill="#D4653B" opacity="0.15"/>
+  <circle cx="650" cy="200" r="3" fill="#E8895A" opacity="0.12"/>
+  <circle cx="950" cy="400" r="5" fill="#D4653B" opacity="0.1"/>
+  <circle cx="1250" cy="250" r="3.5" fill="#E8895A" opacity="0.13"/>
+  <circle cx="1550" cy="350" r="4" fill="#D4653B" opacity="0.11"/>
+  <!-- Connecting lines between elements -->
+  <line x1="350" y1="350" x2="500" y2="300" stroke="#D4653B" stroke-width="0.5" opacity="0.08"/>
+  <line x1="650" y1="200" x2="800" y2="180" stroke="#D4653B" stroke-width="0.5" opacity="0.06"/>
+  <line x1="950" y1="400" x2="1100" y2="350" stroke="#D4653B" stroke-width="0.5" opacity="0.08"/>
+</svg>
