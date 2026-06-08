@@ -106,7 +106,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-white/70 text-body-small">
                 <Globe size={16} className="text-burnt-orange shrink-0" />
-                <span>anglotec-ai.com</span>
+                <a href="https://new.anglotec.com" target="_blank" rel="noopener noreferrer" className="hover:text-burnt-orange transition-colors">new.anglotec.com</a>
               </li>
             </ul>
           </div>
