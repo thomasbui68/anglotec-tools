@@ -99,16 +99,27 @@ function HeroSection() {
 
       <div className="container-main relative z-10 pt-[72px] pb-20">
         <div className="max-w-3xl">
-          {/* Overline */}
-          <p
-            className="text-caption text-muted-olive mb-6"
-            style={{
-              opacity: 0,
-              animation: 'fade-in-up 0.4s cubic-bezier(0.16,1,0.3,1) 0.2s forwards',
-            }}
-          >
-            British Council Accredited Since 1986
-          </p>
+          {/* Overline with 40-year badge */}
+          <div className="flex items-center gap-4 mb-6">
+            <p
+              className="text-caption text-muted-olive"
+              style={{
+                opacity: 0,
+                animation: 'fade-in-up 0.4s cubic-bezier(0.16,1,0.3,1) 0.2s forwards',
+              }}
+            >
+              British Council Accredited Since 1986
+            </p>
+            <img
+              src="/40-year-badge.png"
+              alt="Celebrating 40 Years 1986-2026"
+              className="h-12 w-auto hidden md:block"
+              style={{
+                opacity: 0,
+                animation: 'fade-in-up 0.4s cubic-bezier(0.16,1,0.3,1) 0.35s forwards',
+              }}
+            />
+          </div>
 
           {/* Headline */}
           <h1

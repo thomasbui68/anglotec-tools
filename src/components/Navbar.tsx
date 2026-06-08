@@ -34,10 +34,12 @@ export default function Navbar() {
       >
         <div className="container-main w-full flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-deep-green flex items-center justify-center">
-              <span className="text-white font-heading font-bold text-sm">A</span>
-            </div>
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <img
+              src="/anglotec-logo.png"
+              alt="Anglotec Academy"
+              className="h-10 w-auto rounded-full"
+            />
             <div className="flex flex-col">
               <span className={`font-heading font-bold text-lg leading-tight transition-colors duration-300 ${isScrolled ? 'text-deep-green' : 'text-white'}`}>
                 Anglotec
