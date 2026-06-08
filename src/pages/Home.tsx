@@ -86,12 +86,15 @@ function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] gradient-hero overflow-hidden flex items-center">
-      {/* Background pattern */}
+    <section className="relative min-h-[100dvh] overflow-hidden flex items-center">
+      {/* Real campus photo background */}
       <div
-        className="absolute inset-0 opacity-[0.08]"
-        style={{ backgroundImage: 'url(/hero-bg-pattern.svg)', backgroundSize: 'cover' }}
+        className="absolute inset-0"
+        style={{ backgroundImage: 'url(/campus-hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
       />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a2f28]/95 via-[#1a2f28]/80 to-[#1a2f28]/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a2f28]/50 to-transparent" />
       <ParticleField />
 
       <div className="container-main relative z-10 pt-[72px] pb-20">
@@ -672,6 +675,81 @@ function WhyChooseSection() {
   );
 }
 
+/* ─────────────────── Section 5b: Our Scarborough Campus ─────────────────── */
+function CampusSection() {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const photos = [
+    { src: '/campus-entrance.jpg', alt: 'Anglotec Academy entrance in Scarborough' },
+    { src: '/campus-students.jpg', alt: 'Students and staff at Anglotec Academy' },
+    { src: '/campus-conservatory.jpg', alt: 'The historic conservatory at Anglotec' },
+  ];
+
+  return (
+    <section className="bg-off-white py-20 md:py-28" ref={ref}>
+      <div className="container-main">
+        <div
+          className={`text-center mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+        >
+          <p className="text-caption text-burnt-orange mb-3">Our Campus</p>
+          <h2 className="text-section-title font-heading text-deep-green mb-4">
+            Study in a 19th Century English Manor House
+          </h2>
+          <p className="text-body-large text-warm-gray max-w-2xl mx-auto">
+            Our physical campus in Scarborough, England — British Council accredited since 1986,
+            welcoming students from 60+ countries.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {photos.map((photo, i) => (
+            <div
+              key={i}
+              className={`rounded-xl overflow-hidden shadow-md group transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className={`mt-10 flex flex-wrap justify-center gap-6 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
+          <div className="flex items-center gap-2 text-warm-gray">
+            <MapPin size={18} className="text-burnt-orange" />
+            <span className="text-sm">20 Avenue Road, Scarborough, YO12 5JX, UK</span>
+          </div>
+          <div className="flex items-center gap-2 text-warm-gray">
+            <Award size={18} className="text-sage-green" />
+            <span className="text-sm">British Council Accredited Since 1986</span>
+          </div>
+          <div className="flex items-center gap-2 text-warm-gray">
+            <Globe size={18} className="text-burnt-orange" />
+            <span className="text-sm">60+ Nationalities</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────────── Section 6: Pricing Comparison ─────────────────── */
 const pricingPlans = [
   {
@@ -901,6 +979,7 @@ export default function Home() {
       <FreeToolsBanner />
       <TrustSection />
       <WhyChooseSection />
+      <CampusSection />
       <PricingSection />
       <FinalCTA />
     </Layout>
