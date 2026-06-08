@@ -94,15 +94,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-white/70 text-body-small">
                 <Mail size={16} className="text-burnt-orange shrink-0" />
-                <span>info@anglotec.co.uk</span>
+                <span>info@anglotec.com</span>
               </li>
               <li className="flex items-center gap-2 text-white/70 text-body-small">
                 <Phone size={16} className="text-burnt-orange shrink-0" />
-                <span>+44 (0) 20 0000 0000</span>
+                <span>+44(0)1723 367141</span>
               </li>
               <li className="flex items-start gap-2 text-white/70 text-body-small">
                 <MapPin size={16} className="text-burnt-orange shrink-0 mt-0.5" />
-                <span>London, United Kingdom</span>
+                <span>20 Avenue Road, Scarborough, YO12 5JX, England</span>
               </li>
               <li className="flex items-center gap-2 text-white/70 text-body-small">
                 <Globe size={16} className="text-burnt-orange shrink-0" />
