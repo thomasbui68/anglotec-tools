@@ -113,7 +113,7 @@ function HeroSection() {
             <img
               src="/40-year-badge.png"
               alt="Celebrating 40 Years 1986-2026"
-              className="h-12 w-auto hidden md:block"
+              className="h-20 w-auto hidden md:block"
               style={{
                 opacity: 0,
                 animation: 'fade-in-up 0.4s cubic-bezier(0.16,1,0.3,1) 0.35s forwards',
