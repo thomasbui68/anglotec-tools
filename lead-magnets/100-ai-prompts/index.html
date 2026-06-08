@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free collection of 100 curated AI prompts for productivity, writing, coding, business, learning, and healthcare from Anglotec AI Academy. Copy, filter, and search professional-grade prompts.">
+    <meta name="keywords" content="AI prompts, ChatGPT prompts, prompt engineering, AI productivity, writing prompts, coding prompts, healthcare AI prompts, Anglotec AI Academy">
+    <meta name="author" content="Anglotec AI Academy">
+    <meta property="og:title" content="100 AI Prompts Guide | Anglotec AI Academy">
+    <meta property="og:description" content="100 curated, copy-ready AI prompts organised by category. Filter, search, and copy instantly. Free from British Council accredited Anglotec AI Academy.">
+    <meta property="og:type" content="website">
+    <title>100 AI Prompts Guide | Anglotec AI Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-green: #2C4A3E;
+            --deep-green-light: #3D6354;
+            --deep-green-bg: #E8F0EC;
+            --burnt-orange: #D4653B;
+            --burnt-orange-light: #E87B52;
+            --burnt-orange-bg: #FFF3E8;
+            --off-white: #F7F5F2;
+            --white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-muted: #6B6B6B;
+            --border: #E0DDD8;
+            --shadow: rgba(0,0,0,0.06);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .header {
+            background: var(--deep-green);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .header p { font-size: 0.8rem; opacity: 0.85; }
+        .hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+        }
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-green);
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            color: var(--text-muted);
+            max-width: 540px;
+            margin: 0 auto 2rem;
+            font-size: 0.95rem;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem;
+        }
+        .search-bar {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 1rem 1.25rem 1rem 3rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: var(--white);
+            transition: border-color 0.2s ease;
+        }
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--deep-green);
+        }
+        .search-bar::before {
+            content: "🔍";
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+        }
+        .filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-dark);
+        }
+        .filter-btn:hover { border-color: var(--deep-green); }
+        .filter-btn.active {
+            background: var(--deep-green);
+            color: var(--white);
+            border-color: var(--deep-green);
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--burnt-orange);
+            font-weight: 700;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .category-section {
+            margin-bottom: 2rem;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding: 0 0.25rem;
+        }
+        .category-icon {
+            font-size: 1.5rem;
+        }
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--deep-green);
+        }
+        .category-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--border);
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+        }
+        .prompt-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 6px var(--shadow);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .prompt-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+        .prompt-card.hidden-card { display: none; }
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        .prompt-number {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .prompt-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .icon-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+        .icon-btn:hover { background: var(--deep-green-bg); border-color: var(--deep-green); }
+        .icon-btn.copied { background: var(--deep-green); border-color: var(--deep-green); }
+        .icon-btn.copied::after { content: "✓"; color: var(--white); font-size: 0.75rem; }
+        .prompt-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        .prompt-text:hover { background: var(--off-white); }
+        .prompt-why {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--off-white);
+            border-radius: 8px;
+            border-left: 3px solid var(--burnt-orange);
+            display: none;
+        }
+        .prompt-why.visible { display: block; }
+        .why-label {
+            font-weight: 600;
+            color: var(--burnt-orange);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .tooltip-container {
+            position: relative;
+        }
+        .tooltip-text {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            margin-bottom: 0.5rem;
+        }
+        .tooltip-container:hover .tooltip-text { opacity: 1; }
+        .cta-box {
+            background: linear-gradient(135deg, var(--deep-green), var(--deep-green-light));
+            color: var(--white);
+            border-radius: 14px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .cta-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .cta-box p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-light {
+            background: var(--white);
+            color: var(--deep-green);
+        }
+        .btn-light:hover { background: var(--off-white); }
+        .btn-outline {
+            background: transparent;
+            color: var(--deep-green);
+            border: 2px solid var(--deep-green);
+        }
+        .btn-outline:hover { background: var(--deep-green); color: var(--white); }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .footer a { color: var(--deep-green); text-decoration: none; }
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+            display: none;
+        }
+        .no-results.visible { display: block; }
+
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 1.5rem; }
+            .filters { gap: 0.35rem; }
+            .filter-btn { font-size: 0.7rem; padding: 0.4rem 0.75rem; }
+            .prompt-card { padding: 1rem; }
+            .stats-bar { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Anglotec AI Academy</h1>
+        <p>British Council Accredited Since 1986 | AI Training for Professionals</p>
+    </header>
+
+    <div class="hero">
+        <h2>100 AI Prompts for Professionals</h2>
+        <p>Copy-ready prompts organised by category. Filter, search, and use instantly with ChatGPT, Claude, or any AI assistant. Each prompt includes an explanation of why it works.</p>
+    </div>
+
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value">100</div>
+                <div class="stat-label">Prompts</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Click to Copy</div>
+            </div>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search prompts by keyword..." oninput="searchPrompts()">
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterCategory('all')">All Prompts</button>
+            <button class="filter-btn" onclick="filterCategory('productivity')">⚡ Productivity</button>
+            <button class="filter-btn" onclick="filterCategory('writing')">✍️ Writing</button>
+            <button class="filter-btn" onclick="filterCategory('coding')">💻 Coding</button>
+            <button class="filter-btn" onclick="filterCategory('business')">📊 Business</button>
+            <button class="filter-btn" onclick="filterCategory('learning')">🎓 Learning</button>
+            <button class="filter-btn" onclick="filterCategory('healthcare')">🏥 Healthcare</button>
+        </div>
+
+        <div class="no-results" id="no-results">
+            <p>No prompts found matching your search. Try different keywords or reset the filters.</p>
+            <button class="btn btn-outline" onclick="resetFilters()" style="margin-top: 1rem;">Reset Filters</button>
+        </div>
+
+        <div id="prompts-container"></div>
+
+        <div class="cta-box">
+            <h3>Master AI Prompt Engineering</h3>
+            <p>Go beyond copying prompts — learn how to craft your own, chain them together, and build AI workflows that transform your productivity. Join our certified AI Prompt Masterclass.</p>
+            <a href="https://masterclass.anglotec-ai.com" class="btn btn-light" target="_blank">Explore the Masterclass →</a>
+        </div>
+
+        <div style="text-align: center; padding: 1rem 0;">
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Want more free tools? Visit our hub.</p>
+            <a href="https://aadsllooq7apw.kimi.page" class="btn btn-outline" target="_blank">Free Tools Hub →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Anglotec AI Academy | British Council Accredited Since 1986</p>
+        <p><a href="https://anglotec-ai.com" target="_blank">anglotec-ai.com</a> | <a href="https://masterclass.anglotec-ai.com" target="_blank">AI Masterclass</a></p>
+    </footer>
+
+    <script>
+        const promptsData = [
+            // PRODUCTIVITY (20)
+            { id: 1, cat: "productivity", text: "I have [list your tasks]. Help me prioritise them using the Eisenhower Matrix and create a time-blocked schedule for today.", why: "The Eisenhower Matrix forces urgent/important classification. Time-blocking converts priorities into actionable calendar entries." },
+            { id: 2, cat: "productivity", text: "Transform this messy meeting note into organised action items with owners and deadlines: [paste notes].", why: "Raw notes are unusable. Extracting action items with accountability transforms meetings into outcomes." },
+            { id: 3, cat: "productivity", text: "I spend too much time on [describe task]. Suggest 3 ways to automate or delegate this using free tools.", why: "Explicitly constraining to free tools makes suggestions immediately actionable rather than theoretical." },
+            { id: 4, cat: "productivity", text: "Create a weekly review template that helps me reflect on accomplishments, identify blockers, and plan the week ahead.", why: "Weekly reviews build metacognition. A structured template ensures consistency and captures insights." },
+            { id: 5, cat: "productivity", text: "I need to write [type of document] but keep procrastinating. Break this into 5 tiny, 10-minute steps I can start right now.", why: "Procrastination is often overwhelm. Tiny steps reduce activation energy and build momentum through completion." },
+            { id: 6, cat: "productivity", text: "Analyse my daily routine: [describe your day]. Identify 3 time-wasting patterns and suggest replacements.", why: "External analysis of your routine reveals blind spots. Specific replacements prevent relapse into old patterns." },
+            { id: 7, cat: "productivity", text: "Create a decision matrix for choosing between [option A] and [option B] with weighted criteria.", why: "Weighted criteria objectise decisions. The matrix format makes trade-offs visible and defensible." },
+            { id: 8, cat: "productivity", text: "Summarise this long email thread into 3 bullet points: what they want, what I need to do, and by when. [paste thread]", why: "Email threads bury action items. Extraction format focuses only on commitment and deadline." },
+            { id: 9, cat: "productivity", text: "I have 15 minutes between meetings. Give me a quick-win task from this list: [paste task list].", why: "Interstitial time is often wasted. Matching available time to task size captures lost productivity." },
+            { id: 10, cat: "productivity", text: "Design a morning routine for me based on these goals: [list goals]. I have 45 minutes max.", why: "Time-constrained routine design prevents overambition. Linking to goals ensures purpose-driven choices." },
+            { id: 11, cat: "productivity", text: "Turn this bullet-point brainstorm into a structured project plan with phases, milestones, and dependencies.", why: "Brainstorms are unstructured. Project structure enables scheduling, resource allocation, and tracking." },
+            { id: 12, cat: "productivity", text: "I need to say no to [request] professionally. Draft 3 responses that preserve the relationship.", why: "Saying no is a skill. Multiple options let you choose tone based on relationship closeness." },
+            { id: 13, cat: "productivity", text: "Create an email template for following up when someone has not responded after 5 days.", why: "Follow-ups are necessary but awkward. A template removes emotional friction and ensures consistency." },
+            { id: 14, cat: "productivity", text: "Help me batch these similar tasks together for efficiency: [list tasks]. Group by type and suggest order.", why: "Context switching kills productivity. Batching similar cognitive tasks reduces switching costs." },
+            { id: 15, cat: "productivity", text: "I feel overwhelmed by my workload. Help me identify what to defer, delegate, or drop entirely.", why: "Not everything must be done. Explicit triage categories create permission to deprioritise." },
+            { id: 16, cat: "productivity", text: "Create a weekly dashboard template in table format: goals vs. actual, blockers, lessons learned.", why: "Dashboards compress information for quick scanning. The format enables week-over-week comparison." },
+            { id: 17, cat: "productivity", text: "Analyse this process: [describe process]. Suggest 3 specific improvements with estimated time savings.", why: "Quantified time savings justify change effort. Process analysis reveals non-obvious bottlenecks." },
+            { id: 18, cat: "productivity", text: "Draft a brief status update for my manager covering: what I completed this week, what is blocked, and what is next.", why: "Status updates build trust. The three-part structure ensures completeness without verbosity." },
+            { id: 19, cat: "productivity", text: "Create a travel itinerary for [destination] that balances meetings, work time, and rest. Constraints: [list constraints].", why: "Work travel easily becomes exhausting. Explicit constraints force balanced scheduling." },
+            { id: 20, cat: "productivity", text: "Build a Notion-style database schema for tracking [project/clients/books/goals]. Include fields and views.", why: "Database schemas structure information for retrieval. Multiple views serve different mental models." },
+
+            // WRITING & CONTENT (20)
+            { id: 21, cat: "writing", text: "Rewrite this paragraph to be more concise while keeping all key information: [paste text].", why: "Concision respects the reader's time. Forcing retention of all key points prevents over-cutting." },
+            { id: 22, cat: "writing", text: "Transform this technical explanation into language a 12-year-old would understand: [paste text].", why: "The Feynman Technique. If you cannot explain it simply, you do not understand it well enough." },
+            { id: 23, cat: "writing", text: "Give me 10 headline options for this article: [describe topic or paste draft]. Make them compelling and specific.", why: "Headlines are single points of failure. Ten options let you choose based on audience and platform." },
+            { id: 24, cat: "writing", text: "Analyse this piece of writing for tone. Tell me what it conveys and suggest adjustments to make it more [desired tone].", why: "Tone mismatch undermines message credibility. Explicit target tone enables precise calibration." },
+            { id: 25, cat: "writing", text: "Create an outline for a [type of document] about [topic]. Target length: [word count]. Audience: [describe].", why: "Outlines prevent structural drift. Specifying audience and length tailors depth and complexity." },
+            { id: 26, cat: "writing", text: "Convert these bullet points into flowing prose suitable for a [report/blog/email]: [paste bullets].", why: "Different formats require different prose styles. Specifying output format ensures appropriate register." },
+            { id: 27, cat: "writing", text: "Write a compelling opening paragraph for [topic] that hooks the reader in the first 2 sentences.", why: "Openings determine whether the rest gets read. The 2-sentence constraint forces density and intrigue." },
+            { id: 28, cat: "writing", text: "Proofread this text. Fix grammar, spelling, and punctuation. Explain the 3 most important changes: [paste text].", why: "Explanation of changes builds learning. Focus on top 3 prevents overwhelming feedback volume." },
+            { id: 29, cat: "writing", text: "Generate 5 different ways to express this same idea, ranging from formal to casual: [paste sentence].", why: "Register flexibility is essential. A spectrum from formal to casual covers all communication contexts." },
+            { id: 30, cat: "writing", text: "Create a content calendar for [topic] with 4 weeks of post ideas across [platforms].", why: "Consistency beats intensity. A calendar removes daily decision-making and enables batch creation." },
+            { id: 31, cat: "writing", text: "Write an executive summary (max 150 words) for this document: [paste or describe document].", why: "Executives scan summaries. The word limit forces prioritisation of only the most critical information." },
+            { id: 32, cat: "writing", text: "Turn this data into a compelling narrative: [paste data]. Include context, implications, and a recommendation.", why: "Data without narrative is forgettable. The three-part structure (context, implications, action) drives decisions." },
+            { id: 33, cat: "writing", text: "Draft a response to this negative feedback that is empathetic, accountable, and solution-oriented: [paste feedback].", why: "Negative responses are high-stakes. The three adjectives (empathetic, accountable, solution-oriented) constrain tone." },
+            { id: 34, cat: "writing", text: "Create email templates for these 5 scenarios: introduction, follow-up, request, apology, and thank you.", why: "Core communication scenarios recur frequently. Templates eliminate drafting friction and ensure consistency." },
+            { id: 35, cat: "writing", text: "Write a compelling bio for [platform] in 3 versions: 50 words, 100 words, and 200 words.", why: "Different platforms have different length constraints. Multiple versions ensure you are ready for any context." },
+            { id: 36, cat: "writing", text: "Simplify this jargon-filled text for a general audience without losing accuracy: [paste text].", why: "Jargon excludes non-specialists. The accuracy constraint prevents oversimplification that introduces errors." },
+            { id: 37, cat: "writing", text: "Create a style guide checklist for our team covering tone, formatting, banned words, and examples.", why: "Style guides ensure consistency across team output. Checklists make compliance easy to verify." },
+            { id: 38, cat: "writing", text: "Write a case study structure template with prompts for each section: challenge, approach, results, testimonial.", why: "Case studies sell outcomes. A template with built-in prompts ensures nothing critical is omitted." },
+            { id: 39, cat: "writing", text: "Turn this transcript into a well-structured article: [paste transcript]. Target: [word count] words.", why: "Transcripts are disorganised by nature. Reconstruction into article format creates publishable content." },
+            { id: 40, cat: "writing", text: "Generate 20 social media post ideas for [topic/brand] that educate, entertain, and engage.", why: "The three E framework (educate, entertain, engage) ensures content variety and audience value." },
+
+            // CODING & DEVELOPMENT (15)
+            { id: 41, cat: "coding", text: "Explain this code to me line by line as if I am a beginner: [paste code].", why: "Line-by-line explanations reveal assumptions. The beginner constraint prevents expert-level skipping." },
+            { id: 42, cat: "coding", text: "Debug this code. Identify the issue, explain why it happens, and provide the corrected version: [paste code].", why: "Explanation plus fix builds understanding. Knowing why prevents the same bug from recurring elsewhere." },
+            { id: 43, cat: "coding", text: "Refactor this code to be more readable and efficient. Explain your changes: [paste code].", why: "Refactoring without explanation is unmaintainable. Justifying each change builds reviewable code history." },
+            { id: 44, cat: "coding", text: "Write unit tests for this function covering normal cases, edge cases, and error conditions: [paste function].", why: "The three test categories (normal, edge, error) ensure comprehensive coverage, not just happy-path testing." },
+            { id: 45, cat: "coding", text: "Convert this Python function to JavaScript, preserving all logic and comments: [paste Python code].", why: "Language translation requires semantic fidelity, not just syntax. Preserving comments maintains documentation." },
+            { id: 46, cat: "coding", text: "Create an API endpoint specification for [feature] including request/response format, errors, and example calls.", why: "API specs are contracts. Comprehensive specs prevent integration failures and reduce back-and-forth." },
+            { id: 47, cat: "coding", text: "Generate a regex pattern that matches [describe pattern] and explain how each part works.", why: "Regex is write-once-read-never. Explanation enables future modification without starting from scratch." },
+            { id: 48, cat: "coding", text: "Review this SQL query for performance. Suggest indexes and query rewrites: [paste query].", why: "Unoptimised queries are silent performance killers. Index suggestions provide concrete next steps." },
+            { id: 49, cat: "coding", text: "Create a Git commit message strategy for our team with templates for features, fixes, and refactoring.", why: "Commit messages are documentation. Templates enforce consistency and make history searchable." },
+            { id: 50, cat: "coding", text: "Build a shell script that automates [describe task]. Include error handling and usage instructions.", why: "Automation without error handling is fragile. Usage instructions make scripts accessible to team members." },
+            { id: 51, cat: "coding", text: "Write a README template for [type of project] that covers setup, usage, contributing, and licence.", why: "READMEs are first impressions. The four-section structure addresses visitor needs in priority order." },
+            { id: 52, cat: "coding", text: "Analyse this code for security vulnerabilities. Rate each risk as high/medium/low and suggest fixes: [paste code].", why: "Security analysis without prioritisation is overwhelming. Risk ratings focus remediation effort." },
+            { id: 53, cat: "coding", text: "Create a CI/CD pipeline configuration for [tech stack] that runs tests, builds, and deploys on push.", why: "Pipeline-as-code ensures repeatability. The push-triggered workflow enables continuous delivery." },
+            { id: 54, cat: "coding", text: "Generate sample data for [describe dataset] with [number] records in [format: JSON/CSV/SQL].", why: "Realistic sample data enables development before production data is available. Format choice enables direct use." },
+            { id: 55, cat: "coding", text: "Document this function following JSDoc standards: name, parameters, returns, throws, and example usage. [paste function]", why: "JSDoc enables IDE autocomplete and automatic documentation generation. Complete coverage reduces support questions." },
+
+            // BUSINESS & STRATEGY (15)
+            { id: 56, cat: "business", text: "Analyse this market: [describe market]. Identify key trends, competitors, opportunities, and risks.", why: "The four-part structure (trends, competitors, opportunities, risks) ensures balanced rather than optimistic analysis." },
+            { id: 57, cat: "business", text: "Create a one-page business model canvas for [business idea]. Fill all 9 sections.", why: "The canvas format forces consideration of all business dimensions on a single viewable page." },
+            { id: 58, cat: "business", text: "Draft a proposal for [project/initiative] including problem statement, solution, timeline, budget, and ROI.", why: "Proposals must justify investment. The ROI component transforms requests from cost to investment framing." },
+            { id: 59, cat: "business", text: "Analyse this competitor: [name/link]. List their strengths, weaknesses, and 3 opportunities we can exploit.", why: "Competitive analysis without actionable opportunities is intellectual exercise. Exploitable gaps drive strategy." },
+            { id: 60, cat: "business", text: "Create a SWOT analysis for [company/project] that is honest about weaknesses and threats.", why: "SWOTs often skew positive. Explicitly requesting honesty about negatives produces balanced analysis." },
+            { id: 61, cat: "business", text: "Draft a meeting agenda for [topic] with time allocations, owners, and desired outcomes for each item.", why: "Time allocations prevent overrun. Outcome-focused agendas prevent discussion without decision." },
+            { id: 62, cat: "business", text: "Write a pitch deck outline for [idea] in 10 slides following the Sequoia format.", why: "Sequoia's format is battle-tested by VC review. The 10-slide constraint forces ruthless prioritisation." },
+            { id: 63, cat: "business", text: "Create a customer persona for [product/service] including demographics, pain points, goals, and objections.", why: "Personas make abstract customers concrete. Objections enable proactive handling in sales materials." },
+            { id: 64, cat: "business", text: "Analyse this financial data and highlight 3 concerns and 3 positive trends: [paste data].", why: "Balanced analysis prevents either panic or complacency. Specific quantified trends enable action." },
+            { id: 65, cat: "business", text: "Draft a partnership proposal between [company A] and [company B] outlining mutual benefits and next steps.", why: "Partnership proposals must articulate value for both sides. Mutual benefit framing increases acceptance." },
+            { id: 66, cat: "business", text: "Create an onboarding checklist for new team members covering week 1, month 1, and quarter 1.", why: "Phased onboarding recognises that needs change. Early support prevents first-week disengagement." },
+            { id: 67, cat: "business", text: "Analyse this contract clause and flag any risks or ambiguities: [paste clause].", why: "Contract review requires legal expertise, but AI can flag ambiguities for lawyer review, saving time." },
+            { id: 68, cat: "business", text: "Design a feedback survey for [stakeholders: customers/employees/partners] with 8 targeted questions.", why: "Eight questions respects respondent time. Stakeholder-specific questions produce actionable rather than generic data." },
+            { id: 69, cat: "business", text: "Create a risk register template with columns for risk, likelihood, impact, mitigation, and owner.", why: "Risk registers without owners are unactionable. The five-column structure enables tracking and accountability." },
+            { id: 70, cat: "business", text: "Draft a change management plan for implementing [change] covering communication, training, and timeline.", why: "Change fails from people issues, not technical ones. Communication and training address adoption barriers." },
+
+            // LEARNING & EDUCATION (15)
+            { id: 71, cat: "learning", text: "Create a study plan for learning [topic] from beginner to advanced in [timeframe]. Include resources and milestones.", why: "Self-directed learning often lacks structure. Milestones create progress markers and motivation through achievement." },
+            { id: 72, cat: "learning", text: "Explain [complex concept] using an analogy from everyday life. Then test my understanding with 3 questions.", why: "Analogies bridge new and existing knowledge. Follow-up questions verify comprehension, not just exposure." },
+            { id: 73, cat: "learning", text: "Create flashcard-style Q&A for these key concepts: [list concepts]. Format: question on one line, answer on the next.", why: "Flashcards enable active recall, the most effective study technique. Clean formatting enables import to apps." },
+            { id: 74, cat: "learning", text: "I need to teach [topic] to [audience]. Create a lesson plan with learning objectives, activities, and assessment.", why: "Backward design (objectives first) ensures teaching targets outcomes. Activities align to objective achievement." },
+            { id: 75, cat: "learning", text: "Summarise this text into key points a student could use for exam revision: [paste text].", why: "Exam revision requires distillation, not just summary. Student-oriented framing ensures appropriate complexity." },
+            { id: 76, cat: "learning", text: "Generate 10 practice exam questions on [topic] with answers and explanations.", why: "Practice questions with explanations serve double duty: assessment and teaching. Ten provides topic breadth." },
+            { id: 77, cat: "learning", text: "Create a mind map outline for [topic] with 5 main branches and 3 sub-branches each.", why: "Mind maps mirror how the brain organises information hierarchically. Symmetric structure ensures completeness." },
+            { id: 78, cat: "learning", text: "I am struggling with [concept]. Break it down into prerequisites, core ideas, and common misconceptions.", why: "Misconceptions cause persistent errors. Addressing them explicitly prevents entrenched misunderstanding." },
+            { id: 79, cat: "learning", text: "Recommend 5 free resources for learning [topic], ranked by quality and starting difficulty.", why: "Free resource curation removes financial barriers. Difficulty ranking matches resources to learner readiness." },
+            { id: 80, cat: "learning", text: "Create a spaced repetition schedule for reviewing these 20 items over the next month.", why: "Spaced repetition is the most efficient memorisation technique. A pre-built schedule removes planning friction." },
+            { id: 81, cat: "learning", text: "Write a rubric for assessing [skill/assignment] with 4 levels: excellent, good, satisfactory, and needs improvement.", why: "Rubrics make expectations explicit. Four levels provide enough granularity without overwhelming complexity." },
+            { id: 82, cat: "learning", text: "Transform this lecture transcript into structured study notes with headings and key terms highlighted: [paste transcript].", why: "Transcripts are temporal, not structured. Reorganisation into headings creates searchable reference material." },
+            { id: 83, cat: "learning", text: "Create a self-assessment quiz for [topic] that tells me which areas I need to focus on.", why: "Self-assessment without guidance is frustrating. Area-specific recommendations direct study time efficiently." },
+            { id: 84, cat: "learning", text: "Design a peer teaching activity where students explain [topic] to each other with structured roles.", why: "Teaching is the best way to learn. Structured roles ensure both participants are actively engaged." },
+            { id: 85, cat: "learning", text: "Create a reading list for [topic] with 5 essential and 5 advanced texts, each with a one-line summary.", why: "Curated reading lists save search time. Essential/advanced separation matches resources to readiness level." },
+
+            // HEALTHCARE (15)
+            { id: 86, cat: "healthcare", text: "Explain [medical condition] to a patient in plain English. Include causes, symptoms, treatments, and when to seek help.", why: "Patient education requires plain language. The four-part structure answers the questions patients actually have." },
+            { id: 87, cat: "healthcare", text: "Draft a discharge summary for a patient with [diagnosis] including medications, follow-up appointments, and warning signs.", why: "Discharge summaries are legal documents. Comprehensive coverage reduces readmission and liability risk." },
+            { id: 88, cat: "healthcare", text: "Create a SBAR handover for this patient: [situation/background/assessment/recommendation details].", why: "SBAR is the gold standard for clinical handover. The structured format prevents information omission." },
+            { id: 89, cat: "healthcare", text: "Write a care plan for [patient profile] with goals, interventions, evaluation criteria, and responsible team members.", why: "Care plans require accountability. Team member assignment prevents task ambiguity and coverage gaps." },
+            { id: 90, cat: "healthcare", text: "Summarise this medical research paper for a non-specialist audience in 150 words: [paste abstract or link].", why: "Research summaries democratise evidence. The word limit and non-specialist constraint force accessibility." },
+            { id: 91, cat: "healthcare", text: "Draft a patient information leaflet about [condition/procedure] at a Year 8 reading level.", why: "Health literacy varies widely. Year 8 level ensures accessibility for the broadest patient population." },
+            { id: 92, cat: "healthcare", text: "Create a medication education sheet for [drug name] covering purpose, dosage, side effects, and interactions.", why: "Medication adherence improves with education. Side effects and interactions are the most common patient concerns." },
+            { id: 93, cat: "healthcare", text: "Write a reflective practice entry about [clinical experience] using Gibbs' Reflective Cycle framework.", why: "Gibbs' cycle structures reflection into actionable learning. Frameworks prevent superficial "what happened" entries." },
+            { id: 94, cat: "healthcare", text: "Generate 5 open-ended questions to assess a patient's understanding of their [condition/treatment plan].", why: "Open-ended questions reveal actual understanding. Yes/no questions let patients hide comprehension gaps." },
+            { id: 95, cat: "healthcare", text: "Create a clinical audit proposal for [topic] including aim, standards, sample, data collection, and timeline.", why: "Clinical audits require methodological rigour. The five components align with quality improvement frameworks." },
+            { id: 96, cat: "healthcare", text: "Draft an empathetic response to a patient complaint about [issue] that acknowledges concerns and offers resolution.", why: "Complaint responses are high-stakes. Empathy plus resolution prevents escalation and preserves trust." },
+            { id: 97, cat: "healthcare", text: "Design a training session outline for [clinical skill] with learning objectives, demonstrations, practice, and assessment.", why: "Skill training requires practice, not just presentation. The four-part structure follows instructional design principles." },
+            { id: 98, cat: "healthcare", text: "Create a sepsis screening checklist for [clinical setting] with red flags, actions, and escalation pathway.", why: "Sepsis requires rapid recognition. Checklists reduce cognitive load during time-critical assessment." },
+            { id: 99, cat: "healthcare", text: "Write a multidisciplinary team meeting agenda for [patient case] with input needed from each specialty.", why: "MDT meetings are time-limited. Specialty-specific input requests ensure all perspectives come prepared." },
+            { id: 100, cat: "healthcare", text: "Generate a wellness plan for healthcare workers addressing burnout prevention, stress management, and work-life balance.", why: "Healthcare worker wellbeing affects patient outcomes. The three-pillar approach covers prevention and recovery." }
+        ];
+
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        function renderPrompts() {
+            const container = document.getElementById('prompts-container');
+            const categories = ['productivity', 'writing', 'coding', 'business', 'learning', 'healthcare'];
+            const categoryIcons = {
+                productivity: '⚡',
+                writing: '✍️',
+                coding: '💻',
+                business: '📊',
+                learning: '🎓',
+                healthcare: '🏥'
+            };
+            const categoryNames = {
+                productivity: 'Productivity',
+                writing: 'Writing & Content',
+                coding: 'Coding & Development',
+                business: 'Business & Strategy',
+                learning: 'Learning & Education',
+                healthcare: 'Healthcare'
+            };
+
+            let html = '';
+            let visibleCount = 0;
+
+            categories.forEach(cat => {
+                if (currentFilter !== 'all' && currentFilter !== cat) return;
+
+                const catPrompts = promptsData.filter(p => p.cat === cat);
+                const filteredPrompts = catPrompts.filter(p => {
+                    if (!searchTerm) return true;
+                    return p.text.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           p.why.toLowerCase().includes(searchTerm.toLowerCase());
+                });
+
+                if (filteredPrompts.length === 0) return;
+
+                visibleCount += filteredPrompts.length;
+
+                html += `<div class="category-section" data-category="${cat}">`;
+                html += `<div class="category-header">`;
+                html += `<span class="category-icon">${categoryIcons[cat]}</span>`;
+                html += `<span class="category-title">${categoryNames[cat]}</span>`;
+                html += `<span class="category-count">${filteredPrompts.length} prompts</span>`;
+                html += `</div>`;
+
+                filteredPrompts.forEach(p => {
+                    html += `<div class="prompt-card" data-id="${p.id}">`;
+                    html += `<div class="prompt-header">`;
+                    html += `<span class="prompt-number">#${p.id}</span>`;
+                    html += `<div class="prompt-actions">`;
+                    html += `<div class="tooltip-container">`;
+                    html += `<button class="icon-btn" onclick="toggleWhy(${p.id})" title="Why this works">💡</button>`;
+                    html += `<span class="tooltip-text">Why this works</span>`;
+                    html += `</div>`;
+                    html += `<div class="tooltip-container">`;
+                    html += `<button class="icon-btn" onclick="copyPrompt(${p.id}, this)" title="Copy to clipboard">📋</button>`;
+                    html += `<span class="tooltip-text">Copy prompt</span>`;
+                    html += `</div>`;
+                    html += `</div></div>`;
+                    html += `<div class="prompt-text" onclick="copyPromptText(${p.id})">${escapeHtml(p.text)}</div>`;
+                    html += `<div class="prompt-why" id="why-${p.id}"><span class="why-label">Why this works</span>${escapeHtml(p.why)}</div>`;
+                    html += `</div>`;
+                });
+
+                html += `</div>`;
+            });
+
+            container.innerHTML = html;
+
+            const noResults = document.getElementById('no-results');
+            noResults.classList.toggle('visible', visibleCount === 0);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function filterCategory(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderPrompts();
+        }
+
+        function searchPrompts() {
+            searchTerm = document.getElementById('search-input').value.trim();
+            renderPrompts();
+        }
+
+        function resetFilters() {
+            searchTerm = '';
+            currentFilter = 'all';
+            document.getElementById('search-input').value = '';
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn').classList.add('active');
+            renderPrompts();
+        }
+
+        function toggleWhy(id) {
+            const el = document.getElementById('why-' + id);
+            el.classList.toggle('visible');
+        }
+
+        function copyPrompt(id, btnEl) {
+            const prompt = promptsData.find(p => p.id === id);
+            if (prompt) {
+                navigator.clipboard.writeText(prompt.text).then(() => {
+                    btnEl.classList.add('copied');
+                    btnEl.innerHTML = '';
+                    setTimeout(() => {
+                        btnEl.classList.remove('copied');
+                        btnEl.innerHTML = '📋';
+                    }, 1500);
+                });
+            }
+        }
+
+        function copyPromptText(id) {
+            const prompt = promptsData.find(p => p.id === id);
+            if (prompt) {
+                navigator.clipboard.writeText(prompt.text);
+            }
+        }
+
+        renderPrompts();
+    </script>
+</body>
+</html>

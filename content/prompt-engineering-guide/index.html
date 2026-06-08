@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompt Engineering: Beginner's Guide 2026 | Anglotec AI Academy</title>
+<meta name="description" content="Learn AI prompt engineering from scratch. Master prompt frameworks, techniques, and access 9,000+ prompts. The definitive 2026 beginner's guide from Anglotec AI Academy.">
+<meta name="keywords" content="ai prompt engineering, learn prompt engineering, prompt engineering course, ai prompts guide, prompt engineering beginner, ai prompt techniques, prompt engineering tutorial, ai prompt frameworks">
+<meta name="author" content="Anglotec AI Academy">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aadsllooq7apw.kimi.page/content/prompt-engineering-guide/">
+<meta property="og:title" content="AI Prompt Engineering: Beginner's Guide 2026">
+<meta property="og:description" content="Master AI prompt engineering with frameworks, techniques, and 9,000+ prompts. The definitive beginner's guide from Anglotec AI Academy.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aadsllooq7apw.kimi.page/content/prompt-engineering-guide/">
+<meta property="og:site_name" content="Anglotec AI Academy">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Prompt Engineering: The Complete Beginner's Guide for 2026",
+  "description": "Master AI prompt engineering with proven frameworks, techniques, and access to 9,000+ prompts from Anglotec AI Academy.",
+  "author": {"@type": "Organization", "name": "Anglotec AI Academy", "url": "https://aadsllooq7apw.kimi.page"},
+  "publisher": {"@type": "Organization", "name": "Anglotec AI Academy"},
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-01-15"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is prompt engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt engineering is the practice of designing and refining inputs (prompts) to AI language models to produce optimal outputs. It involves understanding how AI models interpret instructions and crafting prompts that are clear, specific, and structured to achieve desired results."}},
+    {"@type": "Question", "name": "Do I need coding skills to learn prompt engineering?", "acceptedAnswer": {"@type": "Answer", "text": "No, you don't need coding skills to learn prompt engineering. While technical knowledge can help for advanced applications, the core skills are communication, clarity, and structured thinking. Anyone who can write clearly can learn prompt engineering."}},
+    {"@type": "Question", "name": "How long does it take to learn prompt engineering?", "acceptedAnswer": {"@type": "Answer", "text": "You can learn the fundamentals of prompt engineering in 2-3 weeks of consistent practice. Mastering advanced techniques like chain-of-thought prompting and multi-agent workflows may take 2-3 months. The key is daily practice with real-world applications."}}
+  ]
+}
+</script>
+<style>
+:root{--green:#2C4A3E;--orange:#D4653B;--cream:#F7F5F2;--white:#FFFFFF;--text:#1a1a1a;--text-light:#555;--border:#e0ddd8;--code-bg:#f4f1ec}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--cream);line-height:1.7}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+.header{background:var(--green);color:var(--white);padding:48px 0 56px;text-align:center;position:relative;overflow:hidden}
+.header::after{content:'';position:absolute;bottom:-40px;left:0;right:0;height:80px;background:var(--cream);clip-path:ellipse(60% 100% at 50% 100%)}
+.header h1{font-family:'Playfair Display',Georgia,serif;font-size:2.5rem;font-weight:700;margin-bottom:16px;line-height:1.2;position:relative;z-index:1}
+.header .subtitle{font-size:1.1rem;opacity:0.9;max-width:650px;margin:0 auto;position:relative;z-index:1;font-weight:300}
+.header .badge{display:inline-block;background:var(--orange);color:var(--white);padding:6px 18px;border-radius:20px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;position:relative;z-index:1}
+.nav{background:var(--white);border-bottom:1px solid var(--border);padding:12px 0;position:sticky;top:0;z-index:100}
+.nav .container{display:flex;justify-content:space-between;align-items:center}
+.nav .logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;color:var(--green)}
+.nav .logo span{color:var(--orange)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--text);text-decoration:none;font-weight:500;font-size:.9rem;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.breadcrumb{font-size:.85rem;color:var(--text-light);padding:20px 0}
+.breadcrumb a{color:var(--green);text-decoration:none}
+.breadcrumb a:hover{color:var(--orange)}
+.article{background:var(--white);border-radius:16px;padding:48px;margin-top:-30px;position:relative;z-index:2;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--green);margin:48px 0 20px;padding-bottom:12px;border-bottom:3px solid var(--orange);scroll-margin-top:80px}
+h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--green);margin:28px 0 12px}
+h4{font-size:1.05rem;color:var(--green);margin:20px 0 10px;font-weight:600}
+p{margin-bottom:16px;color:var(--text-light);font-size:1.05rem}
+ul,ol{margin:0 0 20px 24px;color:var(--text-light)}
+li{margin-bottom:10px;font-size:1.02rem}
+.toc{background:#f0f4f2;border-radius:12px;padding:28px 32px;margin:32px 0}
+.toc h3{font-family:'Inter',sans-serif;font-size:1.1rem;color:var(--green);margin:0 0 16px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.toc a{color:var(--green);text-decoration:none;font-weight:500;font-size:.95rem;transition:color .2s;padding:6px 0;display:block}
+.toc a:hover{color:var(--orange)}
+.toc a::before{content:'→ ';color:var(--orange)}
+.tip{background:linear-gradient(135deg,#f0f4f2 0%,#e8f0ec 100%);border-left:4px solid var(--orange);padding:20px 24px;border-radius:0 12px 12px 0;margin:24px 0}
+.tip-label{font-weight:700;color:var(--orange);text-transform:uppercase;font-size:.75rem;letter-spacing:1px;margin-bottom:6px}
+.tip p{margin:0;color:var(--text)}
+.cta-box{background:var(--green);color:var(--white);padding:36px;border-radius:16px;text-align:center;margin:40px 0}
+.cta-box h3{font-family:'Playfair Display',serif;color:var(--white);font-size:1.5rem;margin:0 0 12px}
+.cta-box p{color:rgba(255,255,255,.85);margin:0 0 20px}
+.btn{display:inline-block;background:var(--orange);color:var(--white);padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s;border:none;cursor:pointer;margin:4px}
+.btn:hover{background:#c25934;transform:translateY(-2px);box-shadow:0 4px 12px rgba(212,101,59,.3)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid var(--white)}
+.btn-outline:hover{background:var(--white);color:var(--green)}
+.code-block{background:var(--code-bg);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:20px 0;font-family:'Courier New',monospace;font-size:.9rem;overflow-x:auto;position:relative}
+.code-block .label{position:absolute;top:-10px;left:16px;background:var(--green);color:var(--white);padding:2px 12px;border-radius:4px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-family:'Inter',sans-serif}
+.code-block code{color:var(--text);line-height:1.6}
+.prompt-example{background:var(--code-bg);border-left:4px solid var(--green);padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0;font-size:.92rem}
+.prompt-example .pe-label{font-weight:700;color:var(--green);font-size:.75rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.prompt-example .pe-prompt{font-family:'Courier New',monospace;color:var(--text);white-space:pre-wrap;word-break:break-word}
+.prompt-example .pe-output{font-style:italic;color:var(--text-light);margin-top:10px;padding-top:10px;border-top:1px dashed var(--border)}
+.framework-card{background:#f0f4f2;padding:22px;border-radius:12px;margin:16px 0;border-top:4px solid var(--orange)}
+.framework-card h4{color:var(--green);margin:0 0 10px}
+.framework-card p{margin:0 0 10px;font-size:.95rem}
+.framework-card .fw-acronym{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--orange);margin-bottom:8px}
+.stats-bar{background:var(--white);padding:32px 0;border-bottom:1px solid var(--border)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-number{font-family:'Playfair Display',serif;font-size:2rem;color:var(--orange);font-weight:700}
+.stat-label{font-size:.85rem;color:var(--text-light);margin-top:4px}
+.technique-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.technique-card{background:var(--white);border:2px solid var(--border);padding:20px;border-radius:10px;transition:all .2s}
+.technique-card:hover{border-color:var(--orange)}
+.technique-card h4{color:var(--green);margin:0 0 8px}
+.technique-card p{font-size:.9rem;margin:0 0 10px}
+.technique-card .difficulty{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.7rem;font-weight:600;text-transform:uppercase}
+.diff-beginner{background:#e8f5e9;color:#2e7d32}
+.diff-intermediate{background:#fff3e0;color:#ef6c00}
+.diff-advanced{background:#fce4ec;color:#c62828}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.related-link{background:#f0f4f2;padding:16px;border-radius:10px;text-decoration:none;color:var(--green);transition:all .2s}
+.related-link:hover{background:var(--green);color:var(--white)}
+.related-link .rl-title{font-weight:600;display:block;margin-bottom:4px}
+.related-link .rl-desc{font-size:.85rem;opacity:.8}
+.faq-item{margin-bottom:16px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{background:#f0f4f2;padding:14px 18px;font-weight:600;color:var(--green);font-size:.95rem;cursor:pointer}
+.faq-a{padding:14px 18px;background:var(--white);color:var(--text-light);font-size:.95rem}
+.highlight{background:linear-gradient(transparent 60%,rgba(212,101,59,.2) 60%);padding:0 4px}
+.warning-box{background:#fff5f2;border-left:4px solid #e74c3c;padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0}
+.warning-box strong{color:#e74c3c}
+.footer{background:var(--green);color:var(--white);padding:48px 0 32px;margin-top:60px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+.footer h4{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:16px}
+.footer a{color:rgba(255,255,255,.75);text-decoration:none;display:block;margin-bottom:8px;font-size:.9rem;transition:color .2s}
+.footer a:hover{color:var(--orange)}
+.footer p{color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.6}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.header h1{font-size:1.9rem}
+.article{padding:28px 20px}
+.toc ul{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:24px}
+.stats{grid-template-columns:repeat(2,1fr)}
+.related-links{grid-template-columns:1fr}
+.nav-links{display:none}
+.technique-grid{grid-template-columns:1fr}
+.code-block{overflow-x:scroll}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="logo">Anglo<span>tec</span></div>
+    <ul class="nav-links">
+      <li><a href="https://aadsllooq7apw.kimi.page">Free Tools</a></li>
+      <li><a href="https://masterclass.anglotec-ai.com">AI Prompts</a></li>
+      <li><a href="https://agmp.anglotec.com">IELTS/OET</a></li>
+      <li><a href="https://amcvdo.anglotec-ai.com">OSCE</a></li>
+      <li><a href="https://anglotec-ai.com">Languages</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="container">
+    <div class="badge">9,000+ Prompts Available</div>
+    <h1>AI Prompt Engineering: The Complete Beginner's Guide for 2026</h1>
+    <p class="subtitle">Master the art and science of communicating with AI. From zero to expert with proven frameworks, real examples, and 9,000+ ready-to-use prompts.</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats">
+      <div><div class="stat-number">9,000+</div><div class="stat-label">AI Prompts</div></div>
+      <div><div class="stat-number">15+</div><div class="stat-label">Frameworks</div></div>
+      <div><div class="stat-number">40+</div><div class="stat-label">Years Teaching</div></div>
+      <div><div class="stat-number">50K+</div><div class="stat-label">Learners</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="https://aadsllooq7apw.kimi.page">Home</a> → <a href="https://masterclass.anglotec-ai.com">AI Prompts</a> → Prompt Engineering Guide
+  </div>
+
+  <article class="article">
+    <p style="font-size:1.15rem;color:var(--text);margin-bottom:24px;">In 2026, the ability to communicate effectively with artificial intelligence has become as essential as knowing how to use a search engine or send an email. <span class="highlight">Prompt engineering — the skill of crafting inputs that produce optimal AI outputs — is now one of the most valuable competencies across every profession</span>, from medicine and law to marketing and education.</p>
+
+    <p>At <strong>Anglotec AI Academy</strong>, we have spent four decades at the forefront of educational technology. Our <a href="https://masterclass.anglotec-ai.com" style="color:var(--orange);">AI Prompts Masterclass</a> contains over 9,000 carefully crafted prompts across 30+ categories, and this guide will teach you the principles behind every single one of them.</p>
+
+    <div class="cta-box" style="margin-top:28px;">
+      <h3>Access 9,000+ AI Prompts Instantly</h3>
+      <p>Skip the learning curve with our curated collection of 9,000+ production-ready prompts for work, study, and creativity.</p>
+      <a href="https://masterclass.anglotec-ai.com" class="btn">Get 9,000 Prompts</a>
+      <a href="https://aadsllooq7apw.kimi.page" class="btn btn-outline">Try Free Tools</a>
+    </div>
+
+    <div class="toc">
+      <h3>Quick Navigation</h3>
+      <ul>
+        <li><a href="#what-is">What is Prompt Engineering?</a></li>
+        <li><a href="#principles">Core Principles</a></li>
+        <li><a href="#frameworks">Prompt Frameworks</a></li>
+        <li><a href="#techniques">Advanced Techniques</a></li>
+        <li><a href="#examples">Real-World Examples</a></li>
+        <li><a href="#common-mistakes">Common Mistakes</a></li>
+        <li><a href="#career">Career Applications</a></li>
+        <li><a href="#tools">Tools & Resources</a></li>
+      </ul>
+    </div>
+
+    <h2 id="what-is">1. What is Prompt Engineering?</h2>
+    <p>Prompt engineering is the discipline of designing, refining, and optimising inputs (prompts) to AI language models to produce accurate, relevant, and high-quality outputs. Think of it as learning to speak the language of AI — a language that rewards clarity, specificity, and structured thinking.</p>
+
+    <p>In the early days of AI chatbots, users could get reasonable results with simple, one-sentence queries. But as AI models have become more capable, the gap between <em>basic</em> and <em>expert</em> prompting has widened dramatically. A well-engineered prompt can produce outputs that are 5-10x better than a poorly written one, even with the same AI model.</p>
+
+    <h3>Why Prompt Engineering Matters in 2026</h3>
+    <ul>
+      <li><strong>Universal Applicability:</strong> Every professional who uses AI — which is now virtually everyone — benefits from better prompting skills.</li>
+      <li><strong>Competitive Advantage:</strong> Professionals who can extract maximum value from AI tools are significantly more productive than those who cannot.</li>
+      <li><strong>Cost Efficiency:</strong> Better prompts reduce the need for multiple attempts, saving both time and API costs.</li>
+      <li><strong>Career Opportunity:</strong> Dedicated prompt engineering roles now exist at major companies, with salaries exceeding $150,000 annually.</li>
+      <li><strong>Democratisation:</strong> You don't need a computer science degree. If you can write clearly and think structurally, you can master prompt engineering.</li>
+    </ul>
+
+    <div class="tip">
+      <div class="tip-label">The Prompt Engineering Mindset</div>
+      <p>Think of an AI model not as a database that stores facts, but as a highly capable intern who has read most of the internet but needs very clear instructions. The more specific and structured your request, the better the output. Vague instructions produce vague results.</p>
+    </div>
+
+    <h2 id="principles">2. The 7 Core Principles of Effective Prompting</h2>
+    <p>Before learning specific frameworks, you need to understand the foundational principles that underpin all great prompts. These seven principles form the bedrock of prompt engineering:</p>
+
+    <h3>Principle 1: Clarity Above All</h3>
+    <p>The most common reason prompts fail is ambiguity. Every word in your prompt should serve a purpose. Remove vague terms like "good," "interesting," or "better." Replace them with specific criteria. Instead of "Write a good email," say "Write a professional email of approximately 150 words requesting a meeting next Tuesday at 2 PM."</p>
+
+    <h3>Principle 2: Specificity Drives Quality</h3>
+    <p>The more specific your prompt, the more targeted the response. Include details about format, length, tone, audience, and constraints. Think of it as writing a creative brief — the AI needs all the same context a human professional would need.</p>
+
+    <h3>Principle 3: Structure Beats Length</h3>
+    <p>A well-structured 100-word prompt outperforms a rambling 500-word prompt every time. Use formatting — bullet points, numbered lists, clear sections — to make your prompt scannable. AI models process structured information more effectively.</p>
+
+    <h3>Principle 4: Context is King</h3>
+    <p>AI models have no memory of your previous conversations (unless you explicitly provide it). Include all relevant context in each prompt. If you're continuing a previous task, summarise what has been done and what you need next.</p>
+
+    <h3>Principle 5: Iterate and Refine</h3>
+    <p>Your first prompt is rarely your best prompt. Treat prompting as a conversation, not a single command. Review the output, identify what could be better, and refine your prompt accordingly. This iterative process is where the magic happens.</p>
+
+    <h3>Principle 6: Assign a Role</h3>
+    <p>One of the most powerful techniques in prompting is role assignment. When you tell the AI to act as a specific expert ("You are an experienced copywriter" or "You are a medical educator"), the output quality improves dramatically because the model activates domain-specific knowledge patterns.</p>
+
+    <h3>Principle 7: Define the Output Format</h3>
+    <p>Always specify how you want the response formatted. Do you want bullet points, a numbered list, a table, JSON, or prose? Specifying the output format prevents the AI from making assumptions and gives you results that are immediately usable.</p>
+
+    <h2 id="frameworks">3. Proven Prompt Frameworks</h2>
+    <p>Frameworks provide reusable structures for different types of prompting tasks. Here are the most effective frameworks we teach at Anglotec AI Academy:</p>
+
+    <div class="framework-card">
+      <div class="fw-acronym">RTF: Role - Task - Format</div>
+      <p><strong>Best for:</strong> Quick, single-purpose prompts</p>
+      <p><strong>Structure:</strong> Assign a role, define the task, specify the format.</p>
+      <div class="prompt-example" style="margin:12px 0;">
+        <div class="pe-label">Example</div>
+        <div class="pe-prompt"><strong>Role:</strong> You are an experienced IELTS examiner.
+<strong>Task:</strong> Evaluate this essay and provide feedback on the four marking criteria.
+<strong>Format:</strong> Bullet points for each criterion with a score out of 9 and specific improvement suggestions.</div>
+      </div>
+    </div>
+
+    <div class="framework-card">
+      <div class="fw-acronym">COSTAR: Context - Objective - Style - Tone - Audience - Response</div>
+      <p><strong>Best for:</strong> Complex, multi-layered tasks</p>
+      <p><strong>Structure:</strong> Provide background, state the goal, define style/tone, identify audience, specify response format.</p>
+      <div class="prompt-example" style="margin:12px 0;">
+        <div class="pe-label">Example</div>
+        <div class="pe-prompt"><strong>Context:</strong> I am a nurse preparing for the OET Writing exam.
+<strong>Objective:</strong> Write a referral letter based on the case notes I'll provide.
+<strong>Style:</strong> Formal medical English, professional and concise.
+<strong>Tone:</strong> Respectful, collaborative, clear.
+<strong>Audience:</strong> A community nurse who will be providing ongoing care.
+<strong>Response:</strong> A referral letter of 180-200 words with correct formatting.</div>
+      </div>
+    </div>
+
+    <div class="framework-card">
+      <div class="fw-acronym">APE: Action - Purpose - Expectation</div>
+      <p><strong>Best for:</strong> Professional and workplace prompts</p>
+      <p><strong>Structure:</strong> Specify the action, explain the purpose, set expectations for the output.</p>
+      <div class="prompt-example" style="margin:12px 0;">
+        <div class="pe-label">Example</div>
+        <div class="pe-prompt"><strong>Action:</strong> Create a 12-week study plan for PLAB 2 preparation.
+<strong>Purpose:</strong> I am an international doctor working full-time and need an efficient schedule.
+<strong>Expectation:</strong> Daily tasks with specific time allocations, rest days built in, and milestones at weeks 4, 8, and 12.</div>
+      </div>
+    </div>
+
+    <div class="framework-card">
+      <div class="fw-acronym">CARE: Context - Action - Result - Example</div>
+      <p><strong>Best for:</strong> Tasks requiring specific examples or templates</p>
+      <p><strong>Structure:</strong> Set the context, request the action, specify the desired result, provide an example of ideal output.</p>
+      <div class="prompt-example" style="margin:12px 0;">
+        <div class="pe-label">Example</div>
+        <div class="pe-prompt"><strong>Context:</strong> I need to explain diabetes management to a newly diagnosed patient.
+<strong>Action:</strong> Write a patient-friendly explanation.
+<strong>Result:</strong> Clear, jargon-free language the patient can understand.
+<strong>Example:</strong> Start with "Diabetes means your body has trouble using sugar for energy..."</div>
+      </div>
+    </div>
+
+    <div class="framework-card">
+      <div class="fw-acronym">TAG: Task - Action - Goal</div>
+      <p><strong>Best for:</strong> Goal-oriented prompts with clear deliverables</p>
+      <p><strong>Structure:</strong> Define the overall task, specify immediate actions, state the end goal.</p>
+    </div>
+
+    <h2 id="techniques">4. Advanced Prompting Techniques</h2>
+    <p>Once you've mastered the fundamentals, these advanced techniques will take your prompting to the next level:</p>
+
+    <div class="technique-grid">
+      <div class="technique-card">
+        <span class="difficulty diff-beginner">Beginner</span>
+        <h4>Chain of Thought (CoT)</h4>
+        <p>Ask the AI to think step by step before giving an answer. Add "Think through this step by step" to your prompt. This dramatically improves reasoning and reduces errors.</p>
+      </div>
+      <div class="technique-card">
+        <span class="difficulty diff-beginner">Beginner</span>
+        <h4>Few-Shot Prompting</h4>
+        <p>Provide 2-3 examples of the desired input-output pattern before asking for a new output. The AI learns the pattern from your examples.</p>
+      </div>
+      <div class="technique-card">
+        <span class="difficulty diff-intermediate">Intermediate</span>
+        <h4>Chain of Thought with Self-Consistency</h4>
+        <p>Generate multiple reasoning paths and select the most consistent answer. Ask the AI to solve a problem in 3 different ways and compare results.</p>
+      </div>
+      <div class="technique-card">
+        <span class="difficulty diff-intermediate">Intermediate</span>
+        <h4>ReAct (Reasoning + Acting)</h4>
+        <p>Combine reasoning steps with action steps. The AI thinks about what to do, takes an action, observes the result, and repeats. Powerful for complex problem-solving.</p>
+      </div>
+      <div class="technique-card">
+        <span class="difficulty diff-intermediate">Intermediate</span>
+        <h4>Prompt Chaining</h4>
+        <p>Break complex tasks into a sequence of simpler prompts. Use the output of one prompt as input for the next. This improves reliability for multi-step tasks.</p>
+      </div>
+      <div class="technique-card">
+        <span class="difficulty diff-advanced">Advanced</span>
+        <h4>Multi-Agent Collaboration</h4>
+        <p>Simulate multiple AI experts collaborating. Assign different roles (critic, creator, editor) and have them interact to produce superior output.</p>
+      </div>
+      <div class="technique-card">
+        <span class="difficulty diff-advanced">Advanced</span>
+        <h4>Meta-Prompting</h4>
+        <p>Use AI to generate or improve your prompts. Ask: "What additional information would help you give a better answer?" or "How should I phrase this prompt for optimal results?"</p>
+      </div>
+      <div class="technique-card">
+        <span class="difficulty diff-beginner">Beginner</span>
+        <h4>Negative Prompting</h4>
+        <p>Tell the AI what NOT to do. "Do not use technical jargon." "Avoid listing more than 5 items." "Do not include recommendations I didn't ask for."</p>
+      </div>
+    </div>
+
+    <h3>Chain of Thought in Practice</h3>
+    <p>Let's see how Chain of Thought transforms a simple prompt:</p>
+
+    <div class="prompt-example">
+      <div class="pe-label">Basic Prompt (Lower Quality)</div>
+      <div class="pe-prompt">A hospital has 120 nurses. 30% work night shifts. How many nurses work day shifts?</div>
+      <div class="pe-output">Output: 84 nurses work day shifts. (Correct but no explanation)</div>
+    </div>
+
+    <div class="prompt-example">
+      <div class="pe-label">Chain of Thought Prompt (Higher Quality)</div>
+      <div class="pe-prompt">A hospital has 120 nurses. 30% work night shifts. How many nurses work day shifts? Think through this step by step and show your working.</div>
+      <div class="pe-output">Output: Step 1: Total nurses = 120. Step 2: Night shift nurses = 30% of 120 = 0.30 × 120 = 36. Step 3: Day shift nurses = Total − Night shift = 120 − 36 = 84. Therefore, 84 nurses work day shifts.</div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-label">Why CoT Works</div>
+      <p>Chain of Thought prompting forces the AI to use more computational steps in generating the answer. This reduces errors by up to 40% in reasoning tasks. The technique is especially powerful for calculations, comparisons, and multi-step analysis.</p>
+    </div>
+
+    <h2 id="examples">5. Real-World Prompt Engineering Examples</h2>
+    <p>Here are practical examples across different professional domains. Each demonstrates how to apply the frameworks and principles we've covered:</p>
+
+    <h3>Example 1: Medical Education</h3>
+    <div class="code-block">
+      <div class="label">Prompt</div>
+      <code>Role: You are a senior medical educator preparing PLAB 2 OSCE scenarios.
+Task: Create a history-taking station for a 45-year-old male presenting with chest pain.
+Requirements:
+- Patient background and opening statement
+- 5 key symptoms the candidate should elicit
+- 2 red herring symptoms
+- Expected management plan
+- Marking scheme with 10 criteria
+Format: Structured markdown with clear headings.</code>
+    </div>
+
+    <h3>Example 2: Content Creation</h3>
+    <div class="code-block">
+      <div class="label">Prompt</div>
+      <code>Role: You are an expert copywriter specialising in educational content.
+Context: Anglotec AI Academy is launching a new IELTS preparation course.
+Task: Write a landing page headline, 3 bullet point benefits, and a call-to-action.
+Constraints:
+- Headline must be under 15 words
+- Use persuasive but professional tone
+- Target audience: international nurses seeking UK registration
+- Include the phrase "British Council accredited"
+Output: Headline + 3 bullets + CTA button text</code>
+    </div>
+
+    <h3>Example 3: Data Analysis</h3>
+    <div class="code-block">
+      <div class="label">Prompt</div>
+      <code>Role: You are a data analyst specialising in educational outcomes.
+Task: Analyse the following IELTS score data and provide insights.
+Data: [insert data]
+Requirements:
+1. Identify trends across the 4 skills
+2. Highlight the biggest areas for improvement
+3. Compare to global averages
+4. Provide 3 actionable recommendations
+Format: Executive summary followed by detailed analysis with bullet points.</code>
+    </div>
+
+    <h3>Example 4: Language Learning</h3>
+    <div class="code-block">
+      <div class="label">Prompt</div>
+      <code>Role: You are an experienced IELTS speaking examiner.
+Task: Generate 5 Part 2 cue cards for IELTS Speaking on the topic of "Technology."
+Requirements:
+- Each cue card should have a main topic + 3 bullet point prompts
+- Vary the difficulty from easy to challenging
+- Include a model answer outline for each
+- Suggest 5 advanced vocabulary items per cue card
+Format: Numbered list with clear sections for each cue card.</code>
+    </div>
+
+    <h2 id="common-mistakes">6. Common Prompt Engineering Mistakes</h2>
+    <p>Even experienced prompt engineers make these mistakes. Being aware of them will accelerate your learning:</p>
+
+    <div class="warning-box">
+      <strong>Mistake 1: Assuming Context the AI Doesn't Have</strong>
+      <p style="margin-top:4px">AI models don't know your organisation, your previous conversations (unless provided), or your preferences. Always include all necessary context explicitly. Don't say "as discussed" — the AI has no memory of your discussion.</p>
+    </div>
+
+    <div class="warning-box">
+      <strong>Mistake 2: Being Too Vague</strong>
+      <p style="margin-top:4px">"Write something good about nursing" will produce generic fluff. "Write a 200-word professional blog post about time management strategies for night-shift nurses in ICU, including 3 actionable tips" will produce exactly what you need.</p>
+    </div>
+
+    <div class="warning-box">
+      <strong>Mistake 3: Not Specifying Constraints</strong>
+      <p style="margin-top:4px">If you need a response under 500 words, say so. If you want JSON format, specify it. If certain topics are off-limits, list them. Constraints guide the AI to produce usable output.</p>
+    </div>
+
+    <div class="warning-box">
+      <strong>Mistake 4: Giving Up After One Attempt</strong>
+      <p style="margin-top:4px">Prompt engineering is iterative. Your second attempt, informed by the first output, will almost always be better. Expect to refine 2-3 times for optimal results.</p>
+    </div>
+
+    <div class="warning-box">
+      <strong>Mistake 5: Overloading a Single Prompt</strong>
+      <p style="margin-top:4px">If your prompt exceeds 300 words, consider breaking it into multiple prompts using prompt chaining. Overloaded prompts often produce incomplete or confused responses.</p>
+    </div>
+
+    <div class="warning-box">
+      <strong>Mistake 6: Not Using System Prompts</strong>
+      <p style="margin-top:4px">When the interface allows it, use system prompts to set persistent context ("You are a helpful medical educator") and user prompts for specific tasks. This separation improves consistency.</p>
+    </div>
+
+    <h2 id="career">7. Career Applications of Prompt Engineering</h2>
+    <p>Prompt engineering isn't just a technical skill — it's a career accelerator. Here's how professionals across industries are using it:</p>
+
+    <h3>Healthcare Professionals</h3>
+    <ul>
+      <li>Generate patient education materials in plain language</li>
+      <li>Create OSCE scenarios and exam practice questions</li>
+      <li>Draft referral letters and clinical documentation</li>
+      <li>Analyse research papers and extract key findings</li>
+      <li>Prepare presentation slides and teaching materials</li>
+    </ul>
+
+    <h3>Educators and Trainers</h3>
+    <ul>
+      <li>Create differentiated lesson plans for mixed-ability classes</li>
+      <li>Generate practice questions and model answers</li>
+      <li>Produce study guides and revision materials</li>
+      <li>Develop assessment rubrics and marking schemes</li>
+      <li>Create engaging learning activities and case studies</li>
+    </ul>
+
+    <h3>Business Professionals</h3>
+    <ul>
+      <li>Draft emails, reports, and proposals</li>
+      <li>Analyse data and generate insights</li>
+      <li>Create marketing copy and social media content</li>
+      <li>Prepare meeting agendas and summaries</li>
+      <li>Develop project plans and timelines</li>
+    </ul>
+
+    <h3>Creative Professionals</h3>
+    <ul>
+      <li>Generate ideas and creative concepts</li>
+      <li>Draft scripts, stories, and narratives</li>
+      <li>Create character profiles and world-building elements</li>
+      <li>Develop content calendars and editorial plans</li>
+      <li>Produce variations of creative work for A/B testing</li>
+    </ul>
+
+    <div class="tip">
+      <div class="tip-label">The Prompt Engineering Career Path</div>
+      <p>Entry-level prompt engineering roles now start at $80,000-$120,000 annually. Senior roles at major tech companies exceed $200,000. Even if you don't pursue a dedicated prompt engineering role, the skill makes you significantly more valuable in any position that involves AI tools.</p>
+    </div>
+
+    <h2 id="tools">8. Tools and Resources for Prompt Engineering</h2>
+    <p>The prompt engineering ecosystem has grown rapidly. Here are the essential tools:</p>
+
+    <h3>AI Model Access</h3>
+    <ul>
+      <li><strong>ChatGPT (OpenAI):</strong> The most accessible entry point. GPT-4o offers excellent reasoning capabilities.</li>
+      <li><strong>Claude (Anthropic):</strong> Excels at long-form content and nuanced reasoning. The 200K context window is unmatched.</li>
+      <li><strong>Gemini (Google):</strong> Strong multimodal capabilities. Good integration with Google Workspace.</li>
+      <li><strong>Perplexity:</strong> Best for research tasks with built-in web search and citation.</li>
+    </ul>
+
+    <h3>Prompt Libraries and Resources</h3>
+    <ul>
+      <li><strong>Anglotec AI Prompts Masterclass:</strong> 9,000+ production-ready prompts across 30+ categories. <a href="https://masterclass.anglotec-ai.com" style="color:var(--orange);">Access here</a>.</li>
+      <li><strong>Prompt Engineering Guide (OpenAI):</strong> Official documentation from the creators of GPT.</li>
+      <li><strong>Anthropic's Prompt Library:</strong> Curated examples from Claude's developers.</li>
+      <li><strong>LangChain Documentation:</strong> For building applications with LLMs.</li>
+    </ul>
+
+    <h3>Practice Techniques</h3>
+    <ul>
+      <li><strong>Daily Prompt Challenges:</strong> Set yourself one prompt engineering challenge daily. Start simple and increase complexity.</li>
+      <li><strong>A/B Testing:</strong> Write two versions of the same prompt and compare outputs. Note what works.</li>
+      <li><strong>Prompt Journaling:</strong> Keep a record of your best prompts and the outputs they produce. Build your personal prompt library.</li>
+      <li><strong>Community Learning:</strong> Join prompt engineering communities to learn from others and share your discoveries.</li>
+    </ul>
+
+    <div class="cta-box" style="margin-top:48px;">
+      <h3>Get 9,000+ Expert-Crafted Prompts</h3>
+      <p>Our AI Prompts Masterclass contains over 9,000 production-ready prompts across education, healthcare, business, creativity, and more. Save hundreds of hours of trial and error.</p>
+      <a href="https://masterclass.anglotec-ai.com" class="btn">Access 9,000 Prompts</a>
+      <a href="https://aadsllooq7apw.kimi.page" class="btn btn-outline">Explore Free AI Tools</a>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is prompt engineering?</div>
+      <div class="faq-a">Prompt engineering is the practice of designing and refining inputs (prompts) to AI language models to produce optimal outputs. It involves understanding how AI models interpret instructions and crafting prompts that are clear, specific, and structured to achieve desired results.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need coding skills to learn prompt engineering?</div>
+      <div class="faq-a">No, you don't need coding skills to learn prompt engineering. While technical knowledge can help for advanced applications, the core skills are communication, clarity, and structured thinking. Anyone who can write clearly can learn prompt engineering.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to learn prompt engineering?</div>
+      <div class="faq-a">You can learn the fundamentals of prompt engineering in 2-3 weeks of consistent practice. Mastering advanced techniques like chain-of-thought prompting and multi-agent workflows may take 2-3 months. The key is daily practice with real-world applications.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is prompt engineering a real career?</div>
+      <div class="faq-a">Yes, prompt engineering has become a recognised profession. Companies like OpenAI, Google, Microsoft, and major consultancies employ prompt engineers. Salaries range from $80,000 for entry-level roles to over $200,000 for senior positions. Even as a secondary skill, it significantly enhances productivity in any role.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What makes a good prompt?</div>
+      <div class="faq-a">A good prompt is clear, specific, structured, and contextual. It assigns a role to the AI, defines the task precisely, specifies the desired output format, includes relevant context, and sets any necessary constraints. The best prompts are iterative — refined based on the AI's response.</div>
+    </div>
+
+    <h2>Related Resources</h2>
+    <div class="related-links">
+      <a href="https://masterclass.anglotec-ai.com" class="related-link">
+        <span class="rl-title">AI Prompts Masterclass</span>
+        <span class="rl-desc">9,000+ prompts across 30+ categories</span>
+      </a>
+      <a href="https://aadsllooq7apw.kimi.page" class="related-link">
+        <span class="rl-title">Free AI Tools</span>
+        <span class="rl-desc">Prompt generators and AI-powered utilities</span>
+      </a>
+      <a href="https://agmp.anglotec.com" class="related-link">
+        <span class="rl-title">IELTS & OET Platform</span>
+        <span class="rl-desc">AI-powered exam preparation tools</span>
+      </a>
+      <a href="https://anglotec-ai.com" class="related-link">
+        <span class="rl-title">Language Learning AI</span>
+        <span class="rl-desc">Learn languages with AI-powered tutoring</span>
+      </a>
+    </div>
+
+    <div class="cta-box" style="margin-top:48px;">
+      <h3>Start Your Prompt Engineering Journey</h3>
+      <p>Whether you're a beginner or looking to advance your skills, Anglotec AI Academy has the resources you need. Access 9,000+ prompts, expert frameworks, and cutting-edge AI tools.</p>
+      <a href="https://masterclass.anglotec-ai.com" class="btn">Explore 9,000 Prompts</a>
+      <a href="https://aadsllooq7apw.kimi.page" class="btn btn-outline">Free Tools</a>
+    </div>
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Anglotec AI Academy</h4>
+        <p>British Council accredited since 1986. Pioneering AI-powered education and professional development tools for learners worldwide.</p>
+      </div>
+      <div>
+        <h4>AI & Prompts</h4>
+        <a href="https://masterclass.anglotec-ai.com">9,000 AI Prompts</a>
+        <a href="https://masterclass.anglotec-ai.com">Prompt Masterclass</a>
+        <a href="https://aadsllooq7apw.kimi.page">Free AI Tools</a>
+      </div>
+      <div>
+        <h4>Exam Prep</h4>
+        <a href="https://agmp.anglotec.com">IELTS & OET</a>
+        <a href="https://amcvdo.anglotec-ai.com">OSCE Generator</a>
+        <a href="https://amc.anglotec-ai.com">AMC Platform</a>
+      </div>
+      <div>
+        <h4>Languages</h4>
+        <a href="https://anglotec-ai.com">AI Language Tutor</a>
+        <a href="https://aadsllooq7apw.kimi.page">Free Tools Hub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Anglotec AI Academy. British Council Accredited Since 1986.</span>
+      <span>All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

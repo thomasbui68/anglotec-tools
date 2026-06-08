@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn 12 Languages with AI | Personal AI Tutor | Anglotec AI Academy</title>
+<meta name="description" content="Learn 12 languages with your personal AI tutor. AI conversations, pronunciation training, grammar lessons, mock exams & certificates. Start your free lesson today. British Council accredited since 1986.">
+<meta property="og:title" content="Learn 12 Languages with Your Personal AI Tutor | Anglotec AI Academy">
+<meta property="og:description" content="AI-powered language learning in 12 languages. Conversations, pronunciation, grammar, exams & certificates.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"12-Language AI Tutor","description":"AI-powered language learning platform covering 12 languages with conversational AI, pronunciation training, and grammar lessons","provider":{"@type":"EducationalOrganization","name":"Anglotec AI Academy","url":"https://anglotec-ai.com/","address":{"@type":"PostalAddress","streetAddress":"20 Avenue Road","addressLocality":"Scarborough","postalCode":"YO12 5JX","addressCountry":"UK"},"contactPoint":{"@type":"ContactPoint","telephone":"+44-1723-367141","contactType":"enquiries","email":"info@anglotec-ai.com"}},"hasCourseInstance":[{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT5H","instructor":{"@type":"Organization","name":"Anglotec AI Academy"}}]}</script>
+<style>
+:root{--green:#2C4A3E;--orange:#D4653B;--off-white:#F7F5F2;--cream:#FDF6E3;--sage:#8BA888;--green-dark:#1e362d;--green-light:#3d5f50;--orange-light:#e07a55;--white:#fff;--gray:#5a5a5a;--gray-light:#888;--shadow:0 4px 20px rgba(0,0,0,0.08);--shadow-lg:0 8px 40px rgba(0,0,0,0.12);--radius:12px;--radius-sm:8px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;color:#333;background:var(--off-white);line-height:1.6}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--green);font-weight:600}
+a{color:var(--orange);text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:92%;max-width:1200px;margin:0 auto;padding:0 16px}
+
+.announcement{background:var(--green);color:var(--cream);text-align:center;padding:10px 16px;font-size:13px;font-weight:500}
+.announcement a{color:var(--cream);text-decoration:underline}
+
+/* Nav */
+.navbar{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,0.05);position:sticky;top:0;z-index:1000;padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--green)}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;gap:28px;align-items:center;list-style:none;font-size:14px;font-weight:500}
+.nav-links a{color:var(--green);transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{background:var(--orange);color:#fff;padding:10px 22px;border-radius:var(--radius-sm);font-weight:600;font-size:13px;transition:all .2s;border:none;cursor:pointer}
+.nav-cta:hover{background:var(--orange-light);transform:translateY(-1px)}
+.mobile-toggle{display:none;background:none;border:none;font-size:22px;color:var(--green);cursor:pointer}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:#fff;padding:80px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:600px;height:600px;background:rgba(212,101,59,0.08);border-radius:50%}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:rgba(139,168,136,0.1);border-radius:50%}
+.hero-inner{text-align:center;position:relative;z-index:2;max-width:800px;margin:0 auto}
+.hero h1{font-size:48px;line-height:1.15;color:#fff;margin-bottom:20px;font-weight:700}
+.hero-sub{font-size:18px;color:rgba(255,255,255,0.85);margin-bottom:32px;line-height:1.7}
+.hero-badges{display:flex;justify-content:center;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);padding:8px 16px;border-radius:50px;font-size:13px;color:rgba(255,255,255,0.9)}
+.hero-cta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--orange);color:#fff;padding:16px 32px;border-radius:var(--radius);font-weight:700;font-size:16px;border:none;cursor:pointer;transition:all .2s;display:inline-block}
+.btn-primary:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,101,59,0.3)}
+.btn-secondary{background:rgba(255,255,255,0.15);color:#fff;padding:16px 32px;border-radius:var(--radius);font-weight:600;font-size:16px;border:1px solid rgba(255,255,255,0.3);cursor:pointer;transition:all .2s;display:inline-block}
+.btn-secondary:hover{background:rgba(255,255,255,0.25)}
+
+/* Section */
+.section{padding:80px 0}
+.section-header{text-align:center;max-width:640px;margin:0 auto 60px}
+.section-header h2{font-size:38px;margin-bottom:16px;line-height:1.25}
+.section-header p{color:var(--gray);font-size:17px}
+
+/* Language Grid */
+.lang-grid-section{background:var(--off-white)}
+.lang-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.lang-card{background:#fff;border-radius:var(--radius);padding:28px 20px;text-align:center;box-shadow:var(--shadow);transition:all .3s;cursor:pointer;border:2px solid transparent}
+.lang-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--sage)}
+.lang-flag{font-size:40px;margin-bottom:12px}
+.lang-card h4{font-size:17px;margin-bottom:6px;font-family:Inter,sans-serif;font-weight:700;color:var(--green)}
+.lang-card p{font-size:13px;color:var(--gray-light)}
+.lang-card.featured{border-color:var(--orange);position:relative}
+.lang-card.featured::before{content:'POPULAR';position:absolute;top:0;right:0;background:var(--orange);color:#fff;font-size:9px;font-weight:700;padding:4px 10px;border-radius:0 0 0 var(--radius-sm)}
+
+/* How It Works */
+.how-works{background:#fff}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.step-card{text-align:center;position:relative}
+.step-num{width:56px;height:56px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;margin:0 auto 20px;font-family:'Playfair Display',serif}
+.step-card h4{font-size:19px;margin-bottom:10px;font-family:Inter,sans-serif;font-weight:700;color:var(--green)}
+.step-card p{color:var(--gray);font-size:15px;line-height:1.7}
+
+/* AI Teacher */
+.ai-teacher{background:var(--cream)}
+.teacher-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.teacher-visual{background:var(--green);border-radius:var(--radius);padding:40px;color:#fff;position:relative;overflow:hidden;min-height:360px}
+.teacher-visual::before{content:'';position:absolute;top:-20%;right:-20%;width:250px;height:250px;background:rgba(212,101,59,0.15);border-radius:50%}
+.chat-bubble{background:rgba(255,255,255,0.12);border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;position:relative;z-index:2;border-left:3px solid var(--orange)}
+.chat-bubble.user{background:rgba(255,255,255,0.06);border-left-color:var(--sage);margin-left:30px}
+.chat-bubble.ai{margin-right:30px}
+.chat-bubble h5{color:#fff;font-size:13px;margin-bottom:4px;font-family:Inter,sans-serif;font-weight:600}
+.chat-bubble p{color:rgba(255,255,255,0.85);font-size:14px;line-height:1.6}
+.teacher-info h2{font-size:36px;margin-bottom:16px}
+.teacher-info>p{color:var(--gray);font-size:17px;margin-bottom:28px;line-height:1.7}
+.teacher-features{list-style:none}
+.teacher-features li{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--gray);margin-bottom:14px}
+.teacher-features li::before{content:'\2713';width:24px;height:24px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex-shrink:0}
+
+/* Features */
+.features-section{background:var(--off-white)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feature-card{background:#fff;border-radius:var(--radius);padding:36px 28px;text-align:center;box-shadow:var(--shadow);transition:all .3s}
+.feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.feature-icon{width:68px;height:68px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:30px}
+.feature-card h4{font-size:18px;margin-bottom:10px;font-family:Inter,sans-serif;font-weight:700;color:var(--green)}
+.feature-card p{color:var(--gray);font-size:14px;line-height:1.7}
+
+/* Pricing */
+.pricing{background:#fff}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pricing-card{background:var(--off-white);border-radius:var(--radius);padding:36px 28px;box-shadow:var(--shadow);text-align:center;transition:all .3s}
+.pricing-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.pricing-card.featured{border:2px solid var(--orange);position:relative;background:#fff}
+.pricing-card.featured::before{content:'MOST POPULAR';position:absolute;top:0;right:50%;transform:translateX(50%);background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:6px 16px;border-radius:0 0 var(--radius-sm) var(--radius-sm)}
+.pricing-name{font-size:20px;font-weight:700;color:var(--green);margin-bottom:6px}
+.pricing-desc{font-size:13px;color:var(--gray-light);margin-bottom:20px}
+.pricing-price{font-size:48px;color:var(--green);font-family:'Playfair Display',serif;font-weight:700;margin-bottom:4px}
+.pricing-price span{font-size:16px;color:var(--gray-light);font-family:Inter,sans-serif;font-weight:400}
+.pricing-save{color:var(--orange);font-size:13px;font-weight:700;margin-bottom:16px}
+.pricing-features{list-style:none;text-align:left;margin:24px 0}
+.pricing-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray);margin-bottom:12px;padding-left:4px}
+.pricing-features li::before{content:'\2713';color:var(--sage);font-weight:700}
+.pricing-btn{display:block;width:100%;padding:16px;border-radius:var(--radius);font-weight:700;font-size:16px;cursor:pointer;transition:all .2s;border:none}
+.pricing-btn.free{background:#fff;color:var(--green);border:2px solid var(--green)}
+.pricing-btn.free:hover{background:var(--green);color:#fff}
+.pricing-btn.paid{background:var(--orange);color:#fff}
+.pricing-btn.paid:hover{background:var(--orange-light)}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:#fff;text-align:center;padding:80px 0;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:rgba(212,101,59,0.08);border-radius:50%}
+.cta-section h2{color:#fff;font-size:38px;margin-bottom:16px;position:relative;z-index:2}
+.cta-section p{color:rgba(255,255,255,0.85);font-size:17px;margin-bottom:36px;max-width:600px;margin-left:auto;margin-right:auto;position:relative;z-index:2}
+.cta-btn{background:var(--orange);color:#fff;padding:18px 40px;border-radius:var(--radius);font-weight:700;font-size:18px;border:none;cursor:pointer;transition:all .2s;display:inline-block;position:relative;z-index:2}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.2)}
+
+/* Trust */
+.trust{background:var(--cream);padding:50px 0}
+.trust-grid{display:flex;justify-content:center;align-items:center;gap:60px;flex-wrap:wrap}
+.trust-item{text-align:center}
+.trust-item .icon{font-size:32px;margin-bottom:8px}
+.trust-item p{font-size:13px;color:var(--gray);font-weight:600}
+
+/* FAQ */
+.faq{background:var(--off-white)}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{background:#fff;border-radius:var(--radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow)}
+.faq-question{padding:22px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;color:var(--green);font-size:16px;transition:background .2s}
+.faq-question:hover{background:rgba(44,74,62,0.02)}
+.faq-icon{width:28px;height:28px;background:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--orange);transition:transform .3s;flex-shrink:0}
+.faq-item.active .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.active .faq-answer{max-height:300px}
+.faq-answer-inner{padding:0 28px 22px;color:var(--gray);font-size:15px;line-height:1.8}
+
+/* Footer */
+.footer{background:var(--green);color:rgba(255,255,255,0.8);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand .logo{color:#fff;margin-bottom:16px;font-size:24px}
+.footer-brand p{font-size:14px;line-height:1.8;margin-bottom:16px;color:rgba(255,255,255,0.7)}
+.footer-contact{font-size:14px;line-height:2}
+.footer-contact a{color:rgba(255,255,255,0.8)}
+.footer-contact a:hover{color:var(--orange)}
+.footer h4{color:#fff;font-size:16px;margin-bottom:20px;font-family:Inter,sans-serif;font-weight:700}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:12px}
+.footer-links a{color:rgba(255,255,255,0.7);font-size:14px;transition:color .2s}
+.footer-links a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:rgba(255,255,255,0.5)}
+
+@media(max-width:768px){
+.hero{padding:50px 0 60px}
+.hero h1{font-size:32px}
+.lang-grid{grid-template-columns:repeat(2,1fr)}
+.steps-grid{grid-template-columns:1fr;gap:36px}
+.teacher-inner{grid-template-columns:1fr;gap:32px}
+.features-grid{grid-template-columns:1fr}
+.pricing-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+.section{padding:60px 0}
+.section-header h2{font-size:28px}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:var(--shadow);gap:16px}
+.nav-links.open{display:flex}
+.mobile-toggle{display:block}
+.hero-cta{flex-direction:column}
+.btn-primary,.btn-secondary{text-align:center;width:100%}
+}
+@media(max-width:480px){
+.footer-grid{grid-template-columns:1fr}
+.hero h1{font-size:28px}
+.cta-section h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">British Council accredited since 1986 | Learn 12 languages with AI | <a href="tel:+441723367141">+44 (0)1723 367141</a></div>
+
+<nav class="navbar">
+<div class="container nav-inner">
+<a href="https://anglotec-ai.com/" class="logo" target="_blank" rel="noopener noreferrer">Anglo<span>tec</span> AI</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#languages">Languages</a></li>
+<li><a href="#how-it-works">How It Works</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="https://anglotec-ai.com/" class="nav-cta" target="_blank" rel="noopener noreferrer">Start Free</a></li>
+</ul>
+<button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container hero-inner">
+<h1>Learn 12 Languages with Your Personal AI Tutor</h1>
+<p class="hero-sub">Converse naturally, perfect your pronunciation, master grammar, and ace language exams with Emma - your AI language teacher available 24/7.</p>
+<div class="hero-badges">
+<div class="badge">&#127758; 12 Languages</div>
+<div class="badge">&#128300; AI-Powered</div>
+<div class="badge">&#127942; British Council Accredited</div>
+<div class="badge">&#128276; 14-Day Free Trial</div>
+</div>
+<div class="hero-cta">
+<a href="https://anglotec-ai.com/" class="btn-primary" target="_blank" rel="noopener noreferrer">Start Free Lesson</a>
+<a href="#languages" class="btn-secondary">See All Languages</a>
+</div>
+</div>
+</section>
+
+<!-- Language Grid -->
+<section class="section lang-grid-section" id="languages">
+<div class="container">
+<div class="section-header">
+<h2>12 Languages at Your Fingertips</h2>
+<p>Choose from 12 world languages. From beginner to advanced, business to exam preparation - your AI tutor adapts to your goals.</p>
+</div>
+<div class="lang-grid">
+<div class="lang-card featured">
+<div class="lang-flag">&#127468;&#127463;</div>
+<h4>English</h4>
+<p>British & American</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127466;&#127480;</div>
+<h4>Spanish</h4>
+<p>Español</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127467;&#127479;</div>
+<h4>French</h4>
+<p>Français</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127465;&#127466;</div>
+<h4>German</h4>
+<p>Deutsch</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127470;&#127481;</div>
+<h4>Italian</h4>
+<p>Italiano</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127477;&#127481;</div>
+<h4>Portuguese</h4>
+<p>Português</p>
+</div>
+<div class="lang-card featured">
+<div class="lang-flag">&#127464;&#127475;</div>
+<h4>Chinese</h4>
+<p>中文 (Mandarin)</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127471;&#127477;</div>
+<h4>Japanese</h4>
+<p>日本語</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127472;&#127479;</div>
+<h4>Korean</h4>
+<p>한국어</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127466;&#127468;</div>
+<h4>Arabic</h4>
+<p>العربية</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127483;&#127475;</div>
+<h4>Vietnamese</h4>
+<p>Tiếng Việt</p>
+</div>
+<div class="lang-card">
+<div class="lang-flag">&#127470;&#127465;</div>
+<h4>Indonesian</h4>
+<p>Bahasa Indonesia</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- How It Works -->
+<section class="section how-works" id="how-it-works">
+<div class="container">
+<div class="section-header">
+<h2>How It Works</h2>
+<p>Four simple steps to fluency. Your AI tutor guides you every step of the way.</p>
+</div>
+<div class="steps-grid">
+<div class="step-card">
+<div class="step-num">1</div>
+<h4>Choose Your Language</h4>
+<p>Select from 12 languages and set your goal - travel, business, exam prep, or just for fun.</p>
+</div>
+<div class="step-card">
+<div class="step-num">2</div>
+<h4>Chat with AI Emma</h4>
+<p>Have natural conversations with your AI tutor. She adapts to your level and corrects you gently.</p>
+</div>
+<div class="step-card">
+<div class="step-num">3</div>
+<h4>Practice Daily</h4>
+<p>Short, effective lessons every day. Pronunciation drills, grammar exercises, and real-world scenarios.</p>
+</div>
+<div class="step-card">
+<div class="step-num">4</div>
+<h4>Track Progress</h4>
+<p>See your fluency score improve. Earn certificates as you reach milestones from A1 to C2.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- AI Teacher -->
+<section class="section ai-teacher" id="teacher">
+<div class="container teacher-inner">
+<div class="teacher-visual">
+<div class="chat-bubble ai">
+<h5>Emma (AI Tutor)</h5>
+<p>Bonjour! I'm Emma. Let's practise ordering at a French restaurant today. I'll play the waiter!</p>
+</div>
+<div class="chat-bubble user">
+<h5>You</h5>
+<p>Bonjour, je voudrais une table pour deux, s'il vous plaît.</p>
+</div>
+<div class="chat-bubble ai">
+<h5>Emma (AI Tutor)</h5>
+<p>Excellent pronunciation! Let's try something harder. Ask about the daily special...</p>
+</div>
+</div>
+<div class="teacher-info">
+<h2>Meet Emma, Your AI Language Teacher</h2>
+<p>Emma is a conversational AI trained specifically for language education. She speaks 12 languages fluently, understands your mistakes, and adapts every lesson to your level and goals.</p>
+<ul class="teacher-features">
+<li>Natural conversations in 12 languages</li>
+<li>Real-time pronunciation feedback</li>
+<li>Personalised grammar corrections</li>
+<li>Cultural context for every phrase</li>
+<li>Progress tracking from A1 to C2</li>
+<li>Available 24/7, never gets tired</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Features -->
+<section class="section features-section" id="features">
+<div class="container">
+<div class="section-header">
+<h2>Everything You Need to Master a Language</h2>
+<p>A complete learning ecosystem powered by AI, designed for real-world fluency.</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">&#128483;</div>
+<h4>AI Conversations</h4>
+<p>Practise real-world dialogues with Emma. From ordering coffee to negotiating business deals, every scenario is covered.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">&#127908;</div>
+<h4>Pronunciation Training</h4>
+<p>Advanced speech recognition analyses your pronunciation and provides instant feedback. Sound like a native speaker faster.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">&#128221;</div>
+<h4>Grammar Mastery</h4>
+<p>AI-powered grammar explanations that adapt to your mistakes. No more boring grammar drills - learn through context.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">&#127919;</div>
+<h4>Mock Exams</h4>
+<p>Prepare for DELE, JLPT, HSK, DELF, Goethe and other official exams with realistic AI-generated practice tests.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">&#127891;</div>
+<h4>Certificates</h4>
+<p>Earn CEFR-aligned certificates (A1-C2) as you progress. Share your achievements on LinkedIn and your CV.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">&#128200;</div>
+<h4>Progress Analytics</h4>
+<p>Detailed insights into your vocabulary growth, grammar accuracy, speaking fluency, and listening comprehension.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Pricing -->
+<section class="section pricing" id="pricing">
+<div class="container">
+<div class="section-header">
+<h2>Start Learning Free</h2>
+<p>Choose the plan that fits your goals. All plans include a 14-day free trial.</p>
+</div>
+<div class="pricing-grid">
+<div class="pricing-card">
+<div class="pricing-name">Free</div>
+<div class="pricing-desc">Try before you buy</div>
+<div class="pricing-price">&pound;0<span>/month</span></div>
+<div class="pricing-save">&nbsp;</div>
+<ul class="pricing-features">
+<li>1 language</li>
+<li>15 minutes/day conversation</li>
+<li>Basic pronunciation feedback</li>
+<li>Limited grammar lessons</li>
+<li>Progress tracking</li>
+</ul>
+<a href="https://anglotec-ai.com/" class="pricing-btn free" target="_blank" rel="noopener noreferrer">Start Free</a>
+</div>
+<div class="pricing-card featured">
+<div class="pricing-name">Premium</div>
+<div class="pricing-desc">Best for serious learners</div>
+<div class="pricing-price">&pound;12.99<span>/month</span></div>
+<div class="pricing-save">Save 23% vs monthly</div>
+<ul class="pricing-features">
+<li>All 12 languages</li>
+<li>Unlimited conversations</li>
+<li>Advanced pronunciation</li>
+<li>Full grammar course</li>
+<li>Mock exams included</li>
+<li>CEFR certificates</li>
+<li>Priority support</li>
+</ul>
+<a href="https://anglotec-ai.com/" class="pricing-btn paid" target="_blank" rel="noopener noreferrer">Start 14-Day Free Trial</a>
+</div>
+<div class="pricing-card">
+<div class="pricing-name">Annual</div>
+<div class="pricing-desc">Maximum value</div>
+<div class="pricing-price">&pound;99<span>/year</span></div>
+<div class="pricing-save">Save 37% - Best Value</div>
+<ul class="pricing-features">
+<li>Everything in Premium</li>
+<li>12 months for price of 8</li>
+<li>Family sharing (up to 4)</li>
+<li>Offline lesson downloads</li>
+<li>1-to-1 human tutor session</li>
+<li>Exam registration support</li>
+</ul>
+<a href="https://anglotec-ai.com/" class="pricing-btn paid" target="_blank" rel="noopener noreferrer">Start 14-Day Free Trial</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2>Start Learning Free &mdash; 14 Day Trial</h2>
+<p>Join thousands of language learners who speak more confidently thanks to Emma. No credit card required, cancel anytime.</p>
+<a href="https://anglotec-ai.com/" class="cta-btn" target="_blank" rel="noopener noreferrer">Get Started Free</a>
+</div>
+</section>
+
+<!-- Trust -->
+<section class="trust">
+<div class="container">
+<div class="trust-grid">
+<div class="trust-item">
+<div class="icon">&#127942;</div>
+<p>British Council<br>Accredited 1986</p>
+</div>
+<div class="trust-item">
+<div class="icon">&#127758;</div>
+<p>12 Languages<br>Available</p>
+</div>
+<div class="trust-item">
+<div class="icon">&#128270;</div>
+<p>Secure<br>Platform</p>
+</div>
+<div class="trust-item">
+<div class="icon">&#128275;</div>
+<p>Cancel<br>Anytime</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+<div class="container">
+<div class="section-header">
+<h2>Frequently Asked Questions</h2>
+<p>Everything you need to know about learning languages with AI.</p>
+</div>
+<div class="faq-list">
+<div class="faq-item active">
+<div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Can I really learn a language with an AI tutor?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><div class="faq-answer-inner">Yes! Studies show that consistent conversation practice is the most important factor in language acquisition. Our AI tutor Emma provides unlimited speaking practice, instant corrections, and personalised lessons - things that are impossible with traditional apps or even human tutors at scale. Many of our users reach conversational fluency in 3-6 months.</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="this.parentElement.classList.toggle('active')">How accurate is the pronunciation feedback?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><div class="faq-answer-inner">Our pronunciation engine uses advanced speech recognition technology that analyses your phonemes, intonation, rhythm, and stress patterns. It identifies specific sounds you struggle with and provides targeted exercises to help you improve. It's like having a pronunciation coach available 24/7.</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Can I switch between languages?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><div class="faq-answer-inner">Premium and Annual plans give you access to all 12 languages. You can switch between them anytime and your progress is saved separately for each language. Many of our users learn 2-3 languages simultaneously.</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Are the certificates recognised?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><div class="faq-answer-inner">Our certificates are CEFR-aligned (Common European Framework of Reference) and indicate your proficiency level from A1 (beginner) to C2 (mastery). They're recognised by many employers and institutions as proof of language ability. For official immigration or university purposes, we recommend also taking official exams like DELE, JLPT, or HSK.</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="this.parentElement.classList.toggle('active')">What's included in the 14-day free trial?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><div class="faq-answer-inner">The free trial gives you full access to all Premium features: all 12 languages, unlimited AI conversations, advanced pronunciation feedback, complete grammar courses, mock exams, and certificates. No credit card required. Upgrade only if you love the experience.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="logo">Anglo<span>tec</span> AI</div>
+<p>Anglotec AI Academy - British Council accredited since 1986. Empowering language learners worldwide with AI-powered education.</p>
+<div class="footer-contact">
+&#128231; <a href="mailto:info@anglotec-ai.com">info@anglotec-ai.com</a><br>
+&#128222; <a href="tel:+441723367141">+44 (0)1723 367141</a><br>
+&#127968; 20 Avenue Road, Scarborough YO12 5JX, UK
+</div>
+</div>
+<div>
+<h4>Platforms</h4>
+<ul class="footer-links">
+<li><a href="https://anglotec-ai.com/" target="_blank" rel="noopener noreferrer">12-Language AI Tutor</a></li>
+<li><a href="https://agmp.anglotec.com/" target="_blank" rel="noopener noreferrer">UKVI &amp; OET Exam Prep</a></li>
+<li><a href="https://amcvdo.anglotec-ai.com/" target="_blank" rel="noopener noreferrer">OSCE Training &amp; NHS Careers</a></li>
+<li><a href="https://amc.anglotec-ai.com/" target="_blank" rel="noopener noreferrer">Medical &amp; Clinical AI Tutor</a></li>
+<li><a href="https://masterclass.anglotec-ai.com/" target="_blank" rel="noopener noreferrer">AI Prompt Engineering</a></li>
+<li><a href="https://aadsllooq7apw.kimi.page" target="_blank" rel="noopener noreferrer">Free Tools Hub</a></li>
+</ul>
+</div>
+<div>
+<h4>Languages</h4>
+<ul class="footer-links">
+<li><a href="#languages">English</a></li>
+<li><a href="#languages">Spanish</a></li>
+<li><a href="#languages">French</a></li>
+<li><a href="#languages">German</a></li>
+<li><a href="#languages">Chinese</a></li>
+<li><a href="#languages">Japanese</a></li>
+</ul>
+</div>
+<div>
+<h4>Support</h4>
+<ul class="footer-links">
+<li><a href="#faq">Help Centre</a></li>
+<li><a href="mailto:info@anglotec-ai.com">Contact Us</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>&copy; 2025 Anglotec AI Academy. All rights reserved.</div>
+<div>Accredited by the British Council since 1986 | English UK Member</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

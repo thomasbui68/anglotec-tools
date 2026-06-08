@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free UK Study Readiness Quiz by Anglotec AI Academy. Assess your English proficiency, IELTS readiness, academic writing skills, and UK study preparedness in 10 questions.">
+    <meta name="keywords" content="UK study readiness, IELTS preparation, study in UK, English proficiency test, academic writing, Anglotec AI Academy">
+    <meta name="author" content="Anglotec AI Academy">
+    <meta property="og:title" content="UK Study Readiness Quiz | Anglotec AI Academy">
+    <meta property="og:description" content="Find out if you're ready to study in the UK. Take this free 10-question assessment from British Council accredited Anglotec AI Academy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aadsllooq7apw.kimi.page/quiz">
+    <title>UK Study Readiness Quiz | Anglotec AI Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-green: #2C4A3E;
+            --deep-green-light: #3D6354;
+            --burnt-orange: #D4653B;
+            --burnt-orange-light: #E87B52;
+            --off-white: #F7F5F2;
+            --white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-muted: #6B6B6B;
+            --border: #E0DDD8;
+            --success: #2C4A3E;
+            --warning: #D4653B;
+            --danger: #C0392B;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .header {
+            background: var(--deep-green);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .header p {
+            font-size: 0.875rem;
+            opacity: 0.85;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--burnt-orange);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+        .question-step {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--burnt-orange);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .question-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .option {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: var(--white);
+        }
+        .option:hover {
+            border-color: var(--deep-green-light);
+            background: #F0F5F3;
+        }
+        .option.selected {
+            border-color: var(--deep-green);
+            background: #E8F0EC;
+        }
+        .option-radio {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .option.selected .option-radio {
+            border-color: var(--deep-green);
+            background: var(--deep-green);
+        }
+        .option.selected .option-radio::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+            display: block;
+        }
+        .option-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--burnt-orange);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--burnt-orange-light);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: var(--deep-green);
+            color: var(--white);
+        }
+        .btn-secondary:hover {
+            background: var(--deep-green-light);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--deep-green);
+            border: 2px solid var(--deep-green);
+        }
+        .btn-outline:hover {
+            background: var(--deep-green);
+            color: var(--white);
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+        }
+        .hero-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+        }
+        .hero-section p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--burnt-orange);
+            font-weight: 700;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .results-section {
+            display: none;
+        }
+        .score-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        .score-circle::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 8px solid var(--border);
+        }
+        .score-circle-inner {
+            text-align: center;
+        }
+        .score-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--deep-green);
+        }
+        .score-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .result-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .badge-ready { background: #E8F0EC; color: var(--deep-green); }
+        .badge-advanced { background: #FFF3E8; color: var(--burnt-orange); }
+        .badge-intermediate { background: #FFF8E1; color: #B8860B; }
+        .badge-beginner { background: #FFEBEE; color: var(--danger); }
+        .recommendation-box {
+            background: linear-gradient(135deg, var(--deep-green), var(--deep-green-light));
+            color: var(--white);
+            border-radius: 14px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .recommendation-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .recommendation-box p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .recommendation-box .btn {
+            background: var(--white);
+            color: var(--deep-green);
+        }
+        .recommendation-box .btn:hover {
+            background: var(--off-white);
+        }
+        .breakdown-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .breakdown-item:last-child { border-bottom: none; }
+        .breakdown-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .breakdown-info { flex: 1; }
+        .breakdown-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .breakdown-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breakdown-score {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .footer a {
+            color: var(--deep-green);
+            text-decoration: none;
+        }
+        .hidden { display: none !important; }
+        @media (max-width: 600px) {
+            .hero-section h2 { font-size: 1.5rem; }
+            .card { padding: 1.5rem; }
+            .question-text { font-size: 1.15rem; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
+            .stats-row { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Anglotec AI Academy</h1>
+        <p>British Council Accredited Since 1986 | 10,000+ Students | 60+ Countries</p>
+    </header>
+
+    <!-- INTRO SCREEN -->
+    <div id="intro-screen">
+        <div class="hero-section">
+            <h2>Are You Ready to Study in the UK?</h2>
+            <p>Take this free 10-question assessment to evaluate your English proficiency, IELTS readiness, academic writing skills, and overall UK study preparedness.</p>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Questions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Minutes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="startQuiz()">Start Assessment →</button>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-green); margin-bottom: 1rem;">What You'll Discover</h3>
+                <div class="breakdown-item">
+                    <div class="breakdown-icon" style="background: #E8F0EC;">🗣️</div>
+                    <div class="breakdown-info">
+                        <div class="breakdown-title">English Proficiency Level</div>
+                        <div class="breakdown-desc">Understand your current CEFR level across reading, writing, listening, and speaking</div>
+                    </div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-icon" style="background: #FFF3E8;">📝</div>
+                    <div class="breakdown-info">
+                        <div class="breakdown-title">IELTS Readiness</div>
+                        <div class="breakdown-desc">See how close you are to your target band score and what to focus on</div>
+                    </div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-icon" style="background: #E8F0EC;">📚</div>
+                    <div class="breakdown-info">
+                        <div class="breakdown-title">Academic Writing Skills</div>
+                        <div class="breakdown-desc">Assess your comfort with essays, referencing, critical analysis, and argumentation</div>
+                    </div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-icon" style="background: #FFF3E8;">🎯</div>
+                    <div class="breakdown-info">
+                        <div class="breakdown-title">Personalised Study Plan</div>
+                        <div class="breakdown-desc">Get specific recommendations and resources matched to your level</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quiz-screen" class="hidden">
+        <div class="container">
+            <div class="card">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="question-step" id="question-step">Question 1 of 10</div>
+                <div class="question-text" id="question-text"></div>
+                <div class="options" id="options-container"></div>
+                <div class="btn-group">
+                    <button class="btn btn-outline" id="prev-btn" onclick="prevQuestion()" style="display:none;">← Previous</button>
+                    <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" disabled>Next →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div id="results-screen" class="hidden results-section">
+        <div class="container">
+            <div class="card" style="text-align: center;">
+                <div class="score-circle">
+                    <div class="score-circle-inner">
+                        <div class="score-value" id="score-value">0%</div>
+                        <div class="score-label">Readiness</div>
+                    </div>
+                </div>
+                <div class="result-badge" id="result-badge">Result</div>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; color: var(--deep-green); margin-bottom: 0.75rem;" id="result-title"></h2>
+                <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;" id="result-description"></p>
+            </div>
+
+            <div class="recommendation-box" id="recommendation-box">
+                <h3 id="rec-title">Your Personalised Recommendation</h3>
+                <p id="rec-text"></p>
+                <a href="https://agmp.anglotec.com" class="btn" id="rec-cta" target="_blank">Start Free IELTS Trial →</a>
+            </div>
+
+            <div class="card" id="breakdown-card" style="display: none;">
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-green); margin-bottom: 1rem;">Detailed Breakdown</h3>
+                <div id="breakdown-container"></div>
+            </div>
+
+            <div class="btn-group" style="justify-content: center;">
+                <button class="btn btn-outline" onclick="toggleBreakdown()" id="toggle-breakdown-btn">📊 See Detailed Breakdown</button>
+                <button class="btn btn-secondary" onclick="retakeQuiz()">🔄 Retake Quiz</button>
+            </div>
+
+            <div class="card" style="margin-top: 2rem; text-align: center; background: var(--off-white);">
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-green); margin-bottom: 0.75rem;">Free Tools Hub</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Access more free AI-powered diagnostic tools, checklists, and study resources.</p>
+                <a href="https://aadsllooq7apw.kimi.page" class="btn btn-outline" target="_blank">Visit Free Tools Hub →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Anglotec AI Academy | British Council Accredited Since 1986</p>
+        <p><a href="https://anglotec-ai.com" target="_blank">anglotec-ai.com</a> | <a href="https://agmp.anglotec.com" target="_blank">IELTS & OET Prep</a> | <a href="https://masterclass.anglotec-ai.com" target="_blank">AI Masterclass</a></p>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                id: 1,
+                category: "english",
+                text: "How would you rate your overall English proficiency?",
+                options: [
+                    { text: "Beginner — I can understand simple phrases and introduce myself", score: 1 },
+                    { text: "Intermediate — I can hold conversations on familiar topics and understand main points", score: 2 },
+                    { text: "Upper-Intermediate — I can interact fluently on most topics and understand complex texts", score: 3 },
+                    { text: "Advanced — I can use English flexibly and precisely, even in demanding contexts", score: 4 }
+                ]
+            },
+            {
+                id: 2,
+                category: "ielts",
+                text: "Have you taken the IELTS exam before?",
+                options: [
+                    { text: "No, I have never taken IELTS", score: 1 },
+                    { text: "Yes, but I did not achieve my target band score", score: 2 },
+                    { text: "Yes, I achieved my target band but want to improve further", score: 3 },
+                    { text: "Yes, and I am confident with my score — I am preparing for UK study-specific English needs", score: 4 }
+                ]
+            },
+            {
+                id: 3,
+                category: "ielts",
+                text: "How familiar are you with the IELTS test format?",
+                options: [
+                    { text: "Not familiar — I know it is an English test but not the structure", score: 1 },
+                    { text: "Somewhat familiar — I know there are 4 sections but not the details", score: 2 },
+                    { text: "Quite familiar — I know the format, timing, and band descriptors", score: 3 },
+                    { text: "Very familiar — I have studied the marking criteria and practised all sections", score: 4 }
+                ]
+            },
+            {
+                id: 4,
+                category: "academic",
+                text: "How comfortable are you with academic writing in English?",
+                options: [
+                    { text: "Not comfortable — I have never written an essay in English", score: 1 },
+                    { text: "Somewhat comfortable — I can write short essays but struggle with structure", score: 2 },
+                    { text: "Comfortable — I can write well-structured essays with some errors", score: 3 },
+                    { text: "Very comfortable — I can write clear, well-organised academic texts with proper referencing", score: 4 }
+                ]
+            },
+            {
+                id: 5,
+                category: "academic",
+                text: "Can you critically analyse an academic argument and present your own position?",
+                options: [
+                    { text: "No — I find it difficult to evaluate arguments in English", score: 1 },
+                    { text: "Sometimes — I can understand arguments but struggle to articulate my critique", score: 2 },
+                    { text: "Usually — I can analyse most arguments and present a reasoned position", score: 3 },
+                    { text: "Yes — I can deconstruct complex arguments and present a well-supported critique", score: 4 }
+                ]
+            },
+            {
+                id: 6,
+                category: "goals",
+                text: "What is your primary goal for studying in the UK?",
+                options: [
+                    { text: "I am exploring options and have not decided on a specific course yet", score: 1 },
+                    { text: "I have a general idea of my field but have not chosen institutions", score: 2 },
+                    { text: "I know my target course level and have shortlisted 3-5 universities", score: 3 },
+                    { text: "I have a firm offer or am actively applying to specific programmes", score: 4 }
+                ]
+            },
+            {
+                id: 7,
+                category: "english",
+                text: "How comfortable are you participating in English academic discussions and seminars?",
+                options: [
+                    { text: "Not comfortable — I prefer to listen rather than speak", score: 1 },
+                    { text: "Somewhat comfortable — I can contribute on familiar topics", score: 2 },
+                    { text: "Comfortable — I can actively participate and express my views", score: 3 },
+                    { text: "Very comfortable — I can lead discussions and debate complex topics", score: 4 }
+                ]
+            },
+            {
+                id: 8,
+                category: "goals",
+                text: "Have you researched the cost of living and tuition fees for your UK study?",
+                options: [
+                    { text: "Not yet — I have not looked into costs", score: 1 },
+                    { text: "Somewhat — I have a rough idea but need more detail", score: 2 },
+                    { text: "Yes — I have researched costs and am exploring funding options", score: 3 },
+                    { text: "Yes — I have a clear budget and funding plan in place", score: 4 }
+                ]
+            },
+            {
+                id: 9,
+                category: "ielts",
+                text: "How much time can you dedicate to IELTS preparation per week?",
+                options: [
+                    { text: "Less than 3 hours per week", score: 1 },
+                    { text: "3-5 hours per week", score: 2 },
+                    { text: "5-10 hours per week", score: 3 },
+                    { text: "More than 10 hours per week", score: 4 }
+                ]
+            },
+            {
+                id: 10,
+                category: "goals",
+                text: "When do you plan to start your studies in the UK?",
+                options: [
+                    { text: "I have not set a timeline yet", score: 1 },
+                    { text: "In 18-24 months", score: 2 },
+                    { text: "In 12-18 months", score: 3 },
+                    { text: "Within the next 12 months", score: 4 }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = {};
+
+        function startQuiz() {
+            document.getElementById('intro-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question-step').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            document.getElementById('question-text').textContent = q.text;
+            document.getElementById('progress-fill').style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                const div = document.createElement('div');
+                div.className = 'option' + (answers[q.id] === idx ? ' selected' : '');
+                div.onclick = () => selectOption(q.id, idx);
+                div.innerHTML = `<div class="option-radio"></div><div class="option-text">${opt.text}</div>`;
+                container.appendChild(div);
+            });
+
+            document.getElementById('prev-btn').style.display = currentQuestion === 0 ? 'none' : 'inline-flex';
+            document.getElementById('next-btn').textContent = currentQuestion === questions.length - 1 ? 'See Results →' : 'Next →';
+            document.getElementById('next-btn').disabled = answers[q.id] === undefined;
+        }
+
+        function selectOption(questionId, optionIdx) {
+            answers[questionId] = optionIdx;
+            renderQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.remove('hidden');
+            document.getElementById('results-screen').style.display = 'block';
+
+            let totalScore = 0;
+            const categoryScores = { english: 0, ielts: 0, academic: 0, goals: 0 };
+            const categoryCounts = { english: 0, ielts: 0, academic: 0, goals: 0 };
+
+            questions.forEach(q => {
+                const score = q.options[answers[q.id]].score;
+                totalScore += score;
+                categoryScores[q.category] += score;
+                categoryCounts[q.category]++;
+            });
+
+            const maxScore = questions.length * 4;
+            const percentage = Math.round((totalScore / maxScore) * 100);
+
+            document.getElementById('score-value').textContent = percentage + '%';
+
+            let badge, title, description, recTitle, recText, recCta, recLink;
+
+            if (percentage >= 80) {
+                badge = 'badge-ready';
+                title = 'You Are UK Study Ready!';
+                description = 'Excellent preparation! Your English proficiency, academic skills, and planning put you in a strong position to succeed in a UK academic environment. Focus on fine-tuning specific areas before you arrive.';
+                recTitle = 'Take Your Preparation to the Next Level';
+                recText = 'You are in great shape! Our AI-powered academic English programme can help you polish your writing, sharpen your seminar skills, and ensure you hit the ground running from day one.';
+                recCta = 'Start Your Academic English Course →';
+                recLink = 'https://anglotec-ai.com';
+            } else if (percentage >= 60) {
+                badge = 'badge-advanced';
+                title = 'Advanced — Almost Ready!';
+                description = 'You have a solid foundation in most areas. With targeted preparation, especially in IELTS strategy and academic writing conventions, you will be well-positioned for UK study success.';
+                recTitle = 'Bridge the Gap with Targeted IELTS Prep';
+                recText = 'You are close to being fully ready. Our IELTS preparation platform identifies your specific weak areas and gives you personalised AI feedback to get you across the finish line.';
+                recCta = 'Start Your IELTS Preparation →';
+                recLink = 'https://agmp.anglotec.com';
+            } else if (percentage >= 40) {
+                badge = 'badge-intermediate';
+                title = 'Intermediate — Building a Strong Foundation';
+                description = 'You have some good building blocks in place, but there are key areas to develop before UK study. Focus on English proficiency improvement and academic writing skills in the coming months.';
+                recTitle = 'Build Your Foundation with Structured Prep';
+                recText = 'Our comprehensive IELTS and academic English programme starts from your current level and builds systematically. The AI tutor adapts to your pace and gives you feedback on every exercise.';
+                recCta = 'Start Your IELTS Preparation →';
+                recLink = 'https://agmp.anglotec.com';
+            } else {
+                badge = 'badge-beginner';
+                title = 'Beginner — Early Stage Preparation';
+                description = 'You are at the beginning of your UK study journey. That is completely fine — many successful students started here. The key is to start building your English skills systematically and give yourself enough time before your intake date.';
+                recTitle = 'Start Your English Journey with AI Support';
+                recText = 'Our AI-powered language tutor meets you at your current level and guides you step by step. With 24/7 availability and personalised feedback, you will build confidence and skills faster than traditional methods.';
+                recCta = 'Start Learning with AI Tutor →';
+                recLink = 'https://anglotec-ai.com';
+            }
+
+            const badgeEl = document.getElementById('result-badge');
+            badgeEl.className = 'result-badge ' + badge;
+            badgeEl.textContent = title.split(' — ')[0];
+            document.getElementById('result-title').textContent = title;
+            document.getElementById('result-description').textContent = description;
+            document.getElementById('rec-title').textContent = recTitle;
+            document.getElementById('rec-text').textContent = recText;
+            document.getElementById('rec-cta').textContent = recCta;
+            document.getElementById('rec-cta').href = recLink;
+
+            // Build breakdown
+            const breakdownContainer = document.getElementById('breakdown-container');
+            const categoryNames = { english: 'English Proficiency', ielts: 'IELTS Readiness', academic: 'Academic Writing', goals: 'Study Planning' };
+            const categoryIcons = { english: '🗣️', ielts: '📝', academic: '📚', goals: '🎯' };
+            let breakdownHTML = '';
+            for (const cat in categoryScores) {
+                const catPct = Math.round((categoryScores[cat] / (categoryCounts[cat] * 4)) * 100);
+                let color = catPct >= 80 ? 'var(--deep-green)' : catPct >= 60 ? 'var(--burnt-orange)' : catPct >= 40 ? '#B8860B' : 'var(--danger)';
+                breakdownHTML += `
+                    <div class="breakdown-item">
+                        <div class="breakdown-icon" style="background: ${catPct >= 80 ? '#E8F0EC' : catPct >= 60 ? '#FFF3E8' : '#FFEBEE'};">${categoryIcons[cat]}</div>
+                        <div class="breakdown-info">
+                            <div class="breakdown-title">${categoryNames[cat]}</div>
+                            <div class="breakdown-desc">${catPct >= 80 ? 'Strong' : catPct >= 60 ? 'Good' : catPct >= 40 ? 'Developing' : 'Needs Focus'}</div>
+                        </div>
+                        <div class="breakdown-score" style="color: ${color};">${catPct}%</div>
+                    </div>`;
+            }
+            breakdownContainer.innerHTML = breakdownHTML;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleBreakdown() {
+            const card = document.getElementById('breakdown-card');
+            const btn = document.getElementById('toggle-breakdown-btn');
+            if (card.style.display === 'none') {
+                card.style.display = 'block';
+                btn.textContent = '👁️ Hide Detailed Breakdown';
+            } else {
+                card.style.display = 'none';
+                btn.textContent = '📊 See Detailed Breakdown';
+            }
+        }
+
+        function retakeQuiz() {
+            currentQuestion = 0;
+            answers = {};
+            document.getElementById('results-screen').classList.add('hidden');
+            document.getElementById('results-screen').style.display = 'none';
+            document.getElementById('intro-screen').classList.remove('hidden');
+            document.getElementById('breakdown-card').style.display = 'none';
+            document.getElementById('toggle-breakdown-btn').textContent = '📊 See Detailed Breakdown';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

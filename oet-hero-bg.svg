@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="600" viewBox="0 0 1920 600">
+  <defs>
+    <linearGradient id="oetBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F7F5F2"/>
+      <stop offset="100%" style="stop-color:#E8F0E8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#oetBg)"/>
+  <!-- Heartbeat line -->
+  <polyline points="100,300 250,300 300,200 380,400 450,250 520,350 600,300 750,300 800,180 880,420 950,220 1020,380 1100,300 1250,300 1300,200 1380,400 1450,250 1520,350 1600,300 1750,300 1800,200 1880,400 1920,300" 
+    fill="none" stroke="#8BA888" stroke-width="2" opacity="0.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Subtle stethoscope shapes -->
+  <ellipse cx="400" cy="400" rx="150" ry="80" fill="none" stroke="#2C4A3E" stroke-width="1" opacity="0.08"/>
+  <ellipse cx="1500" cy="200" rx="100" ry="60" fill="none" stroke="#2C4A3E" stroke-width="1" opacity="0.06"/>
+  <!-- Small circles representing nodes -->
+  <circle cx="300" cy="200" r="8" fill="#8BA888" opacity="0.1"/>
+  <circle cx="1600" cy="350" r="6" fill="#8BA888" opacity="0.08"/>
+  <circle cx="960" cy="150" r="10" fill="#8BA888" opacity="0.06"/>
+</svg>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aadsllooq7apw.kimi.page/sitemap.xml
+
+# Anglotec AI Academy - British Council Accredited Since 1986
+# 5 AI-Powered Platforms for Learning, Exams & Careers

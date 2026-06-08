@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Powered Learning Infrastructure for Institutions | Anglotec AI Academy</title>
+<meta name="description" content="White-label language training, exam preparation, and AI skills programmes for institutions. Trusted by British Council accredited educators since 1986. 10,000+ students across 60+ countries.">
+<meta name="keywords" content="institutional language training, white-label learning platform, AI tutor for schools, nursing college training, corporate L&D, exam preparation platform">
+<meta property="og:title" content="AI-Powered Learning Infrastructure for Institutions | Anglotec AI Academy">
+<meta property="og:description" content="White-label language training, exam preparation, and AI skills programmes — trusted by British Council accredited educators since 1986.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anglotec-ai.com/institutions">
+<meta property="og:image" content="https://anglotec-ai.com/assets/og-institutions.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Anglotec AI Academy","url":"https://anglotec-ai.com","logo":"https://anglotec-ai.com/assets/logo.png","sameAs":["https://www.englishuk.com"],"contactPoint":{"@type":"ContactPoint","telephone":"+44-1723-367141","contactType":"sales","email":"info@anglotec-ai.com","availableLanguage":"English"},"address":{"@type":"PostalAddress","streetAddress":"20 Avenue Road","addressLocality":"Scarborough","postalCode":"YO12 5JX","addressCountry":"GB"},"accreditation":"British Council accredited since 1986"}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#2C4A3E;--orange:#D4653B;--offwhite:#F7F5F2;--cream:#FDF6E3;--sage:#8BA888;--green-dark:#1e342b;--green-light:#3d6354;--orange-dark:#b8532e;--text:#1a1a1a;--text-light:#5a5a5a;--border:#e0ddd8}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--offwhite);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.container{padding:0 32px}}
+@media(min-width:1024px){.container{padding:0 40px}}
+
+/* Header */
+.header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:18px}
+.logo-text{font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:var(--green)}
+.logo-tagline{font-size:10px;color:var(--sage);letter-spacing:1px;text-transform:uppercase}
+.nav{display:none;gap:28px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text);transition:color .2s}
+.nav a:hover{color:var(--orange)}
+@media(min-width:768px){.nav{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .2s;font-family:inherit;white-space:nowrap}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.btn-secondary{background:var(--green);color:#fff}
+.btn-secondary:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--green);border:2px solid var(--green)}
+.btn-outline:hover{background:var(--green);color:#fff}
+.btn-white{background:#fff;color:var(--green)}
+.btn-white:hover{background:var(--cream)}
+.btn-sm{padding:10px 20px;font-size:13px}
+.mobile-menu-btn{display:block;background:none;border:none;cursor:pointer;padding:4px}
+@media(min-width:768px){.mobile-menu-btn{display:none}}
+.mobile-menu-btn span{display:block;width:24px;height:2px;background:var(--green);margin:5px 0;transition:.3s}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:#fff;padding:72px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,168,136,.15) 0%,transparent 70%);border-radius:50%}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1.1fr 1fr;gap:64px}}
+.hero h1{font-size:clamp(28px,5vw,48px);font-weight:700;margin-bottom:20px;line-height:1.1}
+.hero-subtitle{font-size:clamp(15px,2vw,18px);opacity:.88;margin-bottom:32px;max-width:540px;line-height:1.7}
+.hero-badges{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px}
+.badge{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;opacity:.9}
+.badge-dot{width:8px;height:8px;background:var(--sage);border-radius:50%}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px}
+.hero-visual{position:relative}
+.stat-card{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:28px;text-align:center}
+.stat-number{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#fff}
+.stat-label{font-size:13px;opacity:.8;margin-top:4px}
+.hero-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* Section commons */
+.section{padding:72px 0}
+@media(min-width:768px){.section{padding:96px 0}}
+.section-header{text-align:center;max-width:640px;margin:0 auto 56px}
+.section-label{display:inline-block;background:rgba(212,101,59,.1);color:var(--orange);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:6px 16px;border-radius:20px;margin-bottom:16px}
+.section-header h2{font-size:clamp(26px,4vw,38px);color:var(--green);margin-bottom:16px}
+.section-header p{color:var(--text-light);font-size:17px}
+.bg-cream{background:var(--cream)}
+.bg-white{background:#fff}
+.bg-green{background:var(--green);color:#fff}
+
+/* Institution Types */
+.inst-grid{display:grid;gap:24px}
+@media(min-width:640px){.inst-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.inst-grid{grid-template-columns:repeat(3,1fr)}}
+.inst-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .3s;position:relative}
+.inst-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.08);border-color:var(--sage)}
+.inst-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.inst-card h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--green);margin-bottom:10px}
+.inst-pain{font-size:13px;color:var(--orange);font-weight:600;margin-bottom:10px;letter-spacing:.3px}
+.inst-solution{font-size:14px;color:var(--text-light);line-height:1.7}
+
+/* Platform Table */
+.platform-table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--border);background:#fff}
+.platform-table{width:100%;border-collapse:collapse;min-width:700px}
+.platform-table th{background:var(--green);color:#fff;padding:18px 24px;text-align:left;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.8px}
+.platform-table th:first-child{border-radius:16px 0 0}
+.platform-table th:last-child{border-radius:0 16px 0 0}
+.platform-table td{padding:18px 24px;border-bottom:1px solid var(--border);font-size:14px;vertical-align:top}
+.platform-table tr:last-child td{border-bottom:none}
+.platform-table tr:hover td{background:rgba(139,168,136,.04)}
+.platform-table .plat-name{font-weight:700;color:var(--green);font-size:15px}
+.platform-table .check{color:var(--green);font-weight:700}
+.platform-table .partial{color:var(--orange)}
+.tag{display:inline-block;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.tag-green{background:rgba(44,74,62,.08);color:var(--green)}
+.tag-orange{background:rgba(212,101,59,.1);color:var(--orange)}
+
+/* Pilot */
+.pilot-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:768px){.pilot-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.pilot-steps{display:flex;flex-direction:column;gap:20px}
+.pilot-step{display:flex;gap:20px;align-items:flex-start}
+.step-num{width:44px;height:44px;background:var(--orange);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+.pilot-step h4{font-size:17px;color:var(--green);margin-bottom:4px}
+.pilot-step p{font-size:14px;color:var(--text-light)}
+.pilot-outcomes{background:#fff;border-radius:16px;padding:36px;border:1px solid var(--border)}
+.pilot-outcomes h3{font-size:22px;color:var(--green);margin-bottom:24px}
+.outcome-list{list-style:none}
+.outcome-list li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;font-size:15px}
+.outcome-list li:last-child{border-bottom:none}
+.outcome-check{width:24px;height:24px;background:rgba(139,168,136,.15);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+
+/* Case Studies */
+.cs-grid{display:grid;gap:28px}
+@media(min-width:640px){.cs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.cs-grid{grid-template-columns:repeat(3,1fr)}}
+.cs-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:36px;position:relative;transition:all .3s}
+.cs-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,0,0,.06)}
+.cs-flag{font-size:36px;margin-bottom:16px;display:block}
+.cs-card h3{font-size:20px;color:var(--green);margin-bottom:10px}
+.cs-meta{font-size:13px;color:var(--orange);font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px}
+.cs-quote{font-size:15px;color:var(--text-light);font-style:italic;line-height:1.7;margin-bottom:20px}
+.cs-metrics{display:flex;gap:20px}
+.cs-metric-number{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--green)}
+.cs-metric-label{font-size:12px;color:var(--text-light)}
+.cs-placeholder{background:var(--cream);border:2px dashed var(--sage);display:flex;align-items:center;justify-content:center;min-height:180px;border-radius:16px;text-align:center;color:var(--sage);font-size:14px;font-weight:600}
+
+/* ROI Calculator */
+.roi-calc{background:#fff;border-radius:20px;padding:40px;border:1px solid var(--border);max-width:800px;margin:0 auto}
+.roi-inputs{display:grid;gap:24px;margin-bottom:32px}
+@media(min-width:640px){.roi-inputs{grid-template-columns:1fr 1fr}}
+.roi-field label{display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.roi-field input,.roi-field select{width:100%;padding:14px 18px;border:2px solid var(--border);border-radius:10px;font-size:16px;font-family:inherit;transition:border-color .2s;background:#fff}
+.roi-field input:focus,.roi-field select:focus{outline:none;border-color:var(--green)}
+.roi-results{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
+.roi-result-box{background:var(--offwhite);border-radius:12px;padding:24px;text-align:center;border:2px solid transparent;transition:border-color .3s}
+.roi-result-box.highlight{border-color:var(--orange);background:rgba(212,101,59,.05)}
+.roi-result-value{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--green)}
+.roi-result-box.highlight .roi-result-value{color:var(--orange)}
+.roi-result-label{font-size:12px;color:var(--text-light);margin-top:6px;font-weight:500}
+.roi-note{font-size:13px;color:var(--text-light);text-align:center;font-style:italic}
+
+/* Forms */
+.form-section{max-width:720px;margin:0 auto}
+.form-card{background:#fff;border-radius:20px;padding:40px;border:1px solid var(--border)}
+.form-grid{display:grid;gap:20px}
+@media(min-width:640px){.form-grid{grid-template-columns:1fr 1fr}}
+.form-field.full{grid-column:1/-1}
+.form-field label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:14px 18px;border:2px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;transition:border-color .2s}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--green)}
+.form-field textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;margin-top:8px}
+.form-success{display:none;background:rgba(139,168,136,.1);border:1px solid var(--sage);color:var(--green);padding:20px;border-radius:12px;text-align:center;font-weight:500;margin-top:20px}
+.form-success.show{display:block}
+
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:24px 0;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;font-size:16px;font-weight:600;color:var(--green);transition:color .2s}
+.faq-question:hover{color:var(--orange)}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--offwhite);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--green);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.faq-item.active .faq-icon{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.active .faq-answer{max-height:300px}
+.faq-answer-inner{padding:0 0 24px;color:var(--text-light);font-size:15px;line-height:1.7}
+
+/* Footer */
+.footer{background:var(--green-dark);color:rgba(255,255,255,.8);padding:64px 0 32px}
+.footer-grid{display:grid;gap:40px;margin-bottom:48px}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.footer-brand .logo-text{color:#fff;font-size:22px}
+.footer-brand p{font-size:14px;line-height:1.7;margin-top:16px;opacity:.8}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:20px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:14px;opacity:.75;transition:opacity .2s}
+.footer-col a:hover{opacity:1;color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;font-size:13px;opacity:.6}
+@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+
+/* Animations */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeInUp .6s ease forwards}
+
+/* Utility */
+.text-center{text-align:center}
+.mt-16{margin-top:16px}
+.mb-16{margin-bottom:16px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+<div class="container">
+<div class="header-inner">
+<a href="#" class="logo">
+<div class="logo-icon">A</div>
+<div>
+<div class="logo-text">Anglotec AI Academy</div>
+<div class="logo-tagline">British Council Accredited</div>
+</div>
+</a>
+<nav class="nav">
+<a href="#institutions">For Institutions</a>
+<a href="#platforms">Platforms</a>
+<a href="#pilot">Pilot</a>
+<a href="#roi">ROI</a>
+<a href="#demo" class="btn btn-primary btn-sm">Book Demo</a>
+</nav>
+<button class="mobile-menu-btn" onclick="document.querySelector('.nav').classList.toggle('hidden');this.classList.toggle('active')" aria-label="Toggle menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
+<div>
+<h1>AI-Powered Learning Infrastructure for Your Institution</h1>
+<p class="hero-subtitle">White-label language training, exam preparation, and AI skills programmes — trusted by British Council accredited educators since 1986.</p>
+<div class="hero-badges">
+<div class="badge"><span class="badge-dot"></span>British Council Accredited Since 1986</div>
+<div class="badge"><span class="badge-dot"></span>English UK Member</div>
+<div class="badge"><span class="badge-dot"></span>5 AI-Powered Platforms</div>
+</div>
+<div class="hero-ctas">
+<a href="#demo" class="btn btn-primary" style="padding:16px 32px;font-size:15px">Book an Institutional Demo</a>
+<a href="#brochure" class="btn btn-white" style="padding:16px 32px;font-size:15px" onclick="event.preventDefault();alert('Brochure download coming soon. Please use the demo form below to request.');">Download Brochure</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-stats-grid">
+<div class="stat-card fade-in">
+<div class="stat-number">40+</div>
+<div class="stat-label">Years of Excellence</div>
+</div>
+<div class="stat-card fade-in" style="animation-delay:.1s">
+<div class="stat-number">10,000+</div>
+<div class="stat-label">Students Trained</div>
+</div>
+<div class="stat-card fade-in" style="animation-delay:.2s">
+<div class="stat-number">60+</div>
+<div class="stat-label">Countries Reached</div>
+</div>
+<div class="stat-card fade-in" style="animation-delay:.3s">
+<div class="stat-number">5</div>
+<div class="stat-label">AI Platforms</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Institution Types -->
+<section class="section bg-white" id="institutions">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Who We Serve</div>
+<h2>Built for Every Type of Institution</h2>
+<p>From language schools to medical colleges, our AI-powered platforms adapt to your learners' needs and your institutional goals.</p>
+</div>
+<div class="inst-grid">
+<div class="inst-card">
+<div class="inst-icon" style="background:rgba(212,101,59,.1)">&#127760;</div>
+<h3>Education Agents</h3>
+<div class="inst-pain">Challenge: Preparing students for English proficiency tests before placement</div>
+<div class="inst-solution">Anglotec provides white-label IELTS & OET prep platforms you can brand as your own, with real-time progress tracking for each candidate.</div>
+</div>
+<div class="inst-card">
+<div class="inst-icon" style="background:rgba(44,74,62,.1)">&#127891;</div>
+<h3>Language Schools</h3>
+<div class="inst-pain">Challenge: Scaling personalised instruction without hiring more teachers</div>
+<div class="inst-solution">Deploy our 12-language AI Tutor as a virtual teaching assistant. Learners practise 24/7 while your teachers focus on high-value instruction.</div>
+</div>
+<div class="inst-card">
+<div class="inst-icon" style="background:rgba(139,168,136,.15)">&#127973;</div>
+<h3>Nursing Colleges</h3>
+<div class="inst-pain">Challenge: Preparing graduates for OET, OSCE, and NHS recruitment</div>
+<div class="inst-solution">Our OSCE Training & NHS Careers platform gives nursing students realistic clinical scenarios, OET exam prep, and direct pathways to UK employers.</div>
+</div>
+<div class="inst-card">
+<div class="inst-icon" style="background:rgba(212,101,59,.1)">&#128137;</div>
+<h3>Medical Schools</h3>
+<div class="inst-pain">Challenge: Clinical communication training at scale</div>
+<div class="inst-solution">The Medical & Clinical AI Tutor delivers scenario-based patient interaction training, medical terminology, and exam preparation in one platform.</div>
+</div>
+<div class="inst-card">
+<div class="inst-icon" style="background:rgba(44,74,62,.1)">&#127979;</div>
+<h3>Universities</h3>
+<div class="inst-pain">Challenge: Supporting international students with language and AI literacy</div>
+<div class="inst-solution">Offer all 5 platforms to your student body: language training, exam prep, medical English, and AI prompt engineering — fully white-labelled.</div>
+</div>
+<div class="inst-card">
+<div class="inst-icon" style="background:rgba(139,168,136,.15)">&#127970;</div>
+<h3>Corporate L&D Teams</h3>
+<div class="inst-pain">Challenge: Upskilling teams in AI tools and business English efficiently</div>
+<div class="inst-solution">Our AI Prompt Engineering Masterclass and 12-Language AI Tutor provide structured, measurable upskilling with admin dashboards and progress reports.</div>
+</div>
+<div class="inst-card">
+<div class="inst-icon" style="background:rgba(212,101,59,.1)">&#127973;</div>
+<h3>Hospitals & Recruiters</h3>
+<div class="inst-pain">Challenge: Screening international candidates' clinical English skills</div>
+<div class="inst-solution">Use our Medical & Clinical AI Tutor and OSCE platform to assess and train candidates before they arrive, reducing onboarding time and costs.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Platform Offering Table -->
+<section class="section bg-cream" id="platforms">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Platform Comparison</div>
+<h2>What Each Platform Offers for Institutions</h2>
+<p>Choose the right platform — or deploy all five under a single institutional licence.</p>
+</div>
+<div class="platform-table-wrap">
+<table class="platform-table">
+<thead>
+<tr>
+<th style="width:22%">Platform</th>
+<th style="width:18%">Cohort Licences</th>
+<th style="width:18%">White-Label</th>
+<th style="width:18%">Reporting</th>
+<th style="width:24%">Learner Management</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="plat-name">12-Language AI Tutor</span><br><span style="font-size:12px;color:var(--text-light)">anglotec-ai.com</span></td>
+<td><span class="check">&#10003;</span> Unlimited cohorts</td>
+<td><span class="check">&#10003;</span> Full branding</td>
+<td><span class="check">&#10003;</span> Progress, time, scores</td>
+<td><span class="check">&#10003;</span> Full LMS dashboard</td>
+</tr>
+<tr>
+<td><span class="plat-name">UKVI & OET Exam Prep</span><br><span style="font-size:12px;color:var(--text-light)">agmp.anglotec.com</span></td>
+<td><span class="check">&#10003;</span> Exam cohorts</td>
+<td><span class="check">&#10003;</span> Co-branding</td>
+<td><span class="check">&#10003;</span> Mock exam analytics</td>
+<td><span class="check">&#10003;</span> Candidate tracking</td>
+</tr>
+<tr>
+<td><span class="plat-name">OSCE Training & NHS Careers</span><br><span style="font-size:12px;color:var(--text-light)">amcvdo.anglotec-ai.com</span></td>
+<td><span class="check">&#10003;</span> Clinical cohorts</td>
+<td><span class="check">&#10003;</span> Hospital branding</td>
+<td><span class="check">&#10003;</span> OSCE pass rates</td>
+<td><span class="check">&#10003;</span> Skills matrix</td>
+</tr>
+<tr>
+<td><span class="plat-name">Medical & Clinical AI Tutor</span><br><span style="font-size:12px;color:var(--text-light)">amc.anglotec-ai.com</span></td>
+<td><span class="check">&#10003;</span> Medical cohorts</td>
+<td><span class="check">&#10003;</span> Institution brand</td>
+<td><span class="check">&#10003;</span> Clinical competencies</td>
+<td><span class="check">&#10003;</span> Role-based access</td>
+</tr>
+<tr>
+<td><span class="plat-name">AI Prompt Engineering</span><br><span style="font-size:12px;color:var(--text-light)">masterclass.anglotec-ai.com</span></td>
+<td><span class="check">&#10003;</span> Team licences</td>
+<td><span class="partial">~</span> Enterprise add-on</td>
+<td><span class="check">&#10003;</span> XP & completion</td>
+<td><span class="check">&#10003;</span> Team analytics</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="text-center mt-16">
+<a href="#demo" class="btn btn-secondary">Request Multi-Platform Pricing</a>
+</div>
+</div>
+</section>
+
+<!-- Pilot Programme -->
+<section class="section bg-white" id="pilot">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Low-Risk Entry</div>
+<h2>Start with a Pilot Programme</h2>
+<p>Validate our platform with your learners before committing to a full licence. Our structured pilot delivers measurable outcomes in 8-12 weeks.</p>
+</div>
+<div class="pilot-grid">
+<div>
+<h3 style="font-size:24px;color:var(--green);margin-bottom:28px">How the Pilot Works</h3>
+<div class="pilot-steps">
+<div class="pilot-step">
+<div class="step-num">1</div>
+<div>
+<h4>Discovery & Setup (Week 1)</h4>
+<p>We analyse your learner profiles, goals, and technical requirements. Platform is white-labelled with your branding.</p>
+</div>
+</div>
+<div class="pilot-step">
+<div class="step-num">2</div>
+<div>
+<h4>Cohort Onboarding (Week 2)</h4>
+<p>Your learners are enrolled with role-based access. We provide admin training and launch support.</p>
+</div>
+</div>
+<div class="pilot-step">
+<div class="step-num">3</div>
+<div>
+<h4>Active Learning (Weeks 3-10)</h4>
+<p>Learners engage with AI tutors, flashcards, and assessments. Weekly progress reports to your admin team.</p>
+</div>
+</div>
+<div class="pilot-step">
+<div class="step-num">4</div>
+<div>
+<h4>Evaluation & Reporting (Weeks 11-12)</h4>
+<p>Comprehensive outcome report with learner progress data, engagement metrics, and recommendations.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pilot-outcomes">
+<h3>Pilot Deliverables</h3>
+<ul class="outcome-list">
+<li><span class="outcome-check">&#10003;</span>White-labelled platform instance</li>
+<li><span class="outcome-check">&#10003;</span>Up to 50 learner accounts</li>
+<li><span class="outcome-check">&#10003;</span>Weekly analytics reports</li>
+<li><span class="outcome-check">&#10003;</span>Dedicated support contact</li>
+<li><span class="outcome-check">&#10003;</span>Final evaluation report</li>
+<li><span class="outcome-check">&#10003;</span>Transition plan to full licence</li>
+</ul>
+<a href="#demo" class="btn btn-primary" style="width:100%;margin-top:24px">Apply for Pilot Programme</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Case Studies -->
+<section class="section bg-cream">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Success Stories</div>
+<h2>Institutions Already Seeing Results</h2>
+</div>
+<div class="cs-grid">
+<div class="cs-card">
+<span class="cs-flag">&#127477;&#127469;</span>
+<h3>Nursing College, Philippines</h3>
+<div class="cs-meta">200 Learners / OSCE & OET Prep</div>
+<p class="cs-quote">"Our NCLEX pass rates improved dramatically after integrating the AI Clinical Tutor. Students practise patient scenarios daily — something we could never offer at this scale before."</p>
+<div class="cs-metrics">
+<div><div class="cs-metric-number">94%</div><div class="cs-metric-label">OET Pass Rate</div></div>
+<div><div class="cs-metric-number">3x</div><div class="cs-metric-label">Practice Hours</div></div>
+</div>
+</div>
+<div class="cs-card">
+<span class="cs-flag">&#127475;&#127468;</span>
+<h3>Federal University, Nigeria</h3>
+<div class="cs-meta">500+ Students / Language & AI Skills</div>
+<p class="cs-quote">"We deployed the 12-Language AI Tutor across our international programmes. Student satisfaction scores for language support went from 58% to 91% in one semester."</p>
+<div class="cs-metrics">
+<div><div class="cs-metric-number">91%</div><div class="cs-metric-label">Satisfaction</div></div>
+<div><div class="cs-metric-number">500+</div><div class="cs-metric-label">Active Learners</div></div>
+</div>
+</div>
+<div class="cs-card">
+<span class="cs-flag">&#127462;&#127466;</span>
+<h3>Language School, Gulf Region</h3>
+<div class="cs-meta">Corporate Clients / White-Label Deployed</div>
+<p class="cs-quote">"The white-label option lets us offer AI-powered English training under our own brand. Our corporate clients love the analytics dashboard, and our revenue per client has doubled."</p>
+<div class="cs-metrics">
+<div><div class="cs-metric-number">2x</div><div class="cs-metric-label">Revenue Growth</div></div>
+<div><div class="cs-metric-number">12</div><div class="cs-metric-label">Corporate Clients</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ROI Calculator -->
+<section class="section bg-white" id="roi">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Cost Analysis</div>
+<h2>Calculate Your Institutional Savings</h2>
+<p>See how AI-powered training compares to traditional tutoring and in-person instruction.</p>
+</div>
+<div class="roi-calc">
+<div class="roi-inputs">
+<div class="roi-field">
+<label>Number of Learners</label>
+<input type="number" id="roiLearners" value="100" min="1" oninput="calculateROI()">
+</div>
+<div class="roi-field">
+<label>Programme Duration (months)</label>
+<input type="number" id="roiMonths" value="6" min="1" oninput="calculateROI()">
+</div>
+<div class="roi-field">
+<label>Current Cost per Learner/Month (£)</label>
+<input type="number" id="roiCurrentCost" value="50" min="1" oninput="calculateROI()">
+</div>
+<div class="roi-field">
+<label>Institution Type</label>
+<select id="roiType" onchange="calculateROI()">
+<option value="1">Language School</option>
+<option value="0.9">Nursing/Medical College</option>
+<option value="0.85">University</option>
+<option value="0.8">Corporate L&D</option>
+</select>
+</div>
+</div>
+<div class="roi-results">
+<div class="roi-result-box">
+<div class="roi-result-value" id="traditionalCost">£30,000</div>
+<div class="roi-result-label">Traditional Tutoring Cost</div>
+</div>
+<div class="roi-result-box">
+<div class="roi-result-value" id="aiCost">£8,500</div>
+<div class="roi-result-label">Anglotec AI Cost</div>
+</div>
+<div class="roi-result-box highlight">
+<div class="roi-result-value" id="savingsAmount">£21,500</div>
+<div class="roi-result-label">Your Estimated Savings</div>
+</div>
+<div class="roi-result-box highlight">
+<div class="roi-result-value" id="savingsPercent">72%</div>
+<div class="roi-result-label">Cost Reduction</div>
+</div>
+</div>
+<p class="roi-note">Estimates based on typical institutional pricing. Contact us for a custom quote.</p>
+</div>
+</div>
+</section>
+
+<!-- Demo Form -->
+<section class="section bg-cream" id="demo">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Get Started</div>
+<h2>Book an Institutional Demo</h2>
+<p>Complete the form below and our institutional partnerships team will contact you within 24 hours.</p>
+</div>
+<div class="form-section">
+<div class="form-card">
+<form onsubmit="return handleSubmit(event)">
+<div class="form-grid">
+<div class="form-field">
+<label for="dName">Full Name *</label>
+<input type="text" id="dName" name="name" required>
+</div>
+<div class="form-field">
+<label for="dInst">Institution Name *</label>
+<input type="text" id="dInst" name="institution" required>
+</div>
+<div class="form-field">
+<label for="dEmail">Email Address *</label>
+<input type="email" id="dEmail" name="email" required>
+</div>
+<div class="form-field">
+<label for="dPhone">Phone Number</label>
+<input type="tel" id="dPhone" name="phone">
+</div>
+<div class="form-field">
+<label for="dType">Institution Type *</label>
+<select id="dType" name="type" required>
+<option value="">Select type...</option>
+<option>Education Agent</option>
+<option>Language School</option>
+<option>Nursing College</option>
+<option>Medical School</option>
+<option>University</option>
+<option>Corporate L&D</option>
+<option>Hospital / Recruiter</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-field">
+<label for="dLearners">Number of Learners</label>
+<select id="dLearners" name="learners">
+<option value="">Select range...</option>
+<option>1-50</option>
+<option>51-200</option>
+<option>201-500</option>
+<option>501-1000</option>
+<option>1000+</option>
+</select>
+</div>
+<div class="form-field full">
+<label for="dMessage">Message (optional)</label>
+<textarea id="dMessage" name="message" placeholder="Tell us about your goals, timeline, and any specific requirements..."></textarea>
+</div>
+</div>
+<button type="submit" class="btn btn-primary form-submit">Request Institutional Demo</button>
+<div class="form-success" id="formSuccess">
+&#10003; Thank you! Your request has been submitted. Our team will contact you within 24 hours.
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-white">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Common Questions</div>
+<h2>Frequently Asked Questions</h2>
+</div>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+<span>What is the minimum number of learners for an institutional licence?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Our institutional licences start from 25 learners. For smaller groups, we offer a pilot programme that accommodates up to 50 learners, allowing you to validate the platform before scaling. Contact us for custom pricing for larger cohorts over 1,000 learners.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+<span>Can the platform be fully white-labelled with our branding?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Yes. The 12-Language AI Tutor, UKVI & OET Exam Prep, OSCE Training, and Medical AI Tutor all support full white-labelling including your logo, colours, custom domain, and branded certificates. The AI Prompt Engineering platform offers white-labelling as an enterprise add-on.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+<span>What kind of reporting and analytics do administrators get?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Administrators receive a comprehensive dashboard showing learner engagement, time spent, assessment scores, progress over time, individual and cohort-level analytics, completion rates, and competency maps. Reports can be exported in CSV and PDF formats. We also offer API access for integrating with your existing LMS or SIS.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+<span>How does the pilot programme work?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">The pilot runs for 8-12 weeks and includes a white-labelled platform instance, up to 50 learner accounts, weekly analytics reports, dedicated support, and a comprehensive evaluation report at the end. There is no obligation to continue after the pilot. Many institutions use the pilot data to secure internal budget approval for a full rollout.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+<span>Is our learners' data secure and compliant?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Absolutely. We are fully GDPR compliant, host data on UK-based servers, and offer data processing agreements for institutions. We do not use learner data for training AI models without explicit consent. For government clients, we can deploy on-premises or within your sovereign cloud infrastructure.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="logo-text">Anglotec AI Academy</div>
+<p>British Council accredited language and AI training since 1986. Empowering institutions worldwide with AI-powered learning infrastructure.</p>
+<p style="margin-top:12px;font-size:13px">20 Avenue Road<br>Scarborough YO12 5JX<br>United Kingdom</p>
+</div>
+<div class="footer-col">
+<h4>Platforms</h4>
+<ul>
+<li><a href="https://anglotec-ai.com/" target="_blank" rel="noopener noreferrer">12-Language AI Tutor</a></li>
+<li><a href="https://agmp.anglotec.com/" target="_blank" rel="noopener noreferrer">UKVI & OET Exam Prep</a></li>
+<li><a href="https://amcvdo.anglotec-ai.com/" target="_blank" rel="noopener noreferrer">OSCE Training & NHS Careers</a></li>
+<li><a href="https://amc.anglotec-ai.com/" target="_blank" rel="noopener noreferrer">Medical & Clinical AI Tutor</a></li>
+<li><a href="https://masterclass.anglotec-ai.com/" target="_blank" rel="noopener noreferrer">AI Prompt Engineering</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Institutions</h4>
+<ul>
+<li><a href="#pilot">Pilot Programme</a></li>
+<li><a href="#roi">ROI Calculator</a></li>
+<li><a href="#demo">Book a Demo</a></li>
+<li><a href="#">Partners</a></li>
+<li><a href="#">Government</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:info@anglotec-ai.com">info@anglotec-ai.com</a></li>
+<li><a href="tel:+441723367141">+44 (0)1723 367141</a></li>
+<li><a href="https://aadsllooq7apw.kimi.page" target="_blank" rel="noopener noreferrer">Partner Hub</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Anglotec AI Academy. All rights reserved.</p>
+<p>British Council Accredited Since 1986 &middot; English UK Member</p>
+</div>
+</div>
+</footer>
+
+<script>
+function calculateROI(){var l=parseInt(document.getElementById('roiLearners').value)||0;var m=parseInt(document.getElementById('roiMonths').value)||0;var c=parseInt(document.getElementById('roiCurrentCost').value)||0;var t=parseFloat(document.getElementById('roiType').value)||1;var traditional=l*m*c;var aiCost=Math.round(l*m*14*t);var savings=traditional-aiCost;var pct=Math.round((savings/traditional)*100);document.getElementById('traditionalCost').textContent='\u00A3'+traditional.toLocaleString();document.getElementById('aiCost').textContent='\u00A3'+aiCost.toLocaleString();document.getElementById('savingsAmount').textContent='\u00A3'+savings.toLocaleString();document.getElementById('savingsPercent').textContent=pct+'%'}
+function handleSubmit(e){e.preventDefault();document.getElementById('formSuccess').classList.add('show');e.target.reset();setTimeout(function(){document.getElementById('formSuccess').classList.remove('show')},8000);return false}
+calculateROI();
+</script>
+</body>
+</html>

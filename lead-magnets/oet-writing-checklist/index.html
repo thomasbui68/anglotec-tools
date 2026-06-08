@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free interactive OET Writing Checklist for nurses by Anglotec AI Academy. Pre-writing, writing, and post-writing checklists with progress tracking to maximise your OET writing score.">
+    <meta name="keywords" content="OET writing checklist, OET nursing, OET preparation, OET letter writing, Occupational English Test, Anglotec AI Academy">
+    <meta name="author" content="Anglotec AI Academy">
+    <meta property="og:title" content="OET Writing Checklist for Nurses | Anglotec AI Academy">
+    <meta property="og:description" content="Interactive OET writing checklist with 40+ points across pre-writing, writing, and post-writing stages. Track your progress and maximise your score.">
+    <meta property="og:type" content="website">
+    <title>OET Writing Checklist for Nurses | Anglotec AI Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-green: #2C4A3E;
+            --deep-green-light: #3D6354;
+            --deep-green-bg: #E8F0EC;
+            --burnt-orange: #D4653B;
+            --burnt-orange-light: #E87B52;
+            --burnt-orange-bg: #FFF3E8;
+            --off-white: #F7F5F2;
+            --white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-muted: #6B6B6B;
+            --border: #E0DDD8;
+            --success: #2C4A3E;
+            --warning: #D4653B;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .header {
+            background: var(--deep-green);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .header p { font-size: 0.8rem; opacity: 0.85; }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-green);
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
+            font-size: 0.95rem;
+        }
+        .progress-summary {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .progress-info h3 {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+        .progress-info .percent {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-green);
+            font-weight: 700;
+        }
+        .progress-bar-wrap {
+            flex: 1;
+            min-width: 200px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--burnt-orange);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+        .progress-stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--burnt-orange);
+            color: var(--white);
+        }
+        .btn-primary:hover { background: var(--burnt-orange-light); }
+        .btn-secondary {
+            background: var(--deep-green);
+            color: var(--white);
+        }
+        .btn-secondary:hover { background: var(--deep-green-light); }
+        .btn-outline {
+            background: transparent;
+            color: var(--deep-green);
+            border: 2px solid var(--deep-green);
+        }
+        .btn-outline:hover { background: var(--deep-green); color: var(--white); }
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .section-title {
+            flex: 1;
+        }
+        .section-title h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--deep-green);
+        }
+        .section-title p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .section-toggle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+        .section.collapsed .section-toggle { transform: rotate(-90deg); }
+        .section.collapsed .checklist { display: none; }
+        .checklist { transition: all 0.3s ease; }
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.875rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        .check-item:last-child { border-bottom: none; }
+        .check-item:hover { background: #FAFAFA; margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: 8px; }
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            flex-shrink: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            margin-top: 2px;
+        }
+        .check-box:hover { border-color: var(--deep-green); }
+        .check-box.checked {
+            background: var(--deep-green);
+            border-color: var(--deep-green);
+        }
+        .check-box.checked::after {
+            content: "✓";
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        .check-content { flex: 1; }
+        .check-title {
+            font-weight: 500;
+            font-size: 0.92rem;
+            transition: all 0.2s ease;
+        }
+        .check-item.completed .check-title {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+        .check-tip {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .tip-icon {
+            color: var(--burnt-orange);
+            font-size: 0.75rem;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, var(--deep-green), var(--deep-green-light));
+            color: var(--white);
+            border-radius: 14px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .cta-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .cta-box p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+        }
+        .cta-box .btn {
+            background: var(--white);
+            color: var(--deep-green);
+        }
+        .cta-box .btn:hover { background: var(--off-white); }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .footer a { color: var(--deep-green); text-decoration: none; }
+
+        @media print {
+            .header, .hero, .progress-summary, .cta-box, .footer, .btn-group { display: none !important; }
+            .section { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+            body { background: white; }
+            .check-box { border: 2px solid #333 !important; }
+            .check-box.checked { background: #333 !important; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 1.5rem; }
+            .section { padding: 1.25rem; }
+            .progress-summary { flex-direction: column; text-align: center; }
+            .btn-group { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Anglotec AI Academy</h1>
+        <p>British Council Accredited Since 1986 | OET & IELTS Preparation Specialists</p>
+    </header>
+
+    <div class="hero">
+        <h2>OET Writing Checklist for Nurses</h2>
+        <p>A comprehensive interactive checklist covering pre-writing, writing, and post-writing stages. Tick off each item as you complete it and track your progress towards OET writing success.</p>
+        <div class="btn-group" style="justify-content: center;">
+            <button class="btn btn-outline" onclick="window.print()">🖨️ Print Checklist</button>
+            <button class="btn btn-outline" onclick="resetAll()">🔄 Reset All</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Progress Summary -->
+        <div class="progress-summary">
+            <div class="progress-info">
+                <h3>Your Progress</h3>
+                <div class="percent" id="total-percent">0%</div>
+            </div>
+            <div class="progress-bar-wrap">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="total-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-stats">
+                    <span id="checked-count">0 checked</span>
+                    <span id="total-count">of 40 items</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRE-WRITING SECTION -->
+        <div class="section" data-section="prewriting">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon" style="background: var(--deep-green-bg);">✍️</div>
+                <div class="section-title">
+                    <h3>Pre-Writing Checklist</h3>
+                    <p>Before you start writing — understand the task and prepare your approach (10 items)</p>
+                </div>
+                <div class="section-toggle">▼</div>
+            </div>
+            <div class="checklist">
+                <div class="check-item" data-id="pw1">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Read the task instructions carefully</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Identify the purpose, recipient, and type of letter required (referral, discharge, transfer, etc.)</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw2">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Identify the recipient of the letter</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Note their name, title, and role. This determines the level of formality and what context to include</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw3">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Underline key information in the case notes</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Mark relevant dates, medications, vital signs, and medical history that support the purpose of the letter</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw4">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Determine what information to include vs. exclude</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Only include information relevant to the recipient's role. Exclude irrelevant social history or details the recipient already knows</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw5">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Identify the main purpose of the letter</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Is it to request action? Provide information? Transfer care? This shapes your opening and closing paragraphs</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw6">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Note the patient's current status and key concerns</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Summarise current condition, recent changes, and what the recipient needs to know or do</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw7">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Plan the structure before writing</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Sketch a brief outline: opening (purpose), body (key details), closing (requested action + contact)</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw8">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Check the required word count</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> OET letters are typically 180-200 words. Plan your content to fit within this range</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw9">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Note any specific requests or actions needed</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Has the patient/family requested something? Is a follow-up appointment needed? Include these explicitly</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="pw10">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Verify dates and medication names are correct</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Double-check all dates, drug names, dosages, and medical terms from the case notes before writing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WRITING SECTION -->
+        <div class="section" data-section="writing">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon" style="background: var(--burnt-orange-bg);">📝</div>
+                <div class="section-title">
+                    <h3>Writing Checklist</h3>
+                    <p>While writing — structure, language, and content quality (18 items)</p>
+                </div>
+                <div class="section-toggle">▼</div>
+            </div>
+            <div class="checklist">
+                <div class="check-item" data-id="w1">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Use an appropriate opening greeting</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "Dear Dr. Smith," or "Dear Nurse Williams," — use title + surname, comma after</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w2">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">State the purpose of the letter clearly in the opening paragraph</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "I am writing to refer/update/discharge/transfer..." — be specific and direct</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w3">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Include the patient's full name and date of birth</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "Mr. John Smith (DOB: 15/03/1985)" — essential identifiers, usually in the opening</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w4">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Organise information in logical paragraphs</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> One main idea per paragraph. Typical order: purpose → admission/presentation → management → current status → request</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w5">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Use formal, professional language throughout</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Avoid contractions (don't → do not), slang, and abbreviations the recipient may not understand</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w6">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Write in complete sentences</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Every sentence must have a subject and verb. Avoid sentence fragments</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w7">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Use appropriate connectors and transitions</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "However," "Therefore," "In addition," "Following this," — these improve coherence and flow</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w8">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Use medical terminology correctly and consistently</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Show your professional knowledge but ensure terms are used in the correct context</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w9">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Include all relevant clinical details</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Vital signs, medications, test results, diagnoses — anything the recipient needs for continuity of care</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w10">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Maintain chronological order where appropriate</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Present events in the order they occurred to help the recipient follow the patient's journey</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w11">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Specify any requested action clearly</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "I would be grateful if you could..." "Please arrange..." "It would be appreciated if..."</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w12">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Use passive voice appropriately for objectivity</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "The wound was dressed" rather than "I dressed the wound" — focuses on the patient, not the writer</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w13">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Ensure tense consistency (past for completed actions)</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Use past tense for what happened during admission/treatment. Use present for current status</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w14">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Include your contact information for follow-up</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "Please do not hesitate to contact me on [phone] or [email] should you require further information"</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w15">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Use an appropriate closing formula</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> "Yours sincerely," if you know the name; "Yours faithfully," if "Dear Sir/Madam" — followed by your name and title</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w16">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Stay within the word count (180-200 words)</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Going significantly under or over affects your score. Practice writing to this limit</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w17">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Transform case notes into connected prose</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Do not copy case notes directly. Rewrite them as complete, flowing sentences with proper grammar</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="w18">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Maintain a professional, respectful tone</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Show respect for the recipient's expertise. Be assertive about the patient's needs without being demanding</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POST-WRITING SECTION -->
+        <div class="section" data-section="postwriting">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon" style="background: var(--deep-green-bg);">🔍</div>
+                <div class="section-title">
+                    <h3>Post-Writing Checklist</h3>
+                    <p>After writing — proofread and polish before submission (12 items)</p>
+                </div>
+                <div class="section-toggle">▼</div>
+            </div>
+            <div class="checklist">
+                <div class="check-item" data-id="post1">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Check spelling of all names, medications, and medical terms</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Spelling errors in proper nouns or medications are penalised heavily. Cross-check with case notes</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post2">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Verify all dates and numbers are accurate</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Dates of birth, admission dates, medication dosages, vital signs — any error affects patient safety score</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post3">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Count the words — is it within 180-200?</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Significantly under or over the word count will negatively impact your score</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post4">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Read for grammatical errors (subject-verb agreement, articles)</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Common errors: missing articles (a/an/the), incorrect verb forms, plural/singular mismatches</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post5">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Check punctuation (commas, full stops, apostrophes)</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Ensure every sentence ends with a full stop. Check comma usage in lists and clauses</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post6">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Ensure paragraph breaks are in logical places</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Each paragraph should contain one main topic. Check transitions between paragraphs are smooth</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post7">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Verify the recipient would have all information needed</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Put yourself in the recipient's shoes. Can they take the required action without needing to ask for more info?</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post8">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Check no irrelevant information was included</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Remove any social history, unrelated conditions, or duplicate information that does not serve the letter's purpose</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post9">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Confirm the requested action is clear and specific</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> The recipient should know exactly what you want them to do after reading the letter</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post10">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Read the letter aloud to check flow and coherence</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Reading aloud helps catch awkward phrasing, missing words, and sentences that do not flow well</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post11">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Check formatting (date, address block, signature)</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Ensure date at top, recipient address block, proper greeting, closing, and your signature block with title</div>
+                    </div>
+                </div>
+                <div class="check-item" data-id="post12">
+                    <div class="check-box" onclick="toggleCheck(this)"></div>
+                    <div class="check-content">
+                        <div class="check-title">Do a final check for any omitted case note details</div>
+                        <div class="check-tip"><span class="tip-icon">💡</span> Scan the case notes one more time to ensure no critical information was accidentally left out</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="cta-box">
+            <h3>Ready for AI-Powered OET Practice?</h3>
+            <p>Get instant AI feedback on your OET writing, unlimited mock tests, speaking simulations, and a personalised study plan. Join 10,000+ students who have prepared with Anglotec AI Academy.</p>
+            <a href="https://agmp.anglotec.com" class="btn" target="_blank">Start Your OET Preparation →</a>
+        </div>
+
+        <div class="section" style="text-align: center; background: var(--off-white);">
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-green); margin-bottom: 0.75rem;">More Free Resources</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Access our full library of free AI-powered diagnostic tools and study resources.</p>
+            <a href="https://aadsllooq7apw.kimi.page" class="btn btn-outline" target="_blank">Visit Free Tools Hub →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Anglotec AI Academy | British Council Accredited Since 1986 | 10,000+ Students | 60+ Countries</p>
+        <p><a href="https://anglotec-ai.com" target="_blank">anglotec-ai.com</a> | <a href="https://agmp.anglotec.com" target="_blank">IELTS & OET Prep</a></p>
+    </footer>
+
+    <script>
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+            el.closest('.check-item').classList.toggle('completed');
+            updateProgress();
+            saveProgress();
+        }
+
+        function toggleSection(header) {
+            header.closest('.section').classList.toggle('collapsed');
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.check-box').length;
+            const checked = document.querySelectorAll('.check-box.checked').length;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('total-percent').textContent = percent + '%';
+            document.getElementById('total-fill').style.width = percent + '%';
+            document.getElementById('checked-count').textContent = checked + ' checked';
+            document.getElementById('total-count').textContent = 'of ' + total + ' items';
+
+            // Colour code
+            const fill = document.getElementById('total-fill');
+            if (percent >= 80) fill.style.background = 'var(--deep-green)';
+            else if (percent >= 50) fill.style.background = 'var(--burnt-orange)';
+            else fill.style.background = 'var(--burnt-orange)';
+        }
+
+        function saveProgress() {
+            const checked = Array.from(document.querySelectorAll('.check-box.checked')).map(cb => cb.closest('.check-item').dataset.id);
+            localStorage.setItem('oet_checklist_progress', JSON.stringify(checked));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('oet_checklist_progress');
+            if (saved) {
+                const checked = JSON.parse(saved);
+                checked.forEach(id => {
+                    const item = document.querySelector(`[data-id="${id}"]`);
+                    if (item) {
+                        item.classList.add('completed');
+                        item.querySelector('.check-box').classList.add('checked');
+                    }
+                });
+                updateProgress();
+            }
+        }
+
+        function resetAll() {
+            if (confirm('Reset all checklist items?')) {
+                document.querySelectorAll('.check-box').forEach(cb => cb.classList.remove('checked'));
+                document.querySelectorAll('.check-item').forEach(ci => ci.classList.remove('completed'));
+                localStorage.removeItem('oet_checklist_progress');
+                updateProgress();
+            }
+        }
+
+        loadProgress();
+    </script>
+</body>
+</html>
