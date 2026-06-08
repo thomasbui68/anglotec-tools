@@ -170,24 +170,36 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Decorative floating cards */}
+        {/* Social proof floating cards */}
         <div className="hidden xl:block absolute right-12 top-1/2 -translate-y-1/2">
           {[
-            { rotate: '-5deg', translate: '-20px', baseOpacity: '0.12', delay: '0s', yOffset: '-60px' },
-            { rotate: '0deg', translate: '0px', baseOpacity: '0.15', delay: '0.5s', yOffset: '0px' },
-            { rotate: '5deg', translate: '20px', baseOpacity: '0.10', delay: '1s', yOffset: '60px' },
-          ].map((card, i) => (
-            <div
-              key={i}
-              className="w-64 h-40 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 absolute animate-fade-in-up"
-              style={{
-                transform: `rotate(${card.rotate}) translateX(${card.translate}) translateY(${card.yOffset})`,
-                opacity: card.baseOpacity as unknown as number,
-                animationDelay: `${1.4 + i * 0.2}s`,
-                animationDuration: '0.8s',
-              }}
-            />
-          ))}
+            { rotate: '-5deg', translate: '-20px', yOffset: '-80px', icon: Users, title: '10,000+', desc: 'Students taught since 1986', color: '#D4653B' },
+            { rotate: '0deg', translate: '0px', yOffset: '0px', icon: Globe, title: '60+', desc: 'Countries worldwide', color: '#8BA888' },
+            { rotate: '5deg', translate: '20px', yOffset: '80px', icon: Award, title: 'British Council', desc: 'Accredited since 1986', color: '#FDF6E3' },
+          ].map((card, i) => {
+            const IconComp = card.icon;
+            return (
+              <div
+                key={i}
+                className="w-56 rounded-xl bg-white/15 backdrop-blur-md border border-white/25 absolute animate-fade-in-up p-4 shadow-lg"
+                style={{
+                  transform: `rotate(${card.rotate}) translateX(${card.translate}) translateY(${card.yOffset})`,
+                  animationDelay: `${1.4 + i * 0.2}s`,
+                  animationDuration: '0.8s',
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${card.color}30` }}>
+                    <IconComp size={20} style={{ color: card.color }} />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg leading-tight">{card.title}</div>
+                    <div className="text-white/60 text-xs leading-tight">{card.desc}</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -240,8 +252,8 @@ const platforms = [
     name: 'AI Prompt Engineering Masterclass',
     accent: '#A68B6B',
     description:
-      '3,000 AI prompts across 12 categories. Code generation, content creation, business strategy, and more. Level up your AI skills.',
-    features: ['3,000+ prompts', '12 categories', 'XP tracking'],
+      '9,000 AI prompts across 12 categories. Code generation, content creation, business strategy, and more. Level up your AI skills.',
+    features: ['9,000+ prompts', '12 categories', 'XP tracking'],
     price: 'Free / From £14.99/mo',
     url: 'https://masterclass.anglotec-ai.com/',
     image: '/platform-masterclass.png',
@@ -687,7 +699,7 @@ const pricingPlans = [
       'AI Speaking Coach',
       'AI Writing Evaluator',
       '805+ OSCE Scenarios',
-      '3,000 AI Prompts',
+      '9,000 AI Prompts',
       'NHS CV Review',
       'Priority Support',
     ],
