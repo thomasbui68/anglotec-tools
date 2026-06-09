@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Prompts for Nurses: 50 Essential AI Prompts | Anglotec</title>
+<meta name="description" content="50 essential ChatGPT prompts for nurses to save time, improve patient care, and streamline documentation. Copy-paste ready prompts for clinical, academic, and professional use.">
+<meta name="keywords" content="chatgpt prompts for nurses, ai prompts for nursing, nursing ai tools, chatgpt for nurses, nurse chatgpt prompts, ai for healthcare professionals">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--deep-green:#2C4A3E;--burnt-orange:#D4653B;--cream:#F5F0EB;--light-green:#E8F0EC;--text-dark:#1A1A1A;--text-light:#5C5C5C;--white:#FFFFFF;--prompt-bg:#f0f4f1}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:var(--text-dark);line-height:1.7;background:var(--cream)}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.3}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+a{color:var(--burnt-orange);text-decoration:none}
+a:hover{text-decoration:underline}
+.header{background:var(--deep-green);color:var(--white);padding:24px 0;position:sticky;top:0;z-index:100}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white)}
+.nav a{color:var(--white);margin-left:24px;font-weight:500;font-size:0.95rem}
+.cta-btn{background:var(--burnt-orange);color:var(--white);padding:12px 28px;border-radius:6px;font-weight:600;display:inline-block;border:none;cursor:pointer;transition:opacity 0.2s}
+.cta-btn:hover{opacity:0.9;text-decoration:none}
+.hero{background:linear-gradient(135deg,var(--deep-green) 0%,#1a3028 100%);color:var(--white);padding:80px 0 70px}
+.hero h1{font-size:3.2rem;margin-bottom:20px;max-width:800px}
+.hero p{font-size:1.25rem;opacity:0.9;max-width:700px;margin-bottom:32px}
+.hero-stats{display:flex;gap:40px;margin-top:40px}
+.hero-stat{text-align:center}
+.hero-stat .num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--burnt-orange)}
+.hero-stat .label{font-size:0.9rem;opacity:0.85}
+.breadcrumb{padding:16px 0;font-size:0.9rem;color:var(--text-light);background:var(--white)}
+.breadcrumb a{color:var(--deep-green)}
+.main{padding:60px 0;display:grid;grid-template-columns:1fr 340px;gap:48px}
+.section{margin-bottom:56px}
+.section h2{font-size:2rem;color:var(--deep-green);margin-bottom:24px;padding-bottom:12px;border-bottom:3px solid var(--burnt-orange);display:inline-block}
+.section h3{font-size:1.4rem;color:var(--deep-green);margin:28px 0 14px}
+.section p{margin-bottom:18px;font-size:1.05rem;color:var(--text-dark)}
+.section ul,.section ol{margin-bottom:20px;padding-left:24px}
+.section li{margin-bottom:10px;font-size:1.03rem}
+.toc{background:var(--white);border-radius:10px;padding:28px;margin-bottom:40px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.toc h3{font-family:'Inter',sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:1px;color:var(--deep-green);margin-bottom:16px}
+.toc ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.toc li{margin:0}
+.toc a{color:var(--text-dark);font-size:0.95rem;padding:6px 0;display:block}
+.toc a:hover{color:var(--burnt-orange)}
+.tip-box{background:var(--light-green);border-left:4px solid var(--deep-green);padding:20px 24px;border-radius:0 8px 8px 0;margin:24px 0}
+.tip-box strong{color:var(--deep-green);display:block;margin-bottom:6px}
+.warning-box{background:#FFF3E8;border-left:4px solid var(--burnt-orange);padding:20px 24px;border-radius:0 8px 8px 0;margin:24px 0}
+.warning-box strong{color:var(--burnt-orange);display:block;margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+th{background:var(--deep-green);color:var(--white);padding:14px 16px;text-align:left;font-weight:600}
+td{padding:14px 16px;border-bottom:1px solid #eee}
+tr:hover td{background:#f9f9f9}
+.highlight{background:linear-gradient(120deg,#ffe8d8 0%,#ffe8d8 100%);background-repeat:no-repeat;background-size:100% 40%;background-position:0 85%;padding:0 4px}
+.cta-section{background:var(--deep-green);color:var(--white);padding:48px 36px;border-radius:12px;text-align:center;margin:48px 0}
+.cta-section h3{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:16px;color:var(--white)}
+.cta-section p{font-size:1.1rem;opacity:0.9;margin-bottom:28px}
+.faq-item{background:var(--white);border-radius:10px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.faq-item h4{font-size:1.1rem;color:var(--deep-green);margin-bottom:10px;font-family:'Inter',sans-serif}
+.faq-item p{color:var(--text-light);font-size:0.98rem}
+.prompt-box{background:var(--prompt-bg);border-radius:10px;padding:20px 24px;margin:14px 0;border-left:4px solid var(--deep-green);font-family:'Inter',monospace;font-size:0.95rem;position:relative}
+.prompt-box .label{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--burnt-orange);font-weight:700;margin-bottom:8px;font-family:'Inter',sans-serif}
+.prompt-box code{font-family:'Inter',sans-serif;font-size:0.95rem;color:var(--text-dark);line-height:1.6;display:block;white-space:pre-wrap}
+.sidebar-card{background:var(--white);border-radius:12px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.sidebar-card h4{font-family:'Inter',sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:1px;color:var(--deep-green);margin-bottom:16px}
+.sidebar-card ul{list-style:none;padding:0}
+.sidebar-card li{padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:0.95rem}
+.sidebar-card li:last-child{border-bottom:none}
+.sidebar-cta{background:var(--burnt-orange);color:var(--white);padding:28px;border-radius:12px;text-align:center}
+.sidebar-cta h4{color:var(--white);font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:12px}
+.sidebar-cta p{font-size:0.95rem;opacity:0.9;margin-bottom:20px}
+.sidebar-cta .cta-btn{background:var(--white);color:var(--burnt-orange)}
+.footer{background:var(--deep-green);color:var(--white);padding:48px 0 24px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer h4{font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.footer a{color:rgba(255,255,255,0.8);display:block;padding:4px 0;font-size:0.95rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.2);padding-top:24px;text-align:center;font-size:0.9rem;opacity:0.7}
+@media(max-width:1024px){.main{grid-template-columns:1fr}}
+@media(max-width:768px){.hero h1{font-size:2.2rem}.hero-stats{flex-direction:column;gap:20px}.toc ul{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container">
+<a href="https://tools.anglotec-ai.com" class="logo">Anglotec</a>
+<nav class="nav">
+<a href="#clinical">Clinical</a>
+<a href="#documentation">Documentation</a>
+<a href="#education">Education</a>
+<a href="#career">Career</a>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Try AI Tools</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>ChatGPT Prompts for Nurses: 50 Essential AI Prompts</h1>
+<p>Save hours every week with these copy-paste ready ChatGPT prompts designed specifically for nurses. From clinical decision support to documentation, education, and career development.</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="num">50</div><div class="label">Ready-to-Use Prompts</div></div>
+<div class="hero-stat"><div class="num">10</div><div class="label">Categories</div></div>
+<div class="hero-stat"><div class="num">100%</div><div class="label">Copy-Paste Ready</div></div>
+</div>
+</div>
+</section>
+
+<div class="breadcrumb">
+<div class="container">
+<a href="https://tools.anglotec-ai.com">Home</a> / <a href="https://tools.anglotec-ai.com">Nursing Tools</a> / <span>ChatGPT Prompts for Nurses</span>
+</div>
+</div>
+
+<div class="container">
+<div class="main">
+<div class="content">
+
+<nav class="toc">
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="#how-to-use">How to Use These Prompts</a></li>
+<li><a href="#clinical">Clinical Decision Support</a></li>
+<li><a href="#documentation">Documentation & Handover</a></li>
+<li><a href="#patient-education">Patient Education</a></li>
+<li><a href="#care-plans">Care Planning</a></li>
+<li><a href="#education">Nursing Education</a></li>
+<li><a href="#interview">Interview Preparation</a></li>
+<li><a href="#reflective">Reflective Practice</a></li>
+<li><a href="#leadership">Leadership & Management</a></li>
+<li><a href="#communication">Communication Scripts</a></li>
+<li><a href="#research">Evidence-Based Practice</a></li>
+<li><a href="#faq">FAQs</a></li>
+</ul>
+</nav>
+
+<section class="section" id="how-to-use">
+<h2>How to Use These Prompts Effectively</h2>
+<p>These prompts are designed to be <strong>copied, pasted, and customised</strong>. Replace the [bracketed text] with your specific information. Each prompt has been tested and refined for nursing contexts.</p>
+<p><strong>Tips for best results:</strong></p>
+<ul>
+<li>Be specific — the more detail you provide, the better the output</li>
+<li>Use follow-up prompts to refine responses ("Make this simpler," "Add more detail about...")</li>
+<li>Always verify clinical information against current guidelines</li>
+<li>Never input identifiable patient information — use initials or generic descriptions only</li>
+</ul>
+
+<div class="warning-box">
+<strong>Important Disclaimer:</strong> AI-generated content should support, not replace, clinical judgment. Always verify information against current guidelines, local protocols, and your own clinical assessment. Never input identifiable patient data into AI systems.
+</div>
+</section>
+
+<section class="section" id="clinical">
+<h2>Clinical Decision Support Prompts (1-10)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 1 — Differential Diagnosis Support</div>
+<code>"I am a nurse assessing a patient presenting with [symptoms]. The patient is [age], [gender], with a history of [relevant history]. Their vital signs are: [vitals]. Based on this information, what are the potential differential diagnoses I should consider? What red flags should I look for? What investigations might be relevant?"</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 2 — NEWS2 Score Interpretation</div>
+<code>"A patient on my ward has the following vital signs: Respiratory rate [RR], SpO2 [SpO2], Systolic BP [BP], Pulse [HR], Consciousness [ACVPU], Temperature [Temp]. Calculate the NEWS2 score and explain what actions are required at each threshold. Include escalation pathways."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 3 — Sepsis Recognition</div>
+<code>"A [age]-year-old patient presents with [symptoms]. Their observations show [observations]. Based on the NICE sepsis guidance (NG51), does this patient meet the criteria for suspected sepsis? What immediate actions should I take? Outline the Sepsis Six bundle."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 4 — Medication Safety Check</div>
+<code>"Review the following medications for potential interactions and contraindications: [list medications with doses]. The patient has [relevant conditions/allergies]. Flag any safety concerns, drug interactions, or monitoring requirements."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 5 — Wound Assessment Guide</div>
+<code>"I am assessing a wound on a patient's [body location]. The wound is [size], appears [description of wound bed], with [exudate amount/type] and [odour if any]. The surrounding skin is [description]. Provide a structured wound assessment using the TIME framework and suggest appropriate dressing options."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 6 — Falls Risk Assessment</div>
+<code>"Conduct a comprehensive falls risk assessment for a [age]-year-old patient with [medical history], taking [medications], with [mobility status], living [living situation]. Use the Morse Fall Scale criteria and suggest individualised fall prevention interventions."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 7 — Pain Assessment Framework</div>
+<code>"A patient reports pain at [location] rated [X/10]. They describe it as [character]. It started [onset], is [constant/intermittent], and worsens with [aggravating factors]. Provide a comprehensive pain assessment framework and suggest non-pharmacological and pharmacological management options."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 8 — Catheter Care Protocol</div>
+<code>"Outline best practice for indwelling urinary catheter care including: insertion considerations, daily maintenance, monitoring for complications (CAUTI prevention), and removal criteria. Include key patient education points. Reference current NICE or RCN guidance."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 9 — Diabetes Management</div>
+<code>"A patient with Type [1/2] diabetes has a blood glucose of [reading] mmol/L. They are [conscious/unconscious], last ate [time], and their current medications are [list]. What are the immediate nursing actions? Provide a structured hypoglycaemia and hyperglycaemia management guide."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 10 — Stroke Assessment</div>
+<code>"A patient presents with sudden onset of [symptoms]. Using the FAST and ROSIER scales, what is their stroke risk? Outline the immediate nursing actions, time-critical interventions, and the pathway from ED to acute stroke unit."</code>
+</div>
+</section>
+
+<section class="section" id="documentation">
+<h2>Documentation & Handover Prompts (11-18)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 11 — SBAR Handover</div>
+<code>"Write a professional SBAR handover for the following patient: [Name/Initials], [Age], admitted with [diagnosis]. Current condition: [status]. Recent observations: [vitals]. Current medications: [list]. Outstanding tasks: [tasks]. Concerns: [concerns]."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 12 — Nursing Notes Template</div>
+<code>"Create a structured nursing note entry for a patient who [what happened during your shift]. Include: assessment findings, interventions provided, patient response, changes in condition, and the care plan for the next shift. Use professional nursing documentation standards."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 13 — Discharge Summary</div>
+<code>"Write a patient discharge summary for: [Age] year old [gender] admitted with [diagnosis], treated with [treatment], discharged with [medications]. Include: reason for admission, key treatments, discharge medications with instructions, follow-up appointments, red flag symptoms to watch for, and who to contact."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 14 — Incident Report</div>
+<code>"Help me draft a factual incident report for [type of incident] that occurred at [time/location]. The circumstances were: [description]. Immediate actions taken: [actions]. Patient outcome: [outcome]. Ensure the report is objective, factual, and free from blame."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 15 — Care Plan Documentation</div>
+<code>"Write nursing care plan entries using the APIE format (Assessment, Planning, Implementation, Evaluation) for a patient with [diagnosis/condition]. Include at least 3 nursing diagnoses with SMART goals and specific interventions."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 16 — Shift Handover Checklist</div>
+<code>"Create a comprehensive shift handover checklist for a [type of ward] nurse. Include: patient identifiers, diagnosis, current status, medications due, outstanding tasks, escalation contacts, and safety alerts. Make it concise and practical for quick reference."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 17 — Referral Letter</div>
+<code>"Write a referral letter from a nurse to [specialist/service] for a patient with [condition/symptoms]. Include: reason for referral, relevant history, current management, specific question for the specialist, and urgency level."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 18 — DNACPR Discussion Documentation</div>
+<code>"Help me document a DNACPR (Do Not Attempt Cardiopulmonary Resuscitation) discussion with a patient and their family. The patient is [age] with [conditions]. The outcome was [decision]. Document this sensitively and professionally, including who was present and their understanding."</code>
+</div>
+</section>
+
+<section class="section" id="patient-education">
+<h2>Patient Education Prompts (19-26)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 19 — Medication Explanation</div>
+<code>"Explain the following medications to a patient in plain English: [medication names]. For each, explain: what it does, how to take it, common side effects, and when to seek help. Use language a 12-year-old could understand."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 20 — Post-Operative Instructions</div>
+<code>"Write clear post-operative discharge instructions for a patient who has had [type of surgery]. Include: wound care, activity restrictions, diet, medication, signs of complications, follow-up, and when to seek emergency care."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 21 — Diabetes Self-Management</div>
+<code>"Create a patient education guide for someone newly diagnosed with Type 2 diabetes. Cover: blood glucose monitoring, diet principles, exercise, medication overview, foot care, sick day rules, and when to contact healthcare providers."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 22 — Heart Failure Education</div>
+<code>"Write a patient and family education sheet for someone with heart failure. Include: daily weight monitoring, fluid restriction guidance, sodium reduction tips, activity recommendations, medication importance, and red flag symptoms requiring urgent attention."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 23 — Falls Prevention at Home</div>
+<code>"Create a practical home falls prevention checklist for an elderly patient being discharged after a fall. Include environmental modifications, exercise recommendations, medication review points, and when to seek help."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 24 — Inhaler Technique Teaching</div>
+<code>"Write a step-by-step guide for teaching a patient correct inhaler technique for [type of inhaler: MDI/DPI]. Include common errors to watch for and how to correct them. Add a simple patient handout format."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 25 — Wound Care at Home</div>
+<code>"Create patient instructions for caring for a [type of wound] at home. Include: dressing change steps, signs of infection, showering advice, activity restrictions, and when to contact the nurse or GP."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 26 — Dementia Communication Tips for Families</div>
+<code>"Write a guide for family members on how to communicate effectively with a loved one who has dementia. Include: approach techniques, simplifying questions, managing agitation, validation strategies, and self-care for carers."</code>
+</div>
+</section>
+
+<section class="section" id="care-plans">
+<h2>Care Planning Prompts (27-32)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 27 — Comprehensive Nursing Care Plan</div>
+<code>"Develop a comprehensive nursing care plan for a patient admitted with [diagnosis]. Include 5 nursing diagnoses with: rationale, SMART goals (at least 2 per diagnosis), specific nursing interventions with frequency, and evaluation criteria."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 28 — Risk Assessment Bundle</div>
+<code>"Create a comprehensive risk assessment bundle for a patient with [condition]. Include: falls risk, pressure ulcer risk (Waterlow), VTE risk, malnutrition risk (MUST), and delirium risk (4AT). Suggest prevention strategies for each identified risk."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 29 — Discharge Planning</div>
+<code>"Create a discharge planning checklist for a patient with [diagnosis] being discharged to [home/care home]. Include: equipment needs, care requirements, community services referral, medication reconciliation, transport, and follow-up arrangements."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 30 — End-of-Life Care Plan</div>
+<code>"Outline a nursing care plan for a patient receiving end-of-life care. Include: symptom management (pain, breathlessness, agitation), mouth care, positioning, psychological support for patient and family, spiritual care considerations, and bereavement support."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 31 — Post-Fall Care Plan</div>
+<code>"A patient has fallen on the ward. They are [conscious/unconscious] with [injuries/no obvious injury]. Create an immediate care plan including: assessment priorities (including head injury observation), monitoring frequency, investigation requirements, and prevention strategies for future falls."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 32 — Pressure Ulcer Prevention</div>
+<code>"A patient has a Waterlow score of [score]. Create a comprehensive pressure ulcer prevention care plan including: repositioning schedule, pressure-relieving equipment, skin assessment frequency, nutritional support, and documentation requirements."</code>
+</div>
+</section>
+
+<section class="section" id="education">
+<h2>Nursing Education Prompts (33-38)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 33 — OSCE Revision Guide</div>
+<code>"Create a revision guide for a nursing OSCE station on [topic: e.g., medication administration / wound dressing / catheterisation]. Include: step-by-step procedure, critical steps that must not be missed, safety checks, infection control measures, and communication points."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 34 — Anatomy & Physiology Refresher</div>
+<code>"Explain the anatomy and physiology of [body system/topic] in a way suitable for a nursing student preparing for exams. Include: key structures, physiological processes, common pathologies, and clinical relevance for nurses."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 35 — Drug Calculation Practice</div>
+<code>"Generate 10 drug calculation practice questions suitable for a [student/newly qualified] nurse. Include: tablet calculations, liquid medicine calculations, IV infusion rate calculations, and weight-based dosing. Provide answers with step-by-step working."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 36 — NMC Code Scenarios</div>
+<code>"Create 5 scenario-based questions to test understanding of the NMC Code (2018). Each scenario should present an ethical or professional dilemma and ask the nurse to identify the relevant Code principles and appropriate actions."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 37 — A&P for Wound Care</div>
+<code>"Explain the physiology of wound healing (hemostasis, inflammation, proliferation, maturation) and how different factors (age, diabetes, nutrition, infection, medications) affect each phase. Include nursing implications for optimising wound healing."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 38 — ECG Interpretation Basics</div>
+<code>"Create a beginner's guide to ECG interpretation for nurses. Cover: basic ECG anatomy (P wave, QRS complex, T wave), rate calculation, rhythm identification (sinus rhythm, AF, VF, asystole), and when to escalate. Include red flag rhythms requiring immediate action."</code>
+</div>
+</section>
+
+<section class="section" id="interview">
+<h2>Nursing Interview Prompts (39-42)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 39 — Band 6 Interview Prep</div>
+<code>"I have an interview for a Band 6 [speciality] nurse position. Generate 20 likely interview questions based on NHS Values and the 6 Cs of Nursing. For each question, provide a model answer using the STAR technique."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 40 — Scenario-Based Interview Answer</div>
+<code>"Help me structure an answer to this interview question: '[Paste question here]'. Use the STAR method and incorporate the NHS Values. Make the answer 2-3 minutes when spoken and include specific clinical examples."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 41 — Presentation Preparation</div>
+<code>"I need to give a 10-minute presentation on '[topic]' for a nursing interview. Create a structured presentation outline with slide content, key talking points, and a strong opening and closing. Include one interactive element."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 42 — Revalidation Portfolio</div>
+<code>"Help me structure my NMC revalidation portfolio. I work as a [speciality] nurse with [X] years of experience. Outline the required sections, suggest reflective account topics, and provide a template for my reflective discussions and confirmation."</code>
+</div>
+</section>
+
+<section class="section" id="reflective">
+<h2>Reflective Practice Prompts (43-46)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 43 — Gibbs Reflective Cycle</div>
+<code>"Guide me through a Gibbs Reflective Cycle reflection on this experience: [describe clinical situation]. For each stage (Description, Feelings, Evaluation, Analysis, Conclusion, Action Plan), provide prompting questions and help me develop a structured reflective account suitable for my portfolio."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 44 — Critical Incident Reflection</div>
+<code>"I experienced a challenging incident at work where [description]. Help me write a professional reflection that demonstrates learning, identifies what went well and what could be improved, and outlines specific actions I will take going forward."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 45 — CPD Planning</div>
+<code>"Create a personal CPD (Continuing Professional Development) plan for a [speciality] nurse wanting to develop in [area]. Include: short-term goals (6 months), medium-term goals (1-2 years), relevant courses, self-directed learning activities, and how to evidence each activity."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 46 — Feedback Analysis</div>
+<code>"I received this feedback from my mentor: '[paste feedback]'. Help me analyse this feedback constructively, identify 3 specific areas for development, and create an action plan with measurable goals and timelines."</code>
+</div>
+</section>
+
+<section class="section" id="leadership">
+<h2>Leadership & Management Prompts (47-48)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 47 — Quality Improvement Project</div>
+<code>"Help me design a quality improvement project for [ward/area] focusing on [issue]. Using the PDSA (Plan-Do-Study-Act) cycle, outline: the problem statement, baseline data collection, intervention, measurement plan, and sustainability strategy."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 48 — Team Meeting Agenda</div>
+<code>"Create an agenda for a [type: ward/handovers/team] meeting. Topics to cover: [list topics]. Include time allocations, discussion points, and action item tracking. Ensure the agenda promotes effective communication and team engagement."</code>
+</div>
+</section>
+
+<section class="section" id="communication">
+<h2>Communication Scripts Prompts (49-50)</h2>
+
+<div class="prompt-box">
+<div class="label">Prompt 49 — Difficult Conversation Script</div>
+<code>"Write a compassionate script for a nurse who needs to [have a difficult conversation: e.g., deliver bad news / address a complaint / discuss end-of-life care]. Include: opening lines, key phrases that show empathy, how to handle emotional responses, and how to close the conversation with clear next steps."</code>
+</div>
+
+<div class="prompt-box">
+<div class="label">Prompt 50 — Breaking Bad News</div>
+<code>"Create a structured approach for breaking bad news to a patient and their family using the SPIKES protocol. Include: setting the scene, assessing understanding, delivering the news, responding to emotions, and planning next steps. Provide specific phrase examples for each step."</code>
+</div>
+</section>
+
+<section class="section" id="research">
+<h2>Bonus: Evidence-Based Practice Prompt</h2>
+
+<div class="prompt-box">
+<div class="label">Bonus Prompt — Literature Summary</div>
+<code>"Summarise the current evidence on [clinical topic] for nursing practice. Include: key findings from recent systematic reviews or guidelines, implications for nursing practice, any controversies or gaps in the evidence, and recommendations for implementation on the ward. Reference NICE, RCN, or Cochrane sources where possible."</code>
+</div>
+
+<div class="tip-box">
+<strong>Pro Tip:</strong> Save your favourite prompts in a note-taking app for quick access during shifts. Customise them for your speciality and ward. The more specific your prompt, the more useful the AI response will be.
+</div>
+</section>
+
+<section class="section" id="faq">
+<h2>Frequently Asked Questions About AI for Nurses</h2>
+
+<div class="faq-item">
+<h4>Is it safe to use ChatGPT for nursing?</h4>
+<p>ChatGPT can be a valuable tool for nursing education, documentation assistance, and professional development. However, it should never replace clinical judgment, and you must never input identifiable patient information. Always verify clinical information against current guidelines and local protocols.</p>
+</div>
+
+<div class="faq-item">
+<h4>Can I use AI to write nursing documentation?</h4>
+<p>AI can help structure and draft documentation, but you remain professionally accountable for everything in the patient record. Always review, verify, and take personal responsibility for any AI-assisted documentation. Never copy-paste without reviewing for accuracy.</p>
+</div>
+
+<div class="faq-item">
+<h4>Will using AI for nursing tasks get me in trouble with the NMC?</h4>
+<p>The NMC has not issued specific guidance on AI use. However, their standards apply: you must maintain accurate records, practise within your competence, and be accountable for your decisions. Using AI as a tool to support your work is acceptable; relying on it to replace your clinical judgment is not.</p>
+</div>
+
+<div class="faq-item">
+<h4>What's the best AI tool for nurses?</h4>
+<p>ChatGPT, Claude, and specialised healthcare AI tools all have different strengths. For general nursing tasks, ChatGPT-4 offers the best balance of capability and accessibility. For clinical decision support, always use tools specifically designed for healthcare with appropriate safeguards.</p>
+</div>
+
+<div class="faq-item">
+<h4>Can AI help me prepare for the OET or IELTS?</h4>
+<p>Yes, AI is excellent for exam preparation. You can practise role-plays, get feedback on writing, generate practice questions, and simulate speaking tests. Anglotec's AI-powered tools are specifically designed for healthcare professional exam preparation.</p>
+</div>
+</section>
+
+<div class="cta-section">
+<h3>Ready to Supercharge Your Nursing Practice with AI?</h3>
+<p>Try Anglotec's AI-powered tools designed specifically for healthcare professionals. From OET preparation to clinical communication practice, we've got you covered.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Explore AI Tools for Nurses</a>
+</div>
+
+</div>
+
+<aside class="sidebar">
+<div class="sidebar-cta">
+<h4>AI Tools for Nurses</h4>
+<p>Specialised AI-powered tools for nursing documentation, exam prep, and clinical communication.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Try Free</a>
+</div>
+<div class="sidebar-card">
+<h4>Prompt Categories</h4>
+<ul>
+<li>Clinical Decision (10)</li>
+<li>Documentation (8)</li>
+<li>Patient Education (8)</li>
+<li>Care Planning (6)</li>
+<li>Nursing Education (6)</li>
+<li>Interview Prep (4)</li>
+<li>Reflective Practice (4)</li>
+<li>Leadership (2)</li>
+<li>Communication (2)</li>
+</ul>
+</div>
+<div class="sidebar-card">
+<h4>AI Safety Rules</h4>
+<ul>
+<li>Never input patient identifiers</li>
+<li>Always verify clinical info</li>
+<li>You remain professionally accountable</li>
+<li>Use as a tool, not a replacement</li>
+<li>Check against local protocols</li>
+<li>Follow NMC standards</li>
+</ul>
+</div>
+<div class="sidebar-card">
+<h4>Related Resources</h4>
+<ul>
+<li><a href="#">OET Writing Tips</a></li>
+<li><a href="#">NHS Band 6 Interview</a></li>
+<li><a href="#">OSCE History Taking</a></li>
+<li><a href="#">Reflective Writing Guide</a></li>
+</ul>
+</div>
+</aside>
+
+</div>
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>Anglotec</h4>
+<p style="color:rgba(255,255,255,0.8);font-size:0.95rem">AI-powered tools for healthcare professionals. Nursing documentation, exam preparation, and clinical communication made easier.</p>
+</div>
+<div>
+<h4>AI for Nurses</h4>
+<a href="#">ChatGPT Prompts</a>
+<a href="#">Documentation Tools</a>
+<a href="#">Clinical Decision Support</a>
+<a href="#">Patient Education</a>
+</div>
+<div>
+<h4>Exam Preparation</h4>
+<a href="#">OET for Nurses</a>
+<a href="#">IELTS Preparation</a>
+<a href="#">NMC Registration</a>
+<a href="#">OSCE Preparation</a>
+</div>
+<div>
+<h4>Tools</h4>
+<a href="https://tools.anglotec-ai.com">AI Writing Assistant</a>
+<a href="https://tools.anglotec-ai.com">Speaking Practice</a>
+<a href="https://tools.anglotec-ai.com">Mock OSCE</a>
+<a href="https://tools.anglotec-ai.com">Nursing Prompts Library</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Anglotec. All rights reserved. | <a href="https://tools.anglotec-ai.com" style="display:inline">tools.anglotec-ai.com</a></p>
+</div>
+</div>
+</footer>
+</body>
+</html>

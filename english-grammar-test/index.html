@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free English Grammar Test (50 Questions) | Anglotec AI</title>
+<meta name="description" content="Free online English grammar test with 50 questions. Test your grammar skills with instant results, detailed explanations, and CEFR level assessment.">
+<meta name="keywords" content="english grammar test, free grammar test online, grammar quiz, english level test, grammar assessment">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F4F;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F5F0;--white:#FFFFFF;--gray:#6B7280;--light-gray:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:#1F2937;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:800px;margin:0 auto;padding:0 20px;}
+header{background:var(--green);color:var(--white);padding:24px 0;text-align:center;}
+header h1{font-size:2rem;font-weight:700;margin-bottom:6px;}
+header p{font-size:1rem;opacity:0.9;}
+.main{padding:30px 0 60px;}
+.card{background:var(--white);border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);margin-bottom:24px;}
+.progress-bar{height:8px;background:var(--light-gray);border-radius:4px;margin-bottom:20px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--green);transition:width 0.3s;border-radius:4px;}
+.progress-text{font-size:0.85rem;color:var(--gray);margin-bottom:20px;text-align:center;}
+.question-num{font-size:0.85rem;color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.question-text{font-size:1.1rem;font-weight:600;margin-bottom:20px;color:var(--green);}
+.sentence{font-size:1.05rem;margin-bottom:16px;padding:16px;background:#F9FAFB;border-radius:10px;border-left:4px solid var(--green);}
+.sentence .blank{display:inline-block;min-width:80px;border-bottom:2px solid var(--orange);text-align:center;font-weight:700;color:var(--orange);}
+.options{display:flex;flex-direction:column;gap:10px;}
+.option{background:#F9FAFB;padding:14px 16px;border-radius:10px;border:2px solid var(--light-gray);cursor:pointer;transition:all 0.2s;font-size:0.95rem;}
+.option:hover{border-color:var(--green);background:#F0FDF4;}
+.option.selected{border-color:var(--green);background:var(--green);color:var(--white);}
+.option.correct{border-color:#16A34A;background:#DCFCE7;}
+.option.incorrect{border-color:#DC2626;background:#FEE2E2;}
+.nav-btns{display:flex;justify-content:space-between;margin-top:24px;gap:10px;}
+.btn{background:var(--orange);color:var(--white);border:none;padding:12px 24px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.btn:hover{background:var(--orange-light);transform:translateY(-1px);}
+.btn:disabled{opacity:0.5;cursor:not-allowed;}
+.btn-secondary{background:var(--green);}
+.btn-secondary:hover{background:var(--green-light);}
+.explanation{background:#F0FDF4;padding:16px;border-radius:10px;margin-top:16px;border-left:4px solid #16A34A;display:none;}
+.explanation.show{display:block;}
+.explanation h4{color:var(--green);margin-bottom:6px;}
+.result-card{text-align:center;padding:40px 20px;}
+.result-card h2{font-size:2rem;color:var(--green);margin-bottom:12px;}
+.result-card .score-big{font-size:4rem;font-weight:700;color:var(--orange);font-family:'Inter',sans-serif;}
+.result-card p{color:var(--gray);margin:8px 0;}
+.cefr-badge{display:inline-block;padding:10px 30px;border-radius:30px;font-weight:700;font-size:1.2rem;margin:16px 0;}
+.cefr-a1{background:#E8F5E9;color:#2E7D32;}.cefr-a2{background:#E3F2FD;color:#1565C0;}.cefr-b1{background:#FFF3E0;color:#E65100;}
+.cefr-b2{background:#F3E5F5;color:#6A1B9A;}.cefr-c1{background:#E8EAF6;color:#283593;}.cefr-c2{background:#E0F2F1;color:#00695C;}
+.result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:24px 0;}
+.result-item{padding:16px;background:#F9FAFB;border-radius:10px;}
+.result-item h4{font-size:1.5rem;color:var(--green);}
+.result-item p{font-size:0.8rem;color:var(--gray);}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;text-align:left;}
+.skill-item{padding:12px;background:#F9FAFB;border-radius:10px;display:flex;justify-content:space-between;align-items:center;}
+.skill-item h4{font-size:0.85rem;color:var(--green);}
+.skill-item span{font-weight:700;color:var(--orange);}
+.share-section{text-align:center;padding:30px 0;}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{padding:10px 20px;border-radius:8px;color:var(--white);text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-btn.tw{background:#1DA1F2;}.share-btn.fb{background:#4267B2;}.share-btn.li{background:#0077B5;}.share-btn.wa{background:#25D366;}.share-btn.cp{background:var(--gray);}
+.cta-section{background:var(--green);color:var(--white);padding:40px 20px;text-align:center;border-radius:16px;margin-top:30px;}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px;}
+.cta-section p{margin-bottom:20px;opacity:0.95;}
+.cta-btn{background:var(--orange);color:var(--white);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.2s;}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);}
+.keywords{background:var(--white);padding:20px;border-radius:12px;margin-top:20px;font-size:0.85rem;color:var(--gray);}
+.keywords strong{color:var(--green);}
+.timer{position:fixed;top:20px;right:20px;background:var(--white);padding:10px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.15);font-weight:600;color:var(--green);z-index:50;font-size:1.1rem;}
+.timer.warning{color:var(--orange);}
+.timer.danger{color:#DC2626;animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
+footer{text-align:center;padding:30px 0;color:var(--gray);font-size:0.85rem;}
+@media(max-width:600px){header h1{font-size:1.5rem;}.result-grid{grid-template-columns:1fr;}.skill-grid{grid-template-columns:1fr;}}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:500;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:100;}
+.copy-toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Free English Grammar Test (50 Questions)</h1>
+<p>Comprehensive grammar assessment with CEFR level scoring</p>
+</div>
+</header>
+
+<div class="timer" id="timer">40:00</div>
+
+<div class="container main">
+<div class="card" id="quizCard">
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-text" id="progressText">Question 1 of 50</div>
+
+<div id="questionArea">
+<div class="question-num" id="qNum">Question 1</div>
+<div class="question-text" id="qText"></div>
+<div class="options" id="optionsArea"></div>
+<div class="explanation" id="explanationArea">
+<h4>Explanation</h4>
+<p id="explanationText"></p>
+</div>
+</div>
+
+<div class="nav-btns">
+<button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>Previous</button>
+<button class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+<button class="btn" id="submitBtn" onclick="submitQuiz()" style="display:none;">Submit Test</button>
+</div>
+</div>
+
+<div class="card" id="resultCard" style="display:none;">
+<div class="result-card">
+<h2>Test Complete!</h2>
+<div class="score-big" id="finalScore">0%</div>
+<div id="cefrBadge" class="cefr-badge cefr-b1">B1 - Intermediate</div>
+<p id="resultMessage"></p>
+<div class="result-grid">
+<div class="result-item"><h4 id="correctCount">0</h4><p>Correct</p></div>
+<div class="result-item"><h4 id="wrongCount">0</h4><p>Incorrect</p></div>
+<div class="result-item"><h4 id="timeTaken">0:00</h4><p>Time Taken</p></div>
+</div>
+<h3 style="color:var(--green);margin:20px 0 12px;">Performance by Skill Area</h3>
+<div class="skill-grid" id="skillScores"></div>
+<div style="margin-top:24px;">
+<button class="btn" onclick="restartQuiz()">Retake Test</button>
+</div>
+</div>
+</div>
+
+<div class="keywords">
+<strong>Popular searches:</strong> english grammar test, free grammar test online, grammar quiz, english level test, grammar assessment, cefr grammar test, online english test
+</div>
+
+<div class="share-section">
+<h3 style="color:var(--green);margin-bottom:16px;">Share This Tool</h3>
+<div class="share-btns">
+<a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://tools.anglotec-ai.com/english-grammar-test&text=Free%20English%20Grammar%20Test%20-%2050%20Questions" target="_blank">Twitter</a>
+<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/english-grammar-test" target="_blank">Facebook</a>
+<a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/english-grammar-test" target="_blank">LinkedIn</a>
+<a class="share-btn wa" href="https://wa.me/?text=Free%20English%20Grammar%20Test%20https://tools.anglotec-ai.com/english-grammar-test" target="_blank">WhatsApp</a>
+<button class="share-btn cp" onclick="copyLink()">Copy Link</button>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>Improve Your English Grammar</h2>
+<p>Access more free English language tools and resources at Anglotec AI.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">More English Tools</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p> Free English Grammar Test | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none;">Anglotec AI Tools</a></p>
+</div>
+</footer>
+
+<div class="copy-toast" id="toast">Link copied to clipboard!</div>
+
+<script>
+const questions=[
+{q:"Choose the correct form: She ___ to the gym every morning.",options:["go","goes","going","gone"],correct:1,exp:"'She' is a third-person singular subject, so we use 'goes' with the present simple.",cat:"Verb Tenses"},
+{q:"Choose the correct form: By the time we arrived, the film ___ .",options:["already started","had already started","has already started","was already starting"],correct:1,exp:"The past perfect ('had started') is used for an action completed before another past action.",cat:"Verb Tenses"},
+{q:"Which sentence is correct?",options:["I have lived here since three years.","I have lived here for three years.","I am living here since three years.","I live here for three years."],correct:1,exp:"We use 'for' with durations and 'since' with specific points in time.",cat:"Prepositions"},
+{q:"Choose the correct article: She is ___ honest person.",options:["a","an","the","no article"],correct:1,exp:"'An' is used before words beginning with a vowel sound. 'Honest' starts with a silent 'h', so it has a vowel sound.",cat:"Articles"},
+{q:"Which is the correct passive form? 'Someone stole my bag.'",options:["My bag was stolen.","My bag is stolen.","My bag has stolen.","My bag had stolen."],correct:0,exp:"The passive voice uses 'was/were + past participle' for past events.",cat:"Passive Voice"},
+{q:"Choose the correct relative pronoun: The man ___ lives next door is a doctor.",options:["which","who","whom","whose"],correct:1,exp:"'Who' is used for people as the subject of a relative clause.",cat:"Relative Clauses"},
+{q:"Which sentence uses the conditional correctly?",options:["If I will see him, I tell him.","If I see him, I will tell him.","If I see him, I would tell him.","If I saw him, I will tell him."],correct:1,exp:"First conditional: If + present simple, will + infinitive (for real possibilities).",cat:"Conditionals"},
+{q:"Choose the correct word: This is the ___ book I have ever read.",options:["more interesting","most interesting","interestinger","interestingest"],correct:1,exp:"For superlatives with long adjectives (2+ syllables), we use 'most + adjective'.",cat:"Comparatives & Superlatives"},
+{q:"Which sentence is grammatically correct?",options:["Neither of the students have finished.","Neither of the students has finished.","Neither of the students are finished.","Neither of the students finish."],correct:1,exp:"'Neither' takes a singular verb because it refers to 'not one or the other'.",cat:"Subject-Verb Agreement"},
+{q:"Choose the correct form: I look forward ___ from you soon.",options:["to hear","to hearing","for hearing","of hearing"],correct:1,exp:"The phrase 'look forward to' is followed by a gerund (verb+ing).",cat:"Gerunds & Infinitives"},
+{q:"Which is the correct reported speech? 'I am tired,' she said.",options:["She said she is tired.","She said she was tired.","She said she has been tired.","She said she had been tired."],correct:1,exp:"In reported speech, present tenses typically shift back one tense (am -> was).",cat:"Reported Speech"},
+{q:"Choose the correct preposition: The meeting is ___ Monday morning.",options:["in","on","at","by"],correct:1,exp:"We use 'on' for specific days and 'at' for specific times.",cat:"Prepositions"},
+{q:"Which sentence uses the subjunctive correctly?",options:["I suggest that he goes to the doctor.","I suggest that he go to the doctor.","I suggest that he went to the doctor.","I suggest that he is going to the doctor."],correct:1,exp:"After verbs like 'suggest', 'recommend', 'insist', we use the base form (subjunctive) in formal English.",cat:"Subjunctive"},
+{q:"Choose the correct form: If I ___ you, I would accept the offer.",options:["am","were","was","be"],correct:1,exp:"In second conditional (unreal present/future), we use 'were' for all subjects after 'if'.",cat:"Conditionals"},
+{q:"Which sentence is correct?",options:["The furniture are expensive.","The furniture is expensive.","The furnitures are expensive.","The furnitures is expensive."],correct:1,exp:"'Furniture' is an uncountable noun, so it takes a singular verb.",cat:"Nouns & Countability"},
+{q:"Choose the correct question tag: You haven't seen my keys, ___ ?",options:["have you","haven't you","did you","do you"],correct:0,exp:"For negative statements, the question tag is positive. 'You haven't... have you?'",cat:"Question Tags"},
+{q:"Which is the correct word order?",options:["Never I have seen such a beautiful sunset.","Never have I seen such a beautiful sunset.","I have never seen such a beautiful sunset.","Never seen I have such a beautiful sunset."],correct:1,exp:"When a negative adverb starts the sentence, we invert the subject and auxiliary verb.",cat:"Inversion"},
+{q:"Choose the correct form: The project ___ by the end of next month.",options:["will complete","will be completed","will be completing","is completing"],correct:1,exp:"Future passive: will + be + past participle. The project will be completed (by someone).",cat:"Passive Voice"},
+{q:"Which sentence uses 'used to' correctly?",options:["I am used to get up early.","I used to get up early.","I am used to getting up early.","Both B and C are correct."],correct:3,exp:"'Used to' = past habit. 'Be used to' = accustomed to (followed by gerund). Both B and C are correct.",cat:"Verb Tenses"},
+{q:"Choose the correct form: ___ of the cakes were eaten.",options:["Some","Any","Much","Little"],correct:0,exp:"'Some' is used with plural countable nouns in positive statements. 'Much' and 'little' are for uncountable nouns.",cat:"Quantifiers"},
+{q:"Which sentence is correct?",options:["Despite it was raining, we went out.","Despite of the rain, we went out.","Despite the rain, we went out.","Despite being rain, we went out."],correct:2,exp:"'Despite' is followed by a noun or gerund, not a clause. 'Despite the rain' or 'Despite it raining'.",cat:"Linking Words"},
+{q:"Choose the correct form: He denied ___ the money.",options:["to steal","stealing","that he steal","steal"],correct:1,exp:"After 'deny', we use a gerund (verb+ing), not an infinitive.",cat:"Gerunds & Infinitives"},
+{q:"Which is the correct causative form?",options:["I had my hair cut.","I had cut my hair.","I made my hair cut.","I got cut my hair."],correct:0,exp:"'Have/get something done' is the causative structure: subject + have/get + object + past participle.",cat:"Causative"},
+{q:"Choose the correct article: ___ Pacific Ocean is the largest ocean.",options:["A","An","The","No article"],correct:2,exp:"We use 'the' with unique geographical features like seas, oceans, rivers, and mountain ranges.",cat:"Articles"},
+{q:"Which sentence is in the present perfect continuous?",options:["I have worked here for 5 years.","I have been working here for 5 years.","I am working here for 5 years.","I had been working here for 5 years."],correct:1,exp:"Present perfect continuous: have/has + been + verb+ing. It emphasises the duration of an ongoing action.",cat:"Verb Tenses"},
+{q:"Choose the correct form: Not only ___ speak French, but she also speaks German.",options:["she can","can she","she does","does she"],correct:1,exp:"When 'not only' begins a clause, we invert the subject and auxiliary verb.",cat:"Inversion"},
+{q:"Which is the correct indirect question?",options:["Could you tell me where is the station?","Could you tell me where the station is?","Could you tell me where the station?","Could you tell me the station is where?"],correct:1,exp:"In indirect questions, the word order is subject + verb (not verb + subject).",cat:"Reported Speech"},
+{q:"Choose the correct form: The harder you study, ___ you will do.",options:["the better","better","more better","the more better"],correct:0,exp:"The comparative correlative structure: 'The + comparative, the + comparative'.",cat:"Comparatives & Superlatives"},
+{q:"Which sentence uses the correct modal verb?",options:["You must to finish your homework.","You must finish your homework.","You must finishing your homework.","You must finished your homework."],correct:1,exp:"Modal verbs (must, can, should, etc.) are followed directly by the base form of the verb.",cat:"Modals"},
+{q:"Choose the correct form: She suggested that he ___ a doctor.",options:["see","sees","saw","seen"],correct:0,exp:"After 'suggest' in formal English, we use the subjunctive: the base form of the verb without 'to'.",cat:"Subjunctive"},
+{q:"Which is the correct phrasal verb? 'The meeting has been ___ until next week.'",options:["put off","put on","put up","put away"],correct:0,exp:"'Put off' means to postpone or delay to a later time.",cat:"Phrasal Verbs"},
+{q:"Choose the correct form: I can't help ___ when I see that film.",options:["to cry","cry","crying","cried"],correct:2,exp:"'Can't help' is always followed by a gerund (verb+ing). It means you can't stop yourself.",cat:"Gerunds & Infinitives"},
+{q:"Which sentence uses the past continuous correctly?",options:["I was watching TV when she called.","I watched TV when she called.","I had been watching TV when she called.","I have watched TV when she called."],correct:0,exp:"The past continuous describes an action in progress when another action interrupted it.",cat:"Verb Tenses"},
+{q:"Choose the correct relative pronoun: The book ___ I borrowed is excellent.",options:["who","which","whom","whose"],correct:1,exp:"'Which' is used for things (not people) in defining relative clauses where it can be the object.",cat:"Relative Clauses"},
+{q:"Which sentence is grammatically correct?",options:["Each of the boys have their own room.","Each of the boys has his own room.","Each of the boys have his own room.","Each of the boys has their own room."],correct:1,exp:"'Each' takes a singular verb and singular pronoun. 'Each... has his own room.'",cat:"Subject-Verb Agreement"},
+{q:"Choose the correct form: She wishes she ___ taller.",options:["is","was","were","be"],correct:2,exp:"After 'wish' for unreal present situations, we use the past subjunctive: 'were' for all subjects.",cat:"Subjunctive"},
+{q:"Which sentence uses ellipsis correctly?",options:["I don't like coffee, but my sister.","I don't like coffee, but my sister does.","I don't like coffee, but my sister is.","I don't like coffee, but my sister likes."],correct:1,exp:"Ellipsis avoids repetition by omitting understood words. 'My sister does' = 'my sister likes coffee'.",cat:"Ellipsis"},
+{q:"Choose the correct preposition: She is married ___ a doctor.",options:["with","to","by","at"],correct:1,exp:"'Married to' is the correct collocation. We say 'married to someone', not 'married with'.",cat:"Prepositions"},
+{q:"Which is the correct form? 'If he ___ harder, he would have passed.'",options:["studied","had studied","has studied","would study"],correct:1,exp:"Third conditional: If + past perfect, would have + past participle. Used for unreal past situations.",cat:"Conditionals"},
+{q:"Choose the correct form: There ___ a lot of traffic today.",options:["is","are","were","be"],correct:0,exp:"'Traffic' is an uncountable noun, so we use a singular verb: 'There is traffic'.",cat:"There is/are"},
+{q:"Which sentence uses the present simple correctly?",options:["The sun is rising in the east.","The sun rises in the east.","The sun rose in the east.","The sun has risen in the east."],correct:1,exp:"We use the present simple for universal truths, general facts, and habitual actions.",cat:"Verb Tenses"},
+{q:"Choose the correct form: I'd rather you ___ so much noise.",options:["don't make","didn't make","won't make","haven't made"],correct:1,exp:"After 'would rather' referring to another person, we use the past simple.",cat:"Preferences"},
+{q:"Which sentence is correct?",options:["Between you and I, this is a mistake.","Between you and me, this is a mistake.","Between you and myself, this is a mistake.","Between we and you, this is a mistake."],correct:1,exp:"After prepositions, we use object pronouns: 'between you and me' (not 'you and I').",cat:"Pronouns"},
+{q:"Choose the correct form: No sooner ___ the door than the phone rang.",options:["had she closed","she had closed","she closed","has she closed"],correct:0,exp:"'No sooner' requires inversion and the past perfect. Structure: No sooner + had + subject + past participle + than...",cat:"Inversion"},
+{q:"Which phrasal verb means 'to tolerate'?",options:["put up with","put off","put on","put out"],correct:0,exp:"'Put up with' means to tolerate or endure something difficult or unpleasant.",cat:"Phrasal Verbs"},
+{q:"Choose the correct form: It's time we ___ home.",options:["go","went","have gone","are going"],correct:1,exp:"'It's time' + subject + past simple expresses that something should happen now.",cat:"Unreal Past"},
+{q:"Which sentence uses the future continuous correctly?",options:["I will work at 8pm tomorrow.","I will be working at 8pm tomorrow.","I am going to work at 8pm tomorrow.","I work at 8pm tomorrow."],correct:1,exp:"Future continuous: will + be + verb+ing. Describes an action in progress at a specific future time.",cat:"Verb Tenses"},
+{q:"Choose the correct form: She speaks English ___ .",options:["fluent","fluently","fluency","more fluent"],correct:1,exp:"We need an adverb to describe how she speaks. Adverbs often end in -ly.",cat:"Adverbs"},
+{q:"Which sentence is correct?",options:["The news are good.","The news is good.","The news were good.","The news be good."],correct:1,exp:"'News' is an uncountable noun that takes a singular verb, despite ending in -s.",cat:"Nouns & Countability"},
+{q:"Choose the correct form: I regret ___ you that you failed the exam.",options:["to tell","telling","tell","told"],correct:0,exp:"'Regret to' is used for giving bad news. 'Regret + gerund' is used for being sorry about past actions.",cat:"Gerunds & Infinitives"},
+{q:"Which sentence uses parallel structure correctly?",options:["She likes hiking, swimming, and to ride bikes.","She likes hiking, swimming, and riding bikes.","She likes to hike, swim, and riding bikes.","She likes hiking, to swim, and riding bikes."],correct:1,exp:"Parallel structure requires the same grammatical form for items in a series. All gerunds: hiking, swimming, riding.",cat:"Parallel Structure"},
+{q:"Choose the correct form: Scarcely ___ the house when it started raining.",options:["had she left","she had left","she left","has she left"],correct:0,exp:"'Scarcely' at the beginning requires inversion and the past perfect. 'Scarcely had + subject + past participle + when...'",cat:"Inversion"},
+{q:"Which is the correct collocation?",options:["do a decision","make a decision","take a decision","have a decision"],correct:1,exp:"'Make a decision' is the standard collocation in English.",cat:"Collocations"},
+{q:"Choose the correct form: By next year, I ___ my degree.",options:["will finish","will have finished","am finishing","have finished"],correct:1,exp:"Future perfect: will + have + past participle. Used for actions completed before a specific future time.",cat:"Verb Tenses"},
+{q:"Which sentence is grammatically correct?",options:["The team are playing well today.","The team is playing well today.","Both A and B are correct.","Neither is correct."],correct:2,exp:"In British English, collective nouns like 'team' can take singular or plural verbs depending on whether you view the group as a unit or individuals.",cat:"Subject-Verb Agreement"},
+{q:"Choose the correct form: I was made ___ all the work again.",options:["do","to do","doing","done"],correct:1,exp:"In the passive causative, we include 'to': 'I was made to do' (active: 'They made me do').",cat:"Causative"}
+];
+
+let currentQ=0;let answers=new Array(questions.length).fill(null);let submitted=false;
+let timeRemaining=40*60;let timerInterval;
+
+function startTimer(){
+timerInterval=setInterval(()=>{
+timeRemaining--;
+const m=Math.floor(timeRemaining/60);const s=timeRemaining%60;
+document.getElementById('timer').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+if(timeRemaining<=300)document.getElementById('timer').classList.add('warning');
+if(timeRemaining<=60)document.getElementById('timer').classList.add('danger');
+if(timeRemaining<=0){clearInterval(timerInterval);submitQuiz();}
+},1000);
+}
+
+function showQuestion(idx){
+currentQ=idx;
+const q=questions[idx];
+document.getElementById('qNum').textContent=`Question ${idx+1} - ${q.cat}`;
+document.getElementById('qText').textContent=q.q;
+document.getElementById('progressText').textContent=`Question ${idx+1} of ${questions.length}`;
+document.getElementById('progressFill').style.width=`${((idx+1)/questions.length)*100}%`;
+
+const opts=document.getElementById('optionsArea');
+opts.innerHTML='';
+q.options.forEach((opt,i)=>{
+const div=document.createElement('div');
+div.className='option'+(answers[idx]===i?' selected':'')+(submitted?(i===q.correct?' correct':answers[idx]===i?' incorrect'):'');
+div.textContent=opt;
+div.onclick=()=>{if(!submitted){answers[idx]=i;showQuestion(idx);}};
+opts.appendChild(div);
+});
+
+const exp=document.getElementById('explanationArea');
+if(submitted){exp.classList.add('show');document.getElementById('explanationText').textContent=q.exp;}
+else{exp.classList.remove('show');}
+
+document.getElementById('prevBtn').disabled=idx===0;
+if(idx===questions.length-1&&!submitted){
+document.getElementById('nextBtn').style.display='none';
+document.getElementById('submitBtn').style.display='inline-block';
+}else{
+document.getElementById('nextBtn').style.display='inline-block';
+document.getElementById('submitBtn').style.display='none';
+}
+}
+
+function nextQuestion(){if(currentQ<questions.length-1)showQuestion(currentQ+1);}
+function prevQuestion(){if(currentQ>0)showQuestion(currentQ-1);}
+
+function submitQuiz(){
+clearInterval(timerInterval);
+submitted=true;
+let correct=0;
+answers.forEach((a,i)=>{if(a===questions[i].correct)correct++;});
+const percentage=Math.round((correct/questions.length)*100);
+
+const timeUsed=40*60-timeRemaining;
+const um=Math.floor(timeUsed/60);const us=timeUsed%60;
+
+let cefr,cefrClass,message;
+if(percentage>=90){cefr='C2 - Proficient';cefrClass='cefr-c2';message='Outstanding! Your grammar is at near-native proficiency level.';}
+else if(percentage>=80){cefr='C1 - Advanced';cefrClass='cefr-c1';message='Excellent! You have advanced grammar skills.';}
+else if(percentage>=70){cefr='B2 - Upper Intermediate';cefrClass='cefr-b2';message='Good job! You have solid upper-intermediate grammar skills.';}
+else if(percentage>=60){cefr='B1 - Intermediate';cefrClass='cefr-b1';message='Not bad! Your grammar is at intermediate level. Keep practicing!';}
+else if(percentage>=50){cefr='A2 - Pre-Intermediate';cefrClass='cefr-a2';message='Keep practicing! Focus on your weak areas to improve.';}
+else{cefr='A1 - Beginner';cefrClass='cefr-a1';message='Keep studying! Regular practice will help you improve significantly.';}
+
+document.getElementById('quizCard').style.display='none';
+document.getElementById('resultCard').style.display='block';
+document.getElementById('finalScore').textContent=percentage+'%';
+document.getElementById('cefrBadge').textContent=cefr;
+document.getElementById('cefrBadge').className='cefr-badge '+cefrClass;
+document.getElementById('resultMessage').textContent=message;
+document.getElementById('correctCount').textContent=correct;
+document.getElementById('wrongCount').textContent=questions.length-correct;
+document.getElementById('timeTaken').textContent=`${um}:${us.toString().padStart(2,'0')}`;
+document.getElementById('timer').style.display='none';
+
+const cats={};
+questions.forEach((q,i)=>{
+if(!cats[q.cat])cats[q.cat]={total:0,correct:0};
+cats[q.cat].total++;
+if(answers[i]===q.correct)cats[q.cat].correct++;
+});
+
+const skillDiv=document.getElementById('skillScores');
+skillDiv.innerHTML='';
+Object.entries(cats).forEach(([name,scores])=>{
+const pct=Math.round((scores.correct/scores.total)*100);
+const div=document.createElement('div');div.className='skill-item';
+div.innerHTML=`<h4>${name}</h4><span>${scores.correct}/${scores.total} (${pct}%)</span>`;
+skillDiv.appendChild(div);
+});
+}
+
+function restartQuiz(){
+currentQ=0;answers=new Array(questions.length).fill(null);submitted=false;
+timeRemaining=40*60;document.getElementById('timer').style.display='block';
+document.getElementById('timer').textContent='40:00';document.getElementById('timer').className='timer';
+document.getElementById('quizCard').style.display='block';
+document.getElementById('resultCard').style.display='none';
+showQuestion(0);startTimer();
+}
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+document.getElementById('toast').classList.add('show');
+setTimeout(()=>document.getElementById('toast').classList.remove('show'),2000);
+}
+
+showQuestion(0);startTimer();
+</script>
+</body>
+</html>

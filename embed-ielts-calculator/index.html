@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Band Calculator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root{--green:#2C4A3E;--orange:#D4653B;--cream:#F7F5F0;--lightgreen:#E8F0EC;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;padding:15px}
+.widget-container{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.12);width:100%;max-width:340px;overflow:hidden;border:2px solid var(--green)}
+.header{background:linear-gradient(135deg,var(--green),#1a3028);color:#fff;padding:18px;text-align:center}
+.header h1{font-size:1.1rem;font-weight:600;letter-spacing:0.5px}
+.header p{font-size:0.7rem;opacity:0.8;margin-top:4px}
+.body{padding:16px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.row label{font-size:0.82rem;font-weight:600;color:var(--green)}
+.row select{background:var(--lightgreen);border:2px solid transparent;border-radius:8px;padding:6px 10px;font-size:0.85rem;font-family:'Inter',sans-serif;color:var(--green);font-weight:500;cursor:pointer;width:120px;outline:none;transition:border-color 0.2s}
+.row select:focus{border-color:var(--orange)}
+.result-box{background:linear-gradient(135deg,var(--green),#3d6354);color:#fff;border-radius:12px;padding:16px;text-align:center;margin-top:12px}
+.result-box .overall{font-size:2.4rem;font-weight:700;line-height:1}
+.result-box .label{font-size:0.75rem;opacity:0.9;margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+.result-box .desc{font-size:0.8rem;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.2)}
+.cEF{background:#e74c3c}
+.cD{background:#e67e22}
+.cC{background:#f39c12}
+.cB{background:#27ae60}
+.cA{background:#2ecc71}
+.btn{background:var(--orange);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;cursor:pointer;width:100%;margin-top:10px;transition:opacity 0.2s}
+.btn:hover{opacity:0.9}
+.footer{background:var(--lightgreen);padding:10px;text-align:center;font-size:0.7rem;color:var(--green)}
+.footer a{color:var(--orange);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="widget-container">
+  <div class="header">
+    <h1>IELTS Band Calculator</h1>
+    <p>Calculate your overall band score</p>
+  </div>
+  <div class="body">
+    <div class="row"><label>Listening</label><select id="listen">
+      <option value="9">9.0</option><option value="8.5">8.5</option><option value="8">8.0</option>
+      <option value="7.5">7.5</option><option value="7">7.0</option><option value="6.5">6.5</option>
+      <option value="6">6.0</option><option value="5.5">5.5</option><option value="5">5.0</option>
+      <option value="4.5">4.5</option><option value="4">4.0</option>
+    </select></div>
+    <div class="row"><label>Reading</label><select id="read">
+      <option value="9">9.0</option><option value="8.5">8.5</option><option value="8">8.0</option>
+      <option value="7.5">7.5</option><option value="7">7.0</option><option value="6.5">6.5</option>
+      <option value="6">6.0</option><option value="5.5">5.5</option><option value="5">5.0</option>
+      <option value="4.5">4.5</option><option value="4">4.0</option>
+    </select></div>
+    <div class="row"><label>Writing</label><select id="write">
+      <option value="9">9.0</option><option value="8.5">8.5</option><option value="8">8.0</option>
+      <option value="7.5">7.5</option><option value="7">7.0</option><option value="6.5">6.5</option>
+      <option value="6" selected>6.0</option><option value="5.5">5.5</option><option value="5">5.0</option>
+      <option value="4.5">4.5</option><option value="4">4.0</option>
+    </select></div>
+    <div class="row"><label>Speaking</label><select id="speak">
+      <option value="9">9.0</option><option value="8.5">8.5</option><option value="8">8.0</option>
+      <option value="7.5">7.5</option><option value="7">7.0</option><option value="6.5">6.5</option>
+      <option value="6" selected>6.0</option><option value="5.5">5.5</option><option value="5">5.0</option>
+      <option value="4.5">4.5</option><option value="4">4.0</option>
+    </select></div>
+    <button class="btn" onclick="calc()">Calculate Overall Band</button>
+    <div class="result-box" id="result">
+      <div class="overall" id="score">6.5</div>
+      <div class="label">Overall Band</div>
+      <div class="desc" id="desc">Competent User</div>
+    </div>
+  </div>
+  <div class="footer">
+    Powered by <a href="https://tools.anglotec-ai.com" target="_blank">Anglotec AI Academy</a>
+  </div>
+</div>
+<script>
+function calc(){
+  var l=parseFloat(document.getElementById('listen').value);
+  var r=parseFloat(document.getElementById('read').value);
+  var w=parseFloat(document.getElementById('write').value);
+  var s=parseFloat(document.getElementById('speak').value);
+  var avg=(l+r+w+s)/4;
+  var band=Math.floor(avg*2)/2;
+  if(band%1!==0&&band%1!==0.5){band=Math.round(avg*2)/2}
+  var descs={9:"Expert User",8.5:"Expert User",8:"Very Good User",7.5:"Good User",7:"Good User",6.5:"Competent User",6:"Competent User",5.5:"Modest User",5:"Modest User",4.5:"Limited User",4:"Limited User"};
+  document.getElementById('score').textContent=band;
+  document.getElementById('desc').textContent=descs[band]||"Below Competent";
+  var rb=document.getElementById('result');
+  rb.className='result-box';
+  if(band>=8)rb.classList.add('cA');
+  else if(band>=7)rb.classList.add('cB');
+  else if(band>=6)rb.classList.add('cC');
+  else if(band>=5)rb.classList.add('cD');
+  else rb.classList.add('cEF');
+}
+document.querySelectorAll('select').forEach(function(s){s.addEventListener('change',calc)});
+calc();
+</script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Exam Countdown Timer | Study Milestones | Free Tool</title>
+<meta name="description" content="Free IELTS exam countdown timer. Set your exam date and track your study progress with milestones. Perfect for IELTS, OET, NMC CBT, and any exam preparation.">
+<meta name="keywords" content="ielts countdown, exam countdown timer, ielts exam date, study countdown, exam preparation timer">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F4F;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F5F0;--white:#FFFFFF;--gray:#6B7280;--light-gray:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:#1F2937;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:900px;margin:0 auto;padding:0 20px;}
+header{background:var(--green);color:var(--white);padding:24px 0;text-align:center;}
+header h1{font-size:2rem;font-weight:700;margin-bottom:6px;}
+header p{font-size:1rem;opacity:0.9;}
+.main{padding:30px 0 60px;}
+.card{background:var(--white);border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);margin-bottom:24px;}
+.card h2{font-size:1.3rem;color:var(--green);margin-bottom:16px;}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0;}
+.count-box{background:var(--green);color:var(--white);padding:24px 16px;border-radius:12px;text-align:center;}
+.count-box h3{font-size:2.8rem;font-weight:700;font-family:'Inter',sans-serif;}
+.count-box p{font-size:0.85rem;opacity:0.9;text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.count-box.days{background:var(--orange);}
+.count-box.hours{background:var(--green);}
+.count-box.minutes{background:#3D5F4F;}
+.count-box.seconds{background:var(--orange-light);}
+.exam-input{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:20px;}
+.exam-input .input-group{flex:1;min-width:200px;}
+.exam-input label{display:block;font-weight:600;margin-bottom:6px;color:var(--green);font-size:0.9rem;}
+.exam-input input,.exam-input select{width:100%;padding:12px;border:2px solid var(--light-gray);border-radius:10px;font-size:1rem;font-family:'Inter',sans-serif;}
+.exam-input input:focus,.exam-input select:focus{outline:none;border-color:var(--green);}
+.btn{background:var(--orange);color:var(--white);border:none;padding:12px 24px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.btn:hover{background:var(--orange-light);transform:translateY(-1px);}
+.milestone-list{margin-top:20px;}
+.milestone-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#F9FAFB;border-radius:10px;margin-bottom:10px;transition:all 0.2s;}
+.milestone-item:hover{background:#F0FDF4;}
+.milestone-item.completed{opacity:0.6;text-decoration:line-through;background:#E8F5E9;}
+.milestone-checkbox{width:22px;height:22px;border:2px solid var(--green);border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--white);transition:all 0.2s;flex-shrink:0;}
+.milestone-checkbox.checked{background:var(--green);}
+.milestone-text{flex:1;}
+.milestone-text h4{font-size:0.95rem;color:var(--green);}
+.milestone-text p{font-size:0.8rem;color:var(--gray);}
+.milestone-days{font-size:0.85rem;color:var(--orange);font-weight:600;white-space:nowrap;}
+.progress-ring{position:relative;width:180px;height:180px;margin:0 auto 20px;}
+.progress-ring svg{transform:rotate(-90deg);}
+.progress-ring-bg{fill:none;stroke:var(--light-gray);stroke-width:10;}
+.progress-ring-fill{fill:none;stroke:var(--orange);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 0.5s;}
+.progress-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.progress-text h3{font-size:2rem;color:var(--green);font-weight:700;}
+.progress-text p{font-size:0.8rem;color:var(--gray);}
+.preset-btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;}
+.preset-btn{background:var(--cream);border:2px solid var(--light-gray);padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:500;transition:all 0.2s;font-size:0.85rem;}
+.preset-btn:hover,.preset-btn.active{border-color:var(--green);background:var(--green);color:var(--white);}
+.share-section{text-align:center;padding:30px 0;}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{padding:10px 20px;border-radius:8px;color:var(--white);text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-btn.tw{background:#1DA1F2;}.share-btn.fb{background:#4267B2;}.share-btn.li{background:#0077B5;}.share-btn.wa{background:#25D366;}.share-btn.cp{background:var(--gray);}
+.cta-section{background:var(--green);color:var(--white);padding:40px 20px;text-align:center;border-radius:16px;margin-top:30px;}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px;}
+.cta-section p{margin-bottom:20px;opacity:0.95;}
+.cta-btn{background:var(--orange);color:var(--white);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.2s;}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);}
+.keywords{background:var(--white);padding:20px;border-radius:12px;margin-top:20px;font-size:0.85rem;color:var(--gray);}
+.keywords strong{color:var(--green);}
+footer{text-align:center;padding:30px 0;color:var(--gray);font-size:0.85rem;}
+@media(max-width:600px){.countdown-grid{grid-template-columns:repeat(2,1fr);}header h1{font-size:1.5rem;}}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:500;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:100;}
+.copy-toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>IELTS Exam Countdown Timer</h1>
+<p>Set your exam date and track your study milestones</p>
+</div>
+</header>
+
+<div class="container main">
+<div class="card">
+<h2>Set Your Exam Date</h2>
+<div class="preset-btns">
+<button class="preset-btn" onclick="setPreset('ielts')">IELTS</button>
+<button class="preset-btn" onclick="setPreset('oet')">OET</button>
+<button class="preset-btn" onclick="setPreset('nmc')">NMC CBT</button>
+<button class="preset-btn" onclick="setPreset('osce')">OSCE</button>
+<button class="preset-btn" onclick="setPreset('custom')">Custom</button>
+</div>
+<div class="exam-input">
+<div class="input-group">
+<label>Exam Name</label>
+<input type="text" id="examName" placeholder="e.g. IELTS Academic" value="IELTS Academic">
+</div>
+<div class="input-group">
+<label>Exam Date & Time</label>
+<input type="datetime-local" id="examDate">
+</div>
+<button class="btn" onclick="startCountdown()">Start Countdown</button>
+</div>
+</div>
+
+<div class="card" id="countdownCard" style="display:none;">
+<h2 style="text-align:center;" id="countdownTitle">IELTS Academic</h2>
+<div class="progress-ring">
+<svg width="180" height="180" viewBox="0 0 180 180">
+<circle class="progress-ring-bg" cx="90" cy="90" r="80"/>
+<circle class="progress-ring-fill" id="progressCircle" cx="90" cy="90" r="80" stroke-dasharray="502.65" stroke-dashoffset="0"/>
+</svg>
+<div class="progress-text">
+<h3 id="daysRemaining">0</h3>
+<p>days left</p>
+</div>
+</div>
+
+<div class="countdown-grid">
+<div class="count-box days"><h3 id="cdDays">00</h3><p>Days</p></div>
+<div class="count-box hours"><h3 id="cdHours">00</h3><p>Hours</p></div>
+<div class="count-box minutes"><h3 id="cdMinutes">00</h3><p>Minutes</p></div>
+<div class="count-box seconds"><h3 id="cdSeconds">00</h3><p>Seconds</p></div>
+</div>
+
+<p style="text-align:center;color:var(--gray);font-size:0.9rem;">Target: <strong id="targetDateDisplay" style="color:var(--green);"></strong></p>
+</div>
+
+<div class="card" id="milestonesCard" style="display:none;">
+<h2>Study Milestones</h2>
+<div class="milestone-list" id="milestoneList"></div>
+<div style="display:flex;gap:10px;margin-top:16px;">
+<input type="text" id="newMilestone" placeholder="Add a custom milestone..." style="flex:1;padding:10px;border:2px solid var(--light-gray);border-radius:8px;font-family:'Inter',sans-serif;">
+<input type="number" id="newMilestoneDays" placeholder="Days before" style="width:120px;padding:10px;border:2px solid var(--light-gray);border-radius:8px;font-family:'Inter',sans-serif;">
+<button class="btn" onclick="addMilestone()" style="padding:10px 16px;font-size:0.9rem;">Add</button>
+</div>
+</div>
+
+<div class="keywords">
+<strong>Popular searches:</strong> ielts countdown, exam countdown timer, ielts exam date countdown, study countdown, test countdown timer, ielts preparation countdown
+</div>
+
+<div class="share-section">
+<h3 style="color:var(--green);margin-bottom:16px;">Share This Tool</h3>
+<div class="share-btns">
+<a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://tools.anglotec-ai.com/countdown-timer&text=IELTS%20Exam%20Countdown%20Timer" target="_blank">Twitter</a>
+<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/countdown-timer" target="_blank">Facebook</a>
+<a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/countdown-timer" target="_blank">LinkedIn</a>
+<a class="share-btn wa" href="https://wa.me/?text=IELTS%20Countdown%20Timer%20https://tools.anglotec-ai.com/countdown-timer" target="_blank">WhatsApp</a>
+<button class="share-btn cp" onclick="copyLink()">Copy Link</button>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>Need Help Preparing for Your Exam?</h2>
+<p>Access free practice tests, study tools, and resources at Anglotec AI.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Explore Study Tools</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p> Free Exam Countdown Timer | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none;">Anglotec AI Tools</a></p>
+</div>
+</footer>
+
+<div class="copy-toast" id="toast">Link copied to clipboard!</div>
+
+<script>
+let countdownInterval;
+let examDate;
+let milestones=[];
+const circumference=2*Math.PI*80;
+
+function setPreset(type){
+const now=new Date();
+let date,name;
+if(type==='ielts'){date=new Date(now.getTime()+30*24*60*60*1000);name='IELTS Academic';}
+else if(type==='oet'){date=new Date(now.getTime()+45*24*60*60*1000);name='OET for Nursing';}
+else if(type==='nmc'){date=new Date(now.getTime()+60*24*60*60*1000);name='NMC CBT Exam';}
+else if(type==='osce'){date=new Date(now.getTime()+90*24*60*60*1000);name='OSCE Exam';}
+else{date=new Date(now.getTime()+30*24*60*60*1000);name='My Exam';}
+
+const iso=date.toISOString().slice(0,16);
+document.getElementById('examDate').value=iso;
+document.getElementById('examName').value=name;
+loadMilestones(type);
+startCountdown();
+}
+
+function loadMilestones(type){
+const defaults={
+ielts:[
+{t:'Complete IELTS practice test (diagnostic)',d:30},{t:'Finish reading strategies module',d:25},{t:'Complete writing task 1 & 2 practice',d:20},
+{t:'Take full mock exam 1',d:18},{t:'Focus on speaking practice (record yourself)',d:15},{t:'Review listening techniques',d:12},{t:'Take full mock exam 2',d:10},{t:'Final vocabulary review',d:7},{t:'Take full mock exam 3',d:5},{t:'Light review and rest day before exam',d:1}
+],
+oet:[
+{t:'Complete OET reading practice',d:45},{t:'Finish listening sub-test prep',d:40},{t:'Practice writing referral letters',d:35},
+{t:'Mock speaking role-play practice',d:30},{t:'Take full mock OET exam',d:25},{t:'Review medical vocabulary',d:20},{t:'Focus on weak areas',d:15},{t:'Take timed practice tests',d:10},{t:'Final review of all sections',d:5},{t:'Rest and prepare mentally',d:1}
+],
+nmc:[
+{t:'Review NMC Code and standards',d:60},{t:'Complete CBT practice questions',d:50},{t:'Study UK nursing procedures',d:45},
+{t:'Review medication calculations',d:40},{t:'Practice professional conduct scenarios',d:35},{t:'Take full CBT mock test 1',d:30},{t:'Review all incorrect answers',d:25},{t:'Take full CBT mock test 2',d:20},{t:'Final revision of weak topics',d:10},{t:'Rest day before exam',d:1}
+],
+osce:[
+{t:'Review all OSCE stations',d:90},{t:'Practice APIE (Assessment, Planning, Implementation, Evaluation)',d:80},{t:'Practice skills stations',d:70},{t:'Mock OSCE run-through 1',d:60},{t:'Review feedback and improve',d:50},{t:'Practice with timer',d:40},{t:'Mock OSCE run-through 2',d:30},{t:'Focus on weakest stations',d:20},{t:'Final practice sessions',d:10},{t:'Rest and mental preparation',d:1}
+],
+custom:[
+{t:'Set study schedule',d:30},{t:'Complete first review of materials',d:25},{t:'Take practice test 1',d:20},{t:'Focus on weak areas',d:15},{t:'Take practice test 2',d:10},{t:'Final review',d:5},{t:'Rest before exam',d:1}
+]
+};
+milestones=(defaults[type]||defaults.custom).map(m=>({...m,completed:false}));
+}
+
+function startCountdown(){
+const dateInput=document.getElementById('examDate').value;
+if(!dateInput){alert('Please select an exam date and time.');return;}
+
+examDate=new Date(dateInput);
+const now=new Date();
+if(examDate<=now){alert('Please select a future date.');return;}
+
+const name=document.getElementById('examName').value||'My Exam';
+document.getElementById('countdownTitle').textContent=name;
+document.getElementById('targetDateDisplay').textContent=examDate.toLocaleString('en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'});
+
+document.getElementById('countdownCard').style.display='block';
+document.getElementById('milestonesCard').style.display='block';
+renderMilestones();
+
+if(countdownInterval)clearInterval(countdownInterval);
+updateCountdown();
+countdownInterval=setInterval(updateCountdown,1000);
+}
+
+function updateCountdown(){
+const now=new Date();
+const diff=examDate-now;
+
+if(diff<=0){
+clearInterval(countdownInterval);
+document.getElementById('cdDays').textContent='00';
+document.getElementById('cdHours').textContent='00';
+document.getElementById('cdMinutes').textContent='00';
+document.getElementById('cdSeconds').textContent='00';
+document.getElementById('daysRemaining').textContent='0';
+document.getElementById('progressCircle').style.strokeDashoffset=circumference;
+return;
+}
+
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+const seconds=Math.floor((diff%(1000*60))/1000);
+
+document.getElementById('cdDays').textContent=days.toString().padStart(2,'0');
+document.getElementById('cdHours').textContent=hours.toString().padStart(2,'0');
+document.getElementById('cdMinutes').textContent=minutes.toString().padStart(2,'0');
+document.getElementById('cdSeconds').textContent=seconds.toString().padStart(2,'0');
+document.getElementById('daysRemaining').textContent=days;
+
+const totalDays=Math.ceil((examDate-new Date(document.getElementById('examDate').value?new Date().getTime():examDate.getTime()-30*24*60*60*1000))/(1000*60*60*24));
+const progress=Math.max(0,1-(days/60));
+document.getElementById('progressCircle').style.strokeDashoffset=circumference*(1-progress);
+
+updateMilestoneStatus(days);
+}
+
+function renderMilestones(){
+const list=document.getElementById('milestoneList');
+list.innerHTML='';
+milestones.forEach((m,i)=>{
+const div=document.createElement('div');div.className='milestone-item'+(m.completed?' completed':'');
+div.innerHTML=`<div class="milestone-checkbox ${m.completed?'checked':''}" onclick="toggleMilestone(${i})">${m.checked?'&#10003;':''}</div>
+<div class="milestone-text"><h4>${m.t}</h4><p>${m.d} day${m.d!==1?'s':''} before exam</p></div>
+<div class="milestone-days">${m.d} days</div>`;
+list.appendChild(div);
+});
+}
+
+function toggleMilestone(i){
+milestones[i].completed=!milestones[i].completed;
+renderMilestones();
+}
+
+function updateMilestoneStatus(daysLeft){
+milestones.forEach((m,i)=>{
+if(daysLeft<=m.d&&!m.completed){
+// Auto-mark as due
+}
+});
+}
+
+function addMilestone(){
+const text=document.getElementById('newMilestone').value;
+const days=parseInt(document.getElementById('newMilestoneDays').value);
+if(!text||!days){alert('Please enter both milestone text and days.');return;}
+milestones.push({t:text,d:days,completed:false});
+milestones.sort((a,b)=>b.d-a.d);
+document.getElementById('newMilestone').value='';
+document.getElementById('newMilestoneDays').value='';
+renderMilestones();
+}
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+document.getElementById('toast').classList.add('show');
+setTimeout(()=>document.getElementById('toast').classList.remove('show'),2000);
+}
+
+const now=new Date();
+const defaultDate=new Date(now.getTime()+30*24*60*60*1000);
+document.getElementById('examDate').value=defaultDate.toISOString().slice(0,16);
+loadMilestones('ielts');
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Counter Widget</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root{--green:#2C4A3E;--orange:#D4653B;--cream:#F7F5F0;--lightgreen:#E8F0EC;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;padding:15px}
+.widget-container{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.12);width:100%;max-width:340px;overflow:hidden;border:2px solid var(--green)}
+.header{background:linear-gradient(135deg,var(--green),#1a3028);color:#fff;padding:16px;text-align:center}
+.header h1{font-size:1rem;font-weight:600}
+.header p{font-size:0.7rem;opacity:0.8;margin-top:3px}
+.body{padding:14px}
+.textarea{width:100%;min-height:140px;border:2px solid var(--lightgreen);border-radius:10px;padding:10px;font-family:'Inter',sans-serif;font-size:0.82rem;resize:vertical;outline:none;transition:border-color 0.2s}
+.textarea:focus{border-color:var(--orange)}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.stat-box{background:var(--lightgreen);border-radius:8px;padding:10px;text-align:center}
+.stat-box .num{font-size:1.4rem;font-weight:700;color:var(--green);line-height:1}
+.stat-box .label{font-size:0.6rem;color:#666;text-transform:uppercase;letter-spacing:0.5px;margin-top:3px}
+.ielts-info{background:var(--green);color:#fff;border-radius:10px;padding:12px;margin-top:12px;text-align:center}
+.ielts-info h4{font-size:0.8rem;margin-bottom:6px}
+.ielts-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:0.72rem}
+.ielts-item{background:rgba(255,255,255,0.15);border-radius:6px;padding:5px}
+.ielts-item .task{font-weight:600}
+.ielts-item .target{opacity:0.85}
+.warning{color:var(--orange);font-weight:600;font-size:0.75rem;margin-top:6px;text-align:center;min-height:18px}
+.btn{background:var(--orange);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.78rem;cursor:pointer;margin-top:8px;transition:opacity 0.2s;width:100%}
+.btn:hover{opacity:0.9}
+.footer{background:var(--lightgreen);padding:10px;text-align:center;font-size:0.7rem;color:var(--green)}
+.footer a{color:var(--orange);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="widget-container">
+  <div class="header">
+    <h1>Word Counter</h1>
+    <p>For essays, letters & exam practice</p>
+  </div>
+  <div class="body">
+    <textarea class="textarea" id="textInput" placeholder="Type or paste your text here...
+
+Perfect for:
+- IELTS Writing Task 1 & 2
+- OET referral letters
+- Essays and assignments
+- Any word-limited writing"></textarea>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="num" id="words">0</div><div class="label">Words</div></div>
+      <div class="stat-box"><div class="num" id="chars">0</div><div class="label">Characters</div></div>
+      <div class="stat-box"><div class="num" id="charsNoSpace">0</div><div class="label">No Spaces</div></div>
+      <div class="stat-box"><div class="num" id="sentences">0</div><div class="label">Sentences</div></div>
+      <div class="stat-box"><div class="num" id="paragraphs">0</div><div class="label">Paragraphs</div></div>
+      <div class="stat-box"><div class="num" id="readTime">0s</div><div class="label">Read Time</div></div>
+    </div>
+    <div class="ielts-info">
+      <h4>IELTS / OET Word Targets</h4>
+      <div class="ielts-grid">
+        <div class="ielts-item"><div class="task">IELTS Task 1</div><div class="target">Min: 150 words</div></div>
+        <div class="ielts-item"><div class="task">IELTS Task 2</div><div class="target">Min: 250 words</div></div>
+        <div class="ielts-item"><div class="task">OET Writing</div><div class="target">180-200 words</div></div>
+        <div class="ielts-item"><div class="task">OET Speaking</div><div class="target">~350 words total</div></div>
+      </div>
+    </div>
+    <div class="warning" id="warning"></div>
+    <button class="btn" onclick="clearText()">Clear Text</button>
+  </div>
+  <div class="footer">
+    Powered by <a href="https://tools.anglotec-ai.com" target="_blank">Anglotec AI Academy</a>
+  </div>
+</div>
+<script>
+function updateStats(){
+  var t=document.getElementById('textInput').value;
+  var words=t.trim()===''?0:t.trim().split(/\s+/).length;
+  var chars=t.length;
+  var charsNoSpace=t.replace(/\s/g,'').length;
+  var sentences=t.trim()===''?0:t.split(/[.!?]+/).filter(function(s){return s.trim().length>0;}).length;
+  var paragraphs=t.trim()===''?0:t.split(/\n+/).filter(function(p){return p.trim().length>0;}).length;
+  var readTime=Math.ceil(words/200*60);
+  document.getElementById('words').textContent=words;
+  document.getElementById('chars').textContent=chars;
+  document.getElementById('charsNoSpace').textContent=charsNoSpace;
+  document.getElementById('sentences').textContent=sentences;
+  document.getElementById('paragraphs').textContent=paragraphs;
+  document.getElementById('readTime').textContent=readTime<60?readTime+'s':Math.ceil(readTime/60)+'m';
+  var w=document.getElementById('warning');
+  if(words>0&&words<150)w.textContent='Below IELTS Task 1 minimum (150 words)';
+  else if(words>0&&words>=150&&words<250)w.textContent='Above Task 1 min, below Task 2 min (250)';
+  else if(words>=250&&words<=300)w.textContent='Good length for IELTS Task 2!';
+  else if(words>300&&words<=400)w.textContent='Good length, but check for redundancy';
+  else if(words>400)w.textContent='Consider trimming - may be too long for timed exam';
+  else w.textContent='';
+}
+function clearText(){document.getElementById('textInput').value='';updateStats();}
+document.getElementById('textInput').addEventListener('input',updateStats);
+updateStats();
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Abbreviation of the Day</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root{--green:#2C4A3E;--orange:#D4653B;--cream:#F7F5F0;--lightgreen:#E8F0EC;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;padding:15px}
+.widget-container{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.12);width:100%;max-width:340px;overflow:hidden;border:2px solid var(--green)}
+.header{background:linear-gradient(135deg,var(--green),#1a3028);color:#fff;padding:16px;text-align:center}
+.header h1{font-size:1rem;font-weight:600}
+.header p{font-size:0.7rem;opacity:0.8;margin-top:3px}
+.body{padding:18px;text-align:center}
+.abbrev{display:inline-block;background:linear-gradient(135deg,var(--green),#3d6354);color:#fff;padding:16px 28px;border-radius:12px;font-size:2rem;font-weight:700;letter-spacing:2px;margin:10px 0}
+.full-name{font-size:1.1rem;color:var(--green);font-weight:600;margin:10px 0}
+.definition{font-size:0.82rem;color:#555;line-height:1.5;margin:10px 0;padding:0 8px}
+.context{background:var(--lightgreen);border-radius:10px;padding:12px;margin:12px 0;text-align:left;border-left:4px solid var(--orange)}
+.context h4{font-size:0.75rem;color:var(--orange);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.context p{font-size:0.78rem;color:var(--green)}
+.btn{background:var(--orange);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.8rem;cursor:pointer;margin:6px 3px;transition:opacity 0.2s}
+.btn:hover{opacity:0.9}
+.btn-secondary{background:var(--green)}
+.category-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:8px 0}
+.cat-btn{background:#e0e0e0;color:#555;border:none;border-radius:12px;padding:4px 10px;font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.cat-btn.active{background:var(--orange);color:#fff}
+.prev-next{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:0.7rem;color:#888}
+.footer{background:var(--lightgreen);padding:10px;text-align:center;font-size:0.7rem;color:var(--green)}
+.footer a{color:var(--orange);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="widget-container">
+  <div class="header">
+    <h1>Medical Abbreviation of the Day</h1>
+    <p>Learn essential medical abbreviations</p>
+  </div>
+  <div class="body">
+    <div class="category-btns">
+      <button class="cat-btn active" onclick="setCat('all')">All</button>
+      <button class="cat-btn" onclick="setCat('general')">General</button>
+      <button class="cat-btn" onclick="setCat('prescription')">Rx</button>
+      <button class="cat-btn" onclick="setCat('emergency')">Emergency</button>
+      <button class="cat-btn" onclick="setCat('labs')">Labs</button>
+      <button class="cat-btn" onclick="setCat('nursing')">Nursing</button>
+    </div>
+    <div class="abbrev" id="abbrev">BID</div>
+    <div class="full-name" id="fullName">Bis In Die</div>
+    <div class="definition" id="definition">Twice a day. A common Latin prescription instruction indicating medication should be taken two times daily, typically every 12 hours.</div>
+    <div class="context">
+      <h4>Example in Practice</h4>
+      <p id="example">"Prescribe Amoxicillin 500mg BID for 7 days to treat the patient's chest infection."</p>
+    </div>
+    <div>
+      <button class="btn btn-secondary" onclick="prevAbbr()">&#8592; Previous</button>
+      <button class="btn" onclick="randomAbbr()">Random</button>
+      <button class="btn btn-secondary" onclick="nextAbbr()">Next &#8594;</button>
+    </div>
+    <div class="prev-next">
+      <span id="counter">1 / 50</span>
+      <span id="category">All Categories</span>
+    </div>
+  </div>
+  <div class="footer">
+    Powered by <a href="https://tools.anglotec-ai.com" target="_blank">Anglotec AI Academy</a>
+  </div>
+</div>
+<script>
+var allAbbrev=[
+  {a:"BID",f:"Bis In Die",d:"Twice a day. A common Latin prescription instruction indicating medication should be taken two times daily, typically every 12 hours.",e:"Prescribe Amoxicillin 500mg BID for 7 days to treat the patient's chest infection.",c:"prescription"},
+  {a:"TID",f:"Ter In Die",d:"Three times a day. Medication should be taken at regular intervals, typically every 8 hours.",e:"The patient is to take Metformin 500mg TID with meals to manage blood glucose levels.",c:"prescription"},
+  {a:"QID",f:"Quater In Die",d:"Four times a day. Medication taken every 6 hours throughout the day.",e:"Administer Paracetamol 1g QID for pain management post-operatively.",c:"prescription"},
+  {a:"PRN",f:"Pro Re Nata",d:"As needed. Medication to be administered when required rather than on a fixed schedule.",e:"Morphine 5mg PRN for breakthrough pain. Maximum 4 doses per day.",c:"prescription"},
+  {a:"AC",f:"Ante Cibum",d:"Before meals. Indicates medication should be taken before eating.",e:"Take Insulin 10 units AC to cover postprandial glucose rise.",c:"prescription"},
+  {a:"PC",f:"Post Cibum",d:"After meals. Medication to be taken following food intake.",e:"Administer Omeprazole 20mg PC to reduce gastric irritation.",c:"prescription"},
+  {a:"HS",f:"Hora Somni",d:"At bedtime. Medication to be taken before sleep.",e:"Give Zopiclone 7.5mg HS for insomnia. Monitor for drowsiness.",c:"prescription"},
+  {a:"NPO",f:"Nil Per Os",d:"Nothing by mouth. Patient must not eat or drink, typically before surgery or certain tests.",e:"Patient is NPO from midnight prior to the morning endoscopy procedure.",c:"general"},
+  {a:"DNR",f:"Do Not Resuscitate",d:"A medical order indicating that CPR should not be performed if the patient's heart stops.",e:"The patient's advanced directive specifies DNR status. Confirm with the family and document in notes.",c:"emergency"},
+  {a:"CBC",f:"Complete Blood Count",d:"A blood test that evaluates overall health and detects disorders including anaemia, infection, and leukaemia.",e:"Order a CBC to investigate the patient's fatigue and pallor. Check Hb and WCC.",c:"labs"},
+  {a:"BMP",f:"Basic Metabolic Panel",d:"A blood test measuring glucose, calcium, electrolytes, and kidney function markers.",e:"BMP shows elevated creatinine at 142. Contact nephrology for review.",c:"labs"},
+  {a:"LFT",f:"Liver Function Test",d:"Blood tests measuring enzymes, proteins, and bilirubin to assess liver health.",e:"LFTs are elevated: ALT 85, ALP 120. Consider hepatitis screen.",c:"labs"},
+  {a:"ABG",f:"Arterial Blood Gas",d:"A test measuring oxygen, carbon dioxide, and pH levels in arterial blood to assess lung function and acid-base balance.",e:"ABG shows pH 7.32, pCO2 48, HCO3 24 - respiratory acidosis. Consider ventilatory support.",c:"labs"},
+  {a:"CXR",f:"Chest X-Ray",d:"A radiographic image of the chest used to evaluate lungs, heart, and chest wall.",e:"CXR shows bilateral infiltrates consistent with pneumonia. Start empiric antibiotics.",c:"labs"},
+  {a:"ECG/EKG",f:"Electrocardiogram",d:"A recording of the electrical activity of the heart, used to diagnose arrhythmias and cardiac conditions.",e:"ECG shows sinus tachycardia at 110bpm with ST depression in leads II, III, aVF.",c:"labs"},
+  {a:"BP",f:"Blood Pressure",d:"The force of circulating blood against arterial walls, measured in mmHg as systolic over diastolic.",e:"BP is 165/95 on repeated measurement. Consider antihypertensive medication review.",c:"general"},
+  {a:"HR",f:"Heart Rate",d:"The number of heartbeats per minute. Normal resting range is 60-100 bpm.",e:"HR is 45bpm with dizziness. Consider beta-blocker toxicity or sinus bradycardia.",c:"general"},
+  {a:"RR",f:"Respiratory Rate",d:"The number of breaths per minute. Normal range for adults is 12-20 breaths/min.",e:"RR is 28 and laboured. Oxygen saturation 91% on room air. Apply supplemental O2.",c:"general"},
+  {a:"SpO2",f:"Oxygen Saturation",d:"The percentage of haemoglobin saturated with oxygen in arterial blood. Normal is 95-100%.",e:"SpO2 dropped to 88%. Increase O2 to 4L via nasal cannula and reassess in 15 minutes.",c:"general"},
+  {a:"GCS",f:"Glasgow Coma Scale",d:"A neurological scale assessing consciousness level based on eye, verbal, and motor responses. Range 3-15.",e:"GCS is 9 (E2, V3, M4). Urgent CT head required. Prepare for possible intubation.",c:"emergency"},
+  {a:"UTI",f:"Urinary Tract Infection",d:"An infection in any part of the urinary system, most commonly the bladder.",e:"Dipstick shows leukocytes and nitrites. UTI likely. Send MSU for culture.",c:"general"},
+  {a:"COPD",f:"Chronic Obstructive Pulmonary Disease",d:"A progressive lung disease causing airflow blockage and breathing difficulties.",e:"COPD exacerbation with increased sputum production. Start nebulisers and oral steroids.",c:"general"},
+  {a:"MI",f:"Myocardial Infarction",d:"Heart attack. Damage to heart muscle due to interrupted blood supply.",e:"Troponin elevated at 450ng/L. ECG shows STEMI. Activate cath lab immediately.",c:"emergency"},
+  {a:"CVA",f:"Cerebrovascular Accident",d:"Medical term for stroke. Interruption of blood supply to the brain causing neurological deficits.",e:"FAST positive - facial droop, arm weakness, speech disturbance. CVA suspected. CT head stat.",c:"emergency"},
+  {a:"DVT",f:"Deep Vein Thrombosis",d:"Formation of a blood clot in a deep vein, usually in the legs.",e:"Left calf swollen, tender, warm. Homan's sign positive. Organise Doppler USS for DVT.",c:"emergency"},
+  {a:"PE",f:"Pulmonary Embolism",d:"A blockage in one of the pulmonary arteries in the lungs, usually by a blood clot.",e:"Sudden dyspnoea, pleuritic chest pain, tachycardic. Wells score 6. CTPA indicated for PE.",c:"emergency"},
+  {a:"AKI",f:"Acute Kidney Injury",d:"Sudden episode of kidney failure or kidney damage happening within hours to days.",e:"Creatinine risen from 80 to 210 in 48h. AKI stage 2. Check fluid status and stop nephrotoxins.",c:"labs"},
+  {a:"TKA",f:"Total Knee Arthroplasty",d:"Surgical replacement of the knee joint with a prosthetic implant.",e:"Post-op day 2 following TKA. Wound clean, mobilising with frame. Continue DVT prophylaxis.",c:"general"},
+  {a:"THR",f:"Total Hip Replacement",d:"Surgical replacement of the hip joint with a prosthetic implant.",e:"THR yesterday. Check hip precautions given. Physio review for mobilisation.",c:"general"},
+  {a:"IV",f:"Intravenous",d:"Administered into a vein. Used for fluids, medications, and blood products.",e:"IV access established. Commence 0.9% NaCl at 125ml/hr. Monitor fluid balance chart.",c:"nursing"},
+  {a:"IM",f:"Intramuscular",d:"Injection into muscle tissue. Allows slower absorption than subcutaneous or IV routes.",e:"Give Haloperidol 5mg IM for acute agitation. Monitor for dystonic reactions.",c:"nursing"},
+  {a:"SC",f:"Subcutaneous",d:"Injection into the tissue layer between skin and muscle.",e:"Administer Clexane 40mg SC daily for DVT prophylaxis. Rotate injection sites.",c:"nursing"},
+  {a:"PO",f:"Per Os (By Mouth)",d:"Administration of medication via the oral route.",e:"Convert IV antibiotics to PO route as patient is tolerating diet and clinically improving.",c:"nursing"},
+  {a:"SL",f:"Sublingual",d:"Placed under the tongue for absorption through oral mucosa.",e:"GTN 500mcg SL for angina. Repeat after 5 minutes if pain persists. Maximum 3 doses.",c:"nursing"},
+  {a:"PR",f:"Per Rectum",d:"Administration via the rectal route, often used when oral route is unavailable.",e:"Patient vomiting. Give Paracetamol 1g PR for pyrexia. Document alternative route.",c:"nursing"},
+  {a:"TPR",f:"Temperature, Pulse, Respiration",d:"Basic vital signs monitoring including body temperature, heart rate, and breathing rate.",e:"TPR recorded 4-hourly. Temp 38.2C, HR 96, RR 22. Notify doctor of pyrexia.",c:"nursing"},
+  {a:"I&O",f:"Intake and Output",d:"Measurement of all fluids consumed and excreted, critical for fluid balance monitoring.",e:"I&O chart shows positive 800ml over 24h. Consider diuretic review for fluid overload.",c:"nursing"},
+  {a:"BM",f:"Blood Monitoring (Glucose)",d:"Capillary blood glucose measurement, commonly used in diabetes management.",e:"BM series: pre-meals and HS. Today's readings range 6.2-11.4 mmol/L. Continue current regimen.",c:"nursing"},
+  {a:"MRSA",f:"Methicillin-Resistant Staphylococcus Aureus",d:"A type of bacteria resistant to many antibiotics. Requires isolation precautions.",e:"MRSA screen positive. Implement contact precautions. Inform infection control team.",c:"general"},
+  {a:"VTE",f:"Venous Thromboembolism",d:"Blood clots in veins, encompassing both DVT and PE.",e:"VTE risk assessment score 5. Ensure pharmacological and mechanical prophylaxis in place.",c:"emergency"},
+  {a:"SOB",f:"Shortness of Breath",d:"Difficulty breathing or feeling of not getting enough air.",e:"Patient reports SOB on exertion. O2 sats 94% at rest. Consider cardiopulmonary review.",c:"general"},
+  {a:"CP",f:"Chest Pain",d:"Pain or discomfort in the chest area, potentially indicating cardiac, respiratory, or musculoskeletal issues.",e:"CP radiating to left arm, diaphoretic, nauseous. Acute coronary syndrome until proven otherwise.",c:"emergency"},
+  {a:"LOS",f:"Length of Stay",d:"The duration of a single episode of hospitalisation.",e:"Average LOS for this procedure is 3.2 days. This patient is day 4 - review for discharge barriers.",c:"general"},
+  {a:"TIA",f:"Transient Ischaemic Attack",d:"A temporary period of stroke-like symptoms caused by temporary disruption of blood supply to the brain.",e:"Symptoms resolved completely within 30 minutes. TIA diagnosed. Start antiplatelet and refer TIA clinic.",c:"emergency"},
+  {a:"FBC",f:"Full Blood Count",d:"A blood test measuring red cells, white cells, platelets, and haemoglobin.",e:"FBC shows Hb 98g/L, MCV 72fL. Microcytic anaemia. Consider iron studies.",c:"labs"},
+  {a:"U&E",f:"Urea and Electrolytes",d:"Blood test measuring kidney function and electrolyte levels including sodium, potassium, and creatinine.",e:"U&E: Na 132, K 5.4, Creat 156. Mild hyponatraemia and hyperkalaemia. Review medications.",c:"labs"},
+  {a:"CRP",f:"C-Reactive Protein",d:"A blood marker of inflammation. Elevated levels indicate infection or inflammatory conditions.",e:"CRP 145 mg/L (elevated). WCC 14.2. Indicates active infection. Continue antibiotics.",c:"labs"},
+  {a:"LMWH",f:"Low Molecular Weight Heparin",d:"An anticoagulant medication used for DVT/PE prevention and treatment.",e:"Commence Enoxaparin (LMWH) 1mg/kg SC BD for confirmed PE. Monitor platelets.",c:"prescription"},
+  {a:"SLR",f:"Straight Leg Raise",d:"A physical examination test used to assess for lumbar nerve root compression or sciatica.",e:"SLR test positive at 30 degrees on the right with radiating pain to the foot. L5 radiculopathy.",c:"general"}
+];
+var filtered=allAbbrev;
+var idx=0;
+var curCat='all';
+function show(){var a=filtered[idx];document.getElementById('abbrev').textContent=a.a;document.getElementById('fullName').textContent=a.f;document.getElementById('definition').textContent=a.d;document.getElementById('example').textContent='"'+a.e+'"';document.getElementById('counter').textContent=(idx+1)+' / '+filtered.length;}
+function setCat(cat){curCat=cat;if(cat==='all')filtered=allAbbrev;else filtered=allAbbrev.filter(function(x){return x.c===cat;});idx=0;document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');if(b.textContent.toLowerCase().includes(cat==='prescription'?'rx':cat==='all'?'all':cat))b.classList.add('active');});document.getElementById('category').textContent=cat==='all'?'All Categories':cat.charAt(0).toUpperCase()+cat.slice(1);show();}
+function randomAbbr(){idx=Math.floor(Math.random()*filtered.length);show();}
+function nextAbbr(){idx=(idx+1)%filtered.length;show();}
+function prevAbbr(){idx=(idx-1+filtered.length)%filtered.length;show();}
+// Pick random on load based on day of year
+var doy=Math.floor((new Date()-new Date(new Date().getFullYear(),0,0))/86400000);
+idx=doy%allAbbrev.length;
+show();
+</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free NMC CBT Practice Test (20 Questions) | Anglotec AI</title>
+<meta name="description" content="Free NMC CBT practice test with 20 questions. Test your nursing knowledge for the Nursing and Midwifery Council Computer-Based Test. Instant results with explanations.">
+<meta name="keywords" content="nmc cbt practice, nmc cbt test, nursing cbt practice, nmc cbt questions, nmc test for nurses">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F4F;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F5F0;--white:#FFFFFF;--gray:#6B7280;--light-gray:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:#1F2937;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:800px;margin:0 auto;padding:0 20px;}
+header{background:var(--green);color:var(--white);padding:24px 0;text-align:center;}
+header h1{font-size:2rem;font-weight:700;margin-bottom:6px;}
+header p{font-size:1rem;opacity:0.9;}
+.main{padding:30px 0 60px;}
+.card{background:var(--white);border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);margin-bottom:24px;}
+.progress-bar{height:8px;background:var(--light-gray);border-radius:4px;margin-bottom:20px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--green);transition:width 0.3s;border-radius:4px;}
+.progress-text{font-size:0.85rem;color:var(--gray);margin-bottom:20px;text-align:center;}
+.question-num{font-size:0.85rem;color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.question-text{font-size:1.1rem;font-weight:600;margin-bottom:20px;color:var(--green);}
+.options{display:flex;flex-direction:column;gap:10px;}
+.option{background:#F9FAFB;padding:14px 16px;border-radius:10px;border:2px solid var(--light-gray);cursor:pointer;transition:all 0.2s;font-size:0.95rem;}
+.option:hover{border-color:var(--green);background:#F0FDF4;}
+.option.selected{border-color:var(--green);background:var(--green);color:var(--white);}
+.option.correct{border-color:#16A34A;background:#DCFCE7;}
+.option.incorrect{border-color:#DC2626;background:#FEE2E2;}
+.nav-btns{display:flex;justify-content:space-between;margin-top:24px;gap:10px;}
+.btn{background:var(--orange);color:var(--white);border:none;padding:12px 24px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.btn:hover{background:var(--orange-light);transform:translateY(-1px);}
+.btn:disabled{opacity:0.5;cursor:not-allowed;}
+.btn-secondary{background:var(--green);}
+.btn-secondary:hover{background:var(--green-light);}
+.explanation{background:#F0FDF4;padding:16px;border-radius:10px;margin-top:16px;border-left:4px solid #16A34A;display:none;}
+.explanation.show{display:block;}
+.explanation h4{color:var(--green);margin-bottom:6px;}
+.result-card{text-align:center;padding:40px 20px;}
+.result-card h2{font-size:2rem;color:var(--green);margin-bottom:12px;}
+.result-card .score-big{font-size:4rem;font-weight:700;color:var(--orange);font-family:'Inter',sans-serif;}
+.result-card p{color:var(--gray);margin:8px 0;}
+.result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:24px 0;}
+.result-item{padding:16px;background:#F9FAFB;border-radius:10px;}
+.result-item h4{font-size:1.5rem;color:var(--green);}
+.result-item p{font-size:0.8rem;color:var(--gray);}
+.review-section{margin-top:20px;text-align:left;}
+.review-item{padding:16px;background:#F9FAFB;border-radius:10px;margin-bottom:10px;}
+.review-item h4{font-size:0.9rem;color:var(--green);margin-bottom:4px;}
+.review-item p{font-size:0.85rem;}
+.review-item .your-ans{color:#DC2626;font-weight:600;}
+.review-item .correct-ans{color:#16A34A;font-weight:600;}
+.share-section{text-align:center;padding:30px 0;}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{padding:10px 20px;border-radius:8px;color:var(--white);text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-btn.tw{background:#1DA1F2;}.share-btn.fb{background:#4267B2;}.share-btn.li{background:#0077B5;}.share-btn.wa{background:#25D366;}.share-btn.cp{background:var(--gray);}
+.cta-section{background:var(--green);color:var(--white);padding:40px 20px;text-align:center;border-radius:16px;margin-top:30px;}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px;}
+.cta-section p{margin-bottom:20px;opacity:0.95;}
+.cta-btn{background:var(--orange);color:var(--white);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.2s;}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);}
+.keywords{background:var(--white);padding:20px;border-radius:12px;margin-top:20px;font-size:0.85rem;color:var(--gray);}
+.keywords strong{color:var(--green);}
+.timer{position:fixed;top:20px;right:20px;background:var(--white);padding:10px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.15);font-weight:600;color:var(--green);z-index:50;font-size:1.1rem;}
+.timer.warning{color:var(--orange);}
+.timer.danger{color:#DC2626;animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
+footer{text-align:center;padding:30px 0;color:var(--gray);font-size:0.85rem;}
+@media(max-width:600px){header h1{font-size:1.5rem;}.result-grid{grid-template-columns:1fr;}}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:500;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:100;}
+.copy-toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Free NMC CBT Practice Test</h1>
+<p>20 questions to test your nursing knowledge for the NMC Computer-Based Test</p>
+</div>
+</header>
+
+<div class="timer" id="timer">30:00</div>
+
+<div class="container main">
+<div class="card" id="quizCard">
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-text" id="progressText">Question 1 of 20</div>
+
+<div id="questionArea">
+<div class="question-num" id="qNum">Question 1</div>
+<div class="question-text" id="qText"></div>
+<div class="options" id="optionsArea"></div>
+<div class="explanation" id="explanationArea">
+<h4>Explanation</h4>
+<p id="explanationText"></p>
+</div>
+</div>
+
+<div class="nav-btns">
+<button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>Previous</button>
+<button class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+<button class="btn" id="submitBtn" onclick="submitQuiz()" style="display:none;">Submit</button>
+</div>
+</div>
+
+<div class="card" id="resultCard" style="display:none;">
+<div class="result-card">
+<h2>Test Complete!</h2>
+<div class="score-big" id="finalScore">0%</div>
+<p id="resultMessage"></p>
+<div class="result-grid">
+<div class="result-item"><h4 id="correctCount">0</h4><p>Correct</p></div>
+<div class="result-item"><h4 id="wrongCount">0</h4><p>Incorrect</p></div>
+<div class="result-item"><h4 id="timeTaken">0:00</h4><p>Time Taken</p></div>
+</div>
+<div class="review-section" id="reviewSection"></div>
+<div style="margin-top:24px;">
+<button class="btn" onclick="restartQuiz()">Retake Test</button>
+</div>
+</div>
+</div>
+
+<div class="keywords">
+<strong>Popular searches:</strong> nmc cbt practice, nmc cbt test, nursing cbt practice questions, nmc computer based test, nmc test for nurses, nmc cbt mock test, uk nursing test
+</div>
+
+<div class="share-section">
+<h3 style="color:var(--green);margin-bottom:16px;">Share This Tool</h3>
+<div class="share-btns">
+<a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://tools.anglotec-ai.com/nmc-cbt-practice&text=Free%20NMC%20CBT%20Practice%20Test" target="_blank">Twitter</a>
+<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/nmc-cbt-practice" target="_blank">Facebook</a>
+<a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/nmc-cbt-practice" target="_blank">LinkedIn</a>
+<a class="share-btn wa" href="https://wa.me/?text=Free%20NMC%20CBT%20Practice%20Test%20https://tools.anglotec-ai.com/nmc-cbt-practice" target="_blank">WhatsApp</a>
+<button class="share-btn cp" onclick="copyLink()">Copy Link</button>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>Preparing for NMC CBT?</h2>
+<p>Access more free nursing test preparation tools and resources at Anglotec AI.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">More Nursing Tools</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p> Free NMC CBT Practice Test | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none;">Anglotec AI Tools</a></p>
+</div>
+</footer>
+
+<div class="copy-toast" id="toast">Link copied to clipboard!</div>
+
+<script>
+const questions=[
+{q:"Which of the following is the PRIMARY responsibility of a nurse under the NMC Code?",options:["To follow doctor's orders without question","To prioritise people and ensure their safety","To complete administrative tasks promptly","To minimise hospital costs"],correct:1,exp:"The NMC Code states that nurses must prioritise people and ensure their safety is protected at all times. This is the first principle of the Code."},
+{q:"A patient refuses their prescribed medication. What is the nurse's FIRST action?",options:["Administer the medication anyway for their own good","Document the refusal and inform the prescribing practitioner","Ask a family member to convince them","Skip the documentation since they refused"],correct:1,exp:"When a patient refuses medication, the nurse must respect their autonomy, document the refusal, and inform the prescribing practitioner to discuss alternatives."},
+{q:"What does the term 'accountability' mean for a nurse?",options:["Being able to count the number of patients","Being answerable for one's actions and decisions","Having a manager supervise all tasks","Working overtime when requested"],correct:1,exp:"Accountability means being answerable for your actions and decisions. Nurses are personally accountable for their practice and must act in the best interests of patients."},
+{q:"Which infection control measure is MOST effective in preventing the spread of healthcare-associated infections?",options:["Wearing gloves for all patient contact","Hand hygiene","Using antibiotics prophylactically","Isolating all patients"],correct:1,exp:"Hand hygiene is the single most effective measure in preventing healthcare-associated infections. It should be performed before and after every patient contact."},
+{q:"What is the correct procedure for administering medication via a nasogastric (NG) tube?",options:["Crush all tablets and mix with water","Check tube placement, flush, administer, flush again","Administer directly without checking placement","Mix all medications together before administration"],correct:1,exp:"The correct procedure is to confirm NG tube placement, flush with water, administer medication, and flush again. Each medication should be given separately."},
+{q:"Under the Mental Capacity Act 2005, what is assumed about adults?",options:["They lack capacity until proven otherwise","They have capacity unless established otherwise","Capacity is determined by family members","Capacity is assessed by the police"],correct:1,exp:"The Mental Capacity Act assumes adults have capacity unless it is established that they lack capacity. This is a fundamental principle of the Act."},
+{q:"A patient shows signs of anaphylaxis after receiving medication. What is the FIRST intervention?",options:["Call the patient's family","Administer intramuscular adrenaline","Start CPR immediately","Wait to see if symptoms resolve"],correct:1,exp:"The first-line treatment for anaphylaxis is intramuscular adrenaline (epinephrine) 1:1000, 0.5mg for adults, into the anterolateral thigh."},
+{q:"What is the nurse's role in obtaining informed consent?",options:["The nurse obtains consent for all procedures","The nurse ensures the patient understands information given by the practitioner","The nurse does not need to be involved in consent","The nurse can sign consent forms on behalf of patients"],correct:1,exp:"Nurses play a vital role in ensuring patients understand the information provided about their treatment, though the person performing the procedure typically obtains consent."},
+{q:"Which vital sign change would be MOST concerning in a patient with suspected sepsis?",options:["Temperature 37.5 C","Blood pressure 90/60 mmHg","Heart rate 72 bpm","Respiratory rate 14/min"],correct:1,exp:"Hypotension (BP <90/60) is a sign of septic shock and is the most concerning finding. Sepsis can rapidly progress to organ failure without prompt treatment."},
+{q:"How should a nurse handle a confidential patient information request from the police?",options:["Provide all information immediately","Verify legal authority and follow organisational policy","Refuse all police requests outright","Share information only over the phone"],correct:1,exp:"Nurses must verify the legal authority for information requests and follow organisational policies. Some disclosures are legally required, others require patient consent or a court order."},
+{q:"What is the correct technique for auscultating blood pressure?",options:["Place the stethoscope over the brachial artery and inflate 20-30 mmHg above expected","Place the stethoscope over the radial artery","Inflate the cuff to 100 mmHg only","Use the thumb to palpate the artery"],correct:0,exp:"Place the stethoscope over the brachial artery, inflate the cuff 20-30 mmHg above the expected systolic pressure, and deflate slowly while listening for Korotkoff sounds."},
+{q:"A diabetic patient's blood glucose reads 2.8 mmol/L. What is the PRIORITY action?",options:["Give them a high-sugar snack immediately","Wait for the next scheduled meal","Administer insulin","Document and continue observation"],correct:0,exp:"A blood glucose of 2.8 mmol/L indicates hypoglycaemia. The priority is to give 15-20g of fast-acting carbohydrate immediately (e.g., glucose tablets, sugary drink)."},
+{q:"Which of the following is a sign of a pulmonary embolism?",options:["Sudden onset dyspnoea and pleuritic chest pain","Gradual onset of dry cough","Bilateral ankle swelling over weeks","Increased appetite"],correct:0,exp:"Sudden onset dyspnoea, pleuritic chest pain, and tachypnoea are classic signs of pulmonary embolism. This is a medical emergency requiring immediate intervention."},
+{q:"What is the recommended ratio for chest compressions to rescue breaths in adult CPR?",options:["15 compressions to 2 breaths","30 compressions to 2 breaths","5 compressions to 1 breath","Continuous compressions only"],correct:1,exp:"The recommended ratio for adult CPR is 30 compressions to 2 rescue breaths. Compressions should be at least 5-6cm deep at a rate of 100-120 per minute."},
+{q:"A patient on warfarin has an INR of 6.5. What is the nurse's priority?",options:["Continue the warfarin dose as prescribed","Withhold warfarin and notify the prescriber","Administer vitamin K without consulting","Increase the warfarin dose"],correct:1,exp:"An INR of 6.5 is above the therapeutic range and increases bleeding risk. Warfarin should be withheld and the prescriber notified immediately."},
+{q:"What is the primary purpose of the NEWS2 (National Early Warning Score 2)?",options:["To calculate drug dosages","To identify patients at risk of deterioration","To schedule staff shifts","To record discharge planning"],correct:1,exp:"NEWS2 is a standardised system for identifying patients at risk of clinical deterioration by scoring physiological observations (resp rate, SpO2, temp, BP, pulse, consciousness)."},
+{q:"Which documentation principle is MOST important?",options:["Write in shorthand to save time","Document contemporaneously and factually","Document only positive findings","Have another nurse document for you"],correct:1,exp:"Documentation must be contemporaneous (at the time of care), factual, accurate, and non-judgemental. It is a legal record and essential for continuity of care."},
+{q:"A patient with a known latex allergy requires a catheter. What should the nurse do?",options:["Use a standard latex catheter","Use a latex-free catheter","Give antihistamines before catheterisation","Avoid catheterisation entirely"],correct:1,exp:"For patients with latex allergy, only latex-free products must be used. Always check product labels and use latex-free alternatives."},
+{q:"What is the correct site for intramuscular injection in the deltoid muscle?",options:["Anywhere on the upper arm","2-3 fingerbreadths below the acromion process","The midpoint of the arm","Above the shoulder joint"],correct:1,exp:"The deltoid injection site is located 2-3 fingerbreadths below the acromion process. The maximum volume for deltoid injection is typically 1-2ml."},
+{q:"Which action demonstrates advocacy in nursing?",options:["Following the doctor's plan without question","Supporting a patient's right to make informed decisions about their care","Persuading a patient to accept treatment","Avoiding discussions about treatment options"],correct:1,exp:"Advocacy in nursing means supporting patients' rights, ensuring their voices are heard, and helping them make informed decisions about their own care."}
+];
+
+let currentQ=0;let answers=new Array(questions.length).fill(null);let submitted=false;
+let timeRemaining=30*60;let timerInterval;
+
+function startTimer(){
+timerInterval=setInterval(()=>{
+timeRemaining--;
+const m=Math.floor(timeRemaining/60);const s=timeRemaining%60;
+document.getElementById('timer').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+if(timeRemaining<=300)document.getElementById('timer').classList.add('warning');
+if(timeRemaining<=60)document.getElementById('timer').classList.add('danger');
+if(timeRemaining<=0){clearInterval(timerInterval);submitQuiz();}
+},1000);
+}
+
+function showQuestion(idx){
+currentQ=idx;
+const q=questions[idx];
+document.getElementById('qNum').textContent=`Question ${idx+1}`;
+document.getElementById('qText').textContent=q.q;
+document.getElementById('progressText').textContent=`Question ${idx+1} of ${questions.length}`;
+document.getElementById('progressFill').style.width=`${((idx+1)/questions.length)*100}%`;
+
+const opts=document.getElementById('optionsArea');
+opts.innerHTML='';
+q.options.forEach((opt,i)=>{
+const div=document.createElement('div');
+div.className='option'+(answers[idx]===i?' selected':'')+(submitted?(i===q.correct?' correct':(answers[idx]===i?' incorrect':'')):'');
+div.textContent=opt;
+div.onclick=()=>{if(!submitted){answers[idx]=i;showQuestion(idx);}};
+opts.appendChild(div);
+});
+
+const exp=document.getElementById('explanationArea');
+if(submitted){exp.classList.add('show');document.getElementById('explanationText').textContent=q.exp;}
+else{exp.classList.remove('show');}
+
+document.getElementById('prevBtn').disabled=idx===0;
+if(idx===questions.length-1&&!submitted){
+document.getElementById('nextBtn').style.display='none';
+document.getElementById('submitBtn').style.display='inline-block';
+}else{
+document.getElementById('nextBtn').style.display='inline-block';
+document.getElementById('submitBtn').style.display='none';
+}
+}
+
+function nextQuestion(){if(currentQ<questions.length-1)showQuestion(currentQ+1);}
+function prevQuestion(){if(currentQ>0)showQuestion(currentQ-1);}
+
+function submitQuiz(){
+clearInterval(timerInterval);
+submitted=true;
+let correct=0;
+answers.forEach((a,i)=>{if(a===questions[i].correct)correct++;});
+const percentage=Math.round((correct/questions.length)*100);
+
+const timeUsed=30*60-timeRemaining;
+const um=Math.floor(timeUsed/60);const us=timeUsed%60;
+
+let message='';
+if(percentage>=80)message='Excellent! You are well-prepared for the NMC CBT!';
+else if(percentage>=60)message='Good effort! Review the explanations to improve further.';
+else message='Keep practicing! Review the topics you found challenging.';
+
+document.getElementById('quizCard').style.display='none';
+document.getElementById('resultCard').style.display='block';
+document.getElementById('finalScore').textContent=percentage+'%';
+document.getElementById('resultMessage').textContent=message;
+document.getElementById('correctCount').textContent=correct;
+document.getElementById('wrongCount').textContent=questions.length-correct;
+document.getElementById('timeTaken').textContent=`${um}:${us.toString().padStart(2,'0')}`;
+document.getElementById('timer').style.display='none';
+
+const review=document.getElementById('reviewSection');
+review.innerHTML='<h3 style="color:var(--green);margin-bottom:12px;">Review Answers</h3>';
+questions.forEach((q,i)=>{
+const div=document.createElement('div');
+div.className='review-item';
+div.innerHTML=`<h4>Q${i+1}: ${q.q}</h4><p>Your answer: <span class="your-ans">${answers[i]!==null?q.options[answers[i]]:'Not answered'}</span></p><p>Correct answer: <span class="correct-ans">${q.options[q.correct]}</span></p><p style="margin-top:6px;font-size:0.8rem;color:var(--gray);">${q.exp}</p>`;
+review.appendChild(div);
+});
+}
+
+function restartQuiz(){
+currentQ=0;answers=new Array(questions.length).fill(null);submitted=false;
+timeRemaining=30*60;document.getElementById('timer').style.display='block';
+document.getElementById('timer').textContent='30:00';document.getElementById('timer').className='timer';
+document.getElementById('quizCard').style.display='block';
+document.getElementById('resultCard').style.display='none';
+showQuestion(0);startTimer();
+}
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+document.getElementById('toast').classList.add('show');
+setTimeout(()=>document.getElementById('toast').classList.remove('show'),2000);
+}
+
+showQuestion(0);
+startTimer();
+</script>
+</body>
+</html>

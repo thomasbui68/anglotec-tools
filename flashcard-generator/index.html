@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Terminology Flashcards (100 Cards) | Free Online</title>
+<meta name="description" content="Free medical terminology flashcards online. 100 cards covering anatomy, diseases, procedures, and abbreviations. Flip card animation for effective learning.">
+<meta name="keywords" content="medical terminology flashcards, medical flashcards online, anatomy flashcards, nursing flashcards, medical terms quiz">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F4F;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F5F0;--white:#FFFFFF;--gray:#6B7280;--light-gray:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:#1F2937;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:900px;margin:0 auto;padding:0 20px;}
+header{background:var(--green);color:var(--white);padding:24px 0;text-align:center;}
+header h1{font-size:2rem;font-weight:700;margin-bottom:6px;}
+header p{font-size:1rem;opacity:0.9;}
+.main{padding:30px 0 60px;}
+.card{background:var(--white);border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);margin-bottom:24px;}
+.card h2{font-size:1.3rem;color:var(--green);margin-bottom:16px;}
+.flashcard-container{perspective:1200px;width:100%;max-width:500px;height:320px;margin:0 auto 24px;cursor:pointer;}
+.flashcard{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);}
+.flashcard.flipped{transform:rotateY(180deg);}
+.flashcard-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.12);}
+.flashcard-front{background:var(--green);color:var(--white);}
+.flashcard-back{background:var(--white);color:#1F2937;border:3px solid var(--green);transform:rotateY(180deg);}
+.flashcard-front h3{font-size:1.6rem;font-weight:700;margin-bottom:12px;font-family:'Playfair Display',serif;}
+.flashcard-front .pronunciation{font-size:1rem;opacity:0.85;font-style:italic;}
+.flashcard-front .category-badge{background:rgba(255,255,255,0.2);padding:4px 16px;border-radius:20px;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;margin-top:12px;}
+.flashcard-back h3{font-size:1.3rem;color:var(--green);margin-bottom:12px;font-family:'Inter',sans-serif;}
+.flashcard-back p{font-size:1rem;color:var(--gray);line-height:1.6;}
+.flashcard-back .example{font-size:0.85rem;color:var(--orange);margin-top:12px;font-style:italic;}
+.nav-btns{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
+.nav-btn{background:var(--green);color:var(--white);border:none;padding:12px 24px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.nav-btn:hover{background:var(--green-light);transform:translateY(-1px);}
+.flip-hint{text-align:center;color:var(--gray);font-size:0.9rem;margin-bottom:20px;}
+.progress-bar{height:8px;background:var(--light-gray);border-radius:4px;margin-bottom:12px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--orange);transition:width 0.3s;border-radius:4px;}
+.progress-text{text-align:center;font-size:0.85rem;color:var(--gray);margin-bottom:20px;}
+.category-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;}
+.filter-btn{background:var(--cream);border:2px solid var(--light-gray);padding:8px 16px;border-radius:20px;cursor:pointer;font-weight:500;transition:all 0.2s;font-size:0.85rem;}
+.filter-btn:hover,.filter-btn.active{border-color:var(--green);background:var(--green);color:var(--white);}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+.stat-box{text-align:center;padding:14px;background:#F9FAFB;border-radius:10px;}
+.stat-box h4{font-size:1.4rem;color:var(--green);font-weight:700;}
+.stat-box p{font-size:0.75rem;color:var(--gray);}
+.shuffle-btn{background:var(--orange);color:var(--white);border:none;padding:10px 20px;border-radius:10px;font-weight:600;cursor:pointer;transition:all 0.2s;font-size:0.9rem;}
+.shuffle-btn:hover{background:var(--orange-light);}
+.known-btns{display:flex;gap:10px;justify-content:center;margin-top:16px;}
+.known-btn{padding:10px 24px;border-radius:10px;border:none;font-weight:600;cursor:pointer;transition:all 0.2s;font-size:0.9rem;}
+.known-btn.yes{background:#DCFCE7;color:#16A34A;}
+.known-btn.no{background:#FEE2E2;color:#DC2626;}
+.known-btn:hover{transform:translateY(-1px);}
+.share-section{text-align:center;padding:30px 0;}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{padding:10px 20px;border-radius:8px;color:var(--white);text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-btn.tw{background:#1DA1F2;}.share-btn.fb{background:#4267B2;}.share-btn.li{background:#0077B5;}.share-btn.wa{background:#25D366;}.share-btn.cp{background:var(--gray);}
+.cta-section{background:var(--green);color:var(--white);padding:40px 20px;text-align:center;border-radius:16px;margin-top:30px;}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px;}
+.cta-section p{margin-bottom:20px;opacity:0.95;}
+.cta-btn{background:var(--orange);color:var(--white);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.2s;}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);}
+.keywords{background:var(--white);padding:20px;border-radius:12px;margin-top:20px;font-size:0.85rem;color:var(--gray);}
+.keywords strong{color:var(--green);}
+footer{text-align:center;padding:30px 0;color:var(--gray);font-size:0.85rem;}
+@media(max-width:600px){.flashcard-container{height:360px;}header h1{font-size:1.5rem;}.stats-grid{grid-template-columns:1fr;}}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:500;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:100;}
+.copy-toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Medical Terminology Flashcards</h1>
+<p>100 flashcards for medical terms - tap to flip, swipe to navigate</p>
+</div>
+</header>
+
+<div class="container main">
+<div class="card">
+<div class="stats-grid">
+<div class="stat-box"><h4 id="currentNum">1</h4><p>Current Card</p></div>
+<div class="stat-box"><h4 id="totalNum">100</h4><p>Total Cards</p></div>
+<div class="stat-box"><h4 id="knownCount">0</h4><p>Known</p></div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-text" id="progressText">Card 1 of 100</div>
+
+<div class="category-filters" id="categoryFilters">
+<button class="filter-btn active" onclick="filterCategory('all')">All</button>
+<button class="filter-btn" onclick="filterCategory('anatomy')">Anatomy</button>
+<button class="filter-btn" onclick="filterCategory('disease')">Diseases</button>
+<button class="filter-btn" onclick="filterCategory('procedures')">Procedures</button>
+<button class="filter-btn" onclick="filterCategory('abbreviations')">Abbreviations</button>
+</div>
+
+<div class="flashcard-container" id="flashcardContainer" onclick="flipCard()">
+<div class="flashcard" id="flashcard">
+<div class="flashcard-face flashcard-front">
+<div class="category-badge" id="cardCategory">Anatomy</div>
+<h3 id="cardTerm">Hypertension</h3>
+<div class="pronunciation" id="cardPronunciation">/ha?-per-TEN-shun/</div>
+</div>
+<div class="flashcard-face flashcard-back">
+<h3 id="cardDefinition">High Blood Pressure</h3>
+<p id="cardExplanation">A condition in which the force of the blood against the artery walls is too high. Blood pressure is considered high when readings are consistently 140/90 mmHg or higher.</p>
+<div class="example" id="cardExample">"The patient was diagnosed with hypertension and started on antihypertensive medication."</div>
+</div>
+</div>
+</div>
+
+<p class="flip-hint">Tap the card to flip it</p>
+
+<div class="nav-btns">
+<button class="nav-btn" onclick="prevCard()">Previous</button>
+<button class="shuffle-btn" onclick="shuffleCards()">Shuffle</button>
+<button class="nav-btn" onclick="nextCard()">Next</button>
+</div>
+
+<div class="known-btns">
+<button class="known-btn no" onclick="markKnown(false)">Need Practice</button>
+<button class="known-btn yes" onclick="markKnown(true)">I Know This</button>
+</div>
+</div>
+
+<div class="keywords">
+<strong>Popular searches:</strong> medical terminology flashcards, medical flashcards online, anatomy flashcards, nursing flashcards, medical terms study, healthcare terminology cards
+</div>
+
+<div class="share-section">
+<h3 style="color:var(--green);margin-bottom:16px;">Share This Tool</h3>
+<div class="share-btns">
+<a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://tools.anglotec-ai.com/flashcard-generator&text=Medical%20Terminology%20Flashcards" target="_blank">Twitter</a>
+<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/flashcard-generator" target="_blank">Facebook</a>
+<a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/flashcard-generator" target="_blank">LinkedIn</a>
+<a class="share-btn wa" href="https://wa.me/?text=Medical%20Terminology%20Flashcards%20https://tools.anglotec-ai.com/flashcard-generator" target="_blank">WhatsApp</a>
+<button class="share-btn cp" onclick="copyLink()">Copy Link</button>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>More Free Study Tools</h2>
+<p>Discover flashcards, quizzes, and practice tests at Anglotec AI.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Explore Study Tools</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p> Medical Terminology Flashcards | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none;">Anglotec AI Tools</a></p>
+</div>
+</footer>
+
+<div class="copy-toast" id="toast">Link copied to clipboard!</div>
+
+<script>
+const allFlashcards=[
+{term:"Hypertension",pron:'/ha?-per-TEN-shun/',cat:'disease',def:'High Blood Pressure',exp:'A condition where blood pressure in arteries is persistently elevated, typically defined as 140/90 mmHg or higher.',ex:'The patient was diagnosed with hypertension and prescribed lisinopril.'},
+{term:"Myocardial Infarction",pron:'/my-oh-KAR-dee-al in-FARK-shun/',cat:'disease',def:'Heart Attack',exp:'Death of heart muscle tissue due to interrupted blood supply, usually from a blocked coronary artery.',ex:'ST-elevation on ECG confirmed an acute myocardial infarction.'},
+{term:"Cerebrovascular Accident",pron:'/ser-ee-bro-VAS-kyoo-ler/',cat:'disease',def:'Stroke',exp:'Sudden interruption of blood flow to the brain causing neurological deficits. Can be ischaemic or haemorrhagic.',ex:'The patient presented with left-sided weakness following a cerebrovascular accident.'},
+{term:"Pneumonia",pron:'/nu-MOH-nee-ah/',cat:'disease',def:'Lung Infection',exp:'Inflammation of the lung parenchyma caused by bacterial, viral, or fungal infection, leading to consolidation.',ex:'Chest X-ray showed consolidation consistent with pneumonia.'},
+{term:"Diabetes Mellitus",pron:'/dy-ah-BEE-teez meh-LI-tus/',cat:'disease',def:'Chronic High Blood Sugar',exp:'A metabolic disorder characterised by chronic hyperglycaemia due to insulin deficiency or resistance.',ex:'HbA1c of 8.5% indicated poorly controlled diabetes mellitus.'},
+{term:"Nephritis",pron:'/neh-FRY-tis/',cat:'disease',def:'Kidney Inflammation',exp:'Inflammation of the kidneys, often affecting the glomeruli, causing impaired filtration.',ex:'Nephritis can result from autoimmune conditions like lupus.'},
+{term:"Hepatitis",pron:'/hep-ah-TY-tis/',cat:'disease',def:'Liver Inflammation',exp:'Inflammation of the liver, commonly caused by viral infection (A, B, C) or toxins like alcohol.',ex:'Hepatitis B vaccination is recommended for all healthcare workers.'},
+{term:"Osteoporosis",pron:'/os-tee-oh-poh-ROH-sis/',cat:'disease',def:'Brittle Bone Disease',exp:'A condition of reduced bone density and quality, increasing fracture risk, common in postmenopausal women.',ex:'DEXA scan confirmed osteoporosis with a T-score of -2.8.'},
+{term:"Arrhythmia",pron:'/ah-RITH-mee-ah/',cat:'disease',def:'Irregular Heartbeat',exp:'Any variation from the normal rhythm of the heart, including tachycardia, bradycardia, or fibrillation.',ex:'The patient developed atrial arrhythmia post-operatively.'},
+{term:"Thrombosis",pron:'/throm-BOH-sis/',cat:'disease',def:'Blood Clot Formation',exp:'Formation of a blood clot (thrombus) inside a blood vessel, obstructing blood flow.',ex:'Doppler ultrasound confirmed deep vein thrombosis in the left leg.'},
+{term:"Embolism",pron:'/EM-boh-liz-um/',cat:'disease',def:'Blocked Artery by Clot',exp:'Obstruction of a blood vessel by an embolus (traveling clot, air bubble, or foreign material).',ex:'A pulmonary embolism was suspected based on sudden dyspnoea.'},
+{term:"Sepsis",pron:'/SEP-sis/',cat:'disease',def:'Life-Threatening Infection Response',exp:'A dysregulated host response to infection causing organ dysfunction, potentially leading to septic shock.',ex:'The patient met SIRS criteria and was started on sepsis protocol.'},
+{term:"Anaemia",pron:'/ah-NEE-mee-ah/',cat:'disease',def:'Low Red Blood Cell Count',exp:'A condition of reduced haemoglobin or red blood cells, leading to decreased oxygen-carrying capacity.',ex:'Haemoglobin of 8.2 g/dL indicated moderate anaemia.'},
+{term:"Jaundice",pron:'/JAWN-dis/',cat:'disease',def:'Yellowing of Skin/Eyes',exp:'Yellow discolouration due to elevated bilirubin levels, indicating liver or biliary dysfunction.',ex:'The newborn developed physiological jaundice on day 3.'},
+{term:"Oedema",pron:'/eh-DEE-mah/',cat:'disease',def:'Swelling from Fluid Retention',exp:'Accumulation of excess fluid in interstitial tissues, causing swelling.',ex:'Bilateral ankle oedema was noted on examination.'},
+{term:"Atelectasis",pron:'/at-eh-LEK-tah-sis/',cat:'disease',def:'Collapsed Lung',exp:'Partial or complete collapse of a lung or lobe due to reduced alveolar volume.',ex:'Post-operative atelectasis was visible on the chest X-ray.'},
+{term:"Gastritis",pron:'/gas-TRY-tis/',cat:'disease',def:'Stomach Lining Inflammation',exp:'Inflammation of the gastric mucosa, often caused by H. pylori infection or NSAIDs.',ex:'Endoscopy revealed erosive gastritis.'},
+{term:"Bronchitis",pron:'/bron-KY-tis/',cat:'disease',def:'Airway Inflammation',exp:'Inflammation of the bronchial tubes, typically causing cough and mucus production.',ex:'Chronic bronchitis is a component of COPD.'},
+{term:"Meningitis",pron:'/men-in-JY-tis/',cat:'disease',def:'Brain Membrane Inflammation',exp:'Inflammation of the meninges (membranes covering the brain and spinal cord), usually due to infection.',ex:'Lumbar puncture confirmed bacterial meningitis.'},
+{term:"Pancreatitis",pron:'/pan-kree-ah-TY-tis/',cat:'disease',def:'Pancreas Inflammation',exp:'Inflammation of the pancreas, can be acute (gallstones, alcohol) or chronic.',ex:'Serum amylase was elevated, confirming acute pancreatitis.'},
+
+{term:"Anterior",pron:'/an-TEER-ee-or/',cat:'anatomy',def:'Front side of the body',exp:'Refers to the front or ventral surface of the body or organ.',ex:'The incision was made on the anterior abdominal wall.'},
+{term:"Posterior",pron:'/pos-TEER-ee-or/',cat:'anatomy',def:'Back side of the body',exp:'Refers to the back or dorsal surface of the body or organ.',ex:'The patient had tenderness in the posterior lumbar region.'},
+{term:"Lateral",pron:'/LAT-er-al/',cat:'anatomy',def:'Away from the midline',exp:'Positioned farther from the midline of the body.',ex:'The IV cannula was inserted in the lateral aspect of the forearm.'},
+{term:"Medial",pron:'/MEE-dee-al/',cat:'anatomy',def:'Toward the midline',exp:'Positioned closer to the midline of the body.',ex:'The medial malleolus was tender on palpation.'},
+{term:"Proximal",pron:'/PROK-si-mal/',cat:'anatomy',def:'Closer to the trunk',exp:'Nearer to the point of attachment or origin (centre of body).',ex:'The fracture was in the proximal femur.'},
+{term:"Distal",pron:'/DIS-tal/',cat:'anatomy',def:'Farther from the trunk',exp:'Farther from the point of attachment or origin.',ex:'The distal phalanx of the index finger was injured.'},
+{term:"Superior",pron:'/soo-PEER-ee-or/',cat:'anatomy',def:'Above',exp:'Positioned higher or above another structure.',ex:'The tumour was located in the superior lobe of the lung.'},
+{term:"Inferior",pron:'/in-FEER-ee-or/',cat:'anatomy',def:'Below',exp:'Positioned lower or below another structure.',ex:'The inferior vena cava returns blood to the right atrium.'},
+{term:"Prone",pron:'/PROHN/',cat:'anatomy',def:'Lying face down',exp:'Body position where the patient lies on their anterior surface.',ex:'The patient was placed in prone position for the procedure.'},
+{term:"Supine",pron:'/soo-PYN/',cat:'anatomy',def:'Lying face up',exp:'Body position where the patient lies on their back.',ex:'The patient was examined in the supine position.'},
+{term:"Dorsal",pron:'/DOR-sal/',cat:'anatomy',def:'Back/posterior',exp:'Relating to the upper side or back of an organism or organ.',ex:'The dorsal surface of the hand was erythematous.'},
+{term:"Ventral",pron:'/VEN-tral/',cat:'anatomy',def:'Belly/anterior',exp:'Relating to the underside or abdomen.',ex:'The ventral hernia required surgical repair.'},
+{term:"Peripheral",pron:'/peh-RIF-er-al/',cat:'anatomy',def:'Away from centre',exp:'Relating to or situated on the outside or edge.',ex:'Peripheral pulses were palpable in all four limbs.'},
+{term:"Visceral",pron:'/VIS-er-al/',cat:'anatomy',def:'Relating to internal organs',exp:'Pertaining to the soft internal organs of the body.',ex:'Visceral pain is often deep, dull, and poorly localised.'},
+{term:"Cephalic",pron:'/seh-FAL-ik/',cat:'anatomy',def:'Toward the head',exp:'Relating to the head or head end of the body.',ex:'Blood flow is cephalic in direction toward the head.'},
+{term:"Caudal",pron:'/KAW-dal/',cat:'anatomy',def:'Toward the tail/feet',exp:'Relating to the lower part or tail end of the body.',ex:'The spinal cord extends caudally from the brainstem.'},
+{term:"Bilateral",pron:'/by-LAT-er-al/',cat:'anatomy',def:'Both sides',exp:'Affecting or present on both sides of the body.',ex:'Bilateral lung infiltrates were seen on the CT scan.'},
+{term:"Unilateral",pron:'/yoo-ni-LAT-er-al/',cat:'anatomy',def:'One side only',exp:'Affecting or present on one side of the body.',ex:'The patient had unilateral facial droop.'},
+{term:"Subcutaneous",pron:'/sub-kyoo-TAY-nee-us/',cat:'anatomy',def:'Under the skin',exp:'Located or applied beneath the skin layer.',ex:'Heparin was administered via subcutaneous injection.'},
+{term:"Intramuscular",pron:'/in-trah-MUS-kyoo-lar/',cat:'anatomy',def:'Into the muscle',exp:'Injection or placement within a muscle.',ex:'The vaccine was given via the intramuscular route.'},
+
+{term:"Laparoscopy",pron:'/lap-ah-ROS-koh-pee/',cat:'procedures',def:'Keyhole abdominal surgery',exp:'A minimally invasive surgical procedure using a camera and instruments through small incisions.',ex:'The cholecystectomy was performed via laparoscopy.'},
+{term:"Endoscopy",pron:'/en-DOS-koh-pee/',cat:'procedures',def:'Internal examination with scope',exp:'Visual examination of internal organs using a flexible tube with a camera.',ex:'Upper GI endoscopy revealed a gastric ulcer.'},
+{term:"Biopsy",pron:'/BY-op-see/',cat:'procedures',def:'Tissue sample removal',exp:'Removal of tissue for microscopic examination to diagnose disease.',ex:'A skin biopsy was taken from the suspicious lesion.'},
+{term:"Catheterisation",pron:'/kath-eh-ter-eye-ZAY-shun/',cat:'procedures',def:'Tube insertion into body cavity',exp:'Insertion of a flexible tube (catheter) into a body cavity, duct, or vessel.',ex:'Urinary catheterisation was performed to monitor output.'},
+{term:"Intubation",pron:'/in-too-BAY-shun/',cat:'procedures',def:'Tube insertion into airway',exp:'Insertion of a tube into the trachea to maintain an open airway and ventilate the patient.',ex:'The patient required emergency intubation following respiratory arrest.'},
+{term:"Defibrillation",pron:'/dee-fib-ri-LAY-shun/',cat:'procedures',def:'Electric shock to heart',exp:'Delivery of electric shock to the heart to restore normal rhythm in cardiac arrest.',ex:'Defibrillation at 200J successfully restored sinus rhythm.'},
+{term:"Dialysis",pron:'/dy-AL-i-sis/',cat:'procedures',def:'Blood filtering for kidney failure',exp:'A procedure to remove waste products and excess fluid from blood when kidneys fail.',ex:'The patient undergoes haemodialysis three times per week.'},
+{term:"Transfusion",pron:'/trans-FYOO-zhun/',cat:'procedures',def:'Blood or blood product transfer',exp:'Transfer of blood or blood components into a patient\'s circulation.',ex:'Two units of packed red cells were administered via transfusion.'},
+{term:"Suturing",pron:'/SOO-chur-ing/',cat:'procedures',def:'Stitching a wound',exp:'Closing a wound or surgical incision with stitches.',ex:'The laceration required suturing with 4-0 nylon.'},
+{term:"Thoracocentesis",pron:'/thor-ah-koh-sen-TEE-sis/',cat:'procedures',def:'Chest fluid drainage',exp:'Puncture of the chest wall to drain fluid from the pleural space.',ex:'Thoracocentesis yielded 500ml of serous fluid.'},
+{term:"Paracentesis",pron:'/par-ah-sen-TEE-sis/',cat:'procedures',def:'Abdominal fluid drainage',exp:'Surgical puncture of the peritoneal cavity to withdraw fluid.',ex:'Paracentesis was performed to relieve ascites.'},
+{term:"Lumbar Puncture",pron:'/LUM-bar PUNK-chur/',cat:'procedures',def:'Spinal fluid extraction',exp:'Insertion of a needle into the spinal canal to collect CSF or administer medication.',ex:'Lumbar puncture showed elevated white cells in the CSF.'},
+{term:"Electrocardiogram",pron:'/ee-lek-troh-KAR-dee-oh-gram/',cat:'procedures',def:'ECG/EKG - Heart rhythm recording',exp:'Recording of the electrical activity of the heart to assess rhythm and function.',ex:'The 12-lead electrocardiogram showed ST elevation.'},
+{term:"Angiography",pron:'/an-jee-OG-rah-fee/',cat:'procedures',def:'Blood vessel X-ray imaging',exp:'Imaging technique using contrast dye to visualise blood vessels.',ex:'Coronary angiography revealed 80% stenosis of the LAD.'},
+{term:"Colonoscopy",pron:'/koh-lon-OS-koh-pee/',cat:'procedures',def:'Large intestine examination',exp:'Endoscopic examination of the large bowel using a flexible colonoscope.',ex:'Colonoscopy identified a 2cm polyp in the sigmoid colon.'},
+{term:"Tracheostomy",pron:'/tray-kee-OS-toh-mee/',cat:'procedures',def:'Surgical airway opening',exp:'Surgical creation of an opening in the neck to place a tube into the trachea.',ex:'A percutaneous tracheostomy was performed on day 7 of ventilation.'},
+{term:"Gastrostomy",pron:'/gas-TROS-toh-mee/',cat:'procedures',def:'Stomach feeding tube placement',exp:'Surgical creation of an opening into the stomach for tube feeding.',ex:'A PEG gastrostomy tube was inserted for long-term nutrition.'},
+{term:"Debridement",pron:'/deh-BREED-ment/',cat:'procedures',def:'Removal of dead tissue',exp:'Surgical removal of dead, damaged, or infected tissue from a wound.',ex:'Wound debridement was performed to promote healing.'},
+{term:"Cannulation",pron:'/kan-yoo-LAY-shun/',cat:'procedures',def:'IV line insertion',exp:'Insertion of a cannula into a vein for IV access.',ex:'Cannulation of the cephalic vein was successful on first attempt.'},
+
+{term:"BMI",pron:'',cat:'abbreviations',def:'Body Mass Index',exp:'A measure of body fat based on height and weight. Normal range: 18.5-24.9.',ex:'The patient\'s BMI was calculated at 28.5, indicating overweight.'},
+{term:"BP",pron:'',cat:'abbreviations',def:'Blood Pressure',exp:'The force of blood against artery walls, measured in mmHg (systolic/diastolic).',ex:'BP was recorded as 145/92 mmHg.'},
+{term:"HR",pron:'',cat:'abbreviations',def:'Heart Rate',exp:'Number of heartbeats per minute. Normal resting: 60-100 bpm.',ex:'HR increased to 120 bpm post-exertion.'},
+{term:"RR",pron:'',cat:'abbreviations',def:'Respiratory Rate',exp:'Number of breaths per minute. Normal: 12-20 breaths/min.',ex:'RR was elevated at 28 breaths per minute.'},
+{term:"SpO2",pron:'',cat:'abbreviations',def:'Oxygen Saturation',exp:'Percentage of haemoglobin saturated with oxygen. Normal: 95-100%.',ex:'SpO2 dropped to 89% on room air.'},
+{term:"GCS",pron:'',cat:'abbreviations',def:'Glasgow Coma Scale',exp:'A neurological scale assessing consciousness (eyes, verbal, motor). Range: 3-15.',ex:'GCS was 13 on admission (E4, V4, M5).'},
+{term:"NEWS2",pron:'',cat:'abbreviations',def:'National Early Warning Score 2',exp:'A standardised system for scoring physiological observations to detect deterioration.',ex:'NEWS2 of 7 triggered the rapid response team.'},
+{term:"UTI",pron:'',cat:'abbreviations',def:'Urinary Tract Infection',exp:'Infection affecting any part of the urinary system (kidneys, ureters, bladder, urethra).',ex:'Urine culture confirmed a UTI with E. coli.'},
+{term:"DVT",pron:'',cat:'abbreviations',def:'Deep Vein Thrombosis',exp:'Formation of a blood clot in a deep vein, usually in the legs.',ex:'Low molecular weight heparin was started for DVT prophylaxis.'},
+{term:"PE",pron:'',cat:'abbreviations',def:'Pulmonary Embolism',exp:'Blockage of a pulmonary artery by a blood clot, often from a DVT.',ex:'CT pulmonary angiography confirmed a PE.'},
+{term:"COPD",pron:'',cat:'abbreviations',def:'Chronic Obstructive Pulmonary Disease',exp:'A progressive lung disease causing airflow limitation, including emphysema and chronic bronchitis.',ex:'The patient had a 40 pack-year smoking history and COPD.'},
+{term:"TIA",pron:'',cat:'abbreviations',def:'Transient Ischaemic Attack',exp:'A temporary period of neurological dysfunction caused by focal brain ischaemia, lasting <24 hours.',ex:'The patient was admitted following a TIA with full resolution of symptoms.'},
+{term:"AKI",pron:'',cat:'abbreviations',def:'Acute Kidney Injury',exp:'Sudden decrease in kidney function over hours to days, classified by RIFLE or KDIGO criteria.',ex:'Creatinine rose from 80 to 210, indicating AKI stage 2.'},
+{term:"ECG",pron:'',cat:'abbreviations',def:'Electrocardiogram',exp:'Recording of the heart\'s electrical activity to diagnose rhythm abnormalities.',ex:'ECG showed atrial fibrillation with a rate of 150 bpm.'},
+{term:"IV",pron:'',cat:'abbreviations',def:'Intravenous',exp:'Into or within a vein. Used for fluids, medications, or nutrition.',ex:'Antibiotics were administered via the IV route.'},
+{term:"IM",pron:'',cat:'abbreviations',def:'Intramuscular',exp:'Into a muscle. Common route for vaccines and some medications.',ex:'The flu vaccine was given IM into the deltoid.'},
+{term:"SC / Subcut",pron:'',cat:'abbreviations',def:'Subcutaneous',exp:'Under the skin. Common route for insulin and heparin.',ex:'Insulin was administered SC before meals.'},
+{term:"NG",pron:'',cat:'abbreviations',def:'Nasogastric',exp:'Relating to the nose and stomach. An NG tube passes through the nose into the stomach.',ex:'An NG tube was inserted for enteral feeding.'},
+{term:"PRN",pron:'',cat:'abbreviations',def:'As Required (pro re nata)',exp:'Medication to be given when needed rather than on a fixed schedule.',ex:'Paracetamol 1g PO PRN for pain was prescribed.'},
+{term:"BD / BID",pron:'',cat:'abbreviations',def:'Twice Daily (bis in die)',exp:'Medication to be taken twice a day, usually every 12 hours.',ex:'Metformin 500mg BD was prescribed.'},
+{term:"TDS / TID",pron:'',cat:'abbreviations',def:'Three Times Daily (ter in die)',exp:'Medication to be taken three times a day, usually every 8 hours.',ex:'Amoxicillin 500mg TDS for 7 days.'},
+{term:"QDS / QID",pron:'',cat:'abbreviations',def:'Four Times Daily (quater in die)',exp:'Medication to be taken four times a day.',ex:'Eye drops were prescribed QDS for conjunctivitis.'},
+{term:"OD / q.d.",pron:'',cat:'abbreviations',def:'Once Daily (omni die)',exp:'Medication to be taken once a day.',ex:'Atorvastatin 40mg OD was prescribed in the evening.'},
+{term:"NBM",pron:'',cat:'abbreviations',def:'Nil By Mouth',exp:'Patient must not eat or drink, usually pre-surgery or due to swallowing risk.',ex:'The patient was kept NBM from midnight for surgery.'},
+{term:"DNAR",pron:'',cat:'abbreviations',def:'Do Not Attempt Resuscitation',exp:'A medical order indicating that CPR should not be performed if cardiac arrest occurs.',ex:'A DNAR decision was made following discussion with the family.'},
+{term:"PICC",pron:'',cat:'abbreviations',def:'Peripherally Inserted Central Catheter',exp:'A long, thin tube inserted through a vein in the arm to reach a large vein near the heart.',ex:'A PICC line was inserted for long-term antibiotic therapy.'},
+{term:"PCA",pron:'',cat:'abbreviations',def:'Patient-Controlled Analgesia',exp:'A system allowing patients to self-administer pain medication within set limits.',ex:'Morphine PCA was commenced post-operatively.'},
+{term:"TPN",pron:'',cat:'abbreviations',def:'Total Parenteral Nutrition',exp:'Complete nutrition delivered intravenously when enteral feeding is not possible.',ex:'TPN was initiated due to bowel obstruction.'},
+{term:"FBC",pron:'',cat:'abbreviations',def:'Full Blood Count',exp:'A blood test measuring red cells, white cells, haemoglobin, haematocrit, and platelets.',ex:'FBC showed haemoglobin of 9.8 g/dL.'},
+{term:"U&Es",pron:'',cat:'abbreviations',def:'Urea and Electrolytes',exp:'Blood test measuring kidney function (urea, creatinine) and electrolytes (sodium, potassium).',ex:'U&Es showed Na 132, K 5.2, Creat 180.'},
+{term:"LFTs",pron:'',cat:'abbreviations',def:'Liver Function Tests',exp:'Blood tests assessing liver health including ALT, AST, ALP, bilirubin, and albumin.',ex:'LFTs were elevated, with ALT 250 and bilirubin 45.'},
+{term:"CRP",pron:'',cat:'abbreviations',def:'C-Reactive Protein',exp:'A blood marker of inflammation. Elevated levels indicate infection or inflammation.',ex:'CRP was elevated at 120 mg/L, suggesting active infection.'},
+{term:"INR",pron:'',cat:'abbreviations',def:'International Normalised Ratio',exp:'A measure of blood clotting time. Normal: 0.8-1.2. Target on warfarin: usually 2-3.',ex:'INR was 3.5, so warfarin dose was reduced.'},
+{term:"HbA1c",pron:'',cat:'abbreviations',def:'Glycated Haemoglobin',exp:'A measure of average blood glucose over 2-3 months. Normal: <42 mmol/mol (6%).',ex:'HbA1c of 58 mmol/mol indicated suboptimal diabetic control.'},
+{term:"Arteriole",pron:'/ar-TEER-ee-ohl/',cat:'anatomy',def:'Small Artery',exp:'A small-diameter blood vessel in the microcirculation that extends and branches out from an artery.',ex:'The arterioles regulate blood flow into the capillary beds.'},
+{term:"Nebuliser",pron:'/NEB-yoo-ly-zer/',cat:'procedures',def:'Medication mist inhaler',exp:'A device that converts liquid medication into a fine mist for inhalation into the lungs.',ex:'Salbutamol was administered via nebuliser for acute asthma.'},
+{term:"Tachycardia",pron:'/tak-ee-KAR-dee-ah/',cat:'disease',def:'Abnormally Fast Heart Rate',exp:'A heart rate exceeding 100 beats per minute in adults. Can be physiological or pathological.',ex:'The patient developed sinus tachycardia with a rate of 130 bpm.'},
+{term:"MRI",pron:'',cat:'abbreviations',def:'Magnetic Resonance Imaging',exp:'A non-invasive imaging technique using magnetic fields and radio waves to produce detailed body images.',ex:'MRI of the brain showed no acute abnormalities.'},
+{term:"Bradycardia",pron:'/brad-ee-KAR-dee-ah/',cat:'disease',def:'Abnormally Slow Heart Rate',exp:'A heart rate below 60 beats per minute in adults. May be normal in athletes or indicate pathology.',ex:'Atropine was given for symptomatic bradycardia with a rate of 38 bpm.'},
+{term:"Phlebitis",pron:'/fleb-EYE-tis/',cat:'disease',def:'Vein Inflammation',exp:'Inflammation of a vein, often associated with thrombosis (thrombophlebitis) or IV cannulation.',ex:'The IV site showed signs of phlebitis and was resited.'},
+{term:"Epidermis",pron:'/ep-i-DER-mis/',cat:'anatomy',def:'Outermost Skin Layer',exp:'The outermost layer of the skin, providing a waterproof barrier and creating skin tone.',ex:'The epidermis regenerates approximately every 27 days.'}
+];
+
+let currentIdx=0;
+let filteredCards=[...allFlashcards];
+let knownCards=new Set();
+let isFlipped=false;
+
+function showCard(idx){
+isFlipped=false;
+document.getElementById('flashcard').classList.remove('flipped');
+const card=filteredCards[idx];
+document.getElementById('cardTerm').textContent=card.term;
+document.getElementById('cardPronunciation').textContent=card.pron||'';
+document.getElementById('cardCategory').textContent=card.cat;
+document.getElementById('cardDefinition').textContent=card.def;
+document.getElementById('cardExplanation').textContent=card.exp;
+document.getElementById('cardExample').textContent='"'+card.ex+'"';
+
+document.getElementById('currentNum').textContent=idx+1;
+document.getElementById('totalNum').textContent=filteredCards.length;
+document.getElementById('knownCount').textContent=knownCards.size;
+document.getElementById('progressText').textContent=`Card ${idx+1} of ${filteredCards.length}`;
+document.getElementById('progressFill').style.width=`${((idx+1)/filteredCards.length)*100}%`;
+}
+
+function flipCard(){
+isFlipped=!isFlipped;
+document.getElementById('flashcard').classList.toggle('flipped',isFlipped);
+}
+
+function nextCard(){
+if(currentIdx<filteredCards.length-1){currentIdx++;showCard(currentIdx);}
+}
+
+function prevCard(){
+if(currentIdx>0){currentIdx--;showCard(currentIdx);}
+}
+
+function filterCategory(cat){
+document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+if(cat==='all'){filteredCards=[...allFlashcards];}
+else{filteredCards=allFlashcards.filter(c=>c.cat===cat);}
+currentIdx=0;
+showCard(currentIdx);
+}
+
+function shuffleCards(){
+for(let i=filteredCards.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1));
+[filteredCards[i],filteredCards[j]]=[filteredCards[j],filteredCards[i]];
+}
+currentIdx=0;
+showCard(currentIdx);
+}
+
+function markKnown(known){
+if(known)knownCards.add(filteredCards[currentIdx].term);
+else knownCards.delete(filteredCards[currentIdx].term);
+document.getElementById('knownCount').textContent=knownCards.size;
+nextCard();
+}
+
+document.addEventListener('keydown',e=>{
+if(e.key==='ArrowRight')nextCard();
+if(e.key==='ArrowLeft')prevCard();
+if(e.key===' '){e.preventDefault();flipCard();}
+});
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+document.getElementById('toast').classList.add('show');
+setTimeout(()=>document.getElementById('toast').classList.remove('show'),2000);
+}
+
+showCard(0);
+</script>
+</body>
+</html>

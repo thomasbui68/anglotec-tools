@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Time Calculator | Free Speech & Reading Time Estimator</title>
+<meta name="description" content="Free reading time calculator. Calculate how long it takes to read or speak any text. Supports custom WPM speeds for accurate time estimation.">
+<meta name="keywords" content="reading time calculator, speech time calculator, how long to read, words per minute calculator, speaking time calculator">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F4F;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F5F0;--white:#FFFFFF;--gray:#6B7280;--light-gray:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:#1F2937;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:1000px;margin:0 auto;padding:0 20px;}
+header{background:var(--green);color:var(--white);padding:24px 0;text-align:center;}
+header h1{font-size:2rem;font-weight:700;margin-bottom:6px;}
+header p{font-size:1rem;opacity:0.9;}
+.main{padding:30px 0 60px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.card{background:var(--white);border-radius:16px;padding:24px;box-shadow:0 4px 24px rgba(0,0,0,0.08);}
+.card h2{font-size:1.3rem;color:var(--green);margin-bottom:16px;}
+textarea{width:100%;min-height:240px;padding:14px;border:2px solid var(--light-gray);border-radius:12px;font-family:'Inter',sans-serif;font-size:1rem;resize:vertical;transition:border-color 0.2s;}
+textarea:focus{outline:none;border-color:var(--green);}
+.slider-container{margin:16px 0;}
+.slider-container label{display:block;font-weight:600;margin-bottom:8px;color:var(--green);}
+input[type=range]{width:100%;height:8px;border-radius:4px;background:var(--light-gray);outline:none;-webkit-appearance:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--orange);cursor:pointer;}
+.slider-value{font-weight:700;color:var(--orange);font-size:1.1rem;}
+.result-box{background:var(--green);color:var(--white);padding:24px;border-radius:12px;text-align:center;margin-bottom:16px;}
+.result-box h3{font-size:2.5rem;font-weight:700;margin-bottom:4px;font-family:'Inter',sans-serif;}
+.result-box p{font-size:0.95rem;opacity:0.9;}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.result-item{background:#F9FAFB;padding:16px;border-radius:10px;text-align:center;border-left:4px solid var(--orange);}
+.result-item h4{font-size:1.6rem;color:var(--green);font-weight:700;}
+.result-item p{font-size:0.8rem;color:var(--gray);margin-top:4px;}
+.preset-btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;}
+.preset-btn{background:var(--cream);border:2px solid var(--light-gray);padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:500;transition:all 0.2s;}
+.preset-btn:hover,.preset-btn.active{border-color:var(--green);background:var(--green);color:var(--white);}
+.share-section{text-align:center;padding:30px 0;}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{padding:10px 20px;border-radius:8px;color:var(--white);text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-btn.tw{background:#1DA1F2;}.share-btn.fb{background:#4267B2;}.share-btn.li{background:#0077B5;}.share-btn.wa{background:#25D366;}.share-btn.cp{background:var(--gray);}
+.cta-section{background:var(--green);color:var(--white);padding:40px 20px;text-align:center;border-radius:16px;margin-top:30px;}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px;}
+.cta-section p{margin-bottom:20px;opacity:0.95;}
+.cta-btn{background:var(--orange);color:var(--white);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.2s;}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);}
+.keywords{background:var(--white);padding:20px;border-radius:12px;margin-top:20px;font-size:0.85rem;color:var(--gray);}
+.keywords strong{color:var(--green);}
+footer{text-align:center;padding:30px 0;color:var(--gray);font-size:0.85rem;}
+@media(max-width:768px){.grid{grid-template-columns:1fr;}header h1{font-size:1.5rem;}}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:500;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:100;}
+.copy-toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Reading Time Calculator</h1>
+<p>Calculate reading and speaking time for any text with adjustable speed</p>
+</div>
+</header>
+
+<div class="container main">
+<div class="grid">
+<div class="card">
+<h2>Your Text</h2>
+<textarea id="textInput" placeholder="Paste your article, speech, essay, or any text here to calculate reading and speaking time..."></textarea>
+<div style="display:flex;gap:10px;margin-top:12px;">
+<button class="cta-btn" onclick="clearText()" style="padding:10px 20px;font-size:0.9rem;">Clear</button>
+<button class="cta-btn" onclick="loadSample()" style="padding:10px 20px;font-size:0.9rem;background:var(--green);">Sample</button>
+</div>
+
+<div class="slider-container" style="margin-top:20px;">
+<label>Reading Speed: <span class="slider-value" id="readingWpmVal">200 WPM</span></label>
+<input type="range" id="readingWpm" min="50" max="400" value="200" oninput="updateCalculation()">
+<div class="preset-btns">
+<button class="preset-btn" onclick="setReading(150)">Slow (150)</button>
+<button class="preset-btn active" onclick="setReading(200)">Average (200)</button>
+<button class="preset-btn" onclick="setReading(300)">Fast (300)</button>
+</div>
+</div>
+
+<div class="slider-container">
+<label>Speaking Speed: <span class="slider-value" id="speakingWpmVal">130 WPM</span></label>
+<input type="range" id="speakingWpm" min="50" max="250" value="130" oninput="updateCalculation()">
+<div class="preset-btns">
+<button class="preset-btn" onclick="setSpeaking(100)">Slow (100)</button>
+<button class="preset-btn active" onclick="setSpeaking(130)">Average (130)</button>
+<button class="preset-btn" onclick="setSpeaking(180)">Fast (180)</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Results</h2>
+<div class="result-box">
+<h3 id="totalWords">0</h3>
+<p>Total Words</p>
+</div>
+<div class="result-grid">
+<div class="result-item">
+<h4 id="readingTime">0m 0s</h4>
+<p>Reading Time</p>
+</div>
+<div class="result-item">
+<h4 id="speakingTime">0m 0s</h4>
+<p>Speaking Time</p>
+</div>
+<div class="result-item">
+<h4 id="readingMin">0</h4>
+<p>Reading (minutes)</p>
+</div>
+<div class="result-item">
+<h4 id="speakingMin">0</h4>
+<p>Speaking (minutes)</p>
+</div>
+</div>
+
+<div style="margin-top:20px;padding:16px;background:#F9FAFB;border-radius:10px;">
+<h4 style="color:var(--green);margin-bottom:10px;font-size:0.9rem;">Breakdown by Word Count</h4>
+<div id="breakdown" style="font-size:0.85rem;color:var(--gray);line-height:2;"></div>
+</div>
+</div>
+</div>
+
+<div class="keywords">
+<strong>Popular searches:</strong> reading time calculator, speech time calculator, how long to read my text, words per minute calculator, speaking time estimator, article reading time, presentation time calculator
+</div>
+
+<div class="share-section">
+<h3 style="color:var(--green);margin-bottom:16px;">Share This Tool</h3>
+<div class="share-btns">
+<a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://tools.anglotec-ai.com/reading-time-calculator&text=Free%20Reading%20Time%20Calculator" target="_blank">Twitter</a>
+<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/reading-time-calculator" target="_blank">Facebook</a>
+<a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/reading-time-calculator" target="_blank">LinkedIn</a>
+<a class="share-btn wa" href="https://wa.me/?text=Free%20Reading%20Time%20Calculator%20https://tools.anglotec-ai.com/reading-time-calculator" target="_blank">WhatsApp</a>
+<button class="share-btn cp" onclick="copyLink()">Copy Link</button>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>More Free Writing Tools</h2>
+<p>Explore our complete collection of free tools for writers, students, and professionals.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Discover All Tools</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p> Reading Time Calculator | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none;">Anglotec AI Tools</a></p>
+</div>
+</footer>
+
+<div class="copy-toast" id="toast">Link copied to clipboard!</div>
+
+<script>
+const textarea=document.getElementById('textInput');
+textarea.addEventListener('input',updateCalculation);
+
+function updateCalculation(){
+const text=textarea.value;
+const words=text.trim()?text.trim().split(/\s+/).length:0;
+const readingWpm=parseInt(document.getElementById('readingWpm').value);
+const speakingWpm=parseInt(document.getElementById('speakingWpm').value);
+
+document.getElementById('readingWpmVal').textContent=readingWpm+' WPM';
+document.getElementById('speakingWpmVal').textContent=speakingWpm+' WPM';
+
+document.getElementById('totalWords').textContent=words.toLocaleString();
+
+const readingSeconds=words>0?Math.ceil((words/readingWpm)*60):0;
+const speakingSeconds=words>0?Math.ceil((words/speakingWpm)*60):0;
+
+document.getElementById('readingTime').textContent=formatTime(readingSeconds);
+document.getElementById('speakingTime').textContent=formatTime(speakingSeconds);
+document.getElementById('readingMin').textContent=(readingSeconds/60).toFixed(1);
+document.getElementById('speakingMin').textContent=(speakingSeconds/60).toFixed(1);
+
+const breakdown=document.getElementById('breakdown');
+if(words>0){
+const at100=formatTime(Math.ceil((words/100)*60));
+const at150=formatTime(Math.ceil((words/150)*60));
+const at200=formatTime(Math.ceil((words/200)*60));
+const at250=formatTime(Math.ceil((words/250)*60));
+breakdown.innerHTML=`100 WPM: <strong>${at100}</strong><br>150 WPM: <strong>${at150}</strong><br>200 WPM: <strong>${at200}</strong><br>250 WPM: <strong>${at250}</strong>`;
+}else{breakdown.innerHTML='';}
+}
+
+function formatTime(seconds){
+const m=Math.floor(seconds/60);
+const s=seconds%60;
+return m>0?`${m}m ${s}s`:`${s}s`;
+}
+
+function setReading(val){
+document.getElementById('readingWpm').value=val;
+document.querySelectorAll('.preset-btn').forEach(b=>{if(b.textContent.includes('Slow')||b.textContent.includes('Average')||b.textContent.includes('Fast'))b.classList.remove('active');});
+updateCalculation();
+}
+
+function setSpeaking(val){
+document.getElementById('speakingWpm').value=val;
+updateCalculation();
+}
+
+function clearText(){textarea.value='';updateCalculation();}
+
+function loadSample(){
+textarea.value='The process of becoming a registered nurse in the United Kingdom involves several important steps. First, candidates must hold a nursing qualification from their home country and have at least one year of post-registration experience. Next, they need to demonstrate English language proficiency by achieving the required score in either the IELTS Academic test or the Occupational English Test (OET) for nursing. After meeting the language requirements, applicants must register with the Nursing and Midwifery Council (NMC), which includes passing a Computer-Based Test (CBT) and an Objective Structured Clinical Examination (OSCE). The CBT assesses the candidate\'s theoretical knowledge, while the OSCE evaluates their practical clinical skills. Once these requirements are fulfilled, nurses can apply for positions within the National Health Service (NHS) or private healthcare providers. The entire process typically takes between six months to one year, depending on individual circumstances and preparation time.';
+updateCalculation();
+}
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+document.getElementById('toast').classList.add('show');
+setTimeout(()=>document.getElementById('toast').classList.remove('show'),2000);
+}
+</script>
+</body>
+</html>

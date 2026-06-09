@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPA Calculator for UK Universities | Free Grade Converter</title>
+<meta name="description" content="Free GPA calculator for UK universities. Convert your grades to UK and US GPA scales. Supports percentage, letter grades, and degree classifications.">
+<meta name="keywords" content="gpa calculator uk, grade calculator, uk degree classification, gpa converter, university grade calculator">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F4F;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F5F0;--white:#FFFFFF;--gray:#6B7280;--light-gray:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:#1F2937;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:1000px;margin:0 auto;padding:0 20px;}
+header{background:var(--green);color:var(--white);padding:24px 0;text-align:center;}
+header h1{font-size:2rem;font-weight:700;margin-bottom:6px;}
+header p{font-size:1rem;opacity:0.9;}
+.main{padding:30px 0 60px;}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;}
+.card{background:var(--white);border-radius:16px;padding:24px;box-shadow:0 4px 24px rgba(0,0,0,0.08);margin-bottom:24px;}
+.card h2{font-size:1.3rem;color:var(--green);margin-bottom:16px;}
+.input-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;align-items:center;margin-bottom:10px;}
+.input-row input,.input-row select{padding:10px;border:2px solid var(--light-gray);border-radius:8px;font-size:0.9rem;font-family:'Inter',sans-serif;}
+.input-row input:focus,.input-row select:focus{outline:none;border-color:var(--green);}
+.add-btn{background:var(--green);color:var(--white);border:none;padding:10px 20px;border-radius:10px;font-weight:600;cursor:pointer;transition:all 0.2s;margin-top:10px;}
+.add-btn:hover{background:var(--green-light);}
+.remove-btn{background:#FEE2E2;color:#DC2626;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:0.8rem;font-weight:600;}
+.result-box{background:var(--green);color:var(--white);padding:24px;border-radius:12px;text-align:center;margin-bottom:16px;}
+.result-box h3{font-size:2.5rem;font-weight:700;font-family:'Inter',sans-serif;}
+.result-box p{font-size:0.95rem;opacity:0.9;}
+.result-item{background:#F9FAFB;padding:14px;border-radius:10px;text-align:center;margin-bottom:10px;border-left:4px solid var(--orange);}
+.result-item h4{font-size:1.4rem;color:var(--green);font-weight:700;}
+.result-item p{font-size:0.8rem;color:var(--gray);}
+.scale-table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:16px;}
+.scale-table th{background:var(--green);color:var(--white);padding:10px;text-align:center;}
+.scale-table td{padding:8px;text-align:center;border-bottom:1px solid var(--light-gray);}
+.scale-table tr:hover{background:#F9FAFB;}
+.share-section{text-align:center;padding:30px 0;}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{padding:10px 20px;border-radius:8px;color:var(--white);text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-btn.tw{background:#1DA1F2;}.share-btn.fb{background:#4267B2;}.share-btn.li{background:#0077B5;}.share-btn.wa{background:#25D366;}.share-btn.cp{background:var(--gray);}
+.cta-section{background:var(--green);color:var(--white);padding:40px 20px;text-align:center;border-radius:16px;margin-top:30px;}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px;}
+.cta-section p{margin-bottom:20px;opacity:0.95;}
+.cta-btn{background:var(--orange);color:var(--white);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.2s;}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);}
+.keywords{background:var(--white);padding:20px;border-radius:12px;margin-top:20px;font-size:0.85rem;color:var(--gray);}
+.keywords strong{color:var(--green);}
+footer{text-align:center;padding:30px 0;color:var(--gray);font-size:0.85rem;}
+@media(max-width:768px){.grid{grid-template-columns:1fr;}.input-row{grid-template-columns:1fr 1fr;}}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:500;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:100;}
+.copy-toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>GPA Calculator for UK Universities</h1>
+<p>Convert your grades to UK and US GPA scales with ease</p>
+</div>
+</header>
+
+<div class="container main">
+<div class="grid">
+<div>
+<div class="card">
+<h2>Enter Your Modules</h2>
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;font-size:0.8rem;font-weight:600;color:var(--green);margin-bottom:8px;">
+<span>Module Name</span><span>Credits</span><span>Grade (%)</span><span>Grade (Letter)</span><span></span>
+</div>
+<div id="modulesList"></div>
+<button class="add-btn" onclick="addModule()">+ Add Module</button>
+<button class="add-btn" onclick="loadSample()" style="background:var(--orange);margin-left:8px;">Load Sample</button>
+</div>
+</div>
+
+<div>
+<div class="card">
+<h2>Your Results</h2>
+<div class="result-box">
+<h3 id="gpaResult">0.00</h3>
+<p>UK GPA (4.0 Scale)</p>
+</div>
+<div class="result-item"><h4 id="usGpa">0.00</h4><p>US GPA (4.0)</p></div>
+<div class="result-item"><h4 id="percentage">0%</h4><p>Average Percentage</p></div>
+<div class="result-item"><h4 id="classification">-</h4><p>UK Classification</p></div>
+<div class="result-item"><h4 id="totalCredits">0</h4><p>Total Credits</p></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Grade Conversion Tables</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+<div>
+<h3 style="font-size:1rem;color:var(--orange);margin-bottom:10px;">UK Percentage to GPA</h3>
+<table class="scale-table">
+<tr><th>% Range</th><th>Grade</th><th>GPA</th><th>Class</th></tr>
+<tr><td>70-100</td><td>A</td><td>4.0</td><td>1st</td></tr>
+<tr><td>65-69</td><td>A-</td><td>3.7</td><td>Upper 2:1</td></tr>
+<tr><td>60-64</td><td>B+</td><td>3.3</td><td>Lower 2:1</td></tr>
+<tr><td>55-59</td><td>B</td><td>3.0</td><td>Upper 2:2</td></tr>
+<tr><td>50-54</td><td>B-</td><td>2.7</td><td>Lower 2:2</td></tr>
+<tr><td>45-49</td><td>C+</td><td>2.3</td><td>3rd</td></tr>
+<tr><td>40-44</td><td>C</td><td>2.0</td><td>Pass</td></tr>
+<tr><td>0-39</td><td>F</td><td>0.0</td><td>Fail</td></tr>
+</table>
+</div>
+<div>
+<h3 style="font-size:1rem;color:var(--orange);margin-bottom:10px;">Letter to GPA</h3>
+<table class="scale-table">
+<tr><th>Letter</th><th>GPA</th><th>% Range</th></tr>
+<tr><td>A+</td><td>4.0</td><td>97-100</td></tr>
+<tr><td>A</td><td>4.0</td><td>93-96</td></tr>
+<tr><td>A-</td><td>3.7</td><td>90-92</td></tr>
+<tr><td>B+</td><td>3.3</td><td>87-89</td></tr>
+<tr><td>B</td><td>3.0</td><td>83-86</td></tr>
+<tr><td>B-</td><td>2.7</td><td>80-82</td></tr>
+<tr><td>C+</td><td>2.3</td><td>77-79</td></tr>
+<tr><td>C</td><td>2.0</td><td>73-76</td></tr>
+<tr><td>C-</td><td>1.7</td><td>70-72</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="keywords">
+<strong>Popular searches:</strong> gpa calculator uk, grade calculator, uk degree classification calculator, university grade calculator, gpa converter, first class honours calculator, 2:1 degree calculator
+</div>
+
+<div class="share-section">
+<h3 style="color:var(--green);margin-bottom:16px;">Share This Tool</h3>
+<div class="share-btns">
+<a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://tools.anglotec-ai.com/gpa-calculator&text=GPA%20Calculator%20for%20UK%20Universities" target="_blank">Twitter</a>
+<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/gpa-calculator" target="_blank">Facebook</a>
+<a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/gpa-calculator" target="_blank">LinkedIn</a>
+<a class="share-btn wa" href="https://wa.me/?text=GPA%20Calculator%20https://tools.anglotec-ai.com/gpa-calculator" target="_blank">WhatsApp</a>
+<button class="share-btn cp" onclick="copyLink()">Copy Link</button>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>Need More Academic Tools?</h2>
+<p>Discover more free calculators and converters for students at Anglotec AI.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Explore All Tools</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p> GPA Calculator | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none;">Anglotec AI Tools</a></p>
+</div>
+</footer>
+
+<div class="copy-toast" id="toast">Link copied to clipboard!</div>
+
+<script>
+let modules=[{name:'',credits:15,grade:65,letter:'B+'}];
+
+function pctToGpa(pct){
+if(pct>=70)return 4.0;if(pct>=65)return 3.7;if(pct>=60)return 3.3;if(pct>=55)return 3.0;
+if(pct>=50)return 2.7;if(pct>=45)return 2.3;if(pct>=40)return 2.0;return 0.0;
+}
+function pctToLetter(pct){
+if(pct>=70)return 'A';if(pct>=65)return 'A-';if(pct>=60)return 'B+';if(pct>=55)return 'B';
+if(pct>=50)return 'B-';if(pct>=45)return 'C+';if(pct>=40)return 'C';return 'F';
+}
+function letterToGpa(l){const map={'A+':4,'A':4,'A-':3.7,'B+':3.3,'B':3,'B-':2.7,'C+':2.3,'C':2,'C-':1.7,'D+':1.3,'D':1,'F':0};return map[l]||0;}
+function getClassification(avg){if(avg>=70)return'First Class Honours';if(avg>=60)return'Upper Second (2:1)';if(avg>=50)return'Lower Second (2:2)';if(avg>=40)return'Third Class (3rd)';return'Fail';}
+
+function render(){
+const list=document.getElementById('modulesList');
+list.innerHTML='';
+modules.forEach((m,i)=>{
+const row=document.createElement('div');row.className='input-row';
+row.innerHTML=`<input type="text" placeholder="Module ${i+1}" value="${m.name}" onchange="modules[${i}].name=this.value;calc();">
+<input type="number" placeholder="Credits" value="${m.credits}" min="0" max="60" onchange="modules[${i}].credits=parseFloat(this.value)||0;calc();">
+<input type="number" placeholder="0-100" value="${m.grade}" min="0" max="100" onchange="modules[${i}].grade=parseFloat(this.value)||0;modules[${i}].letter=pctToLetter(modules[${i}].grade);render();">
+<select onchange="modules[${i}].letter=this.value;calc();"><option>A+</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>F</option></select>
+<button class="remove-btn" onclick="modules.splice(${i},1);if(modules.length===0)modules.push({name:'',credits:15,grade:65,letter:'B+'});render();calc();">Remove</button>`;
+row.querySelector('select').value=m.letter;
+list.appendChild(row);
+});
+calc();
+}
+
+function addModule(){modules.push({name:'',credits:15,grade:65,letter:'B+'});render();}
+
+function calc(){
+let totalCredits=0,weightedGpa=0,weightedPct=0;
+modules.forEach(m=>{const c=m.credits||0;totalCredits+=c;weightedGpa+=c*letterToGpa(m.letter);weightedPct+=c*(m.grade||0);});
+if(totalCredits===0){document.getElementById('gpaResult').textContent='0.00';document.getElementById('usGpa').textContent='0.00';document.getElementById('percentage').textContent='0%';document.getElementById('classification').textContent='-';document.getElementById('totalCredits').textContent='0';return;}
+const gpa=weightedGpa/totalCredits;
+const pct=weightedPct/totalCredits;
+document.getElementById('gpaResult').textContent=gpa.toFixed(2);
+document.getElementById('usGpa').textContent=gpa.toFixed(2);
+document.getElementById('percentage').textContent=pct.toFixed(1)+'%';
+document.getElementById('classification').textContent=getClassification(pct);
+document.getElementById('totalCredits').textContent=totalCredits;
+}
+
+function loadSample(){
+modules=[
+{name:'Research Methods',credits:30,grade:72,letter:'A'},
+{name:'Clinical Practice',credits:30,grade:68,letter:'A-'},
+{name:'Pharmacology',credits:15,grade:65,letter:'A-'},
+{name:'Anatomy',credits:15,grade:58,letter:'B'},
+{name:'Communication Skills',credits:15,grade:70,letter:'A'},
+{name:'Evidence-Based Practice',credits:15,grade:62,letter:'B+'}
+];
+render();
+}
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+document.getElementById('toast').classList.add('show');
+setTimeout(()=>document.getElementById('toast').classList.remove('show'),2000);
+}
+
+render();
+</script>
+</body>
+</html>

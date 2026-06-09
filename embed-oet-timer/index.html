@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OET Speaking Timer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root{--green:#2C4A3E;--orange:#D4653B;--cream:#F7F5F0;--lightgreen:#E8F0EC;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;padding:15px}
+.widget-container{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.12);width:100%;max-width:340px;overflow:hidden;border:2px solid var(--green)}
+.header{background:linear-gradient(135deg,var(--green),#1a3028);color:#fff;padding:16px;text-align:center}
+.header h1{font-size:1rem;font-weight:600}
+.header p{font-size:0.7rem;opacity:0.8;margin-top:3px}
+.body{padding:14px}
+.roleplay-card{background:var(--lightgreen);border-radius:10px;padding:12px;margin-bottom:12px;border-left:4px solid var(--orange)}
+.roleplay-card h3{font-size:0.8rem;color:var(--green);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+.roleplay-card p{font-size:0.82rem;color:#333;line-height:1.45}
+.roleplay-card .scenario{font-style:italic;color:var(--orange);font-weight:500}
+.timer-display{background:linear-gradient(135deg,var(--green),#3d6354);color:#fff;border-radius:12px;padding:18px;text-align:center;margin:10px 0}
+.timer-display .time{font-size:3rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.timer-display .phase-label{font-size:0.75rem;opacity:0.9;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+.progress-bar{height:6px;background:rgba(255,255,255,0.2);border-radius:3px;margin-top:10px;overflow:hidden}
+.progress-bar .fill{height:100%;background:var(--orange);border-radius:3px;transition:width 1s linear;width:100%}
+.controls{display:flex;gap:8px;margin-top:10px}
+.ctrl-btn{flex:1;border:none;border-radius:8px;padding:10px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.8rem;cursor:pointer;transition:opacity 0.2s}
+.ctrl-btn:hover{opacity:0.85}
+.start{background:var(--orange);color:#fff}
+.pause{background:#e67e22;color:#fff}
+.reset{background:#95a5a6;color:#fff}
+.next{background:var(--green);color:#fff}
+.footer{background:var(--lightgreen);padding:10px;text-align:center;font-size:0.7rem;color:var(--green)}
+.footer a{color:var(--orange);font-weight:600;text-decoration:none}
+.phase-indicator{display:flex;justify-content:space-between;margin-bottom:8px}
+.phase-dot{width:8px;height:8px;border-radius:50%;background:#ddd}
+.phase-dot.active{background:var(--orange)}
+.phase-dot.done{background:var(--green)}
+</style>
+</head>
+<body>
+<div class="widget-container">
+  <div class="header">
+    <h1>OET Speaking Timer</h1>
+    <p>Role-play practice with built-in timing</p>
+  </div>
+  <div class="body">
+    <div class="phase-indicator">
+      <div class="phase-dot active" id="d0"></div>
+      <div class="phase-dot" id="d1"></div>
+      <div class="phase-dot" id="d2"></div>
+      <div class="phase-dot" id="d3"></div>
+    </div>
+    <div class="roleplay-card">
+      <h3>Role-Play Card</h3>
+      <p><strong>Setting:</strong> <span id="setting" class="scenario">Community Health Centre</span></p>
+      <p style="margin-top:4px" id="task"><strong>Task:</strong> A 58-year-old patient, Mr. Johnson, has been recently diagnosed with Type 2 diabetes. Explain his condition, discuss lifestyle modifications, and address his concerns about medication.</p>
+    </div>
+    <div class="timer-display">
+      <div class="time" id="timer">03:00</div>
+      <div class="phase-label" id="phase">Preparation Time</div>
+      <div class="progress-bar"><div class="fill" id="fill"></div></div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn start" id="btnStart" onclick="startTimer()">Start</button>
+      <button class="ctrl-btn pause" onclick="pauseTimer()" style="display:none" id="btnPause">Pause</button>
+      <button class="ctrl-btn reset" onclick="resetTimer()">Reset</button>
+    </div>
+    <div class="controls" style="margin-top:6px">
+      <button class="ctrl-btn next" onclick="nextScenario()">New Scenario</button>
+    </div>
+  </div>
+  <div class="footer">
+    Powered by <a href="https://tools.anglotec-ai.com" target="_blank">Anglotec AI Academy</a>
+  </div>
+</div>
+<script>
+var scenarios=[
+  {setting:"Community Health Centre",task:"A 58-year-old patient, Mr. Johnson, has been recently diagnosed with Type 2 diabetes. Explain his condition, discuss lifestyle modifications, and address his concerns about medication."},
+  {setting:"Hospital Ward",task:"Mrs. Smith, 72, is being discharged after hip replacement surgery. Explain the home care plan, wound care instructions, and signs of complications to watch for."},
+  {setting:"GP Practice",task:"A mother brings her 3-year-old child with persistent cough and fever. Take a history, explain your assessment, and discuss treatment options."},
+  {setting:"Emergency Department",task:"Mr. Lee, 45, has chest pain. Take a focused history, explain the need for investigations, and reassure the anxious patient."},
+  {setting:"Mental Health Clinic",task:"Ms. Brown, 28, has been referred for anxiety management. Discuss her symptoms, explain CBT approaches, and explore coping strategies."},
+  {setting:"Antenatal Clinic",task:"A first-time mother, 30 weeks pregnant, is worried about labour pain. Discuss pain management options, breathing techniques, and birth plan."},
+  {setting:"Community Health Centre",task:"An elderly patient's son is concerned about his father's increasing forgetfulness. Discuss dementia assessment, support services, and carer resources."},
+  {setting:"Hospital Ward",task:"A post-operative patient refuses to take prescribed pain medication. Explore their concerns, explain the benefits, and discuss alternative pain management."}
+];
+var curScenario=0;
+var phase=0; // 0=prep(3min), 1=speak1(2min), 2=speak2(3min), 3=wrap(1min)
+var phases=[{t:180,label:"Preparation Time"},{t:120,label:"Speaking - Role Card 1"},{t:180,label:"Speaking - Role Card 2"},{t:60,label:"Closing"}];
+var timeLeft=180;
+var running=false;
+var interval=null;
+var totalTime=180;
+function fmt(t){var m=Math.floor(t/60);var s=t%60;return(m<10?"0":"")+m+":"+(s<10?"0":"")+s;}
+function updateDisp(){document.getElementById('timer').textContent=fmt(timeLeft);document.getElementById('phase').textContent=phases[phase].label;var pct=(timeLeft/totalTime)*100;document.getElementById('fill').style.width=pct+'%';}
+function updateDots(){for(var i=0;i<4;i++){var d=document.getElementById('d'+i);d.className='phase-dot';if(i<phase)d.classList.add('done');else if(i===phase&&running)d.classList.add('active');else if(i===phase&&!running)d.classList.add('active');}}
+function startTimer(){if(!running){running=true;document.getElementById('btnStart').style.display='none';document.getElementById('btnPause').style.display='block';totalTime=phases[phase].t;if(timeLeft===0||timeLeft===phases[phase].t)timeLeft=phases[phase].t;updateDisp();interval=setInterval(function(){timeLeft--;updateDisp();if(timeLeft<=0){clearInterval(interval);running=false;document.getElementById('btnStart').style.display='block';document.getElementById('btnPause').style.display='none';if(phase<3){phase++;timeLeft=phases[phase].t;totalTime=phases[phase].t;document.getElementById('btnStart').textContent='Next Phase';}updateDots();}},1000);}updateDots();}
+function pauseTimer(){running=false;clearInterval(interval);document.getElementById('btnStart').style.display='block';document.getElementById('btnPause').style.display='none';document.getElementById('btnStart').textContent='Resume';updateDots();}
+function resetTimer(){running=false;clearInterval(interval);phase=0;timeLeft=phases[0].t;totalTime=phases[0].t;document.getElementById('btnStart').style.display='block';document.getElementById('btnPause').style.display='none';document.getElementById('btnStart').textContent='Start';updateDisp();updateDots();}
+function nextScenario(){curScenario=(curScenario+1)%scenarios.length;var s=scenarios[curScenario];document.getElementById('setting').textContent=s.setting;document.getElementById('task').innerHTML='<strong>Task:</strong> '+s.task;resetTimer();}
+updateDisp();updateDots();
+</script>
+</body>
+</html>

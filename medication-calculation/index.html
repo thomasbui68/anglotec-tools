@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medication Calculation Quiz for Nurses (30 Questions) | Free</title>
+<meta name="description" content="Free medication calculation quiz for nurses. 30 drug calculation questions covering dosage, IV rates, conversions, and more. Instant scoring with explanations.">
+<meta name="keywords" content="medication calculation quiz, drug calculation quiz, nurse drug calc test, dosage calculation practice, nursing maths test">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F4F;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F5F0;--white:#FFFFFF;--gray:#6B7280;--light-gray:#E5E7EB;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:#1F2937;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:800px;margin:0 auto;padding:0 20px;}
+header{background:var(--green);color:var(--white);padding:24px 0;text-align:center;}
+header h1{font-size:2rem;font-weight:700;margin-bottom:6px;}
+header p{font-size:1rem;opacity:0.9;}
+.main{padding:30px 0 60px;}
+.card{background:var(--white);border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);margin-bottom:24px;}
+.progress-bar{height:8px;background:var(--light-gray);border-radius:4px;margin-bottom:20px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--green);transition:width 0.3s;border-radius:4px;}
+.progress-text{font-size:0.85rem;color:var(--gray);margin-bottom:20px;text-align:center;}
+.question-num{font-size:0.85rem;color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.question-text{font-size:1.1rem;font-weight:600;margin-bottom:20px;color:var(--green);}
+.options{display:flex;flex-direction:column;gap:10px;}
+.option{background:#F9FAFB;padding:14px 16px;border-radius:10px;border:2px solid var(--light-gray);cursor:pointer;transition:all 0.2s;font-size:0.95rem;}
+.option:hover{border-color:var(--green);background:#F0FDF4;}
+.option.selected{border-color:var(--green);background:var(--green);color:var(--white);}
+.option.correct{border-color:#16A34A;background:#DCFCE7;}
+.option.incorrect{border-color:#DC2626;background:#FEE2E2;}
+.nav-btns{display:flex;justify-content:space-between;margin-top:24px;gap:10px;}
+.btn{background:var(--orange);color:var(--white);border:none;padding:12px 24px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.btn:hover{background:var(--orange-light);transform:translateY(-1px);}
+.btn:disabled{opacity:0.5;cursor:not-allowed;}
+.btn-secondary{background:var(--green);}
+.btn-secondary:hover{background:var(--green-light);}
+.explanation{background:#F0FDF4;padding:16px;border-radius:10px;margin-top:16px;border-left:4px solid #16A34A;display:none;}
+.explanation.show{display:block;}
+.explanation h4{color:var(--green);margin-bottom:6px;}
+.explanation .worked{font-family:'Courier New',monospace;background:#fff;padding:12px;border-radius:8px;margin-top:8px;font-size:0.9rem;white-space:pre-line;}
+.result-card{text-align:center;padding:40px 20px;}
+.result-card h2{font-size:2rem;color:var(--green);margin-bottom:12px;}
+.result-card .score-big{font-size:4rem;font-weight:700;color:var(--orange);font-family:'Inter',sans-serif;}
+.result-card p{color:var(--gray);margin:8px 0;}
+.result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:24px 0;}
+.result-item{padding:16px;background:#F9FAFB;border-radius:10px;}
+.result-item h4{font-size:1.5rem;color:var(--green);}
+.result-item p{font-size:0.8rem;color:var(--gray);}
+.category-scores{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;text-align:left;}
+.cat-item{padding:12px;background:#F9FAFB;border-radius:10px;display:flex;justify-content:space-between;align-items:center;}
+.cat-item h4{font-size:0.9rem;color:var(--green);}
+.cat-item span{font-weight:700;color:var(--orange);}
+.timer{position:fixed;top:20px;right:20px;background:var(--white);padding:10px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.15);font-weight:600;color:var(--green);z-index:50;font-size:1.1rem;}
+.timer.warning{color:var(--orange);}
+.timer.danger{color:#DC2626;animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
+.share-section{text-align:center;padding:30px 0;}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{padding:10px 20px;border-radius:8px;color:var(--white);text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-btn.tw{background:#1DA1F2;}.share-btn.fb{background:#4267B2;}.share-btn.li{background:#0077B5;}.share-btn.wa{background:#25D366;}.share-btn.cp{background:var(--gray);}
+.cta-section{background:var(--green);color:var(--white);padding:40px 20px;text-align:center;border-radius:16px;margin-top:30px;}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px;}
+.cta-section p{margin-bottom:20px;opacity:0.95;}
+.cta-btn{background:var(--orange);color:var(--white);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;transition:all 0.2s;}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);}
+.keywords{background:var(--white);padding:20px;border-radius:12px;margin-top:20px;font-size:0.85rem;color:var(--gray);}
+.keywords strong{color:var(--green);}
+footer{text-align:center;padding:30px 0;color:var(--gray);font-size:0.85rem;}
+@media(max-width:600px){header h1{font-size:1.5rem;}.result-grid{grid-template-columns:1fr;}.category-scores{grid-template-columns:1fr;}}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:500;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:100;}
+.copy-toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Medication Calculation Quiz for Nurses</h1>
+<p>30 drug calculation questions to test your dosage and IV calculation skills</p>
+</div>
+</header>
+
+<div class="timer" id="timer">45:00</div>
+
+<div class="container main">
+<div class="card" id="quizCard">
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-text" id="progressText">Question 1 of 30</div>
+
+<div id="questionArea">
+<div class="question-num" id="qNum">Question 1</div>
+<div class="question-text" id="qText"></div>
+<div class="options" id="optionsArea"></div>
+<div class="explanation" id="explanationArea">
+<h4>Explanation & Worked Answer</h4>
+<p id="explanationText"></p>
+<div class="worked" id="workedAnswer"></div>
+</div>
+</div>
+
+<div class="nav-btns">
+<button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>Previous</button>
+<button class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+<button class="btn" id="submitBtn" onclick="submitQuiz()" style="display:none;">Submit</button>
+</div>
+</div>
+
+<div class="card" id="resultCard" style="display:none;">
+<div class="result-card">
+<h2>Quiz Complete!</h2>
+<div class="score-big" id="finalScore">0%</div>
+<p id="resultMessage"></p>
+<div class="result-grid">
+<div class="result-item"><h4 id="correctCount">0</h4><p>Correct</p></div>
+<div class="result-item"><h4 id="wrongCount">0</h4><p>Incorrect</p></div>
+<div class="result-item"><h4 id="timeTaken">0:00</h4><p>Time Taken</p></div>
+</div>
+<h3 style="color:var(--green);margin:20px 0 12px;">Performance by Category</h3>
+<div class="category-scores" id="categoryScores"></div>
+<div style="margin-top:24px;">
+<button class="btn" onclick="restartQuiz()">Retake Quiz</button>
+</div>
+</div>
+</div>
+
+<div class="keywords">
+<strong>Popular searches:</strong> medication calculation quiz, drug calculation quiz, nurse drug calc test, dosage calculation practice, IV drip rate calculation, nursing maths test, tablet calculation
+</div>
+
+<div class="share-section">
+<h3 style="color:var(--green);margin-bottom:16px;">Share This Tool</h3>
+<div class="share-btns">
+<a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://tools.anglotec-ai.com/medication-calculation&text=Medication%20Calculation%20Quiz%20for%20Nurses" target="_blank">Twitter</a>
+<a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/medication-calculation" target="_blank">Facebook</a>
+<a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/medication-calculation" target="_blank">LinkedIn</a>
+<a class="share-btn wa" href="https://wa.me/?text=Medication%20Calculation%20Quiz%20https://tools.anglotec-ai.com/medication-calculation" target="_blank">WhatsApp</a>
+<button class="share-btn cp" onclick="copyLink()">Copy Link</button>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>More Nursing Resources</h2>
+<p>Access more free tools for nurse training and exam preparation at Anglotec AI.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Explore Nursing Tools</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p> Medication Calculation Quiz | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none;">Anglotec AI Tools</a></p>
+</div>
+</footer>
+
+<div class="copy-toast" id="toast">Link copied to clipboard!</div>
+
+<script>
+const questions=[
+{q:"A patient is prescribed 500mg of amoxicillin. The stock available is 250mg tablets. How many tablets should be administered?",options:["1 tablet","2 tablets","3 tablets","4 tablets"],correct:1,exp:"Prescribed dose divided by stock dose: 500mg / 250mg = 2 tablets.",worked:"500 mg (prescribed) / 250 mg (stock) = 2 tablets",cat:"Tablet Calculations"},
+{q:"A patient requires 750 micrograms of digoxin. The tablets available are 250 micrograms. How many tablets are needed?",options:["2 tablets","3 tablets","4 tablets","5 tablets"],correct:1,exp:"750 mcg / 250 mcg = 3 tablets.",worked:"750 mcg / 250 mcg = 3 tablets",cat:"Tablet Calculations"},
+{q:"A patient is prescribed 1.2g of paracetamol. Stock tablets are 500mg. How many tablets should be given?",options:["1 tablet","2 tablets","2.5 tablets","3 tablets"],correct:1,exp:"1.2g = 1200mg. 1200mg / 500mg = 2.4, which rounds to 2 tablets (or 2.5 if scored tablets). In practice, 2 x 500mg = 1000mg, so you'd need to clarify with prescriber or give liquid formulation.",worked:"1.2 g = 1200 mg / 500 mg = 2.4 tablets. Usually given as 2 x 500mg tablets.",cat:"Tablet Calculations"},
+{q:"A patient needs 80mg of furosemide orally. The stock is 40mg tablets. How many tablets?",options:["1 tablet","2 tablets","3 tablets","4 tablets"],correct:1,exp:"80mg / 40mg = 2 tablets.",worked:"80 mg / 40 mg = 2 tablets",cat:"Tablet Calculations"},
+{q:"A patient is prescribed 150mg of ranitidine. The available suspension is 75mg/5ml. What volume should be administered?",options:["5 ml","10 ml","15 ml","20 ml"],correct:1,exp:"150mg / 75mg x 5ml = 10ml.",worked:"(150 mg / 75 mg) x 5 ml = 2 x 5 ml = 10 ml",cat:"Liquid Dose"},
+{q:"A patient requires 250mg of erythromycin liquid. The suspension is 125mg/5ml. What volume is needed?",options:["5 ml","10 ml","15 ml","20 ml"],correct:1,exp:"250mg / 125mg x 5ml = 10ml.",worked:"(250 mg / 125 mg) x 5 ml = 2 x 5 ml = 10 ml",cat:"Liquid Dose"},
+{q:"A patient is prescribed 600mg of penicillin. The syrup is 125mg/5ml. What volume should be given?",options:["12 ml","18 ml","24 ml","30 ml"],correct:2,exp:"600mg / 125mg x 5ml = 4.8 x 5 = 24ml.",worked:"(600 mg / 125 mg) x 5 ml = 4.8 x 5 ml = 24 ml",cat:"Liquid Dose"},
+{q:"How many milligrams are in 2.5 grams?",options:["25 mg","250 mg","2500 mg","25000 mg"],correct:2,exp:"1 gram = 1000 milligrams. 2.5g x 1000 = 2500mg.",worked:"2.5 g x 1000 = 2500 mg",cat:"Conversions"},
+{q:"Convert 750 micrograms to milligrams.",options:["0.075 mg","0.75 mg","7.5 mg","75 mg"],correct:1,exp:"1000 micrograms = 1 milligram. 750 mcg / 1000 = 0.75mg.",worked:"750 mcg / 1000 = 0.75 mg",cat:"Conversions"},
+{q:"Convert 0.05 grams to milligrams.",options:["0.5 mg","5 mg","50 mg","500 mg"],correct:1,exp:"0.05g x 1000 = 50mg.",worked:"0.05 g x 1000 = 50 mg",cat:"Conversions"},
+{q:"A patient is prescribed 1 gram of cephalexin. The capsules are 250mg each. How many capsules?",options:["2 capsules","3 capsules","4 capsules","5 capsules"],correct:2,exp:"1g = 1000mg. 1000mg / 250mg = 4 capsules.",worked:"1 g = 1000 mg / 250 mg = 4 capsules",cat:"Tablet Calculations"},
+{q:"An IV infusion of 1000ml Normal Saline is to run over 8 hours. What is the rate in ml/hour?",options:["100 ml/hr","125 ml/hr","150 ml/hr","200 ml/hr"],correct:1,exp:"1000ml / 8 hours = 125 ml/hr.",worked:"1000 ml / 8 hours = 125 ml/hr",cat:"IV Rates"},
+{q:"A patient is to receive 500ml of dextrose saline over 4 hours. What is the infusion rate in ml/hour?",options:["100 ml/hr","125 ml/hr","150 ml/hr","200 ml/hr"],correct:1,exp:"500ml / 4 hours = 125 ml/hr.",worked:"500 ml / 4 hours = 125 ml/hr",cat:"IV Rates"},
+{q:"An IV of 1000ml is prescribed over 12 hours. The giving set delivers 20 drops/ml. What is the drip rate in drops per minute?",options:["14 gtt/min","28 gtt/min","42 gtt/min","56 gtt/min"],correct:1,exp:"(1000ml x 20 drops/ml) / (12 x 60 min) = 20000 / 720 = 27.8, rounded to 28 gtt/min.",worked:"(1000 ml x 20 gtt/ml) / (12 x 60 min) = 20000 / 720 = 27.8 = 28 gtt/min",cat:"IV Rates"},
+{q:"A patient requires 2000ml of IV fluid over 24 hours. The drip factor is 15 drops/ml. Calculate the drip rate.",options:["10 gtt/min","15 gtt/min","21 gtt/min","30 gtt/min"],correct:2,exp:"(2000 x 15) / (24 x 60) = 30000 / 1440 = 20.8, rounded to 21 gtt/min.",worked:"(2000 ml x 15 gtt/ml) / (24 x 60 min) = 30000 / 1440 = 20.8 = 21 gtt/min",cat:"IV Rates"},
+{q:"Heparin is prescribed at 1000 units/hour. The infusion bag contains 25000 units in 500ml. What is the infusion rate in ml/hour?",options:["10 ml/hr","15 ml/hr","20 ml/hr","25 ml/hr"],correct:2,exp:"Concentration = 25000 units / 500ml = 50 units/ml. Rate = 1000 units/hr / 50 units/ml = 20 ml/hr.",worked:"25000 units / 500 ml = 50 units/ml. 1000 units/hr / 50 units/ml = 20 ml/hr",cat:"IV Drug Calculations"},
+{q:"A patient is prescribed 2mg of morphine. The ampoule contains 10mg in 1ml. What volume should be drawn up?",options:["0.1 ml","0.2 ml","0.5 ml","1.0 ml"],correct:1,exp:"2mg / 10mg x 1ml = 0.2ml.",worked:"(2 mg / 10 mg) x 1 ml = 0.2 ml",cat:"Injection Calculations"},
+{q:"A patient needs 75mg of pethidine IM. The ampoule contains 100mg in 2ml. What volume is required?",options:["1.0 ml","1.25 ml","1.5 ml","2.0 ml"],correct:2,exp:"75mg / 100mg x 2ml = 1.5ml.",worked:"(75 mg / 100 mg) x 2 ml = 1.5 ml",cat:"Injection Calculations"},
+{q:"How many millilitres are in 2.5 litres?",options:["25 ml","250 ml","2500 ml","25000 ml"],correct:2,exp:"1 litre = 1000ml. 2.5L x 1000 = 2500ml.",worked:"2.5 L x 1000 = 2500 ml",cat:"Conversions"},
+{q:"Convert 3.75 litres to millilitres.",options:["37.5 ml","375 ml","3750 ml","37500 ml"],correct:2,exp:"3.75L x 1000 = 3750ml.",worked:"3.75 L x 1000 = 3750 ml",cat:"Conversions"},
+{q:"A patient is prescribed 30mg of codeine. The tablets are 15mg. How many tablets?",options:["1 tablet","2 tablets","3 tablets","4 tablets"],correct:1,exp:"30mg / 15mg = 2 tablets.",worked:"30 mg / 15 mg = 2 tablets",cat:"Tablet Calculations"},
+{q:"An IV bag contains 1g of vancomycin in 250ml. The patient is prescribed 500mg. What volume of the infusion should be given?",options:["100 ml","125 ml","150 ml","200 ml"],correct:1,exp:"1g = 1000mg. 500mg / 1000mg x 250ml = 125ml.",worked:"(500 mg / 1000 mg) x 250 ml = 125 ml",cat:"IV Drug Calculations"},
+{q:"A patient requires 40 units of insulin. The insulin syringe is marked in units. How many units should be drawn up?",options:["20 units","30 units","40 units","50 units"],correct:2,exp:"Draw up exactly 40 units in the insulin syringe.",worked:"40 units (direct reading on insulin syringe)",cat:"Injection Calculations"},
+{q:"A child weighing 20kg is prescribed paracetamol at 15mg/kg. What is the total dose?",options:["150 mg","200 mg","250 mg","300 mg"],correct:3,exp:"15mg/kg x 20kg = 300mg.",worked:"15 mg/kg x 20 kg = 300 mg",cat:"Weight-Based Dosing"},
+{q:"A patient weighing 70kg needs gentamicin at 3mg/kg. What is the total dose?",options:["140 mg","175 mg","210 mg","240 mg"],correct:2,exp:"3mg/kg x 70kg = 210mg.",worked:"3 mg/kg x 70 kg = 210 mg",cat:"Weight-Based Dosing"},
+{q:"A patient is prescribed 250 micrograms of adrenaline. The ampoule contains 1mg in 1ml. What volume is needed?",options:["0.1 ml","0.25 ml","0.5 ml","1.0 ml"],correct:1,exp:"1mg = 1000mcg. 250mcg / 1000mcg x 1ml = 0.25ml.",worked:"250 mcg / 1000 mcg x 1 ml = 0.25 ml",cat:"Injection Calculations"},
+{q:"An infusion of dopamine is running at 5 micrograms/kg/min for a 60kg patient. The bag contains 200mg in 50ml. What is the rate in ml/hour?",options:["2.25 ml/hr","4.5 ml/hr","9.0 ml/hr","18 ml/hr"],correct:1,exp:"Dose = 5 x 60 = 300 mcg/min = 18000 mcg/hr = 18 mg/hr. Concentration = 200mg/50ml = 4mg/ml. Rate = 18/4 = 4.5 ml/hr.",worked:"5 mcg/kg/min x 60 kg = 300 mcg/min. 300 x 60 = 18000 mcg/hr = 18 mg/hr. 200mg/50ml = 4 mg/ml. 18/4 = 4.5 ml/hr",cat:"Complex Calculations"},
+{q:"A patient requires 0.125mg of digoxin. The elixir is 50 micrograms/ml. What volume should be given?",options:["1.5 ml","2.5 ml","3.5 ml","4.5 ml"],correct:1,exp:"0.125mg = 125mcg. 125mcg / 50mcg per ml = 2.5ml.",worked:"0.125 mg = 125 mcg. 125 mcg / 50 mcg/ml = 2.5 ml",cat:"Liquid Dose"},
+{q:"An IV of 500ml is to run over 6 hours using a giving set of 20 drops/ml. What is the drip rate?",options:["14 gtt/min","21 gtt/min","28 gtt/min","35 gtt/min"],correct:2,exp:"(500 x 20) / (6 x 60) = 10000 / 360 = 27.8 = 28 gtt/min.",worked:"(500 ml x 20 gtt/ml) / (6 x 60 min) = 10000 / 360 = 27.8 = 28 gtt/min",cat:"IV Rates"},
+{q:"A patient is prescribed 4mg of dexamethasone. The vial contains 8mg in 2ml. What volume should be drawn up?",options:["0.5 ml","1.0 ml","1.5 ml","2.0 ml"],correct:1,exp:"4mg / 8mg x 2ml = 1ml.",worked:"(4 mg / 8 mg) x 2 ml = 1 ml",cat:"Injection Calculations"},
+{q:"A patient weighing 50kg requires fluid at 1.5ml/kg/hour. How much fluid over 8 hours?",options:["400 ml","500 ml","600 ml","700 ml"],correct:2,exp:"1.5ml/kg/hr x 50kg = 75ml/hr. 75ml/hr x 8hr = 600ml.",worked:"1.5 ml/kg/hr x 50 kg = 75 ml/hr. 75 ml/hr x 8 hours = 600 ml",cat:"Weight-Based Dosing"}
+];
+
+let currentQ=0;let answers=new Array(questions.length).fill(null);let submitted=false;
+let timeRemaining=45*60;let timerInterval;
+
+function startTimer(){
+timerInterval=setInterval(()=>{
+timeRemaining--;
+const m=Math.floor(timeRemaining/60);const s=timeRemaining%60;
+document.getElementById('timer').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+if(timeRemaining<=300)document.getElementById('timer').classList.add('warning');
+if(timeRemaining<=60)document.getElementById('timer').classList.add('danger');
+if(timeRemaining<=0){clearInterval(timerInterval);submitQuiz();}
+},1000);
+}
+
+function showQuestion(idx){
+currentQ=idx;
+const q=questions[idx];
+document.getElementById('qNum').textContent=`Question ${idx+1} - ${q.cat}`;
+document.getElementById('qText').textContent=q.q;
+document.getElementById('progressText').textContent=`Question ${idx+1} of ${questions.length}`;
+document.getElementById('progressFill').style.width=`${((idx+1)/questions.length)*100}%`;
+
+const opts=document.getElementById('optionsArea');
+opts.innerHTML='';
+q.options.forEach((opt,i)=>{
+const div=document.createElement('div');
+div.className='option'+(answers[idx]===i?' selected':'')+(submitted?(i===q.correct?' correct':answers[idx]===i?' incorrect'):'');
+div.textContent=opt;
+div.onclick=()=>{if(!submitted){answers[idx]=i;showQuestion(idx);}};
+opts.appendChild(div);
+});
+
+const exp=document.getElementById('explanationArea');
+if(submitted){exp.classList.add('show');document.getElementById('explanationText').textContent=q.exp;document.getElementById('workedAnswer').textContent=q.worked;}
+else{exp.classList.remove('show');}
+
+document.getElementById('prevBtn').disabled=idx===0;
+if(idx===questions.length-1&&!submitted){
+document.getElementById('nextBtn').style.display='none';
+document.getElementById('submitBtn').style.display='inline-block';
+}else{
+document.getElementById('nextBtn').style.display='inline-block';
+document.getElementById('submitBtn').style.display='none';
+}
+}
+
+function nextQuestion(){if(currentQ<questions.length-1)showQuestion(currentQ+1);}
+function prevQuestion(){if(currentQ>0)showQuestion(currentQ-1);}
+
+function submitQuiz(){
+clearInterval(timerInterval);
+submitted=true;
+let correct=0;
+answers.forEach((a,i)=>{if(a===questions[i].correct)correct++;});
+const percentage=Math.round((correct/questions.length)*100);
+
+const timeUsed=45*60-timeRemaining;
+const um=Math.floor(timeUsed/60);const us=timeUsed%60;
+
+let message='';
+if(percentage>=80)message='Excellent! You have strong medication calculation skills!';
+else if(percentage>=60)message='Good effort! Review the worked answers to strengthen your skills.';
+else message='Keep practicing! Medication calculations are critical for patient safety.';
+
+document.getElementById('quizCard').style.display='none';
+document.getElementById('resultCard').style.display='block';
+document.getElementById('finalScore').textContent=percentage+'%';
+document.getElementById('resultMessage').textContent=message;
+document.getElementById('correctCount').textContent=correct;
+document.getElementById('wrongCount').textContent=questions.length-correct;
+document.getElementById('timeTaken').textContent=`${um}:${us.toString().padStart(2,'0')}`;
+document.getElementById('timer').style.display='none';
+
+const cats={};
+questions.forEach((q,i)=>{
+if(!cats[q.cat])cats[q.cat]={total:0,correct:0};
+cats[q.cat].total++;
+if(answers[i]===q.correct)cats[q.cat].correct++;
+});
+
+const catDiv=document.getElementById('categoryScores');
+catDiv.innerHTML='';
+Object.entries(cats).forEach(([name,scores])=>{
+const pct=Math.round((scores.correct/scores.total)*100);
+const div=document.createElement('div');div.className='cat-item';
+div.innerHTML=`<h4>${name}</h4><span>${scores.correct}/${scores.total} (${pct}%)</span>`;
+catDiv.appendChild(div);
+});
+}
+
+function restartQuiz(){
+currentQ=0;answers=new Array(questions.length).fill(null);submitted=false;
+timeRemaining=45*60;document.getElementById('timer').style.display='block';
+document.getElementById('timer').textContent='45:00';document.getElementById('timer').className='timer';
+document.getElementById('quizCard').style.display='block';
+document.getElementById('resultCard').style.display='none';
+showQuestion(0);startTimer();
+}
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+document.getElementById('toast').classList.add('show');
+setTimeout(()=>document.getElementById('toast').classList.remove('show'),2000);
+}
+
+showQuestion(0);startTimer();
+</script>
+</body>
+</html>
