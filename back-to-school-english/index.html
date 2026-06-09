@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back to School: Improve Your English This Term | Autumn Study Guide</title>
+<meta name="description" content="Get back into study mode this autumn term. Practical strategies to improve your English, prepare for exams, and build strong study habits for the new academic year.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D6354;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F1EB;--white:#FFFFFF;--autumn:#8B4513;--text:#2A2A2A;--text-light:#5A5A5A}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;background:var(--cream)}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green)}
+a{color:var(--orange);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+.header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800}
+.logo span{color:var(--orange)}
+.nav a{color:var(--white);margin-left:20px;font-weight:600;font-size:.9rem}
+.nav a:hover{color:var(--orange)}
+
+.hero{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-size:3rem;color:var(--white);margin-bottom:20px;line-height:1.2}
+.hero .subtitle{font-size:1.25rem;opacity:.9;max-width:700px;margin:0 auto 30px}
+.cta-btn{display:inline-block;background:var(--orange);color:var(--white);padding:16px 40px;border-radius:8px;font-weight:700;font-size:1.1rem;transition:all .3s;box-shadow:0 4px 15px rgba(212,101,59,.4)}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 25px rgba(212,101,59,.5)}
+.urgency-bar{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 24px;margin-top:25px;display:inline-block;font-weight:600}
+.urgency-bar strong{color:var(--orange)}
+
+.section{padding:60px 0}
+.section.bg-white{background:var(--white)}
+.section h2{font-size:2.2rem;margin-bottom:30px;text-align:center}
+.section-intro{max-width:800px;margin:0 auto 40px;text-align:center;font-size:1.1rem;color:var(--text-light)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px}
+.card{background:var(--white);border-radius:12px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,.06);border-left:4px solid var(--orange);transition:transform .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card h3{font-size:1.2rem;margin-bottom:10px;color:var(--green)}
+.card .label{background:var(--orange);color:var(--white);display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.card ul{padding-left:20px;color:var(--text-light);font-size:.9rem}
+.card ul li{margin-bottom:6px}
+.card p{color:var(--text-light);font-size:.95rem}
+
+.tip-box{background:linear-gradient(135deg,rgba(212,101,59,.08)0%,rgba(212,101,59,.03)100%);border-radius:12px;padding:25px;margin:25px 0;border:1px solid rgba(212,101,59,.2)}
+.tip-box h4{color:var(--orange);font-family:'Inter',sans-serif;font-weight:700;margin-bottom:10px;font-size:1.1rem}
+.tip-box p{color:var(--text-light);margin:0}
+
+.week-plan{background:var(--white);border-radius:12px;padding:30px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.week-plan h4{color:var(--green);margin-bottom:12px;font-size:1.1rem}
+.week-plan p{color:var(--text-light);margin:0 0 10px}
+.week-plan ul{padding-left:20px;color:var(--text-light);font-size:.95rem}
+.week-plan ul li{margin-bottom:6px}
+
+.cta-section{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:70px 0;text-align:center}
+.cta-section h2{color:var(--white);margin-bottom:20px}
+.cta-section p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 30px}
+
+.faq-item{background:var(--white);border-radius:10px;padding:25px;margin-bottom:15px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.faq-item h4{font-family:'Inter',sans-serif;color:var(--green);font-weight:700;margin-bottom:10px;font-size:1.05rem}
+.faq-item p{color:var(--text-light)}
+
+.footer{background:var(--green);color:var(--white);padding:40px 0;text-align:center}
+.footer a{color:var(--orange)}
+
+@media(max-width:768px){
+.hero h1{font-size:2rem}
+.hero .subtitle{font-size:1rem}
+.nav{display:none}
+.grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container">
+<div class="logo">Anglo<span>Tec</span></div>
+<nav class="nav">
+<a href="#routine">Routine</a>
+<a href="#plan">Study Plan</a>
+<a href="#skills">Skills</a>
+<a href="#faq">FAQ</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Back to School: Improve Your English This Term</h1>
+<p class="subtitle">The autumn term is your fresh start. Rebuild your study habits, sharpen your English skills, and set yourself up for exam success with this comprehensive back-to-school guide.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Start This Term Strong</a>
+<div class="urgency-bar">Autumn term has begun — <strong>early preparation wins</strong></div>
+</div>
+</section>
+
+<section class="section" id="routine">
+<div class="container">
+<h2>Reset Your Study Routine for the New Term</h2>
+<p class="section-intro">After summer break, your brain needs time to readjust to structured learning. Here's how to transition smoothly into study mode and build momentum that lasts all term.</p>
+
+<div class="grid">
+<div class="card">
+<div class="label">Week 1</div>
+<h3>Ease Back In Gently</h3>
+<ul>
+<li>Start with 30-minute study sessions</li>
+<li>Review material from last term</li>
+<li>Organise your study space and materials</li>
+<li>Set 3 clear goals for this term</li>
+<li>Gradually increase study time by 10 min/day</li>
+<li>Don't overwhelm yourself on day one</li>
+</ul>
+</div>
+<div class="card">
+<div class="label">Week 2</div>
+<h3>Build the Foundation</h3>
+<ul>
+<li>Increase to 60-minute focused sessions</li>
+<li>Start daily vocabulary building (10 words/day)</li>
+<li>Begin reading English content daily</li>
+<li>Practice listening to English podcasts</li>
+<li>Join or form a study group</li>
+<li>Establish a consistent sleep schedule</li>
+</ul>
+</div>
+<div class="card">
+<div class="label">Week 3</div>
+<h3>Full Study Mode</h3>
+<ul>
+<li>Aim for 90-120 minutes daily study</li>
+<li>Complete your first practice test</li>
+<li>Identify your strongest and weakest areas</li>
+<li>Create a targeted improvement plan</li>
+<li>Start timed practice for exam sections</li>
+<li>Track your progress in a journal</li>
+</ul>
+</div>
+<div class="card">
+<div class="label">Week 4</div>
+<h3>Momentum & Assessment</h3>
+<ul>
+<li>Second practice test to measure progress</li>
+<li>Review and refine your study plan</li>
+<li>Celebrate improvements from Week 1</li>
+<li>Increase difficulty of practice materials</li>
+<li>Focus extra time on weak areas</li>
+<li>Plan your test date if confident</li>
+</ul>
+</div>
+</div>
+
+<div class="tip-box">
+<h4>The "Study Mode" Transition Trick</h4>
+<p>Don't go from zero to six hours overnight. Your brain will resist. Instead, increase study time by 15 minutes each day. Day 1: 30 minutes. Day 2: 45 minutes. Day 3: 60 minutes. By Day 10, you'll be studying 2.5 hours comfortably. This gradual approach prevents burnout and builds sustainable habits.</p>
+</div>
+</div>
+</section>
+
+<section class="section bg-white" id="plan">
+<div class="container">
+<h2>Your 12-Week Autumn Term Study Plan</h2>
+<p class="section-intro">A structured week-by-week plan to take you from post-summer rusty to exam-ready by winter break. Adjust timing based on your test date.</p>
+
+<div class="week-plan">
+<h4>Weeks 1-2: Assessment & Foundation</h4>
+<p>Goal: Establish your baseline and rebuild study habits.</p>
+<ul>
+<li>Take a full diagnostic practice test (untimed if needed)</li>
+<li>Score each section honestly</li>
+<li>Review all mistakes — create an error log</li>
+<li>Start daily vocabulary (10 new words/day)</li>
+<li>Read one English article daily (BBC News, The Guardian)</li>
+<li>Listen to English audio 20 minutes daily</li>
+</ul>
+</div>
+
+<div class="week-plan">
+<h4>Weeks 3-4: Skill Building</h4>
+<p>Goal: Develop core skills in each test section.</p>
+<ul>
+<li>Complete one section-specific practice daily (Listening on Monday, Reading on Tuesday, etc.)</li>
+<li>Learn test-specific strategies for each section</li>
+<li>For Writing: learn the format and write 2 tasks per week</li>
+<li>For Speaking: practice with a partner or record yourself 3x per week</li>
+<li>Vocabulary: reach 200 new words</li>
+<li>First timed practice test at end of Week 4</li>
+</ul>
+</div>
+
+<div class="week-plan">
+<h4>Weeks 5-6: Intensification</h4>
+<p>Goal: Increase difficulty and build exam stamina.</p>
+<ul>
+<li>Complete full practice tests every weekend (timed)</li>
+<li>Weekday study: focus on weakest section</li>
+<li>Writing: complete timed tasks under exam conditions</li>
+<li>Speaking: full mock tests with timer</li>
+<li>Vocabulary: 300 total new words by end of Week 6</li>
+<li>Analyse score trends — are you improving?</li>
+</ul>
+</div>
+
+<div class="week-plan">
+<h4>Weeks 7-8: Technique Refinement</h4>
+<p>Goal: Perfect your exam strategy and time management.</p>
+<ul>
+<li>Practice with strict exam timing for ALL sections</li>
+<li>Refine your approach to each question type</li>
+<li>Eliminate careless mistakes through careful review</li>
+<li>Build a "cheat sheet" of strategies that work for you</li>
+<li>Complete 2 full tests per week</li>
+<li>Vocabulary review: consolidate all words learned</li>
+</ul>
+</div>
+
+<div class="week-plan">
+<h4>Weeks 9-10: Peak Performance</h4>
+<p>Goal: Simulate exam conditions and build confidence.</p>
+<ul>
+<li>Complete 2-3 full mock tests per week</li>
+<li>Mock tests on the same day of the week as your real exam</li>
+<li>Practice under realistic conditions: timed, no distractions</li>
+<li>Review only — no new content</li>
+<li>Focus on accuracy and consistency</li>
+<li>Build a pre-exam routine</li>
+</ul>
+</div>
+
+<div class="week-plan">
+<h4>Weeks 11-12: Final Preparation & Test</h4>
+<p>Goal: Arrive at the exam room confident and prepared.</p>
+<ul>
+<li>Week 11: Light review, confidence-building practice</li>
+<li>Complete one final mock test early in the week</li>
+<li>Review your best work for confidence</li>
+<li>Prepare exam day documents and materials</li>
+<li>Week 12: Take your exam! Rest 2 days before</li>
+<li>Winter break celebration — you've earned it</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="skills">
+<div class="container">
+<h2>4 Skills to Sharpen This Term</h2>
+<p class="section-intro">Focus your autumn term energy on building these four pillars of English exam success.</p>
+
+<div class="grid">
+<div class="card">
+<div class="label">Listening</div>
+<h3>Rebuild Your Listening Ear</h3>
+<p>After a summer of your native language, your ear needs retraining. Start with slower content (BBC Learning English) and gradually increase speed. Practice daily — even 15 minutes makes a difference. Focus on note-taking: practice writing keywords while listening. Try podcasts about topics you enjoy to make it engaging.</p>
+</div>
+<div class="card">
+<div class="label">Reading</div>
+<h3>Expand Your Reading Stamina</h3>
+<p>Exam reading requires sustained focus. Start with short articles (300 words) and gradually build to longer academic texts (900+ words). Practice skimming for main ideas in 2 minutes. Learn to identify topic sentences. Time yourself: aim to read 300 words in 3 minutes with comprehension.</p>
+</div>
+<div class="card">
+<div class="label">Writing</div>
+<h3>Restore Your Written Fluency</h3>
+<p>Writing is usually the first skill to degrade after a break. Start with simple paragraphs and rebuild to full essays. Focus on sentence structure variety. Practice writing by hand if taking paper-based tests. Aim for one full writing task per week by Week 3, increasing to 2-3 per week by Week 6.</p>
+</div>
+<div class="card">
+<div class="label">Speaking</div>
+<h3>Get Your Voice Back</h3>
+<p>Speaking confidence fades quickly without practice. Start talking to yourself in English daily — describe your day, your plans, your opinions. Record yourself and listen back. Find a speaking partner or join online practice groups. Practice for 10 minutes daily minimum; fluency returns faster than you think.</p>
+</div>
+</div>
+
+<div class="tip-box">
+<h4>The "Little and Often" Principle</h4>
+<p>Research consistently shows that short, daily practice sessions (20-30 minutes) are more effective than occasional marathon sessions (3-4 hours). Your brain needs time to consolidate new information between sessions. Aim for daily contact with English — even 15 minutes of reading or listening counts. Consistency is the single biggest predictor of success.</p>
+</div>
+</div>
+</section>
+
+<section class="section bg-white">
+<div class="container">
+<h2>Autumn Term Study Resources</h2>
+<p class="section-intro">Stock your study toolkit with these recommended resources for the new term.</p>
+
+<div class="grid">
+<div class="card">
+<div class="label">Free</div>
+<h3>Free Resources</h3>
+<ul>
+<li>BBC Learning English (website + app)</li>
+<li>British Council LearnEnglish</li>
+<li>IELTS Liz (YouTube + website)</li>
+<li>OET Official Practice Materials</li>
+<li>Cambridge IELTS Books 15-18</li>
+<li>Grammarly (free writing checker)</li>
+</ul>
+</div>
+<div class="card">
+<div class="label">Apps</div>
+<h3>Recommended Apps</h3>
+<ul>
+<li>Quizlet (vocabulary flashcards)</li>
+<li>Anki (spaced repetition learning)</li>
+<li>IELTS Prep App (British Council)</li>
+<li>Audible (English audiobooks)</li>
+<li>Podcast apps for English shows</li>
+<li>Habit trackers for study streaks</li>
+</ul>
+</div>
+<div class="card">
+<div class="label">Practice</div>
+<h3>Test Practice</h3>
+<ul>
+<li>Cambridge IELTS practice tests</li>
+<li>OET official sample tests</li>
+<li>Full mock tests under timed conditions</li>
+<li>Section-specific practice books</li>
+<li>Online test simulators</li>
+<li>Previous exam papers (official sources)</li>
+</ul>
+</div>
+<div class="card">
+<div class="label">Community</div>
+<h3>Study Communities</h3>
+<ul>
+<li>Reddit r/IELTS community</li>
+<li>IELTS preparation Facebook groups</li>
+<li>OET nursing study groups</li>
+<li>Discord English learning servers</li>
+<li>Local library conversation clubs</li>
+<li>Online speaking practice partners</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="faq">
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<h4>How do I get back into study mode after summer?</h4>
+<p>Start small and build gradually. Begin with 30-minute sessions and increase by 15 minutes every few days. Revisit material you already know to build confidence. Establish a consistent routine before increasing intensity. Most students are back in full study mode within 2-3 weeks.</p>
+</div>
+<div class="faq-item">
+<h4>When should I book my test?</h4>
+<p>Book your test 6-8 weeks before your target date. Autumn term (September-December) is a popular time, so test centres fill up quickly. Booking early secures your preferred date and gives you a fixed deadline to work toward — which is highly motivating.</p>
+</div>
+<div class="faq-item">
+<h4>How many hours should I study per week?</h4>
+<p>During term time, aim for 10-15 hours per week (about 90 minutes daily). If you have an exam within 6 weeks, increase to 20 hours. If your exam is more than 3 months away, 7-10 hours weekly is sufficient for steady progress. The key is consistency, not intensity.</p>
+</div>
+<div class="faq-item">
+<h4>Should I study every day or take rest days?</h4>
+<p>Study 6 days per week with 1 rest day. Daily contact with English is important for maintaining momentum and building fluency. Your rest day should still include passive English exposure — watching a show, listening to music, or casual reading. This keeps your brain engaged without formal study.</p>
+</div>
+<div class="faq-item">
+<h4>What if I feel overwhelmed at the start of term?</h4>
+<p>Feeling overwhelmed is completely normal. Focus on one small action today rather than the entire term ahead. Break your preparation into weekly chunks. Remember: every successful candidate felt overwhelmed at some point. The difference is they started anyway.</p>
+</div>
+<div class="faq-item">
+<h4>Can I improve my score by 1 band in one term?</h4>
+<p>Yes, a 1-band improvement in one 12-week term is achievable with consistent effort. Many students improve by 0.5-1 band in 8-10 weeks of dedicated study. Focus on your weakest section first — it has the most room for improvement. Track your progress with monthly practice tests.</p>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>Make This Your Best Term Yet</h2>
+<p>The students who succeed start early, stay consistent, and never give up. Be one of them. Start your autumn term preparation today.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Get Back-to-School Tools</a>
+<p style="margin-top:20px;font-size:.9rem;opacity:.8">Prepare alongside thousands of students this autumn term</p>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>AngloTec AI — IELTS & OET Preparation Tools</p>
+<p style="margin-top:10px;font-size:.85rem;opacity:.7"><a href="https://tools.anglotec-ai.com">tools.anglotec-ai.com</a> | AI-Powered Language Exam Preparation</p>
+</div>
+</footer>
+
+</body>
+</html>

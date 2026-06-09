@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Prepare for IELTS in 1 Month | Complete 30-Day Study Plan</title>
+<meta name="description" content="An intensive 30-day IELTS study plan with daily schedules, week-by-week breakdown, and proven strategies to boost your band score in just one month.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D6354;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F1EB;--white:#FFFFFF;--text:#2A2A2A;--text-light:#5A5A5A}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;background:var(--cream)}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green)}
+a{color:var(--orange);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800}
+.logo span{color:var(--orange)}
+.nav a{color:var(--white);margin-left:20px;font-weight:600;font-size:.9rem}
+.nav a:hover{color:var(--orange)}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-size:3rem;color:var(--white);margin-bottom:20px;line-height:1.2}
+.hero .subtitle{font-size:1.25rem;opacity:.9;max-width:700px;margin:0 auto 30px}
+.cta-btn{display:inline-block;background:var(--orange);color:var(--white);padding:16px 40px;border-radius:8px;font-weight:700;font-size:1.1rem;transition:all .3s;box-shadow:0 4px 15px rgba(212,101,59,.4)}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 25px rgba(212,101,59,.5)}
+.urgency-bar{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 24px;margin-top:25px;display:inline-block;font-weight:600}
+.urgency-bar strong{color:var(--orange)}
+
+/* Sections */
+.section{padding:60px 0}
+.section.bg-white{background:var(--white)}
+.section h2{font-size:2.2rem;margin-bottom:30px;text-align:center}
+.section-intro{max-width:800px;margin:0 auto 40px;text-align:center;font-size:1.1rem;color:var(--text-light)}
+
+/* Schedule Grid */
+.schedule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px}
+.day-card{background:var(--white);border-radius:12px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,.06);border-left:4px solid var(--orange);transition:transform .2s}
+.day-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.day-card h3{font-size:1.2rem;margin-bottom:10px;color:var(--green)}
+.day-card .day-label{background:var(--orange);color:var(--white);display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.day-card ul{padding-left:20px;color:var(--text-light);font-size:.9rem}
+.day-card ul li{margin-bottom:6px}
+
+/* Week Section */
+.week-block{background:var(--white);border-radius:12px;padding:35px;margin-bottom:25px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.week-block h3{font-size:1.5rem;margin-bottom:15px;color:var(--green);display:flex;align-items:center;gap:10px}
+.week-badge{background:var(--orange);color:var(--white);padding:6px 16px;border-radius:20px;font-size:.8rem;font-family:'Inter',sans-serif}
+.week-block p{margin-bottom:15px;color:var(--text-light)}
+.week-block .focus-area{background:var(--cream);padding:15px 20px;border-radius:8px;margin-top:15px;border-left:4px solid var(--green)}
+.week-block .focus-area strong{color:var(--green)}
+
+/* Tips */
+.tip-box{background:linear-gradient(135deg,rgba(212,101,59,.08)0%,rgba(212,101,59,.03)100%);border-radius:12px;padding:25px;margin:25px 0;border:1px solid rgba(212,101,59,.2)}
+.tip-box h4{color:var(--orange);font-family:'Inter',sans-serif;font-weight:700;margin-bottom:10px;font-size:1.1rem}
+.tip-box p{color:var(--text-light);margin:0}
+
+/* Daily Schedule Table */
+.schedule-table{width:100%;border-collapse:collapse;margin:25px 0;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.schedule-table th{background:var(--green);color:var(--white);padding:15px;text-align:left;font-weight:600}
+.schedule-table td{padding:15px;border-bottom:1px solid #eee;color:var(--text-light)}
+.schedule-table tr:last-child td{border-bottom:none}
+.schedule-table tr:hover td{background:rgba(44,74,62,.03)}
+
+/* CTA Section */
+.cta-section{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:70px 0;text-align:center}
+.cta-section h2{color:var(--white);margin-bottom:20px}
+.cta-section p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 30px}
+
+/* FAQ */
+.faq-item{background:var(--white);border-radius:10px;padding:25px;margin-bottom:15px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.faq-item h4{font-family:'Inter',sans-serif;color:var(--green);font-weight:700;margin-bottom:10px;font-size:1.05rem}
+.faq-item p{color:var(--text-light)}
+
+/* Footer */
+.footer{background:var(--green);color:var(--white);padding:40px 0;text-align:center}
+.footer a{color:var(--orange)}
+
+/* Mobile */
+@media(max-width:768px){
+.hero h1{font-size:2rem}
+.hero .subtitle{font-size:1rem}
+.nav{display:none}
+.schedule-grid{grid-template-columns:1fr}
+.week-block{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container">
+<div class="logo">Anglo<span>Tec</span></div>
+<nav class="nav">
+<a href="#plan">30-Day Plan</a>
+<a href="#schedule">Daily Schedule</a>
+<a href="#weeks">Weeks 1-4</a>
+<a href="#faq">FAQ</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>How to Prepare for IELTS in 1 Month</h1>
+<p class="subtitle">The only intensive 30-day study plan you need. A day-by-day schedule trusted by thousands of test takers who raised their band score by 1-2 points.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Start Your IELTS Prep Now</a>
+<div class="urgency-bar">Limited test dates available this season — <strong>book your slot now</strong></div>
+</div>
+</section>
+
+<section class="section" id="plan">
+<div class="container">
+<h2>The Complete 1-Month IELTS Framework</h2>
+<p class="section-intro">Preparing for IELTS in 30 days is challenging but absolutely achievable with the right strategy. This plan assumes you can dedicate 4-5 hours daily to focused study. If you have less time, prioritize the activities marked with a star.</p>
+
+<div class="tip-box">
+<h4>Before You Begin: Take a Diagnostic Test</h4>
+<p>On Day 1, take a full-length IELTS practice test under timed conditions. This gives you a baseline score and reveals which sections need the most attention. Record your scores for Listening, Reading, Writing, and Speaking separately.</p>
+</div>
+
+<p style="text-align:center;font-weight:700;color:var(--green);margin:30px 0;font-size:1.2rem">Your 30-day preparation is divided into 4 strategic phases:</p>
+
+<div class="schedule-grid">
+<div class="day-card">
+<div class="day-label">Phase 1</div>
+<h3>Days 1-7: Foundation Building</h3>
+<ul>
+<li>Complete diagnostic test</li>
+<li>Understand IELTS format thoroughly</li>
+<li>Build vocabulary bank (50 words/day)</li>
+<li>Listening: Practice Section 1 & 2</li>
+<li>Reading: Skimming & scanning drills</li>
+<li>Writing: Learn task structures</li>
+<li>Speaking: Record yourself daily</li>
+</ul>
+</div>
+<div class="day-card">
+<div class="day-label">Phase 2</div>
+<h3>Days 8-14: Skill Building</h3>
+<ul>
+<li>Listening: Full sections under timed conditions</li>
+<li>Reading: Practice all question types</li>
+<li>Writing: Write 2 essays daily</li>
+<li>Speaking: Practice with a partner or AI</li>
+<li>Vocabulary: Academic word list focus</li>
+<li>Grammar: Complex sentence structures</li>
+<li>First full mock test on Day 14</li>
+</ul>
+</div>
+<div class="day-card">
+<div class="day-label">Phase 3</div>
+<h3>Days 15-21: Intense Practice</h3>
+<ul>
+<li>One full test every two days</li>
+<li>Writing: Focus on Task 1 & Task 2</li>
+<li>Speaking: Full mock interviews</li>
+<li>Review all mistakes from practice</li>
+<li>Time management strategies</li>
+<li>Vocabulary: Topic-specific words</li>
+<li>Listening: Accents (British, Australian)</li>
+</ul>
+</div>
+<div class="day-card">
+<div class="day-label">Phase 4</div>
+<h3>Days 22-30: Peak Performance</h3>
+<ul>
+<li>Daily full mock tests</li>
+<li>Perfect your exam strategy</li>
+<li>Speaking: Final polish sessions</li>
+<li>Writing: Speed and accuracy drills</li>
+<li>Listening: Difficult accents practice</li>
+<li>Reading: Complex passage drills</li>
+<li>Light review on Day 29; rest on Day 30</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-white" id="schedule">
+<div class="container">
+<h2>Your Daily Study Schedule (4-5 Hours)</h2>
+<p class="section-intro">Consistency is the secret weapon of IELTS success. Follow this schedule daily for maximum results.</p>
+
+<table class="schedule-table">
+<thead>
+<tr><th>Time Block</th><th>Activity</th><th>Focus Area</th><th>Duration</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Morning Block</strong></td><td>Vocabulary + Listening Practice</td><td>Build word bank; 1 listening section</td><td>90 min</td></tr>
+<tr><td><strong>Mid-Morning</strong></td><td>Reading Practice</td><td>1-2 passages with full analysis</td><td>75 min</td></tr>
+<tr><td><strong>Afternoon</strong></td><td>Writing Task</td><td>Task 1 (Day odd) / Task 2 (Day even)</td><td>60 min</td></tr>
+<tr><td><strong>Late Afternoon</strong></td><td>Speaking Practice</td><td>Record answers; practice fluency</td><td>45 min</td></tr>
+<tr><td><strong>Evening</strong></td><td>Review & Correct Mistakes</td><td>Analyze errors; note weak areas</td><td>30 min</td></tr>
+</tbody>
+</table>
+
+<div class="tip-box">
+<h4>Pro Tip: The "Golden Hour" Strategy</h4>
+<p>Study your weakest section during your peak mental energy hour. If you're sharpest in the morning, dedicate that time to Writing or Reading. Save Listening practice for when you can focus without interruptions, as it requires audio concentration.</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="weeks">
+<div class="container">
+<h2>Week-by-Week Breakdown</h2>
+
+<div class="week-block">
+<h3><span class="week-badge">WEEK 1</span> Foundation & Assessment</h3>
+<p><strong>Goal:</strong> Understand the test format, identify your weaknesses, and build foundational skills.</p>
+<p><strong>Day 1:</strong> Take a full diagnostic test. Score each section. This is your baseline — everything builds from here.</p>
+<p><strong>Days 2-3:</strong> Deep dive into IELTS Listening. Practice Sections 1 and 2. These are the easiest sections; master them first to guarantee points. Focus on spelling names, numbers, dates, and addresses.</p>
+<p><strong>Days 4-5:</strong> Reading fundamentals. Practice skimming (getting the gist in 2 minutes) and scanning (finding specific information). Do 4-5 passages using these techniques only.</p>
+<p><strong>Days 6-7:</strong> Writing Task 1 introduction. Learn the 4 types: line graph, bar chart, pie chart, and table. Write one of each. For Task 2, learn the standard 4-paragraph structure: introduction, two body paragraphs, conclusion.</p>
+<div class="focus-area"><strong>Week 1 Focus:</strong> Complete 500 new vocabulary words. Listen to BBC 6 Minute English daily. Read one English news article aloud.</div>
+</div>
+
+<div class="week-block">
+<h3><span class="week-badge">WEEK 2</span> Skill Building & Practice</h3>
+<p><strong>Goal:</strong> Build competence in each section through targeted, intensive practice.</p>
+<p><strong>Days 8-9:</strong> Listening Sections 3 and 4 — the academic sections. Practice multiple-choice, matching, and diagram labelling. These question types trip up most test takers because the audio is faster and more complex.</p>
+<p><strong>Days 10-11:</strong> Reading all question types. Focus on True/False/Not Given questions — the most challenging type. Learn the difference between "False" (contradicts) and "Not Given" (not mentioned). Practice with 6 passages.</p>
+<p><strong>Days 12-13:</strong> Writing intensity. Write one Task 1 and one Task 2 daily. Get feedback from a teacher or use AI scoring. Focus on coherence, cohesion, and using linking words effectively. Memorize 20 academic phrases for Task 2.</p>
+<p><strong>Day 14:</strong> Full mock test under exam conditions. Time yourself strictly. This mid-point assessment shows your progress.</p>
+<div class="focus-area"><strong>Week 2 Focus:</strong> Complete 500 more vocabulary words (total 1000). Practice speaking Part 1 topics (hometown, work, studies, hobbies). Record yourself answering 10 questions daily.</div>
+</div>
+
+<div class="week-block">
+<h3><span class="week-badge">WEEK 3</span> Intense Mock Testing</h3>
+<p><strong>Goal:</strong> Simulate exam conditions, build stamina, and refine time management.</p>
+<p><strong>Days 15-17:</strong> Full mock tests every other day. On non-test days, deeply analyze every wrong answer. For Listening, replay the audio to catch what you missed. For Reading, re-read the passage to find the correct answer location. For Writing, rewrite essays focusing on weaker areas.</p>
+<p><strong>Days 18-19:</strong> Speaking focus. Practice Part 2 (cue card) extensively — this is where most candidates lose confidence. Use the 1-minute preparation time wisely: jot down 4-5 bullet points and expand on each. Practice Part 3 (discussion) by recording yourself giving extended answers with examples.</p>
+<p><strong>Days 20-21:</strong> Focused skill drills. Work only on your two weakest sections based on mock test results. If Writing is weak, write 3 essays daily. If Reading is weak, do 4 passages daily with strict 20-minute timers.</p>
+<div class="focus-area"><strong>Week 3 Focus:</strong> Build exam stamina with 3+ hour continuous study sessions. Practice with headphones similar to exam conditions. Review all 1000 vocabulary words.</div>
+</div>
+
+<div class="week-block">
+<h3><span class="week-badge">WEEK 4</span> Peak Performance & Polish</h3>
+<p><strong>Goal:</strong> Fine-tune your strategy, build confidence, and peak on test day.</p>
+<p><strong>Days 22-25:</strong> Daily full mock tests. By now, you should be scoring consistently at or above your target band. Analyze any remaining weak patterns. Focus on eliminating careless mistakes rather than learning new content.</p>
+<p><strong>Days 26-27:</strong> Strategy refinement. Perfect your time allocation: Listening — follow audio pacing; Reading — 20 min per passage; Writing — 20 min Task 1, 40 min Task 2; Speaking — stay calm, expand answers.</p>
+<p><strong>Days 28-29:</strong> Light review only. Read through your vocabulary lists. Review your best essays and speaking recordings. Watch IELTS speaking test videos on YouTube to visualize the exam room. Do NOT do full tests — you want to arrive fresh.</p>
+<p><strong>Day 30:</strong> REST. Light vocabulary review only. Prepare your ID documents. Sleep 8 hours. You are ready.</p>
+<div class="focus-area"><strong>Week 4 Focus:</strong> Mental preparation is as important as academic preparation. Stay hydrated, sleep well, and visualize success. Trust your preparation.</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-white">
+<div class="container">
+<h2>Section-by-Section Strategies</h2>
+<p class="section-intro">Master each IELTS section with these proven techniques.</p>
+
+<div class="schedule-grid">
+<div class="day-card">
+<div class="day-label">Listening</div>
+<h3>7.5+ Band Strategies</h3>
+<ul>
+<li>Read questions BEFORE audio starts — 30 seconds is precious</li>
+<li>Predict answers (number, name, date) while reading</li>
+<li>Write answers in ALL CAPS to avoid spelling penalty</li>
+<li>Don't get stuck on a missed answer — move on immediately</li>
+<li>Practice with 1.25x speed audio; exam will feel slower</li>
+<li>Check spelling and grammar in transfer time</li>
+</ul>
+</div>
+<div class="day-card">
+<div class="day-label">Reading</div>
+<h3>7.5+ Band Strategies</h3>
+<ul>
+<li>Skim passage in 2 minutes before tackling questions</li>
+<li>Read questions first, then scan for keywords</li>
+<li>Master True/False/Not Given — the trickiest question type</li>
+<li>Don't read every word — 60% of text is irrelevant</li>
+<li>Leave difficult questions; return if time permits</li>
+<li>Transfer answers with 5 minutes remaining</li>
+</ul>
+</div>
+<div class="day-card">
+<div class="day-label">Writing</div>
+<h3>7.0+ Band Strategies</h3>
+<ul>
+<li>Task 1: Aim for 150+ words in 20 minutes. Include overview paragraph.</li>
+<li>Task 2: 250+ words with clear position throughout</li>
+<li>Use 4-paragraph structure: intro, 2 body, conclusion</li>
+<li>Include 5-7 linking words per paragraph</li>
+<li>Use complex sentences with subordinate clauses</li>
+<li>Leave 3 minutes for proofreading — spelling errors cost bands</li>
+</ul>
+</div>
+<div class="day-card">
+<div class="day-label">Speaking</div>
+<h3>7.5+ Band Strategies</h3>
+<ul>
+<li>Part 1: Give 2-3 sentence answers, not one-word responses</li>
+<li>Part 2: Use the full 2 minutes; structure with past tenses</li>
+<li>Part 3: Give opinions + reasons + examples + alternatives</li>
+<li>Use discourse markers: "That's an interesting question..."</li>
+<li>Don't memorize scripts — examiners can tell</li>
+<li>Fluency matters more than perfect grammar</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2>Essential Resources for Your 30-Day Plan</h2>
+<p class="section-intro">Use these resources to maximize your preparation efficiency.</p>
+
+<div class="tip-box">
+<h4>Free Resources</h4>
+<p><strong>IELTS Simon</strong> (website/YouTube) — Excellent free writing task advice.<br>
+<strong>IELTS Liz</strong> — Comprehensive free lessons for all sections.<br>
+<strong>BBC Learning English</strong> — Daily listening practice with transcripts.<br>
+<strong>British Council Road to IELTS</strong> — Free version with 10 practice tests.<br>
+<strong>Academic Word List</strong> — Master these 570 words for Reading/Writing.</p>
+</div>
+
+<div class="tip-box">
+<h4>Practice Tests (Essential)</h4>
+<p>Complete at least <strong>12 full practice tests</strong> during your 30 days — that's one every 2-3 days. Books 15-19 of the Cambridge IELTS series are the most accurate to current test standards. Always time yourself strictly; untimed practice creates false confidence.</p>
+</div>
+</div>
+</section>
+
+<section class="section bg-white" id="faq">
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<h4>Is 1 month really enough to prepare for IELTS?</h4>
+<p>Yes, if you can dedicate 4-5 hours daily and already have intermediate English proficiency (B1+). One month is not enough to build English from scratch, but it is sufficient to master test-taking strategies and improve by 1-2 band points if your foundation is solid.</p>
+</div>
+<div class="faq-item">
+<h4>What if I can only study 2 hours a day?</h4>
+<p>Focus exclusively on your weakest sections and do fewer but higher-quality practice sessions. Use the Pomodoro technique (25 minutes focus, 5 minutes break). Quality always beats quantity in IELTS preparation.</p>
+</div>
+<div class="faq-item">
+<h4>Which section should I prioritize?</h4>
+<p>Prioritize your weakest section first — it has the most room for improvement. However, Writing and Speaking typically need the most practice because they're productive skills. Listening and Reading can improve faster with technique alone.</p>
+</div>
+<div class="faq-item">
+<h4>Should I take the paper-based or computer test?</h4>
+<p>Take the computer test if you're comfortable typing — results come in 3-5 days instead of 13 days, and the Speaking test is often on the same day. The paper test suits those who prefer writing by hand and want more time to check Reading answers.</p>
+</div>
+<div class="faq-item">
+<h4>How many practice tests should I complete?</h4>
+<p>Aim for 10-12 full tests over 30 days. Quality matters more than quantity: always review wrong answers thoroughly. One well-analysed test teaches more than three rushed tests.</p>
+</div>
+<div class="faq-item">
+<h4>What should I do the night before the exam?</h4>
+<p>Stop studying by 6 PM. Prepare your ID documents. Set two alarms. Eat a light, healthy dinner. Do light stretching or meditation. Review your "confidence list" — skills you've mastered. Sleep 8 hours minimum. You've prepared for 30 days; one more night of cramming won't help.</p>
+</div>
+<div class="faq-item">
+<h4>Can I improve from Band 5.5 to 7.0 in one month?</h4>
+<p>Improving from 5.5 to 7.0 is ambitious but achievable if your weak areas are technique-related (time management, question types) rather than fundamental English gaps. Focus on test strategies, vocabulary building, and writing structure. Many students see their biggest jumps in Listening and Reading through technique improvements alone.</p>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>Start Your 30-Day IELTS Journey Today</h2>
+<p>Every day you delay is a day closer to your test date. Begin your intensive preparation now and walk into the exam room with confidence.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Get IELTS Prep Tools Now</a>
+<p style="margin-top:20px;font-size:.9rem;opacity:.8">Over 10,000 students have used our tools to achieve their target band score</p>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>AngloTec AI — IELTS & OET Preparation Tools</p>
+<p style="margin-top:10px;font-size:.85rem;opacity:.7"><a href="https://tools.anglotec-ai.com">tools.anglotec-ai.com</a> | AI-Powered Language Exam Preparation</p>
+</div>
+</footer>
+
+</body>
+</html>

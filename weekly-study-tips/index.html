@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Weekly IELTS & OET Study Tips | Anglotec Newsletter</title>
+<meta name="description" content="Join 25,000+ test takers receiving weekly IELTS and OET study tips. Expert advice, practice questions, and strategies delivered to your inbox every week. Free signup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#2C4A3E;--green-light:#3D5F52;--orange:#D4653B;--orange-light:#E07A52;--cream:#F8F6F1;--white:#FFFFFF;--text:#1A1A1A;--text-light:#5A5A5A;--border:#E5E0D8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.6;}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  header{background:var(--green);padding:16px 0;}
+  header .container{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Playfair Display',serif;font-size:22px;color:var(--white);font-weight:700;text-decoration:none;}
+  .logo span{color:var(--orange);}
+
+  .squeeze-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 60px);}
+  .squeeze-left{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);padding:60px 48px;display:flex;flex-direction:column;justify-content:center;color:var(--white);}
+  .squeeze-right{padding:60px 48px;display:flex;flex-direction:column;justify-content:center;background:var(--white);}
+
+  .squeeze-left .badge{display:inline-block;background:var(--orange);color:#fff;padding:6px 18px;border-radius:20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:20px;width:fit-content;}
+  .squeeze-left h1{font-size:42px;margin-bottom:18px;line-height:1.15;}
+  .squeeze-left .sub{font-size:17px;opacity:0.9;margin-bottom:32px;line-height:1.6;}
+
+  .benefits{list-style:none;margin-bottom:32px;}
+  .benefits li{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:15px;opacity:0.95;line-height:1.5;}
+  .benefits li .checkmark{width:24px;height:24px;min-width:24px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;}
+
+  .sample-issue{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:18px;border-radius:12px;margin-top:24px;}
+  .sample-issue strong{display:block;margin-bottom:10px;font-size:14px;}
+  .sample-issue ul{list-style:none;font-size:13px;opacity:0.9;}
+  .sample-issue ul li{margin-bottom:6px;padding-left:16px;position:relative;}
+  .sample-issue ul li::before{content:'•';position:absolute;left:0;color:var(--orange);}
+
+  .trust-mini{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap;}
+  .trust-mini-item{display:flex;align-items:center;gap:8px;font-size:13px;opacity:0.85;}
+  .trust-mini-item .num{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--orange);}
+
+  .form-box{background:var(--white);border-radius:16px;padding:0;max-width:440px;margin:0 auto;width:100%;}
+  .form-box h2{font-size:26px;color:var(--green);margin-bottom:8px;text-align:center;}
+  .form-box .sub2{text-align:center;color:var(--text-light);font-size:14px;margin-bottom:28px;}
+
+  .form-group{margin-bottom:18px;}
+  .form-group label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.3px;}
+  .form-group input, .form-group select{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:10px;font-size:15px;font-family:'Inter',sans-serif;transition:border-color 0.2s;background:#fff;}
+  .form-group input:focus, .form-group select:focus{outline:none;border-color:var(--green);}
+  .form-group input::placeholder{color:#aaa;}
+
+  .submit-btn{width:100%;background:var(--orange);color:#fff;padding:16px;border-radius:10px;border:none;font-size:16px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 14px rgba(212,101,59,0.35);}
+  .submit-btn:hover{background:var(--orange-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,101,59,0.45);}
+
+  .trust-badges{display:flex;justify-content:center;gap:20px;margin-top:24px;flex-wrap:wrap;}
+  .trust-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-light);}
+  .trust-badge .icon{color:var(--green);font-size:16px;}
+
+  .security-note{text-align:center;font-size:12px;color:var(--text-light);margin-top:16px;display:flex;align-items:center;justify-content:center;gap:6px;}
+
+  .success-box{display:none;text-align:center;padding:20px 0;}
+  .success-box.active{display:block;}
+  .success-icon{width:72px;height:72px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 20px;}
+  .success-box h3{font-size:24px;color:var(--green);margin-bottom:10px;}
+  .success-box p{color:var(--text-light);font-size:15px;margin-bottom:24px;}
+  .success-btn{display:inline-block;background:var(--green);color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;transition:all 0.2s;}
+  .success-btn:hover{background:var(--green-light);}
+
+  .form-section{display:none;}
+  .form-section.active{display:block;}
+
+  .social-proof{background:#F5F3EE;border-radius:10px;padding:20px;margin-bottom:24px;}
+  .social-proof strong{color:var(--green);font-size:14px;display:block;margin-bottom:12px;text-align:center;}
+  .subscriber-row{display:flex;gap:8px;align-items:center;margin-bottom:10px;}
+  .subscriber-avatars{display:flex;}
+  .sub-av{width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;border:2px solid var(--white);margin-left:-8px;}
+  .sub-av:first-child{margin-left:0;}
+  .subscriber-text{font-size:13px;color:var(--text-light);}
+
+  .testimonials{margin-top:40px;padding-top:32px;border-top:1px solid var(--border);}
+  .testimonials h3{font-size:18px;color:var(--green);margin-bottom:16px;text-align:center;}
+  .testi{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start;}
+  .testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700;min-width:40px;}
+  .testi-text{font-size:13px;color:var(--text-light);line-height:1.5;}
+  .testi-text strong{display:block;color:var(--text);font-size:13px;margin-bottom:2px;}
+  .stars{color:#FFC107;font-size:13px;letter-spacing:1px;}
+
+  .urgency-bar{background:var(--orange);color:#fff;padding:12px 16px;border-radius:10px;text-align:center;font-size:14px;font-weight:600;margin-bottom:24px;}
+
+  footer{background:var(--green);color:rgba(255,255,255,0.7);padding:28px 0;font-size:12px;text-align:center;}
+  footer a{color:rgba(255,255,255,0.8);text-decoration:none;}footer a:hover{color:var(--orange);}
+
+  @media(max-width:900px){
+    .squeeze-wrap{grid-template-columns:1fr;}
+    .squeeze-left{padding:48px 24px;}
+    .squeeze-right{padding:48px 24px;}
+    .squeeze-left h1{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo">Anglo<span>tec</span></a>
+  </div>
+</header>
+
+<div class="squeeze-wrap">
+  <div class="squeeze-left">
+    <div class="badge">Weekly Newsletter - 25,000+ Subscribers</div>
+    <h1>Get Weekly IELTS & OET Study Tips</h1>
+    <p class="sub">Expert-curated tips, practice questions, and proven strategies delivered to your inbox every Tuesday. Join the community of test takers who are serious about passing.</p>
+
+    <ul class="benefits">
+      <li><span class="checkmark">✓</span> <strong>Weekly IELTS practice question</strong> — With detailed answer explanations and band descriptors</li>
+      <li><span class="checkmark">✓</span> <strong>OET writing tips for nurses</strong> — Case note strategies, vocabulary, and sample letters</li>
+      <li><span class="checkmark">✓</span> <strong>Speaking frameworks</strong> — Part 1, 2 & 3 templates that actually work in the exam</li>
+      <li><span class="checkmark">✓</span> <strong>Writing task breakdowns</strong> — Analysed sample answers showing what examiners want</li>
+      <li><span class="checkmark">✓</span> <strong>Drug calculation practice</strong> — For nurses preparing for the NMC CBT</li>
+      <li><span class="checkmark">✓</span> <strong>Motivation & study hacks</strong> — Stay on track with weekly accountability</li>
+    </ul>
+
+    <div class="sample-issue">
+      <strong>📬 Example: Last Week's Issue Included:</strong>
+      <ul>
+        <li>IELTS Writing Task 2: "Discuss both views" essay template</li>
+        <li>OET: How to structure an urgent referral letter</li>
+        <li>Vocabulary: 20 academic collocations for Band 7+</li>
+        <li>Speaking: Idiomatic expressions for Part 3</li>
+        <li>NMC: 5 CBT drug calculation questions with solutions</li>
+      </ul>
+    </div>
+
+    <div class="trust-mini">
+      <div class="trust-mini-item"><span class="num">25K+</span><span>Subscribers</span></div>
+      <div class="trust-mini-item"><span class="num">156</span><span>Issues Sent</span></div>
+      <div class="trust-mini-item"><span class="num">42%</span><span>Open Rate</span></div>
+    </div>
+  </div>
+
+  <div class="squeeze-right">
+    <div class="form-box">
+      <div class="urgency-bar">🎁 New subscribers get our IELTS Band 7+ Vocabulary PDF free!</div>
+
+      <div class="form-section active" id="formSection">
+        <h2>Join the Newsletter</h2>
+        <p class="sub2">Free weekly tips. Unsubscribe anytime with one click.</p>
+
+        <div class="social-proof">
+          <strong>Trusted by nurses and doctors worldwide:</strong>
+          <div class="subscriber-row">
+            <div class="subscriber-avatars">
+              <div class="sub-av">M</div>
+              <div class="sub-av">R</div>
+              <div class="sub-av">S</div>
+              <div class="sub-av">A</div>
+              <div class="sub-av">J</div>
+            </div>
+            <span class="subscriber-text">+25,000 more subscribers</span>
+          </div>
+        </div>
+
+        <form id="leadForm" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">First Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="exam">Which Exam Are You Preparing For?</label>
+            <select id="exam" name="exam" required>
+              <option value="">Select your exam</option>
+              <option value="ielts-academic">IELTS Academic</option>
+              <option value="ielts-general">IELTS General Training</option>
+              <option value="oet">OET (Healthcare)</option>
+              <option value="pte">PTE Academic</option>
+              <option value="nmc">NMC CBT / OSCE</option>
+              <option value="plab">PLAB</option>
+              <option value="multiple">Multiple Exams</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="goal">Target Score / Goal</label>
+            <input type="text" id="goal" name="goal" placeholder="e.g. IELTS Band 7.5 or OET Grade B">
+          </div>
+          <button type="submit" class="submit-btn">Send Me Weekly Study Tips →</button>
+        </form>
+
+        <div class="trust-badges">
+          <div class="trust-badge"><span class="icon">🔒</span> SSL Secure</div>
+          <div class="trust-badge"><span class="icon">✓</span> No Spam Ever</div>
+          <div class="trust-badge"><span class="icon">🚫</span> Unsubscribe Anytime</div>
+        </div>
+
+        <div class="security-note">
+          <span>🔐</span> We respect your inbox. One email per week, always valuable.
+        </div>
+      </div>
+
+      <div class="success-box" id="successBox">
+        <div class="success-icon">✓</div>
+        <h3>You're Subscribed!</h3>
+        <p>Welcome to the Anglotec community! Your first issue arrives this Tuesday. Don't forget to check your spam folder and add us to your contacts.</p>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:20px;">Your bonus <strong>IELTS Band 7+ Vocabulary PDF</strong> is attached to the welcome email.</p>
+        <a href="https://tools.anglotec-ai.com" class="success-btn">Try Our AI Tools Free →</a>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <h3>What Subscribers Say</h3>
+      <div class="testi">
+        <div class="testi-avatar">EC</div>
+        <div class="testi-text">
+          <strong>Elena C. — Weekly Reader for 6 Months</strong>
+          <div class="stars">★★★★★</div>
+          "The Tuesday email is now part of my routine. The writing task breakdowns are incredibly detailed. I went from Band 6.0 to 7.5 in 3 months."
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-avatar">DK</div>
+        <div class="testi-text">
+          <strong>Dr. David K. — NHS Doctor</strong>
+          <div class="stars">★★★★★</div>
+          "As a doctor preparing for OET, the medical vocabulary lists and referral letter tips are pure gold. Better than many paid courses I've tried."
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-avatar">FN</div>
+        <div class="testi-text">
+          <strong>Fatima N. — Future UK Nurse</strong>
+          <div class="stars">★★★★★</div>
+          "I love that each issue has something for IELTS AND something for OET. The drug calculation questions prepared me well for the CBT too."
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Anglotec AI · <a href="https://tools.anglotec-ai.com">IELTS Tools</a> · <a href="https://tools.anglotec-ai.com">OET Prep</a> · Privacy Policy</div>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit(e){
+    e.preventDefault();
+    document.getElementById('formSection').classList.remove('active');
+    document.getElementById('formSection').style.display='none';
+    document.getElementById('successBox').classList.add('active');
+    document.getElementById('successBox').style.display='block';
+    return false;
+  }
+</script>
+
+</body>
+</html>

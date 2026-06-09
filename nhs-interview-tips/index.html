@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NHS Interview Tips: How to Impress Every Time | Complete Interview Guide</title>
+<meta name="description" content="NHS interview preparation strategies for nurses and doctors. Common questions, answer frameworks, and proven tips to impress every NHS interview panel.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D6354;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F1EB;--white:#FFFFFF;--nhs-blue:#005EB8;--text:#2A2A2A;--text-light:#5A5A5A}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;background:var(--cream)}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green)}
+a{color:var(--orange);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+.header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800}
+.logo span{color:var(--orange)}
+.nav a{color:var(--white);margin-left:20px;font-weight:600;font-size:.9rem}
+.nav a:hover{color:var(--orange)}
+
+.hero{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-size:3rem;color:var(--white);margin-bottom:20px;line-height:1.2}
+.hero .subtitle{font-size:1.25rem;opacity:.9;max-width:700px;margin:0 auto 30px}
+.cta-btn{display:inline-block;background:var(--orange);color:var(--white);padding:16px 40px;border-radius:8px;font-weight:700;font-size:1.1rem;transition:all .3s;box-shadow:0 4px 15px rgba(212,101,59,.4)}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 25px rgba(212,101,59,.5)}
+.urgency-bar{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 24px;margin-top:25px;display:inline-block;font-weight:600}
+.urgency-bar strong{color:var(--orange)}
+
+.section{padding:60px 0}
+.section.bg-white{background:var(--white)}
+.section h2{font-size:2.2rem;margin-bottom:30px;text-align:center}
+.section-intro{max-width:800px;margin:0 auto 40px;text-align:center;font-size:1.1rem;color:var(--text-light)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px}
+.card{background:var(--white);border-radius:12px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,.06);border-left:4px solid var(--nhs-blue);transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card h3{font-size:1.2rem;margin-bottom:10px;color:var(--green)}
+.card .label{background:var(--nhs-blue);color:var(--white);display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+.card ul{padding-left:20px;color:var(--text-light);font-size:.9rem}
+.card ul li{margin-bottom:6px}
+.card p{color:var(--text-light);font-size:.95rem}
+
+.question-card{background:var(--white);border-radius:12px;padding:30px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.question-card h4{color:var(--green);margin-bottom:10px;font-size:1.1rem}
+.question-card .answer{background:var(--cream);padding:15px 20px;border-radius:8px;margin-top:12px;border-left:3px solid var(--orange)}
+.question-card .answer p{color:var(--text-light);margin:0;font-size:.95rem}
+
+.tip-box{background:linear-gradient(135deg,rgba(212,101,59,.08)0%,rgba(212,101,59,.03)100%);border-radius:12px;padding:25px;margin:25px 0;border:1px solid rgba(212,101,59,.2)}
+.tip-box h4{color:var(--orange);font-family:'Inter',sans-serif;font-weight:700;margin-bottom:10px;font-size:1.1rem}
+.tip-box p{color:var(--text-light);margin:0}
+
+.checklist{background:var(--white);border-radius:12px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin:20px 0}
+.checklist h4{color:var(--green);margin-bottom:15px;font-size:1.1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.checklist-item .check{color:var(--nhs-blue);font-weight:700;font-size:1.2rem;flex-shrink:0}
+.checklist-item p{margin:0;color:var(--text-light);font-size:.95rem}
+
+.cta-section{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:70px 0;text-align:center}
+.cta-section h2{color:var(--white);margin-bottom:20px}
+.cta-section p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 30px}
+
+.faq-item{background:var(--white);border-radius:10px;padding:25px;margin-bottom:15px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.faq-item h4{font-family:'Inter',sans-serif;color:var(--green);font-weight:700;margin-bottom:10px;font-size:1.05rem}
+.faq-item p{color:var(--text-light)}
+
+.footer{background:var(--green);color:var(--white);padding:40px 0;text-align:center}
+.footer a{color:var(--orange)}
+
+@media(max-width:768px){
+.hero h1{font-size:2rem}
+.hero .subtitle{font-size:1rem}
+.nav{display:none}
+.grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container">
+<div class="logo">Anglo<span>Tec</span></div>
+<nav class="nav">
+<a href="#questions">Common Questions</a>
+<a href="#frameworks">Answer Frameworks</a>
+<a href="#prepare">How to Prepare</a>
+<a href="#faq">FAQ</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>NHS Interview Tips: How to Impress Every Time</h1>
+<p class="subtitle">Comprehensive NHS interview preparation for nurses and doctors. Master the common questions, use proven answer frameworks, and secure your dream NHS job.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Get Interview Prep Tools</a>
+<div class="urgency-bar">NHS jobs are competitive — <strong>proper preparation makes the difference</strong></div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2>Understanding the NHS Interview Format</h2>
+<p class="section-intro">NHS interviews typically use a structured or semi-structured format. Understanding this format gives you a significant advantage over unprepared candidates.</p>
+
+<div class="grid">
+<div class="card">
+<div class="label">Format</div>
+<h3>Structured Interview</h3>
+<p>All candidates are asked the same pre-determined questions. The panel scores each answer against set criteria. This ensures fairness. Your answers are scored on: communication, clinical knowledge, problem-solving, teamwork, and professionalism. Prepare with the STAR method for maximum impact.</p>
+</div>
+<div class="card">
+<div class="label">Format</div>
+<h3>Panel Interview</h3>
+<p>You'll face a panel of 2-4 interviewers, typically including a senior nurse/doctor, a manager, and an HR representative. Each panel member may ask questions from their area of expertise. Address your answer primarily to the person who asked, but make eye contact with all panel members.</p>
+</div>
+<div class="card">
+<div class="label">Format</div>
+<h3>Values-Based Interview</h3>
+<p>The NHS uses values-based recruitment, meaning they assess whether your personal values align with NHS values. The 6 NHS values are: Working Together for Patients, Respect and Dignity, Commitment to Quality of Care, Compassion, Improving Lives, and Everyone Counts. Weave these into your answers naturally.</p>
+</div>
+</div>
+
+<div class="tip-box">
+<h4>The Scoring System</h4>
+<p>Most NHS interviews use a scoring system where each answer is rated 1-5. A score of 1 = no evidence, 3 = meets expectations, 5 = exceeds expectations with clear examples. To score 4s and 5s, you must provide SPECIFIC examples from your experience, not general statements. "I am a good team player" scores a 2. "In my last role, I collaborated with physiotherapy to reduce patient falls by 30% through a new mobility assessment protocol" scores a 5.</p>
+</div>
+</div>
+</section>
+
+<section class="section bg-white" id="questions">
+<div class="container">
+<h2>15 Most Common NHS Interview Questions</h2>
+<p class="section-intro">These questions appear in virtually every NHS interview. Prepare detailed, specific answers for each one using the STAR method.</p>
+
+<div class="question-card">
+<h4>1. Tell us about yourself and why you want to work for the NHS.</h4>
+<p>This is your opening pitch. Keep it to 1-2 minutes. Cover: your professional background, your key skills, what attracted you to this specific role, and why the NHS. Connect your personal motivation to the NHS values.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "I am a registered nurse with 5 years of experience in acute medical settings. I'm passionate about delivering compassionate, evidence-based care, which is why the NHS appeals to me — it's built on values that match my own, particularly Commitment to Quality of Care. I'm excited about this role because..."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>2. Why do you want to work in this specific department/specialty?</h4>
+<p>Show you've researched the department. Mention: specific aspects of the specialty that interest you, the department's reputation or achievements, and how your skills align with their needs.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> Research the department's CQC rating, recent quality improvement projects, or patient outcomes. Reference these specifically to show genuine interest.</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>3. Describe a time when you delivered excellent patient care.</h4>
+<p>Use STAR: Situation (set the scene), Task (what needed to be done), Action (what YOU specifically did), Result (positive outcome with metrics if possible). Focus on YOUR contribution, not the team's.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "I was caring for an elderly patient with dementia who was refusing to eat (Situation). I needed to ensure they received adequate nutrition (Task). I sat with them at each meal, used memory prompts from their past, and involved the dietician to modify food textures (Action). Their intake increased by 60% over the next week and they were discharged with improved nutritional status (Result)."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>4. How do you handle working under pressure?</h4>
+<p>The NHS is high-pressure. They need to know you can cope. Give a specific example of a pressured situation. Explain your coping strategies: prioritisation, delegation, staying calm, seeking support.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> Avoid saying "I don't feel pressure." Instead: "During a winter pressure surge, our ward had 3 nurses for 30 patients instead of 6. I prioritised using the ABC approach, delegated tasks based on each team member's strengths, communicated clearly with the bed manager, and checked in with my colleagues throughout. We managed the shift safely and I learned the importance of..."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>5. Tell us about a time you had a conflict with a colleague. How did you resolve it?</h4>
+<p>This tests your professionalism and communication skills. Choose an example where the resolution was positive. Emphasise: private discussion, active listening, finding common ground, professional resolution.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> Never blame the other person entirely. Frame it as a misunderstanding: "I had a disagreement with a colleague about patient handover timing. I requested a private conversation, listened to their concerns about workload, explained my perspective about patient safety, and we agreed on a new handover protocol that worked for both of us. Our working relationship improved after that."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>6. How do you prioritise your workload?</h4>
+<p>Use a recognised framework: ABC (Airway, Breathing, Circulation) for clinical, or urgency/importance matrix for general. Show systematic thinking and flexibility.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "I use the ABCDE approach for clinical prioritisation. For general workload, I assess urgency and importance. Patient safety issues come first, then time-sensitive tasks, then routine care. I also reassess priorities throughout the shift as situations change, and I'm not afraid to ask for help when the workload exceeds safe capacity."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>7. Describe a time you identified a patient safety issue and what you did about it.</h4>
+<p>Patient safety is the NHS's top priority. Show: vigilance in identifying the issue, immediate action to protect the patient, escalation through appropriate channels, and follow-up to prevent recurrence.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "I noticed a prescribing error — a patient was prescribed penicillin despite a documented allergy. I immediately withheld the medication, informed the patient, contacted the prescriber to request an alternative antibiotic, documented the incident, and completed a DATIX report. I also shared the learning in our team huddle to raise awareness about allergy checking."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>8. How do you keep your clinical knowledge up to date?</h4>
+<p>Show commitment to continuing professional development. Mention: CPD hours, courses, journal reading, reflection, NMC/GMC requirements, e-learning.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "I maintain a CPD portfolio and aim for 35 hours of relevant learning annually as required by the NMC. I subscribe to the Nursing Times and NICE guidelines updates. I completed my ALS certification last year and I'm currently undertaking a course in wound care management. I also learn from reflective practice — after challenging cases, I review what went well and what I could improve."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>9. What would you do if you made a mistake at work?</h4>
+<p>Honesty, accountability, and immediate action are key. The NHS has a "just culture" — they want to see you own mistakes and learn from them.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "First, I would ensure the patient's safety — take immediate action to minimise harm. Second, I would inform my line manager and the relevant healthcare team. Third, I would document the incident honestly and complete a DATIX report. Fourth, I would reflect on what happened and how to prevent it in the future. The NHS just culture encourages openness because that's how we improve patient safety."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>10. How do you deal with difficult or upset patients/relatives?</h4>
+<p>Show empathy, communication skills, and de-escalation techniques. Structure: acknowledge feelings, listen actively, apologise for their experience (not for clinical decisions), explain clearly, offer solutions.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "I had a situation where a patient's relative was angry about delayed discharge. I found a private space, listened without interrupting, acknowledged their frustration ('I understand how worrying the delay must be'), apologised for the communication gap, explained the reasons for the delay in plain language, and offered to speak to the discharge coordinator for an update. The relative left feeling heard and informed."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>11. Tell us about a time you worked effectively in a team.</h4>
+<p>Teamwork is essential in the NHS. Use STAR. Show: your specific role, how you supported others, effective communication, and a positive team outcome.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "During a cardiac arrest on the ward, I was the team leader. I delegated roles clearly (someone for compressions, someone for airway, someone to fetch the crash trolley, someone to document). I maintained clear communication throughout, called for senior support when needed, and debriefed the team afterwards. The patient achieved ROSC and was transferred to ITU. The feedback from my team highlighted the clear communication as key to our effective response."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>12. What are your strengths and weaknesses?</h4>
+<p>For strengths: choose 2-3 relevant to the role with examples. For weaknesses: choose something you're genuinely working on (NOT a fake weakness like "I work too hard"), explain your improvement plan, and show progress.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "My strengths are my clinical assessment skills — I've received positive feedback from mentors — and my ability to stay calm in emergencies. A weakness I'm working on is my confidence in presenting at large multidisciplinary meetings. I've joined Toastmasters and volunteer to present at our team meetings to build this skill. I've already noticed improvement in my last two presentations."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>13. Where do you see yourself in 5 years?</h4>
+<p>Show ambition that aligns with the organisation's goals. Mention: clinical development, potential specialisation, leadership aspirations, and commitment to the NHS.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "In 5 years, I see myself as a senior nurse in this specialty, possibly with a mentorship or practice educator role. I'm interested in developing expertise in [specific area] and contributing to quality improvement projects. I'm committed to long-term NHS service and want to grow within this organisation."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>14. How do you demonstrate compassion in your practice?</h4>
+<p>This directly tests the NHS value of Compassion. Give a specific, heartfelt example. Show that compassion is not just a word — it's an action.</p>
+<div class="answer">
+<p><strong>Strong answer tip:</strong> "Compassion is about seeing the person, not just the patient. I had a patient who was dying and had no family. I sat with them during my breaks, held their hand, and arranged for the chaplaincy team to visit. After they passed, I ensured they were treated with dignity and wrote a personal note to the team about the positive aspects of their care. Small acts of human connection make the biggest difference."</p>
+</div>
+</div>
+
+<div class="question-card">
+<h4>15. Do you have any questions for us?</h4>
+<p>ALWAYS have questions ready. This shows interest and engagement. Good questions: training opportunities, team structure, induction process, quality improvement projects, what success looks like in the first 6 months.</p>
+<div class="answer">
+<p><strong>Strong questions to ask:</strong> "What does the induction and preceptorship programme look like for this role?" "What are the team's current quality improvement priorities?" "What would success look like in the first 6 months?" "Are there opportunities for CPD and specialisation?"</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="frameworks">
+<div class="container">
+<h2>Answer Frameworks That Impress</h2>
+<p class="section-intro">Structure your answers using these proven frameworks. Structured answers are easier for the panel to score and demonstrate your systematic thinking.</p>
+
+<div class="grid">
+<div class="card">
+<div class="label">STAR</div>
+<h3>For Behavioural Questions</h3>
+<p><strong>S</strong>ituation — Set the scene briefly<br>
+<strong>T</strong>ask — What needed to be done?<br>
+<strong>A</strong>ction — What did YOU specifically do?<br>
+<strong>R</strong>esult — What was the positive outcome?<br><br>
+Use for: "Tell us about a time when...", "Describe a situation where...", "Give an example of..."</p>
+</div>
+<div class="card">
+<div class="label">SPIKES</div>
+<h3>For Breaking Bad News</h3>
+<p><strong>S</strong>etting — Private, uninterrupted<br>
+<strong>P</strong>erception — What does the patient know?<br>
+<strong>I</strong>nvitation — How much do they want to know?<br>
+<strong>K</strong>nowledge — Share information clearly<br>
+<strong>E</strong>motions — Acknowledge and empathise<br>
+<strong>S</strong>trategy — Discuss next steps together<br><br>
+Use for: communication scenario questions.</p>
+</div>
+<div class="card">
+<div class="label">ABCDE</div>
+<h3>For Clinical Prioritisation</h3>
+<p><strong>A</strong>irway — Is it patent?<br>
+<strong>B</strong>reathing — Rate, effort, oxygenation<br>
+<strong>C</strong>irculation — Pulse, BP, perfusion<br>
+<strong>D</strong>isability — Consciousness, pupils<br>
+<strong>E</strong>xposure — Temperature, rash, injuries<br><br>
+Use for: prioritisation and emergency scenario questions.</p>
+</div>
+<div class="card">
+<div class="label">SBAR</div>
+<h3>For Communication & Handover</h3>
+<p><strong>S</strong>ituation — What's happening right now?<br>
+<strong>B</strong>ackground — Relevant patient history<br>
+<strong>A</strong>ssessment — Your clinical assessment<br>
+<strong>R</strong>ecommendation — What do you need?<br><br>
+Use for: handover, escalation, and teamwork questions.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-white" id="prepare">
+<div class="container">
+<h2>Your Pre-Interview Checklist</h2>
+<p class="section-intro">Complete this checklist in the days before your NHS interview to arrive fully prepared and confident.</p>
+
+<div class="checklist">
+<h4>Research (Do This 3-5 Days Before)</h4>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Read the job description thoroughly — highlight key requirements</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Research the NHS Trust: their values, recent CQC report, key priorities</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Research the specific department: patient demographics, specialisms, team structure</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Learn the 6 NHS values and think of examples for each</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Review your CV and application form — the panel will have it</p></div>
+</div>
+
+<div class="checklist">
+<h4>Preparation (Do This 2-3 Days Before)</h4>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Write out STAR answers for the 15 common questions above</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Practice your answers aloud (record yourself, listen back)</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Do a mock interview with a friend or mentor</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Prepare 3-5 questions to ask the panel</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Plan your outfit: professional, clean, comfortable</p></div>
+</div>
+
+<div class="checklist">
+<h4>Interview Day (Do This on the Day)</h4>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Arrive 15 minutes early</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Bring copies of your CV, certificates, and passport</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Turn your phone OFF before entering the building</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Make eye contact, smile, and shake hands firmly</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Take a breath before answering each question</p></div>
+<div class="checklist-item"><span class="check">&#10003;</span><p>Be yourself — authenticity impresses more than perfection</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="faq">
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<h4>How long does an NHS interview typically last?</h4>
+<p>NHS interviews usually last 30-60 minutes. Band 5-6 nursing roles typically have 30-45 minute interviews. Band 7+ roles and medical positions may have 45-60 minute interviews, sometimes with additional assessment components like presentations or practical tests.</p>
+</div>
+<div class="faq-item">
+<h4>Should I bring documents to the interview?</h4>
+<p>Yes. Bring: your passport or ID, NMC/GMC registration certificate, original qualification certificates, updated CV, and any CPD records. Even if not requested, having these shows preparation and professionalism. Keep them organised in a folder.</p>
+</div>
+<div class="faq-item">
+<h4>What should I wear to an NHS interview?</h4>
+<p>Dress professionally: smart business attire. For women: tailored dress or suit, closed-toe shoes, minimal jewellery. For men: suit or smart shirt with trousers, tie recommended, clean shoes. Avoid strong perfumes/colognes. Your appearance should convey professionalism and respect for the process.</p>
+</div>
+<div class="faq-item">
+<h4>How soon after the interview will I hear back?</h4>
+<p>Most NHS Trusts inform candidates within 1-2 weeks. Some may contact you within a few days if you're the successful candidate. If you haven't heard after 2 weeks, it's appropriate to send a polite follow-up email to the HR contact.</p>
+</div>
+<div class="faq-item">
+<h4>Can I ask about salary during the interview?</h4>
+<p>It's best to avoid leading with salary questions. Focus on the role, team, and opportunity first. If the panel asks about salary expectations, give a range based on the NHS pay band. Salary discussions are more appropriate at the offer stage.</p>
+</div>
+<div class="faq-item">
+<h4>What if I don't have UK experience?</h4>
+<p>International candidates are welcomed by the NHS. Frame your international experience positively: diverse clinical exposure, adaptability, multilingual skills, different healthcare systems perspective. Emphasise your commitment to learning UK protocols and your CPD plans.</p>
+</div>
+<div class="faq-item">
+<h4>How do I handle questions about gaps in my employment?</h4>
+<p>Be honest and brief. Explain the reason (further study, family care, relocation, visa processing) and emphasise what you did during that time to stay clinically current (volunteering, online courses, reading journals). Keep it positive and move on.</p>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>Your NHS Career Starts with a Great Interview</h2>
+<p>Proper preparation is the difference between a good interview and a great one. Use these strategies, practice your answers, and walk in with confidence.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Get Interview Preparation Tools</a>
+<p style="margin-top:20px;font-size:.9rem;opacity:.8">Helping healthcare professionals secure their dream NHS roles</p>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>AngloTec AI — IELTS & OET Preparation Tools</p>
+<p style="margin-top:10px;font-size:.85rem;opacity:.7"><a href="https://tools.anglotec-ai.com">tools.anglotec-ai.com</a> | AI-Powered Language Exam Preparation</p>
+</div>
+</footer>
+
+</body>
+</html>

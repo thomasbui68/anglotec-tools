@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 Common IELTS Mistakes & How to Avoid Them | Mistakes That Cost Bands</title>
+<meta name="description" content="The 10 most common IELTS mistakes that cost candidates their target band score. Learn what they are, why they matter, and how to avoid them in every section.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D6354;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F1EB;--white:#FFFFFF;--red:#C0392B;--text:#2A2A2A;--text-light:#5A5A5A}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;background:var(--cream)}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green)}
+a{color:var(--orange);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+.header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800}
+.logo span{color:var(--orange)}
+.nav a{color:var(--white);margin-left:20px;font-weight:600;font-size:.9rem}
+.nav a:hover{color:var(--orange)}
+
+.hero{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:80px 0 60px;text-align:center}
+.hero h1{font-size:3rem;color:var(--white);margin-bottom:20px;line-height:1.2}
+.hero .subtitle{font-size:1.25rem;opacity:.9;max-width:700px;margin:0 auto 30px}
+.cta-btn{display:inline-block;background:var(--orange);color:var(--white);padding:16px 40px;border-radius:8px;font-weight:700;font-size:1.1rem;transition:all .3s;box-shadow:0 4px 15px rgba(212,101,59,.4)}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 25px rgba(212,101,59,.5)}
+.urgency-bar{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 24px;margin-top:25px;display:inline-block;font-weight:600}
+.urgency-bar strong{color:var(--orange)}
+
+.section{padding:60px 0}
+.section.bg-white{background:var(--white)}
+.section h2{font-size:2.2rem;margin-bottom:30px;text-align:center}
+.section-intro{max-width:800px;margin:0 auto 40px;text-align:center;font-size:1.1rem;color:var(--text-light)}
+
+.mistake-card{background:var(--white);border-radius:12px;padding:30px;margin-bottom:25px;box-shadow:0 4px 20px rgba(0,0,0,.06);border-left:4px solid var(--red);transition:transform .2s}
+.mistake-card:hover{transform:translateY(-3px)}
+.mistake-card .number{background:var(--red);color:var(--white);display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;font-weight:700;font-size:1rem;margin-bottom:15px}
+.mistake-card h3{font-size:1.25rem;margin-bottom:12px;color:var(--green)}
+.mistake-card .impact{background:rgba(192,57,43,.08);padding:12px 16px;border-radius:8px;margin-bottom:15px;border-left:3px solid var(--red)}
+.mistake-card .impact strong{color:var(--red)}
+.mistake-card .impact p{color:var(--text-light);margin:0;font-size:.95rem}
+.mistake-card .solution{background:var(--cream);padding:15px 20px;border-radius:8px;border-left:3px solid var(--green)}
+.mistake-card .solution strong{color:var(--green)}
+.mistake-card .solution p{color:var(--text-light);margin:0;font-size:.95rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px}
+.card{background:var(--white);border-radius:12px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,.06);border-left:4px solid var(--orange);transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card h3{font-size:1.2rem;margin-bottom:10px;color:var(--green)}
+.card ul{padding-left:20px;color:var(--text-light);font-size:.9rem}
+.card ul li{margin-bottom:6px}
+
+.tip-box{background:linear-gradient(135deg,rgba(212,101,59,.08)0%,rgba(212,101,59,.03)100%);border-radius:12px;padding:25px;margin:25px 0;border:1px solid rgba(212,101,59,.2)}
+.tip-box h4{color:var(--orange);font-family:'Inter',sans-serif;font-weight:700;margin-bottom:10px;font-size:1.1rem}
+.tip-box p{color:var(--text-light);margin:0}
+
+.cta-section{background:linear-gradient(135deg,var(--green)0%,var(--green-light)100%);color:var(--white);padding:70px 0;text-align:center}
+.cta-section h2{color:var(--white);margin-bottom:20px}
+.cta-section p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 30px}
+
+.faq-item{background:var(--white);border-radius:10px;padding:25px;margin-bottom:15px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.faq-item h4{font-family:'Inter',sans-serif;color:var(--green);font-weight:700;margin-bottom:10px;font-size:1.05rem}
+.faq-item p{color:var(--text-light)}
+
+.footer{background:var(--green);color:var(--white);padding:40px 0;text-align:center}
+.footer a{color:var(--orange)}
+
+@media(max-width:768px){
+.hero h1{font-size:2rem}
+.hero .subtitle{font-size:1rem}
+.nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container">
+<div class="logo">Anglo<span>Tec</span></div>
+<nav class="nav">
+<a href="#mistakes">10 Mistakes</a>
+<a href="#summary">Summary</a>
+<a href="#avoid">Avoidance Tips</a>
+<a href="#faq">FAQ</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>10 Common IELTS Mistakes & How to Avoid Them</h1>
+<p class="subtitle">These are the mistakes that cost candidates 0.5-1 full band. Learn them, avoid them, and protect your target score.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Avoid These Mistakes</a>
+<div class="urgency-bar">One mistake can cost you an entire band — <strong>know them before your test</strong></div>
+</div>
+</section>
+
+<section class="section" id="mistakes">
+<div class="container">
+<h2>The 10 Mistakes That Cost Bands</h2>
+<p class="section-intro">Every mistake on this list has been made by thousands of IELTS candidates. Each one can drop your score by 0.5 bands or more. Read carefully, recognise which ones you might be making, and fix them before test day.</p>
+
+<div class="mistake-card">
+<div class="number">1</div>
+<h3>Not Managing Time Properly in Reading</h3>
+<div class="impact">
+<p><strong>Impact:</strong> Candidates spend 30+ minutes on the first passage and rush through the last, guessing answers randomly. This alone can drop your Reading score from Band 7.0 to Band 5.5.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Allocate exactly 20 minutes per passage — no exceptions. Use a watch. If a question takes more than 2 minutes, skip it and return later. The last passage is worth the same as the first; treat them equally. Practice with strict 20-minute timers until it becomes automatic.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">2</div>
+<h3>Writing Task 2 Before Task 1 — But Spending Too Long on Task 1</h3>
+<div class="impact">
+<p><strong>Impact:</strong> Task 2 is worth DOUBLE Task 1 in the Writing score. Spending 30+ minutes on Task 1 leaves insufficient time for Task 2, which devastates your overall Writing band. Many candidates score Band 6.0 on Task 1 and Band 5.0 on Task 2 because of poor time allocation.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Strictly allocate 20 minutes for Task 1 and 40 minutes for Task 2. Set a timer. When 20 minutes hit for Task 1, stop mid-sentence if needed and move to Task 2. Task 2's 250 words at double weight is mathematically more valuable than Task 1's 150 words.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">3</div>
+<h3>Not Understanding True/False/Not Given</h3>
+<div class="impact">
+<p><strong>Impact:</strong> This is the most commonly misunderstood question type in IELTS Reading. Confusing "False" with "Not Given" costs candidates 3-4 marks per test — enough to drop a full band. A candidate scoring Band 7.0 could fall to Band 6.0 purely from T/F/NG errors.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Memorise this rule: <strong>True</strong> = the statement agrees with the information in the text. <strong>False</strong> = the statement contradicts the information in the text. <strong>Not Given</strong> = there is no information about this in the text. Practice with 20+ T/F/NG exercises until the distinction is automatic. If you can't find the information after scanning, it's Not Given.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">4</div>
+<h3>Memorising Essay Templates and Scripts</h3>
+<div class="impact">
+<p><strong>Impact:</strong> Examiners are trained to detect memorised language. If they identify a memorised template or script, they give it a Band 5.0 or below for Task Response. This is one of the fastest ways to destroy your Writing or Speaking score.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Learn STRUCTURES, not scripts. Know the 4-paragraph essay framework (intro, 2 body, conclusion). Practise adapting this structure to different questions. For Speaking, practise responding naturally to many questions rather than memorising answers. Examiners reward natural, relevant responses — not rehearsed speeches.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">5</div>
+<h3>Spelling Errors in Writing and Listening</h3>
+<div class="impact">
+<p><strong>Impact:</strong> Every spelling error in Writing costs marks under Lexical Resource. In Listening, misspelled answers are marked wrong even if you heard the correct word. Candidates lose 3-5 marks per test through careless spelling.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Proofread your Writing for the last 3 minutes. Check these commonly misspelled words: government, environment, accommodation, definitely, necessary, separate, occurrence, recommend, maintenance, privilege. In Listening, write answers in ALL CAPS to avoid capitalisation errors. Double-check spelling during the 10-minute transfer time.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">6</div>
+<h3>Leaving Blanks Instead of Guessing</h3>
+<div class="impact">
+<p><strong>Impact:</strong> IELTS has no negative marking — a wrong answer scores the same as a blank (zero). Leaving blanks means you have ZERO chance of getting the mark. A strategic guess gives you a 25-50% chance, depending on the question type.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> NEVER leave a blank in Listening or Reading. If you don't know the answer, make your best guess using elimination. In multiple-choice questions, eliminate 2 obviously wrong options first, then guess between the remaining 2. In blank-filling questions, predict the type of word (noun, verb, adjective) and guess accordingly. Every guess has a chance; every blank has none.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">7</div>
+<h3>Not Predicting Answers in Listening</h3>
+<div class="impact">
+<p><strong>Impact:</strong> Candidates who don't use the preview time effectively are caught off-guard when the audio plays. They miss answers because they don't know what to listen for. This costs 2-3 marks per Listening section — enough to drop 0.5 bands.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> During the 30-second preview before each section, read ALL questions and underline keywords. Predict the answer type for each blank: Is it a name? A number? A date? An address? This primes your brain to catch the answer when it appears. Also watch out for distractors — the speaker may mention an incorrect answer before giving the correct one.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">8</div>
+<h3>Giving One-Word Answers in Speaking</h3>
+<div class="impact">
+<p><strong>Impact:</strong> One-word answers demonstrate limited fluency and range, which directly lowers your Fluency & Coherence and Lexical Resource scores. A candidate who answers "Yes" or "No" to Part 1 questions will score Band 4.0-5.0 in Speaking regardless of their English level.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Always expand your answers. Use this structure: Direct answer + Explanation + Example. For example: "Do you like reading?" Don't say "Yes." Say "Yes, I enjoy reading very much, especially non-fiction books about history. I find it relaxing after a busy day at work, and I'm currently reading a book about the Tudor period." Aim for 3-4 sentences for Part 1, the full 2 minutes for Part 2, and extended opinions for Part 3.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">9</div>
+<h3>Not Including an Overview in Task 1</h3>
+<div class="impact">
+<p><strong>Impact:</strong> The overview paragraph is the most important part of Task 1. Without it, the maximum score for Task Achievement is Band 5.0 — regardless of how well you describe the details. Many candidates jump straight into describing data without summarising the main trends.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Always include a clear overview paragraph immediately after the introduction. The overview should summarise 2-3 main trends or features without mentioning specific numbers. For example: "Overall, it is clear that online sales increased significantly over the period, while in-store purchases declined. Additionally, the gap between the two widened considerably after 2015." This one paragraph can raise your Task Achievement from Band 5 to Band 7.</p>
+</div>
+</div>
+
+<div class="mistake-card">
+<div class="number">10</div>
+<h3>Cramming the Night Before Instead of Sleeping</h3>
+<div class="impact">
+<p><strong>Impact:</strong> Studies show that a sleep-deprived brain performs 20-30% worse on cognitive tasks. Cramming until 2 AM the night before IELTS destroys your performance in all four sections. Memory consolidation happens during sleep, not during late-night studying. This mistake affects every single section.</p>
+</div>
+<div class="solution">
+<p><strong>How to avoid:</strong> Stop all study by 6 PM the day before the exam. Do light review only (vocabulary flashcards, reading your best essays for confidence). Eat a light dinner. Do something relaxing. Set your alarm. Aim for 8 hours of sleep. A rested, alert brain will retrieve everything you've learned over weeks of preparation. Trust your preparation — it doesn't disappear overnight.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-white" id="summary">
+<div class="container">
+<h2>Quick Reference: Mistake Prevention Checklist</h2>
+<p class="section-intro">Print this checklist and review it before every practice test. Eventually, these preventions will become automatic.</p>
+
+<div class="grid">
+<div class="card">
+<h3>Reading Mistakes to Avoid</h3>
+<ul>
+<li>Spending more than 20 min per passage</li>
+<li>Confusing False with Not Given</li>
+<li>Leaving blanks instead of guessing</li>
+<li>Reading every word instead of skimming</li>
+<li>Not transferring answers in time</li>
+<li>Ignoring instruction word limits</li>
+</ul>
+</div>
+<div class="card">
+<h3>Listening Mistakes to Avoid</h3>
+<ul>
+<li>Not using preview time to predict answers</li>
+<li>Getting stuck on missed answers</li>
+<li>Spelling errors during transfer time</li>
+<li>Not checking grammar in answers</li>
+<li>Writing on answer sheet during audio</li>
+<li>Ignoring instructions about word counts</li>
+</ul>
+</div>
+<div class="card">
+<h3>Writing Mistakes to Avoid</h3>
+<ul>
+<li>Spending more than 20 min on Task 1</li>
+<li>Not including an overview in Task 1</li>
+<li>Using memorised templates</li>
+<li>Spelling errors (especially common words)</li>
+<li>Not proofreading before time runs out</li>
+<li>Writing fewer than required words</li>
+</ul>
+</div>
+<div class="card">
+<h3>Speaking Mistakes to Avoid</h3>
+<ul>
+<li>One-word answers in Part 1</li>
+<li>Not using the full 2 minutes in Part 2</li>
+<li>Memorising scripted answers</li>
+<li>Not giving opinions + reasons + examples</li>
+<li>Speaking too fast due to nervousness</li>
+<li>Not asking for clarification when needed</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2>Additional Mistakes That Cost 0.5 Bands</h2>
+<p class="section-intro">Beyond the top 10, these additional mistakes are surprisingly common and equally costly.</p>
+
+<div class="tip-box">
+<h4>Not Following Word Count Instructions</h4>
+<p>In Reading and Listening, answers that exceed the word limit (e.g., "NO MORE THAN TWO WORDS") are marked WRONG, even if the content is correct. Always check the instruction before each set of questions. In Writing, not meeting the minimum word count (150 for Task 1, 250 for Task 2) results in automatic penalties.</p>
+</div>
+
+<div class="tip-box">
+<h4>Not Proofreading Writing Tasks</h4>
+<p>Three minutes of proofreading at the end can catch 3-5 errors that would otherwise cost you marks. Check: spelling, subject-verb agreement, article usage (a/an/the), and punctuation. These are the errors that separate Band 6.5 from Band 7.0 writing.</p>
+</div>
+
+<div class="tip-box">
+<h4>Panic After One Difficult Section</h4>
+<p>Many candidates perform poorly in one section and let it affect the rest of the exam. Each section is scored independently. A difficult Listening section does NOT affect your Reading, Writing, or Speaking scores. If one section goes badly, take a deep breath and attack the next one with full focus. Many candidates recover from a poor section and still achieve their target overall band.</p>
+</div>
+
+<div class="tip-box">
+<h4>Ignoring the Band Descriptor Requirements</h4>
+<p>Each band level has specific requirements. Band 7.0 Writing requires "presents a clear position throughout" and "uses a variety of complex structures." Many candidates write grammatically correct essays but fail to maintain a clear position — resulting in Band 6.0 Task Response. Read the band descriptors for your target score and ensure your practice meets every criterion.</p>
+</div>
+</div>
+</section>
+
+<section class="section bg-white" id="faq">
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<h4>Which mistake costs candidates the most bands?</h4>
+<p>Poor time management in Reading and Writing are the two biggest score-killers. Not allocating 20 minutes per Reading passage and spending too long on Writing Task 1 are the most common reasons candidates miss their target band by 0.5 points. Fix your timing and you'll fix your score.</p>
+</div>
+<div class="faq-item">
+<h4>How many marks do spelling errors cost?</h4>
+<p>In Writing, spelling errors are assessed under Lexical Resource. Frequent spelling errors limit you to Band 5.0-6.0 in that criterion. In Listening, every misspelled answer is marked wrong — that's one full mark lost per spelling error. Always proofread.</p>
+</div>
+<div class="faq-item">
+<h4>Is it okay to use essay templates?</h4>
+<p>Structure templates (4 paragraphs: intro, 2 body, conclusion) are fine and recommended. However, memorised content templates — pre-written introductions, conclusions, or body paragraphs that you plug in regardless of the question — are penalised heavily. Examiners read thousands of essays and can spot memorised language instantly. Learn the structure, write the content fresh.</p>
+</div>
+<div class="faq-item">
+<h4>How do I improve my True/False/Not Given accuracy?</h4>
+<p>Practice is the only way. Complete 20+ T/F/NG exercises, checking answers carefully. For each wrong answer, re-read the passage to understand WHY the correct answer is what it is. The key distinction: False means the text says the OPPOSITE; Not Given means the text says NOTHING about it.</p>
+</div>
+<div class="faq-item">
+<h4>Can I really improve just by avoiding mistakes?</h4>
+<p>Yes — absolutely. Many candidates have the English level for Band 7.0 but score Band 6.0 due to technique errors. Avoiding the mistakes on this list can improve your score by 0.5-1 band without learning a single new word. Technique matters as much as language ability in IELTS.</p>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>Know the Mistakes. Avoid the Mistakes. Get Your Band.</h2>
+<p>Every mistake you avoid is a mark gained. Every mark gained is a step closer to your target band score. Prepare smart.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Practice Mistake-Free IELTS</a>
+<p style="margin-top:20px;font-size:.9rem;opacity:.8">Smart preparation beats hard preparation</p>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>AngloTec AI — IELTS & OET Preparation Tools</p>
+<p style="margin-top:10px;font-size:.85rem;opacity:.7"><a href="https://tools.anglotec-ai.com">tools.anglotec-ai.com</a> | AI-Powered Language Exam Preparation</p>
+</div>
+</footer>
+
+</body>
+</html>

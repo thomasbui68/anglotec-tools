@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMC CBT vs OSCE: What's the Difference? | Anglotec</title>
+<meta name="description" content="NMC CBT vs OSCE explained for overseas nurses. Learn the differences between the Computer Based Test and Objective Structured Clinical Examination for UK NMC registration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#2C4A3E;--green-light:#3D5F52;--orange:#D4653B;--orange-light:#E07A52;--cream:#F8F6F1;--white:#FFFFFF;--text:#1A1A1A;--text-light:#5A5A5A;--border:#E5E0D8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.6;}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  header{background:var(--green);padding:16px 0;position:sticky;top:0;z-index:100;}
+  header .container{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Playfair Display',serif;font-size:22px;color:var(--white);font-weight:700;text-decoration:none;}
+  .logo span{color:var(--orange);}
+  nav a{color:rgba(255,255,255,0.9);text-decoration:none;margin-left:28px;font-size:14px;font-weight:500;transition:color 0.2s;}nav a:hover{color:var(--orange);}
+  .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);padding:80px 0 70px;text-align:center;color:var(--white);}
+  .hero h1{font-size:50px;margin-bottom:16px;}
+  .hero p{font-size:18px;opacity:0.9;max-width:660px;margin:0 auto 32px;}
+  .badge{display:inline-block;background:var(--orange);color:#fff;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:20px;}
+  .cta-btn{display:inline-block;background:var(--orange);color:#fff;padding:15px 36px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.25s;box-shadow:0 4px 14px rgba(212,101,59,0.35);}
+  .cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,101,59,0.45);}
+  .section{padding:64px 0;}
+  .section-title{text-align:center;margin-bottom:48px;}
+  .section-title h2{font-size:38px;color:var(--green);margin-bottom:10px;}
+  .section-title p{color:var(--text-light);font-size:16px;}
+  .table-wrap{overflow-x:auto;margin-bottom:40px;}
+  table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+  thead{background:var(--green);color:var(--white);}
+  th{padding:18px 24px;text-align:left;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.4px;}
+  td{padding:16px 24px;border-bottom:1px solid var(--border);font-size:14px;}
+  tr:last-child td{border-bottom:none;}
+  tr:nth-child(even){background:#FAFAF8;}
+  .highlight{color:var(--orange);font-weight:600;}
+  .check{color:#4CAF52;font-weight:700;}
+  .cross{color:#E74C3C;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:40px;}
+  .card{background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--orange);}
+  .card h3{font-size:20px;color:var(--green);margin-bottom:10px;}
+  .card p{font-size:14px;color:var(--text-light);}
+  .card .icon{width:44px;height:44px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:20px;margin-bottom:14px;}
+  .green-section{background:var(--green);color:var(--white);padding:72px 0;text-align:center;}
+  .green-section h2{font-size:36px;margin-bottom:12px;}
+  .green-section p{font-size:16px;opacity:0.9;margin-bottom:28px;}
+  .green-section .cta-btn{background:var(--white);color:var(--green);box-shadow:0 4px 14px rgba(0,0,0,0.2);}
+  .green-section .cta-btn:hover{background:var(--cream);}
+  .faq-item{background:var(--white);border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.04);}
+  .faq-question{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;transition:background 0.2s;}
+  .faq-question:hover{background:#FAFAF8;}
+  .faq-answer{padding:0 24px 18px;font-size:14px;color:var(--text-light);display:none;}
+  .faq-item.active .faq-answer{display:block;}
+  .faq-toggle{color:var(--orange);font-size:20px;transition:transform 0.2s;}
+  .faq-item.active .faq-toggle{transform:rotate(45deg);}
+  .meta-bar{background:var(--white);border-bottom:1px solid var(--border);padding:12px 0;font-size:13px;color:var(--text-light);}
+  .meta-bar .container{display:flex;gap:24px;flex-wrap:wrap;}
+  .meta-bar span{display:flex;align-items:center;gap:6px;}
+  .trust{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap;}
+  .trust-item{text-align:center;}
+  .trust-item .num{font-family:'Playfair Display',serif;font-size:32px;color:var(--orange);font-weight:700;}
+  .trust-item .lbl{font-size:13px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;}
+  .timeline{position:relative;padding-left:32px;}
+  .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--green);opacity:0.3;}
+  .timeline-item{position:relative;margin-bottom:28px;}
+  .timeline-item::before{content:'';position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--orange);border:3px solid var(--white);box-shadow:0 0 0 2px var(--orange);}
+  .timeline-item h4{font-size:16px;color:var(--green);margin-bottom:4px;}
+  .timeline-item p{font-size:14px;color:var(--text-light);}
+  .step-badge{display:inline-block;background:var(--orange);color:#fff;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:6px;}
+  .step-badge-cbt{background:#2196F3;}
+  .step-badge-osce{background:#9C27B0;}
+  .step-badge-shared{background:var(--green);}
+  footer{background:var(--green);color:rgba(255,255,255,0.7);padding:40px 0 28px;font-size:13px;}
+  footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer a{color:rgba(255,255,255,0.8);text-decoration:none;}footer a:hover{color:var(--orange);}
+  .warning{background:#FFF3E0;border-left:4px solid var(--orange);padding:16px 20px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:14px;color:var(--text);}
+  @media(max-width:768px){.hero h1{font-size:32px;}.hero{padding:56px 0 48px;}.section{padding:48px 0;}.section-title h2{font-size:28px;}nav{display:none;}th,td{padding:12px 16px;font-size:13px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo">Anglo<span>tec</span></a>
+    <nav>
+      <a href="https://tools.anglotec-ai.com">AI Tools</a>
+      <a href="https://tools.anglotec-ai.com">CBT Prep</a>
+      <a href="https://tools.anglotec-ai.com">OSCE Prep</a>
+    </nav>
+  </div>
+</header>
+
+<div class="meta-bar">
+  <div class="container">
+    <span>📅 Updated July 2026</span>
+    <span>👤 By Anglotec Nursing Team</span>
+    <span>📖 9 min read</span>
+    <span>🏥 NMC Registration Guide</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">Overseas Nurses Guide</div>
+    <h1>NMC CBT vs OSCE: What's the Difference?</h1>
+    <p>If you're an overseas nurse registering with the UK's Nursing and Midwifery Council, you'll need to pass BOTH the CBT and OSCE. Here's exactly what each test involves and how to prepare for success.</p>
+    <a href="https://tools.anglotec-ai.com" class="cta-btn">Start NMC Exam Prep</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>NMC CBT vs OSCE: The Fundamental Difference</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>NMC CBT (Part 1)</th><th>NMC OSCE (Part 2)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Full Name</strong></td><td>Nursing and Midwifery Council Computer Based Test</td><td>Objective Structured Clinical Examination</td></tr>
+          <tr><td><strong>Order in Process</strong></td><td>First (before coming to UK)</td><td>Second (after arriving in UK)</td></tr>
+          <tr><td><strong>Test Format</strong></td><td>120 multiple-choice questions on computer</td><td>Practical clinical stations with actors/manikins</td></tr>
+          <tr><td><strong>Duration</strong></td><td>4 hours</td><td>Approx. 3-4 hours</td></tr>
+          <tr><td><strong>Location</strong></td><td>Pearson VUE test centres worldwide</td><td>Approved UK test centres only (OSCE hubs)</td></tr>
+          <tr><td><strong>Can Take From Home</strong></td><td class="cross">No (test centre only)</td><td class="cross">No (in-person only)</td></tr>
+          <tr><td><strong>Cost (2026)</strong></td><td>£83</td><td>£794 (first attempt)</td></tr>
+          <tr><td><strong>Pass Mark</strong></td><td>Critical questions must pass + overall pass score</td><td>Pass all stations at borderline or above</td></tr>
+          <tr><td><strong>Pass Rate</strong></td><td>~70-75% first attempt</td><td>~60-65% first attempt</td></tr>
+          <tr><td><strong>Max Attempts</strong></td><td>Unlimited (but must pay each time)</td><td>Maximum 3 attempts</td></tr>
+          <tr><td><strong>What It Tests</strong></td><td>Theoretical nursing knowledge, UK standards, professional values</td><td>Practical clinical skills, communication, patient safety</td></tr>
+          <tr><td><strong>Preparation Time</strong></td><td>4-8 weeks typically</td><td>6-12 weeks typically</td></tr>
+          <tr><td><strong>Expiry</strong></td><td>Valid for 2 years (must pass OSCE within this period)</td><td>No expiry once passed</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-title">
+      <h2>The Complete NMC Registration Process</h2>
+      <p>Step-by-step from overseas nurse to UK registered nurse</p>
+    </div>
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="step-badge step-badge-shared">Step 1</span>
+          <h4> eligibility & Qualification Check</h4>
+          <p>NMC verifies your nursing qualification, training hours (minimum 4,600 hours), and registration in your home country. Create an NMC Online account and submit documents. Processing: 2-6 weeks.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="step-badge step-badge-shared">Step 2</span>
+          <h4>English Language Test</h4>
+          <p>Pass IELTS Academic (7.0 overall, 6.5 each) or OET (Grade B all sub-tests) or PTE Academic (76 overall, 66 each). You can combine scores from two sittings for OET.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="step-badge step-badge-cbt">Step 3</span>
+          <h4>CBT (Part 1) - THEORY</h4>
+          <p>Book through Pearson VUE. 120 MCQs covering nursing theory, UK standards, drug calculations, professional values. Must pass within 2 years. Cost: £83.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="step-badge step-badge-shared">Step 4</span>
+          <h4>Admission to the Register (Provisional)</h4>
+          <p>After passing CBT and English test, NMC grants provisional registration. You can now apply for UK nursing jobs and obtain your Health and Care Worker visa.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="step-badge step-badge-osce">Step 5</span>
+          <h4>Arrive in the UK</h4>
+          <p>Take up your nursing position. Your employer will support your OSCE preparation. Most employers provide study time and resources. You're on a pre-registration PIN.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="step-badge step-badge-osce">Step 6</span>
+          <h4>OSCE (Part 2) - PRACTICAL</h4>
+          <p>Book at an approved OSCE test centre. 10 stations testing clinical skills, assessment, communication, and professionalism. Must pass within 3 attempts and within 8 months of employment start. Cost: £794.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="step-badge step-badge-shared">Step 7</span>
+          <h4>Full NMC Registration</h4>
+          <p>Upon passing OSCE, your provisional registration becomes full registration. You receive your NMC PIN number and can practise as a registered nurse in the UK without restrictions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>CBT in Detail: What to Expect</h2>
+      <p>The computer-based theory examination broken down</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>Test Format</h3>
+        <p>120 multiple-choice questions answered on a computer at a Pearson VUE test centre. You have 4 hours to complete the test. Questions are a mix of single-best-answer and extended matching format. Some questions include images (ECGs, wound photos, medication labels).</p>
+      </div>
+      <div class="card">
+        <div class="icon">📋</div>
+        <h3>Topics Covered</h3>
+        <p>Professional values, communication and interpersonal skills, nursing practice and decision-making, leadership and management, drug calculations (essential), safeguarding (adults and children), mental health awareness, and infection control.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚠️</div>
+        <h3>Critical Questions</h3>
+        <p>The CBT includes "critical questions" on patient and public safety. You MUST answer these correctly to pass, regardless of your overall score. These cover essential nursing judgement scenarios.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧮</div>
+        <h3>Drug Calculations</h3>
+        <p>Expect 10-15 drug calculation questions. These are often the section that causes failures. You must demonstrate competency in calculating dosages, IV rates, and medication concentrations. Calculators are provided on-screen.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>Booking & Availability</h3>
+        <p>CBT can be taken at Pearson VUE centres in 150+ countries. You can book online through your NMC account. Available most days of the week with flexible timing. Results emailed within 48 hours.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Preparation Tips</h3>
+        <p>Study the NMC Code (2018), UK nursing standards, and practise drug calculations daily. Use NMC's test blueprint (published on their website). Anglotec AI provides CBT practice questions aligned with the NMC curriculum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-title">
+      <h2>OSCE in Detail: What to Expect</h2>
+      <p>The practical clinical examination broken down station by station</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🏥</div>
+        <h3>Test Format</h3>
+        <p>The OSCE consists of 10 stations, each lasting 15-20 minutes. You'll rotate through stations with short breaks. Stations use both simulated patients (actors) and clinical skill manikins. An examiner observes and scores your performance at each station.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🩺</div>
+        <h3>APIE Stations (4 stations)</h3>
+        <p>Assessment, Planning, Implementation, and Evaluation. These are the core nursing process stations. You'll assess a patient, develop a care plan, implement nursing interventions, and evaluate outcomes. These stations carry the most weight.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💊</div>
+        <h3>Medicines Management (2 stations)</h3>
+        <p>One station tests your ability to safely administer medication including checks, calculations, and patient education. The other tests dispensing and clinical pharmacology knowledge.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Professional Values & Communication</h3>
+        <p>Stations testing your ability to communicate effectively with patients, families, and colleagues. Scenarios include breaking bad news, dealing with complaints, informed consent, and ethical dilemmas.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🩹</div>
+        <h3>Clinical Skills Stations</h3>
+        <p>Practical demonstrations of: vital signs, wound care/dressing, catheterisation (theory), injection technique, basic life support (BLS), manual handling, and infection control procedures.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>Test Centres</h3>
+        <p>Approved OSCE test centres are located at various NHS trusts across England and Northern Ireland. You must book through your employer, who typically arranges your OSCE slot. Major hubs include Oxford, Northampton, and Ulster University.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="green-section">
+  <div class="container">
+    <h2>Struggling with CBT Drug Calculations?</h2>
+    <p>Drug calculations are the #1 reason nurses fail the CBT. Our AI-powered practice gives you unlimited calculation questions with step-by-step solutions.</p>
+    <a href="https://tools.anglotec-ai.com" class="cta-btn">Practise Drug Calculations Free</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>CBT vs OSCE Scoring Explained</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Aspect</th><th>CBT Scoring</th><th>OSCE Scoring</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Scoring Method</strong></td><td>Automated computer marking</td><td>Human examiners with structured criteria</td></tr>
+          <tr><td><strong>Pass Criteria</strong></td><td>Pass all critical questions + achieve overall pass score</td><td>Pass all 4 APIE stations + overall borderline or above</td></tr>
+          <tr><td><strong>Results Timeline</strong></td><td>Within 48 hours</td><td>Within 5 working days</td></tr>
+          <tr><td><strong>Results Method</strong></td><td>Email notification + NMC account update</td><td>Email from test centre + NMC account</td></tr>
+          <tr><td><strong>Retake Waiting Period</strong></td><td>None (book next available slot)</td><td>Minimum 10 days between attempts</td></tr>
+          <tr><td><strong>Maximum Attempts</strong></td><td>Unlimited</td><td>Maximum 3 attempts total</td></tr>
+          <tr><td><strong>What Happens If You Fail</strong></td><td>Pay £83 and retake</td><td>Employer may provide additional training; £794 per resit</td></tr>
+          <tr><td><strong>After 3 OSCE Failures</strong></td><td>N/A</td><td>Employment may be terminated; must leave UK unless alternative visa</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warning">
+      <strong>Important:</strong> Failing the OSCE 3 times has serious consequences. Your employer may terminate your contract, and without an alternative visa route, you may need to leave the UK. Take preparation extremely seriously - don't rely on clinical experience alone.
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-title">
+      <h2>How to Prepare: CBT vs OSCE</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📖</div>
+        <h3>CBT Preparation (4-8 weeks)</h3>
+        <p>• Read the NMC Code (2018) thoroughly<br>• Study UK nursing standards and guidelines<br>• Practise 50+ drug calculations daily<br>• Use the NMC test blueprint as your guide<br>• Take timed practice CBT tests<br>• Join overseas nurse Facebook groups for tips<br>• Focus on UK-specific protocols (may differ from your country)</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎭</div>
+        <h3>OSCE Preparation (6-12 weeks)</h3>
+        <p>• Attend your employer's OSCE training programme<br>• Practise ALL clinical skills repeatedly<br>• Role-play communication scenarios with colleagues<br>• Learn the APIE framework inside-out<br>• Understand UK documentation standards<br>• Practise with OSCE-specific manikins if possible<br>• Watch OSCE preparation videos on YouTube</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>Anglotec AI Preparation</h3>
+        <p>• Unlimited CBT-style practice questions<br>• Drug calculation generator with solutions<br>• OSCE communication role-play with AI<br>• NMC Code knowledge testing<br>• Personalised study plan based on weak areas<br>• Progress tracking and analytics<br>• Available on mobile - practise anywhere</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-item active">
+      <div class="faq-question">What is the difference between CBT and OSCE? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">CBT (Computer Based Test) is a 120-question multiple-choice exam testing your theoretical nursing knowledge. You take it BEFORE coming to the UK, at a Pearson VUE centre in your home country. OSCE (Objective Structured Clinical Examination) is a practical exam with 10 clinical stations testing hands-on skills, communication, and professional judgement. You take it AFTER arriving in the UK, at an approved OSCE test centre. Both are mandatory for NMC registration.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I take the OSCE before coming to the UK? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">No. The OSCE can only be taken at approved test centres in the UK. You must first pass the CBT and obtain your Health and Care Worker visa, then travel to the UK to take up employment before you can sit the OSCE. Most nurses take the OSCE within 3-6 months of arriving in the UK.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What happens if I fail the OSCE 3 times? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">This is a serious situation. After 3 failed OSCE attempts, the NMC will close your application. Your employer may terminate your employment contract since you cannot work as a registered nurse. Without employer sponsorship, your visa status is at risk. Some nurses switch to different visa categories or return home. This is why thorough preparation is absolutely critical - never underestimate the OSCE.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How long do I have to pass the OSCE after arriving in the UK? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">You must pass the OSCE within 8 months (12 months in some cases) from your employment start date. Additionally, your CBT result is only valid for 2 years, so you must pass the OSCE within that window. Most employers expect you to take your first OSCE attempt within 3 months of arrival.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What is the hardest part of the CBT? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Drug calculations are consistently the most challenging section for overseas nurses. Many countries use different medication names, units, and calculation methods. The NMC expects competency in dosage calculations, IV infusion rates, and medication concentrations. Practise daily until you can solve any calculation confidently in under 2 minutes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What is the hardest part of the OSCE? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">The APIE (Assessment, Planning, Implementation, Evaluation) stations are the most challenging because they test your entire nursing process in a timed environment. Communication stations can also be difficult if you're not familiar with UK cultural norms around patient interaction. Many nurses also struggle with UK-specific documentation requirements.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Does my employer help with OSCE preparation? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Yes, most NHS employers provide structured OSCE preparation programmes for overseas nurses. This typically includes: dedicated study time, skills lab access, practice sessions with manikins, communication role-play training, and sometimes a mock OSCE. However, the quality varies between employers. Ask about OSCE support during your interview.</div>
+    </div>
+  </div>
+</section>
+
+<section class="green-section">
+  <div class="container">
+    <h2>Pass Your NMC Exams First Time</h2>
+    <p>AI-powered CBT questions, drug calculation practice, and OSCE role-play simulations. Join 8,000+ overseas nurses who prepared with Anglotec.</p>
+    <div class="trust">
+      <div class="trust-item"><div class="num">8K+</div><div class="lbl">Nurse Users</div></div>
+      <div class="trust-item"><div class="num">73%</div><div class="lbl">CBT Pass Rate</div></div>
+      <div class="trust-item"><div class="num">68%</div><div class="lbl">OSCE Pass Rate</div></div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="https://tools.anglotec-ai.com" class="cta-btn">Start Free NMC Prep</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Anglotec AI. All rights reserved.</div>
+    <div><a href="https://tools.anglotec-ai.com">CBT Prep</a> · <a href="https://tools.anglotec-ai.com">OSCE Prep</a> · <a href="https://tools.anglotec-ai.com">OET for Nurses</a></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q=>{
+    q.addEventListener('click',()=>{q.parentElement.classList.toggle('active');});
+  });
+</script>
+</body>
+</html>

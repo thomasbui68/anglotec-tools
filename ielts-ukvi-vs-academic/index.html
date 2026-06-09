@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS UKVI vs Academic: Which Do You Need? | Anglotec</title>
+<meta name="description" content="Discover the key differences between IELTS UKVI and IELTS Academic. Learn which test you need for UK visas, university, and professional registration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#2C4A3E;--green-light:#3D5F52;--orange:#D4653B;--orange-light:#E07A52;--cream:#F8F6F1;--white:#FFFFFF;--text:#1A1A1A;--text-light:#5A5A5A;--border:#E5E0D8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.6;}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  header{background:var(--green);padding:16px 0;position:sticky;top:0;z-index:100;}
+  header .container{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Playfair Display',serif;font-size:22px;color:var(--white);font-weight:700;text-decoration:none;}
+  .logo span{color:var(--orange);}
+  nav a{color:rgba(255,255,255,0.9);text-decoration:none;margin-left:28px;font-size:14px;font-weight:500;transition:color 0.2s;}nav a:hover{color:var(--orange);}
+  .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);padding:80px 0 70px;text-align:center;color:var(--white);}
+  .hero h1{font-size:52px;margin-bottom:16px;}
+  .hero p{font-size:18px;opacity:0.9;max-width:640px;margin:0 auto 32px;}
+  .badge{display:inline-block;background:var(--orange);color:#fff;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:20px;}
+  .cta-btn{display:inline-block;background:var(--orange);color:#fff;padding:15px 36px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.25s;box-shadow:0 4px 14px rgba(212,101,59,0.35);}
+  .cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,101,59,0.45);}
+  .cta-outline{display:inline-block;background:transparent;color:var(--orange);border:2px solid var(--orange);padding:13px 34px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.25s;margin-left:12px;}
+  .cta-outline:hover{background:var(--orange);color:#fff;}
+  .section{padding:64px 0;}
+  .section-title{text-align:center;margin-bottom:48px;}
+  .section-title h2{font-size:38px;color:var(--green);margin-bottom:10px;}
+  .section-title p{color:var(--text-light);font-size:16px;}
+  .table-wrap{overflow-x:auto;margin-bottom:40px;}
+  table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+  thead{background:var(--green);color:var(--white);}
+  th{padding:18px 24px;text-align:left;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.4px;}
+  td{padding:16px 24px;border-bottom:1px solid var(--border);font-size:14px;}
+  tr:last-child td{border-bottom:none;}
+  tr:nth-child(even){background:#FAFAF8;}
+  .highlight{color:var(--orange);font-weight:600;}
+  .check{color:#4CAF52;font-weight:700;}
+  .cross{color:#E74C3C;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:40px;}
+  .card{background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--orange);}
+  .card h3{font-size:20px;color:var(--green);margin-bottom:10px;}
+  .card p{font-size:14px;color:var(--text-light);}
+  .card .icon{width:44px;height:44px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:20px;margin-bottom:14px;}
+  .green-section{background:var(--green);color:var(--white);padding:72px 0;text-align:center;}
+  .green-section h2{font-size:36px;margin-bottom:12px;}
+  .green-section p{font-size:16px;opacity:0.9;margin-bottom:28px;}
+  .green-section .cta-btn{background:var(--white);color:var(--green);box-shadow:0 4px 14px rgba(0,0,0,0.2);}
+  .green-section .cta-btn:hover{background:var(--cream);}
+  .faq-item{background:var(--white);border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.04);}
+  .faq-question{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;transition:background 0.2s;}
+  .faq-question:hover{background:#FAFAF8;}
+  .faq-answer{padding:0 24px 18px;font-size:14px;color:var(--text-light);display:none;}
+  .faq-item.active .faq-answer{display:block;}
+  .faq-toggle{color:var(--orange);font-size:20px;transition:transform 0.2s;}
+  .faq-item.active .faq-toggle{transform:rotate(45deg);}
+  .meta-bar{background:var(--white);border-bottom:1px solid var(--border);padding:12px 0;font-size:13px;color:var(--text-light);}
+  .meta-bar .container{display:flex;gap:24px;flex-wrap:wrap;}
+  .meta-bar span{display:flex;align-items:center;gap:6px;}
+  .trust{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap;}
+  .trust-item{text-align:center;}
+  .trust-item .num{font-family:'Playfair Display',serif;font-size:32px;color:var(--orange);font-weight:700;}
+  .trust-item .lbl{font-size:13px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;}
+  footer{background:var(--green);color:rgba(255,255,255,0.7);padding:40px 0 28px;font-size:13px;}
+  footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer a{color:rgba(255,255,255,0.8);text-decoration:none;}footer a:hover{color:var(--orange);}
+  .tag{display:inline-block;background:rgba(212,101,59,0.1);color:var(--orange);padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;margin-bottom:8px;}
+  @media(max-width:768px){.hero h1{font-size:34px;}.hero{padding:56px 0 48px;}.section{padding:48px 0;}.section-title h2{font-size:28px;}.cta-outline{margin-left:0;margin-top:12px;display:block;width:fit-content;margin-left:auto;margin-right:auto;}nav{display:none;}th,td{padding:12px 16px;font-size:13px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo">Anglo<span>tec</span></a>
+    <nav>
+      <a href="https://tools.anglotec-ai.com">AI Tools</a>
+      <a href="https://tools.anglotec-ai.com">Study Plans</a>
+      <a href="https://tools.anglotec-ai.com">Practice Tests</a>
+    </nav>
+  </div>
+</header>
+
+<div class="meta-bar">
+  <div class="container">
+    <span>📅 Updated July 2026</span>
+    <span>👤 By Anglotec Education Team</span>
+    <span>📖 7 min read</span>
+    <span>🎯 UK Visa & University Focus</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">Comparison Guide</div>
+    <h1>IELTS UKVI vs Academic: Which Do You Need?</h1>
+    <p>Confused about which IELTS test to take for your UK visa, university application, or professional registration? This guide breaks down every difference so you can choose with confidence.</p>
+    <a href="https://tools.anglotec-ai.com" class="cta-btn">Start IELTS Prep Free</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Quick Comparison at a Glance</h2>
+      <p>All the key differences between IELTS UKVI and IELTS Academic in one place</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>IELTS UKVI</th><th>IELTS Academic</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Purpose</strong></td><td>UK Visas & Immigration applications</td><td>Higher education & professional registration</td></tr>
+          <tr><td><strong>Accepted for UK Visa</strong></td><td class="check">Yes (SELT approved)</td><td class="cross">No (for visa purposes)</td></tr>
+          <tr><td><strong>Accepted by Universities</strong></td><td class="check">Yes (most UK universities)</td><td class="check">Yes (all universities worldwide)</td></tr>
+          <tr><td><strong>Test Format</strong></td><td>Same as Academic</td><td>Reading, Writing, Listening, Speaking</td></tr>
+          <tr><td><strong>Difficulty Level</strong></td><td>Identical to Academic</td><td>Standard academic level</td></tr>
+          <tr><td><strong>Test Locations</strong></td><td>UKVI-approved centres only</td><td>Any IELTS test centre</td></tr>
+          <tr><td><strong>Cost (2026)</strong></td><td class="highlight">£222 (approx.)</td><td class="highlight">£185 (approx.)</td></tr>
+          <tr><td><strong>Results (TRF)</strong></td><td>Unique UKVI reference number</td><td>Standard TRF number</td></tr>
+          <tr><td><strong> SELT Approved</strong></td><td class="check">Yes</td><td class="cross">No</td></tr>
+          <tr><td><strong>Booking Portal</strong></td><td>Separate UKVI booking</td><td>Standard IELTS booking</td></tr>
+          <tr><td><strong>Photo ID Required</strong></td><td>Passport mandatory</td><td>Passport or National ID</td></tr>
+          <tr><td><strong>Video Speaking Test</strong></td><td>Available at some centres</td><td>Available at some centres</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-title">
+      <h2>When Do You Need IELTS UKVI?</h2>
+      <p>Specific scenarios where IELTS UKVI is mandatory</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🛂</div>
+        <span class="tag">Tier 4 Student Visa</span>
+        <h3>UK Student Visa (Tier 4/Student Route)</h3>
+        <p>If you're applying for a UK student visa and your course is below degree level, you MUST take IELTS UKVI. For degree-level courses, regular IELTS Academic may be accepted by your university, but check with your institution first.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏥</div>
+        <span class="tag">Healthcare Visa</span>
+        <h3>Health and Care Worker Visa</h3>
+        <p>Nurses, doctors, and care workers applying for the Health and Care Worker visa need IELTS UKVI (or OET) to prove English proficiency. Minimum requirement: overall 7.0 with no band below 6.5 for nursing roles.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💼</div>
+        <span class="tag">Skilled Worker Visa</span>
+        <h3>Skilled Worker Visa Applications</h3>
+        <p>Professionals applying for the UK's Skilled Worker visa route need a SELT-approved test. IELTS UKVI is the most popular choice, requiring a minimum CEFR B1 level (IELTS 4.0 overall).</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏠</div>
+        <span class="tag">Settlement</span>
+        <h3>Indefinite Leave to Remain (ILR)</h3>
+        <p>Applicants for UK settlement or British citizenship through the Life in the UK route need IELTS UKVI at B1 level or above as proof of English language ability.</p>
+      </div>
+      <div class="card">
+        <div class="icon">👨‍👩‍👧</div>
+        <span class="tag">Family Visa</span>
+        <h3>Family Visa (Spouse/Partner)</h3>
+        <p>Family visa applicants need to prove English at CEFR A1 or A2 level. IELTS UKVI Life Skills A1 or B1 is specifically designed for this route.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📋</div>
+        <span class="tag">NMC Registration</span>
+        <h3>NMC & GMC Registration</h3>
+        <p>While NMC accepts both IELTS Academic and UKVI for registration, some employers and visa categories specifically require the UKVI version. Always confirm with your recruiter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>When Is IELTS Academic Enough?</h2>
+      <p>Scenarios where standard IELTS Academic is perfectly suitable</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>University Applications (Non-UK)</h3>
+        <p>Applying to universities in Australia, Canada, New Zealand, Ireland, or the USA? Standard IELTS Academic is accepted everywhere and is the preferred choice for academic admissions.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>UK Degree-Level Courses (Direct Entry)</h3>
+        <p>If your UK university has assessed your English level and confirmed they accept standard IELTS Academic for degree-level programmes, you may not need UKVI. Check your CAS statement.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏛️</div>
+        <h3>Professional Body Registration</h3>
+        <p>Many professional bodies worldwide (engineering, accounting, law) accept standard IELTS Academic for credential evaluation and registration purposes.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💰</div>
+        <h3>Budget-Conscious Test Takers</h3>
+        <p>IELTS Academic costs approximately £37 less than UKVI. If you don't need the UKVI-specific reference number, Academic saves money without any disadvantage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="green-section">
+  <div class="container">
+    <h2>Not Sure Which Test You Need?</h2>
+    <p>Take our 60-second assessment and get a personalised recommendation with a study plan tailored to your target score.</p>
+    <a href="https://tools.anglotec-ai.com" class="cta-btn">Get Your Personalised Study Plan</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>IELTS UKVI Test Types Explained</h2>
+      <p>There are three UKVI-specific IELTS tests to choose from</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Test Type</th><th>CEFR Level</th><th>Purpose</th><th>Who It's For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>IELTS Academic UKVI</strong></td><td>B1-C2</td><td>Higher education + visa</td><td>Students applying for degree courses who also need a visa</td></tr>
+          <tr><td><strong>IELTS General Training UKVI</strong></td><td>B1-C2</td><td>Work/immigration + visa</td><td>Those migrating to UK or applying for work visas below degree level</td></tr>
+          <tr><td><strong>IELTS Life Skills</strong></td><td>A1, A2, or B1</td><td>Family/settlement visa</td><td>Spouse visas, family reunion, indefinite leave to remain, citizenship</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers to common questions about IELTS UKVI vs Academic</p>
+    </div>
+    <div class="faq-item active">
+      <div class="faq-question">Is the IELTS UKVI test harder than regular IELTS? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">No. The test content, format, difficulty, and scoring are identical. The only difference is administrative: UKVI tests are conducted at approved centres with additional security protocols, and your results include a unique UKVI reference number recognised by UK Visas & Immigration.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I use IELTS Academic for a UK student visa? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Only if you're applying for a degree-level course AND your university has explicitly confirmed they sponsor students with standard IELTS Academic. For courses below degree level (pre-sessional, foundation, diploma), IELTS UKVI is mandatory. Always check your Confirmation of Acceptance for Studies (CAS).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do UK universities prefer IELTS UKVI or Academic? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Most UK universities accept both. The academic admissions team typically doesn't distinguish between them since the test content is identical. However, your university's visa sponsorship team may require UKVI. Contact both departments before booking.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How much more expensive is IELTS UKVI? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">IELTS UKVI costs approximately £222 in 2026, compared to £185 for standard IELTS Academic - a difference of about £37. IELTS Life Skills is typically around £150. Prices vary slightly by country and test centre.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How long are IELTS UKVI results valid? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Both IELTS UKVI and Academic results are valid for 2 years from your test date. However, UKVI may require your test to have been taken within a specific timeframe for your visa application - typically within 2 years.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I switch from Academic to UKVI after booking? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">No, these are separate booking systems. If you book the wrong test, you'll need to cancel and rebook. Some test centres charge a cancellation fee. Always confirm which test you need with your university, employer, or immigration advisor before booking.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What IELTS score do I need for a UK nursing visa? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">The NMC requires IELTS 7.0 overall with at least 6.5 in each section (Reading, Writing, Listening, Speaking). For the Health and Care Worker visa, UKVI accepts this score. You can combine scores from two tests taken within 6 months of each other.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Top Tips for Choosing the Right Test</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">1</div>
+        <h3>Check Your Visa Category First</h3>
+        <p>Visit the official UK government website to see if your visa route requires a SELT test. If it does, IELTS UKVI is your safest option.</p>
+      </div>
+      <div class="card">
+        <div class="icon">2</div>
+        <h3>Confirm with Your University</h3>
+        <p>Email both the admissions office AND the international student support team. Ask specifically: "Do you accept standard IELTS Academic for CAS issuance?"</p>
+      </div>
+      <div class="card">
+        <div class="icon">3</div>
+        <h3>Consider IELTS One Skill Retake</h3>
+        <p>Both UKVI and Academic now offer One Skill Retake in many countries. If you narrowly miss your target in one section, you can retake just that section within 60 days.</p>
+      </div>
+      <div class="card">
+        <div class="icon">4</div>
+        <h3>Book Early at UKVI Centres</h3>
+        <p>UKVI-approved test centres have limited availability and fill up faster. Book at least 4-6 weeks in advance, especially during peak seasons (July-September).</p>
+      </div>
+      <div class="card">
+        <div class="icon">5</div>
+        <h3>Use the Same Passport</h3>
+        <p>Ensure your test booking name matches your passport exactly. UKVI is strict about name mismatches, and discrepancies can invalidate your results for visa purposes.</p>
+      </div>
+      <div class="card">
+        <div class="icon">6</div>
+        <h3>Prepare with Anglotec AI</h3>
+        <p>Our AI-powered IELTS prep platform gives you unlimited speaking practice, instant writing feedback, and personalised study plans. Start free - no credit card required.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="https://tools.anglotec-ai.com" class="cta-btn">Start IELTS AI Prep Free</a>
+    </div>
+  </div>
+</section>
+
+<section class="green-section">
+  <div class="container">
+    <h2>Start Your IELTS Journey Today</h2>
+    <p>AI-powered practice, instant feedback, and personalised study plans. Join 50,000+ test takers who improved their score with Anglotec.</p>
+    <div class="trust">
+      <div class="trust-item"><div class="num">50K+</div><div class="lbl">Students Helped</div></div>
+      <div class="trust-item"><div class="num">8.5</div><div class="lbl">Max AI Score</div></div>
+      <div class="trust-item"><div class="num">98%</div><div class="lbl">Success Rate</div></div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="https://tools.anglotec-ai.com" class="cta-btn">Get Started Free</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Anglotec AI. All rights reserved.</div>
+    <div><a href="https://tools.anglotec-ai.com">IELTS AI Tools</a> · <a href="https://tools.anglotec-ai.com">OET Prep</a> · <a href="https://tools.anglotec-ai.com">Speaking Practice</a></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q=>{
+    q.addEventListener('click',()=>{q.parentElement.classList.toggle('active');});
+  });
+</script>
+</body>
+</html>
