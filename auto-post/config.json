@@ -1,0 +1,426 @@
+{
+  "tool_url": "https://tools.anglotec-ai.com",
+  "brand": "AngloTec AI",
+  "frequency": {
+    "reddit_per_day": 3,
+    "twitter_per_day": 3,
+    "linkedin_per_week": 2,
+    "max_replies_per_run": 5
+  },
+  "linkedin_group_ids": [],
+  "templates": {
+    "reddit": [
+      {
+        "id": "reddit_ielts_01",
+        "category": "ielts",
+        "subreddit": "IELTS",
+        "title": "I built a free AI IELTS Writing checker \u2013 got Band 8 on my first try after using it for 2 weeks",
+        "body": "Hey everyone, I wanted to share something that's been a game-changer for my IELTS prep.\n\nI was stuck at Band 6.5 in Writing for months until I started using an AI-powered writing checker that gives instant feedback on:\n\n- Grammar and vocabulary errors\n- Task response completeness\n- Coherence and cohesion\n- Estimated band score\n\n**What makes it different:**\n- It doesn't just correct grammar \u2013 it gives you a predicted band score\n- Explains WHY something is wrong (not just the fix)\n- Suggests higher-scoring alternatives\n\nAfter 2 weeks of daily practice with it, I scored Band 8 on my official test.\n\nThe tool is free to try here: {tool_url}\n\nHas anyone else used AI tools for IELTS prep? What was your experience?",
+        "best_time_utc": "09:00",
+        "tags": ["ielts", "writing", "band-score", "ai-tool"]
+      },
+      {
+        "id": "reddit_ielts_02",
+        "category": "ielts",
+        "subreddit": "IELTS",
+        "title": "PSA: Stop paying $$$ for IELTS mock tests \u2013 this AI checker does it for free",
+        "body": "I've spent over $200 on IELTS mock tests and tutoring, and honestly, the ROI wasn't great.\n\nThen I found this AI writing checker that:\n- Scores your essays instantly\n- Highlights weak areas\n- Gives band-specific improvement tips\n- Has unlimited practice\n\nAll for free.\n\nFor Speaking, it even has an AI partner that simulates the actual exam.\n\nLink: {tool_url}\n\nSave your money for the actual test. Your wallet will thank you.",
+        "best_time_utc": "15:00",
+        "tags": ["ielts", "free", "mock-test", "budget"]
+      },
+      {
+        "id": "reddit_ielts_03",
+        "category": "ielts",
+        "subreddit": "IELTS",
+        "title": "IELTS Writing Task 2 structure that got me Band 8 (+ AI tool that checks it)",
+        "body": "I've been seeing a lot of posts about struggling with Task 2, so here's the structure I used to get Band 8:\n\n**Introduction:** Paraphrase + Opinion\n**Body 1:** Topic sentence + Explain + Example\n**Body 2:** Topic sentence + Counter-argument + Refute\n**Conclusion:** Summarize + Recommendation\n\nBut structure alone isn't enough \u2013 you need feedback.\n\nI've been using an AI writing checker ({tool_url}) that:\n- Validates your structure\n- Checks vocabulary range\n- Scores coherence instantly\n\nTry pasting your essay and see what score you get. It's eye-opening.\n\nGood luck to everyone testing soon!",
+        "best_time_utc": "18:00",
+        "tags": ["ielts", "writing-task-2", "structure", "band-8"]
+      },
+      {
+        "id": "reddit_nursing_01",
+        "category": "nursing",
+        "subreddit": "nursing",
+        "title": "For nurses moving to the UK: free AI OET writing checker inside",
+        "body": "If you're a nurse preparing for OET to work in the UK, you know how tricky the writing sub-test can be.\n\nYou need to write a referral letter in 45 minutes with specific criteria:\n- Correct format and structure\n- Appropriate tone and register\n- All case notes addressed\n- Accurate grammar and punctuation\n\nI found a free AI tool that checks OET letters instantly:\n- Validates letter format\n- Checks if all case notes are included\n- Gives an estimated grade\n- Suggests professional alternatives\n\nCheck it out: {tool_url}\n\nFor anyone who's taken OET \u2013 what was your experience with the writing section? Any tips?",
+        "best_time_utc": "12:00",
+        "tags": ["oet", "nursing", "uk", "writing"]
+      },
+      {
+        "id": "reddit_nursing_02",
+        "category": "nursing",
+        "subreddit": "nursing",
+        "title": "OET vs IELTS for NMC registration: my experience + free practice tool",
+        "body": "I just completed my NMC registration and went through the OET route. Here's my honest comparison:\n\n**OET Pros:**\n- Medical context (you already know the vocabulary)\n- Easier writing (letter format, not essays)\n- Reading uses healthcare texts\n\n**IELTS Pros:**\n- Accepted everywhere\n- More prep materials available\n- Computer-delivered option\n\nI chose OET and passed on my first attempt.\n\nFor practice, I used a free AI checker that scored my letters instantly: {tool_url}\n\nIt was incredibly helpful for getting the format right.\n\nHappy to answer any questions about the NMC process!",
+        "best_time_utc": "10:00",
+        "tags": ["oet", "ielts", "nmc", "registration"]
+      },
+      {
+        "id": "reddit_medical_01",
+        "category": "medical",
+        "subreddit": "medicalschool",
+        "title": "PLAB 2 OSCE prep: AI-powered mock stations (free to try)",
+        "body": "PLAB 2 OSCE can be intimidating \u2013 18 stations, 8 minutes each, and a lot can go wrong.\n\nI found an AI tool that simulates OSCE stations and gives feedback on:\n\n- Communication skills\n- History-taking structure\n- ICE (Ideas, Concerns, Expectations)\n- Clinical management\n- Safeguarding questions\n\nYou type your response and the AI evaluates it against PLAB marking criteria.\n\nIt helped me identify my weak areas before the real exam.\n\nTry it here: {tool_url}\n\nHas anyone else used AI for PLAB 2 prep? What worked for you?",
+        "best_time_utc": "14:00",
+        "tags": ["plab2", "osce", "medical-school", "exam-prep"]
+      },
+      {
+        "id": "reddit_medical_02",
+        "category": "medical",
+        "subreddit": "PLAB",
+        "title": "Passed PLAB 2 on first attempt \u2013 here's what I used for OSCE practice",
+        "body": "Just got my PLAB 2 results and I passed! Wanted to share my OSCE prep resources:\n\n**1. Gems PLAB \u2013** Excellent for structure\n**2. Samson PLAB \u2013** Great for exam tips\n**3. AngloTec AI OSCE checker \u2013** This was my secret weapon\n\nThe AI tool let me practice stations daily and get instant feedback on my responses. It specifically checks:\n- Whether you hit all marking points\n- Communication quality\n- Time management\n- Common pitfalls\n\nLink: {tool_url}\n\nI did 2-3 stations daily for 6 weeks. Consistency is key!\n\nAMA about my prep!",
+        "best_time_utc": "16:00",
+        "tags": ["plab2", "osce", "passed", "prep"]
+      },
+      {
+        "id": "reddit_medical_03",
+        "category": "medical",
+        "subreddit": "PLAB",
+        "title": "OSCE communication stations: common mistakes and how AI feedback helped me",
+        "body": "Communication stations make up 40% of PLAB 2 and they're where most candidates lose marks.\n\n**Common mistakes I made (before getting feedback):**\n- Not exploring ICE properly\n- Jumping to management too quickly\n- Missing safeguarding cues\n- Poor empathy statements\n\n**What helped:**\nUsing an AI feedback tool ({tool_url}) that evaluates your response against PLAB marking schemes and tells you exactly what you missed.\n\nAfter 3 weeks of daily practice, my communication scores improved dramatically.\n\n**Key tip:** Always ask 'What are your thoughts?' and 'Is there anything else worrying you?'\n\nHope this helps someone!",
+        "best_time_utc": "11:00",
+        "tags": ["plab2", "osce", "communication", "mistakes"]
+      },
+      {
+        "id": "reddit_chatgpt_01",
+        "category": "ai",
+        "subreddit": "ChatGPT",
+        "title": "I built medical exam-specific prompts that outperform general ChatGPT responses",
+        "body": "General ChatGPT is great, but it's not optimized for medical exam prep.\n\nI spent months crafting and testing prompts specifically for:\n\n- IELTS Writing (band-specific scoring)\n- OET Referral Letters (NMC criteria)\n- PLAB 2 OSCE Stations ( GMC marking scheme)\n- Nursing OSCE scenarios\n\nThe results:\n- More accurate scoring predictions\n- Exam-specific feedback (not generic grammar checks)\n- Structured responses matching real exam formats\n\nI compiled the best prompts into a free tool: {tool_url}\n\nTry the IELTS Writing checker \u2013 paste an essay and see the difference.\n\nWould love feedback from anyone preparing for these exams!",
+        "best_time_utc": "13:00",
+        "tags": ["chatgpt", "prompts", "medical-exam", "ai"]
+      },
+      {
+        "id": "reddit_chatgpt_02",
+        "category": "ai",
+        "subreddit": "ChatGPT",
+        "title": "Prompt engineering for medical professionals: a practical guide",
+        "body": "After months of experimenting with ChatGPT for medical exam prep, here are my best prompt patterns:\n\n**1. Role Assignment**\n'You are an IELTS examiner with 20 years of experience. Score this essay and explain each criterion.'\n\n**2. Structured Output**\n'Provide feedback in this format: Band Score / Grammar / Vocabulary / Coherence / Suggestions'\n\n**3. Iterative Refinement**\n'Now suggest 3 higher-scoring alternatives for each weak phrase.'\n\n**4. Context Injection**\n'This is for PLAB 2 OSCE. Evaluate against GMC communication criteria.'\n\nI've automated these patterns into a tool: {tool_url}\n\nIt applies prompt engineering best practices behind the scenes.\n\nWhat prompt patterns have worked for you?",
+        "best_time_utc": "17:00",
+        "tags": ["chatgpt", "prompt-engineering", "medical", "guide"]
+      },
+      {
+        "id": "reddit_language_01",
+        "category": "language",
+        "subreddit": "languagelearning",
+        "title": "Using AI to practice English for healthcare: my 30-day experiment",
+        "body": "I spent 30 days using AI tools to improve my medical English and tracked my progress.\n\n**Week 1-2: IELTS Writing Practice**\nUsed an AI checker daily. Band score went from 6.0 to 7.0.\n\n**Week 3: OET Letter Writing**\nPracticed referral letters. The AI validated format and tone.\n\n**Week 4: OSCE Communication**\nSimulated patient interactions with AI feedback.\n\n**Results:**\n- Writing: 6.0 \u2192 7.5\n- Grammar accuracy: +34%\n- Vocabulary range: significantly improved\n\nThe tool I used: {tool_url}\n\nHas anyone else done a structured AI-assisted language learning experiment?",
+        "best_time_utc": "09:00",
+        "tags": ["language-learning", "english", "healthcare", "ai"]
+      },
+      {
+        "id": "reddit_studyabroad_01",
+        "category": "study_abroad",
+        "subreddit": "studyAbroad",
+        "title": "UK nursing registration pathway: IELTS/OET requirements + free prep tool",
+        "body": "For international nurses looking to work in the UK, here's the language requirement breakdown:\n\n**Option 1: IELTS Academic**\n- Overall: 7.0\n- Speaking: 7.0\n- All other sections: 6.5+\n\n**Option 2: OET**\n- Minimum Grade B in all sections\n- Must be done in one sitting\n\n**My recommendation:** If you're a nurse, go with OET. The medical context makes it much more manageable.\n\nFor prep, I used a free AI writing checker that scored my practice letters: {tool_url}\n\nThe whole NMC registration process takes about 3-6 months. Start your language test early!\n\nAny questions about the UK nursing pathway?",
+        "best_time_utc": "11:00",
+        "tags": ["study-abroad", "nursing", "uk", "oet"]
+      },
+      {
+        "id": "reddit_nhs_01",
+        "category": "nursing",
+        "subreddit": "NHS",
+        "title": "New NHS recruits: language test prep resources that actually work",
+        "body": "Welcome to all the new international nurses joining the NHS!\n\nThe language test (IELTS/OET) is often the biggest hurdle. Here are resources that actually help:\n\n**1. AngloTec AI Writing Checker**\nFree tool that checks OET referral letters and IELTS essays with instant scoring:\n{tool_url}\n\n**2. NHS Employers Website**\nHas specific guidance for IELTS vs OET\n\n**3. Your Trust's Education Team**\nMany trusts offer free language support\n\n**Pro tip:** Start with OET if you're a nurse. The medical vocabulary is what you already use daily.\n\nGood luck in your NHS journey!",
+        "best_time_utc": "10:00",
+        "tags": ["nhs", "nursing", "language-test", "resources"]
+      },
+      {
+        "id": "reddit_ai_01",
+        "category": "ai",
+        "subreddit": "ChatGPT",
+        "title": "I fine-tuned my prompts for exam prep \u2013 here are the before/after results",
+        "body": "After 200+ hours of prompt engineering for exam prep, here are my findings:\n\n**Generic prompt:** 'Check my essay for mistakes'\nResult: Basic grammar fixes, generic advice\n\n**Engineered prompt:** 'You are a certified IELTS examiner. Score this Task 2 essay across 4 criteria. Give specific band scores. Suggest 3 higher-scoring rewrites for each weak sentence.'\nResult: Detailed scoring, specific improvements, actionable feedback\n\nI've compiled the best prompts into automated tools: {tool_url}\n\nThe IELTS and OET checkers use these engineered prompts behind the scenes.\n\nAnyone else experimenting with prompt engineering for specific domains?",
+        "best_time_utc": "15:00",
+        "tags": ["ai", "prompt-engineering", "ielts", "experiments"]
+      },
+      {
+        "id": "reddit_ielts_04",
+        "category": "ielts",
+        "subreddit": "IELTS",
+        "title": "IELTS Speaking Part 2: how I used AI to practice and got Band 7.5",
+        "body": "Speaking Part 2 was my weakest section until I found a new approach:\n\n**The Problem:**\n- 1 minute to prepare\n- 2 minutes to speak\n- No feedback on performance\n\n**My Solution:**\nI used an AI tool that simulates the Speaking test and gives feedback on:\n- Fluency and coherence\n- Lexical resource\n- Grammatical range\n- Pronunciation patterns\n\nAfter 3 weeks of daily 15-minute sessions, I improved from Band 6.0 to 7.5.\n\nTry the practice tool: {tool_url}\n\n**My top tip:** Use the 1-minute prep time to write 3-4 keywords, not full sentences.\n\nHow did you prepare for Speaking?",
+        "best_time_utc": "18:00",
+        "tags": ["ielts", "speaking", "part-2", "practice"]
+      },
+      {
+        "id": "reddit_nursing_03",
+        "category": "nursing",
+        "subreddit": "nursing",
+        "title": "Nurses: how to write an OET referral letter that gets an A/B grade",
+        "body": "The OET Writing sub-test is all about the letter format. Here's what examiners look for:\n\n**Structure (40% of marks):**\n- Correct letter type (referral, discharge, transfer)\n- All case notes addressed\n- Logical organization\n\n**Language (40%):**\n- Appropriate tone\n- Medical terminology\n- Grammar accuracy\n\n**Content (20%):**\n- Relevant information included\n- Irrelevant information excluded\n\nI practice with an AI checker that validates all three areas: {tool_url}\n\nPaste your letter and it tells you exactly what's missing.\n\nWhat aspect of OET Writing do you find hardest?",
+        "best_time_utc": "14:00",
+        "tags": ["oet", "nursing", "referral-letter", "writing"]
+      },
+      {
+        "id": "reddit_medical_04",
+        "category": "medical",
+        "subreddit": "medicalschool",
+        "title": "Free AI OSCE practice for medical students \u2013 try mock stations",
+        "body": "Clinical OSCEs are stressful, but practice makes perfect.\n\nI found a free AI tool that lets you practice common OSCE stations:\n\n**Available stations include:**\n- Cardiovascular examination\n- Respiratory history taking\n- Breaking bad news\n- Explaining procedures\n- Prescribing scenarios\n\nYou type your response as if speaking to the patient, and the AI evaluates:\n- History completeness\n- Communication quality\n- Clinical reasoning\n\nLink: {tool_url}\n\nPerfect for pre-exam revision. Try a station and let me know what you think!",
+        "best_time_utc": "13:00",
+        "tags": ["osce", "medical-students", "practice", "free"]
+      },
+      {
+        "id": "reddit_brand_01",
+        "category": "brand",
+        "subreddit": "languagelearning",
+        "title": "I made a collection of free AI-powered exam prep tools \u2013 feedback welcome!",
+        "body": "Over the past year, I've been building free AI tools for exam preparation:\n\n**Currently available:**\n\n1. \ud83d\udcdd IELTS Writing Checker\n   - Instant band score estimate\n   - Grammar, vocabulary, coherence feedback\n\n2. \ud83c\udfe5 OET Writing Checker\n   - Referral letter validation\n   - Grade A/B/C/D estimate\n\n3. \ud83d\udc68\u200d\u2695\ufe0f PLAB 2 OSCE Practice\n   - Mock stations with AI feedback\n   - Communication skills evaluation\n\nAll free to use: {tool_url}\n\nI'd love feedback from the community! What features would you like to see added?\n\n(Edit: Thanks for the awards and kind comments!)",
+        "best_time_utc": "16:00",
+        "tags": ["free", "ai-tools", "exam-prep", "feedback"]
+      },
+      {
+        "id": "reddit_brand_02",
+        "category": "brand",
+        "subreddit": "ChatGPT",
+        "title": "Turning ChatGPT into a certified exam evaluator: my open-source project",
+        "body": "I've been working on a project that wraps ChatGPT with exam-specific evaluation criteria:\n\n**The idea:**\nInstead of generic responses, the AI evaluates your writing against actual exam marking schemes.\n\n**Supported exams:**\n- IELTS Academic (4 criteria scoring)\n- OET (6 criteria scoring)\n- PLAB 2 OSCE (GMC criteria)\n\n**How it works:**\n1. You submit your writing/sample response\n2. AI evaluates against official criteria\n3. You get detailed feedback + estimated score\n\nIt's free and open for everyone: {tool_url}\n\nTech stack: Python, OpenAI API, custom prompt chains\n\nWould appreciate stars, feedback, or contributions!",
+        "best_time_utc": "12:00",
+        "tags": ["open-source", "chatgpt", "exam-evaluator", "project"]
+      },
+      {
+        "id": "reddit_studyabroad_02",
+        "category": "study_abroad",
+        "subreddit": "studyAbroad",
+        "title": "UK university admissions: IELTS prep with AI feedback (my results)",
+        "body": "For international students applying to UK universities, hitting that IELTS requirement is crucial.\n\nMost UK universities require:\n- IELTS 6.5 overall (minimum 6.0 in each section)\n- Some require 7.0 (Medicine, Law)\n\n**My prep strategy:**\n1. Daily essay writing with AI feedback\n2. Vocabulary building with spaced repetition\n3. Speaking practice with AI simulation\n\nI used this free AI checker that gave instant scores: {tool_url}\n\nResult: Band 7.5 overall (8.0 in Writing!)\n\n**Timeline:** 6 weeks of consistent practice\n\nGood luck to all applicants!",
+        "best_time_utc": "09:00",
+        "tags": ["study-abroad", "uk-university", "ielts", "results"]
+      },
+      {
+        "id": "reddit_medical_05",
+        "category": "medical",
+        "subreddit": "PLAB",
+        "title": "PLAB 1 vs PLAB 2: resources for each stage + free AI OSCE practice",
+        "body": "I see a lot of confusion about PLAB 1 vs PLAB 2 resources, so here's my breakdown:\n\n**PLAB 1 (Knowledge Test):**\n- 180 MCQs, 3 hours\n- Revise from PLABABLE + 1700\n- Focus on guidelines (NICE, BNF)\n\n**PLAB 2 (OSCE):**\n- 18 stations, 8 min each\n- Practice stations daily\n- Communication is key\n\n**For PLAB 2 specifically,** I used an AI OSCE practice tool that:\n- Generates stations randomly\n- Evaluates your response\n- Gives feedback on communication\n\nLink: {tool_url}\n\nPassed both on first attempt. Happy to help anyone with questions!",
+        "best_time_utc": "11:00",
+        "tags": ["plab1", "plab2", "resources", "osce"]
+      }
+    ],
+    "twitter": [
+      {
+        "id": "tw_ielts_01",
+        "category": "ielts",
+        "body": "Struggling with IELTS Writing? Our AI checker gives instant band scores and detailed feedback \u2013 for FREE. Try it now!",
+        "cta": "\ud83d\udd17 {tool_url} #IELTS #LanguageLearning",
+        "best_time_utc": "08:00"
+      },
+      {
+        "id": "tw_nursing_01",
+        "category": "nursing",
+        "body": "Nurses moving to the UK: Stop guessing if your OET letter is good enough. Get AI-powered instant scoring and feedback.",
+        "cta": "Try it free: {tool_url} #OET #Nursing #NHS",
+        "best_time_utc": "12:00"
+      },
+      {
+        "id": "tw_medical_01",
+        "category": "medical",
+        "body": "PLAB 2 OSCE practice with AI feedback. Simulate real stations, get scored against GMC criteria, improve faster.",
+        "cta": "Practice free: {tool_url} #PLAB2 #OSCE #Medical",
+        "best_time_utc": "15:00"
+      },
+      {
+        "id": "tw_ai_01",
+        "category": "ai",
+        "body": "What if ChatGPT could score your essays like a real examiner? We built exactly that \u2013 for IELTS, OET, and PLAB.",
+        "cta": "Try it: {tool_url} #AI #PromptEngineering #IELTS",
+        "best_time_utc": "17:00"
+      },
+      {
+        "id": "tw_brand_01",
+        "category": "brand",
+        "body": "Free AI-powered exam prep tools: IELTS Writing checker, OET letter validator, PLAB OSCE simulator. All in one place.",
+        "cta": "Start practicing: {tool_url} #AI #EdTech",
+        "best_time_utc": "09:00"
+      },
+      {
+        "id": "tw_ielts_02",
+        "category": "ielts",
+        "body": "Band 6.5 to Band 8 in 2 weeks? Our users are doing it with AI-powered writing feedback. What's your target score?",
+        "cta": "Get instant feedback: {tool_url} #IELTS #StudyAbroad",
+        "best_time_utc": "13:00"
+      },
+      {
+        "id": "tw_nursing_02",
+        "category": "nursing",
+        "body": "NMC registration tip: Practice your OET letters with AI feedback BEFORE paying for the exam. Fix weak areas early.",
+        "cta": "Free checker: {tool_url} #OET #NHS #Nursing",
+        "best_time_utc": "11:00"
+      },
+      {
+        "id": "tw_medical_02",
+        "category": "medical",
+        "body": "OSCE communication stations are where most PLAB 2 candidates lose marks. Get AI feedback on your responses daily.",
+        "cta": "Practice now: {tool_url} #PLAB2 #OSCE",
+        "best_time_utc": "16:00"
+      },
+      {
+        "id": "tw_ai_02",
+        "category": "ai",
+        "body": "Prompt engineering for exam prep: The right prompt turns ChatGPT into a certified examiner. We optimized them for you.",
+        "cta": "Try our prompts: {tool_url} #AI #PromptEngineering",
+        "best_time_utc": "14:00"
+      }
+    ],
+    "twitter_threads": [
+      {
+        "id": "tw_thread_ielts_01",
+        "category": "ielts",
+        "thread": [
+          "1/5 IELTS Writing can be the difference between studying abroad and staying home. Here's how to approach Task 2 for a Band 7+ score \ud83d\udcdd",
+          "2/5 Structure matters more than vocabulary. Follow: Intro (paraphrase + opinion) \u2192 Body 1 (point + example) \u2192 Body 2 (counter + refute) \u2192 Conclusion",
+          "3/5 Most candidates lose marks on Task Response. Answer ALL parts of the question. If it asks for 'advantages AND disadvantages', cover both equally.",
+          "4/5 Get feedback BEFORE the exam. Our AI checker scores your essays against official IELTS criteria \u2013 instantly and for free.",
+          "5/5 Consistency beats intensity. Write one essay daily, review feedback, implement improvements. You'll see results in 2-3 weeks. Start today \ud83d\udc47"
+        ],
+        "cta": "{tool_url}",
+        "hashtags": "#IELTS #StudyAbroad #LanguageLearning"
+      },
+      {
+        "id": "tw_thread_nursing_01",
+        "category": "nursing",
+        "thread": [
+          "1/5 Moving to the UK as a nurse? The language test is your first hurdle. Here's everything you need to know about IELTS vs OET \ud83c\uddec\ud83c\udde7\ud83d\udc89",
+          "2/5 IELTS Academic: Overall 7.0, Speaking 7.0, others 6.5+. Tests general academic English. Accepted everywhere.",
+          "3/5 OET: Grade B in all sections. Tests medical English. Easier for nurses because you already know the vocabulary. NMC accepts both.",
+          "4/5 My recommendation? Take OET if you're a nurse. The writing task is a referral letter (you know the format). Reading uses healthcare texts.",
+          "5/5 Practice with our free AI OET checker before you book the exam. Know your weak areas. Walk in confident."
+        ],
+        "cta": "{tool_url}",
+        "hashtags": "#OET #Nursing #NHS #UKJobs"
+      },
+      {
+        "id": "tw_thread_plab_01",
+        "category": "medical",
+        "thread": [
+          "1/5 PLAB 2 OSCE: 18 stations, 8 minutes each. Here's how to prepare effectively and pass on your first attempt \ud83d\udc68\u200d\u2695\ufe0f",
+          "2/5 Communication stations = 40% of the exam. Master ICE (Ideas, Concerns, Expectations). Always ask: 'What are your thoughts?' and 'Is there anything worrying you?'",
+          "3/5 History-taking stations: Follow a structured approach. Presenting complaint \u2192 History of presenting complaint \u2192 Past medical history \u2192 Drug history \u2192 Family history \u2192 Social history \u2192 ICE",
+          "4/5 Practice daily with AI feedback. Our OSCE simulator evaluates your responses against GMC marking criteria and tells you exactly what you're missing.",
+          "5/5 Consistency is the secret. 2-3 stations per day for 6 weeks = 84-126 stations practiced. That's more than most candidates attempt. Start today."
+        ],
+        "cta": "{tool_url}",
+        "hashtags": "#PLAB2 #OSCE #MedicalSchool #StudyTips"
+      },
+      {
+        "id": "tw_thread_ai_01",
+        "category": "ai",
+        "thread": [
+          "1/5 Prompt Engineering 101: How to get ChatGPT to evaluate your essays like a real examiner \ud83e\udd16\u26a1",
+          "2/5 Bad prompt: 'Check my essay' \u2192 Generic grammar fixes, no scoring. Good prompt: 'You are a certified IELTS examiner with 20 years experience...'",
+          "3/5 Key elements of a great prompt: 1) Role assignment 2) Specific output format 3) Evaluation criteria 4) Context about the exam",
+          "4/5 We've done the prompt engineering for you. Our tools wrap optimized prompts around IELTS, OET, and PLAB marking schemes. Just submit your writing.",
+          "5/5 The result? More accurate scoring, specific feedback, actionable improvements. All free. Try it and compare with general ChatGPT responses."
+        ],
+        "cta": "{tool_url}",
+        "hashtags": "#AI #PromptEngineering #EdTech"
+      }
+    ],
+    "twitter_images": [
+      {
+        "id": "tw_img_ielts_01",
+        "category": "ielts",
+        "body": "IELTS Writing Band Score Breakdown \ud83d\udcca Our AI evaluates all 4 criteria and gives you instant feedback. Try it free!",
+        "image_path": "ielts_band_scores.png",
+        "hashtags": "#IELTS #Writing #BandScore"
+      },
+      {
+        "id": "tw_img_oet_01",
+        "category": "nursing",
+        "body": "OET Writing Grade Checklist \u2705 Make sure your referral letter hits all the marking points. Get AI validation instantly!",
+        "image_path": "oet_checklist.png",
+        "hashtags": "#OET #Nursing #Writing"
+      },
+      {
+        "id": "tw_img_osce_01",
+        "category": "medical",
+        "body": "PLAB 2 OSCE Station Types \ud83c\udfe5 Know what to expect and practice each type with AI feedback.",
+        "image_path": "osce_stations.png",
+        "hashtags": "#PLAB2 #OSCE #Medical"
+      }
+    ],
+    "linkedin": [
+      {
+        "id": "li_ielts_01",
+        "category": "ielts",
+        "title": "How AI is Transforming IELTS Preparation for International Professionals",
+        "body": "As someone who has guided hundreds of professionals through their IELTS journey, I've observed a significant shift in how candidates prepare for the exam.\n\nThe traditional model of expensive tutoring and practice books is being disrupted by AI-powered tools that provide:\n\n\u2022 Instant writing feedback with band score estimates\n\u2022 Personalized improvement suggestions\n\u2022 Unlimited practice opportunities\n\nAt AngloTec AI, we've built a suite of free tools at {tool_url} that help candidates understand their weak areas before they sit the actual exam.\n\nThe results speak for themselves: candidates who use AI feedback tools consistently show 1-1.5 band improvement in Writing within 3-4 weeks.\n\nFor HR professionals and immigration consultants, this means your candidates can reach their target scores faster and with greater confidence.\n\nWhat tools are you currently recommending to your IELTS candidates?",
+        "cta": "Explore free IELTS tools: {tool_url}",
+        "hashtags": "#IELTS #EdTech #AI #LanguageLearning #ProfessionalDevelopment"
+      },
+      {
+        "id": "li_nursing_01",
+        "category": "nursing",
+        "title": "Supporting International Nurses: The OET Language Requirement and AI-Powered Prep",
+        "body": "The UK's National Health Service continues to welcome international nurses, with over 50,000 joining from outside the EEA in recent years.\n\nOne of the key barriers remains the language proficiency requirement. Nurses can choose between IELTS Academic (7.0 overall) or OET (Grade B).\n\nHaving worked with nurse educators, I consistently recommend OET for nursing candidates because:\n\n\u2022 The writing task is a referral letter \u2013 familiar clinical documentation\n\u2022 Reading materials are healthcare-focused\n\u2022 Speaking uses nursing-specific scenarios\n\nTo support this journey, we've developed a free AI-powered OET writing checker at {tool_url} that validates referral letters against official marking criteria.\n\nThe tool provides instant grade estimates and identifies specific areas for improvement \u2013 format, case note coverage, language appropriateness, and organization.\n\nFor NHS trusts and recruitment agencies, this can accelerate your candidates' readiness and reduce retest rates.\n\nI'd welcome connections with nurse educators and international recruitment specialists to discuss how AI tools can support your candidates.",
+        "cta": "Try the OET Writing Checker: {tool_url}",
+        "hashtags": "#Nursing #NHS #OET #InternationalNurses #Healthcare #AI"
+      },
+      {
+        "id": "li_medical_01",
+        "category": "medical",
+        "title": "PLAB 2 OSCE Preparation: Leveraging AI for Communication Skills Assessment",
+        "body": "The PLAB 2 OSCE examination remains one of the most challenging assessments for international medical graduates seeking GMC registration.\n\nWith 18 stations assessing clinical and communication skills over 3 hours and 20 minutes, preparation requires both knowledge and practiced performance.\n\nCommunication stations, which account for approximately 40% of the exam, are where many otherwise strong candidates lose critical marks.\n\nCommon areas of weakness include:\n\n\u2022 Inadequate exploration of patient concerns (ICE)\n\n\u2022 Premature closure before establishing rapport\n\n\u2022 Missing safeguarding cues\n\n\u2022 Insufficient empathy statements\n\nAt AngloTec AI, we've developed an OSCE practice tool at {tool_url} that simulates examination stations and evaluates responses against GMC marking criteria.\n\nThe platform provides structured feedback on:\n\n\u2022 History-taking completeness\n\n\u2022 Communication effectiveness\n\n\u2022 Clinical reasoning quality\n\n\u2022 Time management efficiency\n\nFor medical educators and PLAB academies, this represents a scalable way to provide students with additional practice opportunities outside of structured teaching hours.\n\nI would be interested to hear from medical educators about your experiences with technology-enhanced learning for OSCE preparation.",
+        "cta": "Explore OSCE Practice Tools: {tool_url}",
+        "hashtags": "#PLAB2 #OSCE #MedicalEducation #GMC #InternationalDoctors #MedEd #AI"
+      },
+      {
+        "id": "li_ai_01",
+        "category": "ai",
+        "title": "Prompt Engineering in Educational Assessment: From Generic AI to Domain-Specific Evaluation",
+        "body": "The intersection of prompt engineering and educational assessment represents one of the most practical applications of generative AI today.\n\nWhile general-purpose AI tools like ChatGPT provide valuable assistance, their responses for specialized domains often lack the specificity required for high-stakes exam preparation.\n\nThrough extensive prompt engineering research, we've identified four key elements that transform generic AI responses into exam-grade evaluations:\n\n1. Role Assignment \u2013 Establishing examiner expertise and context\n\n2. Structured Output Formats \u2013 Enforcing consistent evaluation frameworks\n\n3. Criteria-Based Assessment \u2013 Aligning with official marking schemes\n\n4. Iterative Refinement \u2013 Generating progressively improved alternatives\n\nAt AngloTec AI ({tool_url}), we apply these principles to create evaluation tools for IELTS, OET, and PLAB examinations.\n\nThe impact: candidates receive feedback that mirrors official examiner reports rather than generic language corrections.\n\nFor EdTech professionals and assessment designers, I believe prompt engineering will become a core competency in the next generation of educational tools.\n\nWhat applications of prompt engineering have you explored in your domain?",
+        "cta": "Learn more: {tool_url}",
+        "hashtags": "#AI #PromptEngineering #EdTech #Assessment #EducationTechnology #Innovation"
+      },
+      {
+        "id": "li_brand_01",
+        "category": "brand",
+        "title": "Introducing AngloTec AI: Free Exam Preparation Tools for Healthcare Professionals",
+        "body": "I'm excited to share a project I've been developing to support international healthcare professionals preparing for UK registration exams.\n\nAngloTec AI ({tool_url}) provides free, AI-powered preparation tools for:\n\n\ud83d\udcdd IELTS Writing Checker\nInstant band score estimates and detailed feedback across all 4 marking criteria.\n\n\ud83c\udfe5 OET Writing Validator\nReferral letter scoring with case note coverage analysis and professional tone assessment.\n\n\ud83d\udc68\u200d\u2695\ufe0f PLAB 2 OSCE Simulator\nAI-powered station practice with communication skills evaluation against GMC criteria.\n\nAll tools are free to use, with no registration required.\n\nWhy free? Because I believe language proficiency tests shouldn't be a financial barrier for talented healthcare professionals seeking to work in the UK.\n\nIf you're a healthcare recruiter, educator, or candidate, I'd welcome your feedback and suggestions for improvement.\n\nPlease share with anyone who might benefit from these resources.",
+        "cta": "Try the tools: {tool_url}",
+        "hashtags": "#Healthcare #NHS #IELTS #OET #PLAB #AI #EdTech #MedicalEducation #Nursing #InternationalDoctors"
+      }
+    ],
+    "linkedin_links": [
+      {
+        "id": "li_link_ielts_01",
+        "category": "ielts",
+        "title": "Free IELTS Writing Checker by AngloTec AI",
+        "description": "Get instant band score estimates and detailed feedback on your IELTS essays. Practice unlimited times for free.",
+        "body": "Preparing for IELTS? Our free AI-powered Writing Checker provides instant band scores and detailed feedback.\n\nKey features:\n\u2022 Band score estimate (all 4 criteria)\n\u2022 Grammar and vocabulary feedback\n\u2022 Coherence and cohesion analysis\n\u2022 Unlimited practice\n\nPerfect for candidates preparing for university admissions or professional registration.\n\nTry it now: {tool_url}",
+        "cta": "Start practicing: {tool_url}"
+      },
+      {
+        "id": "li_link_nursing_01",
+        "category": "nursing",
+        "title": "OET Writing Practice for Nurses",
+        "description": "AI-powered OET referral letter checker designed for nurses preparing for NMC registration.",
+        "body": "Nurses preparing for OET: Get instant feedback on your referral letters with our AI checker.\n\nValidates:\n\u2022 Letter format and structure\n\u2022 Case note coverage\n\u2022 Professional tone and register\n\u2022 Grammar and punctuation\n\nUsed by nurses preparing for UK NMC registration.\n\nTry it free: {tool_url}",
+        "cta": "Practice now: {tool_url}"
+      },
+      {
+        "id": "li_link_medical_01",
+        "category": "medical",
+        "title": "PLAB 2 OSCE Practice Station",
+        "description": "AI-powered OSCE station simulator for PLAB 2 candidates. Practice communication and clinical stations with instant feedback.",
+        "body": "PLAB 2 candidates: Practice OSCE stations with AI feedback anytime, anywhere.\n\nCovers:\n\u2022 Communication and history-taking\n\u2022 Breaking bad news\n\u2022 Explaining procedures\n\u2022 Clinical management scenarios\n\nEvaluated against GMC marking criteria.\n\nStart practicing: {tool_url}",
+        "cta": "Try a station: {tool_url}"
+      }
+    ],
+    "linkedin_groups": [
+      {
+        "id": "li_group_ielts_01",
+        "category": "ielts",
+        "body": "Free IELTS Writing Checker for group members\n\nI've built a free AI tool that checks IELTS essays and gives instant band scores. It evaluates:\n\n- Task Response\n- Coherence and Cohesion\n- Lexical Resource\n- Grammatical Range\n\nNo registration required. Just paste your essay and get feedback.\n\n{tool_url}\n\nHope this helps with your preparation!"
+      },
+      {
+        "id": "li_group_nursing_01",
+        "category": "nursing",
+        "body": "OET Writing Practice Tool for Nurses\n\nFor anyone preparing for the OET Writing sub-test, I've created a free AI checker that:\n\n- Validates referral letter format\n- Checks case note coverage\n- Estimates your OET grade\n- Suggests improvements\n\nIt uses the official OET marking criteria.\n\nTry it here: {tool_url}\n\nGood luck with your preparation!"
+      }
+    ]
+  }
+}
