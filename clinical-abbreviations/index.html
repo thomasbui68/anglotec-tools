@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Abbreviations Quiz | 50 Questions for Nurses & Doctors</title>
+  <meta name="description" content="Free clinical abbreviations quiz with 50 questions. Test your knowledge of common medical abbreviations used in UK healthcare. Multiple choice with explanations. Essential for OSCE prep and UK practice.">
+  <meta name="keywords" content="medical abbreviations quiz, clinical abbreviations test, common medical abbreviations, nursing abbreviations quiz, medical terms quiz, OSCE preparation">
+  <meta property="og:title" content="Clinical Abbreviations Quiz | 50 Questions for Nurses & Doctors">
+  <meta property="og:description" content="Test your knowledge of 50 common clinical abbreviations. Essential for UK nursing OSCE and clinical practice.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tools.anglotec-ai.com/clinical-abbreviations">
+  <link rel="canonical" href="https://tools.anglotec-ai.com/clinical-abbreviations">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--green:#2C4A3E;--green-light:#3D5F52;--green-dark:#1E352C;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F4F0;--white:#FFFFFF;--text:#2A2A2A;--text-light:#6B7280;--border:#E2DDD7;--success:#059669;--danger:#DC2626;--warning:#D97706}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif}
+    .container{max-width:900px;margin:0 auto;padding:0 20px}
+    .header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .header-flex{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);text-decoration:none}
+    .logo span{color:var(--orange)}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{color:var(--white);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--orange)}
+    .mobile-menu{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+    .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--white);padding:50px 0;text-align:center}
+    .hero h1{font-size:2.4rem;margin-bottom:12px;line-height:1.2}
+    .hero p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto}
+    .hero-badge{display:inline-block;background:var(--orange);color:var(--white);padding:6px 16px;border-radius:30px;font-size:.8rem;font-weight:600;margin-top:16px;text-transform:uppercase;letter-spacing:1px}
+    .main{padding:30px 0}
+    .card{background:var(--white);border-radius:16px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);margin-bottom:24px}
+    .card-title{font-size:1.3rem;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+    .card-title i{color:var(--orange)}
+
+    /* Progress */
+    .progress-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:16px}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--orange-light));border-radius:4px;transition:width .3s}
+    .quiz-stats{display:flex;justify-content:space-between;font-size:.85rem;color:var(--text-light);margin-bottom:20px}
+    .quiz-stats span{display:flex;align-items:center;gap:5px}
+    .stat-correct{color:var(--success);font-weight:600}
+    .stat-wrong{color:var(--danger);font-weight:600}
+
+    /* Question */
+    .question-area{margin-bottom:20px}
+    .q-number{font-size:.85rem;color:var(--text-light);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+    .q-text{font-size:1.3rem;font-weight:600;color:var(--green-dark);margin-bottom:6px;font-family:'Playfair Display',serif}
+    .q-hint{font-size:.85rem;color:var(--text-light);font-style:italic}
+    .q-context{font-size:.9rem;color:var(--text-light);margin-top:8px;padding:10px;background:var(--cream);border-radius:8px;border-left:3px solid var(--orange)}
+
+    /* Options */
+    .options{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+    .option{padding:14px 18px;border:2px solid var(--border);border-radius:12px;cursor:pointer;transition:all .2s;font-size:1rem;display:flex;align-items:center;gap:12px;background:var(--white)}
+    .option:hover{border-color:var(--orange);background:#FFF8F5}
+    .option-letter{width:32px;height:32px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--green);flex-shrink:0}
+    .option:hover .option-letter{background:var(--orange);color:var(--white)}
+    .option.correct{border-color:var(--success);background:#ECFDF5}
+    .option.correct .option-letter{background:var(--success);color:#fff}
+    .option.wrong{border-color:var(--danger);background:#FEF2F2}
+    .option.wrong .option-letter{background:var(--danger);color:#fff}
+    .option.disabled{pointer-events:none;opacity:.8}
+
+    /* Explanation */
+    .explanation{background:linear-gradient(135deg,#EBF5FF 0%,#DBEAFE 100%);border-left:4px solid #3B82F6;padding:16px 20px;border-radius:0 10px 10px 0;margin-top:16px;display:none}
+    .explanation.show{display:block;animation:fadeIn .3s}
+    .explanation h4{color:var(--green);margin-bottom:6px;font-size:.95rem}
+    .explanation p{font-size:.88rem;color:var(--text);margin:4px 0}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+    /* Navigation */
+    .quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border:none;border-radius:10px;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s}
+    .btn-primary{background:var(--orange);color:var(--white)}
+    .btn-primary:hover{background:var(--orange-light);transform:translateY(-1px)}
+    .btn-secondary{background:var(--green);color:var(--white)}
+    .btn-secondary:hover{background:var(--green-light)}
+    .btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+    /* Start Screen */
+    .start-screen{text-align:center;padding:30px 0}
+    .start-screen h2{font-size:1.8rem;color:var(--green);margin-bottom:16px}
+    .start-screen p{color:var(--text-light);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;text-align:left}
+    .feature-item{display:flex;align-items:center;gap:10px;padding:12px;background:var(--cream);border-radius:10px;font-size:.9rem}
+    .feature-item i{color:var(--orange);font-size:1.1rem}
+
+    /* Results Screen */
+    .results-screen{text-align:center;padding:20px 0;display:none}
+    .score-circle{width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-light));display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 24px;color:#fff;box-shadow:0 6px 20px rgba(44,74,62,.3)}
+    .score-number{font-size:3rem;font-weight:700;font-family:'Playfair Display',serif;line-height:1}
+    .score-label{font-size:.8rem;opacity:.9}
+    .score-message{font-size:1.2rem;font-weight:600;margin-bottom:8px}
+    .score-detail{color:var(--text-light);font-size:.9rem;margin-bottom:24px}
+    .result-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0;max-width:400px;margin-left:auto;margin-right:auto}
+    .result-item{padding:12px;background:var(--cream);border-radius:10px}
+    .result-item .r-label{font-size:.7rem;color:var(--text-light);text-transform:uppercase;font-weight:600}
+    .result-item .r-val{font-size:1.3rem;font-weight:700;color:var(--green)}
+    .review-list{text-align:left;margin-top:24px;max-height:300px;overflow-y:auto}
+    .review-item{padding:10px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.9rem}
+    .review-item i{margin-right:6px}
+
+    /* Share */
+    .share-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+    .share-btn{padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;color:var(--white);transition:transform .2s;display:inline-flex;align-items:center;gap:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+    .share-btn:hover{transform:translateY(-2px)}
+    .share-tw{background:#1DA1F2}.share-fb{background:#4267B2}.share-wa{background:#25D366}.share-li{background:#0077B5}.share-copy{background:var(--green)}
+
+    .cta-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);padding:50px 0;text-align:center;margin-top:40px}
+    .cta-section h2{font-size:2rem;margin-bottom:16px}
+    .cta-section p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto 24px}
+    .cta-btn{background:var(--orange);color:var(--white);padding:16px 36px;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s}
+    .cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    .footer{background:var(--green-dark);color:rgba(255,255,255,.7);padding:30px 0;text-align:center;font-size:.85rem}
+    .footer a{color:var(--orange);text-decoration:none}
+
+    @media(max-width:768px){
+      .hero h1{font-size:1.9rem}.nav-links{display:none}.mobile-menu{display:block}
+      .feature-grid{grid-template-columns:1fr}.result-breakdown{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-flex">
+      <a href="https://tools.anglotec-ai.com" class="logo">Anglo<span>Tec</span> Tools</a>
+      <nav class="nav-links">
+        <a href="#" onclick="location.reload()">Restart Quiz</a>
+        <a href="https://tools.anglotec-ai.com/osce-training" target="_blank">OSCE Training</a>
+      </nav>
+      <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('hidden')" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1><i class="fas fa-question-circle"></i> Clinical Abbreviations Quiz</h1>
+      <p>50 essential clinical abbreviations every nurse and doctor must know for UK healthcare practice.</p>
+      <span class="hero-badge"><i class="fas fa-user-nurse"></i> OSCE Essential</span>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <!-- Start Screen -->
+      <div class="card" id="startScreen">
+        <div class="start-screen">
+          <h2>Test Your Medical Abbreviations</h2>
+          <p>This quiz covers 50 common clinical abbreviations used in UK hospitals, prescriptions, and patient notes. Essential knowledge for the OSCE and daily practice.</p>
+          <div class="feature-grid">
+            <div class="feature-item"><i class="fas fa-list-ol"></i> 50 Multiple Choice Questions</div>
+            <div class="feature-item"><i class="fas fa-chart-bar"></i> Instant Score Tracking</div>
+            <div class="feature-item"><i class="fas fa-book-open"></i> Detailed Explanations</div>
+            <div class="feature-item"><i class="fas fa-redo"></i> Review Wrong Answers</div>
+          </div>
+          <button class="btn btn-primary" style="padding:16px 40px;font-size:1.1rem" onclick="startQuiz()">
+            <i class="fas fa-play"></i> Start Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Screen -->
+      <div class="card" id="quizScreen" style="display:none">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:2%"></div></div>
+        <div class="quiz-stats">
+          <span><i class="fas fa-list-ol"></i> Question <span id="currentQ">1</span>/50</span>
+          <span class="stat-correct"><i class="fas fa-check"></i> <span id="correctCount">0</span> Correct</span>
+          <span class="stat-wrong"><i class="fas fa-times"></i> <span id="wrongCount">0</span> Wrong</span>
+        </div>
+
+        <div class="question-area">
+          <div class="q-number">Question <span id="qNum">1</span></div>
+          <div class="q-text" id="qText">What does "BP" stand for?</div>
+          <div class="q-context" id="qContext">Commonly documented in patient observation charts</div>
+        </div>
+
+        <div class="options" id="options"></div>
+
+        <div class="explanation" id="explanation"></div>
+
+        <div class="quiz-nav">
+          <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Results Screen -->
+      <div class="card" id="resultsScreen" style="display:none">
+        <div class="results-screen" style="display:block">
+          <div class="score-circle">
+            <div class="score-number" id="finalScore">40</div>
+            <div class="score-label">/ 50</div>
+          </div>
+          <div class="score-message" id="scoreMessage">Excellent!</div>
+          <div class="score-detail" id="scoreDetail">You got 40 out of 50 correct (80%)</div>
+          <div class="result-breakdown">
+            <div class="result-item"><div class="r-label">Correct</div><div class="r-val" id="rCorrect" style="color:var(--success)">40</div></div>
+            <div class="result-item"><div class="r-label">Wrong</div><div class="r-val" id="rWrong" style="color:var(--danger)">10</div></div>
+            <div class="result-item"><div class="r-label">Percentage</div><div class="r-val" id="rPercent">80%</div></div>
+            <div class="result-item"><div class="r-label">Grade</div><div class="r-val" id="rGrade" style="color:var(--orange)">B</div></div>
+          </div>
+          <div class="review-list" id="reviewList" style="display:none"></div>
+          <div style="margin-top:24px">
+            <button class="btn btn-primary" onclick="restartQuiz()"><i class="fas fa-redo"></i> Retake Quiz</button>
+          </div>
+          <div class="share-bar">
+            <span class="share-label"><i class="fas fa-share-alt"></i> Share your score:</span>
+            <a class="share-btn share-tw" id="shareTw" href="#" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+            <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/clinical-abbreviations" target="_blank"><i class="fab fa-facebook-f"></i> Share</a>
+            <a class="share-btn share-wa" id="shareWa" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <button class="share-btn share-copy" onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Master Clinical Skills for OSCE</h2>
+      <p>Our comprehensive OSCE training covers abbreviations, clinical scenarios, patient communication, and all skills needed to pass your NMC OSCE exam first time.</p>
+      <a href="https://tools.anglotec-ai.com/osce-training" class="cta-btn" target="_blank"><i class="fas fa-graduation-cap"></i> Start OSCE Training</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>For educational purposes. Abbreviations commonly used in UK healthcare settings. &copy; 2025 <a href="https://tools.anglotec-ai.com">AngloTec AI</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const quizData=[
+      {q:"BP",context:"Documented in patient observation charts every shift",options:["Blood Pressure","Body Pain","Brain Pressure","Breathing Pattern"],a:0,expl:"BP stands for Blood Pressure - the force of blood against artery walls. Normal range is typically 90/60 to 120/80 mmHg. Recorded as systolic/diastolic."},
+      {q:"HR",context:"Measured alongside BP during vital signs",options:["Heart Rate","High Risk","Hormone Response","Head Rotation"],a:0,expl:"HR stands for Heart Rate - number of heartbeats per minute. Normal resting rate for adults is 60-100 bpm. Tachycardia is >100, Bradycardia is <60."},
+      {q:"RR",context:"Counted by observing chest rise and fall",options:["Respiratory Rate","Recovery Room","Renal Rate","Risk Ratio"],a:0,expl:"RR stands for Respiratory Rate - breaths per minute. Normal range is 12-20 breaths/min for adults. A key vital sign in NEWS2 scoring."},
+      {q:"SpO2",context:"Measured using a pulse oximeter on the finger",options:["Oxygen Saturation","Blood Sugar Level","Spinal Pressure","Special Output"],a:0,expl:"SpO2 stands for Oxygen Saturation - percentage of oxygen-carrying haemoglobin. Normal is 95-100%. Below 92% may require supplemental oxygen."},
+      {q:"Temp",context:"Measured orally, tympanically, or axillarily",options:["Temperature","Temporary","Temperament","Template"],a:0,expl:"Temperature is a vital sign. Normal body temperature is around 36.5-37.5 C. Hypothermia <35 C, Pyrexia >38 C."},
+      {q:"IV",context:"Common route for fluid and medication administration",options:["Intravenous","Internal Valve","Intraventricular","In Vitro"],a:0,expl:"IV stands for Intravenous - within a vein. Medications/fluids delivered directly into the bloodstream for rapid effect."},
+      {q:"IM",context:"Common injection route for vaccines and antibiotics",options:["Intramuscular","Internal Medicine","Immediate","Immunization"],a:0,expl:"IM stands for Intramuscular - injection into muscle tissue. Common sites: deltoid, vastus lateralis, ventrogluteal. Absorption slower than IV."},
+      {q:"SC / Subcut",context:"Insulin and heparin commonly given via this route",options:["Subcutaneous","Subclinical","Sacral Canal","Special Care"],a:0,expl:"SC or Subcut stands for Subcutaneous - injection into the fatty tissue layer under the skin. Common sites: abdomen, thigh, upper arm."},
+      {q:"PO",context:"The most common and preferred route of administration",options:["By Mouth (Per Os)","Post Operative","Partial Opening","Patient Only"],a:0,expl:"PO (Per Os) means by mouth/orally. The most common, convenient, and economical route of medication administration."},
+      {q:"PR",context:"Used when oral route is contraindicated",options:["Per Rectum","Post Recovery","Pressure Reading","Prognosis"],a:0,expl:"PR stands for Per Rectum - rectal administration. Used for anti-emetics, analgesics, and when patient cannot take oral medications."},
+      {q:"TDS / TID",context:"A common prescription frequency instruction",options:["Three Times Daily","Total Daily Score","To Be Decided","Treatment Discontinued"],a:0,expl:"TDS (ter die sumendum) or TID means three times daily - typically every 8 hours. Common for antibiotics and many medications."},
+      {q:"BD / BID",context:"Medication given twice every 24 hours",options:["Twice Daily","Before Dinner","Bedtime Dose","Blood Disorder"],a:0,expl:"BD (bis in die) or BID means twice daily - typically every 12 hours. Common for medications like metformin and many cardiac drugs."},
+      {q:"QDS / QID",context:"More frequent than TDS dosing",options:["Four Times Daily","Quarterly Dose Schedule","Quick Discharge Summary","Quality Improvement Data"],a:0,expl:"QDS (quater die sumendum) or QID means four times daily - approximately every 6 hours."},
+      {q:"OD / QD",context:"Usually taken in the morning",options:["Once Daily","Over Dose","On Demand","Optical Density"],a:0,expl:"OD (omni die) or QD means once daily. Many medications are prescribed OD, often in the morning (e.g., thyroxine, statins)."},
+      {q:"PRN",context:"Used for medications not on a regular schedule",options:["As Required (Pro Re Nata)","Post-Respiratory Notification","Patient Refuses Medication","Pre-Registration Nursing"],a:0,expl:"PRN (pro re nata) means as required/as needed. Common for analgesics, anti-emetics, and laxatives. Must document each administration."},
+      {q:"STAT",context:"Indicates urgent administration",options:["Immediately","Status","Static Dose","Statistical"],a:0,expl:"STAT means immediately/right away. Used in emergencies when a medication must be given without delay (e.g., adrenaline in anaphylaxis)."},
+      {q:"CO",context:"Gas that requires careful monitoring",options:["Carbon Monoxide","Cardiac Output","Company","Carry On"],a:0,expl:"CO stands for Carbon Monoxide - a colourless, odourless, toxic gas. Also means Cardiac Output (volume of blood pumped by heart per minute). Context matters."},
+      {q:"COPD",context:"Common respiratory condition in smokers",options:["Chronic Obstructive Pulmonary Disease","Cardiac Output Pulmonary Disorder","Chronic Organic Pain Disorder","Critical Oxygen Pressure Deficit"],a:0,expl:"COPD is Chronic Obstructive Pulmonary Disease - a progressive lung disease including emphysema and chronic bronchitis. Common in long-term smokers."},
+      {q:"UTI",context:"Common infection especially in females",options:["Urinary Tract Infection","Upper Torso Injury","Under Treatment Investigation","Universal Trauma Index"],a:0,expl:"UTI stands for Urinary Tract Infection - infection of the bladder (cystitis), urethra, or kidneys. Common symptoms: dysuria, frequency, urgency."},
+      {q:"DVT",context:"Risk increased by immobility post-surgery",options:["Deep Vein Thrombosis","Dorsal Venous Tunnel","Differential Ventilation Test","Diabetic Vascular Thrombosis"],a:0,expl:"DVT is Deep Vein Thrombosis - a blood clot in a deep vein, usually the leg. Risk factors: immobility, surgery, pregnancy. Can lead to PE."},
+      {q:"PE",context:"A life-threatening complication of DVT",options:["Pulmonary Embolism","Patient Examination","Physical Examination","Pressure Equalization"],a:0,expl:"PE stands for Pulmonary Embolism - a blocked artery in the lungs, usually from a DVT clot that has travelled. Life-threatening emergency."},
+      {q:"MI",context:"Commonly known as a heart attack",options:["Myocardial Infarction","Mitral Incompetence","Muscular Injury","Mental Impairment"],a:0,expl:"MI stands for Myocardial Infarction - death of heart muscle due to interrupted blood supply. Classic symptoms: chest pain, sweating, nausea. STEMI and NSTEMI types."},
+      {q:"CVA",context:"Sudden onset neurological deficit",options:["Cerebrovascular Accident (Stroke)","Cardiovascular Assessment","Central Venous Access","Cerebral Venous Aneurysm"],a:0,expl:"CVA stands for Cerebrovascular Accident (stroke). Caused by interrupted blood supply to the brain. Use FAST assessment: Face, Arms, Speech, Time."},
+      {q:"TIA",context:"Warning sign for future stroke",options:["Transient Ischaemic Attack","Total Intracranial Assessment","Thrombotic Infarction Area","Traumatic Injury Assessment"],a:0,expl:"TIA stands for Transient Ischaemic Attack - 'mini stroke' with temporary symptoms (<24 hours). A warning sign for future stroke. Needs urgent investigation."},
+      {q:"AKI",context:"Rapid deterioration in kidney function",options:["Acute Kidney Injury","Anterior Knee Inflammation","Acute Ketoacidosis Incident","Automated Kidney Irrigation"],a:0,expl:"AKI stands for Acute Kidney Injury - sudden reduction in kidney function over hours to days. Causes: dehydration, sepsis, nephrotoxic drugs. Monitor urine output and creatinine."},
+      {q:"CKD",context:"Progressive loss of kidney function over months/years",options:["Chronic Kidney Disease","Cardiac Kidney Dysfunction","Cranial Kinetic Disorder","Complete Kidney Dialysis"],a:0,expl:"CKD stands for Chronic Kidney Disease - gradual loss of kidney function over time. Staged 1-5 based on GFR. Stage 5 requires dialysis or transplant."},
+      {q:"ECG / EKG",context:"Records electrical activity of the heart",options:["Electrocardiogram","Echocardiogram","Electroencephalogram","Endocardial Graph"],a:0,expl:"ECG (EKG) stands for Electrocardiogram - records the heart's electrical activity. 12-lead ECG is standard. Shows rhythm, rate, and signs of ischaemia."},
+      {q:"CXR",context:"Common imaging investigation for chest conditions",options:["Chest X-Ray","Cervical X-Ray","Complex X-Ray Reading","Cardiac X-Ray Result"],a:0,expl:"CXR stands for Chest X-Ray - a common imaging investigation. Used to diagnose pneumonia, heart failure, pneumothorax, fractures, and lung masses."},
+      {q:"CT",context:"Detailed cross-sectional imaging",options:["Computed Tomography","Clinical Trial","Cranial Trauma","Cardiac Test"],a:0,expl:"CT stands for Computed Tomography - uses X-rays and computer processing to create cross-sectional images. Faster than MRI, good for trauma and acute conditions."},
+      {q:"MRI",context:"Uses magnetic fields, no radiation",options:["Magnetic Resonance Imaging","Medical Record Index","Musculoskeletal Radiographic Investigation","Multi-Region Imaging"],a:0,expl:"MRI stands for Magnetic Resonance Imaging - uses strong magnetic fields and radio waves. Excellent for soft tissues, brain, spine, and joints. No ionising radiation."},
+      {q:"US / USS",context:"Commonly used in pregnancy and abdomen",options:["Ultrasound Scan","Universal Screening System","Urinary System Study","Upper Spine Survey"],a:0,expl:"US or USS stands for Ultrasound Scan - uses high-frequency sound waves to create images. Safe, non-invasive. Used in pregnancy, abdomen, DVT assessment."},
+      {q:"FBC",context:"Most commonly ordered blood test",options:["Full Blood Count","Fasting Blood Check","Fluid Balance Chart","Foreign Body Collection"],a:0,expl:"FBC stands for Full Blood Count - measures red cells, white cells, platelets, haemoglobin, and haematocrit. The most commonly requested blood test."},
+      {q:"U&E",context:"Essential for monitoring kidney function and electrolytes",options:["Urea and Electrolytes","Urine and Excretory","Upper Extremity","Urgent Examination"],a:0,expl:"U&E stands for Urea and Electrolytes - measures kidney function (urea, creatinine) and electrolytes (sodium, potassium). Essential baseline blood test."},
+      {q:"LFT",context:"Used to assess liver health",options:["Liver Function Test","Lung Function Test","Lipid Function Test","Lymphatic Flow Test"],a:0,expl:"LFT stands for Liver Function Test - measures enzymes (ALT, ALP, GGT), bilirubin, and proteins (albumin) to assess liver health and function."},
+      {q:"CRP",context:"Non-specific marker of inflammation",options:["C-Reactive Protein","Creatinine Phosphate","Complete Renal Panel","Cardiac Recovery Phase"],a:0,expl:"CRP stands for C-Reactive Protein - a protein produced by the liver in response to inflammation. Non-specific marker but useful for monitoring infection and inflammatory conditions."},
+      {q:"INR",context:"Monitored in patients on warfarin",options:["International Normalised Ratio","Internal Neural Response","Intranasal Ratio","Insulin Neutralisation Rate"],a:0,expl:"INR stands for International Normalised Ratio - measures blood clotting. Target for warfarin therapy is typically 2-3. Regular monitoring is essential."},
+      {q:"ABG",context:"Taken from the radial artery",options:["Arterial Blood Gas","Acid-Base Gradient","Airway Breathing Assessment","Anti-Bacterial Grade"],a:0,expl:"ABG stands for Arterial Blood Gas - measures oxygen, carbon dioxide, pH and bicarbonate from arterial blood. Essential for assessing respiratory and metabolic function."},
+      {q:"GCS",context:"Used to assess level of consciousness",options:["Glasgow Coma Scale","General Clinical Score","Glucose Control System","Great Cardiac Score"],a:0,expl:"GCS stands for Glasgow Coma Scale - assesses level of consciousness. Scores eye opening (1-4), verbal response (1-5), and motor response (1-6). Total 3-15. <8 indicates coma."},
+      {q:"NEWS2",context:"Used across NHS hospitals for early warning",options:["National Early Warning Score","New Emergency Ward System","Nursing Evaluation Workload Score","Neonatal Early Warning Score"],a:0,expl:"NEWS2 stands for National Early Warning Score (2nd version) - standardised scoring of vital signs (resp rate, SpO2, temp, BP, pulse, consciousness). Score 0-20. 5+ triggers escalation."},
+      {q:"DNACPR",context:"Important end-of-life care decision",options:["Do Not Attempt Cardiopulmonary Resuscitation","Direct Nursing and Care Planning Review","Daily Nutrition and Care Protocol Record","Disease Not Active, Continue Present Regime"],a:0,expl:"DNACPR stands for Do Not Attempt Cardiopulmonary Resuscitation - a clinical decision that CPR should not be attempted if the heart stops. Must be clearly documented and communicated."},
+      {q:"NBM",context:"Important pre-operative instruction",options:["Nil By Mouth","Non-Bacterial Meningitis","Normal Body Mass","Neck Back Movement"],a:0,expl:"NBM stands for Nil By Mouth - patient must not eat or drink. Usually 6 hours pre-surgery for food, 2 hours for clear fluids. Prevents aspiration during anaesthesia."},
+      {q:"BM / BGL",context:"Regularly checked in diabetic patients",options:["Blood Glucose Level","Body Mass","Bone Marrow","Blood Marker"],a:0,expl:"BM (from Boehringer Mannheim) or BGL stands for Blood Glucose Level. Normal fasting: 4-7 mmol/L. Regular monitoring essential for diabetic patients. Hypo <4, Hyper >11."},
+      {q:"TTO",context:"Prepared when a patient is leaving hospital",options:["To Take Out (discharge meds)","Total Treatment Order","Temporary Transfer Out","Type Two Order"],a:0,expl:"TTO stands for To Take Out - discharge medications prescribed for the patient to take home. Must be checked against inpatient prescription and reconciled."},
+      {q:"MUST",context:"Screening tool used on admission",options:["Malnutrition Universal Screening Tool","Medical Urgency Status Test","Multiple Symptom Test","Minimum Universal Standard Test"],a:0,expl:"MUST stands for Malnutrition Universal Screening Tool - a 5-step screening tool to identify adults at risk of malnutrition. Calculates BMI, weight loss, and acute disease effect."},
+      {q:"WCC",context:"Elevated in infection and inflammation",options:["White Cell Count","Wound Care Chart","Weight Control Check","Whole Cell Count"],a:0,expl:"WCC stands for White Cell Count (from FBC) - measures leukocytes. Normal: 4-11 x10^9/L. Elevated in infection, inflammation, leukaemia. Low in immunosuppression."},
+      {q:"Hb",context:"Carries oxygen in the blood",options:["Haemoglobin","Heart Beat","Hip Brace","Hepatitis B"],a:0,expl:"Hb stands for Haemoglobin - the protein in red blood cells that carries oxygen. Normal: men 135-175 g/L, women 120-155 g/L. Low = anaemia."},
+      {q:"Plt",context:"Essential for blood clotting",options:["Platelets","Platinum Level","Plantar Test","Plasma Total"],a:0,expl:"Plt stands for Platelets (thrombocytes) - cell fragments essential for blood clotting. Normal: 150-400 x10^9/L. Low (thrombocytopenia) increases bleeding risk."},
+      {q:"Na+",context:"Most abundant extracellular cation",options:["Sodium","Narcotic Assessment","Neurological Analysis","Natural Antibody"],a:0,expl:"Na+ stands for Sodium - the main extracellular cation. Normal: 135-145 mmol/L. Essential for fluid balance, nerve conduction, and muscle function."},
+      {q:"K+",context:"Critical for cardiac function",options:["Potassium","Kidney Plus","Kinetic Pressure","Kappa Index"],a:0,expl:"K+ stands for Potassium - the main intracellular cation. Normal: 3.5-5.0 mmol/L. Critical for cardiac function. Hyperkalaemia >6.0 can cause cardiac arrest."},
+      {q:"eGFR",context:"Used to stage chronic kidney disease",options:["Estimated Glomerular Filtration Rate","Expected Growth Factor Ratio","External Gravity Flow Rate","Erythrocyte Grouping Factor Result"],a:0,expl:"eGFR stands for Estimated Glomerular Filtration Rate - measures kidney function. Normal >90. CKD stages: 1 (90+), 2 (60-89), 3a (45-59), 3b (30-44), 4 (15-29), 5 (<15)."}
+    ];
+
+    let currentQ=0,correct=0,wrong=0,answers=[],shuffled=[];
+
+    function shuffleArray(a){const s=[...a];for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]];}return s;}
+
+    function startQuiz(){
+      currentQ=0;correct=0;wrong=0;answers=[];
+      shuffled=shuffleArray(quizData);
+      document.getElementById('startScreen').style.display='none';
+      document.getElementById('quizScreen').style.display='block';
+      document.getElementById('resultsScreen').style.display='none';
+      loadQuestion();
+    }
+
+    function loadQuestion(){
+      const q=shuffled[currentQ];
+      document.getElementById('currentQ').textContent=currentQ+1;
+      document.getElementById('qNum').textContent=currentQ+1;
+      document.getElementById('qText').innerHTML=`What does "<strong style="color:var(--orange)">${q.q}</strong>" stand for?`;
+      document.getElementById('qContext').textContent=q.context;
+      document.getElementById('progressFill').style.width=(((currentQ+1)/50)*100)+'%';
+
+      const optsDiv=document.getElementById('options');
+      optsDiv.innerHTML='';
+      q.options.forEach((opt,i)=>{
+        const btn=document.createElement('div');
+        btn.className='option';
+        btn.innerHTML=`<div class="option-letter">${String.fromCharCode(65+i)}</div><div>${opt}</div>`;
+        btn.onclick=()=>selectAnswer(i);
+        optsDiv.appendChild(btn);
+      });
+
+      document.getElementById('explanation').classList.remove('show');
+      document.getElementById('nextBtn').disabled=true;
+      document.getElementById('prevBtn').disabled=currentQ===0;
+      document.getElementById('nextBtn').innerHTML=currentQ===49?'Finish <i class="fas fa-flag-checkered"></i>':'Next <i class="fas fa-arrow-right"></i>';
+
+      // Restore answer if already answered
+      if(answers[currentQ]!==undefined){
+        showAnswer(answers[currentQ]);
+      }
+    }
+
+    function selectAnswer(idx){
+      if(answers[currentQ]!==undefined)return; // Already answered
+      answers[currentQ]=idx;
+      showAnswer(idx);
+    }
+
+    function showAnswer(idx){
+      const q=shuffled[currentQ];
+      const opts=document.querySelectorAll('.option');
+      opts.forEach((opt,i)=>{
+        opt.classList.add('disabled');
+        if(i===q.a)opt.classList.add('correct');
+        else if(i===idx&&i!==q.a)opt.classList.add('wrong');
+      });
+
+      if(idx===q.a&&answers[currentQ]===idx)correct++;
+      else if(answers[currentQ]===idx)wrong++;
+
+      document.getElementById('correctCount').textContent=correct;
+      document.getElementById('wrongCount').textContent=wrong;
+      document.getElementById('explanation').innerHTML=`<h4><i class="fas fa-info-circle"></i> Explanation</h4><p><strong>${q.q}</strong> = ${q.options[q.a]}</p><p>${q.expl}</p>`;
+      document.getElementById('explanation').classList.add('show');
+      document.getElementById('nextBtn').disabled=false;
+    }
+
+    function nextQuestion(){
+      if(currentQ<49){currentQ++;loadQuestion();}
+      else{showResults();}
+    }
+
+    function prevQuestion(){
+      if(currentQ>0){currentQ--;loadQuestion();}
+    }
+
+    function showResults(){
+      document.getElementById('quizScreen').style.display='none';
+      document.getElementById('resultsScreen').style.display='block';
+      const pct=Math.round((correct/50)*100);
+      document.getElementById('finalScore').textContent=correct;
+      document.getElementById('rCorrect').textContent=correct;
+      document.getElementById('rWrong').textContent=wrong;
+      document.getElementById('rPercent').textContent=pct+'%';
+
+      let msg,grade;
+      if(pct>=90){msg='Outstanding! You are OSCE-ready!';grade='A+';}
+      else if(pct>=80){msg='Excellent knowledge!';grade='A';}
+      else if(pct>=70){msg='Good work! Keep practicing.';grade='B';}
+      else if(pct>=60){msg='Fair. Review the ones you missed.';grade='C';}
+      else{msg='Keep studying. You will get there!';grade='D';}
+      document.getElementById('scoreMessage').textContent=msg;
+      document.getElementById('rGrade').textContent=grade;
+      document.getElementById('scoreDetail').textContent=`You got ${correct} out of 50 correct (${pct}%)`;
+
+      // Share links
+      document.getElementById('shareTw').href=`https://twitter.com/intent/tweet?text=I+scored+${correct}/50+(${pct}%)+on+the+Clinical+Abbreviations+Quiz!+Can+you+beat+me?&url=https://tools.anglotec-ai.com/clinical-abbreviations`;
+      document.getElementById('shareWa').href=`https://wa.me/?text=I+scored+${correct}/50+on+the+Clinical+Abbreviations+Quiz!+Try+it+yourself:+https://tools.anglotec-ai.com/clinical-abbreviations`;
+    }
+
+    function restartQuiz(){startQuiz();}
+
+    function copyLink(){
+      navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));
+    }
+  </script>
+</body>
+</html>

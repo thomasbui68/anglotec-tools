@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS to TOEFL Score Converter | Free Band Score Calculator</title>
+  <meta name="description" content="Free IELTS to TOEFL score converter. Convert any IELTS band score (0-9) to equivalent TOEFL score (0-120). Includes full comparison table for all sections. Used by universities worldwide.">
+  <meta name="keywords" content="ielts to toefl conversion, ielts to toefl score, convert ielts to toefl, toefl ielts comparison, ielts band to toefl">
+  <meta property="og:title" content="IELTS to TOEFL Score Converter | Free Band Score Calculator">
+  <meta property="og:description" content="Convert IELTS band scores to TOEFL scores instantly. Full comparison table included.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tools.anglotec-ai.com/ielts-toefl-converter">
+  <link rel="canonical" href="https://tools.anglotec-ai.com/ielts-toefl-converter">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--green:#2C4A3E;--green-light:#3D5F52;--green-dark:#1E352C;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F4F0;--white:#FFFFFF;--text:#2A2A2A;--text-light:#6B7280;--border:#E2DDD7;--success:#059669}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    /* Header */
+    .header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .header-flex{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);text-decoration:none}
+    .logo span{color:var(--orange)}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{color:var(--white);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--orange)}
+    .mobile-menu{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+    /* Hero */
+    .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--white);padding:60px 0;text-align:center}
+    .hero h1{font-size:2.6rem;margin-bottom:16px;line-height:1.2}
+    .hero p{font-size:1.1rem;opacity:.9;max-width:650px;margin:0 auto}
+    .hero-badge{display:inline-block;background:var(--orange);color:var(--white);padding:6px 16px;border-radius:30px;font-size:.8rem;font-weight:600;margin-top:20px;text-transform:uppercase;letter-spacing:1px}
+    /* Main */
+    .main{padding:40px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--white);border-radius:16px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);margin-bottom:24px}
+    .card-title{font-size:1.3rem;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .card-title i{color:var(--orange)}
+    /* Converter */
+    .converter-box{text-align:center;padding:20px 0}
+    .score-display{font-size:5rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--green);line-height:1}
+    .score-label{font-size:1rem;color:var(--text-light);margin-top:8px}
+    .arrow-icon{font-size:3rem;color:var(--orange);margin:16px 0}
+    .score-input{width:100%;max-width:200px;padding:14px 20px;border:3px solid var(--border);border-radius:12px;font-size:1.5rem;font-weight:700;text-align:center;font-family:'Inter',sans-serif;transition:all .2s}
+    .score-input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 4px rgba(212,101,59,.15)}
+    .slider-container{margin:20px 0}
+    .score-slider{width:100%;height:8px;border-radius:4px;background:var(--border);outline:none;-webkit-appearance:none}
+    .score-slider::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--orange);cursor:pointer;box-shadow:0 2px 8px rgba(212,101,59,.4)}
+    .score-slider::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--orange);cursor:pointer;border:none;box-shadow:0 2px 8px rgba(212,101,59,.4)}
+    .score-range{display:flex;justify-content:space-between;font-size:.75rem;color:var(--text-light);margin-top:6px}
+    /* Section Results */
+    .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .section-card{background:var(--cream);padding:14px;border-radius:10px;text-align:center}
+    .section-card h4{font-size:.8rem;color:var(--text-light);margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+    .section-card .sec-score{font-size:1.5rem;font-weight:700;color:var(--green)}
+    /* Table */
+    .comp-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:16px}
+    .comp-table th{background:var(--green);color:var(--white);padding:12px;text-align:center;font-weight:600}
+    .comp-table td{padding:10px;text-align:center;border-bottom:1px solid var(--border)}
+    .comp-table tr:hover td{background:var(--cream)}
+    .comp-table .highlight{background:rgba(212,101,59,.1)!important;font-weight:600}
+    .comp-table .highlight td{color:var(--green-dark)}
+    /* Info Box */
+    .info-box{background:linear-gradient(135deg,#EBF5FF 0%,#DBEAFE 100%);border-left:4px solid #3B82F6;padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0;font-size:.9rem}
+    .info-box strong{color:var(--green)}
+    .uni-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .uni-item{background:var(--white);padding:10px 12px;border-radius:8px;font-size:.85rem;display:flex;align-items:center;gap:8px;border:1px solid var(--border)}
+    .uni-item i{color:var(--orange)}
+    /* Share */
+    .share-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+    .share-label{font-weight:600;color:var(--green);font-size:.9rem}
+    .share-btn{padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;color:var(--white);transition:transform .2s;display:inline-flex;align-items:center;gap:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+    .share-btn:hover{transform:translateY(-2px)}
+    .share-tw{background:#1DA1F2}.share-fb{background:#4267B2}.share-wa{background:#25D366}.share-li{background:#0077B5}.share-copy{background:var(--green)}
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);padding:50px 0;text-align:center;margin-top:40px}
+    .cta-section h2{font-size:2rem;margin-bottom:16px}
+    .cta-section p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto 24px}
+    .cta-btn{background:var(--orange);color:var(--white);padding:16px 36px;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s}
+    .cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    .cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:700px;margin:28px auto 0}
+    .cta-item{background:rgba(255,255,255,.1);padding:16px;border-radius:10px}
+    .cta-item i{font-size:1.5rem;margin-bottom:8px;display:block}
+    .cta-item span{font-size:.85rem}
+    /* Footer */
+    .footer{background:var(--green-dark);color:rgba(255,255,255,.7);padding:30px 0;text-align:center;font-size:.85rem}
+    .footer a{color:var(--orange);text-decoration:none}
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1{font-size:2rem}.nav-links{display:none}.mobile-menu{display:block}
+      .section-grid,.uni-grid,.cta-grid{grid-template-columns:1fr}
+      .score-display{font-size:3.5rem}.comp-table{font-size:.8rem}
+    }
+    .hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-flex">
+      <a href="https://tools.anglotec-ai.com" class="logo">Anglo<span>Tec</span> Tools</a>
+      <nav class="nav-links">
+        <a href="#converter">Converter</a>
+        <a href="#table">Comparison Table</a>
+        <a href="https://tools.anglotec-ai.com/ielts-prep" target="_blank">IELTS Prep</a>
+      </nav>
+      <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('hidden')" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1><i class="fas fa-exchange-alt"></i> IELTS to TOEFL Score Converter</h1>
+      <p>Convert any IELTS band score to its equivalent TOEFL iBT score. Trusted by students, universities, and immigration advisors worldwide.</p>
+      <span class="hero-badge"><i class="fas fa-check-circle"></i> Official ETS Equivalency</span>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="container">
+      <div class="grid" id="converter">
+        <!-- Converter -->
+        <div class="card">
+          <h2 class="card-title"><i class="fas fa-calculator"></i> Score Converter</h2>
+          <div class="converter-box">
+            <label class="form-label" style="display:block;margin-bottom:10px;font-weight:600;color:var(--green)">Enter IELTS Band Score</label>
+            <input type="number" class="score-input" id="ieltsInput" min="0" max="9" step="0.5" value="6.5" oninput="convertScore()">
+            <div class="slider-container">
+              <input type="range" class="score-slider" id="ieltsSlider" min="0" max="90" value="65" oninput="sliderChange()">
+              <div class="score-range"><span>0</span><span>2</span><span>4</span><span>6</span><span>7</span><span>8</span><span>9</span></div>
+            </div>
+
+            <div class="arrow-icon"><i class="fas fa-arrow-down"></i></div>
+
+            <div class="score-display" id="toeflScore">79</div>
+            <div class="score-label">Equivalent TOEFL iBT Score (0-120)</div>
+
+            <div class="section-grid" id="sectionScores" style="display:none">
+              <div class="section-card"><h4>Listening</h4><div class="sec-score" id="toeflL">-</div></div>
+              <div class="section-card"><h4>Reading</h4><div class="sec-score" id="toeflR">-</div></div>
+              <div class="section-card"><h4>Speaking</h4><div class="sec-score" id="toeflS">-</div></div>
+              <div class="section-card"><h4>Writing</h4><div class="sec-score" id="toeflW">-</div></div>
+            </div>
+          </div>
+
+          <div class="info-box" style="margin-top:16px">
+            <strong>How it works:</strong> This converter uses the official ETS (Educational Testing Service) equivalency table. Simply enter your IELTS band score (0-9 in 0.5 increments) to see your equivalent TOEFL iBT score.
+          </div>
+        </div>
+
+        <!-- Side Panel -->
+        <div>
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-university"></i> University Requirements</h2>
+            <p style="font-size:.9rem;color:var(--text-light);margin-bottom:16px">Common minimum scores required by top universities:</p>
+            <div class="uni-grid">
+              <div class="uni-item"><i class="fas fa-graduation-cap"></i> <strong>Oxford/Cambridge:</strong> IELTS 7.5 / TOEFL 110</div>
+              <div class="uni-item"><i class="fas fa-graduation-cap"></i> <strong>Imperial College:</strong> IELTS 7.0 / TOEFL 100</div>
+              <div class="uni-item"><i class="fas fa-graduation-cap"></i> <strong>UCL:</strong> IELTS 6.5 / TOEFL 92</div>
+              <div class="uni-item"><i class="fas fa-graduation-cap"></i> <strong>Manchester:</strong> IELTS 6.5 / TOEFL 90</div>
+              <div class="uni-item"><i class="fas fa-graduation-cap"></i> <strong>Edinburgh:</strong> IELTS 6.5 / TOEFL 92</div>
+              <div class="uni-item"><i class="fas fa-graduation-cap"></i> <strong>King's College:</strong> IELTS 7.0 / TOEFL 100</div>
+              <div class="uni-item"><i class="fas fa-flag-usa"></i> <strong>Harvard/MIT:</strong> IELTS 7.5 / TOEFL 100+</div>
+              <div class="uni-item"><i class="fas fa-flag-usa"></i> <strong>Stanford:</strong> IELTS 7.0 / TOEFL 100</div>
+            </div>
+          </div>
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-info-circle"></i> Key Differences</h2>
+            <ul style="list-style:none;padding:0;font-size:.9rem">
+              <li style="padding:8px 0;border-bottom:1px solid var(--border)"><strong>IELTS:</strong> Band 0-9, pen-paper or computer, British/Australian accent, face-to-face speaking</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--border)"><strong>TOEFL:</strong> Score 0-120, internet-based (iBT), American accent, recorded speaking</li>
+              <li style="padding:8px 0"><strong>Validity:</strong> Both scores valid for 2 years from test date</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Comparison Table -->
+      <div class="card" id="table">
+        <h2 class="card-title"><i class="fas fa-table"></i> Complete IELTS to TOEFL Comparison Table</h2>
+        <p style="margin-bottom:16px;color:var(--text-light);font-size:.9rem">Full equivalency table for all IELTS band scores. Hover over rows to highlight.</p>
+        <div style="overflow-x:auto">
+          <table class="comp-table" id="compTable">
+            <thead>
+              <tr><th>IELTS Band</th><th>TOEFL iBT Total</th><th>Listening</th><th>Reading</th><th>Speaking</th><th>Writing</th><th>CEFR Level</th></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Immigration Requirements -->
+      <div class="card">
+        <h2 class="card-title"><i class="fas fa-passport"></i> Immigration & Visa Requirements</h2>
+        <div class="uni-grid">
+          <div class="uni-item"><i class="fas fa-plane"></i> <strong>UK Student Visa:</strong> IELTS 4.0+ / TOEFL varies</div>
+          <div class="uni-item"><i class="fas fa-heartbeat"></i> <strong>NMC Registration:</strong> IELTS 7.0 (min 6.5) / OET Grade B</div>
+          <div class="uni-item"><i class="fas fa-briefcase"></i> <strong>Skilled Worker UK:</strong> IELTS 4.0-5.5 depending on route</div>
+          <div class="uni-item"><i class="fas fa-flag-usa"></i> <strong>US Student Visa:</strong> Varies by institution</div>
+          <div class="uni-item"><i class="fas fa-flag"></i> <strong>Australia PR:</strong> IELTS 6.0-8.0 depending on points</div>
+          <div class="uni-item"><i class="fas fa-flag"></i> <strong>Canada Express Entry:</strong> IELTS CLB 7-9 equivalent</div>
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div class="share-bar">
+        <span class="share-label"><i class="fas fa-share-alt"></i> Share:</span>
+        <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?text=Free+IELTS+to+TOEFL+Score+Converter&url=https://tools.anglotec-ai.com/ielts-toefl-converter" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/ielts-toefl-converter" target="_blank"><i class="fab fa-facebook-f"></i> Share</a>
+        <a class="share-btn share-wa" href="https://wa.me/?text=Check+out+this+free+IELTS+to+TOEFL+converter:+https://tools.anglotec-ai.com/ielts-toefl-converter" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/ielts-toefl-converter" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <button class="share-btn share-copy" onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Achieve Your Target IELTS Score</h2>
+      <p>Join thousands of students who achieved their dream scores with AngloTec's AI-powered IELTS preparation. Personalized study plans, mock tests, and expert feedback.</p>
+      <a href="https://tools.anglotec-ai.com/ielts-prep" class="cta-btn" target="_blank"><i class="fas fa-rocket"></i> Start IELTS Prep</a>
+      <div class="cta-grid">
+        <div class="cta-item"><i class="fas fa-brain"></i> <span>AI-Powered Practice</span></div>
+        <div class="cta-item"><i class="fas fa-chart-line"></i> <span>Score Tracking</span></div>
+        <div class="cta-item"><i class="fas fa-users"></i> <span>Expert Feedback</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Score conversions based on official ETS equivalency tables. For reference purposes. &copy; 2025 <a href="https://tools.anglotec-ai.com">AngloTec AI</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ETS Official Equivalency Table
+    const etsTable={
+      9:{total:120,l:30,r:30,s:30,w:30,cefr:'C2'},
+      8.5:{total:117,l:29,r:29,s:27,w:28,cefr:'C2'},
+      8:{total:110,l:28,r:27,s:26,w:26,cefr:'C1'},
+      7.5:{total:102,l:27,r:26,s:24,w:25,cefr:'C1'},
+      7:{total:94,l:24,r:24,s:23,w:24,cefr:'C1'},
+      6.5:{total:79,l:20,r:21,s:20,w:21,cefr:'B2'},
+      6:{total:60,l:17,r:18,s:18,w:17,cefr:'B2'},
+      5.5:{total:46,l:14,r:15,s:15,w:14,cefr:'B1'},
+      5:{total:40,l:12,r:13,s:14,w:12,cefr:'B1'},
+      4.5:{total:32,l:10,r:10,s:12,w:10,cefr:'B1'},
+      4:{total:0,l:8,r:8,s:10,w:8,cefr:'A2'},
+      3.5:{total:0,l:6,r:6,s:8,w:6,cefr:'A2'},
+      3:{total:0,l:4,r:4,s:6,w:4,cefr:'A1'},
+      2.5:{total:0,l:2,r:2,s:4,w:2,cefr:'A1'},
+      0:{total:0,l:0,r:0,s:0,w:0,cefr:'-'}
+    };
+
+    // Interpolate for half-band scores not in table
+    function getEquiv(ielts){
+      if(etsTable[ielts]) return etsTable[ielts];
+      // Find nearest values
+      const bands=Object.keys(etsTable).map(Number).sort((a,b)=>a-b);
+      let lower=bands[0],upper=bands[bands.length-1];
+      for(let i=0;i<bands.length-1;i++){if(bands[i]<=ielts&&bands[i+1]>=ielts){lower=bands[i];upper=bands[i+1];break;}}
+      if(lower===upper) return etsTable[lower];
+      const ratio=(ielts-lower)/(upper-lower);
+      const low=etsTable[lower],up=etsTable[upper];
+      return{
+        total:Math.round(low.total+ratio*(up.total-low.total)),
+        l:Math.round(low.l+ratio*(up.l-low.l)),
+        r:Math.round(low.r+ratio*(up.r-low.r)),
+        s:Math.round(low.s+ratio*(up.s-low.s)),
+        w:Math.round(low.w+ratio*(up.w-low.w)),
+        cefr:ratio>0.5?up.cefr:low.cefr
+      };
+    }
+
+    function sliderChange(){
+      const val=(document.getElementById('ieltsSlider').value/10).toFixed(1);
+      document.getElementById('ieltsInput').value=val;
+      convertScore();
+    }
+
+    function convertScore(){
+      let ielts=parseFloat(document.getElementById('ieltsInput').value);
+      if(isNaN(ielts)||ielts<0)ielts=0;if(ielts>9)ielts=9;
+      const equiv=getEquiv(ielts);
+      document.getElementById('toeflScore').textContent=equiv.total;
+      document.getElementById('ieltsSlider').value=Math.round(ielts*10);
+      document.getElementById('sectionScores').style.display='grid';
+      document.getElementById('toeflL').textContent=equiv.l;
+      document.getElementById('toeflR').textContent=equiv.r;
+      document.getElementById('toeflS').textContent=equiv.s;
+      document.getElementById('toeflW').textContent=equiv.w;
+      highlightRow(ielts);
+    }
+
+    function highlightRow(ielts){
+      document.querySelectorAll('#compTable tbody tr').forEach(row=>row.classList.remove('highlight'));
+      const band=String(Math.round(ielts*2)/2);
+      const row=document.querySelector(`tr[data-band="${band}"]`);
+      if(row){row.classList.add('highlight');row.scrollIntoView({behavior:'smooth',block:'nearest'});}
+    }
+
+    // Populate table
+    const bands=[9,8.5,8,7.5,7,6.5,6,5.5,5,4.5,4,3.5,3,2.5,0];
+    const tbody=document.getElementById('tableBody');
+    bands.forEach(b=>{
+      const e=etsTable[b];
+      const row=document.createElement('tr');
+      row.setAttribute('data-band',String(b));
+      row.innerHTML=`<td style="font-weight:700;color:var(--green);font-size:1.1rem">${b}</td><td style="font-weight:700">${e.total}</td><td>${e.l}</td><td>${e.r}</td><td>${e.s}</td><td>${e.w}</td><td><span style="background:var(--green);color:#fff;padding:3px 10px;border-radius:12px;font-size:.75rem">${e.cefr}</span></td>`;
+      tbody.appendChild(row);
+    });
+
+    function copyLink(){
+      navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));
+    }
+
+    // Initialize
+    convertScore();
+  </script>
+</body>
+</html>

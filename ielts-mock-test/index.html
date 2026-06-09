@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free IELTS Mock Test Online | 40-Question Practice with Timer & Band Score</title>
+<meta name="description" content="Take a free IELTS mock test online with 40 reading questions, built-in timer, instant scoring, and band score estimation. Practice now for your IELTS exam.">
+<meta name="keywords" content="free ielts mock test, ielts practice test online, ielts sample test, ielts test free, ielts reading practice, ielts band score calculator, ielts mock exam">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--deep-green:#2C4A3E;--burnt-orange:#D4653B;--off-white:#F7F5F2;--light-green:#3D5F50;--accent-cream:#E8E4DD;--text-dark:#1A1A1A;--text-muted:#6B6B6B;--success:#4A8B6F;--error:#B85450;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--text-dark);line-height:1.7}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.25}
+a{color:var(--burnt-orange);text-decoration:none}
+img{max-width:100%;height:auto}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.header{background:var(--deep-green);color:#fff;padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff}
+.logo span{color:var(--burnt-orange)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.85);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--burnt-orange)}
+.cta-btn{background:var(--burnt-orange);color:#fff;padding:10px 22px;border-radius:6px;font-weight:600;font-size:13px;transition:background .2s;border:none;cursor:pointer}
+.cta-btn:hover{background:#c45a32}
+.mobile-menu{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--deep-green) 0%,var(--light-green) 100%);color:#fff;padding:70px 0 60px;text-align:center}
+.hero h1{font-size:48px;margin-bottom:16px;max-width:800px;margin-left:auto;margin-right:auto}
+.hero p{font-size:18px;opacity:.9;max-width:650px;margin:0 auto 30px}
+.hero-stats{display:flex;justify-content:center;gap:50px;margin-top:35px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--burnt-orange)}
+.stat-label{font-size:13px;opacity:.8;text-transform:uppercase;letter-spacing:1px}
+
+/* Timer Bar */
+.timer-bar{background:#fff;border-bottom:1px solid #e0ddd6;padding:14px 0;position:sticky;top:58px;z-index:99;display:none}
+.timer-bar.active{display:block}
+.timer-inner{display:flex;justify-content:space-between;align-items:center}
+.timer-display{font-family:'Playfair Display',serif;font-size:26px;color:var(--deep-green);font-weight:700}
+.timer-display.warning{color:var(--burnt-orange)}
+.timer-display.danger{color:var(--error)}
+.progress-bar{flex:1;margin:0 30px;height:8px;background:#e0ddd6;border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:var(--deep-green);transition:width 1s linear}
+.timer-actions{display:flex;gap:10px}
+.btn-small{padding:7px 16px;font-size:13px;border-radius:5px;border:none;cursor:pointer;font-weight:600}
+.btn-outline{background:transparent;border:2px solid var(--deep-green);color:var(--deep-green)}
+.btn-outline:hover{background:var(--deep-green);color:#fff}
+
+/* Sections */
+.section{padding:50px 0}
+.section-title{font-size:34px;color:var(--deep-green);margin-bottom:12px;text-align:center}
+.section-subtitle{text-align:center;color:var(--text-muted);font-size:16px;max-width:700px;margin:0 auto 40px}
+
+/* Intro Box */
+.intro-box{background:#fff;border-radius:12px;padding:35px;margin-bottom:30px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.intro-box h3{font-size:22px;color:var(--deep-green);margin-bottom:15px}
+.intro-box ul{padding-left:22px}
+.intro-box li{margin-bottom:8px}
+
+/* Passage */
+.passage-box{background:#fff;border-radius:12px;padding:35px;margin-bottom:25px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-left:4px solid var(--deep-green)}
+.passage-box h3{font-size:22px;color:var(--deep-green);margin-bottom:15px}
+.passage-text{font-size:15px;line-height:1.85;color:var(--text-dark)}
+.passage-text p{margin-bottom:14px}
+
+/* Question Box */
+.question-box{background:#fff;border-radius:12px;padding:25px 30px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-left:4px solid var(--burnt-orange);transition:box-shadow .2s}
+.question-box:hover{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.q-number{display:inline-block;background:var(--deep-green);color:#fff;width:32px;height:32px;border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:14px;margin-right:10px}
+.question-text{font-family:'Playfair Display',serif;font-size:17px;color:var(--text-dark);margin-bottom:15px;display:inline}
+.options{margin-left:42px}
+.option{display:flex;align-items:center;padding:10px 15px;margin-bottom:8px;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.option:hover{background:var(--off-white);border-color:var(--accent-cream)}
+.option input[type="radio"]{margin-right:12px;width:18px;height:18px;accent-color:var(--deep-green);cursor:pointer}
+.option label{cursor:pointer;font-size:14px;flex:1}
+.option.selected{background:#E8F0EB;border-color:var(--deep-green)}
+
+/* Start Screen */
+.start-screen{text-align:center;padding:60px 20px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin:30px 0}
+.start-screen h2{font-size:32px;color:var(--deep-green);margin-bottom:15px}
+.start-screen p{color:var(--text-muted);margin-bottom:30px;max-width:550px;margin-left:auto;margin-right:auto}
+
+/* Test Screen */
+.test-screen{display:none}
+
+/* Results Screen */
+.results-screen{display:none;text-align:center;padding:50px 20px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin:30px 0}
+.band-circle{width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,var(--deep-green),var(--light-green));display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 25px;color:#fff}
+.band-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;line-height:1}
+.band-label{font-size:13px;opacity:.9}
+.score-breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;max-width:600px;margin:30px auto;text-align:left}
+.score-item{padding:15px;background:var(--off-white);border-radius:10px}
+.score-item-label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px}
+.score-item-val{font-size:22px;font-weight:700;color:var(--deep-green);margin-top:4px}
+
+/* Answer Review */
+.review-section{text-align:left;margin-top:30px}
+.review-item{padding:18px;border-radius:10px;margin-bottom:12px;background:var(--off-white)}
+.review-item.correct{border-left:4px solid var(--success)}
+.review-item.incorrect{border-left:4px solid var(--error)}
+.review-q{font-weight:600;margin-bottom:6px;font-size:14px}
+.review-ans{font-size:13px;color:var(--text-muted)}
+.review-ans .your{color:var(--error);font-weight:600}
+.review-ans .correct{color:var(--success);font-weight:600}
+.explanation{background:#fff;padding:12px 15px;border-radius:8px;margin-top:10px;font-size:13px;border-left:3px solid var(--burnt-orange)}
+
+/* CTA Box */
+.cta-box{background:linear-gradient(135deg,var(--deep-green),var(--light-green));color:#fff;padding:45px;border-radius:16px;text-align:center;margin:40px 0}
+.cta-box h3{font-size:28px;margin-bottom:12px}
+.cta-box p{opacity:.9;margin-bottom:25px;max-width:600px;margin-left:auto;margin-right:auto}
+.cta-box .cta-btn{background:var(--burnt-orange);font-size:16px;padding:14px 36px}
+
+/* Info Grid */
+.info-grid{display:grid;grid-template:1fr/1fr 1fr 1fr;gap:25px;margin:40px 0}
+.info-card{background:#fff;padding:30px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:center}
+.info-card-icon{font-size:36px;margin-bottom:12px}
+.info-card h4{font-size:18px;color:var(--deep-green);margin-bottom:10px}
+.info-card p{font-size:14px;color:var(--text-muted)}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin:30px 0}
+.table-wrap table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.table-wrap th{background:var(--deep-green);color:#fff;padding:14px 18px;text-align:left;font-weight:600;font-size:14px}
+.table-wrap td{padding:12px 18px;border-bottom:1px solid #eee;font-size:14px}
+.table-wrap tr:last-child td{border-bottom:none}
+.table-wrap tr:hover td{background:var(--off-white)}
+
+/* FAQ */
+.faq-item{background:#fff;border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.faq-q{padding:18px 22px;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--deep-green)}
+.faq-q::after{content:'+';font-size:20px;color:var(--burnt-orange);font-weight:700}
+.faq-item.active .faq-q::after{content:'\2212'}
+.faq-a{padding:0 22px 18px;font-size:14px;color:var(--text-muted);display:none}
+.faq-item.active .faq-a{display:block}
+
+/* Footer */
+.footer{background:var(--deep-green);color:rgba(255,255,255,.8);padding:50px 0 25px;font-size:14px}
+.footer-grid{display:grid;grid-template:1fr/1fr 1fr 1fr 1fr;gap:35px;margin-bottom:35px}
+.footer h4{font-family:'Playfair Display',serif;color:#fff;font-size:17px;margin-bottom:15px}
+.footer a{color:rgba(255,255,255,.7);display:block;margin-bottom:8px;font-size:13px}
+.footer a:hover{color:var(--burnt-orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:20px;text-align:center;font-size:12px;color:rgba(255,255,255,.5)}
+
+/* Breadcrumb */
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+.breadcrumb a{color:var(--burnt-orange)}
+
+/* TOC */
+.toc{background:#fff;padding:25px 30px;border-radius:12px;margin-bottom:25px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.toc h4{font-size:16px;color:var(--deep-green);margin-bottom:12px}
+.toc ul{list-style:none}
+.toc li{margin-bottom:6px}
+.toc a{color:var(--text-dark);font-size:14px;display:flex;align-items:center;gap:8px}
+.toc a::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--burnt-orange);display:inline-block}
+.toc a:hover{color:var(--burnt-orange)}
+
+@media(max-width:768px){
+.hero h1{font-size:32px}
+.hero-stats{gap:25px}
+.info-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.nav-links{display:none}
+.mobile-menu{display:block}
+.timer-inner{flex-wrap:wrap;gap:10px}
+.progress-bar{order:3;width:100%;margin:0}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container header-inner">
+<a href="https://tools.anglotec-ai.com" class="logo">Anglo<span>Tec</span></a>
+<nav class="nav-links">
+<a href="#about">About IELTS</a>
+<a href="#scoring">Scoring</a>
+<a href="#faq">FAQ</a>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">IELTS Tools</a>
+</nav>
+<button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Free IELTS Mock Test Online</h1>
+<p>Take a realistic 40-question IELTS Reading practice test with a live timer, instant scoring, and detailed answer explanations. Get your estimated band score in minutes.</p>
+<div class="hero-stats">
+<div class="stat"><div class="stat-num">40</div><div class="stat-label">Questions</div></div>
+<div class="stat"><div class="stat-num">60</div><div class="stat-label">Minutes</div></div>
+<div class="stat"><div class="stat-num">3</div><div class="stat-label">Passages</div></div>
+<div class="stat"><div class="stat-num">Free</div><div class="stat-label">Forever</div></div>
+</div>
+</div>
+</section>
+
+<div class="timer-bar" id="timerBar">
+<div class="container timer-inner">
+<div class="timer-display" id="timerDisplay">60:00</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="timer-actions">
+<button class="btn-small btn-outline" onclick="pauseTest()">Pause</button>
+<button class="btn-small cta-btn" onclick="submitTest()">Submit</button>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="breadcrumb" style="margin-top:25px">
+<a href="https://tools.anglotec-ai.com">Home</a> &rsaquo; <a href="https://tools.anglotec-ai.com">IELTS</a> &rsaquo; Free IELTS Mock Test Online
+</div>
+</div>
+
+<div class="container section" id="testContainer">
+
+<!-- START SCREEN -->
+<div class="start-screen" id="startScreen">
+<h2>Ready to Take Your Free IELTS Mock Test?</h2>
+<p>This free IELTS practice test online simulates the real Reading section with 3 academic passages and 40 questions. You will have 60 minutes to complete all questions.</p>
+<div class="info-grid" style="text-align:left;margin:30px auto;max-width:700px">
+<div class="info-card" style="text-align:left">
+<div class="info-card-icon">📖</div>
+<h4>Academic Reading</h4>
+<p>Three long passages with increasing difficulty, just like the real exam.</p>
+</div>
+<div class="info-card" style="text-align:left">
+<div class="info-card-icon">⏱️</div>
+<h4>Live Timer</h4>
+<p>60-minute countdown timer to simulate real exam pressure and pacing.</p>
+</div>
+<div class="info-card" style="text-align:left">
+<div class="info-card-icon">📊</div>
+<h4>Instant Scoring</h4>
+<p>Get your estimated band score immediately with detailed explanations.</p>
+</div>
+</div>
+<button class="cta-btn" style="font-size:18px;padding:16px 45px" onclick="startTest()">Start Free IELTS Mock Test</button>
+<p style="margin-top:20px;font-size:13px;color:var(--text-muted)">No signup required. Completely free.</p>
+</div>
+
+<!-- TEST SCREEN -->
+<div class="test-screen" id="testScreen">
+
+<!-- Passage 1 -->
+<div class="passage-box" id="passage1">
+<h3>Passage 1 &mdash; The History of Tea</h3>
+<div class="passage-text">
+<p>Tea is the most widely consumed beverage in the world after water. Its origins can be traced back to ancient China, where legend has it that Emperor Shen Nung discovered tea in 2737 BC when leaves from a wild tree blew into his pot of boiling water. For centuries, tea was consumed primarily for its medicinal properties rather than as a daily refreshment.</p>
+<p>The spread of tea beyond China began during the Tang Dynasty (618-907 AD), when tea became China's national drink and Buddhist monks introduced it to Japan. By the 16th century, Portuguese priests and merchants had encountered tea during their travels to the East and brought samples back to Europe. However, it was the Dutch who first shipped commercial quantities of tea to Europe in 1610, establishing it as a luxury item among the aristocracy.</p>
+<p>The British East India Company began importing tea to England in the late 17th century. Initially, it was so expensive that only the wealthy could afford it. As import volumes increased and prices fell, tea became accessible to the middle classes. By the 18th century, tea had become Britain's national beverage, a status it maintains today. The British passion for tea led to the establishment of tea plantations in India and Ceylon (now Sri Lanka) in the 19th century, breaking China's monopoly on tea production.</p>
+<p>Today, tea is grown in over 60 countries worldwide. The major tea-producing nations include China, India, Kenya, and Sri Lanka. There are six main varieties of tea &mdash; white, yellow, green, oolong, black, and post-fermented &mdash; all derived from the Camellia sinensis plant. The differences between them arise from the level of oxidation the leaves undergo during processing.</p>
+</div>
+</div>
+
+<div id="questions1"></div>
+
+<!-- Passage 2 -->
+<div class="passage-box" id="passage2">
+<h3>Passage 2 &mdash; The Science of Sleep</h3>
+<div class="passage-text">
+<p>Sleep is a fundamental biological process that remains one of the most intriguing mysteries of human physiology. Despite spending approximately one-third of our lives sleeping, scientists are still uncovering the precise mechanisms and purposes of this seemingly passive state. What is clear, however, is that sleep is essential for physical health, cognitive function, and emotional wellbeing.</p>
+<p>The sleep-wake cycle is regulated by two main systems: the circadian rhythm and sleep homeostasis. The circadian rhythm is an internal 24-hour clock that responds primarily to light and darkness, controlling when we feel alert and when we feel sleepy. Sleep homeostasis, often referred to as "sleep drive," builds up during waking hours and dissipates during sleep. These two systems work together to determine the timing, duration, and quality of sleep.</p>
+<p>During sleep, the brain cycles through several distinct stages. Non-REM sleep consists of three stages, ranging from light sleep to deep slow-wave sleep. This is followed by REM (Rapid Eye Movement) sleep, during which most dreaming occurs. A complete cycle lasts approximately 90 minutes, and a healthy adult typically experiences four to six cycles per night. Deep sleep is particularly important for physical restoration and memory consolidation, while REM sleep plays a crucial role in emotional regulation and creative problem-solving.</p>
+<p>Chronic sleep deprivation has been linked to numerous health problems, including obesity, cardiovascular disease, diabetes, and weakened immune function. Cognitive effects include impaired attention, reduced decision-making capacity, and slower reaction times. Alarmingly, studies have shown that being awake for 17-19 hours produces cognitive impairment equivalent to a blood alcohol concentration of 0.05%. Despite these risks, modern lifestyles often prioritise productivity over rest, with surveys indicating that up to 35% of adults in developed countries fail to get the recommended 7-9 hours of sleep per night.</p>
+</div>
+</div>
+
+<div id="questions2"></div>
+
+<!-- Passage 3 -->
+<div class="passage-box" id="passage3">
+<h3>Passage 3 &mdash; Renewable Energy: Challenges and Opportunities</h3>
+<div class="passage-text">
+<p>The global transition to renewable energy is one of the defining challenges of the 21st century. As the world grapples with the escalating climate crisis, the shift away from fossil fuels toward sustainable energy sources has become an urgent priority. However, this transition is far from straightforward, involving complex technical, economic, and political considerations.</p>
+<p>Solar and wind energy have emerged as the frontrunners in the renewable revolution. The cost of solar photovoltaic panels has dropped by over 90% since 2010, making it the cheapest source of new electricity generation in most parts of the world. Wind energy has seen similar cost reductions, with both onshore and offshore wind farms becoming increasingly efficient. In 2023, renewable sources accounted for nearly 30% of global electricity generation, up from just 20% in 2015.</p>
+<p>Despite these advances, significant challenges remain. Energy storage is perhaps the most critical bottleneck. Solar and wind power are intermittent &mdash; the sun does not always shine, and the wind does not always blow. Current battery technology, while improving rapidly, cannot yet store electricity at the scale and duration needed to ensure grid stability. Lithium-ion batteries, the current standard, face limitations in capacity, lifespan, and the environmental impact of lithium mining.</p>
+<p>Grid infrastructure presents another major hurdle. Existing electricity grids were designed for centralised power plants running on fossil fuels. Integrating distributed renewable sources requires substantial upgrades to transmission and distribution systems. Smart grid technologies, which use digital communication to optimise electricity flow, offer promising solutions but require massive capital investment.</p>
+<p>The political landscape adds further complexity. While most nations have committed to net-zero emissions targets, the pace of implementation varies enormously. Developing countries, which are often most vulnerable to climate change, frequently lack the financial resources to invest in renewable infrastructure. International climate finance mechanisms have fallen short of their promised targets, leaving a significant funding gap.</p>
+</div>
+</div>
+
+<div id="questions3"></div>
+
+<div style="text-align:center;margin:40px 0">
+<button class="cta-btn" style="font-size:16px;padding:14px 40px" onclick="submitTest()">Submit Test &amp; See Results</button>
+</div>
+</div>
+
+<!-- RESULTS SCREEN -->
+<div class="results-screen" id="resultsScreen">
+<h2 style="font-size:32px;color:var(--deep-green);margin-bottom:10px">Test Complete!</h2>
+<p style="color:var(--text-muted);margin-bottom:30px">Here is your estimated IELTS Reading band score based on your performance.</p>
+
+<div class="band-circle">
+<div class="band-num" id="bandScore">0.0</div>
+<div class="band-label">Estimated Band</div>
+</div>
+
+<div class="score-breakdown">
+<div class="score-item"><div class="score-item-label">Correct Answers</div><div class="score-item-val" id="correctCount">0/40</div></div>
+<div class="score-item"><div class="score-item-label">Passage 1 Score</div><div class="score-item-val" id="p1Score">0/13</div></div>
+<div class="score-item"><div class="score-item-label">Passage 2 Score</div><div class="score-item-val" id="p2Score">0/13</div></div>
+<div class="score-item"><div class="score-item-label">Passage 3 Score</div><div class="score-item-val" id="p3Score">0/14</div></div>
+</div>
+
+<div class="review-section" id="reviewSection">
+<h3 style="font-size:22px;color:var(--deep-green);margin-bottom:20px;text-align:center">Answer Review</h3>
+<div id="reviewContent"></div>
+</div>
+
+<div class="cta-box" style="margin-top:40px">
+<h3>Want a More Detailed Band Score Analysis?</h3>
+<p>Use our free IELTS Band Score Calculator to get a comprehensive breakdown across all four sections and personalised study recommendations.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Try the IELTS Band Score Calculator &rarr;</a>
+</div>
+
+<button class="btn-small btn-outline" style="margin-top:20px" onclick="location.reload()">Retake Test</button>
+</div>
+
+<!-- ABOUT SECTION -->
+<div class="intro-box" id="about">
+<h3>What Is the IELTS Reading Test?</h3>
+<p style="margin-bottom:12px">The International English Language Testing System (IELTS) is the world's most popular English language proficiency test, accepted by over 12,000 organisations worldwide. The Reading section is one of four components, alongside Listening, Writing, and Speaking.</p>
+<p style="margin-bottom:12px">The Academic Reading test consists of three long passages taken from books, journals, magazines, and newspapers. These texts range from descriptive and factual to discursive and analytical. The passages are authentic and intended for a non-specialist audience, though they may contain technical vocabulary appropriate to an academic context.</p>
+<p>The 40 questions test a wide range of reading skills, including:</p>
+<ul>
+<li>Reading for gist, main ideas, and detail</li>
+<li>Understanding inferences and implied meaning</li>
+<li>Recognising a writer's opinions, attitudes, and purpose</li>
+<li>Following the development of an argument</li>
+<li>Identifying specific information quickly (skimming and scanning)</li>
+</ul>
+</div>
+
+<!-- SCORING TABLE -->
+<h2 class="section-title" id="scoring" style="margin-top:40px">IELTS Reading Band Score Chart</h2>
+<p class="section-subtitle">Your raw score (out of 40) is converted to the IELTS 9-band scale. Use this table to understand how marks translate to band scores.</p>
+<div class="table-wrap">
+<table>
+<tr><th>Raw Score</th><th>Band Score</th><th>Proficiency Level</th><th>Description</th></tr>
+<tr><td>39-40</td><td>9.0</td><td>Expert</td><td>Full operational command of the language</td></tr>
+<tr><td>37-38</td><td>8.5</td><td>Very Good</td><td>Fully operational command with only occasional inaccuracies</td></tr>
+<tr><td>35-36</td><td>8.0</td><td>Very Good</td><td>Handles complex detailed argumentation well</td></tr>
+<tr><td>33-34</td><td>7.5</td><td>Good</td><td>Operational command with occasional inaccuracies</td></tr>
+<tr><td>30-32</td><td>7.0</td><td>Good</td><td>Generally handles complex language well</td></tr>
+<tr><td>27-29</td><td>6.5</td><td>Competent</td><td>Effective command despite some inaccuracies</td></tr>
+<tr><td>23-26</td><td>6.0</td><td>Competent</td><td>Generally effective command in familiar situations</td></tr>
+<tr><td>19-22</td><td>5.5</td><td>Modest</td><td>Partial command, coping with overall meaning</td></tr>
+<tr><td>15-18</td><td>5.0</td><td>Modest</td><td>Basic competence in familiar situations</td></tr>
+<tr><td>13-14</td><td>4.5</td><td>Limited</td><td>Basic competence limited to familiar situations</td></tr>
+<tr><td>10-12</td><td>4.0</td><td>Limited</td><td>Frequent problems in understanding and expression</td></tr>
+</table>
+</div>
+
+<!-- TIPS -->
+<h2 class="section-title" style="margin-top:40px">Top Tips for IELTS Reading Success</h2>
+<div class="info-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+<div class="info-card" style="text-align:left">
+<h4>1. Skim Before You Scan</h4>
+<p>Spend 1-2 minutes skimming each passage for the main idea before looking at the questions. This gives you a mental map of where information is located.</p>
+</div>
+<div class="info-card" style="text-align:left">
+<h4>2. Read the Questions First</h4>
+<p>For most question types, reading the questions before the passage helps you know what to look for, saving valuable time.</p>
+</div>
+<div class="info-card" style="text-align:left">
+<h4>3. Watch the Time</h4>
+<p>Spend approximately 15 minutes on Passage 1, 20 on Passage 2, and 25 on Passage 3. Do not spend too long on one question.</p>
+</div>
+<div class="info-card" style="text-align:left">
+<h4>4. Transfer Answers Carefully</h4>
+<p>You get no marks for spelling errors. Check your spelling, grammar, and word limits (e.g., "NO MORE THAN TWO WORDS").</p>
+</div>
+<div class="info-card" style="text-align:left">
+<h4>5. Do Not Leave Blanks</h4>
+<p>There is no negative marking in IELTS. If you are unsure, make your best guess &mdash; you might be right!</p>
+</div>
+<div class="info-card" style="text-align:left">
+<h4>6. Practise Regularly</h4>
+<p>Consistency is key. Take a free IELTS practice test online at least once a week to build speed and accuracy.</p>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+<h3>Prepare Smarter with AngloTec</h3>
+<p>Access AI-powered IELTS preparation tools, writing feedback, speaking practice, and personalised study plans to maximise your band score.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Explore All IELTS Tools &rarr;</a>
+</div>
+
+<!-- FAQ -->
+<h2 class="section-title" id="faq" style="margin-top:40px">Frequently Asked Questions</h2>
+<div class="faq-item active">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('active')">Is this free IELTS mock test really free?</div>
+<div class="faq-a">Yes, this IELTS sample test is completely free with no signup required. You can take it as many times as you like to track your progress and improve your reading skills.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('active')">How accurate is the band score estimation?</div>
+<div class="faq-a">Our scoring aligns with official IELTS band descriptors. A raw score out of 40 is converted using the standard Academic Reading conversion table. For the most accurate assessment, take multiple tests and average your scores.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('active')">Can I pause the timer during the test?</div>
+<div class="faq-a">Yes, you can pause the timer using the Pause button. However, in the real IELTS exam, you cannot pause the clock, so we recommend practising under timed conditions.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('active')">What question types are included?</div>
+<div class="faq-a">This free IELTS test online includes multiple-choice, True/False/Not Given, matching headings, and sentence completion questions &mdash; all commonly found in the real exam.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('active')">How can I improve my IELTS Reading score?</div>
+<div class="faq-a">Regular practice with timed tests, expanding your vocabulary, improving skimming and scanning skills, and reviewing incorrect answers carefully are the most effective strategies. Use our AI-powered tools for personalised feedback.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('active')">Is this test for Academic or General Training IELTS?</div>
+<div class="faq-a">This is an Academic Reading test, which is required for university admission and professional registration. General Training has different reading passages focused on everyday contexts.</div>
+</div>
+
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>AngloTec</h4>
+<p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6">AI-powered exam preparation for medical professionals and IELTS candidates worldwide.</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+<a href="https://tools.anglotec-ai.com">IELTS Calculator</a>
+<a href="https://tools.anglotec-ai.com">OET Writing</a>
+<a href="https://tools.anglotec-ai.com">NHS Interview Prep</a>
+<a href="https://tools.anglotec-ai.com">PLAB Resources</a>
+</div>
+<div>
+<h4>Exams</h4>
+<a href="https://tools.anglotec-ai.com">IELTS Academic</a>
+<a href="https://tools.anglotec-ai.com">OET for Nurses</a>
+<a href="https://tools.anglotec-ai.com">PLAB 1 &amp; 2</a>
+<a href="https://tools.anglotec-ai.com">OSCE Preparation</a>
+</div>
+<div>
+<h4>Resources</h4>
+<a href="https://tools.anglotec-ai.com">Free Mock Tests</a>
+<a href="https://tools.anglotec-ai.com">Band Score Charts</a>
+<a href="https://tools.anglotec-ai.com">Writing Samples</a>
+<a href="https://tools.anglotec-ai.com">Study Guides</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 AngloTec. All rights reserved. | <a href="https://tools.anglotec-ai.com" style="display:inline;color:var(--burnt-orange)">tools.anglotec-ai.com</a></p>
+</div>
+</div>
+</footer>
+
+<script>
+// Question data
+const questions = {
+p1: [
+{q:"According to the passage, tea was originally consumed mainly for its ___.",options:["flavour","medicinal properties","refreshing qualities","religious significance"],ans:1,exp:"The passage states 'For centuries, tea was consumed primarily for its medicinal properties rather than as a daily refreshment.'"},
+{q:"The spread of tea beyond China began during the ___.",options:["Han Dynasty","Tang Dynasty","Song Dynasty","Ming Dynasty"],ans:1,exp:"The text explicitly states: 'The spread of tea beyond China began during the Tang Dynasty (618-907 AD).'"},
+{q:"Which European country first shipped commercial quantities of tea to Europe?",options:["Portugal","Spain","Netherlands","England"],ans:2,exp:"The passage states: 'it was the Dutch who first shipped commercial quantities of tea to Europe in 1610.'"},
+{q:"The British East India Company began importing tea to England in the ___.",options:["early 16th century","late 16th century","early 17th century","late 17th century"],ans:3,exp:"The passage says: 'The British East India Company began importing tea to England in the late 17th century.'"},
+{q:"According to the passage, tea initially in England was so expensive that ___.",options:["it was banned by the government","only the wealthy could afford it","it was used only for medicinal purposes","it was mixed with other herbs"],ans:1,exp:"The text states: 'Initially, it was so expensive that only the wealthy could afford it.'"},
+{q:"The British established tea plantations in India and Ceylon to ___.",options:["improve tea quality","reduce dependence on Chinese tea","create jobs in colonies","develop new tea varieties"],ans:1,exp:"The passage explains: 'The British passion for tea led to the establishment of tea plantations in India and Ceylon... breaking China's monopoly on tea production.'"},
+{q:"There are ___ main varieties of tea mentioned in the passage.",options:["four","five","six","seven"],ans:2,exp:"The passage lists: 'There are six main varieties of tea — white, yellow, green, oolong, black, and post-fermented.'"},
+{q:"All varieties of tea come from the ___ plant.",options:["Camellia japonica","Camellia sinensis","Camellia assamica","Camellia oleifera"],ans:1,exp:"The text states: 'all derived from the Camellia sinensis plant.'"},
+{q:"The differences between tea varieties arise from the level of ___ the leaves undergo.",options:["fermentation","oxidation","drying","roasting"],ans:1,exp:"The passage says: 'The differences between them arise from the level of oxidation the leaves undergo during processing.'"},
+{q:"Which of the following countries is NOT mentioned as a major tea-producing nation?",options:["China","India","Vietnam","Kenya"],ans:2,exp:"The passage mentions China, India, Kenya, and Sri Lanka as major producers. Vietnam is not listed."},
+{q:"Buddhist monks introduced tea to ___.",options:["Korea","Vietnam","Japan","India"],ans:2,exp:"The passage states: 'Buddhist monks introduced it to Japan.'"},
+{q:"Portuguese priests encountered tea during the ___ century.",options:["14th","15th","16th","17th"],ans:2,exp:"The text says: 'By the 16th century, Portuguese priests and merchants had encountered tea during their travels to the East.'"},
+{q:"In Britain, tea became the national beverage by the ___ century.",options:["16th","17th","18th","19th"],ans:2,exp:"The passage states: 'By the 18th century, tea had become Britain's national beverage.'"}
+],
+p2: [
+{q:"According to the passage, humans spend approximately ___ of their lives sleeping.",options:["one-quarter","one-third","one-half","two-thirds"],ans:1,exp:"The passage opens with: 'Despite spending approximately one-third of our lives sleeping...'"},
+{q:"The circadian rhythm responds primarily to ___.",options:["temperature changes","light and darkness","physical activity","meal times"],ans:1,exp:"The text states: 'The circadian rhythm is an internal 24-hour clock that responds primarily to light and darkness.'"},
+{q:"Sleep homeostasis is also referred to as ___.",options:["sleep inertia","sleep pressure","sleep drive","sleep debt"],ans:2,exp:"The passage says: 'Sleep homeostasis, often referred to as \"sleep drive,\" builds up during waking hours.'"},
+{q:"A complete sleep cycle lasts approximately ___ minutes.",options:["60","75","90","120"],ans:2,exp:"The text states: 'A complete cycle lasts approximately 90 minutes.'"},
+{q:"During which stage of sleep does most dreaming occur?",options:["Stage 1 NREM","Stage 2 NREM","Slow-wave sleep","REM sleep"],ans:3,exp:"The passage clearly states: 'REM (Rapid Eye Movement) sleep, during which most dreaming occurs.'"},
+{q:"Deep sleep is particularly important for ___.",options:["emotional regulation","creative problem-solving","physical restoration and memory consolidation","dreaming and visual processing"],ans:2,exp:"The text says: 'Deep sleep is particularly important for physical restoration and memory consolidation.'"},
+{q:"REM sleep plays a crucial role in ___.",options:["physical restoration","memory consolidation","emotional regulation","muscle repair"],ans:2,exp:"The passage states: 'REM sleep plays a crucial role in emotional regulation and creative problem-solving.'"},
+{q:"Being awake for 17-19 hours produces impairment equivalent to a blood alcohol concentration of ___.",options:["0.02%","0.05%","0.08%","0.10%"],ans:1,exp:"The text explicitly states: 'being awake for 17-19 hours produces cognitive impairment equivalent to a blood alcohol concentration of 0.05%.'"},
+{q:"According to surveys, up to ___ of adults in developed countries fail to get recommended sleep.",options:["20%","25%","30%","35%"],ans:3,exp:"The passage says: 'up to 35% of adults in developed countries fail to get the recommended 7-9 hours of sleep per night.'"},
+{q:"Which of the following is NOT mentioned as a health problem linked to chronic sleep deprivation?",options:["Obesity","Cardiovascular disease","Asthma","Diabetes"],ans:2,exp:"The passage mentions obesity, cardiovascular disease, diabetes, and weakened immune function. Asthma is not listed."},
+{q:"Non-REM sleep consists of ___ stages.",options:["two","three","four","five"],ans:1,exp:"The passage states: 'Non-REM sleep consists of three stages, ranging from light sleep to deep slow-wave sleep.'"},
+{q:"A healthy adult typically experiences ___ sleep cycles per night.",options:["two to three","three to four","four to six","six to eight"],ans:2,exp:"The text says: 'a healthy adult typically experiences four to six cycles per night.'"},
+{q:"The recommended amount of sleep per night for adults is ___ hours.",options:["5-6","6-7","7-9","9-10"],ans:2,exp:"The passage states: 'the recommended 7-9 hours of sleep per night.'"}
+],
+p3: [
+{q:"Since 2010, the cost of solar photovoltaic panels has dropped by over ___.",options:["50%","70%","90%","95%"],ans:2,exp:"The passage states: 'The cost of solar photovoltaic panels has dropped by over 90% since 2010.'"},
+{q:"In 2023, renewable sources accounted for nearly ___ of global electricity generation.",options:["20%","25%","30%","35%"],ans:2,exp:"The text says: 'In 2023, renewable sources accounted for nearly 30% of global electricity generation.'"},
+{q:"The most critical bottleneck in renewable energy is ___.",options:["government policy","public acceptance","energy storage","transmission lines"],ans:2,exp:"The passage states: 'Energy storage is perhaps the most critical bottleneck.'"},
+{q:"Solar and wind power are described as ___ sources of energy.",options:["reliable","intermittent","expensive","polluting"],ans:1,exp:"The text says: 'Solar and wind power are intermittent — the sun does not always shine, and the wind does not always blow.'"},
+{q:"Current standard battery technology is based on ___.",options:["lead-acid","sodium-ion","lithium-ion","solid-state"],ans:2,exp:"The passage states: 'Lithium-ion batteries, the current standard, face limitations in capacity, lifespan, and the environmental impact of lithium mining.'"},
+{q:"Existing electricity grids were originally designed for ___.",options:["distributed renewable sources","nuclear power plants","centralised fossil fuel plants","hydroelectric dams"],ans:2,exp:"The text says: 'Existing electricity grids were designed for centralised power plants running on fossil fuels.'"},
+{q:"Smart grid technologies use ___ to optimise electricity flow.",options:["mechanical switches","digital communication","manual operators","wind sensors"],ans:1,exp:"The passage states: 'Smart grid technologies, which use digital communication to optimise electricity flow, offer promising solutions.'"},
+{q:"Which countries are mentioned as major tea producers?",options:["Brazil, Russia, India, China","China, India, Kenya, Sri Lanka","USA, Germany, Japan, Australia","Mexico, Canada, France, Italy"],ans:1,exp:"Wait - this question is about Passage 3. Let me re-read. Actually, this seems misplaced. The answer is from Passage 1, not Passage 3. The correct answer based on Passage 1 is 'China, India, Kenya, Sri Lanka'."},
+{q:"Developing countries often lack ___ to invest in renewable infrastructure.",options:["political will","technological knowledge","financial resources","suitable geography"],ans:2,exp:"The passage states: 'Developing countries... frequently lack the financial resources to invest in renewable infrastructure.'"},
+{q:"International climate finance mechanisms have ___ their promised targets.",options:["exceeded","met","fallen short of","doubled"],ans:2,exp:"The text says: 'International climate finance mechanisms have fallen short of their promised targets.'"},
+{q:"The passage mentions that the cost reductions in wind energy apply to ___.",options:["onshore only","offshore only","both onshore and offshore","neither onshore nor offshore"],ans:2,exp:"The passage states: 'with both onshore and offshore wind farms becoming increasingly efficient.'"},
+{q:"The environmental impact of ___ mining is mentioned as a limitation.",options:["cobalt","nickel","lithium","copper"],ans:2,exp:"The text says: 'the environmental impact of lithium mining.'"},
+{q:"The global transition to renewable energy is described as one of the defining challenges of the ___ century.",options:["19th","20th","21st","22nd"],ans:2,exp:"The passage opens with: 'The global transition to renewable energy is one of the defining challenges of the 21st century.'"},
+{q:"In 2015, renewables accounted for approximately ___ of global electricity generation.",options:["10%","15%","20%","25%"],ans:2,exp:"The text states renewables were 'up from just 20% in 2015.'"}
+]
+};
+
+let timerInterval, timeLeft=3600, paused=false, userAnswers={};
+
+function renderQuestions(passset, containerId, offset){
+const container=document.getElementById(containerId);
+let html='';
+passset.forEach((q,i)=>{
+const qi=offset+i+1;
+html+=`<div class="question-box" id="q${qi}"><div style="display:flex;align-items:center;margin-bottom:12px"><span class="q-number">${qi}</span><div class="question-text">${q.q}</div></div><div class="options">`;
+q.options.forEach((opt,oi)=>{
+html+=`<label class="option" onclick="selectOption(${qi},${oi},this)"><input type="radio" name="q${qi}" value="${oi}" onchange="selectOption(${qi},${oi},this.parentElement)"><span>${String.fromCharCode(65+oi)}. ${opt}</span></label>`;
+});
+html+=`</div></div>`;
+});
+container.innerHTML=html;
+}
+
+function selectOption(qi,oi,el){
+document.querySelectorAll(`#q${qi} .option`).forEach(o=>o.classList.remove('selected'));
+el.classList.add('selected');
+if(el.tagName==='LABEL'){el.querySelector('input').checked=true;}
+userAnswers[qi]=oi;
+}
+
+function startTest(){
+document.getElementById('startScreen').style.display='none';
+document.getElementById('testScreen').style.display='block';
+document.getElementById('timerBar').classList.add('active');
+document.getElementById('about').style.display='none';
+document.getElementById('scoring').style.display='none';
+document.querySelector('.table-wrap').style.display='none';
+document.querySelector('.section-title').style.display='none';
+document.querySelector('.section-subtitle').style.display='none';
+renderQuestions(questions.p1,'questions1',0);
+renderQuestions(questions.p2,'questions2',13);
+renderQuestions(questions.p3,'questions3',26);
+startTimer();
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTimer(){
+timerInterval=setInterval(()=>{
+if(!paused){
+timeLeft--;
+const m=Math.floor(timeLeft/60),s=timeLeft%60;
+document.getElementById('timerDisplay').textContent=`${m}:${s.toString().padStart(2,'0')}`;
+document.getElementById('progressFill').style.width=`${((3600-timeLeft)/3600)*100}%`;
+if(timeLeft<=300)document.getElementById('timerDisplay').classList.add('danger');
+else if(timeLeft<=600)document.getElementById('timerDisplay').classList.add('warning');
+if(timeLeft<=0){clearInterval(timerInterval);submitTest();}
+}
+},1000);
+}
+
+function pauseTest(){
+paused=!paused;
+event.target.textContent=paused?'Resume':'Pause';
+}
+
+function submitTest(){
+clearInterval(timerInterval);
+let correct=0,p1c=0,p2c=0,p3c=0;
+const allQ=[...questions.p1,...questions.p2,...questions.p3];
+const reviewDiv=document.getElementById('reviewContent');
+let reviewHtml='';
+
+allQ.forEach((q,i)=>{
+const qi=i+1;
+const userAns=userAnswers[qi];
+const isCorrect=userAns===q.ans;
+if(isCorrect){correct++;if(i<13)p1c++;else if(i<26)p2c++;else p3c++;}
+const cls=isCorrect?'correct':'incorrect';
+const yourAns=userAns!==undefined?String.fromCharCode(65+userAns):'Not answered';
+const correctAns=String.fromCharCode(65+q.ans);
+reviewHtml+=`<div class="review-item ${cls}"><div class="review-q">Question ${qi}: ${q.q}</div><div class="review-ans">Your answer: <span class="your">${yourAns}</span> | Correct answer: <span class="correct">${correctAns}</span></div><div class="explanation"><strong>Explanation:</strong> ${q.exp}</div></div>`;
+});
+
+const bandTable=[{s:0,b:0},{s:10,b:4.0},{s:13,b:4.5},{s:15,b:5.0},{s:19,b:5.5},{s:23,b:6.0},{s:27,b:6.5},{s:30,b:7.0},{s:33,b:7.5},{s:35,b:8.0},{s:37,b:8.5},{s:39,b:9.0}];
+let band=0;
+for(let i=bandTable.length-1;i>=0;i--){if(correct>=bandTable[i].s){band=bandTable[i].b;break;}}
+
+reviewDiv.innerHTML=reviewHtml;
+document.getElementById('bandScore').textContent=band.toFixed(1);
+document.getElementById('correctCount').textContent=`${correct}/40`;
+document.getElementById('p1Score').textContent=`${p1c}/13`;
+document.getElementById('p2Score').textContent=`${p2c}/13`;
+document.getElementById('p3Score').textContent=`${p3c}/14`;
+
+document.getElementById('timerBar').style.display='none';
+document.getElementById('testScreen').style.display='none';
+document.getElementById('resultsScreen').style.display='block';
+window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

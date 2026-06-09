@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OET to IELTS Score Converter | NMC Registration Requirements</title>
+  <meta name="description" content="Free OET to IELTS score converter. Convert OET grades (A-E) to equivalent IELTS bands. Includes NMC registration requirements and grade breakdown by skill. Essential for nurses registering in the UK.">
+  <meta name="keywords" content="oet to ielts conversion, oet grade to ielts, oet score equivalent to ielts, oet nursing, nmc oet requirements, oet ielts converter">
+  <meta property="og:title" content="OET to IELTS Score Converter | NMC Registration Requirements">
+  <meta property="og:description" content="Convert OET grades to IELTS bands. Includes NMC registration requirements for nurses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tools.anglotec-ai.com/oet-ielts-converter">
+  <link rel="canonical" href="https://tools.anglotec-ai.com/oet-ielts-converter">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--green:#2C4A3E;--green-light:#3D5F52;--green-dark:#1E352C;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F4F0;--white:#FFFFFF;--text:#2A2A2A;--text-light:#6B7280;--border:#E2DDD7;--success:#059669;--danger:#DC2626;--warning:#D97706}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .header-flex{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);text-decoration:none}
+    .logo span{color:var(--orange)}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{color:var(--white);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--orange)}
+    .mobile-menu{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+    .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--white);padding:60px 0;text-align:center}
+    .hero h1{font-size:2.5rem;margin-bottom:16px;line-height:1.2}
+    .hero p{font-size:1.1rem;opacity:.9;max-width:650px;margin:0 auto}
+    .hero-badge{display:inline-block;background:var(--orange);color:var(--white);padding:6px 16px;border-radius:30px;font-size:.8rem;font-weight:600;margin-top:20px;text-transform:uppercase;letter-spacing:1px}
+    .main{padding:40px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--white);border-radius:16px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);margin-bottom:24px}
+    .card-title{font-size:1.3rem;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .card-title i{color:var(--orange)}
+    /* Grade Cards */
+    .grade-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:20px 0}
+    .grade-card{padding:16px 10px;border-radius:12px;text-align:center;cursor:pointer;transition:all .2s;border:3px solid transparent}
+    .grade-card:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+    .grade-card.selected{border-color:var(--orange);transform:scale(1.05);box-shadow:0 6px 20px rgba(212,101,59,.25)}
+    .grade-card .grade-letter{font-size:2.2rem;font-weight:700;font-family:'Playfair Display',serif;line-height:1}
+    .grade-card .grade-label{font-size:.7rem;margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+    .grade-card .grade-ielts{font-size:.85rem;margin-top:4px;opacity:.8}
+    .grade-a{background:linear-gradient(135deg,#059669,#047857);color:#fff}
+    .grade-b{background:linear-gradient(135deg,#3B82F6,#2563EB);color:#fff}
+    .grade-c{background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff}
+    .grade-d{background:linear-gradient(135deg,#6B7280,#4B5563);color:#fff}
+    .grade-e{background:linear-gradient(135deg,#DC2626,#B91C1C);color:#fff}
+    /* Result */
+    .result-area{background:var(--cream);padding:24px;border-radius:12px;margin-top:20px;text-align:center}
+    .result-ielts{font-size:3.5rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--green);line-height:1}
+    .result-label{font-size:1rem;color:var(--text-light);margin-top:8px}
+    .skill-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+    .skill-card{background:var(--white);padding:14px;border-radius:10px;text-align:center}
+    .skill-card h4{font-size:.7rem;color:var(--text-light);margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:600;text-transform:uppercase}
+    .skill-card .skill-score{font-size:1.4rem;font-weight:700;color:var(--green)}
+    /* NMC Box */
+    .nmc-box{background:linear-gradient(135deg,#FEF3C7,#FDE68A);border-left:4px solid var(--warning);padding:20px 24px;border-radius:0 12px 12px 0;margin:20px 0}
+    .nmc-box h3{color:var(--green-dark);font-size:1.1rem;margin-bottom:10px}
+    .nmc-box ul{list-style:none;padding:0;font-size:.9rem}
+    .nmc-box li{padding:6px 0;display:flex;align-items:center;gap:8px}
+    .nmc-box .pass{color:var(--success);font-weight:600}
+    .nmc-box .fail{color:var(--danger)}
+    /* Table */
+    .comp-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:16px}
+    .comp-table th{background:var(--green);color:var(--white);padding:12px;text-align:center;font-weight:600}
+    .comp-table td{padding:10px;text-align:center;border-bottom:1px solid var(--border)}
+    .comp-table tr:hover td{background:var(--cream)}
+    .grade-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-weight:700;color:#fff;font-size:.9rem}
+    /* Info */
+    .info-box{background:linear-gradient(135deg,#EBF5FF 0%,#DBEAFE 100%);border-left:4px solid #3B82F6;padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0;font-size:.9rem}
+    .info-box strong{color:var(--green)}
+    .share-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+    .share-label{font-weight:600;color:var(--green);font-size:.9rem}
+    .share-btn{padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;color:var(--white);transition:transform .2s;display:inline-flex;align-items:center;gap:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+    .share-btn:hover{transform:translateY(-2px)}
+    .share-tw{background:#1DA1F2}.share-fb{background:#4267B2}.share-wa{background:#25D366}.share-li{background:#0077B5}.share-copy{background:var(--green)}
+    .cta-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);padding:50px 0;text-align:center;margin-top:40px}
+    .cta-section h2{font-size:2rem;margin-bottom:16px}
+    .cta-section p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto 24px}
+    .cta-btn{background:var(--orange);color:var(--white);padding:16px 36px;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s}
+    .cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    .footer{background:var(--green-dark);color:rgba(255,255,255,.7);padding:30px 0;text-align:center;font-size:.85rem}
+    .footer a{color:var(--orange);text-decoration:none}
+    @media(max-width:768px){
+      .hero h1{font-size:2rem}.nav-links{display:none}.mobile-menu{display:block}
+      .grade-grid{grid-template-columns:repeat(3,1fr)}.skill-breakdown{grid-template-columns:1fr 1fr}
+      .result-ielts{font-size:2.5rem}
+    }
+    .hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-flex">
+      <a href="https://tools.anglotec-ai.com" class="logo">Anglo<span>Tec</span> Tools</a>
+      <nav class="nav-links">
+        <a href="#converter">Converter</a>
+        <a href="#nmc">NMC Requirements</a>
+        <a href="https://tools.anglotec-ai.com/oet-prep" target="_blank">OET Prep</a>
+      </nav>
+      <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('hidden')" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1><i class="fas fa-exchange-alt"></i> OET to IELTS Score Converter</h1>
+      <p>Convert OET grades (A-E) to equivalent IELTS band scores. Includes NMC registration requirements and grade breakdowns for nursing professionals.</p>
+      <span class="hero-badge"><i class="fas fa-user-nurse"></i> For UK Nursing Registration</span>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <div class="grid" id="converter">
+        <div class="card">
+          <h2 class="card-title"><i class="fas fa-mouse-pointer"></i> Select Your OET Grade</h2>
+          <p style="font-size:.9rem;color:var(--text-light);margin-bottom:16px">Click on the grade you received (or expect) in your OET exam to see the IELTS equivalent.</p>
+          <div class="grade-grid">
+            <div class="grade-card grade-a" onclick="selectGrade('A')">
+              <div class="grade-letter">A</div>
+              <div class="grade-label">Highest</div>
+              <div class="grade-ielts">IELTS 8.0-9.0</div>
+            </div>
+            <div class="grade-card grade-b" onclick="selectGrade('B')">
+              <div class="grade-letter">B</div>
+              <div class="grade-label">Good</div>
+              <div class="grade-ielts">IELTS 7.0-7.5</div>
+            </div>
+            <div class="grade-card grade-c" onclick="selectGrade('C+')">
+              <div class="grade-letter">C+</div>
+              <div class="grade-label">Moderate+</div>
+              <div class="grade-ielts">IELTS 6.5</div>
+            </div>
+            <div class="grade-card grade-c" onclick="selectGrade('C')">
+              <div class="grade-letter">C</div>
+              <div class="grade-label">Moderate</div>
+              <div class="grade-ielts">IELTS 5.5-6.0</div>
+            </div>
+            <div class="grade-card grade-d" onclick="selectGrade('D')">
+              <div class="grade-letter">D</div>
+              <div class="grade-label">Limited</div>
+              <div class="grade-ielts">IELTS 4.0-5.0</div>
+            </div>
+            <div class="grade-card grade-e" onclick="selectGrade('E')">
+              <div class="grade-letter">E</div>
+              <div class="grade-label">Low</div>
+              <div class="grade-ielts">Below 4.0</div>
+            </div>
+          </div>
+
+          <div class="result-area" id="resultArea">
+            <div class="result-ielts" id="resultIelts">7.0 - 7.5</div>
+            <div class="result-label">Equivalent IELTS Band Score (Grade B selected)</div>
+            <div class="skill-breakdown" id="skillBreakdown">
+              <div class="skill-card"><h4>Listening</h4><div class="skill-score" id="skillL">7.0+</div></div>
+              <div class="skill-card"><h4>Reading</h4><div class="skill-score" id="skillR">7.0+</div></div>
+              <div class="skill-card"><h4>Writing</h4><div class="skill-score" id="skillW">7.0+</div></div>
+              <div class="skill-card"><h4>Speaking</h4><div class="skill-score" id="skillS">7.0+</div></div>
+            </div>
+            <div id="nmcStatus" style="margin-top:16px;padding:12px;background:var(--success);color:#fff;border-radius:10px;font-weight:600">
+              <i class="fas fa-check-circle"></i> Meets NMC Registration Requirement (Grade B minimum)
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" id="nmc">
+            <h2 class="card-title"><i class="fas fa-hospital"></i> NMC Registration Requirements</h2>
+            <div class="nmc-box">
+              <h3><i class="fas fa-clipboard-check"></i> NMC English Language Requirements</h3>
+              <ul>
+                <li><span class="pass"><i class="fas fa-check"></i></span> <strong>OET:</strong> Grade B (350+) in Listening, Reading, Writing AND Speaking</li>
+                <li><span class="pass"><i class="fas fa-check"></i></span> <strong>IELTS:</strong> 7.0 in Reading, Listening, Speaking; 6.5 in Writing</li>
+                <li><span class="pass"><i class="fas fa-check"></i></span> <strong>Combined:</strong> IELTS 7.0 (R,L,S) + 6.5 (W) accepted</li>
+                <li><span class="fail"><i class="fas fa-times"></i></span> IELTS scores below 6.5 in any band = rejected</li>
+                <li><span class="fail"><i class="fas fa-times"></i></span> OET Grade C or below in any skill = rejected</li>
+              </ul>
+            </div>
+            <div class="info-box">
+              <strong>Important:</strong> NMC recently updated requirements (2023). You can now combine OET and IELTS scores from two tests taken within 6 months. All scores must meet minimum thresholds.
+            </div>
+            <div style="margin-top:16px;font-size:.9rem">
+              <p style="margin-bottom:8px"><strong>OET Score Ranges:</strong></p>
+              <ul style="padding-left:20px;color:var(--text-light)">
+                <li>Grade A: 450-500 (IELTS 8.0-9.0)</li>
+                <li>Grade B: 350-440 (IELTS 7.0-7.5)</li>
+                <li>Grade C+: 300-340 (IELTS 6.5)</li>
+                <li>Grade C: 200-290 (IELTS 5.5-6.0)</li>
+                <li>Grade D: 100-190 (IELTS 4.0-5.0)</li>
+                <li>Grade E: 0-90 (Below IELTS 4.0)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-lightbulb"></i> OET vs IELTS for Nurses</h2>
+            <ul style="list-style:none;padding:0;font-size:.9rem">
+              <li style="padding:8px 0;border-bottom:1px solid var(--border)"><i class="fas fa-check" style="color:var(--success);margin-right:8px"></i> OET uses <strong>healthcare-specific</strong> scenarios</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--border)"><i class="fas fa-check" style="color:var(--success);margin-right:8px"></i> IELTS is <strong>general academic</strong> English</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--border)"><i class="fas fa-check" style="color:var(--success);margin-right:8px"></i> Most nurses find <strong>OET Writing easier</strong></li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--border)"><i class="fas fa-check" style="color:var(--success);margin-right:8px"></i> OET Speaking uses <strong>nurse-patient roleplay</strong></li>
+              <li style="padding:8px 0"><i class="fas fa-check" style="color:var(--success);margin-right:8px"></i> Both accepted by <strong>NMC, GMC, HCPC</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Table -->
+      <div class="card">
+        <h2 class="card-title"><i class="fas fa-table"></i> Complete OET to IELTS Equivalency Table</h2>
+        <div style="overflow-x:auto">
+          <table class="comp-table">
+            <thead>
+              <tr><th>OET Grade</th><th>OET Score Range</th><th>IELTS Equivalent</th><th>CEFR Level</th><th>NMC Accepted?</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="grade-badge grade-a" style="background:linear-gradient(135deg,#059669,#047857)">A</span></td><td>450 - 500</td><td style="font-weight:700;color:var(--green)">8.0 - 9.0</td><td>C2</td><td style="color:var(--success);font-weight:600"><i class="fas fa-check-circle"></i> Yes</td></tr>
+              <tr><td><span class="grade-badge grade-b" style="background:linear-gradient(135deg,#3B82F6,#2563EB)">B</span></td><td>350 - 440</td><td style="font-weight:700;color:var(--green)">7.0 - 7.5</td><td>C1</td><td style="color:var(--success);font-weight:600"><i class="fas fa-check-circle"></i> Yes</td></tr>
+              <tr><td><span class="grade-badge" style="background:linear-gradient(135deg,#F59E0B,#D97706)">C+</span></td><td>300 - 340</td><td style="font-weight:700">6.5</td><td>B2+</td><td style="color:var(--danger)"><i class="fas fa-times-circle"></i> No (unless combined)</td></tr>
+              <tr><td><span class="grade-badge" style="background:linear-gradient(135deg,#D97706,#B45309)">C</span></td><td>200 - 290</td><td style="font-weight:700">5.5 - 6.0</td><td>B2</td><td style="color:var(--danger)"><i class="fas fa-times-circle"></i> No</td></tr>
+              <tr><td><span class="grade-badge" style="background:linear-gradient(135deg,#6B7280,#4B5563)">D</span></td><td>100 - 190</td><td style="font-weight:700">4.0 - 5.0</td><td>B1</td><td style="color:var(--danger)"><i class="fas fa-times-circle"></i> No</td></tr>
+              <tr><td><span class="grade-badge" style="background:linear-gradient(135deg,#DC2626,#B91C1C)">E</span></td><td>0 - 90</td><td style="font-weight:700">Below 4.0</td><td>A1-A2</td><td style="color:var(--danger)"><i class="fas fa-times-circle"></i> No</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div class="share-bar">
+        <span class="share-label"><i class="fas fa-share-alt"></i> Share:</span>
+        <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?text=Free+OET+to+IELTS+Score+Converter+for+Nurses&url=https://tools.anglotec-ai.com/oet-ielts-converter" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/oet-ielts-converter" target="_blank"><i class="fab fa-facebook-f"></i> Share</a>
+        <a class="share-btn share-wa" href="https://wa.me/?text=OET+to+IELTS+converter+for+nurses:+https://tools.anglotec-ai.com/oet-ielts-converter" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/oet-ielts-converter" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <button class="share-btn share-copy" onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+      </div>
+    </div>
+  </main>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Pass Your OET First Time</h2>
+      <p>Specialized OET preparation for nurses. Healthcare-focused vocabulary, roleplay practice, writing correction, and listening exercises tailored to the nursing profession.</p>
+      <a href="https://tools.anglotec-ai.com/oet-prep" class="cta-btn" target="_blank"><i class="fas fa-user-nurse"></i> Start OET Prep</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>For educational purposes. Always verify with official NMC guidance. &copy; 2025 <a href="https://tools.anglotec-ai.com">AngloTec AI</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const gradeData={
+      A:{ielts:'8.0 - 9.0',listening:'8.0+',reading:'8.0+',writing:'8.0+',speaking:'8.0+',nmc:true,msg:'Exceeds NMC requirements'},
+      B:{ielts:'7.0 - 7.5',listening:'7.0+',reading:'7.0+',writing:'7.0+',speaking:'7.0+',nmc:true,msg:'Meets NMC Registration Requirement'},
+      'C+':{ielts:'6.5',listening:'6.5',reading:'6.5',writing:'6.5',speaking:'6.5',nmc:false,msg:'Below NMC requirement. Need Grade B minimum.'},
+      C:{ielts:'5.5 - 6.0',listening:'5.5+',reading:'5.5+',writing:'5.5+',speaking:'5.5+',nmc:false,msg:'Below NMC requirement. Need Grade B minimum.'},
+      D:{ielts:'4.0 - 5.0',listening:'4.0+',reading:'4.0+',writing:'4.0+',speaking:'4.0+',nmc:false,msg:'Well below NMC requirement.'},
+      E:{ielts:'Below 4.0',listening:'<4.0',reading:'<4.0',writing:'<4.0',speaking:'<4.0',nmc:false,msg:'Does not meet any registration requirements.'}
+    };
+
+    function selectGrade(grade){
+      document.querySelectorAll('.grade-card').forEach(c=>c.classList.remove('selected'));
+      const cards=document.querySelectorAll('.grade-card');
+      // Find card with matching onclick
+      cards.forEach(c=>{if(c.getAttribute('onclick').includes(`'${grade}'`))c.classList.add('selected');});
+
+      const d=gradeData[grade];
+      document.getElementById('resultIelts').textContent=d.ielts;
+      document.getElementById('skillL').textContent=d.listening;
+      document.getElementById('skillR').textContent=d.reading;
+      document.getElementById('skillW').textContent=d.writing;
+      document.getElementById('skillS').textContent=d.speaking;
+
+      const statusEl=document.getElementById('nmcStatus');
+      if(d.nmc){
+        statusEl.style.background='var(--success)';
+        statusEl.innerHTML=`<i class="fas fa-check-circle"></i> ${d.msg}`;
+      }else{
+        statusEl.style.background='var(--danger)';
+        statusEl.innerHTML=`<i class="fas fa-times-circle"></i> ${d.msg}`;
+      }
+    }
+
+    function copyLink(){
+      navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));
+    }
+
+    // Default selection
+    selectGrade('B');
+  </script>
+</body>
+</html>

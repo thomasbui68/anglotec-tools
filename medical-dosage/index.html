@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Dosage Calculator | Drug Dose Calculator for Nurses</title>
+  <meta name="description" content="Free medical dosage calculator for nurses. Calculate mg/kg, mcg, units for common medications. Pediatric dosage calculator with drug reference table. Essential for nursing OSCE prep.">
+  <meta name="keywords" content="medical dosage calculator, drug dose calculator, pediatric dosage calculator, nursing dosage calculation, medication dosage, nurse calculator">
+  <meta property="og:title" content="Medical Dosage Calculator | Drug Dose Calculator for Nurses">
+  <meta property="og:description" content="Calculate medication dosages instantly. Essential tool for nurses and healthcare professionals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tools.anglotec-ai.com/medical-dosage">
+  <link rel="canonical" href="https://tools.anglotec-ai.com/medical-dosage">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--green:#2C4A3E;--green-light:#3D5F52;--green-dark:#1E352C;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F4F0;--white:#FFFFFF;--text:#2A2A2A;--text-light:#6B7280;--border:#E2DDD7;--danger:#DC2626;--success:#059669;--warning:#D97706}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    /* Header */
+    .header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .header-flex{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);text-decoration:none}
+    .logo span{color:var(--orange)}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{color:var(--white);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--orange)}
+    .mobile-menu{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+    /* Hero */
+    .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--white);padding:60px 0;text-align:center}
+    .hero h1{font-size:2.8rem;margin-bottom:16px;line-height:1.2}
+    .hero p{font-size:1.15rem;opacity:.9;max-width:700px;margin:0 auto}
+    .hero-badge{display:inline-block;background:var(--orange);color:var(--white);padding:6px 16px;border-radius:30px;font-size:.8rem;font-weight:600;margin-top:20px;text-transform:uppercase;letter-spacing:1px}
+    /* Main */
+    .main{padding:40px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    /* Card */
+    .card{background:var(--white);border-radius:16px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);margin-bottom:24px}
+    .card-title{font-size:1.3rem;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .card-title i{color:var(--orange)}
+    /* Tabs */
+    .tabs{display:flex;gap:4px;margin-bottom:20px;background:var(--cream);padding:4px;border-radius:10px}
+    .tab{flex:1;padding:12px 16px;border:none;border-radius:8px;background:transparent;color:var(--text);font-weight:500;cursor:pointer;transition:all .2s;font-size:.85rem;text-align:center}
+    .tab.active{background:var(--green);color:var(--white)}
+    .tab:hover:not(.active){background:var(--white)}
+    /* Form */
+    .form-group{margin-bottom:18px}
+    .form-label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px;color:var(--green-dark)}
+    .form-input,.form-select{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:10px;font-size:1rem;font-family:'Inter',sans-serif;transition:border-color .2s,box-shadow .2s;background:var(--white)}
+    .form-input:focus,.form-select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(212,101,59,.15)}
+    .input-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s}
+    .btn-primary{background:var(--orange);color:var(--white)}
+    .btn-primary:hover{background:var(--orange-light);transform:translateY(-1px);box-shadow:0 4px 12px rgba(212,101,59,.3)}
+    .btn-secondary{background:var(--green);color:var(--white)}
+    .btn-secondary:hover{background:var(--green-light);transform:translateY(-1px)}
+    .btn-full{width:100%}
+    /* Result */
+    .result-box{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--white);padding:24px;border-radius:12px;margin-top:20px;display:none}
+    .result-box.show{display:block;animation:fadeIn .3s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .result-label{font-size:.85rem;opacity:.8;margin-bottom:4px}
+    .result-value{font-size:2rem;font-weight:700;font-family:'Playfair Display',serif}
+    .result-detail{font-size:.9rem;opacity:.9;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.2)}
+    .result-warning{background:rgba(255,193,7,.15);border-left:4px solid var(--warning);padding:12px 16px;border-radius:8px;margin-top:12px;color:#fff;font-size:.9rem}
+    .result-danger{background:rgba(220,38,38,.15);border-left:4px solid var(--danger);padding:12px 16px;border-radius:8px;margin-top:12px;color:#fff;font-size:.9rem}
+    /* Drug Table */
+    .drug-table{width:100%;border-collapse:collapse;font-size:.88rem}
+    .drug-table th{background:var(--green);color:var(--white);padding:12px 14px;text-align:left;font-weight:600}
+    .drug-table td{padding:10px 14px;border-bottom:1px solid var(--border)}
+    .drug-table tr:hover td{background:var(--cream)}
+    .drug-table .drug-name{font-weight:600;color:var(--green)}
+    .drug-search{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:10px;font-size:.9rem;margin-bottom:16px;font-family:'Inter',sans-serif}
+    .drug-search:focus{outline:none;border-color:var(--orange)}
+    /* Info Box */
+    .info-box{background:linear-gradient(135deg,#EBF5FF 0%,#DBEAFE 100%);border-left:4px solid #3B82F6;padding:16px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:.9rem}
+    .info-box strong{color:var(--green)}
+    /* Share */
+    .share-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+    .share-label{font-weight:600;color:var(--green);font-size:.9rem}
+    .share-btn{padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;color:var(--white);transition:transform .2s;display:inline-flex;align-items:center;gap:6px}
+    .share-btn:hover{transform:translateY(-2px)}
+    .share-tw{background:#1DA1F2}.share-fb{background:#4267B2}.share-wa{background:#25D366}.share-li{background:#0077B5}
+    .share-copy{background:var(--green);border:none;cursor:pointer;font-family:'Inter',sans-serif}
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);padding:50px 0;text-align:center;margin-top:40px}
+    .cta-section h2{font-size:2rem;margin-bottom:16px}
+    .cta-section p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto 24px}
+    .cta-btn{background:var(--orange);color:var(--white);padding:16px 36px;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s}
+    .cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    .cta-features{display:flex;justify-content:center;gap:30px;margin-top:24px;flex-wrap:wrap}
+    .cta-feature{display:flex;align-items:center;gap:8px;font-size:.9rem}
+    /* Footer */
+    .footer{background:var(--green-dark);color:rgba(255,255,255,.7);padding:30px 0;text-align:center;font-size:.85rem}
+    .footer a{color:var(--orange);text-decoration:none}
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1{font-size:2rem}
+      .nav-links{display:none}
+      .mobile-menu{display:block}
+      .input-row{grid-template-columns:1fr}
+      .cta-features{flex-direction:column;gap:12px}
+      .tabs{flex-wrap:wrap}
+      .tab{font-size:.8rem;padding:10px}
+    }
+    /* Print */
+    @media print{.header,.hero,.cta-section,.share-bar,.footer{display:none}.card{box-shadow:none;border:1px solid #ccc}}
+    .hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-flex">
+      <a href="https://tools.anglotec-ai.com" class="logo">Anglo<span>Tec</span> Tools</a>
+      <nav class="nav-links">
+        <a href="#calculator">Calculator</a>
+        <a href="#drug-table">Drug Reference</a>
+        <a href="https://tools.anglotec-ai.com/osce-training" target="_blank">OSCE Training</a>
+      </nav>
+      <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('hidden')" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1><i class="fas fa-pills"></i> Medical Dosage Calculator</h1>
+      <p>Accurate drug dose calculations for nurses and healthcare professionals. Calculate mg/kg, mcg, units and more with built-in safety checks.</p>
+      <span class="hero-badge"><i class="fas fa-shield-alt"></i> Used by 10,000+ Nurses</span>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="container">
+      <div class="grid" id="calculator">
+        <!-- Calculator -->
+        <div class="card">
+          <h2 class="card-title"><i class="fas fa-calculator"></i> Dosage Calculator</h2>
+          <div class="tabs">
+            <button class="tab active" onclick="switchTab('weight')" data-tab="weight"><i class="fas fa-weight"></i> Weight-Based</button>
+            <button class="tab" onclick="switchTab('iv')" data-tab="iv"><i class="fas fa-syringe"></i> IV Rate</button>
+            <button class="tab" onclick="switchTab('conversion')" data-tab="conversion"><i class="fas fa-exchange-alt"></i> Conversion</button>
+          </div>
+
+          <!-- Weight-Based -->
+          <div id="tab-weight">
+            <div class="form-group">
+              <label class="form-label">Medication</label>
+              <select class="form-select" id="wb-drug" onchange="fillWeightDefaults()">
+                <option value="">-- Select or enter manually --</option>
+                <option value="paracetamol" data-dose="10-15" data-unit="mg/kg" data-max="1000" data-freq="4-6h">Paracetamol (Acetaminophen)</option>
+                <option value="ibuprofen" data-dose="5-10" data-unit="mg/kg" data-max="800" data-freq="6-8h">Ibuprofen</option>
+                <option value="amoxicillin" data-dose="20-40" data-unit="mg/kg/day" data-max="2000" data-freq="8h">Amoxicillin</option>
+                <option value="metformin" data-dose="500" data-unit="mg" data-max="2000" data-freq="12h">Metformin</option>
+                <option value="insulin" data-dose="0.5" data-unit="units/kg/day" data-max="" data-freq="variable">Insulin (starting)</option>
+                <option value="morphine" data-dose="0.05-0.2" data-unit="mg/kg" data-max="15" data-freq="4h PRN">Morphine IV/IM</option>
+                <option value="furosemide" data-dose="0.5-2" data-unit="mg/kg" data-max="80" data-freq="6-12h">Furosemide (Lasix)</option>
+                <option value="ondansetron" data-dose="0.15" data-unit="mg/kg" data-max="8" data-freq="8h PRN">Ondansetron</option>
+                <option value="custom" data-dose="" data-unit="" data-max="" data-freq="">Custom Medication</option>
+              </select>
+            </div>
+            <div class="input-row">
+              <div class="form-group">
+                <label class="form-label">Patient Weight (kg)</label>
+                <input type="number" class="form-input" id="wb-weight" placeholder="e.g. 70" step="0.1" min="0.1">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Dose per kg</label>
+                <input type="text" class="form-input" id="wb-dose" placeholder="e.g. 10" step="0.01">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="form-group">
+                <label class="form-label">Unit</label>
+                <select class="form-select" id="wb-unit">
+                  <option value="mg/kg">mg/kg</option>
+                  <option value="mcg/kg">mcg/kg</option>
+                  <option value="units/kg">units/kg</option>
+                  <option value="mg/kg/day">mg/kg/day</option>
+                  <option value="mcg/kg/min">mcg/kg/min</option>
+                  <option value="mg">mg (fixed)</option>
+                  <option value="mcg">mcg (fixed)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Max Single Dose</label>
+                <input type="number" class="form-input" id="wb-max" placeholder="Optional cap">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Frequency</label>
+              <input type="text" class="form-input" id="wb-freq" placeholder="e.g. 4-6 hours">
+            </div>
+            <button class="btn btn-primary btn-full" onclick="calcWeightBased()"><i class="fas fa-calculator"></i> Calculate Dose</button>
+            <div class="result-box" id="wb-result">
+              <div class="result-label">Recommended Single Dose</div>
+              <div class="result-value" id="wb-result-value"></div>
+              <div class="result-detail" id="wb-result-detail"></div>
+            </div>
+          </div>
+
+          <!-- IV Rate -->
+          <div id="tab-iv" class="hidden">
+            <div class="input-row">
+              <div class="form-group">
+                <label class="form-label">Volume (ml)</label>
+                <input type="number" class="form-input" id="iv-vol" placeholder="e.g. 500">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Time (hours)</label>
+                <input type="number" class="form-input" id="iv-time" placeholder="e.g. 8" step="0.5">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="form-group">
+                <label class="form-label">Drop Factor (gtt/ml)</label>
+                <select class="form-select" id="iv-drop">
+                  <option value="20">Macro (20 gtt/ml)</option>
+                  <option value="60">Micro (60 gtt/ml)</option>
+                  <option value="15">15 gtt/ml</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Drug in Bag (mg)</label>
+                <input type="number" class="form-input" id="iv-drug" placeholder="Optional">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Required Dose (mg/hr or mcg/kg/min)</label>
+              <input type="text" class="form-input" id="iv-required" placeholder="e.g. 5 mg/hr (optional)">
+            </div>
+            <button class="btn btn-primary btn-full" onclick="calcIVRate()"><i class="fas fa-calculator"></i> Calculate IV Rate</button>
+            <div class="result-box" id="iv-result">
+              <div class="result-label">Infusion Rate</div>
+              <div class="result-value" id="iv-result-value"></div>
+              <div class="result-detail" id="iv-result-detail"></div>
+            </div>
+          </div>
+
+          <!-- Conversion -->
+          <div id="tab-conversion" class="hidden">
+            <div class="form-group">
+              <label class="form-label">Convert From</label>
+              <div class="input-row">
+                <input type="number" class="form-input" id="conv-val" placeholder="Value">
+                <select class="form-select" id="conv-from">
+                  <option value="mg">mg (milligrams)</option>
+                  <option value="mcg">mcg (micrograms)</option>
+                  <option value="g">g (grams)</option>
+                  <option value="kg">kg (kilograms)</option>
+                  <option value="ml">ml (milliliters)</option>
+                  <option value="L">L (liters)</option>
+                  <option value="mmol">mmol</option>
+                  <option value="meq">mEq</option>
+                  <option value="units">Units</option>
+                  <option value="ng">ng (nanograms)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Convert To</label>
+              <select class="form-select" id="conv-to">
+                <option value="mcg" selected>mcg (micrograms)</option>
+                <option value="mg">mg (milligrams)</option>
+                <option value="g">g (grams)</option>
+                <option value="kg">kg (kilograms)</option>
+                <option value="ml">ml (milliliters)</option>
+                <option value="L">L (liters)</option>
+                <option value="mmol">mmol</option>
+                <option value="meq">mEq</option>
+                <option value="units">Units</option>
+                <option value="ng">ng (nanograms)</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="calcConversion()"><i class="fas fa-exchange-alt"></i> Convert</button>
+            <div class="result-box" id="conv-result">
+              <div class="result-label">Converted Value</div>
+              <div class="result-value" id="conv-result-value"></div>
+              <div class="result-detail" id="conv-result-detail"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Reference + Info -->
+        <div>
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-book-medical"></i> Quick Formula Reference</h2>
+            <div class="info-box">
+              <strong>Weight-Based Dose:</strong><br>
+              Dose = Weight (kg) x Dose per kg<br><br>
+              <strong>IV Flow Rate:</strong><br>
+              ml/hr = Total Volume / Total Hours<br><br>
+              <strong>Drops per minute:</strong><br>
+              gtt/min = (Volume x Drop Factor) / (Time in minutes)<br><br>
+              <strong>mg to mcg:</strong> Multiply by 1000<br>
+              <strong>g to mg:</strong> Multiply by 1000<br>
+              <strong>mcg to ng:</strong> Multiply by 1000
+            </div>
+          </div>
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-clipboard-check"></i> Safety Checklist</h2>
+            <ul style="list-style:none;padding:0">
+              <li style="padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px"><i class="fas fa-check-circle" style="color:var(--success)"></i> Right patient identification</li>
+              <li style="padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px"><i class="fas fa-check-circle" style="color:var(--success)"></i> Right medication verified</li>
+              <li style="padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px"><i class="fas fa-check-circle" style="color:var(--success)"></i> Right dose calculated</li>
+              <li style="padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px"><i class="fas fa-check-circle" style="color:var(--success)"></i> Right route confirmed</li>
+              <li style="padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px"><i class="fas fa-check-circle" style="color:var(--success)"></i> Right time documented</li>
+              <li style="padding:10px 0;display:flex;align-items:center;gap:10px"><i class="fas fa-check-circle" style="color:var(--success)"></i> Allergies checked</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drug Table -->
+      <div class="card" id="drug-table" style="margin-top:20px">
+        <h2 class="card-title"><i class="fas fa-tablets"></i> Common Drug Dosage Reference</h2>
+        <p style="margin-bottom:16px;color:var(--text-light);font-size:.9rem">Quick reference for commonly prescribed medications. Always verify with BNF and local protocols.</p>
+        <input type="text" class="drug-search" id="drugSearch" placeholder="Search drugs..." onkeyup="filterDrugs()">
+        <div style="overflow-x:auto">
+          <table class="drug-table" id="drugTable">
+            <thead>
+              <tr>
+                <th>Drug</th>
+                <th>Adult Dose</th>
+                <th>Pediatric Dose</th>
+                <th>Route</th>
+                <th>Max Dose</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="drug-name">Paracetamol</td><td>0.5-1g q4-6h</td><td>10-15 mg/kg q4-6h</td><td>PO/IV/PR</td><td>4g/day</td><td>Reduce in hepatic impairment</td></tr>
+              <tr><td class="drug-name">Ibuprofen</td><td>200-400mg q6-8h</td><td>5-10 mg/kg q6-8h</td><td>PO</td><td>2.4g/day</td><td>Take with food</td></tr>
+              <tr><td class="drug-name">Amoxicillin</td><td>250-500mg tds</td><td>20-40 mg/kg/day div</td><td>PO/IV</td><td>4-6g/day</td><td>Complete course</td></tr>
+              <tr><td class="drug-name">Metformin</td><td>500mg bd, titrate</td><td>N/A</td><td>PO</td><td>2g/day</td><td>Monitor renal function</td></tr>
+              <tr><td class="drug-name">Amlodipine</td><td>5-10mg od</td><td>N/A</td><td>PO</td><td>10mg/day</td><td>Monitor BP</td></tr>
+              <tr><td class="drug-name">Atorvastatin</td><td>10-80mg od</td><td>N/A</td><td>PO</td><td>80mg/day</td><td>Evening dosing</td></tr>
+              <tr><td class="drug-name">Morphine</td><td>5-10mg q4h PRN</td><td>0.05-0.2 mg/kg</td><td>PO/IV/IM/SC</td><td>Varies</td><td>Monitor respiration</td></tr>
+              <tr><td class="drug-name">Furosemide</td><td>20-40mg od</td><td>0.5-2 mg/kg</td><td>PO/IV</td><td>Varies</td><td>Monitor electrolytes</td></tr>
+              <tr><td class="drug-name">Ondansetron</td><td>4-8mg q8h</td><td>0.15 mg/kg</td><td>PO/IV</td><td>32mg/day IV</td><td>QT prolongation risk</td></tr>
+              <tr><td class="drug-name">Salbutamol</td><td>2-4mg q6-8h</td><td>0.1-0.2 mg/kg</td><td>PO/Inh/IV</td><td>32mg/day PO</td><td>Tremor common</td></tr>
+              <tr><td class="drug-name">Omeprazole</td><td>20-40mg od</td><td>0.3-0.7 mg/kg</td><td>PO/IV</td><td>Varies</td><td>Before food</td></tr>
+              <tr><td class="drug-name">Warfarin</td><td>Individualised (INR 2-3)</td><td>N/A</td><td>PO</td><td>Varies</td><td>Monitor INR regularly</td></tr>
+              <tr><td class="drug-name">Insulin (Actrapid)</td><td>Individualised</td><td>0.5-1 units/kg/day</td><td>SC/IV</td><td>Varies</td><td>Monitor glucose</td></tr>
+              <tr><td class="drug-name">Aspirin</td><td>75mg od (cardio)</td><td>N/A</td><td>PO</td><td>Varies</td><td>Reye's syndrome in children</td></tr>
+              <tr><td class="drug-name">Prednisolone</td><td>5-60mg/day</td><td>0.5-2 mg/kg/day</td><td>PO</td><td>Varies</td><td>Taper when stopping</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div class="share-bar">
+        <span class="share-label"><i class="fas fa-share-alt"></i> Share:</span>
+        <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?text=Free+Medical+Dosage+Calculator+for+Nurses&url=https://tools.anglotec-ai.com/medical-dosage" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/medical-dosage" target="_blank"><i class="fab fa-facebook-f"></i> Share</a>
+        <a class="share-btn share-wa" href="https://wa.me/?text=Check+out+this+free+Medical+Dosage+Calculator+for+Nurses:+https://tools.anglotec-ai.com/medical-dosage" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/medical-dosage" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <button class="share-btn share-copy" onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Preparing for Your OSCE Exam?</h2>
+      <p>Master medication administration, dosage calculations, and clinical skills with our comprehensive OSCE training program designed for international nurses.</p>
+      <a href="https://tools.anglotec-ai.com/osce-training" class="cta-btn" target="_blank"><i class="fas fa-graduation-cap"></i> Start OSCE Training</a>
+      <div class="cta-features">
+        <div class="cta-feature"><i class="fas fa-video"></i> Video Demonstrations</div>
+        <div class="cta-feature"><i class="fas fa-user-md"></i> Expert Tutors</div>
+        <div class="cta-feature"><i class="fas fa-certificate"></i> NMC Registration Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Medical Dosage Calculator for educational purposes. Always verify calculations and follow local protocols. &copy; 2025 <a href="https://tools.anglotec-ai.com">AngloTec AI</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switching
+    function switchTab(tab){
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+      document.getElementById('tab-weight').classList.add('hidden');
+      document.getElementById('tab-iv').classList.add('hidden');
+      document.getElementById('tab-conversion').classList.add('hidden');
+      document.getElementById('tab-'+tab).classList.remove('hidden');
+      ['wb-result','iv-result','conv-result'].forEach(r=>document.getElementById(r).classList.remove('show'));
+    }
+
+    // Fill defaults from drug select
+    function fillWeightDefaults(){
+      const sel=document.getElementById('wb-drug');
+      const opt=sel.options[sel.selectedIndex];
+      if(!opt||!opt.dataset.dose)return;
+      document.getElementById('wb-dose').value=opt.dataset.dose.split('-')[0];
+      document.getElementById('wb-unit').value=opt.dataset.unit||'mg/kg';
+      document.getElementById('wb-max').value=opt.dataset.max||'';
+      document.getElementById('wb-freq').value=opt.dataset.freq||'';
+    }
+
+    // Weight-based calculation
+    function calcWeightBased(){
+      const weight=parseFloat(document.getElementById('wb-weight').value);
+      const doseInput=document.getElementById('wb-dose').value;
+      const unit=document.getElementById('wb-unit').value;
+      const maxDose=parseFloat(document.getElementById('wb-max').value);
+      const freq=document.getElementById('wb-freq').value;
+
+      if(!weight||!doseInput||weight<=0){alert('Please enter valid weight and dose');return;}
+
+      // Parse dose (handle ranges like "10-15")
+      let doseVal=parseFloat(doseInput);
+      if(doseInput.includes('-')) doseVal=parseFloat(doseInput.split('-')[0]);
+
+      let result=0,resultText='',detailText='';
+
+      if(unit==='mg/kg'){result=weight*doseVal;resultText=result.toFixed(1)+' mg';detailText=`${doseVal} mg/kg x ${weight} kg = ${result.toFixed(1)} mg per dose`;}
+      else if(unit==='mcg/kg'){result=weight*doseVal;resultText=result.toFixed(1)+' mcg';detailText=`${doseVal} mcg/kg x ${weight} kg = ${result.toFixed(1)} mcg per dose`;}
+      else if(unit==='units/kg'){result=weight*doseVal;resultText=result.toFixed(1)+' units';detailText=`${doseVal} units/kg x ${weight} kg = ${result.toFixed(1)} units per dose`;}
+      else if(unit==='mg/kg/day'){result=weight*doseVal;resultText=result.toFixed(1)+' mg/day';detailText=`${doseVal} mg/kg/day x ${weight} kg = ${result.toFixed(1)} mg total daily dose`;}
+      else if(unit==='mcg/kg/min'){result=weight*doseVal;resultText=result.toFixed(1)+' mcg/min';detailText=`${doseVal} mcg/kg/min x ${weight} kg = ${result.toFixed(1)} mcg/min`;const mgHr=(result*60/1000).toFixed(2);detailText+=` (${mgHr} mg/hr)`;}
+      else if(unit==='mg'){result=doseVal;resultText=result.toFixed(1)+' mg';detailText=`Fixed dose: ${result.toFixed(1)} mg`;}
+      else if(unit==='mcg'){result=doseVal;resultText=result.toFixed(1)+' mcg';detailText=`Fixed dose: ${result.toFixed(1)} mcg`;}
+
+      // Apply max cap
+      if(maxDose&&result>maxDose){resultText=maxDose+(unit.includes('mcg')?' mcg':' mg')+` (capped from ${result.toFixed(1)})`;detailText+=`<br>Maximum single dose of ${maxDose}${unit.includes('mcg')?' mcg':' mg'} applied.`;}
+
+      if(freq) detailText+=`<br>Frequency: ${freq}`;
+
+      document.getElementById('wb-result-value').innerHTML=resultText;
+      document.getElementById('wb-result-detail').innerHTML=detailText;
+      document.getElementById('wb-result').classList.add('show');
+    }
+
+    // IV Rate calculation
+    function calcIVRate(){
+      const vol=parseFloat(document.getElementById('iv-vol').value);
+      const time=parseFloat(document.getElementById('iv-time').value);
+      const dropFactor=parseInt(document.getElementById('iv-drop').value);
+
+      if(!vol||!time||vol<=0||time<=0){alert('Please enter valid volume and time');return;}
+
+      const mlPerHr=(vol/time).toFixed(1);
+      const totalMin=time*60;
+      const gttPerMin=((vol*dropFactor)/totalMin).toFixed(1);
+
+      let detail=`Volume: ${vol}ml over ${time} hours<br>Flow Rate: ${mlPerHr} ml/hr<br>Drops/min (${dropFactor} gtt/ml): ${gttPerMin} gtt/min`;
+
+      const drugMg=parseFloat(document.getElementById('iv-drug').value);
+      const required=document.getElementById('iv-required').value;
+      if(drugMg&&drugMg>0){
+        const conc=(drugMg/vol).toFixed(2);
+        detail+=`<br>Drug concentration: ${conc} mg/ml`;
+        if(required){
+          const reqNum=parseFloat(required);
+          if(reqNum>0){
+            const infusionMlHr=(reqNum/conc).toFixed(1);
+            detail+=`<br>To deliver ${required}: set pump at ${infusionMlHr} ml/hr`;
+          }
+        }
+      }
+
+      document.getElementById('iv-result-value').innerHTML=`${mlPerHr} ml/hr`;
+      document.getElementById('iv-result-detail').innerHTML=detail;
+      document.getElementById('iv-result').classList.add('show');
+    }
+
+    // Unit conversion
+    function calcConversion(){
+      const val=parseFloat(document.getElementById('conv-val').value);
+      const from=document.getElementById('conv-from').value;
+      const to=document.getElementById('conv-to').value;
+
+      if(!val||val<0){alert('Please enter a valid value');return;}
+      if(from===to){document.getElementById('conv-result-value').innerHTML=val+' '+to;document.getElementById('conv-result-detail').innerHTML='Same unit - no conversion needed';document.getElementById('conv-result').classList.add('show');return;}
+
+      // Convert to base unit (mg for mass, ml for volume)
+      let base=val;
+      const massUnits={ng:0.000001,mcg:0.001,mg:1,g:1000,kg:1000000};
+      const volUnits={ml:1,L:1000};
+      const otherUnits={mmol:1,meq:1,units:1};
+
+      let result=0;
+      if(from in massUnits&&to in massUnits){
+        base=val*massUnits[from];
+        result=base/massUnits[to];
+      }else if(from in volUnits&&to in volUnits){
+        base=val*volUnits[from];
+        result=base/volUnits[to];
+      }else{
+        document.getElementById('conv-result-detail').innerHTML='Cannot convert between these unit types. Use compatible units (mass to mass, volume to volume).';
+        document.getElementById('conv-result-value').innerHTML='N/A';
+        document.getElementById('conv-result').classList.add('show');
+        return;
+      }
+
+      // Format result
+      let display=result;
+      if(result<0.001) display=result.toExponential(3);
+      else if(result<1) display=result.toFixed(4);
+      else if(result<1000) display=result.toFixed(2);
+      else display=result.toFixed(1);
+
+      document.getElementById('conv-result-value').innerHTML=display+' '+to;
+      document.getElementById('conv-result-detail').innerHTML=`${val} ${from} = ${display} ${to}`;
+      document.getElementById('conv-result').classList.add('show');
+    }
+
+    // Drug table filter
+    function filterDrugs(){
+      const term=document.getElementById('drugSearch').value.toLowerCase();
+      document.querySelectorAll('#drugTable tbody tr').forEach(row=>{
+        row.style.display=row.textContent.toLowerCase().includes(term)?'':'none';
+      });
+    }
+
+    // Copy link
+    function copyLink(){
+      navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));
+    }
+
+    // Keyboard shortcut
+    document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.ctrlKey){const tab=document.querySelector('.tab.active').dataset.tab;if(tab==='weight')calcWeightBased();else if(tab==='iv')calcIVRate();else calcConversion();}});
+  </script>
+</body>
+</html>

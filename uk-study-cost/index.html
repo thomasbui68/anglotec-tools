@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study in UK Cost Calculator | Compare Cities & Save Money</title>
+  <meta name="description" content="Free Study in UK Cost Calculator. Calculate total costs including tuition, accommodation, food, transport, visa and IELTS. Compare London, Manchester, Birmingham and Scarborough. See how much you can save!">
+  <meta name="keywords" content="study in uk cost, cost of studying in uk, uk university fees, living cost uk students, uk student expenses, cheapest city to study uk">
+  <meta property="og:title" content="Study in UK Cost Calculator | Compare Cities & Save Money">
+  <meta property="og:description" content="Calculate your total UK study costs. Compare cities and discover how much you can save in affordable locations like Scarborough.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tools.anglotec-ai.com/uk-study-cost">
+  <link rel="canonical" href="https://tools.anglotec-ai.com/uk-study-cost">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--green:#2C4A3E;--green-light:#3D5F52;--green-dark:#1E352C;--green-pale:#E8F0EC;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F7F4F0;--white:#FFFFFF;--text:#2A2A2A;--text-light:#6B7280;--border:#E2DDD7;--success:#059669;--danger:#DC2626;--savings:#059669}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .header{background:var(--green);color:var(--white);padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .header-flex{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);text-decoration:none}
+    .logo span{color:var(--orange)}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{color:var(--white);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--orange)}
+    .mobile-menu{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+    .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--white);padding:50px 0;text-align:center}
+    .hero h1{font-size:2.5rem;margin-bottom:12px;line-height:1.2}
+    .hero p{font-size:1.05rem;opacity:.9;max-width:650px;margin:0 auto}
+    .hero-badge{display:inline-block;background:var(--orange);color:var(--white);padding:6px 16px;border-radius:30px;font-size:.8rem;font-weight:600;margin-top:16px;text-transform:uppercase;letter-spacing:1px}
+    .main{padding:30px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--white);border-radius:16px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);margin-bottom:24px}
+    .card-title{font-size:1.3rem;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .card-title i{color:var(--orange)}
+
+    /* Form Elements */
+    .form-group{margin-bottom:18px}
+    .form-label{display:flex;justify-content:space-between;font-weight:600;font-size:.88rem;margin-bottom:6px;color:var(--green-dark)}
+    .form-label .value-display{color:var(--orange);font-weight:700}
+    .form-input,.form-select{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:10px;font-size:1rem;font-family:'Inter',sans-serif;transition:border-color .2s,box-shadow .2s}
+    .form-input:focus,.form-select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(212,101,59,.15)}
+    .slider{width:100%;height:8px;border-radius:4px;background:var(--border);outline:none;-webkit-appearance:none;margin-top:8px}
+    .slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--orange);cursor:pointer;box-shadow:0 2px 6px rgba(212,101,59,.4)}
+    .slider::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--orange);cursor:pointer;border:none;box-shadow:0 2px 6px rgba(212,101,59,.4)}
+    .input-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+    /* Toggle Group */
+    .toggle-group{display:flex;gap:4px;background:var(--cream);padding:4px;border-radius:10px;margin-bottom:16px}
+    .toggle-btn{flex:1;padding:10px 8px;border:none;border-radius:8px;background:transparent;color:var(--text);font-weight:500;cursor:pointer;transition:all .2s;font-size:.85rem;text-align:center;font-family:'Inter',sans-serif}
+    .toggle-btn.active{background:var(--green);color:var(--white)}
+    .toggle-btn:hover:not(.active){background:var(--white)}
+
+    /* Results */
+    .result-total{background:linear-gradient(135deg,var(--green),var(--green-light));color:var(--white);padding:28px;border-radius:14px;text-align:center;margin-bottom:20px}
+    .result-total .total-label{font-size:.9rem;opacity:.85;text-transform:uppercase;letter-spacing:1px}
+    .result-total .total-value{font-size:3rem;font-weight:700;font-family:'Playfair Display',serif;line-height:1;margin:8px 0}
+    .result-total .total-note{font-size:.85rem;opacity:.8}
+    .breakdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .break-item{background:var(--cream);padding:12px 14px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+    .break-item .bi-label{font-size:.82rem;color:var(--text-light);display:flex;align-items:center;gap:6px}
+    .break-item .bi-val{font-weight:700;color:var(--green)}
+    .break-item .bi-val i{color:var(--orange);font-size:.8rem}
+
+    /* City Compare */
+    .city-compare{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+    .city-card{padding:18px 12px;border-radius:12px;text-align:center;border:2px solid var(--border);transition:all .2s;position:relative}
+    .city-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+    .city-card.best{background:var(--green-pale);border-color:var(--green)}
+    .city-card.best::after{content:'BEST VALUE';position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-size:.6rem;font-weight:700;padding:3px 10px;border-radius:10px;letter-spacing:.5px}
+    .city-card .city-icon{font-size:1.8rem;margin-bottom:8px}
+    .city-card .city-name{font-weight:700;color:var(--green);font-size:.95rem}
+    .city-card .city-cost{font-size:1.3rem;font-weight:700;color:var(--text);margin:4px 0}
+    .city-card .city-save{font-size:.75rem;color:var(--success);font-weight:600}
+    .city-card .city-save.negative{color:var(--danger)}
+
+    /* Savings Highlight */
+    .savings-box{background:linear-gradient(135deg,var(--green-pale),#fff);border:2px solid var(--green);border-radius:14px;padding:24px;text-align:center;margin:24px 0}
+    .savings-box h3{color:var(--green);font-size:1.3rem;margin-bottom:8px}
+    .savings-amount{font-size:2.5rem;font-weight:700;color:var(--success);font-family:'Playfair Display',serif}
+    .savings-box p{color:var(--text-light);font-size:.9rem;margin-top:8px}
+    .anglo-highlight{background:var(--white);border-radius:10px;padding:16px;margin-top:16px;border:1px dashed var(--orange)}
+    .anglo-highlight h4{color:var(--orange);margin-bottom:8px;font-size:1rem}
+    .anglo-highlight ul{list-style:none;padding:0;font-size:.88rem;text-align:left}
+    .anglo-highlight li{padding:4px 0;display:flex;align-items:center;gap:8px}
+    .anglo-highlight li i{color:var(--success)}
+
+    /* Chart bar */
+    .chart-container{margin-top:20px}
+    .chart-row{display:flex;align-items:center;margin-bottom:10px;font-size:.88rem}
+    .chart-label{width:100px;font-weight:600;color:var(--green);text-align:right;padding-right:12px;flex-shrink:0}
+    .chart-bar{flex:1;height:28px;background:var(--border);border-radius:8px;overflow:hidden;position:relative}
+    .chart-fill{height:100%;border-radius:8px;transition:width .5s ease;position:relative}
+    .chart-fill.green-fill{background:linear-gradient(90deg,var(--green),var(--green-light))}
+    .chart-fill.orange-fill{background:linear-gradient(90deg,var(--orange),var(--orange-light))}
+    .chart-fill.red-fill{background:linear-gradient(90deg,#DC2626,#EF4444)}
+    .chart-value{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-weight:700;color:#fff;font-size:.8rem;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+
+    /* Info */
+    .info-box{background:linear-gradient(135deg,#EBF5FF 0%,#DBEAFE 100%);border-left:4px solid #3B82F6;padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0;font-size:.9rem}
+    .info-box strong{color:var(--green)}
+
+    /* Share */
+    .share-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+    .share-label{font-weight:600;color:var(--green);font-size:.9rem}
+    .share-btn{padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;color:var(--white);transition:transform .2s;display:inline-flex;align-items:center;gap:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+    .share-btn:hover{transform:translateY(-2px)}
+    .share-tw{background:#1DA1F2}.share-fb{background:#4267B2}.share-wa{background:#25D366}.share-li{background:#0077B5}.share-copy{background:var(--green)}
+
+    .cta-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:var(--white);padding:50px 0;text-align:center;margin-top:40px}
+    .cta-section h2{font-size:2rem;margin-bottom:16px}
+    .cta-section p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto 24px}
+    .cta-btn{background:var(--orange);color:var(--white);padding:16px 36px;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s}
+    .cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    .footer{background:var(--green-dark);color:rgba(255,255,255,.7);padding:30px 0;text-align:center;font-size:.85rem}
+    .footer a{color:var(--orange);text-decoration:none}
+
+    @media(max-width:768px){
+      .hero h1{font-size:1.9rem}.nav-links{display:none}.mobile-menu{display:block}
+      .input-row,.breakdown-grid{grid-template-columns:1fr}
+      .city-compare{grid-template-columns:1fr 1fr}
+      .result-total .total-value{font-size:2.2rem}
+      .toggle-group{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-flex">
+      <a href="https://tools.anglotec-ai.com" class="logo">Anglo<span>Tec</span> Tools</a>
+      <nav class="nav-links">
+        <a href="#calculator">Calculator</a>
+        <a href="#compare">Compare Cities</a>
+        <a href="https://tools.anglotec-ai.com/study-in-uk" target="_blank">Study in UK</a>
+      </nav>
+      <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('hidden')" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1><i class="fas fa-pound-sign"></i> Study in UK Cost Calculator</h1>
+      <p>Calculate your total cost of studying in the UK. Compare living expenses across cities and see how much you can save in affordable locations.</p>
+      <span class="hero-badge"><i class="fas fa-calculator"></i> Updated 2025 Prices</span>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <div class="grid" id="calculator">
+        <!-- Input Panel -->
+        <div class="card">
+          <h2 class="card-title"><i class="fas fa-sliders-h"></i> Your Details</h2>
+
+          <div class="form-group">
+            <label class="form-label">Course Duration</label>
+            <div class="toggle-group">
+              <button class="toggle-btn active" onclick="setDuration(1,this)">1 Year</button>
+              <button class="toggle-btn" onclick="setDuration(2,this)">2 Years</button>
+              <button class="toggle-btn" onclick="setDuration(3,this)">3 Years</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span><i class="fas fa-graduation-cap"></i> Tuition Fees (per year)</span><span class="value-display" id="tuitionVal">GBP 14,000</span></label>
+            <input type="range" class="slider" id="tuition" min="8000" max="35000" step="500" value="14000" oninput="updateCalc()">
+            <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--text-light);margin-top:4px"><span>8,000</span><span>35,000</span></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span><i class="fas fa-home"></i> Accommodation (per month)</span><span class="value-display" id="accomVal">GBP 600</span></label>
+            <input type="range" class="slider" id="accom" min="300" max="1500" step="50" value="600" oninput="updateCalc()">
+            <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--text-light);margin-top:4px"><span>300</span><span>1,500</span></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span><i class="fas fa-utensils"></i> Food & Groceries (per month)</span><span class="value-display" id="foodVal">GBP 250</span></label>
+            <input type="range" class="slider" id="food" min="100" max="600" step="25" value="250" oninput="updateCalc()">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span><i class="fas fa-bus"></i> Transport (per month)</span><span class="value-display" id="transportVal">GBP 80</span></label>
+            <input type="range" class="slider" id="transport" min="0" max="300" step="10" value="80" oninput="updateCalc()">
+          </div>
+
+          <div class="input-row">
+            <div class="form-group">
+              <label class="form-label"><i class="fas fa-passport"></i> Visa Application</label>
+              <select class="form-select" id="visa" onchange="updateCalc()">
+                <option value="490">Student Visa - 490 GBP</option>
+                <option value="0">No Visa (EU/EEA settled)</option>
+                <option value="363">Graduate Visa - 363 GBP</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label"><i class="fas fa-language"></i> IELTS / English Test</label>
+              <select class="form-select" id="ielts" onchange="updateCalc()">
+                <option value="185">IELTS Academic - 185 GBP</option>
+                <option value="0">Already have valid score</option>
+                <option value="155">OET - 155 GBP</option>
+                <option value="200">PTE Academic - 200 GBP</option>
+                <option value="0">Internal test (free)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="form-group">
+              <label class="form-label"><i class="fas fa-heartbeat"></i> NHS Health Surcharge</label>
+              <select class="form-select" id="nhs" onchange="updateCalc()">
+                <option value="776">1 Year - 776 GBP</option>
+                <option value="1552" selected>2 Years - 1,552 GBP</option>
+                <option value="2328">3 Years - 2,328 GBP</option>
+                <option value="0">Exempt</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label"><i class="fas fa-plane"></i> Flight to UK (one-way)</label>
+              <select class="form-select" id="flight" onchange="updateCalc()">
+                <option value="500" selected>Medium haul - 500 GBP</option>
+                <option value="300">Short haul - 300 GBP</option>
+                <option value="800">Long haul - 800 GBP</option>
+                <option value="0">Already in UK</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span><i class="fas fa-shopping-bag"></i> Personal Expenses (per month)</span><span class="value-display" id="personalVal">GBP 150</span></label>
+            <input type="range" class="slider" id="personal" min="50" max="500" step="25" value="150" oninput="updateCalc()">
+          </div>
+        </div>
+
+        <!-- Results Panel -->
+        <div>
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-chart-pie"></i> Total Cost Breakdown</h2>
+            <div class="result-total">
+              <div class="total-label">Estimated Total Cost</div>
+              <div class="total-value" id="grandTotal">GBP 32,024</div>
+              <div class="total-note" id="totalNote">for 2 years of study</div>
+            </div>
+            <div class="breakdown-grid">
+              <div class="break-item"><div class="bi-label"><i class="fas fa-graduation-cap" style="color:var(--orange)"></i> Tuition</div><div class="bi-val" id="bTuition">28,000</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-home" style="color:var(--orange)"></i> Accommodation</div><div class="bi-val" id="bAccom">14,400</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-utensils" style="color:var(--orange)"></i> Food</div><div class="bi-val" id="bFood">6,000</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-bus" style="color:var(--orange)"></i> Transport</div><div class="bi-val" id="bTransport">1,920</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-passport" style="color:var(--orange)"></i> Visa</div><div class="bi-val" id="bVisa">490</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-heartbeat" style="color:var(--orange)"></i> NHS</div><div class="bi-val" id="bNhs">1,552</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-language" style="color:var(--orange)"></i> IELTS/Test</div><div class="bi-val" id="bIelts">185</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-plane" style="color:var(--orange)"></i> Flight</div><div class="bi-val" id="bFlight">500</div></div>
+              <div class="break-item"><div class="bi-label"><i class="fas fa-shopping-bag" style="color:var(--orange)"></i> Personal</div><div class="bi-val" id="bPersonal">3,600</div></div>
+            </div>
+          </div>
+
+          <!-- City Comparison -->
+          <div class="card" id="compare">
+            <h2 class="card-title"><i class="fas fa-city"></i> Cost by City (Annual Living)</h2>
+            <p style="font-size:.88rem;color:var(--text-light);margin-bottom:16px">Living costs excluding tuition, based on student lifestyle estimates:</p>
+            <div class="city-compare">
+              <div class="city-card">
+                <div class="city-icon"><i class="fas fa-building" style="color:#DC2626"></i></div>
+                <div class="city-name">London</div>
+                <div class="city-cost" id="cLondon">18,720</div>
+                <div class="city-save negative" id="sLondon">+52% vs avg</div>
+              </div>
+              <div class="city-card">
+                <div class="city-icon"><i class="fas fa-city" style="color:#3B82F6"></i></div>
+                <div class="city-name">Manchester</div>
+                <div class="city-cost" id="cManc">13,320</div>
+                <div class="city-save negative" id="sManc">+8% vs avg</div>
+              </div>
+              <div class="city-card">
+                <div class="city-icon"><i class="fas fa-city" style="color:#6B7280"></i></div>
+                <div class="city-name">Birmingham</div>
+                <div class="city-cost" id="cBirm">12,360</div>
+                <div class="city-save" id="sBirm">avg cost</div>
+              </div>
+              <div class="city-card best">
+                <div class="city-icon"><i class="fas fa-water" style="color:var(--green)"></i></div>
+                <div class="city-name">Scarborough</div>
+                <div class="city-cost" id="cScarb">9,960</div>
+                <div class="city-save" id="sScarb">Save 8,760 GBP</div>
+              </div>
+            </div>
+
+            <!-- Savings Highlight -->
+            <div class="savings-box">
+              <h3><i class="fas fa-piggy-bank"></i> Your Potential Savings</h3>
+              <div class="savings-amount" id="savingsAmt">Save up to GBP 8,760/yr</div>
+              <p>Studying in <strong>Scarborough</strong> vs London. That's <strong id="savingsPct">47%</strong> less on living costs!</p>
+              <div class="anglo-highlight">
+                <h4><i class="fas fa-star"></i> Why Study in Scarborough with AngloTec?</h4>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> <strong>Lowest cost of living</strong> among UK university towns</li>
+                  <li><i class="fas fa-check-circle"></i> Beautiful seaside location with <strong>lower rent</strong></li>
+                  <li><i class="fas fa-check-circle"></i> Same UK degree, <strong>fraction of the cost</strong></li>
+                  <li><i class="fas fa-check-circle"></i> <strong>Smaller class sizes</strong> - more tutor attention</li>
+                  <li><i class="fas fa-check-circle"></i> Pathway to <strong>NMC registration</strong> for nurses</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Chart -->
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-chart-bar"></i> Living Cost Comparison Chart</h2>
+            <div class="chart-container">
+              <div class="chart-row">
+                <div class="chart-label">London</div>
+                <div class="chart-bar"><div class="chart-fill red-fill" id="barLondon" style="width:100%"><span class="chart-value" id="barLV">18,720</span></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-label">Manchester</div>
+                <div class="chart-bar"><div class="chart-fill orange-fill" id="barManc" style="width:71%"><span class="chart-value" id="barMV">13,320</span></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-label">Birmingham</div>
+                <div class="chart-bar"><div class="chart-fill orange-fill" id="barBirm" style="width:66%"><span class="chart-value" id="barBV">12,360</span></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-label">Scarborough</div>
+                <div class="chart-bar"><div class="chart-fill green-fill" id="barScarb" style="width:53%"><span class="chart-value" id="barSV">9,960</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="card">
+        <h2 class="card-title"><i class="fas fa-info-circle"></i> Understanding UK Study Costs</h2>
+        <div class="grid" style="margin-top:16px">
+          <div class="info-box" style="margin:0">
+            <strong>Tuition Fees:</strong> International student fees range from 8,000 to 35,000+ GBP/year depending on course and university. Nursing and healthcare courses typically cost 14,000-18,000 GBP/year. MBA and medical degrees can exceed 30,000 GBP/year.
+          </div>
+          <div class="info-box" style="margin:0;background:linear-gradient(135deg,#FEF3C7,#FDE68A);border-left-color:var(--warning)">
+            <strong>Maintenance Funds:</strong> UKVI requires proof of funds: 1,023 GBP/month for London or 816 GBP/month for outside London, for up to 9 months. This is in addition to tuition fees.
+          </div>
+        </div>
+        <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+          <div style="text-align:center;padding:16px;background:var(--cream);border-radius:10px">
+            <i class="fas fa-pound-sign" style="font-size:2rem;color:var(--green);margin-bottom:8px;display:block"></i>
+            <strong style="display:block;margin-bottom:4px">Tuition</strong>
+            <span style="font-size:.85rem;color:var(--text-light)">8,000 - 35,000 GBP/year</span>
+          </div>
+          <div style="text-align:center;padding:16px;background:var(--cream);border-radius:10px">
+            <i class="fas fa-home" style="font-size:2rem;color:var(--green);margin-bottom:8px;display:block"></i>
+            <strong style="display:block;margin-bottom:4px">Accommodation</strong>
+            <span style="font-size:.85rem;color:var(--text-light)">400 - 1,200 GBP/month</span>
+          </div>
+          <div style="text-align:center;padding:16px;background:var(--cream);border-radius:10px">
+            <i class="fas fa-utensils" style="font-size:2rem;color:var(--green);margin-bottom:8px;display:block"></i>
+            <strong style="display:block;margin-bottom:4px">Living Costs</strong>
+            <span style="font-size:.85rem;color:var(--text-light)">200 - 500 GBP/month</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div class="share-bar">
+        <span class="share-label"><i class="fas fa-share-alt"></i> Share:</span>
+        <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?text=Study+in+UK+Cost+Calculator+-+Compare+cities+and+save+money!&url=https://tools.anglotec-ai.com/uk-study-cost" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglotec-ai.com/uk-study-cost" target="_blank"><i class="fab fa-facebook-f"></i> Share</a>
+        <a class="share-btn share-wa" href="https://wa.me/?text=Study+in+UK+Cost+Calculator+-+Compare+cities+and+costs:+https://tools.anglotec-ai.com/uk-study-cost" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tools.anglotec-ai.com/uk-study-cost" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <button class="share-btn share-copy" onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+      </div>
+    </div>
+  </main>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Start Your UK Study Journey</h2>
+      <p>AngloTec helps international students find affordable, quality education in the UK. From application to arrival, we guide you every step of the way.</p>
+      <a href="https://tools.anglotec-ai.com/study-in-uk" class="cta-btn" target="_blank"><i class="fas fa-rocket"></i> Explore Study in UK</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Cost estimates are indicative and may vary. Always verify with official sources. &copy; 2025 <a href="https://tools.anglotec-ai.com">AngloTec AI</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    let duration=2;
+
+    // City multipliers (relative to base)
+    const cityData={
+      London:{accom:1.8,food:1.3,transport:1.6,personal:1.4,multi:1},
+      Manchester:{accom:1.1,food:1.0,transport:0.9,personal:1.0,multi:0.71},
+      Birmingham:{accom:1.05,food:0.95,transport:0.85,personal:0.95,multi:0.66},
+      Scarborough:{accom:0.7,food:0.85,transport:0.5,personal:0.75,multi:0.53}
+    };
+
+    function setDuration(years,btn){
+      duration=years;
+      document.querySelectorAll('.toggle-group .toggle-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      // Auto-select NHS surcharge
+      const nhsSelect=document.getElementById('nhs');
+      if(years===1)nhsSelect.value='776';
+      else if(years===2)nhsSelect.value='1552';
+      else nhsSelect.value='2328';
+      updateCalc();
+    }
+
+    function formatMoney(val){return val.toLocaleString('en-GB');}
+
+    function updateCalc(){
+      const tuition=parseInt(document.getElementById('tuition').value);
+      const accomMonthly=parseInt(document.getElementById('accom').value);
+      const foodMonthly=parseInt(document.getElementById('food').value);
+      const transportMonthly=parseInt(document.getElementById('transport').value);
+      const personalMonthly=parseInt(document.getElementById('personal').value);
+      const visa=parseInt(document.getElementById('visa').value);
+      const ielts=parseInt(document.getElementById('ielts').value);
+      const nhs=parseInt(document.getElementById('nhs').value);
+      const flight=parseInt(document.getElementById('flight').value);
+
+      // Update slider labels
+      document.getElementById('tuitionVal').textContent='GBP '+formatMoney(tuition);
+      document.getElementById('accomVal').textContent='GBP '+formatMoney(accomMonthly);
+      document.getElementById('foodVal').textContent='GBP '+formatMoney(foodMonthly);
+      document.getElementById('transportVal').textContent='GBP '+formatMoney(transportMonthly);
+      document.getElementById('personalVal').textContent='GBP '+formatMoney(personalMonthly);
+
+      const months=duration*12;
+      const totalTuition=tuition*duration;
+      const totalAccom=accomMonthly*months;
+      const totalFood=foodMonthly*months;
+      const totalTransport=transportMonthly*months;
+      const totalPersonal=personalMonthly*months;
+      const totalVisa=visa;
+      const totalIelts=ielts;
+      const totalNhs=nhs;
+      const totalFlight=flight;
+
+      const grandTotal=totalTuition+totalAccom+totalFood+totalTransport+totalPersonal+totalVisa+totalIelts+totalNhs+totalFlight;
+
+      // Update breakdown
+      document.getElementById('bTuition').textContent=formatMoney(totalTuition);
+      document.getElementById('bAccom').textContent=formatMoney(totalAccom);
+      document.getElementById('bFood').textContent=formatMoney(totalFood);
+      document.getElementById('bTransport').textContent=formatMoney(totalTransport);
+      document.getElementById('bVisa').textContent=formatMoney(totalVisa);
+      document.getElementById('bNhs').textContent=formatMoney(totalNhs);
+      document.getElementById('bIelts').textContent=formatMoney(totalIelts);
+      document.getElementById('bFlight').textContent=formatMoney(totalFlight);
+      document.getElementById('bPersonal').textContent=formatMoney(totalPersonal);
+
+      document.getElementById('grandTotal').textContent='GBP '+formatMoney(grandTotal);
+      document.getElementById('totalNote').textContent=`for ${duration} year${duration>1?'s':''} of study`;
+
+      // City comparison (annual living costs only)
+      const baseLiving=accomMonthly+foodMonthly+transportMonthly+personalMonthly;
+      const cities=['London','Manchester','Birmingham','Scarborough'];
+      const cData=cityData;
+      const londonAnnual=(baseLiving*cData.London.accom/baseLiving*accomMonthly + baseLiving*cData.London.food/baseLiving*foodMonthly + baseLiving*cData.London.transport/baseLiving*transportMonthly + baseLiving*cData.London.personal/baseLiving*personalMonthly)*12;
+
+      cities.forEach(city=>{
+        const cd=cData[city];
+        const annual=Math.round((accomMonthly*cd.accom + foodMonthly*cd.food + transportMonthly*cd.transport + personalMonthly*cd.personal)*12);
+        document.getElementById('c'+city).textContent=formatMoney(annual);
+        const vsLondon=Math.round((cData.London.accom*accomMonthly + cData.London.food*foodMonthly + cData.London.transport*transportMonthly + cData.London.personal*personalMonthly)*12);
+        const save=vsLondon-annual;
+        const saveEl=document.getElementById('s'+city);
+        if(city==='Scarborough'){
+          saveEl.textContent='Save '+formatMoney(save)+'/yr';
+          document.getElementById('savingsAmt').textContent='Save up to GBP '+formatMoney(save*duration);
+          document.getElementById('savingsPct').textContent=Math.round((save/vsLondon)*100)+'%';
+        }else if(city==='Birmingham'){
+          saveEl.textContent=save>0?'Save '+formatMoney(save)+'/yr':'avg cost';
+        }else{
+          saveEl.textContent='+'+Math.round(((annual/vsLondon)-1)*100)+'% vs best';
+        }
+
+        // Update chart bars
+        const barFill=document.getElementById('bar'+city);
+        const barVal=document.getElementById('bar'+city.charAt(0)+city.slice(1)+'V');
+        if(barFill){barFill.style.width=Math.round((annual/vsLondon)*100)+'%';barVal.textContent=formatMoney(annual);}
+      });
+    }
+
+    function copyLink(){
+      navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));
+    }
+
+    // Initialize
+    updateCalc();
+  </script>
+</body>
+</html>
