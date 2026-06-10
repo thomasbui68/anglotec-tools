@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Unit Converter for Nurses | Nursing Unit Conversion</title>
+<meta name="description" content="Medical Unit Converter for nurses. Convert mg to mcg, kg to lbs, ml to fl oz, Celsius to Fahrenheit, mmol/L to mg/dL and more.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F52;--green-pale:#E8F3EF;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F0E8;--text:#1A1A1A;--text-light:#5C5C5C;--border:#E8E2D8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+.container{max-width:800px;margin:0 auto;padding:20px}
+header{text-align:center;padding:40px 20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:#fff;border-radius:0 0 30px 30px;margin-bottom:30px}
+h1{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:8px}
+.subtitle{font-size:1rem;opacity:.9}
+.card{background:#fff;border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.card h2{font-family:'Playfair Display',serif;color:var(--green);font-size:1.4rem;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.category-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.cat-tab{padding:12px 8px;border:2px solid var(--border);border-radius:10px;background:#fff;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;transition:.3s;text-align:center;font-size:.85rem;color:var(--text)}
+.cat-tab.active{border-color:var(--green);background:var(--green);color:#fff}
+.cat-tab:hover:not(.active){border-color:var(--green-light)}
+.converter-row{display:flex;align-items:end;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.conv-half{flex:1;min-width:140px}
+.swap-btn{width:50px;height:50px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.2rem;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:16px}
+.swap-btn:hover{background:var(--green);color:#fff;transform:rotate(180deg)}
+label{display:block;font-weight:500;margin-bottom:6px;color:var(--text);font-size:.85rem}
+input[type="number"],select{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:10px;font-size:1rem;font-family:'Inter',sans-serif;transition:.3s;background:#fff}
+input:focus,select:focus{outline:none;border-color:var(--green)}
+.result-display{text-align:center;padding:24px;background:var(--green-pale);border-radius:12px;margin-top:16px;border-left:5px solid var(--green)}
+.result-value{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--green)}
+.result-eq{color:var(--text-light);font-size:.9rem;margin-top:4px}
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:16px}
+.quick-item{background:var(--cream);padding:12px;border-radius:8px;text-align:center;cursor:pointer;transition:.3s;border:2px solid transparent}
+.quick-item:hover{border-color:var(--green);background:#fff}
+.quick-val{font-weight:600;color:var(--green);font-size:1.1rem}
+.quick-label{font-size:.75rem;color:var(--text-light)}
+.formula-display{background:#FFF3E0;padding:12px;border-radius:8px;margin-top:12px;font-size:.85rem;border-left:4px solid var(--orange)}
+.cta-section{text-align:center;padding:28px;background:linear-gradient(135deg,var(--orange) 0%,var(--orange-light) 100%);border-radius:16px;color:#fff;margin:30px 0}
+.cta-btn{display:inline-block;padding:14px 36px;background:#fff;color:var(--orange);border-radius:30px;font-weight:600;text-decoration:none;margin-top:12px;transition:.3s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.share-btns{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.share-btn{padding:10px 20px;border-radius:8px;border:none;font-weight:500;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
+.share-btn.tw{background:#1DA1F2;color:#fff}
+.share-btn.fb{background:#4267B2;color:#fff}
+.share-btn.li{background:#0077B5;color:#fff}
+.share-btn.cp{background:var(--green);color:#fff}
+.disclaimer{background:#FFF3E0;padding:16px;border-radius:8px;font-size:.8rem;color:var(--text-light);margin-top:20px;border-left:4px solid var(--orange)}
+@media(max-width:480px){.category-tabs{grid-template-columns:repeat(2,1fr)}h1{font-size:1.7rem}.result-value{font-size:2rem}}
+</style>
+</head>
+<body>
+<header>
+<h1>Medical Unit Converter</h1>
+<p class="subtitle">Fast, accurate conversions for nursing practice</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>Select Category</h2>
+<div class="category-tabs">
+<button class="cat-tab active" onclick="setCategory('weight')" data-cat="weight">⚖️ Weight</button>
+<button class="cat-tab" onclick="setCategory('volume')" data-cat="volume">💧 Volume</button>
+<button class="cat-tab" onclick="setCategory('temp')" data-cat="temp">🌡️ Temperature</button>
+<button class="cat-tab" onclick="setCategory('mass')" data-cat="mass">💊 Mass</button>
+<button class="cat-tab" onclick="setCategory('glucose')" data-cat="glucose">🩸 Glucose</button>
+<button class="cat-tab" onclick="setCategory('length')" data-cat="length">📏 Length</button>
+</div>
+<div class="converter-row">
+<div class="conv-half">
+<label for="fromVal">From</label>
+<input type="number" id="fromVal" placeholder="Enter value" oninput="convert()">
+<select id="fromUnit" onchange="convert()">
+<option value="kg">Kilograms (kg)</option><option value="g">Grams (g)</option><option value="mg">Milligrams (mg)</option>
+<option value="mcg">Micrograms (mcg)</option><option value="lbs">Pounds (lbs)</option><option value="oz">Ounces (oz)</option>
+</select>
+</div>
+<button class="swap-btn" onclick="swapUnits()">⇄</button>
+<div class="conv-half">
+<label for="toVal">Result</label>
+<input type="number" id="toVal" placeholder="Result" readonly style="background:var(--green-pale);font-weight:600;color:var(--green)">
+<select id="toUnit" onchange="convert()">
+<option value="lbs">Pounds (lbs)</option><option value="kg">Kilograms (kg)</option><option value="g">Grams (g)</option>
+<option value="mg">Milligrams (mg)</option><option value="mcg">Micrograms (mcg)</option><option value="oz">Ounces (oz)</option>
+</select>
+</div>
+</div>
+<div class="formula-display" id="formulaDisplay"></div>
+</div>
+<div class="card">
+<h2>Common Conversions</h2>
+<div class="quick-grid" id="quickGrid"></div>
+</div>
+<div class="card">
+<h2>Nursing Conversion Tables</h2>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:.85rem" id="refTable">
+<tr style="background:var(--green);color:#fff"><th style="padding:10px;text-align:left">From</th><th style="padding:10px;text-align:left">To</th><th style="padding:10px;text-align:left">Multiply By</th></tr>
+<tr style="background:var(--cream)"><td style="padding:10px">kg</td><td style="padding:10px">lbs</td><td style="padding:10px">× 2.205</td></tr>
+<tr><td style="padding:10px">lbs</td><td style="padding:10px">kg</td><td style="padding:10px">× 0.454</td></tr>
+<tr style="background:var(--cream)"><td style="padding:10px">g</td><td style="padding:10px">mg</td><td style="padding:10px">× 1,000</td></tr>
+<tr><td style="padding:10px">mg</td><td style="padding:10px">mcg</td><td style="padding:10px">× 1,000</td></tr>
+<tr style="background:var(--cream)"><td style="padding:10px">°C</td><td style="padding:10px">°F</td><td style="padding:10px">(°C × 9/5) + 32</td></tr>
+<tr><td style="padding:10px">°F</td><td style="padding:10px">°C</td><td style="padding:10px">(°F - 32) × 5/9</td></tr>
+<tr style="background:var(--cream)"><td style="padding:10px">mmol/L glucose</td><td style="padding:10px">mg/dL</td><td style="padding:10px">× 18</td></tr>
+<tr><td style="padding:10px">mg/dL glucose</td><td style="padding:10px">mmol/L</td><td style="padding:10px">× 0.0555</td></tr>
+</table>
+</div>
+</div>
+<div class="cta-section">
+<h3>More Clinical Calculators</h3>
+<p>Dosage, fluids, and assessment tools</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Explore All Tools →</a>
+</div>
+<div class="share-btns">
+<button class="share-btn tw" onclick="share('twitter')">𝕏 Share</button>
+<button class="share-btn fb" onclick="share('facebook')">Share</button>
+<button class="share-btn li" onclick="share('linkedin')">Share</button>
+<button class="share-btn cp" onclick="share('copy')">📋 Copy Link</button>
+</div>
+<div class="disclaimer">
+<strong>Disclaimer:</strong> Always double-check conversions, especially for medication dosing. When in doubt, consult pharmacy verification.
+</div>
+</div>
+<footer style="text-align:center;padding:30px;color:var(--text-light);font-size:.85rem">
+<p>Made for healthcare professionals | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none">More Tools</a></p>
+</footer>
+<script>
+const conversions={
+  weight:{kg:{lbs:2.20462,g:1000,mg:1000000,mcg:1000000000,oz:35.274},g:{kg:0.001,lbs:0.00220462,mg:1000,mcg:1000000,oz:0.035274},mg:{kg:0.000001,g:0.001,lbs:0.00000220462,mcg:1000,oz:0.000035274},mcg:{kg:1e-9,g:0.000001,mg:0.001,lbs:2.20462e-9,oz:3.5274e-8},lbs:{kg:0.453592,g:453.592,mg:453592,mcg:453592000,oz:16},oz:{kg:0.0283495,g:28.3495,mg:28349.5,mcg:28349500,lbs:0.0625}},
+  volume:{ml:{l:0.001,fl_oz:0.033814,tsp:0.202884,tbsp:0.067628,cup:0.00422675,pt:0.00211338},l:{ml:1000,fl_oz:33.814,tsp:202.884,tbsp:67.628,cup:4.22675,pt:2.11338},fl_oz:{ml:29.5735,l:0.0295735,tsp:6,tbsp:2,cup:0.125,pt:0.0625},tsp:{ml:4.92892,l:0.00492892,fl_oz:0.166667,tbsp:0.333333,cup:0.0208333,pt:0.0104167},tbsp:{ml:14.7868,l:0.0147868,fl_oz:0.5,tsp:3,cup:0.0625,pt:0.03125},cup:{ml:236.588,l:0.236588,fl_oz:8,tsp:48,tbsp:16,pt:0.5},pt:{ml:473.176,l:0.473176,fl_oz:16,tsp:96,tbsp:32,cup:2}},
+  temp:{c:{f:v=>v*9/5+32},f:{c:v=>(v-32)*5/9}},
+  mass:{g:{mg:1000,mcg:1000000,kg:0.001,grains:15.4324},mg:{g:0.001,mcg:1000,kg:0.000001,grains:0.0154324},mcg:{g:0.000001,mg:0.001,kg:1e-9,grains:0.0000154324},kg:{g:1000,mg:1000000,mcg:1000000000,grains:15432.4},grains:{g:0.0647989,mg:64.7989,mcg:64798.9,kg:0.0000647989}},
+  glucose:{mmol_l:{mg_dl:18},mg_dl:{mmol_l:0.0555}},
+  length:{cm:{m:0.01,inch:0.393701,ft:0.0328084,mm:10},m:{cm:100,inch:39.3701,ft:3.28084,mm:1000},inch:{cm:2.54,m:0.0254,ft:0.0833333,mm:25.4},ft:{cm:30.48,m:0.3048,inch:12,mm:304.8},mm:{cm:0.1,m:0.001,inch:0.0393701,ft:0.00328084}}
+};
+const unitLabels={
+  weight:{kg:'Kilograms (kg)',g:'Grams (g)',mg:'Milligrams (mg)',mcg:'Micrograms (mcg)',lbs:'Pounds (lbs)',oz:'Ounces (oz)'},
+  volume:{ml:'Milliliters (mL)',l:'Liters (L)',fl_oz:'Fluid Ounces (fl oz)',tsp:'Teaspoons (tsp)',tbsp:'Tablespoons (tbsp)',cup:'Cups',pt:'Pints (pt)'},
+  temp:{c:'Celsius (°C)',f:'Fahrenheit (°F)'},
+  mass:{g:'Grams (g)',mg:'Milligrams (mg)',mcg:'Micrograms (mcg)',kg:'Kilograms (kg)',grains:'Grains (gr)'},
+  glucose:{mmol_l:'mmol/L',mg_dl:'mg/dL'},
+  length:{cm:'Centimeters (cm)',m:'Meters (m)',inch:'Inches (in)',ft:'Feet (ft)',mm:'Millimeters (mm)'}
+};
+let currentCat='weight';
+function setCategory(cat){
+  currentCat=cat;
+  document.querySelectorAll('.cat-tab').forEach(t=>t.classList.toggle('active',t.dataset.cat===cat));
+  const units=Object.keys(unitLabels[cat]);
+  populateSelect('fromUnit',units,unitLabels[cat]);
+  populateSelect('toUnit',units.slice().reverse(),unitLabels[cat]);
+  document.getElementById('fromVal').value='';
+  document.getElementById('toVal').value='';
+  document.getElementById('formulaDisplay').textContent='';
+  updateQuickGrid();
+}
+function populateSelect(id,units,labels){
+  const sel=document.getElementById(id);
+  sel.innerHTML='';
+  units.forEach(u=>{const o=document.createElement('option');o.value=u;o.textContent=labels[u];sel.appendChild(o)});
+}
+function swapUnits(){
+  const fu=document.getElementById('fromUnit');const tu=document.getElementById('toUnit');
+  const tmp=fu.value;fu.value=tu.value;tu.value=tmp;
+  const fv=document.getElementById('fromVal');const tv=document.getElementById('toVal');
+  fv.value=tv.value;convert();
+}
+function convert(){
+  const val=parseFloat(document.getElementById('fromVal').value);
+  if(isNaN(val)){document.getElementById('toVal').value='';document.getElementById('formulaDisplay').textContent='';return}
+  const from=document.getElementById('fromUnit').value;
+  const to=document.getElementById('toUnit').value;
+  if(from===to){document.getElementById('toVal').value=val;document.getElementById('formulaDisplay').textContent='Same unit - no conversion needed';return}
+  let result;
+  if(currentCat==='temp'){
+    result=conversions.temp[from][to](val);
+  }else{
+    result=val*conversions[currentCat][from][to];
+  }
+  let display=result;
+  if(result<0.001||result>1000000)display=result.toExponential(4);
+  else if(result<0.01)display=result.toFixed(6);
+  else if(result<1)display=result.toFixed(4);
+  else if(result<100)display=result.toFixed(2);
+  else display=result.toFixed(1);
+  document.getElementById('toVal').value=display;
+  document.getElementById('formulaDisplay').innerHTML='<strong>'+val+' '+unitLabels[currentCat][from]+'</strong> = <strong>'+display+' '+unitLabels[currentCat][to]+'</strong>';
+}
+function updateQuickGrid(){
+  const grid=document.getElementById('quickGrid');
+  const quickData={
+    weight:[{from:1,to:2.205,ul:'kg → lbs'},{from:70,to:154,ul:'70 kg → lbs'},{from:1,to:1000,ul:'g → mg'},{from:1,to:1000,ul:'mg → mcg'},{from:5,to:5*2.205,ul:'5 kg → lbs'},{from:0.5,to:500,ul:'0.5 g → mg'}],
+    volume:[{from:1,to:0.034,ul:'mL → fl oz'},{from:30,to:1,ul:'30 mL → fl oz'},{from:1,to:1000,ul:'L → mL'},{from:5,to:1,ul:'5 mL → tsp'},{from:15,to:1,ul:'15 mL → tbsp'},{from:240,to:1,ul:'240 mL → cup'}],
+    temp:[{from:37,to:98.6,ul:'37°C → °F'},{from:38.5,to:101.3,ul:'38.5°C → °F'},{from:36,to:96.8,ul:'36°C → °F'},{from:100,to:212,ul:'100°C → °F'},{from:0,to:32,ul:'0°C → °F'},{from:40,to:104,ul:'40°C → °F'}],
+    mass:[{from:1,to:1000,ul:'g → mg'},{from:1,to:1000000,ul:'g → mcg'},{from:500,to:0.5,ul:'500 mg → g'},{from:0.5,to:500,ul:'0.5 g → mg'},{from:1,to:15.43,ul:'g → grains'},{from:65,to:1,ul:'65 mg → grain'}],
+    glucose:[{from:5,to:90,ul:'5 mmol/L → mg/dL'},{from:7,to:126,ul:'7 mmol/L → mg/dL'},{from:11.1,to:200,ul:'11.1 mmol/L → mg/dL'},{from:90,to:5,ul:'90 mg/dL → mmol/L'},{from:126,to:7,ul:'126 mg/dL → mmol/L'},{from:200,to:11.1,ul:'200 mg/dL → mmol/L'}],
+    length:[{from:1,to:0.39,ul:'cm → in'},{from:2.54,to:1,ul:'2.54 cm → in'},{from:30,to:1,ul:'30 cm → ft'},{from:100,to:39.37,ul:'100 cm → in'},{from:12,to:30.48,ul:'12 in → cm'},{from:1,to:100,ul:'m → cm'}]
+  };
+  const data=quickData[currentCat]||[];
+  grid.innerHTML=data.map((q,i)=>'<div class="quick-item" onclick="setQuick('+q.from+','+i+')"><div class="quick-val">'+q.to+'</div><div class="quick-label">'+q.ul+'</div></div>').join('');
+}
+function setQuick(val,idx){
+  document.getElementById('fromVal').value=val;
+  convert();
+}
+setCategory('weight');
+function share(platform){
+  const url=encodeURIComponent(window.location.href);
+  const text=encodeURIComponent('Medical Unit Converter for Nurses - fast, accurate conversions!');
+  const urls={twitter:'https://twitter.com/intent/tweet?url='+url+'&text='+text,facebook:'https://www.facebook.com/sharer/sharer.php?u='+url,linkedin:'https://www.linkedin.com/sharing/share-offsite/?url='+url};
+  if(platform==='copy')navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'));
+  else if(urls[platform])window.open(urls[platform],'_blank','width=600,height=400');
+}
+</script>
+</body>
+</html>

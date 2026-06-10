@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engenharia de Prompts de IA 2026 | Anglotec AI Academy</title>
+<meta name="description" content="Curso de Engenharia de Prompts de IA para brasileiros e portugueses. Aprenda a criar prompts eficazes para ChatGPT, Midjourney, DALL-E e outras IAs. Certificado reconhecido globalmente.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#F7F5F0;color:#1a1a1a;line-height:1.8}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero{background:linear-gradient(135deg,#2C4A3E 0%,#1a3028 100%);color:#fff;padding:100px 0 80px;text-align:center}
+.hero h1{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:24px;line-height:1.3}
+.hero p{font-size:1.2rem;opacity:.9;max-width:750px;margin:0 auto 40px}
+.badge{display:inline-block;background:#D4653B;color:#fff;padding:8px 24px;border-radius:30px;font-size:.9rem;font-weight:600;margin-bottom:24px}
+.cta-btn{display:inline-block;background:#D4653B;color:#fff;padding:18px 48px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all .3s;font-family:'Inter',sans-serif}
+.cta-btn:hover{background:#b8542e;transform:translateY(-2px)}
+.cta-secondary{display:inline-block;background:transparent;color:#fff;padding:16px 40px;border-radius:8px;text-decoration:none;font-weight:600;border:2px solid #fff;margin-left:16px;font-family:'Inter',sans-serif;transition:all .3s}
+.cta-secondary:hover{background:#fff;color:#2C4A3E}
+.section{padding:80px 0}
+.section-title{font-family:'Playfair Display',serif;font-size:2.4rem;color:#2C4A3E;margin-bottom:20px;text-align:center}
+.section-subtitle{text-align:center;color:#666;max-width:700px;margin:0 auto 60px;font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.card{background:#fff;border-radius:16px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,.08);transition:all .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.12)}
+.card-icon{font-size:2.5rem;margin-bottom:20px}
+.card h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#2C4A3E;margin-bottom:12px}
+.card p{color:#555;line-height:1.8}
+.stats{background:linear-gradient(135deg,#2C4A3E,#1a3028);color:#fff;padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.stat-number{font-family:'Playfair Display',serif;font-size:3rem;color:#D4653B;font-weight:700}
+.stat-label{font-size:1rem;opacity:.9;margin-top:8px}
+.highlight{background:#fff;padding:60px;border-radius:20px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin:40px 0}
+.highlight h3{font-family:'Playfair Display',serif;color:#2C4A3E;font-size:1.8rem;margin-bottom:20px}
+.highlight ul{list-style:none;padding:0}
+.highlight ul li{padding:12px 0;border-bottom:1px solid #eee;display:flex;align-items:center}
+.highlight ul li:before{content:"✓";color:#D4653B;font-weight:700;margin-right:12px}
+.testimonial{background:#fff;border-radius:16px;padding:40px;border-left:4px solid #D4653B;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.testimonial-text{font-style:italic;font-size:1.05rem;color:#444;margin-bottom:20px;line-height:1.8}
+.testimonial-author{font-weight:700;color:#2C4A3E}
+.testimonial-role{color:#888;font-size:.9rem}
+.pricing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.price-card{background:#fff;border-radius:16px;padding:40px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid transparent;transition:all .3s}
+.price-card.featured{border-color:#D4653B;transform:scale(1.05)}
+.price-card h4{font-family:'Playfair Display',serif;color:#2C4A3E;font-size:1.5rem;margin-bottom:12px}
+.price{font-family:'Playfair Display',serif;font-size:2.5rem;color:#D4653B;margin:20px 0}
+.price-features{list-style:none;padding:0;margin:24px 0}
+.price-features li{padding:8px 0;color:#555}
+.whatsapp-section{background:#25D366;color:#fff;padding:60px 0;text-align:center}
+.whatsapp-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:16px}
+.whatsapp-btn{display:inline-block;background:#fff;color:#25D366;padding:18px 48px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1.1rem;margin-top:24px;font-family:'Inter',sans-serif;transition:all .3s}
+.whatsapp-btn:hover{background:#f0f0f0;transform:translateY(-2px)}
+.faq-item{background:#fff;border-radius:12px;padding:28px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.faq-item h4{color:#2C4A3E;font-size:1.1rem;margin-bottom:10px}
+.faq-item p{color:#666}
+.steps{display:flex;justify-content:space-between;gap:24px;margin-top:40px;flex-wrap:wrap}
+.step{flex:1;min-width:200px;text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.step-number{width:48px;height:48px;background:#D4653B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;margin:0 auto 16px;font-family:'Inter',sans-serif}
+.step h4{color:#2C4A3E;font-size:1.1rem;margin-bottom:8px}
+.step p{color:#666;font-size:.9rem}
+.country-tag{display:inline-block;background:rgba(212,101,59,.15);color:#D4653B;padding:6px 16px;border-radius:20px;font-size:.85rem;margin:4px;font-weight:500}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:24px}
+.tool-card{background:#fff;border-radius:12px;padding:24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.tool-card h5{color:#2C4A3E;margin-bottom:8px}
+.tool-card p{font-size:.85rem;color:#888}
+@media(max-width:768px){.hero h1{font-size:2rem}.stats-grid{grid-template-columns:repeat(2,1fr)}.steps{flex-direction:column}.price-card.featured{transform:none}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="container">
+<span class="badge">Anglotec AI Academy — #1 em Engenharia de Prompts no Brasil</span>
+<h1>Engenharia de Prompts de IA: Domine a Arte de Comunicar com Inteligência Artificial</h1>
+<p>Aprenda a criar prompts poderosos e eficazes para ChatGPT, Claude, Midjourney, DALL-E e outras ferramentas de IA. Curso completo em português para profissionais do Brasil e Portugal que querem aumentar sua produtividade 10x, automatizar tarefas e se destacar no mercado de trabalho com habilidades de IA.</p>
+<div>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Start Learning — Free Trial</a>
+<a href="https://tools.anglotec-ai.com" class="cta-secondary" target="_blank">Try AI Prompt Generator</a>
+</div>
+<div style="margin-top:32px">
+<span class="country-tag">🇧🇷 São Paulo</span>
+<span class="country-tag">🇧🇷 Rio de Janeiro</span>
+<span class="country-tag">🇧🇷 Brasília</span>
+<span class="country-tag">🇧🇷 Belo Horizonte</span>
+<span class="country-tag">🇵🇹 Lisboa</span>
+<span class="country-tag">🇵🇹 Porto</span>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Por Que Milhares de Brasileiros Escolhem Anglotec AI Academy?</h2>
+<p class="section-subtitle">O curso mais completo de Engenharia de Prompts, do básico ao avançado, em português</p>
+<div class="grid">
+<div class="card">
+<div class="card-icon">🧠</div>
+<h3>Fundamentos da Engenharia de Prompts</h3>
+<p>Aprenda os princípios fundamentais que governam como os LLMs processam informações: contexto, instruções claras, exemplos (few-shot), chain-of-thought, e técnicas de refinamento. Domine a lógica por trás de prompts que geram resultados excepcionais.</p>
+</div>
+<div class="card">
+<div class="card-icon">💬</div>
+<h3>Prompts para ChatGPT e Claude</h3>
+<p>Crie prompts avançados para ChatGPT-4, GPT-4o, Claude 3.5 Sonnet e outros modelos conversacionais. Aprenda técnicas de system prompting, role prompting, iterative refinement, e como construir conversas complexas com múltiplos objetivos.</p>
+</div>
+<div class="card">
+<div class="card-icon">🎨</div>
+<h3>Prompts para Geração de Imagens</h3>
+<p>Domine a criação de prompts para Midjourney, DALL-E 3, Stable Diffusion e Leonardo AI. Aprenda sobre estilos artísticos, composição, iluminação, parâmetros avançados e como obter resultados profissionais para marketing e design.</p>
+</div>
+<div class="card">
+<div class="card-icon">⚙️</div>
+<h3>Automação com APIs e Scripts</h3>
+<p>Aprenda a usar APIs da OpenAI, Anthropic e outras para automatizar fluxos de trabalho. Crie scripts Python simples, integre IA em planilhas, e construa soluções personalizadas para seu negócio sem ser um programador especialista.</p>
+</div>
+<div class="card">
+<div class="card-icon">📊</div>
+<h3>IA para Análise de Dados</h3>
+<p>Use prompts especializados para análise de dados, geração de relatórios, visualização, e interpretação de métricas. Transforme dados brutos em insights acionáveis com poucos comandos bem estruturados.</p>
+</div>
+<div class="card">
+<div class="card-icon">🚀</div>
+<h3>Prompts para Produtividade Empresarial</h3>
+<p>Templates prontos para marketing, vendas, RH, atendimento ao cliente, redação, tradução, resumo de documentos, e-mails profissionais, apresentações e muito mais. Aumente sua produtividade em horas todos os dias.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="stats">
+<div class="container">
+<div class="stats-grid">
+<div>
+<div class="stat-number">20,000+</div>
+<div class="stat-label">Alunos no Brasil</div>
+</div>
+<div>
+<div class="stat-number">500+</div>
+<div class="stat-label">Templates de prompts</div>
+</div>
+<div>
+<div class="stat-number">50+</div>
+<div class="stat-label">Ferramentas de IA cobertas</div>
+</div>
+<div>
+<div class="stat-number">4.9★</div>
+<div class="stat-label">Avaliação média</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Ferramentas de IA que Você Vai Dominar</h2>
+<p class="section-subtitle">Aprenda a criar prompts eficazes para as principais ferramentas de IA do mercado</p>
+<div class="tool-grid">
+<div class="tool-card"><h5>ChatGPT</h5><p>OpenAI GPT-4o</p></div>
+<div class="tool-card"><h5>Claude</h5><p>Anthropic Claude 3.5</p></div>
+<div class="tool-card"><h5>Midjourney</h5><p>Geração de imagens</p></div>
+<div class="tool-card"><h5>DALL-E 3</h5><p>Imagens com ChatGPT</p></div>
+<div class="tool-card"><h5>Gemini</h5><p>Google AI</p></div>
+<div class="tool-card"><h5>Copilot</h5><p>Microsoft AI</p></div>
+<div class="tool-card"><h5>Runway</h5><p>Vídeo com IA</p></div>
+<div class="tool-card"><h5>Perplexity</h5><p>Busca com IA</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:#f0efe9">
+<div class="container">
+<h2 class="section-title">Seu Caminho para se Tornar um Engenheiro de Prompts</h2>
+<p class="section-subtitle">Do iniciante ao especialista em 6 módulos práticos e completos</p>
+<div class="steps">
+<div class="step">
+<div class="step-number">1</div>
+<h4>Fundamentos e Lógica</h4>
+<p>Como LLMs funcionam, tokens, temperatura, e os princípios básicos de um bom prompt</p>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<h4>Técnicas Avançadas</h4>
+<p>Few-shot, chain-of-thought, role prompting, system prompts e técnicas de refinamento</p>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<h4>Prompts para Texto</h4>
+<p>ChatGPT, Claude, Gemini — criação de conteúdo, análise, código, e automação</p>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<h4>Prompts para Imagem</h4>
+<p>Midjourney, DALL-E, Stable Diffusion — composição, estilos, parâmetros avançados</p>
+</div>
+</div>
+<div style="text-align:center;margin-top:48px">
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Start Free Trial — First Module</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="grid">
+<div class="highlight">
+<h3>📚 O que Você Vai Aprender</h3>
+<ul>
+<li>Como estruturar prompts que geram resultados consistentes</li>
+<li>Técnicas de role prompting para especialização de respostas</li>
+<li>Chain-of-thought para problemas complexos e raciocínio</li>
+<li>Few-shot learning: ensinar a IA com exemplos</li>
+<li>Como combinar múltiplas ferramentas de IA em workflows</li>
+<li>Automatização de tarefas repetitivas com APIs</li>
+<li>Criação de prompts para análise de dados e relatórios</li>
+<li>Como usar IA para marketing, vendas e atendimento</li>
+</ul>
+</div>
+<div class="highlight">
+<h3>💼 Aplicações Profissionais</h3>
+<ul>
+<li>Marketing: criação de campanhas, copy, e anúncios</li>
+<li>Redação: artigos, e-mails, apresentações, propostas</li>
+<li>Programação: geração de código, debugging, explicação</li>
+<li>Análise de dados: interpretação, visualização, relatórios</li>
+<li>Design: criação de imagens, logos, e materiais visuais</li>
+<li>RH: triagem de currículos, descrições de vagas</li>
+<li>Atendimento: chatbots, respostas automatizadas</li>
+<li>Educação: criação de materiais, tutoria personalizada</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:#f0efe9">
+<div class="container">
+<h2 class="section-title">Depoimentos de Nossos Alunos</h2>
+<p class="section-subtitle">Profissionais do Brasil e Portugal que transformaram suas carreiras</p>
+<div class="grid">
+<div class="testimonial">
+<div class="testimonial-text">"Sou designer gráfico em São Paulo e o curso de prompts para Midjourney mudou minha vida. Consegui reduzir o tempo de criação em 70% e agora atendo o dobro de clientes. Os templates prontos são um tesouro!"</div>
+<div class="testimonial-author">Camila Ferreira</div>
+<div class="testimonial-role">🇧🇷 São Paulo — Designer Gráfica Freelancer</div>
+</div>
+<div class="testimonial">
+<div class="testimonial-text">"Trabalho em marketing digital no Rio e precisava criar conteúdo em escala. Aprendi a usar ChatGPT com prompts avançados e agora produzo 10x mais conteúdo com a mesma equipe. Meu chefe ficou impressionado!"</div>
+<div class="testimonial-author">Ricardo Mendes</div>
+<div class="testimonial-role">🇧🇷 Rio de Janeiro — Gerente de Marketing</div>
+</div>
+<div class="testimonial">
+<div class="testimonial-text">"Sou desenvolvedor em Lisboa e o módulo de APIs e automação abriu um mundo novo. Consegui integrar IA nos projetos da empresa e recebi uma promoção. O conteúdo é muito prático e bem estruturado."</div>
+<div class="testimonial-author">Tiago Oliveira</div>
+<div class="testimonial-role">🇵🇹 Lisboa — Desenvolvedor Full-Stack</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Planos do Curso</h2>
+<p class="section-subtitle">Escolha o plano ideal para seus objetivos. Todo o suporte em português.</p>
+<div class="pricing-cards">
+<div class="price-card">
+<h4>Starter</h4>
+<div class="price">R$49/mês</div>
+<ul class="price-features">
+<li>Módulos 1 e 2 (Fundamentos)</li>
+<li>100+ templates de prompts</li>
+<li>Exercícios práticos diários</li>
+<li>Suporte por email</li>
+</ul>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Começar</a>
+</div>
+<div class="price-card featured">
+<h4>Pro Completo</h4>
+<div class="price">R$99/mês</div>
+<ul class="price-features">
+<li>Todos os 6 módulos</li>
+<li>500+ templates de prompts</li>
+<li>Acesso a todas as ferramentas de IA</li>
+<li>Projetos práticos avaliados</li>
+<li>Suporte WhatsApp em português</li>
+<li>Certificado de conclusão</li>
+</ul>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Mais Popular — Matricular</a>
+</div>
+<div class="price-card">
+<h4>Enterprise</h4>
+<div class="price">R$199/mês</div>
+<ul class="price-features">
+<li>Tudo do plano Pro</li>
+<li>Mentoria individual mensal</li>
+<li>Acesso a novos módulos primeiro</li>
+<li>Workshops ao vivo semanais</li>
+<li>Comunidade exclusiva no Discord</li>
+<li>Garantia de 30 dias</li>
+</ul>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank">Ir para Enterprise</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:#f0efe9">
+<div class="container">
+<h2 class="section-title">Perguntas Frequentes</h2>
+<div class="faq-item">
+<h4>Preciso saber programar para fazer este curso?</h4>
+<p>Não! O curso é projetado para iniciantes completos. Os módulos de programação e API são opcionais e ensinados de forma acessível, mesmo para quem nunca escreveu uma linha de código. Foque nas áreas que mais interessam ao seu perfil profissional.</p>
+</div>
+<div class="faq-item">
+<h4>O que é Engenharia de Prompts exatamente?</h4>
+<p>Engenharia de Prompts é a arte e ciência de criar instruções eficazes (prompts) para modelos de inteligência artificial, especialmente LLMs como ChatGPT. Um bom prompt engineer consegue extrair resultados precisos, consistentes e de alta qualidade das IAs, aumentando drasticamente a produtividade e a qualidade do trabalho.</p>
+</div>
+<div class="faq-item">
+<h4>O certificado é reconhecido?</h4>
+<p>Sim! Nosso certificado de Engenharia de Prompts é reconhecido por empresas no Brasil, Portugal e internacionalmente. Inclui seu portfólio de projetos e um badge verificável para LinkedIn. Muitos alunos usam o certificado para conseguir promoções e novas oportunidades.</p>
+</div>
+<div class="faq-item">
+<h4>Em quanto tempo consigo terminar o curso?</h4>
+<p>O ritmo é seu! A maioria dos alunos completa o curso em 4-8 semanas dedicando 5-10 horas por semana. O plano Pro inclui um cronograma sugerido, mas você tem acesso ilimitado ao conteúdo e pode estudar no seu próprio tempo.</p>
+</div>
+<div class="faq-item">
+<h4>Preciso pagar pelas ferramentas de IA separadamente?</h4>
+<p>Para a maioria dos exercícios, usamos as versões gratuitas das ferramentas ou demos limitadas. Recomendamos assinar ChatGPT Plus ($20/mês) para o módulo avançado, mas não é obrigatório. Fornecemos alternativas gratuitas para todas as atividades.</p>
+</div>
+<div class="faq-item">
+<h4>O suporte é realmente em português?</h4>
+<p>Sim! Toda a equipe de suporte fala português fluentemente. Atendimento por WhatsApp, email e comunidade no Discord — tudo em português. O conteúdo do curso também é 100% em português, com terminologia técnica em inglês quando necessário.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="whatsapp-section">
+<div class="container">
+<h2>📱 Fale Conosco pelo WhatsApp</h2>
+<p style="font-size:1.1rem;opacity:.9;max-width:700px;margin:16px auto 0">Nossa equipe de suporte em português está pronta para ajudar com informações sobre o curso, planos, e como a engenharia de prompts pode transformar sua carreira.</p>
+<a href="https://wa.me/447123456789" class="whatsapp-btn" target="_blank">Falar no WhatsApp</a>
+</div>
+</section>
+
+<section class="hero" style="padding:80px 0">
+<div class="container">
+<h2 style="font-size:2.4rem;margin-bottom:20px">Comece Sua Jornada em IA Hoje</h2>
+<p style="font-size:1.2rem;margin-bottom:40px">Junte-se a 20.000+ brasileiros e portugueses que já dominam a engenharia de prompts. A primeira aula é gratuita!</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" target="_blank" style="font-size:1.2rem;padding:20px 56px">Start Free Trial Today</a>
+<p style="margin-top:24px;font-size:.9rem;opacity:.7">Sem cartão de crédito — comece grátis hoje</p>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p><strong>Anglotec AI Academy</strong> — Your Partner in AI Skills Development</p>
+<p style="margin-top:8px">Serving learners across São Paulo, Rio de Janeiro, Brasília, Belo Horizonte, Lisbon, Porto, and all Portuguese-speaking countries.</p>
+<p style="margin-top:16px">CTAs link to: <a href="https://tools.anglotec-ai.com" style="color:#D4653B" target="_blank">tools.anglotec-ai.com</a> | <a href="https://wa.me/447123456789" style="color:#25D366" target="_blank">WhatsApp Support</a></p>
+</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing FAQ: 20 Common Questions Answered</title>
+<meta name="description" content="Get answers to the 20 most common IELTS Writing questions. Task 1, Task 2, word count, scoring, band descriptors, and tips from examiners.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3d5f52;--orange:#D4653B;--orange-light:#e87a52;--cream:#F8F6F1;--white:#FFFFFF;--text:#2a2a2a;--text-light:#5a5a5a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.7}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:var(--green)}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+header{background:linear-gradient(135deg,var(--green) 0%,#1a3028 100%);color:var(--white);padding:80px 0 100px;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;bottom:-50px;right:-50px;width:300px;height:300px;background:var(--orange);border-radius:50%;opacity:.15}
+header h1{font-size:3rem;line-height:1.15;margin-bottom:20px;color:var(--white);font-family:'Playfair Display',serif}
+header .subtitle{font-size:1.2rem;opacity:.9;max-width:700px;line-height:1.7;font-weight:300}
+.nav-fix{position:sticky;top:0;background:var(--green);z-index:100;padding:12px 0}
+.nav-fix .container{display:flex;justify-content:space-between;align-items:center}
+.nav-fix a{color:var(--white);text-decoration:none;font-weight:500;font-size:.9rem}
+.nav-fix .cta-btn{background:var(--orange);padding:10px 24px;border-radius:6px;font-weight:600;transition:.3s}
+.nav-fix .cta-btn:hover{background:var(--orange-light)}
+.breadcrumbs{padding:20px 0;font-size:.85rem;color:var(--text-light)}
+.breadcrumbs a{color:var(--green);text-decoration:none}
+.section{padding:50px 0}
+.section-alt{background:var(--white)}
+h2{font-size:2rem;margin-bottom:24px}
+p{margin-bottom:16px;color:var(--text-light);font-size:1.05rem}
+/* FAQ Accordion Styles */
+.faq-list{margin:32px 0}
+.faq-item{background:var(--white);border-radius:10px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden}
+.faq-question{width:100%;padding:20px 24px;background:none;border:none;text-align:left;font-size:1.08rem;font-weight:600;color:var(--green);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',sans-serif;transition:.3s}
+.faq-question:hover{color:var(--orange)}
+.faq-question::after{content:'+';font-size:1.4rem;color:var(--orange);transition:.3s;flex-shrink:0;margin-left:12px}
+.faq-item.active .faq-question::after{content:'−';color:var(--orange)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;padding:0 24px}
+.faq-item.active .faq-answer{max-height:2000px;padding:0 24px 24px}
+.faq-answer p{color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:12px}
+.faq-answer ul,.faq-answer ol{margin-left:20px;margin-bottom:12px;color:var(--text-light)}
+.faq-answer li{margin-bottom:6px;font-size:1rem}
+.faq-answer a{color:var(--orange);font-weight:600}
+.highlight-box{background:linear-gradient(135deg,var(--green),var(--green-light));color:var(--white);padding:32px;border-radius:12px;margin:32px 0}
+.highlight-box h3{color:var(--white);font-family:'Playfair Display',serif;margin-top:0}
+.highlight-box p{color:rgba(255,255,255,.9)}
+.highlight-box a{color:var(--orange);font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin:32px 0}
+.card{background:var(--white);padding:28px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.card h4{color:var(--orange);font-size:1.1rem;margin-bottom:10px;font-family:'Inter',sans-serif;font-weight:600}
+.tag{display:inline-block;background:rgba(212,101,59,.1);color:var(--orange);padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:10px}
+.cta-section{background:linear-gradient(135deg,var(--green),var(--green-light));color:var(--white);padding:70px 0;text-align:center}
+.cta-section h2{color:var(--white);font-size:2.2rem;margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,.9);font-size:1.1rem;max-width:600px;margin:0 auto 32px}
+.cta-btn{display:inline-block;background:var(--orange);color:var(--white);padding:16px 40px;border-radius:8px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:.3s}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px)}
+.toc{background:var(--white);padding:28px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin:32px 0}
+.toc h3{margin-top:0;color:var(--green)}
+.toc ul{list-style:none;margin:0;columns:2;column-gap:24px}
+.toc li{margin-bottom:6px}
+.toc a{color:var(--green);text-decoration:none;font-weight:500;font-size:.9rem}
+.toc a:hover{color:var(--orange)}
+.table-wrap{overflow-x:auto;margin:24px 0}
+.comparison-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);font-size:.95rem}
+.comparison-table th{background:var(--green);color:var(--white);padding:14px;text-align:left;font-weight:600}
+.comparison-table td{padding:12px 14px;border-bottom:1px solid #eee;color:var(--text-light)}
+.comparison-table tr:hover{background:#fafafa}
+footer{background:var(--green);color:rgba(255,255,255,.8);padding:40px 0;text-align:center;font-size:.9rem}
+footer a{color:var(--orange);text-decoration:none}
+@media(max-width:768px){header h1{font-size:2rem}h2{font-size:1.6rem}.toc ul{columns:1}}
+</style>
+</head>
+<body>
+
+<nav class="nav-fix">
+<div class="container">
+<a href="https://anglotec-ai.com">Anglotec AI</a>
+<div><a href="https://tools.anglotec-ai.com" class="cta-btn">Free IELTS Writing Tool</a></div>
+</div>
+</nav>
+
+<header>
+<div class="container">
+<div class="breadcrumbs" style="color:rgba(255,255,255,.7)"><a href="https://anglotec-ai.com" style="color:var(--orange)">Home</a> &gt; IELTS Writing FAQ</div>
+<h1>IELTS Writing FAQ: 20 Common Questions Answered</h1>
+<p class="subtitle">Get answers to the 20 most common IELTS Writing questions about Task 1, Task 2, word count, scoring, band descriptors, and examiner tips.</p>
+</div>
+</header>
+
+<div class="container">
+
+<div class="toc">
+<h3>Jump to a Question</h3>
+<ul>
+<li><a href="#q1">Test format</a></li>
+<li><a href="#q2">How scoring works</a></li>
+<li><a href="#q3">Minimum word count</a></li>
+<li><a href="#q4">Target word count</a></li>
+<li><a href="#q5">Writing more than 250 words</a></li>
+<li><a href="#q6">Penalties for short answers</a></li>
+<li><a href="#q7">Handwriting impact</a></li>
+<li><a href="#q8">Pen vs pencil</a></li>
+<li><a href="#q9">Time allocation</a></li>
+<li><a href="#q10">Which task first?</a></li>
+<li><a href="#q11">Task 1 question types</a></li>
+<li><a href="#q12">GT Task 1 letters</a></li>
+<li><a href="#q13">Task 2 essay types</a></li>
+<li><a href="#q14">Paragraph structure</a></li>
+<li><a href="#q15">Using idioms</a></li>
+<li><a href="#q16">Spelling rules</a></li>
+<li><a href="#q17">Personal examples</a></li>
+<li><a href="#q18">Band 6 vs 7 vs 8</a></li>
+<li><a href="#q19">Quick improvement tips</a></li>
+<li><a href="#q20">Free writing feedback</a></li>
+</ul>
+</div>
+
+<section class="section">
+<p>IELTS Writing is the section that concerns most test takers, and for good reason. It requires not just English language skills but also the ability to organise ideas, develop arguments, and write under time pressure. These 20 frequently asked questions cover everything from basic test format to advanced scoring criteria, helping you understand exactly what examiners expect and how to achieve your target band score.</p>
+
+<div class="highlight-box">
+<h3>IELTS Writing Essentials</h3>
+<p>Task 1: Minimum 150 words (1/3 of score) | Task 2: Minimum 250 words (2/3 of score) | Total time: 60 minutes | Scored on 4 criteria each worth 25% | Band scores from 0-9 in half-band increments | Computer and paper formats available</p>
+</div>
+
+<div class="faq-list">
+<div class="faq-item" id="q1">
+<button class="faq-question">What is the IELTS Writing test format?</button>
+<div class="faq-answer">
+<p>The IELTS Writing test consists of two tasks and lasts 60 minutes. Task 1 requires you to write at least 150 words describing visual information (a graph, chart, table, diagram, or process) for Academic IELTS, or writing a letter for General Training IELTS. Task 2 requires you to write at least 250 words responding to a point of view, argument, or problem. Task 2 carries twice the weight of Task 1 in scoring.</p>
+</div>
+</div>
+<div class="faq-item" id="q2">
+<button class="faq-question">How is IELTS Writing scored?</button>
+<div class="faq-answer">
+<p>IELTS Writing is scored using four criteria, each weighted equally at 25%: <strong>Task Response</strong> (how well you address the task), <strong>Coherence and Cohesion</strong> (organisation and flow), <strong>Lexical Resource</strong> (vocabulary range and accuracy), and <strong>Grammatical Range and Accuracy</strong> (variety and correctness of grammar). Each criterion is scored on a band scale of 0-9, and the average produces your Writing band score.</p>
+</div>
+</div>
+<div class="faq-item" id="q3">
+<button class="faq-question">What is the minimum word count for IELTS Writing?</button>
+<div class="faq-answer">
+<p>You must write at least <strong>150 words for Task 1</strong> and at least <strong>250 words for Task 2</strong>. There is no penalty for writing more, but excessively long responses may contain more errors and take time away from checking. If you write significantly fewer words than required, you will be penalised under the Task Response criterion and may receive a reduced band score.</p>
+</div>
+</div>
+<div class="faq-item" id="q4">
+<button class="faq-question">How many words should I aim for in each task?</button>
+<div class="faq-answer">
+<p>A good target is <strong>160-180 words for Task 1</strong> and <strong>260-280 words for Task 2</strong>. This gives you enough space to develop your response fully without excessive length that might introduce errors. Quality matters more than quantity — a well-structured 260-word essay will score higher than a disorganised 350-word essay.</p>
+</div>
+</div>
+<div class="faq-item" id="q5">
+<button class="faq-question">Can I write more than 250 words for Task 2?</button>
+<div class="faq-answer">
+<p>Yes, you can write more than 250 words, and there is no upper word limit. However, writing significantly more does not guarantee a higher score and may increase the risk of errors. Examiners assess quality, not quantity. Focus on developing clear, well-supported arguments rather than simply writing more words.</p>
+</div>
+</div>
+<div class="faq-item" id="q6">
+<button class="faq-question">What happens if I don't write enough words?</button>
+<div class="faq-answer">
+<p>If you write fewer than 150 words for Task 1 or fewer than 250 words for Task 2, you will be penalised. The penalty is applied under Task Response and can reduce your band score by 0.5 to 1 full band depending on how far below the minimum you are. Always check your word count and ensure you meet the minimum requirement for both tasks.</p>
+</div>
+</div>
+<div class="faq-item" id="q7">
+<button class="faq-question">Does handwriting affect my IELTS Writing score?</button>
+<div class="faq-answer">
+<p>Handwriting does not directly affect your score as there is no specific criterion for it. However, if the examiner cannot read your writing, they cannot assess your content fairly. Illegible handwriting may lead to lower scores simply because your good ideas and vocabulary cannot be understood. If your handwriting is poor, consider the computer-delivered IELTS test where you type your responses.</p>
+</div>
+</div>
+<div class="faq-item" id="q8">
+<button class="faq-question">Can I use a pencil in IELTS Writing?</button>
+<div class="faq-answer">
+<p>For paper-based IELTS, you should write in <strong>pencil</strong> for both Listening and Reading, but for Writing, you may use either pen or pencil. Check the specific instructions at your test centre, as policies can vary. For computer-delivered IELTS, you type your responses and this question does not apply.</p>
+</div>
+</div>
+<div class="faq-item" id="q9">
+<button class="faq-question">How long should I spend on each task?</button>
+<div class="faq-answer">
+<p>You should spend approximately <strong>20 minutes on Task 1</strong> and <strong>40 minutes on Task 2</strong>. Task 2 carries twice the marks of Task 1, so allocating more time to it makes sense. Plan your time carefully: spend a few minutes planning, most of the time writing, and leave a few minutes at the end to check your work for errors.</p>
+</div>
+</div>
+<div class="faq-item" id="q10">
+<button class="faq-question">Should I do Task 1 or Task 2 first?</button>
+<div class="faq-answer">
+<p>You can choose which task to do first, though most candidates start with Task 1 since it appears first in the test booklet. Some candidates prefer to start with Task 2 because it is worth more marks and they want to ensure they complete it fully. Either approach is valid — choose the strategy that works best for you based on your practice experience.</p>
+</div>
+</div>
+<div class="faq-item" id="q11">
+<button class="faq-question">What types of Task 1 questions appear in Academic IELTS?</button>
+<div class="faq-answer">
+<p>Academic IELTS Task 1 may include: line graphs, bar charts, pie charts, tables, diagrams showing a process, maps showing changes over time, or combinations of these. You need to describe the main features, make comparisons where relevant, and summarise the information. No interpretation or opinion is required — just factual description.</p>
+</div>
+</div>
+<div class="faq-item" id="q12">
+<button class="faq-question">What types of letters appear in General Training Task 1?</button>
+<div class="faq-answer">
+<p>General Training Task 1 requires you to write a letter in response to a given situation. The letter may be formal, semi-formal, or informal. Common topics include: requesting information, making a complaint, explaining a situation, inviting someone, thanking someone, or applying for a position. The letter type (formal/informal) is specified in the task instructions.</p>
+</div>
+</div>
+<div class="faq-item" id="q13">
+<button class="faq-question">What are the common Task 2 essay types?</button>
+<div class="faq-answer">
+<p>IELTS Task 2 essay questions typically fall into these categories: <strong>Opinion (Agree/Disagree)</strong> — do you agree or disagree with a statement? <strong>Discussion (Both Views)</strong> — discuss both views and give your opinion. <strong>Problem and Solution</strong> — identify problems and propose solutions. <strong>Advantages and Disadvantages</strong> — analyse the pros and cons. <strong>Double Question</strong> — answer two direct questions. Understanding each type helps you structure your response correctly.</p>
+</div>
+</div>
+<div class="faq-item" id="q14">
+<button class="faq-question">How important is paragraph structure in IELTS Writing?</button>
+<div class="faq-answer">
+<p>Paragraph structure is extremely important. Well-organised paragraphs demonstrate Coherence and Cohesion, which accounts for 25% of your score. For Task 2, a standard structure includes: introduction (2 sentences), body paragraph 1 (main idea + support), body paragraph 2 (main idea + support), and conclusion (1-2 sentences). Each paragraph should contain one main idea developed with explanations and examples.</p>
+</div>
+</div>
+<div class="faq-item" id="q15">
+<button class="faq-question">Can I use idioms in IELTS Writing?</button>
+<div class="faq-answer">
+<p>Idioms should be used sparingly and only when you are confident they are appropriate. While natural, accurate idiom use can demonstrate strong Lexical Resource, inappropriate or incorrect idiom use can harm your score. Academic writing (Task 2) generally requires a formal tone where idioms are less common. If you use idioms, ensure they fit the context and are used correctly.</p>
+</div>
+</div>
+<div class="faq-item" id="q16">
+<button class="faq-question">Does spelling matter in IELTS Writing?</button>
+<div class="faq-answer">
+<p>Yes, spelling matters. Frequent spelling errors will reduce your score under the Lexical Resource and Grammatical Range and Accuracy criteria. British or American spelling is accepted, but you should be consistent throughout your response. If you are unsure of a spelling, use a different word that you know is correct rather than guessing.</p>
+</div>
+</div>
+<div class="faq-item" id="q17">
+<button class="faq-question">Can I use personal examples in Task 2?</button>
+<div class="faq-answer">
+<p>Yes, personal examples are acceptable in IELTS Task 2 and can make your arguments more convincing. However, Academic Task 2 typically requires a more formal, objective tone, so balance personal examples with more general evidence where possible. The key is that your examples effectively support your argument, regardless of whether they are personal or general.</p>
+</div>
+</div>
+<div class="faq-item" id="q18">
+<button class="faq-question">What is the difference between Band 6, 7, and 8 writing?</button>
+<div class="faq-answer">
+<p><strong>Band 6</strong> writers address the task adequately with generally organised responses and reasonably accurate grammar and vocabulary, though with some errors. <strong>Band 7</strong> writers present clear, well-developed arguments with good organisation, varied vocabulary, and a mix of complex and simple sentences with occasional errors. <strong>Band 8</strong> writers produce fully developed, well-organised responses with sophisticated vocabulary, wide grammatical range, and very few errors. Each band represents a significant step up in precision, range, and sophistication.</p>
+</div>
+</div>
+<div class="faq-item" id="q19">
+<button class="faq-question">How can I improve my IELTS Writing score quickly?</button>
+<div class="faq-answer">
+<p>To improve quickly: 1) Understand the band descriptors and what each level requires. 2) Practise timed writing regularly — at least one Task 1 and one Task 2 every 2-3 days. 3) Get detailed feedback on your writing using <a href='https://tools.anglotec-ai.com'>Anglotec AI's free writing assessment tool</a>. 4) Study model answers to understand what examiners expect. 5) Build your academic vocabulary systematically. 6) Learn to plan your essays in 3-5 minutes before writing. 7) Review your errors and focus on correcting patterns of mistakes.</p>
+</div>
+</div>
+<div class="faq-item" id="q20">
+<button class="faq-question">Where can I get free IELTS Writing feedback?</button>
+<div class="faq-answer">
+<p><a href='https://tools.anglotec-ai.com'>Anglotec AI provides completely free IELTS Writing feedback</a> powered by advanced AI. Submit your Task 1 and Task 2 essays and receive instant evaluation across all four criteria: Task Response, Coherence and Cohesion, Lexical Resource, and Grammatical Range and Accuracy. You get a band score estimate and detailed suggestions for improvement. Unlike paid marking services, Anglotec AI is free, instant, and available unlimited times.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section section-alt">
+<h2>Additional IELTS Writing Tips</h2>
+<p>Beyond the FAQ above, keep these key principles in mind for IELTS Writing success. Always plan your essay before writing — a 3-5 minute plan saves time and produces better-organised responses. Focus on one main idea per paragraph and develop it fully with explanations and examples. Use a variety of sentence structures and vocabulary to demonstrate your language range. Leave 3-5 minutes at the end to check for grammar errors and spelling mistakes. Practise under timed conditions regularly to build speed and confidence.</p>
+<div class="card-grid">
+<div class="card">
+<span class="tag">Planning</span>
+<h4>Plan Before You Write</h4>
+<p>Spend 3-5 minutes planning your essay structure. A clear plan prevents rambling and ensures all parts of the task are addressed.</p>
+</div>
+<div class="card">
+<span class="tag">Practice</span>
+<h4>Practise Timed Writing</h4>
+<p>Complete full Task 1 and Task 2 under exam conditions at least twice per week in the month before your test.</p>
+</div>
+<div class="card">
+<span class="tag">Feedback</span>
+<h4>Get Regular Feedback</h4>
+<p>Use <a href="https://tools.anglotec-ai.com">Anglotec AI's free tool</a> to submit essays and receive detailed feedback on all four scoring criteria.</p>
+</div>
+<div class="card">
+<span class="tag">Review</span>
+<h4>Learn from Mistakes</h4>
+<p>Track your common errors and focus on eliminating them. Repeated mistake patterns are the biggest barrier to score improvement.</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<section class="cta-section">
+<div class="container">
+<h2>Get Free IELTS Writing Feedback Now</h2>
+<p>Submit your Task 1 and Task 2 essays to Anglotec AI for instant assessment across all four criteria. Completely free, unlimited submissions, and AI-powered accuracy.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Get Free Writing Feedback</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>&copy; 2026 Anglotec AI. All rights reserved. | <a href="https://tools.anglotec-ai.com">Free IELTS Tools</a> | <a href="https://anglotec-ai.com">Anglotec AI Home</a></p>
+</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(btn=>{
+btn.addEventListener('click',()=>{
+const item=btn.parentElement;
+const isActive=item.classList.contains('active');
+document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
+if(!isActive)item.classList.add('active');
+});
+});
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the IELTS Writing test format?","acceptedAnswer":{"@type":"Answer","text":"The IELTS Writing test consists of two tasks and lasts 60 minutes. Task 1 requires you to write at least 150 words describing visual information (a graph, chart, table, diagram, or process) for Academic IELTS, or writing a letter for General Training IELTS. Task 2 requires you to write at least 250 words responding to a point of view, argument, or problem. Task 2 carries twice the weight of Task 1 in scoring."}},{"@type":"Question","name":"How is IELTS Writing scored?","acceptedAnswer":{"@type":"Answer","text":"IELTS Writing is scored using four criteria, each weighted equally at 25%: <strong>Task Response</strong> (how well you address the task), <strong>Coherence and Cohesion</strong> (organisation and flow), <strong>Lexical Resource</strong> (vocabulary range and accuracy), and <strong>Grammatical Range and Accuracy</strong> (variety and correctness of grammar). Each criterion is scored on a band scale of 0-9, and the average produces your Writing band score."}},{"@type":"Question","name":"What is the minimum word count for IELTS Writing?","acceptedAnswer":{"@type":"Answer","text":"You must write at least <strong>150 words for Task 1</strong> and at least <strong>250 words for Task 2</strong>. There is no penalty for writing more, but excessively long responses may contain more errors and take time away from checking. If you write significantly fewer words than required, you will be penalised under the Task Response criterion and may receive a reduced band score."}},{"@type":"Question","name":"How many words should I aim for in each task?","acceptedAnswer":{"@type":"Answer","text":"A good target is <strong>160-180 words for Task 1</strong> and <strong>260-280 words for Task 2</strong>. This gives you enough space to develop your response fully without excessive length that might introduce errors. Quality matters more than quantity — a well-structured 260-word essay will score higher than a disorganised 350-word essay."}},{"@type":"Question","name":"Can I write more than 250 words for Task 2?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can write more than 250 words, and there is no upper word limit. However, writing significantly more does not guarantee a higher score and may increase the risk of errors. Examiners assess quality, not quantity. Focus on developing clear, well-supported arguments rather than simply writing more words."}},{"@type":"Question","name":"What happens if I don't write enough words?","acceptedAnswer":{"@type":"Answer","text":"If you write fewer than 150 words for Task 1 or fewer than 250 words for Task 2, you will be penalised. The penalty is applied under Task Response and can reduce your band score by 0.5 to 1 full band depending on how far below the minimum you are. Always check your word count and ensure you meet the minimum requirement for both tasks."}},{"@type":"Question","name":"Does handwriting affect my IELTS Writing score?","acceptedAnswer":{"@type":"Answer","text":"Handwriting does not directly affect your score as there is no specific criterion for it. However, if the examiner cannot read your writing, they cannot assess your content fairly. Illegible handwriting may lead to lower scores simply because your good ideas and vocabulary cannot be understood. If your handwriting is poor, consider the computer-delivered IELTS test where you type your responses."}},{"@type":"Question","name":"Can I use a pencil in IELTS Writing?","acceptedAnswer":{"@type":"Answer","text":"For paper-based IELTS, you should write in <strong>pencil</strong> for both Listening and Reading, but for Writing, you may use either pen or pencil. Check the specific instructions at your test centre, as policies can vary. For computer-delivered IELTS, you type your responses and this question does not apply."}},{"@type":"Question","name":"How long should I spend on each task?","acceptedAnswer":{"@type":"Answer","text":"You should spend approximately <strong>20 minutes on Task 1</strong> and <strong>40 minutes on Task 2</strong>. Task 2 carries twice the marks of Task 1, so allocating more time to it makes sense. Plan your time carefully: spend a few minutes planning, most of the time writing, and leave a few minutes at the end to check your work for errors."}},{"@type":"Question","name":"Should I do Task 1 or Task 2 first?","acceptedAnswer":{"@type":"Answer","text":"You can choose which task to do first, though most candidates start with Task 1 since it appears first in the test booklet. Some candidates prefer to start with Task 2 because it is worth more marks and they want to ensure they complete it fully. Either approach is valid — choose the strategy that works best for you based on your practice experience."}},{"@type":"Question","name":"What types of Task 1 questions appear in Academic IELTS?","acceptedAnswer":{"@type":"Answer","text":"Academic IELTS Task 1 may include: line graphs, bar charts, pie charts, tables, diagrams showing a process, maps showing changes over time, or combinations of these. You need to describe the main features, make comparisons where relevant, and summarise the information. No interpretation or opinion is required — just factual description."}},{"@type":"Question","name":"What types of letters appear in General Training Task 1?","acceptedAnswer":{"@type":"Answer","text":"General Training Task 1 requires you to write a letter in response to a given situation. The letter may be formal, semi-formal, or informal. Common topics include: requesting information, making a complaint, explaining a situation, inviting someone, thanking someone, or applying for a position. The letter type (formal/informal) is specified in the task instructions."}},{"@type":"Question","name":"What are the common Task 2 essay types?","acceptedAnswer":{"@type":"Answer","text":"IELTS Task 2 essay questions typically fall into these categories: <strong>Opinion (Agree/Disagree)</strong> — do you agree or disagree with a statement? <strong>Discussion (Both Views)</strong> — discuss both views and give your opinion. <strong>Problem and Solution</strong> — identify problems and propose solutions. <strong>Advantages and Disadvantages</strong> — analyse the pros and cons. <strong>Double Question</strong> — answer two direct questions. Understanding each type helps you structure your response correctly."}},{"@type":"Question","name":"How important is paragraph structure in IELTS Writing?","acceptedAnswer":{"@type":"Answer","text":"Paragraph structure is extremely important. Well-organised paragraphs demonstrate Coherence and Cohesion, which accounts for 25% of your score. For Task 2, a standard structure includes: introduction (2 sentences), body paragraph 1 (main idea + support), body paragraph 2 (main idea + support), and conclusion (1-2 sentences). Each paragraph should contain one main idea developed with explanations and examples."}},{"@type":"Question","name":"Can I use idioms in IELTS Writing?","acceptedAnswer":{"@type":"Answer","text":"Idioms should be used sparingly and only when you are confident they are appropriate. While natural, accurate idiom use can demonstrate strong Lexical Resource, inappropriate or incorrect idiom use can harm your score. Academic writing (Task 2) generally requires a formal tone where idioms are less common. If you use idioms, ensure they fit the context and are used correctly."}},{"@type":"Question","name":"Does spelling matter in IELTS Writing?","acceptedAnswer":{"@type":"Answer","text":"Yes, spelling matters. Frequent spelling errors will reduce your score under the Lexical Resource and Grammatical Range and Accuracy criteria. British or American spelling is accepted, but you should be consistent throughout your response. If you are unsure of a spelling, use a different word that you know is correct rather than guessing."}},{"@type":"Question","name":"Can I use personal examples in Task 2?","acceptedAnswer":{"@type":"Answer","text":"Yes, personal examples are acceptable in IELTS Task 2 and can make your arguments more convincing. However, Academic Task 2 typically requires a more formal, objective tone, so balance personal examples with more general evidence where possible. The key is that your examples effectively support your argument, regardless of whether they are personal or general."}},{"@type":"Question","name":"What is the difference between Band 6, 7, and 8 writing?","acceptedAnswer":{"@type":"Answer","text":"<strong>Band 6</strong> writers address the task adequately with generally organised responses and reasonably accurate grammar and vocabulary, though with some errors. <strong>Band 7</strong> writers present clear, well-developed arguments with good organisation, varied vocabulary, and a mix of complex and simple sentences with occasional errors. <strong>Band 8</strong> writers produce fully developed, well-organised responses with sophisticated vocabulary, wide grammatical range, and very few errors. Each band represents a significant step up in precision, range, and sophistication."}},{"@type":"Question","name":"How can I improve my IELTS Writing score quickly?","acceptedAnswer":{"@type":"Answer","text":"To improve quickly: 1) Understand the band descriptors and what each level requires. 2) Practise timed writing regularly — at least one Task 1 and one Task 2 every 2-3 days. 3) Get detailed feedback on your writing using <a href=''https://tools.anglotec-ai.com''>Anglotec AI''s free writing assessment tool</a>. 4) Study model answers to understand what examiners expect. 5) Build your academic vocabulary systematically. 6) Learn to plan your essays in 3-5 minutes before writing. 7) Review your errors and focus on correcting patterns of mistakes."}},{"@type":"Question","name":"Where can I get free IELTS Writing feedback?","acceptedAnswer":{"@type":"Answer","text":"<a href=''https://tools.anglotec-ai.com''>Anglotec AI provides completely free IELTS Writing feedback</a> powered by advanced AI. Submit your Task 1 and Task 2 essays and receive instant evaluation across all four criteria: Task Response, Coherence and Cohesion, Lexical Resource, and Grammatical Range and Accuracy. You get a band score estimate and detailed suggestions for improvement. Unlike paid marking services, Anglotec AI is free, instant, and available unlimited times."}}]}
+</script>
+
+</body>
+</html>

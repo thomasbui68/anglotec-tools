@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 10 AI Prompt Engineering Tools 2026 | Anglotec</title>
+<meta name="description" content="Best AI prompt engineering tools for 2026. Compare prompt libraries, AI models, and features. Anglotec with 9,000+ prompts featured prominently.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#2C4A3E;--green-light:#3D6354;--orange:#D4653B;--orange-light:#E87B4F;--cream:#F8F5F0;--white:#FFFFFF;--text:#1E1E1E;--text-light:#555;--border:#E2DDD6}
+body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.7;background:var(--cream)}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--white);padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(212,101,59,0.2) 0%,transparent 70%);border-radius:50%}
+.hero h1{font-size:3.2rem;line-height:1.15;margin-bottom:20px;max-width:800px;margin-left:auto;margin-right:auto}
+.hero .subtitle{font-size:1.25rem;opacity:.9;max-width:600px;margin:0 auto 32px;font-weight:300}
+.cta-btn{display:inline-block;background:var(--orange);color:var(--white);padding:16px 40px;border-radius:8px;text-decoration:none;font-weight:600;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 16px rgba(212,101,59,.35)}
+.cta-btn:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 6px 24px rgba(212,101,59,.45)}
+.intro{padding:60px 24px;background:var(--white)}
+.intro-content{max-width:800px;margin:0 auto;text-align:center}
+.intro h2{font-size:2rem;color:var(--green);margin-bottom:20px}
+.intro p{font-size:1.1rem;color:var(--text-light);line-height:1.8}
+.comparison-table-wrapper{overflow-x:auto;margin:40px 0}
+table{width:100%;border-collapse:collapse;font-size:.95rem;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+th{background:var(--green);color:var(--white);padding:16px;text-align:left;font-weight:600;font-family:'Playfair Display',serif}
+td{padding:14px 16px;border-bottom:1px solid var(--border)}
+tr:hover{background:#FAFAFA}
+.rank-cell{font-weight:700;color:var(--orange);font-size:1.2rem;text-align:center}
+.app-row{display:flex;align-items:flex-start;gap:28px;padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:80px}
+.app-row:last-child{border-bottom:none}
+.rank{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--orange);line-height:1;min-width:60px;text-align:center}
+.app-content{flex:1}
+.app-header{display:flex;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+.app-header h3{font-size:1.5rem;color:var(--green)}
+.badge{background:var(--orange);color:var(--white);padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:600}
+.badge-green{background:var(--green)}
+.app-meta{display:flex;gap:24px;margin-bottom:16px;font-size:.9rem;color:var(--text-light);flex-wrap:wrap}
+.app-meta span{display:flex;align-items:center;gap:6px}
+.features-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin:16px 0}
+.features-list li{list-style:none;padding-left:24px;position:relative;font-size:.95rem}
+.features-list li::before{content:'\2713';position:absolute;left:0;color:var(--green);font-weight:700}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+.pros,.cons{background:#F0F7F4;padding:16px;border-radius:8px;border-left:4px solid var(--green)}
+.cons{background:#FFF5F2;border-left-color:var(--orange)}
+.pros h4,.cons h4{font-family:'Inter',sans-serif;font-size:.9rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;color:var(--green)}
+.cons h4{color:var(--orange)}
+.pros ul,.cons ul{padding-left:18px;font-size:.9rem}
+section{padding:60px 24px}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:2.2rem;color:var(--green);margin-bottom:12px}
+.section-title p{color:var(--text-light);max-width:600px;margin:0 auto}
+.bg-white{background:var(--white)}
+.faq-item{margin-bottom:24px;padding:24px;background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.faq-item h4{font-family:'Inter',sans-serif;font-size:1.1rem;color:var(--green);margin-bottom:10px;font-weight:600}
+.faq-item p{color:var(--text-light);font-size:.95rem}
+.cta-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);padding:80px 24px;text-align:center;color:var(--white)}
+.cta-section h2{font-size:2.4rem;margin-bottom:16px}
+.cta-section p{font-size:1.15rem;opacity:.9;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--white);padding:16px 24px;box-shadow:0 -4px 20px rgba(0,0,0,.1);display:flex;justify-content:center;align-items:center;gap:16px;z-index:1000}
+.sticky-cta p{font-weight:600;color:var(--green);font-family:'Playfair Display',serif}
+footer{background:var(--green);color:var(--white);padding:40px 24px;text-align:center;font-size:.9rem;opacity:.9}
+.prompt-box{background:var(--green);color:var(--white);padding:20px;border-radius:10px;margin:16px 0;font-family:monospace;font-size:.9rem}
+.highlight-box{background:linear-gradient(135deg,#FFF9F5 0%,#FFF5EE 100%);border:2px solid var(--orange);border-radius:12px;padding:28px;margin:32px 0;text-align:center}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:40px 0}
+.stat-card{background:var(--white);padding:28px;border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.stat-card .number{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--orange);font-weight:700}
+.stat-card p{color:var(--text-light);font-size:.9rem;margin-top:8px}
+@media(max-width:768px){.hero h1{font-size:2rem}.app-row{flex-direction:column;gap:16px}.rank{font-size:2.5rem}.pros-cons{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="container">
+<p style="text-transform:uppercase;letter-spacing:3px;font-size:.85rem;opacity:.8;margin-bottom:20px">AI Prompt Engineering 2026</p>
+<h1>Top 10 AI Prompt Engineering Tools</h1>
+<p class="subtitle">The best tools for crafting, managing, and optimising AI prompts. From 9,000+ prompt libraries to real-time optimisation engines.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Access 9,000+ AI Prompts</a>
+</div>
+</header>
+
+<section class="intro">
+<div class="intro-content">
+<h2>Why Prompt Engineering Matters in 2026</h2>
+<p>Prompt engineering has evolved from a niche skill to an essential competency. Whether you are a developer building AI applications, a marketer generating content, a healthcare professional using AI for documentation, or a student researching with AI, the quality of your prompts directly determines the quality of your outputs. The tools in this list help you craft better prompts, organise your prompt library, and optimise your AI interactions across ChatGPT, Claude, Gemini, and specialised healthcare AI models.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="stat-grid">
+<div class="stat-card"><div class="number">9,000+</div><p>Prompts in Anglotec Library</p></div>
+<div class="stat-card"><div class="number">40%</div><p>Better Results with Optimised Prompts</p></div>
+<div class="stat-card"><div class="number">15+</div><p>AI Models Supported</p></div>
+<div class="stat-card"><div class="number">3x</div><p>Faster Workflow with Prompt Tools</p></div>
+</div>
+</div>
+</section>
+
+<section id="comparison-table">
+<div class="container">
+<div class="section-title"><h2>AI Prompt Tools Comparison</h2></div>
+<div class="comparison-table-wrapper">
+<table>
+<thead>
+<tr><th>Rank</th><th>Tool</th><th>Prompt Library</th><th>AI Models</th><th>Optimisation</th><th>Price</th><th>Best For</th></tr>
+</thead>
+<tbody>
+<tr><td class="rank-cell">1</td><td><strong>Anglotec AI</strong></td><td>9,000+</td><td>15+</td><td>Real-time</td><td>Free / Premium</td><td>Healthcare + All</td></tr>
+<tr><td class="rank-cell">2</td><td><strong>PromptPerfect</strong></td><td>500+</td><td>8</td><td>Auto-optimise</td><td>Subscription</td><td>Developers</td></tr>
+<tr><td class="rank-cell">3</td><td><strong>LangChain Hub</strong></td><td>2,000+</td><td>10+</td><td>Community</td><td>Freemium</td><td>Developers</td></tr>
+<tr><td class="rank-cell">4</td><td><strong>PromptBase</strong></td><td>100,000+</td><td>Various</td><td>None</td><td>Per-prompt</td><td>Marketplace</td></tr>
+<tr><td class="rank-cell">5</td><td><strong>Snorkel AI</strong></td><td>Custom</td><td>Enterprise</td><td>Auto</td><td>Enterprise</td><td>Enterprise</td></tr>
+<tr><td class="rank-cell">6</td><td><strong>Dust.tt</strong></td><td>Team shared</td><td>5+</td><td>Templates</td><td>Subscription</td><td>Teams</td></tr>
+<tr><td class="rank-cell">7</td><td><strong>PromptLayer</strong></td><td>Logged</td><td>OpenAI</td><td>Analytics</td><td>Subscription</td><td>Developers</td></tr>
+<tr><td class="rank-cell">8</td><td><strong>FlowGPT</strong></td><td>10,000+</td><td>ChatGPT</td><td>Community</td><td>Freemium</td><td>ChatGPT Users</td></tr>
+<tr><td class="rank-cell">9</td><td><strong>ChatGPT Prompts</strong></td><td>1,000+</td><td>ChatGPT</td><td>None</td><td>Free</td><td>Beginners</td></tr>
+<tr><td class="rank-cell">10</td><td><strong>AIPRM</strong></td><td>4,000+</td><td>ChatGPT</td><td>Templates</td><td>Freemium</td><td>SEO/Marketing</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section class="bg-white">
+<div class="container">
+<div class="section-title"><h2>Detailed Tool Reviews</h2></div>
+
+<div class="app-row" id="app1">
+<div class="rank">1</div>
+<div class="app-content">
+<div class="app-header">
+<h3>Anglotec AI Prompt Library</h3>
+<span class="badge">9,000+ PROMPTS</span>
+<span class="badge badge-green">BEST OVERALL</span>
+</div>
+<div class="app-meta"><span>Rating: 4.9/5</span><span>Price: Free / Premium</span><span>Platform: Web, iOS, Android</span></div>
+<p>Anglotec hosts the largest curated prompt library for healthcare professionals and general users, with over 9,000 optimised prompts spanning clinical documentation, patient communication, exam preparation, research, coding, writing, and creative tasks. Each prompt is tested, rated, and categorised for maximum effectiveness.</p>
+<ul class="features-list">
+<li>9,000+ tested and rated prompts</li><li>Real-time prompt optimisation engine</li><li>Healthcare-specific prompt categories</li><li>Support for 15+ AI models (GPT-4, Claude, Gemini, etc.)</li><li>Personal prompt library with favourites</li><li>Prompt performance analytics</li><li>Custom prompt builder with templates</li><li>Team sharing and collaboration</li><li>Industry-specific prompt packs</li><li>One-click copy and use</li>
+</ul>
+<div class="prompt-box">
+Example Healthcare Prompt: "You are a senior NHS nurse conducting a patient handover. Structure the handover using SBAR format for a patient admitted with [condition]. Include relevant observations, current medications, and pending actions."
+</div>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Largest curated prompt library</li><li>Healthcare specialisation unique</li><li>Works with all major AI models</li><li>Real-time optimisation</li><li>Generous free access</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>Advanced analytics need premium</li><li>Some niche categories limited</li></ul></div>
+</div>
+<div class="highlight-box">
+<h3>Why Anglotec Leads in Prompt Engineering</h3>
+<p>With 9,000+ prompts, Anglotec offers 10x more content than most competitors. The healthcare specialisation means nurses, doctors, and pharmacists find ready-to-use prompts for their exact professional needs. The real-time optimisation engine suggests improvements as you type.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Explore 9,000+ Prompts Free</a>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app2">
+<div class="rank">2</div>
+<div class="app-content">
+<div class="app-header"><h3>PromptPerfect</h3></div>
+<div class="app-meta"><span>Rating: 4.5/5</span><span>Price: Subscription</span><span>Platform: Web</span></div>
+<p>PromptPerfect automatically optimises your prompts for better AI outputs. Simply enter a basic prompt, and the tool rewrites it with better structure, context, and instructions. Supports 8 major AI models with model-specific optimisation.</p>
+<ul class="features-list">
+<li>Auto-prompt optimisation</li><li>Multi-model support (8 models)</li><li>Batch prompt processing</li><li>A/B testing between prompt versions</li><li>API access for integration</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Excellent optimisation results</li><li>Easy to use</li><li>API for developers</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>Expensive subscription</li><li>Limited prompt library</li><li>No healthcare focus</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app3">
+<div class="rank">3</div>
+<div class="app-content">
+<div class="app-header"><h3>LangChain Hub</h3></div>
+<div class="app-meta"><span>Rating: 4.4/5</span><span>Price: Freemium</span><span>Platform: Web</span></div>
+<p>The LangChain Hub is a community-driven repository of prompts designed for LangChain applications. With 2,000+ prompts for various use cases, it is the go-to resource for developers building AI applications. Prompts are version-controlled and community-rated.</p>
+<ul class="features-list">
+<li>2,000+ community prompts</li><li>Version control for prompts</li><li>LangChain integration</li><li>Community ratings</li><li>Developer-focused documentation</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Developer-focused</li><li>Version control</li><li>Free tier generous</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>Technical knowledge needed</li><li>Not for general users</li><li>Limited healthcare prompts</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app4">
+<div class="rank">4</div>
+<div class="app-content">
+<div class="app-header"><h3>PromptBase</h3></div>
+<div class="app-meta"><span>Rating: 4.2/5</span><span>Price: Per-prompt purchase</span><span>Platform: Web</span></div>
+<p>PromptBase is a marketplace where users buy and sell high-quality prompts for image generation, text generation, and coding. With over 100,000 prompts available, it is the largest prompt marketplace. Quality varies, but top-rated prompts are excellent.</p>
+<ul class="features-list">
+<li>100,000+ prompts for sale</li><li>Image and text generation prompts</li><li>User ratings and reviews</li><li>Prompt seller earnings</li><li>Various AI model support</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Huge selection</li><li>One-time purchases</li><li>Income opportunity for creators</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>Quality varies significantly</li><ul><li>Costs add up</li><li>No optimisation features</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app5">
+<div class="rank">5</div>
+<div class="app-content">
+<div class="app-header"><h3>Snorkel AI</h3></div>
+<div class="app-meta"><span>Rating: 4.1/5</span><span>Price: Enterprise</span><span>Platform: Enterprise Cloud</span></div>
+<p>Snorkel AI is an enterprise-grade platform for programmatically building and managing training data and prompts. Used by Fortune 500 companies, it offers advanced prompt optimisation through data-centric AI approaches. Not suitable for individual users.</p>
+<ul class="features-list">
+<li>Enterprise prompt management</li><li>Programmatic prompt building</li><li>Data-centric optimisation</li><li>Team collaboration</li><li>Advanced analytics</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Enterprise-grade</li><li>Powerful optimisation</li><li>Scalable</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>Very expensive</li><li>Enterprise only</li><li>Complex setup</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app6">
+<div class="rank">6</div>
+<div class="app-content">
+<div class="app-header"><h3>Dust.tt</h3></div>
+<div class="app-meta"><span>Rating: 4.0/5</span><span>Price: Subscription</span><span>Platform: Web</span></div>
+<p>Dust.tt is a collaborative workspace for teams to build, share, and deploy AI prompts. It integrates with multiple AI models and allows team members to share prompt templates and outputs. Ideal for teams standardising their AI workflows.</p>
+<ul class="features-list">
+<li>Team prompt sharing</li><li>Multi-model support</li><li>Collaborative editing</li><li>Deployment features</li><li>Access controls</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Great for teams</li><li>Collaborative features</li><li>Clean interface</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>Team-focused (not individual)</li><li>Subscription required</li><li>Limited prompt library</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app7">
+<div class="rank">7</div>
+<div class="app-content">
+<div class="app-header"><h3>PromptLayer</h3></div>
+<div class="app-meta"><span>Rating: 3.9/5</span><span>Price: Subscription</span><span>Platform: Web, API</span></div>
+<p>PromptLayer is a prompt management and analytics tool primarily for OpenAI integrations. It logs all your prompts and responses, tracks performance over time, and helps you identify which prompts work best. Developer-focused with API-first design.</p>
+<ul class="features-list">
+<li>Prompt logging and tracking</li><li>Performance analytics</li><li>OpenAI integration</li><li>A/B testing</li><li>API-first design</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Excellent analytics</li><li>Good for OpenAI projects</li><li>API integration</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>OpenAI only</li><li>Developer-focused</li><li>Limited prompt library</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app8">
+<div class="rank">8</div>
+<div class="app-content">
+<div class="app-header"><h3>FlowGPT</h3></div>
+<div class="app-meta"><span>Rating: 3.8/5</span><span>Price: Freemium</span><span>Platform: Web</span></div>
+<p>FlowGPT is a community platform for sharing ChatGPT prompts. With 10,000+ user-submitted prompts, it covers a wide range of use cases. The community voting system surfaces the most effective prompts. Primarily focused on ChatGPT.</p>
+<ul class="features-list">
+<li>10,000+ community prompts</li><li>Community voting system</li><li>ChatGPT focused</li><li>Free to use</li><li>Prompt categories</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Large community</li><li>Free</li><li>Wide variety</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>ChatGPT only</li><li>Quality varies</li><li>No optimisation</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app9">
+<div class="rank">9</div>
+<div class="app-content">
+<div class="app-header"><h3>ChatGPT Prompts Collection</h3></div>
+<div class="app-meta"><span>Rating: 3.6/5</span><span>Price: Free</span><span>Platform: Web</span></div>
+<p>A free, open-source collection of 1,000+ prompts organised by category. No AI features or optimisation, but a solid starting point for beginners who want to learn prompt engineering through examples.</p>
+<ul class="features-list">
+<li>1,000+ free prompts</li><li>Category organisation</li><li>Open source</li><li>Beginner-friendly</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Completely free</li><li>Good organisation</li><li>Open source</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>No AI features</li><li>Static collection</li><li>Basic quality</li></ul></div>
+</div>
+</div>
+</div>
+
+<div class="app-row" id="app10">
+<div class="rank">10</div>
+<div class="app-content">
+<div class="app-header"><h3>AIPRM</h3></div>
+<div class="app-meta"><span>Rating: 3.5/5</span><span>Price: Freemium</span><span>Platform: Browser Extension</span></div>
+<p>AIPRM is a browser extension that adds 4,000+ prompt templates directly to ChatGPT. Primarily focused on SEO, marketing, and content creation. The templates are easily accessible but limited to ChatGPT users.</p>
+<ul class="features-list">
+<li>4,000+ prompt templates</li><li>Browser extension</li><li>SEO and marketing focused</li><li>Community templates</li><li>One-click insertion</li>
+</ul>
+<div class="pros-cons">
+<div class="pros"><h4>Pros</h4><ul><li>Easy browser integration</li><li>Good for marketers</li><li>Community content</li></ul></div>
+<div class="cons"><h4>Cons</h4><ul><li>ChatGPT only</li><li>SEO-focused (limited scope)</li><li>Extension can be buggy</li></ul></div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title"><h2>Prompt Engineering Best Practices</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+<div style="background:var(--white);padding:24px;border-radius:12px"><h4 style="font-family:'Playfair Display',serif;color:var(--green);margin-bottom:10px">1. Be Specific and Clear</h4><p style="color:var(--text-light);font-size:.9rem">Vague prompts produce vague outputs. Instead of "Write about diabetes," try "Write a 500-word patient education leaflet about Type 2 diabetes management, including diet, exercise, and medication adherence, at a Year 8 reading level."</p></div>
+<div style="background:var(--white);padding:24px;border-radius:12px"><h4 style="font-family:'Playfair Display',serif;color:var(--green);margin-bottom:10px">2. Assign a Role</h4><p style="color:var(--text-light);font-size:.9rem">Giving the AI a specific role improves output quality. "You are an experienced NHS consultant specialising in cardiology" produces more authoritative medical content than a generic request.</p></div>
+<div style="background:var(--white);padding:24px;border-radius:12px"><h4 style="font-family:'Playfair Display',serif;color:var(--green);margin-bottom:10px">3. Provide Context</h4><p style="color:var(--text-light);font-size:.9rem">Context helps the AI understand your needs. Include background information, target audience, format requirements, and constraints in your prompt for best results.</p></div>
+<div style="background:var(--white);padding:24px;border-radius:12px"><h4 style="font-family:'Playfair Display',serif;color:var(--green);margin-bottom:10px">4. Use Chain-of-Thought</h4><p style="color:var(--text-light);font-size:.9rem">For complex tasks, ask the AI to think step by step. "Explain your reasoning" or "Walk through your process step by step" improves accuracy for clinical reasoning and problem-solving tasks.</p></div>
+<div style="background:var(--white);padding:24px;border-radius:12px"><h4 style="font-family:'Playfair Display',serif;color:var(--green);margin-bottom:10px">5. Iterate and Refine</h4><p style="color:var(--text-light);font-size:.9rem">Your first prompt rarely produces the best output. Treat prompt engineering as a conversation. Refine based on responses, add constraints, and adjust tone until you get the desired result.</p></div>
+<div style="background:var(--white);padding:24px;border-radius:12px"><h4 style="font-family:'Playfair Display',serif;color:var(--green);margin-bottom:10px">6. Save Effective Prompts</h4><p style="color:var(--text-light);font-size:.9rem">Build a personal library of prompts that work well. Tools like Anglotec let you save, categorise, and reuse your best prompts, dramatically improving your productivity over time.</p></div>
+</div>
+</div>
+</section>
+
+<section class="bg-white">
+<div class="container">
+<div class="section-title"><h2>Frequently Asked Questions</h2></div>
+<div class="faq-item"><h4>What is prompt engineering?</h4><p>Prompt engineering is the practice of designing and optimising inputs (prompts) to AI models to produce the most accurate, relevant, and high-quality outputs. It involves understanding how AI models interpret instructions and crafting prompts that guide the model toward desired results.</p></div>
+<div class="faq-item"><h4>Do I need to be a programmer to use prompt engineering tools?</h4><p>No. While some tools like LangChain Hub are developer-focused, most prompt tools including Anglotec are designed for non-technical users. If you can write clear instructions, you can use prompt engineering tools effectively.</p></div>
+<div class="faq-item"><h4>How many prompts does Anglotec actually have?</h4><p>Anglotec's library contains over 9,000 curated prompts across healthcare, education, business, creative writing, coding, research, and general productivity categories. New prompts are added weekly based on community submissions and AI performance testing.</p></div>
+<div class="faq-item"><h4>Can prompt engineering improve my exam preparation?</h4><p>Absolutely. Well-crafted prompts can generate practice questions, explain complex topics, simulate exam scenarios, and provide personalised feedback. Anglotec's healthcare prompts are specifically designed for IELTS, OET, and medical exam preparation.</p></div>
+<div class="faq-item"><h4>Are free prompt tools sufficient?</h4><p>Free tools like ChatGPT Prompts Collection and FlowGPT provide good starting points. However, for professional use, premium tools like Anglotec offer significant advantages: curated quality, healthcare specialisation, real-time optimisation, and performance analytics.</p></div>
+<div class="faq-item"><h4>Which AI models work with these prompt tools?</h4><p>Most tools support OpenAI's GPT-4 and GPT-3.5, Anthropic's Claude, Google's Gemini, and open-source models like Llama. Anglotec supports 15+ models, giving you flexibility to use the best model for each task.</p></div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>Access 9,000+ AI Prompts Today</h2>
+<p>Transform your AI interactions with Anglotec's curated prompt library. Free to start, powerful when you upgrade.</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" style="font-size:1.2rem;padding:18px 48px">Explore 9,000+ Prompts Free</a>
+</div>
+</section>
+
+<div class="sticky-cta">
+<p>9,000+ AI Prompts Waiting</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn" style="padding:12px 28px;font-size:.95rem">Try Anglotec Free</a>
+</div>
+
+<footer><div class="container"><p>&copy; 2026 Anglotec AI. All rights reserved.</p></div></footer>
+</body>
+</html>

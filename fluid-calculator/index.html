@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IV Fluid Calculator | Maintenance Fluids & Holliday-Segar</title>
+<meta name="description" content="IV Fluid Calculator with Holliday-Segar method for maintenance fluids, fluid deficit calculation, and pediatric fluid requirements for nurses.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F52;--green-pale:#E8F3EF;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F0E8;--text:#1A1A1A;--text-light:#5C5C5C;--border:#E8E2D8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+.container{max-width:800px;margin:0 auto;padding:20px}
+header{text-align:center;padding:40px 20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:#fff;border-radius:0 0 30px 30px;margin-bottom:30px}
+h1{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:8px}
+.subtitle{font-size:1rem;opacity:.9}
+.card{background:#fff;border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.card h2{font-family:'Playfair Display',serif;color:var(--green);font-size:1.4rem;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.mode-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.mode-tab{padding:10px 16px;border:2px solid var(--green);border-radius:10px;background:transparent;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;transition:.3s;color:var(--green);font-size:.85rem}
+.mode-tab.active{background:var(--green);color:#fff}
+label{display:block;font-weight:500;margin-bottom:6px;color:var(--text);font-size:.9rem}
+input[type="number"],select{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:10px;font-size:1rem;font-family:'Inter',sans-serif;transition:.3s;margin-bottom:16px;background:#fff}
+input:focus,select:focus{outline:none;border-color:var(--green)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.btn-calculate{width:100%;padding:16px;background:var(--orange);color:#fff;border:none;border-radius:12px;font-size:1.1rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:.3s}
+.btn-calculate:hover{background:var(--orange-light);transform:translateY(-2px)}
+.result-area{padding:24px;background:var(--green-pale);border-radius:12px;margin-top:20px;border-left:5px solid var(--green);display:none}
+.result-area.show{display:block;animation:fadeIn .5s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.main-result{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--green);text-align:center}
+.main-label{text-align:center;color:var(--text-light);font-size:.9rem;margin-top:4px}
+.breakdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.break-item{background:#fff;padding:14px;border-radius:10px;text-align:center}
+.break-val{font-size:1.3rem;font-weight:700;color:var(--green)}
+.break-desc{font-size:.75rem;color:var(--text-light);margin-top:2px}
+.formula-box{background:#FFF3E0;padding:12px;border-radius:8px;margin-top:12px;font-size:.85rem;border-left:4px solid var(--orange)}
+.rate-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:12px}
+.rate-table th{background:var(--green);color:#fff;padding:10px;text-align:left}
+.rate-table td{padding:10px;border-bottom:1px solid var(--border)}
+.rate-table tr:nth-child(even){background:var(--cream)}
+.info-box{background:var(--cream);padding:14px;border-radius:10px;margin-top:16px;font-size:.85rem}
+.info-box h4{color:var(--green);margin-bottom:6px}
+.info-box ul{padding-left:18px;color:var(--text-light)}
+.info-box li{margin-bottom:4px}
+.cta-section{text-align:center;padding:28px;background:linear-gradient(135deg,var(--orange) 0%,var(--orange-light) 100%);border-radius:16px;color:#fff;margin:30px 0}
+.cta-btn{display:inline-block;padding:14px 36px;background:#fff;color:var(--orange);border-radius:30px;font-weight:600;text-decoration:none;margin-top:12px;transition:.3s}
+.cta-btn:hover{transform:translateY(-2px)}
+.share-btns{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.share-btn{padding:10px 20px;border-radius:8px;border:none;font-weight:500;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
+.share-btn.tw{background:#1DA1F2;color:#fff}
+.share-btn.fb{background:#4267B2;color:#fff}
+.share-btn.li{background:#0077B5;color:#fff}
+.share-btn.cp{background:var(--green);color:#fff}
+.disclaimer{background:#FFF3E0;padding:16px;border-radius:8px;font-size:.8rem;color:var(--text-light);margin-top:20px;border-left:4px solid var(--orange)}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}h1{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<header>
+<h1>IV Fluid Calculator</h1>
+<p class="subtitle">Maintenance fluids, deficit & Holliday-Segar method</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>⚙️ Select Calculation</h2>
+<div class="mode-tabs">
+<button class="mode-tab active" onclick="setMode('maint')" id="tabMaint">Maintenance (Holliday-Segar)</button>
+<button class="mode-tab" onclick="setMode('deficit')" id="tabDeficit">Fluid Deficit</button>
+<button class="mode-tab" onclick="setMode('hourly')" id="tabHourly">Hourly Rate</button>
+</div>
+<div id="maintInputs">
+<div class="two-col">
+<div><label for="maintWeight">Weight (kg)</label><input type="number" id="maintWeight" placeholder="e.g. 25" min="0.1" step="0.1"></div>
+<div><label for="maintAge">Age Group</label>
+<select id="maintAge">
+<option value="child">Child (≤30 kg)</option>
+<option value="adult">Adult (&gt;30 kg)</option>
+</select>
+</div>
+</div>
+<div class="two-col">
+<div><label for="maintHours">Over Period (hours)</label><input type="number" id="maintHours" placeholder="e.g. 24" min="1" value="24"></div>
+<div><label for="maintFactor">Adjustment Factor</label>
+<select id="maintFactor">
+<option value="1">Normal</option>
+<option value="1.5">Increased (fever, hypermetabolic)</option>
+<option value="0.75">Decreased (SIADH, renal failure)</option>
+</select>
+</div>
+</div>
+</div>
+<div id="deficitInputs" style="display:none">
+<div class="two-col">
+<div><label for="defWeight">Weight (kg)</label><input type="number" id="defWeight" placeholder="e.g. 15" min="0.1" step="0.1"></div>
+<div><label for="defPercent">Dehydration (%)</label>
+<select id="defPercent">
+<option value="3">Mild (3%)</option>
+<option value="5">Moderate (5%)</option>
+<option value="8">Severe (8%)</option>
+<option value="10">Critical (10%+)</option>
+</select>
+</div>
+</div>
+<div class="two-col">
+<div><label for="defNa">Serum Sodium (mEq/L)</label><input type="number" id="defNa" placeholder="e.g. 140" min="100" max="180" value="140"></div>
+<div><label for="defReplace">Replacement Hours</label><input type="number" id="defReplace" placeholder="e.g. 24" min="1" value="24"></div>
+</div>
+</div>
+<div id="hourlyInputs" style="display:none">
+<div class="two-col">
+<div><label for="hourlyWeight">Weight (kg)</label><input type="number" id="hourlyWeight" placeholder="e.g. 70" min="0.1" step="0.1"></div>
+<div><label for="hourlyVol">Total Volume (mL)</label><input type="number" id="hourlyVol" placeholder="e.g. 2400" min="1"></div>
+</div>
+<div class="two-col">
+<div><label for="hourlyOver">Infusion Duration (hours)</label><input type="number" id="hourlyOver" placeholder="e.g. 24" min="0.5" step="0.5"></div>
+<div><label for="hourlySet">Drip Set (gtt/mL)</label>
+<select id="hourlySet">
+<option value="60">Microdrip (60 gtt/mL)</option>
+<option value="20">Macrodrip (20 gtt/mL)</option>
+<option value="15">Macrodrip (15 gtt/mL)</option>
+<option value="10">Macrodrip (10 gtt/mL)</option>
+</select>
+</div>
+</div>
+</div>
+<button class="btn-calculate" onclick="calculate()">Calculate</button>
+<div id="resultArea" class="result-area">
+<div class="main-result" id="mainResult">--</div>
+<div class="main-label" id="mainLabel">mL/day</div>
+<div class="breakdown-grid" id="breakdownGrid"></div>
+<div class="formula-box" id="formulaBox"></div>
+</div>
+</div>
+<div class="card">
+<h2>📊 Holliday-Segar Method Reference</h2>
+<table class="rate-table">
+<tr><th>Body Weight</th><th>Hourly Rate</th><th>Daily Rate</th></tr>
+<tr><td style="padding:10px">First 10 kg</td><td style="padding:10px">4 mL/kg/hr</td><td style="padding:10px">100 mL/kg/day</td></tr>
+<tr style="background:var(--cream)"><td style="padding:10px">Next 10 kg (10-20)</td><td style="padding:10px">2 mL/kg/hr</td><td style="padding:10px">50 mL/kg/day</td></tr>
+<tr><td style="padding:10px">Each kg above 20</td><td style="padding:10px">1 mL/kg/hr</td><td style="padding:10px">20 mL/kg/day</td></tr>
+</table>
+<div class="info-box" style="margin-top:16px">
+<h4>Example: 25 kg child</h4>
+<ul>
+<li>First 10 kg: 10 × 4 = <strong>40 mL/hr</strong></li>
+<li>Next 10 kg: 10 × 2 = <strong>20 mL/hr</strong></li>
+<li>Remaining 5 kg: 5 × 1 = <strong>5 mL/hr</strong></li>
+<li>Total: <strong>65 mL/hr</strong> = 1,560 mL/day</li>
+</ul>
+</div>
+</div>
+<div class="card">
+<h2>💧 Fluid Deficit Signs</h2>
+<div class="two-col">
+<div class="info-box">
+<h4>Mild (3-5%)</h4>
+<ul>
+<li>Dry mucous membranes</li>
+<li>Slightly decreased urine</li>
+<li>Normal vital signs</li>
+<li>Cap refill &lt;2 sec</li>
+</ul>
+</div>
+<div class="info-box">
+<h4>Moderate (6-9%)</h4>
+<ul>
+<li>Tachycardia</li>
+<li>Decreased skin turgor</li>
+<li>Sunken eyes/fontanelle</li>
+<li>Oliguria</li>
+</ul>
+</div>
+<div class="info-box">
+<h4>Severe (10%+)</h4>
+<ul>
+<li>Hypotension</li>
+<li>Altered mental status</li>
+<li>Anuria</li>
+<li>Shock - emergency!</li>
+</ul>
+</div>
+<div class="info-box">
+<h4>Replace 1/2 in first 8h</h4>
+<ul>
+<li>Then 1/2 over next 16h</li>
+<li>Add maintenance fluids</li>
+<li>Monitor electrolytes</li>
+<li>Recheck weight</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-section">
+<h3>More Clinical Calculators</h3>
+<p>Comprehensive tools for nursing practice</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Explore All Tools →</a>
+</div>
+<div class="share-btns">
+<button class="share-btn tw" onclick="share('twitter')">𝕏 Share</button>
+<button class="share-btn fb" onclick="share('facebook')">Share</button>
+<button class="share-btn li" onclick="share('linkedin')">Share</button>
+<button class="share-btn cp" onclick="share('copy')">📋 Copy Link</button>
+</div>
+<div class="disclaimer">
+<strong>Disclaimer:</strong> Fluid calculations are estimates. Individual patient needs vary based on clinical condition, ongoing losses, and organ function. Always monitor intake/output, electrolytes, and weight. Consult protocols for specific conditions like DKA.
+</div>
+</div>
+<footer style="text-align:center;padding:30px;color:var(--text-light);font-size:.85rem">
+<p>Made for healthcare professionals | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none">More Tools</a></p>
+</footer>
+<script>
+let currentMode='maint';
+function setMode(m){
+  currentMode=m;
+  document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab'+m.charAt(0).toUpperCase()+m.slice(1)).classList.add('active');
+  document.getElementById('maintInputs').style.display=m==='maint'?'block':'none';
+  document.getElementById('deficitInputs').style.display=m==='deficit'?'block':'none';
+  document.getElementById('hourlyInputs').style.display=m==='hourly'?'block':'none';
+  document.getElementById('resultArea').classList.remove('show');
+}
+function calculate(){
+  const resultArea=document.getElementById('resultArea');
+  resultArea.classList.add('show');
+  if(currentMode==='maint'){
+    const wt=parseFloat(document.getElementById('maintWeight').value);
+    const factor=parseFloat(document.getElementById('maintFactor').value);
+    const hours=parseFloat(document.getElementById('maintHours').value)||24;
+    if(!wt||wt<=0){alert('Enter weight');return}
+    let hourly,daily,formula,first10,next10,rest;
+    if(wt<=10){hourly=wt*4;first10=hourly;next10=0;rest=0;formula='First 10 kg: '+wt+' × 4 = '+hourly.toFixed(1)+' mL/hr'}
+    else if(wt<=20){hourly=(10*4)+((wt-10)*2);first10=40;next10=(wt-10)*2;rest=0;formula='First 10 kg: 10 × 4 = 40 mL/hr<br>Next 10 kg: '+(wt-10).toFixed(1)+' × 2 = '+next10.toFixed(1)+' mL/hr<br>Total: '+hourly.toFixed(1)+' mL/hr'}
+    else{hourly=(10*4)+(10*2)+((wt-20)*1);first10=40;next10=20;rest=(wt-20)*1;formula='First 10 kg: 10 × 4 = 40 mL/hr<br>Next 10 kg: 10 × 2 = 20 mL/hr<br>Remaining '+(wt-20).toFixed(1)+' kg: × 1 = '+rest.toFixed(1)+' mL/hr<br>Total: '+hourly.toFixed(1)+' mL/hr'}
+    hourly*=factor;daily=hourly*hours;
+    document.getElementById('mainResult').textContent=hourly.toFixed(1);
+    document.getElementById('mainLabel').textContent='mL/hr maintenance';
+    let grid='<div class="break-item"><div class="break-val">'+daily.toFixed(0)+'</div><div class="break-desc">mL over '+hours+' hours</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+(hourly/60).toFixed(2)+'</div><div class="break-desc">mL/min</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+(daily/wt).toFixed(1)+'</div><div class="break-desc">mL/kg/day</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+wt+'</div><div class="break-desc">kg body weight</div></div>';
+    document.getElementById('breakdownGrid').innerHTML=grid;
+    document.getElementById('formulaBox').innerHTML='<strong>Holliday-Segar Method:</strong><br>'+formula+(factor!==1?'<br>Adjustment factor: ×'+factor:'')+'<br>Adjusted: <strong>'+hourly.toFixed(1)+' mL/hr</strong>';
+  }else if(currentMode==='deficit'){
+    const wt=parseFloat(document.getElementById('defWeight').value);
+    const pct=parseFloat(document.getElementById('defPercent').value);
+    const na=parseFloat(document.getElementById('defNa').value)||140;
+    const replaceHrs=parseFloat(document.getElementById('defReplace').value)||24;
+    if(!wt||wt<=0){alert('Enter weight');return}
+    const deficit=wt*pct*10;
+    const first8=deficit/2;
+    const next16=deficit/2;
+    const maintHourly=wt<=10?wt*4:(wt<=20?40+(wt-10)*2:60+(wt-20)*1);
+    const maintDaily=maintHourly*24;
+    let naStatus=na<135?'Hyponatremic':na>145?'Hypernatremic':'Isotonic';
+    document.getElementById('mainResult').textContent=deficit.toFixed(0);
+    document.getElementById('mainLabel').textContent='mL total fluid deficit ('+pct+'% dehydration)';
+    let grid='<div class="break-item"><div class="break-val">'+first8.toFixed(0)+'</div><div class="break-desc">mL first 8 hours</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+next16.toFixed(0)+'</div><div class="break-desc">mL next 16 hours</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+maintDaily.toFixed(0)+'</div><div class="break-desc">mL maintenance/day</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+na+'</div><div class="break-desc">mEq/L ('+naStatus+')</div></div>';
+    document.getElementById('breakdownGrid').innerHTML=grid;
+    document.getElementById('formulaBox').innerHTML='<strong>Fluid Deficit:</strong> '+wt+' kg × '+pct+'% × 10 = <strong>'+deficit.toFixed(0)+' mL</strong><br>Give 1/2 ('+first8.toFixed(0)+' mL) in first 8 hours, then 1/2 ('+next16.toFixed(0)+' mL) over next 16 hours.<br>Add maintenance: '+maintDaily.toFixed(0)+' mL/day.<br>Total 24h fluid: <strong>'+(deficit+maintDaily).toFixed(0)+' mL</strong>';
+  }else{
+    const wt=parseFloat(document.getElementById('hourlyWeight').value);
+    const vol=parseFloat(document.getElementById('hourlyVol').value);
+    const dur=parseFloat(document.getElementById('hourlyOver').value);
+    const df=parseInt(document.getElementById('hourlySet').value);
+    if(!vol||!dur||dur<=0){alert('Enter volume and duration');return}
+    const mlPerHr=vol/dur;
+    const gttMin=(mlPerHr*df)/60;
+    const mlPerKg=wt?mlPerHr/wt:0;
+    document.getElementById('mainResult').textContent=mlPerHr.toFixed(1);
+    document.getElementById('mainLabel').textContent='mL/hr infusion rate';
+    let grid='<div class="break-item"><div class="break-val">'+gttMin.toFixed(1)+'</div><div class="break-desc">gtt/min</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+(mlPerHr/60).toFixed(2)+'</div><div class="break-desc">mL/min</div></div>';
+    if(wt)grid+='<div class="break-item"><div class="break-val">'+mlPerKg.toFixed(1)+'</div><div class="break-desc">mL/kg/hr</div></div>';
+    grid+='<div class="break-item"><div class="break-val">'+dur.toFixed(1)+'</div><div class="break-desc">hours</div></div>';
+    document.getElementById('breakdownGrid').innerHTML=grid;
+    document.getElementById('formulaBox').innerHTML='<strong>Rate:</strong> '+vol+' mL ÷ '+dur+' hours = <strong>'+mlPerHr.toFixed(1)+' mL/hr</strong><br>gtt/min = ('+mlPerHr.toFixed(1)+' × '+df+') ÷ 60 = <strong>'+gttMin.toFixed(1)+' gtt/min</strong>';
+  }
+}
+function share(platform){
+  const url=encodeURIComponent(window.location.href);
+  const text=encodeURIComponent('IV Fluid Calculator - Holliday-Segar maintenance fluids for nurses!');
+  const urls={twitter:'https://twitter.com/intent/tweet?url='+url+'&text='+text,facebook:'https://www.facebook.com/sharer/sharer.php?u='+url,linkedin:'https://www.linkedin.com/sharing/share-offsite/?url='+url};
+  if(platform==='copy')navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'));
+  else if(urls[platform])window.open(urls[platform],'_blank','width=600,height=400');
+}
+</script>
+</body>
+</html>

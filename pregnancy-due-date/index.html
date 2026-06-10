@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregnancy Due Date Calculator | Naegele's Rule</title>
+<meta name="description" content="Pregnancy Due Date Calculator using Naegele's rule. Calculate due date, trimester breakdown, gestational age, and key pregnancy milestones.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F52;--green-pale:#E8F3EF;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F0E8;--text:#1A1A1A;--text-light:#5C5C5C;--border:#E8E2D8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+.container{max-width:800px;margin:0 auto;padding:20px}
+header{text-align:center;padding:40px 20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:#fff;border-radius:0 0 30px 30px;margin-bottom:30px}
+h1{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:8px}
+.subtitle{font-size:1rem;opacity:.9}
+.card{background:#fff;border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.card h2{font-family:'Playfair Display',serif;color:var(--green);font-size:1.4rem;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.method-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.method-tab{padding:10px 18px;border:2px solid var(--green);border-radius:10px;background:transparent;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;transition:.3s;color:var(--green)}
+.method-tab.active{background:var(--green);color:#fff}
+label{display:block;font-weight:500;margin-bottom:6px;color:var(--text);font-size:.9rem}
+input[type="date"],input[type="number"],select{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:10px;font-size:1rem;font-family:'Inter',sans-serif;transition:.3s;margin-bottom:16px;background:#fff}
+input:focus,select:focus{outline:none;border-color:var(--green)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.btn-calculate{width:100%;padding:16px;background:var(--orange);color:#fff;border:none;border-radius:12px;font-size:1.1rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:.3s}
+.btn-calculate:hover{background:var(--orange-light);transform:translateY(-2px)}
+.due-display{text-align:center;padding:28px;background:var(--green-pale);border-radius:16px;margin-top:20px;border-left:5px solid var(--green)}
+.due-date{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--green)}
+.due-label{color:var(--text-light);font-size:.9rem;margin-top:4px}
+.gestational-bar{width:100%;height:30px;background:var(--border);border-radius:15px;overflow:hidden;margin:16px 0;position:relative}
+.gest-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-light));border-radius:15px;transition:width .8s ease;position:relative}
+.gest-marker{position:absolute;top:-5px;right:-10px;width:20px;height:20px;background:var(--orange);border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.gest-text{text-align:center;font-size:.85rem;color:var(--text-light);margin-top:4px}
+.trimester-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px}
+.trim-card{padding:14px;border-radius:10px;text-align:center;font-size:.85rem;position:relative;overflow:hidden}
+.trim-card.active{box-shadow:0 0 0 3px var(--orange)}
+.trim-1{background:#E3F2FD}
+.trim-2{background:#E8F5E9}
+.trim-3{background:#FFF3E0}
+.trim-label{font-weight:600;margin-bottom:4px}
+.trim-1 .trim-label{color:#1565C0}
+.trim-2 .trim-label{color:#2E7D32}
+.trim-3 .trim-label{color:#E65100}
+.timeline{position:relative;padding-left:24px;margin-top:16px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:16px;padding:12px;background:var(--cream);border-radius:8px;font-size:.85rem}
+.timeline-item::before{content:'';position:absolute;left:-20px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--green)}
+.timeline-item.past::before{background:var(--orange)}
+.timeline-item.future::before{background:var(--border)}
+.timeline-item.past{opacity:.7}
+.week-badge{display:inline-block;padding:2px 8px;background:var(--green);color:#fff;border-radius:10px;font-size:.75rem;margin-right:6px}
+.cta-section{text-align:center;padding:28px;background:linear-gradient(135deg,var(--orange) 0%,var(--orange-light) 100%);border-radius:16px;color:#fff;margin:30px 0}
+.cta-btn{display:inline-block;padding:14px 36px;background:#fff;color:var(--orange);border-radius:30px;font-weight:600;text-decoration:none;margin-top:12px;transition:.3s}
+.cta-btn:hover{transform:translateY(-2px)}
+.share-btns{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.share-btn{padding:10px 20px;border-radius:8px;border:none;font-weight:500;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
+.share-btn.tw{background:#1DA1F2;color:#fff}
+.share-btn.fb{background:#4267B2;color:#fff}
+.share-btn.li{background:#0077B5;color:#fff}
+.share-btn.cp{background:var(--green);color:#fff}
+.disclaimer{background:#FFF3E0;padding:16px;border-radius:8px;font-size:.8rem;color:var(--text-light);margin-top:20px;border-left:4px solid var(--orange)}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}h1{font-size:1.7rem}.due-date{font-size:1.8rem}.trimester-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<h1>Pregnancy Due Date Calculator</h1>
+<p class="subtitle">Calculate EDD using Naegele's rule with trimester breakdown</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>📅 Calculate Your Due Date</h2>
+<div class="method-tabs">
+<button class="method-tab active" onclick="setMethod('lmp')" id="tabLmp">First Day of LMP</button>
+<button class="method-tab" onclick="setMethod('conception')" id="tabConception">Conception Date</button>
+<button class="method-tab" onclick="setMethod('us')" id="tabUs">Ultrasound (EGA)</button>
+<button class="method-tab" onclick="setMethod('ivf')" id="tabIvf">IVF Transfer</button>
+</div>
+<div id="lmpInput">
+<label for="lmpDate">First Day of Last Menstrual Period (LMP)</label>
+<input type="date" id="lmpDate">
+<p style="font-size:.85rem;color:var(--text-light);margin-top:-12px;margin-bottom:16px">Naegele's Rule: LMP + 1 year - 3 months + 7 days</p>
+</div>
+<div id="conceptionInput" style="display:none">
+<label for="conceptionDate">Conception Date</label>
+<input type="date" id="conceptionDate">
+<p style="font-size:.85rem;color:var(--text-light);margin-top:-12px;margin-bottom:16px">EDD = Conception date + 266 days</p>
+</div>
+<div id="usInput" style="display:none">
+<div class="two-col">
+<div><label for="usDate">Ultrasound Date</label><input type="date" id="usDate"></div>
+<div><label for="usWeeks">Gestational Age (weeks)</label><input type="number" id="usWeeks" placeholder="e.g. 12" min="1" max="42"></div>
+</div>
+<div class="two-col">
+<div><label for="usDays">Additional Days</label><input type="number" id="usDays" placeholder="e.g. 3" min="0" max="6"></div>
+</div>
+</div>
+<div id="ivfInput" style="display:none">
+<div class="two-col">
+<div><label for="ivfDate">Transfer Date</label><input type="date" id="ivfDate"></div>
+<div><label for="ivfDay">Embryo Age at Transfer</label>
+<select id="ivfDay">
+<option value="3">Day 3 (Cleavage)</option>
+<option value="5">Day 5 (Blastocyst)</option>
+</select>
+</div>
+</div>
+</div>
+<button class="btn-calculate" onclick="calculateDueDate()">Calculate Due Date</button>
+<div id="resultArea" style="display:none">
+<div class="due-display">
+<div class="due-date" id="dueDate">--</div>
+<div class="due-label">Estimated Date of Delivery (EDD)</div>
+<div class="gestational-bar"><div class="gest-fill" id="gestFill" style="width:0%"><div class="gest-marker"></div></div></div>
+<div class="gest-text" id="gestText">--</div>
+</div>
+<div class="trimester-grid">
+<div class="trim-card trim-1" id="trim1"><div class="trim-label">1st Trimester</div><div>Week 1 - 12</div><div style="font-size:.75rem;margin-top:4px" id="trim1Date">--</div></div>
+<div class="trim-card trim-2" id="trim2"><div class="trim-label">2nd Trimester</div><div>Week 13 - 27</div><div style="font-size:.75rem;margin-top:4px" id="trim2Date">--</div></div>
+<div class="trim-card trim-3" id="trim3"><div class="trim-label">3rd Trimester</div><div>Week 28 - 40</div><div style="font-size:.75rem;margin-top:4px" id="trim3Date">--</div></div>
+</div>
+<div class="timeline" id="timeline"></div>
+</div>
+</div>
+<div class="card">
+<h2>📖 Method Reference</h2>
+<table style="width:100%;border-collapse:collapse;font-size:.85rem">
+<tr style="background:var(--green);color:#fff"><th style="padding:10px;text-align:left">Method</th><th style="padding:10px;text-align:left">Calculation</th><th style="padding:10px;text-align:left">Accuracy</th></tr>
+<tr style="background:var(--cream)"><td style="padding:10px">LMP (Naegele's)</td><td style="padding:10px">LMP + 1y - 3mo + 7d</td><td style="padding:10px">+/- 2 weeks</td></tr>
+<tr><td style="padding:10px">Conception</td><td style="padding:10px">Conception + 266 days</td><td style="padding:10px">+/- 3 days</td></tr>
+<tr style="background:var(--cream)"><td style="padding:10px">Ultrasound</td><td style="padding:10px">US date + (40w - EGA)</td><td style="padding:10px">+/- 5-7 days (1st tri)</td></tr>
+<tr><td style="padding:10px">IVF Transfer</td><td style="padding:10px">Transfer + (280d - embryo age)</td><td style="padding:10px">Most accurate</td></tr>
+</table>
+</div>
+<div class="cta-section">
+<h3>More Clinical Calculators</h3>
+<p>Comprehensive tools for healthcare professionals</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Explore All Tools →</a>
+</div>
+<div class="share-btns">
+<button class="share-btn tw" onclick="share('twitter')">𝕏 Share</button>
+<button class="share-btn fb" onclick="share('facebook')">Share</button>
+<button class="share-btn li" onclick="share('linkedin')">Share</button>
+<button class="share-btn cp" onclick="share('copy')">📋 Copy Link</button>
+</div>
+<div class="disclaimer">
+<strong>Disclaimer:</strong> This calculator provides an estimated due date for educational purposes. Only 4-5% of babies are born on their exact due date. Always follow your healthcare provider's guidance. This tool does not replace medical advice.
+</div>
+</div>
+<footer style="text-align:center;padding:30px;color:var(--text-light);font-size:.85rem">
+<p>Made for healthcare professionals | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none">More Tools</a></p>
+</footer>
+<script>
+let currentMethod='lmp';
+function setMethod(m){
+  currentMethod=m;
+  document.querySelectorAll('.method-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab'+m.charAt(0).toUpperCase()+m.slice(1)).classList.add('active');
+  document.getElementById('lmpInput').style.display=m==='lmp'?'block':'none';
+  document.getElementById('conceptionInput').style.display=m==='conception'?'block':'none';
+  document.getElementById('usInput').style.display=m==='us'?'block':'none';
+  document.getElementById('ivfInput').style.display=m==='ivf'?'block':'none';
+}
+function calculateDueDate(){
+  let edd,lmpDate;
+  const today=new Date();
+  today.setHours(0,0,0,0);
+  if(currentMethod==='lmp'){
+    const lmpInput=document.getElementById('lmpDate').value;
+    if(!lmpInput){alert('Please enter LMP date');return}
+    lmpDate=new Date(lmpInput);
+    edd=new Date(lmpDate);edd.setDate(edd.getDate()+280);
+  }else if(currentMethod==='conception'){
+    const cInput=document.getElementById('conceptionDate').value;
+    if(!cInput){alert('Please enter conception date');return}
+    lmpDate=new Date(cInput);lmpDate.setDate(lmpDate.getDate()-14);
+    edd=new Date(cInput);edd.setDate(edd.getDate()+266);
+  }else if(currentMethod==='us'){
+    const usDate=new Date(document.getElementById('usDate').value);
+    const usWeeks=parseInt(document.getElementById('usWeeks').value)||0;
+    const usDays=parseInt(document.getElementById('usDays').value)||0;
+    if(!usDate||!usWeeks){alert('Please enter ultrasound date and gestational age');return}
+    const totalUsDays=usWeeks*7+usDays;
+    const daysRemaining=280-totalUsDays;
+    edd=new Date(usDate);edd.setDate(edd.getDate()+daysRemaining);
+    lmpDate=new Date(edd);lmpDate.setDate(lmpDate.getDate()-280);
+  }else if(currentMethod==='ivf'){
+    const ivfDate=new Date(document.getElementById('ivfDate').value);
+    const embryoAge=parseInt(document.getElementById('ivfDay').value)||5;
+    if(!ivfDate){alert('Please enter transfer date');return}
+    edd=new Date(ivfDate);edd.setDate(edd.getDate()+(280-embryoAge));
+    lmpDate=new Date(edd);lmpDate.setDate(lmpDate.getDate()-280);
+  }
+  const diffTime=today-lmpDate;
+  const gestDays=Math.floor(diffTime/(1000*60*60*24));
+  const gestWeeks=Math.floor(gestDays/7);
+  const gestRemDays=gestDays%7;
+  const pctComplete=Math.min(Math.max(gestDays/280*100,0),100);
+  document.getElementById('dueDate').textContent=edd.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('gestFill').style.width=pctComplete+'%';
+  let gestText='';
+  if(gestDays<0)gestText='Pregnancy not yet started (LMP is in the future)';
+  else if(gestDays>294)gestText='Post-term (42+ weeks) - consult provider';
+  else gestText='Gestational Age: <strong>'+gestWeeks+' weeks '+gestRemDays+' days</strong> ('+Math.round(pctComplete)+'% of pregnancy)';
+  document.getElementById('gestText').innerHTML=gestText;
+  const t1End=new Date(lmpDate);t1End.setDate(t1End.getDate()+84);
+  const t2End=new Date(lmpDate);t2End.setDate(t2End.getDate()+189);
+  document.getElementById('trim1Date').textContent=lmpDate.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' - '+t1End.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  document.getElementById('trim2Date').textContent=new Date(t1End.getTime()+86400000).toLocaleDateString('en-US',{month:'short',day:'numeric'})+' - '+t2End.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  document.getElementById('trim3Date').textContent=new Date(t2End.getTime()+86400000).toLocaleDateString('en-US',{month:'short',day:'numeric'})+' - '+edd.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  document.getElementById('trim1').classList.toggle('active',gestWeeks<=12&&gestWeeks>=0);
+  document.getElementById('trim2').classList.toggle('active',gestWeeks>=13&&gestWeeks<=27);
+  document.getElementById('trim3').classList.toggle('active',gestWeeks>=28);
+  const milestones=[
+    {week:4,label:'Embryo implants, positive pregnancy test possible'},{week:8,label:'Major organs forming, heartbeat detectable'},{week:12,label:'End of 1st trimester, risk of miscarriage drops'},{week:16,label:'Gender may be visible on ultrasound'},{week:20,label:'Halfway point, anatomy scan recommended'},{week:24,label:'Viability milestone, baby can survive with care'},{week:28,label:'3rd trimester begins, glucose screening'},{week:32,label:'Baby practices breathing movements'},{week:36,label:'Full-term range begins'},{week:40,label:'Due date! Full term'}
+  ];
+  let timelineHTML='';
+  milestones.forEach(m=>{
+    const mDate=new Date(lmpDate);mDate.setDate(mDate.getDate()+m.week*7);
+    const isPast=mDate<today;
+    const isNear=Math.abs(mDate-today)<7*86400000;
+    timelineHTML+='<div class="timeline-item '+(isPast?'past':'')+' '+(isNear&&!isPast?'future':'')+'"><span class="week-badge">Week '+m.week+'</span>'+m.label+'<div style="color:var(--text-light);font-size:.75rem;margin-top:4px">'+mDate.toLocaleDateString('en-US',{month:'long',day:'numeric'})+'</div></div>';
+  });
+  document.getElementById('timeline').innerHTML=timelineHTML;
+  document.getElementById('resultArea').style.display='block';
+}
+function share(platform){
+  const url=encodeURIComponent(window.location.href);
+  const text=encodeURIComponent('Pregnancy Due Date Calculator - calculate EDD with Naegele\'s rule!');
+  const urls={twitter:'https://twitter.com/intent/tweet?url='+url+'&text='+text,facebook:'https://www.facebook.com/sharer/sharer.php?u='+url,linkedin:'https://www.linkedin.com/sharing/share-offsite/?url='+url};
+  if(platform==='copy')navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'));
+  else if(urls[platform])window.open(urls[platform],'_blank','width=600,height=400');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oxygen Flow Rate Calculator | FiO2 Calculator for Nurses</title>
+<meta name="description" content="Oxygen Flow Rate Calculator. Calculate FiO2 based on delivery method: nasal cannula, simple mask, venturi mask, non-rebreather, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2C4A3E;--green-light:#3D5F52;--green-pale:#E8F3EF;--orange:#D4653B;--orange-light:#E87A4F;--cream:#F5F0E8;--text:#1A1A1A;--text-light:#5C5C5C;--border:#E8E2D8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+.container{max-width:800px;margin:0 auto;padding:20px}
+header{text-align:center;padding:40px 20px;background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:#fff;border-radius:0 0 30px 30px;margin-bottom:30px}
+h1{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:8px}
+.subtitle{font-size:1rem;opacity:.9}
+.card{background:#fff;border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.card h2{font-family:'Playfair Display',serif;color:var(--green);font-size:1.4rem;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.device-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:20px}
+.device-card{border:2px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:.3s;background:#fff}
+.device-card:hover{border-color:var(--green-light)}
+.device-card.active{border-color:var(--green);background:var(--green-pale)}
+.device-card h3{font-size:1rem;color:var(--green);margin-bottom:4px}
+.device-card p{font-size:.8rem;color:var(--text-light)}
+.device-icon{font-size:1.5rem;margin-bottom:6px}
+label{display:block;font-weight:500;margin-bottom:6px;color:var(--text);font-size:.9rem}
+input[type="range"]{width:100%;margin-bottom:8px;-webkit-appearance:none;height:8px;border-radius:4px;background:var(--border);outline:none}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--green);cursor:pointer;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.flow-display{text-align:center;padding:20px;background:var(--green-pale);border-radius:12px;margin:16px 0}
+.flow-number{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--green)}
+.flow-label{color:var(--text-light);font-size:.9rem}
+.result-area{padding:24px;background:var(--green-pale);border-radius:12px;margin-top:16px;border-left:5px solid var(--green);display:none}
+.result-area.show{display:block;animation:fadeIn .5s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fio2-display{font-family:'Playfair Display',serif;font-size:3rem;color:var(--green);text-align:center}
+.spo2-guide{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.spo2-item{padding:12px;border-radius:8px;text-align:center;font-size:.85rem}
+.spo2-item.green{background:#E8F5E9;color:#2E7D32}
+.spo2-item.yellow{background:#FFF8E1;color:#F57F17}
+.spo2-item.orange{background:#FFF3E0;color:#E65100}
+.spo2-item.red{background:#FFEBEE;color:#C62828}
+.target-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:12px}
+.target-table th{background:var(--green);color:#fff;padding:10px;text-align:left}
+.target-table td{padding:10px;border-bottom:1px solid var(--border)}
+.target-table tr:nth-child(even){background:var(--cream)}
+.warning-box{background:#FFEBEE;padding:14px;border-radius:8px;border-left:4px solid #C62828;margin-top:16px;font-size:.85rem}
+.warning-box h4{color:#C62828;margin-bottom:4px}
+.cta-section{text-align:center;padding:28px;background:linear-gradient(135deg,var(--orange) 0%,var(--orange-light) 100%);border-radius:16px;color:#fff;margin:30px 0}
+.cta-btn{display:inline-block;padding:14px 36px;background:#fff;color:var(--orange);border-radius:30px;font-weight:600;text-decoration:none;margin-top:12px;transition:.3s}
+.cta-btn:hover{transform:translateY(-2px)}
+.share-btns{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.share-btn{padding:10px 20px;border-radius:8px;border:none;font-weight:500;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
+.share-btn.tw{background:#1DA1F2;color:#fff}
+.share-btn.fb{background:#4267B2;color:#fff}
+.share-btn.li{background:#0077B5;color:#fff}
+.share-btn.cp{background:var(--green);color:#fff}
+.disclaimer{background:#FFF3E0;padding:16px;border-radius:8px;font-size:.8rem;color:var(--text-light);margin-top:20px;border-left:4px solid var(--orange)}
+@media(max-width:480px){h1{font-size:1.7rem}.fio2-display{font-size:2.2rem}.flow-number{font-size:2.5rem}}
+</style>
+</head>
+<body>
+<header>
+<h1>Oxygen Flow Rate Calculator</h1>
+<p class="subtitle">Calculate FiO2 by delivery device and flow rate</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>🫁 Select Delivery Device</h2>
+<div class="device-grid">
+<div class="device-card" data-device="nc" onclick="selectDevice('nc')">
+<div class="device-icon">👃</div>
+<h3>Nasal Cannula</h3>
+<p>1-6 L/min | FiO2: 24-44%</p>
+</div>
+<div class="device-card" data-device="sm" onclick="selectDevice('sm')">
+<div class="device-icon">😷</div>
+<h3>Simple Mask</h3>
+<p>5-10 L/min | FiO2: 35-55%</p>
+</div>
+<div class="device-card" data-device="nr" onclick="selectDevice('nr')">
+<div class="device-icon">💨</div>
+<h3>Non-Rebreather</h3>
+<p>10-15 L/min | FiO2: 60-80%</p>
+</div>
+<div class="device-card" data-device="vm" onclick="selectDevice('vm')">
+<div class="device-icon">🔧</div>
+<h3>Venturi Mask</h3>
+<p>Set FiO2 directly | 24-60%</p>
+</div>
+<div class="device-card" data-device="hf" onclick="selectDevice('hf')">
+<div class="device-icon">📈</div>
+<h3>High Flow Nasal</h3>
+<p>Up to 60 L/min | Up to 100%</p>
+</div>
+<div class="device-card" data-device="tb" onclick="selectDevice('tb')">
+<div class="device-icon">🌬️</div>
+<h3>Tracheostomy Mask</h3>
+<p>4-10 L/min | FiO2: 35-60%</p>
+</div>
+</div>
+<div id="flowControl">
+<label for="flowRate" id="flowLabel">Flow Rate: <strong>2 L/min</strong></label>
+<input type="range" id="flowRate" min="1" max="6" value="2" step="1" oninput="updateFlow()">
+<div class="flow-display">
+<div class="flow-number" id="flowDisplay">2</div>
+<div class="flow-label">Liters per minute (L/min)</div>
+</div>
+</div>
+<div id="resultArea" class="result-area show">
+<div class="fio2-display" id="fio2Display">28%</div>
+<div style="text-align:center;color:var(--text-light);font-size:.9rem;margin-top:4px">Approximate FiO2</div>
+<div class="spo2-guide">
+<div class="spo2-item green"><strong>Normal SpO2</strong><br>95-100%</div>
+<div class="spo2-item yellow"><strong>Mild Hypoxia</strong><br>90-94%</div>
+<div class="spo2-item orange"><strong>Moderate</strong><br>85-89%</div>
+<div class="spo2-item red"><strong>Severe</strong><br>&lt;85%</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>📋 Quick Reference Table</h2>
+<table class="target-table">
+<tr><th>Device</th><th>Flow Rate</th><th>Approx. FiO2</th><th>Indication</th></tr>
+<tr><td>Nasal Cannula</td><td>1 L/min</td><td>24%</td><td>Mild hypoxemia</td></tr>
+<tr><td>Nasal Cannula</td><td>2 L/min</td><td>28%</td><td>Chronic conditions</td></tr>
+<tr><td>Nasal Cannula</td><td>4 L/min</td><td>36%</td><td>Moderate hypoxemia</td></tr>
+<tr><td>Simple Mask</td><td>5-6 L/min</td><td>40%</td><td>Moderate hypoxemia</td></tr>
+<tr><td>Simple Mask</td><td>8-10 L/min</td><td>50%</td><td>Moderate-severe</td></tr>
+<tr><td>Non-Rebreather</td><td>10-15 L/min</td><td>80-90%</td><td>Severe hypoxemia</td></tr>
+<tr><td>Venturi (blue)</td><td>2-4 L/min</td><td>24%</td><td>COPD (controlled)</td></tr>
+<tr><td>Venturi (white)</td><td>4-6 L/min</td><td>28%</td><td>COPD (controlled)</td></tr>
+<tr><td>Venturi (yellow)</td><td>8-10 L/min</td><td>35%</td><td>Controlled O2</td></tr>
+<tr><td>Venturi (red)</td><td>10-12 L/min</td><td>40%</td><td>Controlled O2</td></tr>
+</table>
+</div>
+<div class="warning-box">
+<h4>⚠️ Important Clinical Notes</h4>
+<p>Nasal cannula FiO2 varies with patient's breathing pattern (tidal volume, respiratory rate). Venturi masks provide more accurate FiO2 delivery. For COPD patients, maintain SpO2 88-92%. Always titrate oxygen to target SpO2 rather than arbitrary FiO2.</p>
+</div>
+<div class="cta-section">
+<h3>More Clinical Calculators</h3>
+<p>Comprehensive tools for nursing practice</p>
+<a href="https://tools.anglotec-ai.com" class="cta-btn">Explore All Tools →</a>
+</div>
+<div class="share-btns">
+<button class="share-btn tw" onclick="share('twitter')">𝕏 Share</button>
+<button class="share-btn fb" onclick="share('facebook')">Share</button>
+<button class="share-btn li" onclick="share('linkedin')">Share</button>
+<button class="share-btn cp" onclick="share('copy')">📋 Copy Link</button>
+</div>
+<div class="disclaimer">
+<strong>Disclaimer:</strong> FiO2 values are approximate and vary by manufacturer, patient factors, and fit. Always titrate oxygen to target SpO2. Follow local protocols and BTS/Thoracic Society guidelines.
+</div>
+</div>
+<footer style="text-align:center;padding:30px;color:var(--text-light);font-size:.85rem">
+<p>Made for healthcare professionals | <a href="https://tools.anglotec-ai.com" style="color:var(--orange);text-decoration:none">More Tools</a></p>
+</footer>
+<script>
+const devices={
+  nc:{name:'Nasal Cannula',min:1,max:6,step:1,fio2:{1:24,2:28,3:32,4:36,5:40,6:44}},
+  sm:{name:'Simple Mask',min:5,max:10,step:1,fio2:{5:40,6:44,7:50,8:52,9:54,10:55}},
+  nr:{name:'Non-Rebreather Mask',min:10,max:15,step:1,fio2:{10:80,11:85,12:88,13:90,14:92,15:95}},
+  vm:{name:'Venturi Mask',min:24,max:60,step:1,venturi:true,vcolors:{24:'Blue',28:'White',35:'Yellow',40:'Red',50:'Pink',60:'Green'}},
+  hf:{name:'High Flow Nasal Cannula',min:10,max:60,step:2,hfnc:true},
+  tb:{name:'Tracheostomy Mask',min:4,max:10,step:1,fio2:{4:35,5:40,6:45,7:50,8:55,9:58,10:60}}
+};
+let currentDevice='nc';
+function selectDevice(dev){
+  currentDevice=dev;
+  document.querySelectorAll('.device-card').forEach(c=>c.classList.toggle('active',c.dataset.device===dev));
+  const d=devices[dev];
+  const slider=document.getElementById('flowRate');
+  slider.min=d.min;slider.max=d.max;slider.step=d.step||1;
+  slider.value=d.min;
+  if(d.venturi){
+    document.getElementById('flowLabel').innerHTML='FiO2 Setting: <strong>'+d.min+'%</strong> ('+d.vcolors[d.min]+')';
+    document.getElementById('flowDisplay').textContent=d.min+'%';
+    document.querySelector('.flow-label').textContent='Venturi FiO2 setting';
+  }else if(d.hfnc){
+    document.getElementById('flowLabel').innerHTML='Flow Rate: <strong>'+d.min+' L/min</strong>';
+    document.getElementById('flowDisplay').textContent=d.min;
+    document.querySelector('.flow-label').textContent='Liters per minute (up to 60 L/min)';
+  }else{
+    document.getElementById('flowLabel').innerHTML='Flow Rate: <strong>'+d.min+' L/min</strong>';
+    document.getElementById('flowDisplay').textContent=d.min;
+    document.querySelector('.flow-label').textContent='Liters per minute';
+  }
+  updateFlow();
+}
+function updateFlow(){
+  const d=devices[currentDevice];
+  const val=parseInt(document.getElementById('flowRate').value);
+  let fio2;
+  if(d.venturi){
+    fio2=val;
+    const color=d.vcolors[val]||'';
+    document.getElementById('flowLabel').innerHTML='FiO2 Setting: <strong>'+val+'%</strong> '+(color?'('+color+')':'');
+    document.getElementById('flowDisplay').textContent=val+'%';
+    document.getElementById('fio2Display').textContent=val+'%';
+  }else if(d.hfnc){
+    fio2=Math.round(20+(val/d.max)*80);
+    document.getElementById('flowLabel').innerHTML='Flow Rate: <strong>'+val+' L/min</strong>';
+    document.getElementById('flowDisplay').textContent=val;
+    document.getElementById('fio2Display').textContent=fio2+'%';
+  }else{
+    fio2=d.fio2[val]||Math.round(d.fio2[d.min]+(d.fio2[d.max]-d.fio2[d.min])*((val-d.min)/(d.max-d.min)));
+    document.getElementById('flowLabel').innerHTML='Flow Rate: <strong>'+val+' L/min</strong>';
+    document.getElementById('flowDisplay').textContent=val;
+    document.getElementById('fio2Display').textContent=fio2+'%';
+  }
+}
+selectDevice('nc');
+function share(platform){
+  const url=encodeURIComponent(window.location.href);
+  const text=encodeURIComponent('Oxygen Flow Rate Calculator - calculate FiO2 for any delivery device!');
+  const urls={twitter:'https://twitter.com/intent/tweet?url='+url+'&text='+text,facebook:'https://www.facebook.com/sharer/sharer.php?u='+url,linkedin:'https://www.linkedin.com/sharing/share-offsite/?url='+url};
+  if(platform==='copy')navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'));
+  else if(urls[platform])window.open(urls[platform],'_blank','width=600,height=400');
+}
+</script>
+</body>
+</html>
