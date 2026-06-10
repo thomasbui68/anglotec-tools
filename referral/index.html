@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give 1 Month Free, Get 1 Month Free | Anglotec AI Academy Referral</title>
+    <meta name="description" content="Share free IELTS & OET tools with friends and earn 1 month of premium access for every 3 friends who sign up. Everyone wins!">
+    <meta name="keywords" content="IELTS referral, OET referral, free IELTS prep, free OET prep, Anglotec AI Academy">
+    <meta property="og:title" content="Give 1 Month Free, Get 1 Month Free | Anglotec AI Academy">
+    <meta property="og:description" content="I'm sharing free IELTS & OET prep tools. Sign up and we both get 1 month premium free!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tools.anglotec-ai.com/referral">
+    <meta property="og:image" content="https://tools.anglotec-ai.com/og-referral.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <style>
+        :root {
+            --green: #2C4A3E;
+            --green-light: #3D5F52;
+            --green-dark: #1F352C;
+            --orange: #D4653B;
+            --orange-light: #E07A52;
+            --orange-dark: #B8532E;
+            --cream: #F7F5F2;
+            --cream-dark: #E8E4DF;
+            --white: #FFFFFF;
+            --gray: #6B7280;
+            --gray-light: #9CA3AF;
+            --dark: #1A1A1A;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .display {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--cream-dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--green);
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--green), var(--green-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .header-cta {
+            background: var(--orange);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .header-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(160deg, var(--green) 0%, var(--green-dark) 100%);
+            color: var(--white);
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,101,59,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 16px;
+        }
+        .hero h1 span {
+            color: var(--orange);
+            display: block;
+        }
+        .hero-sub {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--orange);
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 60px 0;
+            background: var(--white);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            color: var(--gray);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .step {
+            text-align: center;
+            padding: 36px 28px;
+            background: var(--cream);
+            border-radius: var(--radius);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .step:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .step-num {
+            width: 48px;
+            height: 48px;
+            background: var(--orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 auto 18px;
+        }
+        .step h3 {
+            font-size: 1.15rem;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .step p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .step-arrow {
+            display: none;
+        }
+
+        /* Main CTA Section */
+        .cta-section {
+            padding: 60px 0;
+            background: var(--cream);
+        }
+        .cta-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 1px solid var(--cream-dark);
+        }
+        .cta-card h2 {
+            font-size: 1.5rem;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .cta-card > p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        /* Email Form */
+        .email-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .email-form input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid var(--cream-dark);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .email-form input:focus {
+            border-color: var(--orange);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212,101,59,0.3);
+        }
+        .btn-secondary {
+            background: var(--green);
+            color: var(--white);
+        }
+        .btn-secondary:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--green);
+            border: 2px solid var(--green);
+        }
+        .btn-outline:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+        .form-note {
+            font-size: 0.78rem;
+            color: var(--gray-light);
+        }
+        .form-note a { color: var(--orange); }
+
+        /* Referral Dashboard (hidden initially) */
+        .dashboard {
+            display: none;
+            animation: fadeUp 0.5s ease;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dashboard.active { display: block; }
+        .dashboard-welcome {
+            font-size: 1.1rem;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .link-box {
+            background: linear-gradient(135deg, #f0fdf4, #f7f5f2);
+            border: 2px dashed var(--green-light);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .link-box code {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--green);
+            word-break: break-all;
+            text-align: left;
+        }
+        .btn-copy {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .copied {
+            background: var(--green) !important;
+        }
+
+        /* Progress */
+        .progress-section {
+            margin: 28px 0;
+            text-align: left;
+        }
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .progress-header span { font-weight: 600; font-size: 0.9rem; }
+        .progress-bar {
+            height: 12px;
+            background: var(--cream-dark);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--orange), var(--orange-light));
+            border-radius: 20px;
+            transition: width 1s ease;
+            width: 0%;
+        }
+        .progress-note {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* Share Buttons */
+        .share-section h3 {
+            font-size: 1rem;
+            color: var(--green);
+            margin-bottom: 14px;
+        }
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--white);
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .share-wa { background: #25D366; }
+        .share-fb { background: #1877F2; }
+        .share-tw { background: #1DA1F2; }
+        .share-email { background: var(--gray); }
+        .share-native { background: var(--green); }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 50px 0;
+            background: var(--white);
+        }
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .proof-card {
+            background: var(--cream);
+            padding: 24px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--orange);
+            transition: transform 0.3s;
+        }
+        .proof-card:hover { transform: translateY(-3px); }
+        .proof-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .proof-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green), var(--green-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .proof-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .proof-location {
+            font-size: 0.78rem;
+            color: var(--gray-light);
+        }
+        .proof-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .proof-text strong { color: var(--orange); }
+
+        /* Toast Notification */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .toast {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            box-shadow: var(--shadow-lg);
+            border-left: 4px solid var(--orange);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+            animation: slideInRight 0.4s ease, fadeOut 0.4s ease 4.6s forwards;
+            max-width: 340px;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(120%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(120%); }
+        }
+        .toast-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .toast-text strong { color: var(--green); }
+        .toast-text span { color: var(--gray); font-size: 0.8rem; }
+
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+            background: var(--cream);
+        }
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--green);
+            cursor: pointer;
+            text-align: left;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.3rem;
+            color: var(--orange);
+            flex-shrink: 0;
+            margin-left: 12px;
+            transition: transform 0.2s;
+        }
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+        .faq-answer-inner {
+            padding: 0 22px 18px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        .faq-answer a { color: var(--orange); }
+
+        /* Footer CTA */
+        .footer-cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--green), var(--green-dark));
+            color: var(--white);
+            text-align: center;
+        }
+        .footer-cta h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 12px;
+        }
+        .footer-cta p {
+            opacity: 0.85;
+            margin-bottom: 28px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-white {
+            background: var(--white);
+            color: var(--green);
+        }
+        .btn-white:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--green-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .footer a { color: var(--orange); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        /* Confetti Canvas */
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .steps { grid-template-columns: repeat(3, 1fr); }
+            .step-arrow {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: -24px;
+                transform: translateY(-50%);
+                color: var(--cream-dark);
+                font-size: 1.5rem;
+                z-index: 1;
+            }
+            .step:last-child .step-arrow { display: none; }
+            .email-form { flex-wrap: nowrap; }
+        }
+        @media (max-width: 480px) {
+            .hero { padding: 40px 0 60px; }
+            .hero-stats { gap: 24px; }
+            .cta-card { padding: 28px 20px; }
+            .share-buttons { gap: 8px; }
+            .share-btn { padding: 8px 14px; font-size: 0.8rem; }
+            .link-box { flex-direction: column; align-items: stretch; }
+            .link-box code { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="https://tools.anglotec-ai.com" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span>Anglotec AI Academy</span>
+            </a>
+            <a href="https://tools.anglotec-ai.com" class="header-cta">Free Tools</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-badge">
+                    <span>🎁</span> Limited Time — Refer & Earn Premium
+                </div>
+                <h1>Share Free Tools, <span>Earn Premium Access</span></h1>
+                <p class="hero-sub">Give 1 month free to friends. Get 1 month free when they sign up. Everyone wins with free IELTS & OET prep tools.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" id="statReferrals">12,847</div>
+                        <div class="hero-stat-label">Referrals Sent</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" id="statEarned">4,231</div>
+                        <div class="hero-stat-label">Months Earned</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" id="statUsers">8,903</div>
+                        <div class="hero-stat-label">Happy Users</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Three simple steps to start earning free premium access</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <span class="step-arrow">→</span>
+                    <h3>Sign Up Free</h3>
+                    <p>Enter your email to get your unique referral link instantly. No credit card required.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <span class="step-arrow">→</span>
+                    <h3>Share With Friends</h3>
+                    <p>Share your link via WhatsApp, Facebook, Twitter, or email. The more you share, the more you earn.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Earn Premium</h3>
+                    <p>Every 3 friends who sign up = 1 month of premium access. Refer unlimited friends!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Dashboard Section -->
+    <section class="cta-section" id="getStarted">
+        <div class="container">
+            <div class="cta-card">
+                <!-- Initial State -->
+                <div id="initialState">
+                    <h2>Get Your Referral Link</h2>
+                    <p>Enter your email to generate your unique referral link and start earning.</p>
+                    <form class="email-form" id="referralForm" onsubmit="handleSubmit(event)">
+                        <input type="email" id="emailInput" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Get My Link →</button>
+                    </form>
+                    <p class="form-note">🔒 We respect your privacy. Unsubscribe anytime. <a href="#faq">Learn more</a></p>
+                </div>
+
+                <!-- Dashboard State -->
+                <div class="dashboard" id="dashboard">
+                    <div class="dashboard-welcome">🎉 Welcome aboard, <span id="userEmail"></span>!</div>
+                    <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 20px;">Your unique referral link is ready. Share it and start earning!</p>
+
+                    <div class="link-box">
+                        <code id="referralLink">https://tools.anglotec-ai.com/?ref=AT78432</code>
+                        <button class="btn btn-secondary btn-copy" id="copyBtn" onclick="copyLink()">📋 Copy</button>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span>Your Progress</span>
+                            <span id="progressText">0 of 3 friends</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="progress-note">🎯 Refer 3 friends to earn 1 month of premium access</p>
+                    </div>
+
+                    <div class="share-section">
+                        <h3>Share Your Link</h3>
+                        <div class="share-buttons">
+                            <button class="share-btn share-wa" onclick="shareNative()">📱 Share</button>
+                            <button class="share-btn share-wa" onclick="shareWhatsApp()">WhatsApp</button>
+                            <button class="share-btn share-fb" onclick="shareFacebook()">Facebook</button>
+                            <button class="share-btn share-tw" onclick="shareTwitter()">Twitter</button>
+                            <button class="share-btn share-email" onclick="shareEmail()">Email</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>See how our users are earning free premium access</p>
+            </div>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-card-header">
+                        <div class="proof-avatar">👩</div>
+                        <div>
+                            <div class="proof-name">Sarah M.</div>
+                            <div class="proof-location">Mumbai, India 🇮🇳</div>
+                        </div>
+                    </div>
+                    <p class="proof-text">"I shared my link with 5 friends from my IELTS study group. <strong>I earned 2 months free!</strong> The tools are amazing."</p>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card-header">
+                        <div class="proof-avatar">👨</div>
+                        <div>
+                            <div class="proof-name">Ahmed K.</div>
+                            <div class="proof-location">Lagos, Nigeria 🇳🇬</div>
+                        </div>
+                    </div>
+                    <p class="proof-text">"Posted on my WhatsApp status. Got 4 signups in 2 days. <strong>1 month premium earned.</strong>"</p>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card-header">
+                        <div class="proof-avatar">👩</div>
+                        <div>
+                            <div class="proof-name">Priya R.</div>
+                            <div class="proof-location">Chennai, India 🇮🇳</div>
+                        </div>
+                    </div>
+                    <p class="proof-text">"The writing evaluator alone is worth it. I shared on Facebook and <strong>earned 3 months free!</strong>"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our referral program</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item open">
+                    <button class="faq-question" onclick="toggleFaq(this)">How does the referral program work?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">It's simple! Sign up with your email to get a unique referral link. Share it with friends. When 3 friends sign up using your link, you get 1 month of premium access free. Your friends also get 1 month free when they join. There's no limit — refer 30 friends, get 10 months free!</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">When do I get my reward?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Your premium access is unlocked instantly once your 3rd friend signs up. You'll receive an email notification, and the premium features will be activated on your account immediately. No waiting, no hassle!</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Can I refer unlimited friends?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Absolutely! There's no cap on referrals. Every 3 friends = 1 month free. Many of our top referrers have earned 6+ months of premium access completely free. The more you share, the more you earn.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">What do my friends get?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Your friends get 1 month of premium access completely free when they sign up through your link. They'll get access to all premium features including the IELTS Writing Evaluator, OET Speaking Practice, Vocabulary Builder, and Mock Tests.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Is this really free?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes, 100% free! No credit card required to sign up or refer friends. We believe in the power of community — when you help us grow, we reward you with premium access. It's a win-win!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Ready to Start Earning?</h2>
+            <p>Join thousands of students already sharing and earning free premium access to the best IELTS & OET prep tools.</p>
+            <a href="https://tools.anglotec-ai.com" class="btn btn-white">Explore Free Tools →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 <a href="https://tools.anglotec-ai.com">Anglotec AI Academy</a>. All rights reserved. | Built for IELTS & OET success.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
+
+    <script>
+        // ====== Referral Link Generator ======
+        let currentReferralCode = '';
+        let referralCount = 0;
+        const GOAL = 3;
+
+        function generateReferralCode(email) {
+            const hash = btoa(email).replace(/[^a-zA-Z0-9]/g, '').substring(0, 8).toUpperCase();
+            return 'AT' + hash;
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            if (!email || !email.includes('@')) return;
+
+            currentReferralCode = generateReferralCode(email);
+            const link = `https://tools.anglotec-ai.com/?ref=${currentReferralCode}`;
+
+            document.getElementById('referralLink').textContent = link;
+            document.getElementById('userEmail').textContent = email.split('@')[0];
+            document.getElementById('initialState').style.display = 'none';
+            document.getElementById('dashboard').classList.add('active');
+
+            // Animate progress
+            setTimeout(() => updateProgress(0), 300);
+
+            // Confetti
+            fireConfetti();
+
+            // Toast
+            showToast('🎉', 'Link Generated!', 'Your referral link is ready to share');
+
+            // Save to localStorage
+            localStorage.setItem('anglotec_referral_email', email);
+            localStorage.setItem('anglotec_referral_code', currentReferralCode);
+        }
+
+        function updateProgress(count) {
+            referralCount = count;
+            const pct = (count / GOAL) * 100;
+            document.getElementById('progressFill').style.width = pct + '%';
+            document.getElementById('progressText').textContent = `${count} of ${GOAL} friends`;
+            if (count >= GOAL) {
+                document.getElementById('progressText').textContent = '🎉 Goal reached! You earned 1 month free!';
+                fireConfetti();
+            }
+        }
+
+        function copyLink() {
+            const link = document.getElementById('referralLink').textContent;
+            navigator.clipboard.writeText(link).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+                showToast('📋', 'Link Copied!', 'Ready to paste anywhere');
+            });
+        }
+
+        // ====== Share Functions ======
+        function getShareText() {
+            return `I'm using free IELTS & OET prep tools from Anglotec AI Academy. Sign up through my link and we BOTH get 1 month premium free! 🎓`;
+        }
+
+        function getShareUrl() {
+            return document.getElementById('referralLink').textContent;
+        }
+
+        function shareNative() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Free IELTS & OET Prep Tools',
+                    text: getShareText(),
+                    url: getShareUrl()
+                }).catch(() => {});
+            } else {
+                copyLink();
+            }
+        }
+
+        function shareWhatsApp() {
+            const text = encodeURIComponent(getShareText() + ' ' + getShareUrl());
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+            simulateSignup();
+        }
+
+        function shareFacebook() {
+            const url = encodeURIComponent(getShareUrl());
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+            simulateSignup();
+        }
+
+        function shareTwitter() {
+            const text = encodeURIComponent(getShareText());
+            const url = encodeURIComponent(getShareUrl());
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=600,height=400');
+            simulateSignup();
+        }
+
+        function shareEmail() {
+            const subject = encodeURIComponent('Free IELTS & OET Tools - We both get 1 month free!');
+            const body = encodeURIComponent(getShareText() + '\n\n' + getShareUrl());
+            window.open(`mailto:?subject=${subject}&body=${body}`, '_blank');
+        }
+
+        // Simulate a signup after sharing
+        function simulateSignup() {
+            setTimeout(() => {
+                showToast('👋', 'New Signup!', 'A friend just joined through your link');
+                if (referralCount < GOAL) {
+                    updateProgress(referralCount + 1);
+                }
+            }, 3000);
+        }
+
+        // ====== FAQ Toggle ======
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        }
+
+        // ====== Toast Notifications ======
+        function showToast(emoji, title, message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <div class="toast-avatar">${emoji}</div>
+                <div class="toast-text"><strong>${title}</strong><br><span>${message}</span></div>
+            `;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 5000);
+        }
+
+        // ====== Live Notifications ======
+        const liveNotifications = [
+            { name: 'Sarah', country: 'India', flag: '🇮🇳', action: 'just earned 1 month free!' },
+            { name: 'Mohammed', country: 'Egypt', flag: '🇪🇬', action: 'referred 3 friends!' },
+            { name: 'Li Wei', country: 'China', flag: '🇨🇳', action: 'just signed up!' },
+            { name: 'Fatima', country: 'Pakistan', flag: '🇵🇰', action: 'earned 2 months free!' },
+            { name: 'Carlos', country: 'Brazil', flag: '🇧🇷', action: 'shared with 5 friends!' },
+            { name: 'Aisha', country: 'Nigeria', flag: '🇳🇬', action: 'just got her referral link!' },
+            { name: 'Raj', country: 'India', flag: '🇮🇳', action: 'unlocked premium access!' },
+            { name: 'Yuki', country: 'Japan', flag: '🇯🇵', action: 'referred a friend!' },
+            { name: 'Anna', country: 'Russia', flag: '🇷🇺', action: 'earned 3 months free!' },
+            { name: 'David', country: 'UK', flag: '🇬🇧', action: 'joined the program!' },
+        ];
+
+        function showLiveNotification() {
+            const n = liveNotifications[Math.floor(Math.random() * liveNotifications.length)];
+            showToast(n.flag, `${n.name} from ${n.country}`, n.action);
+        }
+
+        // Show random notification every 15-25 seconds
+        setInterval(() => {
+            if (Math.random() > 0.3) showLiveNotification();
+        }, 18000);
+
+        // ====== Animated Counters ======
+        function animateCounter(id, target, duration = 2000) {
+            const el = document.getElementById(id);
+            const start = 0;
+            const step = target / (duration / 16);
+            let current = start;
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                el.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+
+        // ====== Confetti ======
+        function fireConfetti() {
+            const canvas = document.getElementById('confetti');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const colors = ['#D4653B', '#2C4A3E', '#F7F5F2', '#E07A52', '#3D5F52'];
+            const particles = [];
+            const count = 120;
+
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: canvas.width / 2,
+                    y: canvas.height / 2,
+                    vx: (Math.random() - 0.5) * 20,
+                    vy: (Math.random() - 0.5) * 20 - 5,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rotation: Math.random() * 360,
+                    rotationSpeed: (Math.random() - 0.5) * 10,
+                    life: 1
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let alive = false;
+                particles.forEach(p => {
+                    if (p.life <= 0) return;
+                    alive = true;
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.3;
+                    p.vx *= 0.99;
+                    p.life -= 0.015;
+                    p.rotation += p.rotationSpeed;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rotation * Math.PI / 180);
+                    ctx.globalAlpha = p.life;
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+                if (alive) requestAnimationFrame(draw);
+                else ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            draw();
+        }
+
+        // ====== Init ======
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate counters
+            setTimeout(() => animateCounter('statReferrals', 12847), 500);
+            setTimeout(() => animateCounter('statEarned', 4231), 700);
+            setTimeout(() => animateCounter('statUsers', 8903), 900);
+
+            // Check for saved referral
+            const savedEmail = localStorage.getItem('anglotec_referral_email');
+            const savedCode = localStorage.getItem('anglotec_referral_code');
+            if (savedEmail && savedCode) {
+                document.getElementById('emailInput').value = savedEmail;
+            }
+
+            // Show first live notification after 5 seconds
+            setTimeout(showLiveNotification, 5000);
+        });
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
