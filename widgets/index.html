@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anglotec AI Academy — Embeddable Widgets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-green: #2C4A3E;
+      --brand-orange: #D4653B;
+      --brand-cream: #F7F5F2;
+      --white: #FFFFFF;
+      --dark: #1A1A1A;
+      --gray: #8A8680;
+      --light-gray: #E8E6E3;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--brand-cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    .site-header {
+      background: var(--brand-green);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .header-logo-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--brand-orange);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 15px;
+      color: var(--white);
+    }
+    
+    .header-logo-text {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+    }
+    
+    .header-logo-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .header-nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    
+    .header-nav a:hover {
+      color: var(--brand-orange);
+    }
+    
+    /* Hero */
+    .hero {
+      background: var(--brand-green);
+      padding: 60px 24px 70px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--brand-cream);
+      border-radius: 50% 50% 0 0;
+    }
+    
+    .hero h1 {
+      color: var(--white);
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    
+    .hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 16px;
+      max-width: 540px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 101, 59, 0.2);
+      border: 1px solid rgba(212, 101, 59, 0.4);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Main Content */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+    
+    /* Embed Instructions */
+    .instructions {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid var(--light-gray);
+    }
+    
+    .instructions h2 {
+      font-size: 20px;
+      color: var(--brand-green);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .instructions ol {
+      padding-left: 20px;
+      color: var(--dark);
+      font-size: 14px;
+      line-height: 2;
+    }
+    
+    .instructions li code {
+      background: var(--brand-cream);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--brand-orange);
+      font-weight: 600;
+    }
+    
+    .instructions .note {
+      background: #E8F5E9;
+      border-left: 4px solid #388E3C;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #2E7D32;
+    }
+    
+    /* Widget Sections */
+    .widget-section {
+      margin-bottom: 50px;
+    }
+    
+    .widget-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .widget-section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .widget-section-title .icon {
+      width: 42px;
+      height: 42px;
+      background: var(--brand-green);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    
+    .widget-section-title h2 {
+      font-size: 22px;
+      color: var(--brand-green);
+      font-weight: 800;
+    }
+    
+    .widget-section-title p {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 500;
+    }
+    
+    .widget-section-badge {
+      background: var(--brand-orange);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Two-column layout */
+    .widget-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 28px;
+      align-items: start;
+    }
+    
+    @media (max-width: 900px) {
+      .widget-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Demo area */
+    .widget-demo {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid var(--light-gray);
+      display: flex;
+      justify-content: center;
+      min-height: 200px;
+    }
+    
+    /* Code area */
+    .widget-code {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid var(--light-gray);
+    }
+    
+    .widget-code h3 {
+      font-size: 14px;
+      color: var(--brand-green);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .code-block {
+      background: #1E1E1E;
+      border-radius: 10px;
+      padding: 16px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .code-block pre {
+      color: #E0E0E0;
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    
+    .code-block .tag { color: #569CD6; }
+    .code-block .attr { color: #9CDCFE; }
+    .code-block .val { color: #CE9178; }
+    .code-block .comment { color: #6A9955; }
+    
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.8);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    
+    .copy-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .copy-btn.copied {
+      background: #388E3C;
+      border-color: #388E3C;
+      color: var(--white);
+    }
+    
+    .widget-code .params {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--light-gray);
+    }
+    
+    .widget-code .params h4 {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .widget-code .params table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    
+    .widget-code .params th {
+      text-align: left;
+      color: var(--brand-green);
+      font-weight: 700;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .widget-code .params td {
+      padding: 6px 0;
+      color: var(--dark);
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .widget-code .params td code {
+      background: var(--brand-cream);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+      color: var(--brand-orange);
+      font-weight: 600;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background: var(--brand-green);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    
+    .site-footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    
+    .site-footer-logo-icon {
+      width: 30px;
+      height: 30px;
+      background: var(--brand-orange);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--white);
+    }
+    
+    .site-footer h3 {
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+    
+    .site-footer p {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    
+    .site-footer a {
+      color: var(--brand-orange);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    
+    .site-footer a:hover {
+      opacity: 0.8;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--brand-orange);
+    }
+    
+    .footer-copyright {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+      font-size: 11px;
+    }
+    
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 26px; }
+      .header-nav { display: none; }
+      .widget-section-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div class="header-logo-icon">A</div>
+        <div>
+          <div class="header-logo-text">ANGLOTEC</div>
+          <div class="header-logo-sub">AI ACADEMY</div>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="https://tools.anglotec-ai.com" target="_blank">Tools Hub</a>
+        <a href="https://agmp.anglotec.com" target="_blank">Mock Tests</a>
+        <a href="https://amc.anglotec-ai.com" target="_blank">Medical English</a>
+        <a href="https://anglotec-ai.com" target="_blank">Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Embeddable Widgets</h1>
+    <p>Add powerful, interactive IELTS and Medical English tools to your website with a single line of code. Free, responsive, and brandable.</p>
+    <div class="hero-badge">🚀 3 Widgets Available &mdash; Copy, Paste, Done!</div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Instructions -->
+    <section class="instructions">
+      <h2>📋 How to Embed</h2>
+      <ol>
+        <li>Copy the embed code for the widget you want to use.</li>
+        <li>Paste it into your website's HTML where you want it to appear.</li>
+        <li>The widget will automatically load and render itself using <code>Shadow DOM</code> for perfect style isolation.</li>
+        <li>Customize the <code>data-container</code> attribute to match your container element's ID.</li>
+      </ol>
+      <div class="note">
+        <strong>No dependencies required.</strong> All widgets are self-contained, load their own fonts from Google Fonts, and use Shadow DOM to prevent CSS conflicts with your site. They work on any HTTPS website.
+      </div>
+    </section>
+
+    <!-- Widget 1: IELTS Band Calculator -->
+    <section class="widget-section">
+      <div class="widget-section-header">
+        <div class="widget-section-title">
+          <div class="icon">📊</div>
+          <div>
+            <h2>IELTS Band Calculator</h2>
+            <p>Interactive sliders for all 4 modules with real-time scoring</p>
+          </div>
+        </div>
+        <span class="widget-section-badge">~4.2 KB</span>
+      </div>
+      <div class="widget-row">
+        <div class="widget-demo">
+          <div style="width:100%;">
+            <script src="ielts-calculator-widget.js" data-container="ielts-widget-demo"></script>
+            <div id="ielts-widget-demo"></div>
+          </div>
+        </div>
+        <div class="widget-code">
+          <h3>📎 Embed Code</h3>
+          <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this, 'code1')">Copy</button>
+            <pre id="code1"><span class="comment">&lt;!-- IELTS Band Calculator Widget --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://tools.anglotec-ai.com/
+  widgets/ielts-calculator-widget.js"</span>
+  <span class="attr">data-container</span>=<span class="val">"ielts-widget"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"ielts-widget"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+          </div>
+          <div class="params">
+            <h4>Configuration</h4>
+            <table>
+              <tr><th>Attribute</th><th>Required</th><th>Description</th></tr>
+              <tr><td><code>data-container</code></td><td>Yes</td><td>ID of the container div where the widget renders</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Widget 2: Medical Word of the Day -->
+    <section class="widget-section">
+      <div class="widget-section-header">
+        <div class="widget-section-title">
+          <div class="icon">🩺</div>
+          <div>
+            <h2>Medical English Word of the Day</h2>
+            <p>Daily medical vocabulary with pronunciation and clinical examples</p>
+          </div>
+        </div>
+        <span class="widget-section-badge">~12 KB</span>
+      </div>
+      <div class="widget-row">
+        <div class="widget-demo">
+          <div style="width:100%;">
+            <script src="medical-word-widget.js" data-container="medword-widget-demo"></script>
+            <div id="medword-widget-demo"></div>
+          </div>
+        </div>
+        <div class="widget-code">
+          <h3>📎 Embed Code</h3>
+          <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this, 'code2')">Copy</button>
+            <pre id="code2"><span class="comment">&lt;!-- Medical Word of the Day Widget --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://tools.anglotec-ai.com/
+  widgets/medical-word-widget.js"</span>
+  <span class="attr">data-container</span>=<span class="val">"medword-widget"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"medword-widget"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+          </div>
+          <div class="params">
+            <h4>Configuration</h4>
+            <table>
+              <tr><th>Attribute</th><th>Required</th><th>Description</th></tr>
+              <tr><td><code>data-container</code></td><td>Yes</td><td>ID of the container div where the widget renders</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Widget 3: IELTS Countdown Timer -->
+    <section class="widget-section">
+      <div class="widget-section-header">
+        <div class="widget-section-title">
+          <div class="icon">⏰</div>
+          <div>
+            <h2>IELTS Countdown Timer</h2>
+            <p>Live countdown to test day with study milestone messages</p>
+          </div>
+        </div>
+        <span class="widget-section-badge">~3.8 KB</span>
+      </div>
+      <div class="widget-row">
+        <div class="widget-demo">
+          <div style="width:100%;">
+            <script src="ielts-countdown-widget.js" data-container="countdown-widget-demo" data-test-date="2025-09-01"></script>
+            <div id="countdown-widget-demo"></div>
+          </div>
+        </div>
+        <div class="widget-code">
+          <h3>📎 Embed Code</h3>
+          <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this, 'code3')">Copy</button>
+            <pre id="code3"><span class="comment">&lt;!-- IELTS Countdown Timer Widget --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://tools.anglotec-ai.com/
+  widgets/ielts-countdown-widget.js"</span>
+  <span class="attr">data-container</span>=<span class="val">"countdown-widget"</span>
+  <span class="attr">data-test-date</span>=<span class="val">"2025-08-15"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"countdown-widget"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+          </div>
+          <div class="params">
+            <h4>Configuration</h4>
+            <table>
+              <tr><th>Attribute</th><th>Required</th><th>Description</th></tr>
+              <tr><td><code>data-container</code></td><td>Yes</td><td>ID of the container div where the widget renders</td></tr>
+              <tr><td><code>data-test-date</code></td><td>No</td><td>IELTS test date in YYYY-MM-DD format (default: 30 days from now)</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-logo">
+      <div class="site-footer-logo-icon">A</div>
+      <h3>ANGLOTEC AI ACADEMY</h3>
+    </div>
+    <p>Free tools for IELTS preparation and Medical English learning</p>
+    <div class="footer-links">
+      <a href="https://tools.anglotec-ai.com" target="_blank">tools.anglotec-ai.com</a>
+      <a href="https://agmp.anglotec.com" target="_blank">Mock Tests</a>
+      <a href="https://amc.anglotec-ai.com" target="_blank">Medical English</a>
+      <a href="https://amcvdo.anglotec-ai.com" target="_blank">Video Platform</a>
+      <a href="https://masterclass.anglotec-ai.com" target="_blank">Masterclass</a>
+      <a href="https://anglotec-ai.com" target="_blank">Main Website</a>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 Anglotec AI Academy. All widgets are free to use with attribution.
+    </div>
+  </footer>
+
+  <script>
+    // Copy code functionality
+    function copyCode(btn, codeId) {
+      const code = document.getElementById(codeId).textContent;
+      navigator.clipboard.writeText(code).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      }).catch(function() {
+        // Fallback
+        const textarea = document.createElement('textarea');
+        textarea.value = code;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
