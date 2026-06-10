@@ -1,39 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aadsllooq7apw.kimi.page/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://tools.anglotec-ai.com/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://aadsllooq7apw.kimi.page/#/ielts-calculator</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://tools.anglotec-ai.com/articles/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://aadsllooq7apw.kimi.page/#/oet-speaking</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://tools.anglotec-ai.com/articles/ielts-writing-task-1-band-9-sample-answers.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://aadsllooq7apw.kimi.page/#/osce-practice</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://tools.anglotec-ai.com/articles/oet-speaking-sample-nurse-role-play.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://aadsllooq7apw.kimi.page/#/ai-prompt-generator</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://tools.anglotec-ai.com/articles/osce-stations-for-international-nurses.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://aadsllooq7apw.kimi.page/#/language-guide</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://tools.anglotec-ai.com/articles/how-to-pass-ielts-first-attempt.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/articles/nmc-registration-process-overseas-nurses.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/articles/best-free-ielts-practice-tests-online.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/articles/ai-tools-for-language-learning-2025.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/articles/oet-vs-ielts-for-nurses.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/articles/medical-english-vocabulary-healthcare-professionals.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/articles/how-to-improve-english-speaking-fast.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/comparisons/anglotec-vs-british-council-ielts.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/comparisons/anglotec-vs-ielts-liz.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/comparisons/anglotec-vs-ielts-advantage.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/comparisons/anglotec-vs-eman-osce.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/comparisons/anglotec-vs-duolingo.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/widgets/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/referral/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/giveaway/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://tools.anglotec-ai.com/share-to-unlock/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
   </url>
 </urlset>
