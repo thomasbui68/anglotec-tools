@@ -1,0 +1,20 @@
+# AngloTec Study Bot - Dependencies
+# ===================================
+
+# Core Telegram bot framework (async)
+python-telegram-bot[job-queue]>=20.0
+
+# Scheduling for daily auto-posts
+APScheduler>=3.10.0
+
+# HTTP requests for any API calls
+requests>=2.31.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# Logging utilities
+colorlog>=6.8.0
+
+# Data handling
+# (built-in json and datetime modules used - no external packages needed)
