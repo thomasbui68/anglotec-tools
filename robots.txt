@@ -1,8 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /auto-post/
+Disallow: /chatbot-widget/
 
 Sitemap: https://tools.anglotec-ai.com/sitemap.xml
-
-# Anglotec AI Academy - Free IELTS, OET & OSCE Training Tools
-# British Council Accredited Since 1986
-# https://tools.anglotec-ai.com
