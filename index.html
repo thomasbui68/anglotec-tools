@@ -20,12 +20,18 @@
         var timers = document.querySelectorAll('.fixed.bottom-6.right-6.z-40');
         timers.forEach(function(timer) {
           if (timer.querySelector('svg') && !timer.querySelector('.timer-label')) {
+            // Create wrapper to hold timer + label without breaking fixed position
+            var wrapper = document.createElement('div');
+            wrapper.style.cssText = 'position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;';
+            // Move all timer children into wrapper
+            while (timer.firstChild) { wrapper.appendChild(timer.firstChild); }
+            timer.appendChild(wrapper);
+            // Add label
             var label = document.createElement('div');
             label.className = 'timer-label';
-            label.textContent = '\u23F1 Speaking Timer';
-            label.style.cssText = 'position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:600;color:#fff;background:#4A9B6B;padding:1px 6px;border-radius:999px;white-space:nowrap;letter-spacing:0.3px;';
-            timer.style.position = 'relative';
-            timer.appendChild(label);
+            label.textContent = '\u23F1 Speaking Timer (5 min)';
+            label.style.cssText = 'font-size:9px;font-weight:600;color:#fff;background:#4A9B6B;padding:2px 8px;border-radius:999px;white-space:nowrap;letter-spacing:0.3px;box-shadow:0 1px 3px rgba(0,0,0,0.2);';
+            wrapper.appendChild(label);
           }
         });
       }
