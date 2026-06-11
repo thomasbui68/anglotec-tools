@@ -13,5 +13,32 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+    // Add visible label to OET Speaking Timer
+    (function() {
+      function addTimerLabel() {
+        var timers = document.querySelectorAll('.fixed.bottom-6.right-6.z-40');
+        timers.forEach(function(timer) {
+          if (timer.querySelector('svg') && !timer.querySelector('.timer-label')) {
+            var label = document.createElement('div');
+            label.className = 'timer-label';
+            label.textContent = '\u23F1 Speaking Timer';
+            label.style.cssText = 'position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:600;color:#fff;background:#4A9B6B;padding:1px 6px;border-radius:999px;white-space:nowrap;letter-spacing:0.3px;';
+            timer.style.position = 'relative';
+            timer.appendChild(label);
+          }
+        });
+      }
+      // Check every 500ms for timer to appear
+      var interval = setInterval(function() {
+        if (document.querySelector('.fixed.bottom-6.right-6.z-40 svg')) {
+          addTimerLabel();
+          clearInterval(interval);
+        }
+      }, 500);
+      // Stop checking after 15 seconds
+      setTimeout(function() { clearInterval(interval); }, 15000);
+    })();
+    </script>
   </body>
 </html>
