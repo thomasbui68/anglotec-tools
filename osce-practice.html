@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSCE Practice Scenarios — Free NMC OSCE Stations | Anglotec AI Academy</title>
+  <meta name="description" content="Practice all 12 NMC OSCE stations for free. Random scenario generator with built-in 12-minute timer and examiner checklists. APIE, Skills & Communication stations covered.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f6f0; color: #1a1a1a; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .topbar { background: #1a3a2f; color: white; padding: 12px 0; text-align: center; font-size: 13px; }
+    .topbar a { color: #d4a843; text-decoration: none; font-weight: 600; }
+    header { background: white; border-bottom: 1px solid #e5e5e5; padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #1a3a2f; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: #1a3a2f; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #d4a843; font-size: 20px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #444; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #d4a843; }
+    .cta-btn { background: #d4862a; color: white; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: background 0.2s; }
+    .cta-btn:hover { background: #bf7520; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%); color: white; padding: 60px 0 50px; }
+    .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,168,67,0.2); border: 1px solid rgba(212,168,67,0.4); color: #d4a843; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+    .hero h1 span { color: #d4a843; }
+    .hero p { font-size: 17px; opacity: 0.85; margin-bottom: 28px; max-width: 480px; }
+    .hero-stats { display: flex; gap: 30px; margin-bottom: 28px; }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 28px; font-weight: 800; color: #d4a843; }
+    .hero-stat .label { font-size: 12px; opacity: 0.7; }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: #d4862a; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-primary:hover { background: #bf7520; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,134,42,0.3); }
+    .btn-secondary { background: rgba(255,255,255,0.1); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 1px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+    .hero-visual { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; text-align: center; }
+    .osce-preview { background: white; border-radius: 12px; padding: 24px; color: #1a1a1a; text-align: left; }
+    .osce-preview h3 { font-size: 15px; margin-bottom: 14px; color: #1a3a2f; display: flex; align-items: center; gap: 8px; }
+    .osce-station { background: #f8f6f0; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; font-size: 13px; }
+    .osce-station .station-type { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #d4862a; font-weight: 700; margin-bottom: 4px; }
+    .osce-station .station-title { font-weight: 600; color: #1a3a2f; }
+    .timer-display { background: #1a3a2f; color: white; border-radius: 8px; padding: 10px 16px; text-align: center; margin-top: 12px; }
+    .timer-display .time { font-size: 22px; font-weight: 800; color: #d4a843; }
+    .timer-display .time-label { font-size: 11px; opacity: 0.7; }
+    .checklist-preview { margin-top: 10px; font-size: 12px; color: #666; }
+    .checklist-preview li { margin-bottom: 4px; list-style: none; }
+    .checklist-preview li::before { content: "☐"; color: #d4862a; margin-right: 6px; }
+
+    /* How It Works */
+    .how-it-works { padding: 60px 0; background: white; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 { font-size: 32px; font-weight: 800; color: #1a3a2f; margin-bottom: 12px; }
+    .section-header p { color: #666; font-size: 16px; max-width: 500px; margin: 0 auto; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .step { text-align: center; padding: 30px 20px; border-radius: 12px; background: #f8f6f0; transition: transform 0.2s; }
+    .step:hover { transform: translateY(-4px); }
+    .step-num { width: 44px; height: 44px; background: #1a3a2f; color: #d4a843; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; margin: 0 auto 16px; }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #1a3a2f; }
+    .step p { font-size: 14px; color: #666; }
+
+    /* Features */
+    .features { padding: 60px 0; background: #f8f6f0; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e8e4dc; }
+    .feature-icon { width: 48px; height: 48px; background: rgba(26,58,47,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+    .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #1a3a2f; }
+    .feature p { font-size: 14px; color: #666; }
+
+    /* Station Types */
+    .station-types { padding: 60px 0; background: white; }
+    .station-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .station-card { background: #f8f6f0; border-radius: 12px; padding: 28px; border-left: 4px solid #1a3a2f; }
+    .station-card.skills { border-left-color: #d4862a; }
+    .station-card.comm { border-left-color: #d4a843; }
+    .station-card h3 { font-size: 17px; font-weight: 700; color: #1a3a2f; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .station-card ul { list-style: none; font-size: 14px; color: #555; }
+    .station-card ul li { padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+    .station-card ul li::before { content: "•"; color: #d4862a; font-weight: 700; }
+
+    /* Demo Section */
+    .demo-section { padding: 60px 0; background: #f8f6f0; }
+    .demo-box { background: #1a3a2f; border-radius: 16px; padding: 50px; color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .demo-box h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+    .demo-box h2 span { color: #d4a843; }
+    .demo-box p { opacity: 0.85; margin-bottom: 24px; }
+    .demo-list { list-style: none; }
+    .demo-list li { padding: 8px 0; display: flex; align-items: center; gap: 10px; font-size: 15px; }
+    .demo-list li::before { content: "✓"; color: #d4a843; font-weight: 700; }
+    .demo-visual { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+    .timer-big { font-size: 64px; font-weight: 800; color: #d4a843; font-variant-numeric: tabular-ums; }
+    .timer-label { font-size: 14px; opacity: 0.7; margin-top: 8px; }
+
+    /* FAQ */
+    .faq { padding: 60px 0; background: white; }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { background: #f8f6f0; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #e8e4dc; }
+    .faq-q { padding: 18px 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #1a3a2f; }
+    .faq-q:hover { background: #f5f3ed; }
+    .faq-a { padding: 0 24px 18px; color: #666; font-size: 14px; display: none; }
+    .faq-item.active .faq-a { display: block; }
+    .faq-item.active .faq-q::after { transform: rotate(180deg); }
+    .faq-q::after { content: "▼"; font-size: 10px; color: #999; transition: transform 0.2s; }
+
+    /* Stats Bar */
+    .stats-bar { background: linear-gradient(135deg, #d4862a 0%, #d4a843 100%); color: white; padding: 40px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .stat-item .stat-num { font-size: 36px; font-weight: 800; }
+    .stat-item .stat-label { font-size: 13px; opacity: 0.9; }
+
+    /* CTA Section */
+    .cta-section { padding: 70px 0; background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%); color: white; text-align: center; }
+    .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+    .cta-section h2 span { color: #d4a843; }
+    .cta-section p { font-size: 17px; opacity: 0.85; margin-bottom: 32px; }
+
+    /* Footer */
+    footer { background: #1a1a1a; color: #999; padding: 40px 0 24px; font-size: 13px; }
+    footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    footer h4 { color: white; font-size: 14px; margin-bottom: 14px; }
+    footer a { color: #999; text-decoration: none; display: block; padding: 4px 0; transition: color 0.2s; }
+    footer a:hover { color: #d4a843; }
+    footer .brand { color: white; font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+    footer .contact { margin-top: 12px; line-height: 1.8; }
+    .copyright { border-top: 1px solid #333; margin-top: 30px; padding-top: 20px; text-align: center; color: #666; }
+
+    @media (max-width: 768px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .station-grid { grid-template-columns: 1fr; }
+      .demo-box { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      footer .container { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    🎓 British Council Accredited Since 1986 &nbsp;|&nbsp; 40 Years of Excellence &nbsp;|&nbsp; <a href="https://tools.anglotec-ai.com">Explore All Free Tools →</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="https://tools.anglotec-ai.com" class="logo">
+        <div class="logo-icon">A</div>
+        Anglotec AI Academy
+      </a>
+      <ul class="nav-links">
+        <li><a href="./ielts-calculator.html">IELTS Calculator</a></li>
+        <li><a href="./oet-speaking.html">OET Speaking</a></li>
+        <li><a href="./osce-practice.html">OSCE Practice</a></li>
+        <li><a href="./ai-prompts.html">AI Prompts</a></li>
+        <li><a href="./language-guide.html">Language Guide</a></li>
+      </ul>
+      <a href="https://tools.anglotec-ai.com/#/osce-practice" class="cta-btn">Practice OSCE Now →</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="hero-badge">🩺 Free Tool — No Signup Required</div>
+        <h1>OSCE Practice <span>Scenarios</span></h1>
+        <p>Generate random NMC OSCE stations with built-in 12-minute timers and examiner checklists. Practice all 12 stations — APIE, Skills, and Communication — completely free.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">35K+</div><div class="label">Monthly Users</div></div>
+          <div class="hero-stat"><div class="num">100%</div><div class="label">Free Forever</div></div>
+          <div class="hero-stat"><div class="num">4.9★</div><div class="label">User Rating</div></div>
+        </div>
+        <div class="hero-buttons">
+          <a href="https://tools.anglotec-ai.com/#/osce-practice" class="btn-primary">🚀 Start Practicing Now →</a>
+          <a href="#how-it-works" class="btn-secondary">ℹ️ How It Works</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="osce-preview">
+          <h3>🩺 OSCE Station Preview</h3>
+          <div class="osce-station">
+            <div class="station-type">APIE Station</div>
+            <div class="station-title">Post-Operative Wound Assessment</div>
+          </div>
+          <div class="osce-station">
+            <div class="station-type">Skills Station</div>
+            <div class="station-title">Medication Administration — IM Injection</div>
+          </div>
+          <div class="timer-display">
+            <div class="time">11:42</div>
+            <div class="time-label">Remaining — 12 Minute Station</div>
+          </div>
+          <ul class="checklist-preview">
+            <li>Introduces self & confirms patient identity</li>
+            <li>Explains procedure & gains consent</li>
+            <li>Performs hand hygiene correctly</li>
+            <li>Completes documentation accurately</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">2,000+</div><div class="stat-label">Nurses Passed Using This Tool</div></div>
+        <div class="stat-item"><div class="stat-num">12</div><div class="stat-label">NMC OSCE Stations Covered</div></div>
+        <div class="stat-item"><div class="stat-num">35K+</div><div class="stat-label">Monthly Active Users</div></div>
+        <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">Average User Rating</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How to Practice OSCE Stations</h2>
+        <p>Get exam-ready in 4 simple steps. No account needed — completely free.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Select Station Type</h3>
+          <p>Choose from APIE (Assessment, Planning, Implementation, Evaluation), Skills, or Communication stations.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Read the Scenario</h3>
+          <p>Review the patient scenario with symptoms, history, and task instructions just like in the real exam.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Start the Timer</h3>
+          <p>Launch the 12-minute countdown timer — matching the exact duration of a real NMC OSCE station.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Review Checklist</h3>
+          <p>Compare your performance against the examiner marking checklist to see if you covered everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Station Types -->
+  <section class="station-types">
+    <div class="container">
+      <div class="section-header">
+        <h2>All 12 NMC OSCE Stations</h2>
+        <p>Comprehensive coverage of every station type you'll face in the exam</p>
+      </div>
+      <div class="station-grid">
+        <div class="station-card">
+          <h3>📋 APIE Stations</h3>
+          <ul>
+            <li>Assessment — vital signs, history taking</li>
+            <li>Planning — care plan development</li>
+            <li>Implementation — carrying out interventions</li>
+            <li>Evaluation — reviewing patient outcomes</li>
+            <li>Full patient scenario with symptoms</li>
+            <li>Structured APIE framework guidance</li>
+          </ul>
+        </div>
+        <div class="station-card skills">
+          <h3>🔧 Skills Stations</h3>
+          <ul>
+            <li>Vital signs measurement & recording</li>
+            <li>Medication administration</li>
+            <li>IM & subcutaneous injections</li>
+            <li>Wound care & dressing changes</li>
+            <li>Catheter & stoma care</li>
+            <li>Aseptic non-touch technique (ANTT)</li>
+          </ul>
+        </div>
+        <div class="station-card comm">
+          <h3>💬 Communication Stations</h3>
+          <ul>
+            <li>Breaking bad news (SPIKES framework)</li>
+            <li>Gaining informed consent</li>
+            <li>Escalation of care (SBAR)</li>
+            <li>Discharge planning discussion</li>
+            <li>Dealing with anxious relatives</li>
+            <li>Professional behaviour assessment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Nurses Love This Tool</h2>
+        <p>Everything you need to pass your NMC OSCE first time</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">🏥</div>
+          <h3>All 12 NMC OSCE Stations</h3>
+          <p>Complete coverage of every station type — APIE, Skills, and Communication. No station is left out.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⏱️</div>
+          <h3>12-Minute Countdown Timer</h3>
+          <p>Real exam duration timer to build your time management skills under pressure. Just like test day.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✅</div>
+          <h3>Examiner Marking Checklist</h3>
+          <p>See exactly what the examiner is looking for. Know the criteria before you walk into the room.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎭</div>
+          <h3>Realistic Patient Scenarios</h3>
+          <p>Detailed scenarios with symptoms, history, and task instructions that mirror real exam cases.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📢</div>
+          <h3>SPIKES Framework for Bad News</h3>
+          <p>Step-by-step guidance for breaking bad news using the proven SPIKES communication model.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📝</div>
+          <h3>SOAP & APIE Structure Guidance</h3>
+          <p>Built-in frameworks to help you structure your documentation and clinical reasoning perfectly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="demo-box">
+        <div>
+          <h2>Pass Your OSCE <span>First Time</span></h2>
+          <p>The NMC OSCE is challenging — but with enough practice, you can walk in confident. Our tool replicates the exam environment so there are no surprises on test day.</p>
+          <ul class="demo-list">
+            <li>Randomised stations so every practice session is different</li>
+            <li>12-minute timer matches real exam pressure</li>
+            <li>Examiner checklists show exactly what scores points</li>
+            <li>SPIKES, SOAP, APIE, and SBAR frameworks built in</li>
+            <li>Covers vital signs, meds, wound care, consent & more</li>
+            <li>2,000+ nurses have passed using this free tool</li>
+          </ul>
+          <a href="https://tools.anglotec-ai.com/#/osce-practice" class="btn-primary" style="margin-top:20px;">Start Free OSCE Practice →</a>
+        </div>
+        <div class="demo-visual">
+          <div class="timer-big">12:00</div>
+          <div class="timer-label">Standard NMC OSCE Station Time</div>
+          <div style="margin-top:24px; font-size:13px; opacity:0.6;">
+            <div style="margin-bottom:8px;">APIE Stations: 4</div>
+            <div style="margin-bottom:8px;">Skills Stations: 4</div>
+            <div>Communication Stations: 4</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about OSCE practice</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-q">What are the 12 NMC OSCE stations?</div>
+          <div class="faq-a">The 12 NMC OSCE stations are divided into three groups: <strong>APIE stations</strong> (Assessment, Planning, Implementation, Evaluation — 4 stations), <strong>Skills stations</strong> (4 stations covering procedures like vital signs, medication administration, injections, and wound care), and <strong>Communication stations</strong> (4 stations including breaking bad news, consent, escalation, and professional behaviour). Our tool covers all 12 with realistic scenarios.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long do I have for each OSCE station?</div>
+          <div class="faq-a">Each NMC OSCE station lasts <strong>12 minutes</strong>, with a few minutes of reading time before you enter. Our tool uses the exact 12-minute countdown so you can build your time management skills under realistic exam conditions.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What is the pass mark for NMC OSCE?</div>
+          <div class="faq-a">To pass the NMC OSCE, you must achieve the required standard across all stations. There is no fixed percentage — each station is marked against a set of criteria (the examiner checklist). You need to demonstrate safe, competent, and professional nursing practice. Our tool shows you the exact checklist for each station so you know what the examiner expects.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How accurate are these practice scenarios?</div>
+          <div class="faq-a">Our scenarios are aligned with the official NMC OSCE blueprints and reflect the types of cases, skills, and communication tasks you'll encounter in the real exam. The patient scenarios, examiner checklists, and timing all mirror the actual test format. Over 2,000 nurses have passed their OSCE using this tool.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I practice on my phone?</div>
+          <div class="faq-a">Yes! The OSCE Practice tool is fully responsive and works perfectly on mobile phones, tablets, and desktops. Practice during your commute, on lunch breaks, or at home — the timer, scenarios, and checklists all work seamlessly on any device.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What happens if I fail the OSCE?</div>
+          <div class="faq-a">If you don't pass the first time, you can resit the OSCE. Most candidates use the feedback to focus their preparation. Our tool is designed to help you identify weak areas through the examiner checklists, so you can target your practice and pass on your next attempt. Combine it with our <a href="https://amcvdo.anglotec-ai.com">full OSCE training platform</a> for comprehensive preparation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Pass Your <span>NMC OSCE</span>?</h2>
+      <p>Join 35,000+ nurses practising every month. Completely free — no signup required.</p>
+      <a href="https://tools.anglotec-ai.com/#/osce-practice" class="btn-primary" style="font-size:18px;padding:16px 40px;">🩺 Start Free OSCE Practice Now →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <div class="brand">Anglotec AI Academy</div>
+        <p style="color:#999;font-size:13px;margin-bottom:12px;">British Council accredited language school since 1986. Now powering the future of medical and language education with AI.</p>
+        <div class="contact">
+          📧 info@anglotec.com<br>
+          📞 +44(0)1723 367141<br>
+          📍 20 Avenue Road, Scarborough YO12 5JX, England
+        </div>
+      </div>
+      <div>
+        <h4>Free Tools</h4>
+        <a href="./ielts-calculator.html">IELTS Calculator</a>
+        <a href="./oet-speaking.html">OET Speaking</a>
+        <a href="./osce-practice.html">OSCE Practice</a>
+        <a href="./ai-prompts.html">AI Prompts</a>
+        <a href="./language-guide.html">Language Guide</a>
+      </div>
+      <div>
+        <h4>Platforms</h4>
+        <a href="https://anglotec-ai.com">AI Tutor</a>
+        <a href="https://agmp.anglotec.com">IELTS/OET Prep</a>
+        <a href="https://amcvdo.anglotec-ai.com">OSCE Training</a>
+        <a href="https://amc.anglotec-ai.com">Medical AI Tutor</a>
+        <a href="https://masterclass.anglotec-ai.com">AI Prompt Masterclass</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="mailto:info@anglotec.com">Contact Us</a>
+        <a href="https://tools.anglotec-ai.com/#/faq-ielts">FAQs</a>
+        <a href="https://tools.anglotec-ai.com">All Free Tools</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">© 2026 Anglotec AI Academy. British Council Accredited Since 1986. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

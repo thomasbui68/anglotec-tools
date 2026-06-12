@@ -46,5 +46,131 @@
       setTimeout(function() { clearInterval(interval); }, 15000);
     })();
     </script>
+    <!-- FIX: Redirect Free Tools cards to landing pages + scroll-to-top -->
+    <script>
+    (function() {
+      // === 1. SCROLL TO TOP ON EVERY NAVIGATION ===
+      function scrollToTop() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }
+      // On hash change (SPA navigation)
+      window.addEventListener('hashchange', scrollToTop, false);
+      // On initial page load
+      if (window.location.hash) {
+        setTimeout(scrollToTop, 100);
+      }
+      // Also scroll to top on regular clicks after a short delay
+      document.addEventListener('click', function(e) {
+        var target = e.target.closest('a');
+        if (target && target.getAttribute('href') && target.getAttribute('href').startsWith('#/')) {
+          setTimeout(scrollToTop, 50);
+        }
+      }, true);
+
+      // === 2. REDIRECT FREE TOOLS CARDS TO LANDING PAGES ===
+      var cardRedirects = {
+        'IELTS Calculator': './ielts-calculator.html',
+        'OET Speaking': './oet-speaking.html',
+        'OSCE Scenarios': './osce-practice.html',
+        'AI Prompts': './ai-prompts.html',
+        'Language Guide': './language-guide.html'
+      };
+
+      function updateToolCards() {
+        // Find all links in the Free Resources section
+        var allLinks = document.querySelectorAll('a[href]');
+        allLinks.forEach(function(link) {
+          var href = link.getAttribute('href') || '';
+          var text = link.textContent.trim();
+
+          // Check if this is a free tools card link (hash route)
+          if (href.startsWith('#/ielts-calculator') || href.startsWith('#/oet-speaking') ||
+              href.startsWith('#/osce-practice') || href.startsWith('#/ai-prompt-generator') ||
+              href.startsWith('#/language-guide')) {
+
+            // Find which card this belongs to by looking at parent text
+            var cardTitle = '';
+            var parent = link;
+            for (var i = 0; i < 3; i++) {
+              parent = parent.parentElement;
+              if (!parent) break;
+              var parentText = parent.textContent;
+              for (var title in cardRedirects) {
+                if (parentText.indexOf(title) !== -1) {
+                  cardTitle = title;
+                  break;
+                }
+              }
+              if (cardTitle) break;
+            }
+
+            // If we found a matching card, redirect to landing page
+            if (cardTitle && cardRedirects[cardTitle]) {
+              link.setAttribute('href', cardRedirects[cardTitle]);
+              link.setAttribute('target', '_self');
+              // Add click tracking
+              link.addEventListener('click', function() {
+                scrollToTop();
+              });
+            }
+          }
+
+          // Also catch by card title text directly
+          for (var title in cardRedirects) {
+            if (text === title || text.indexOf(title) === 0) {
+              link.setAttribute('href', cardRedirects[title]);
+              link.addEventListener('click', scrollToTop);
+            }
+          }
+        });
+
+        // Also handle nav links in the header
+        var navMap = {
+          '#/ielts-calculator': './ielts-calculator.html',
+          '#/oet-speaking': './oet-speaking.html',
+          '#/osce-practice': './osce-practice.html',
+          '#/ai-prompt-generator': './ai-prompts.html',
+          '#/language-guide': './language-guide.html'
+        };
+
+        // Only update nav links if we're NOT already on a tool page (to keep SPA working on subpages)
+        var isToolLandingPage = false;
+        for (var route in navMap) {
+          if (window.location.pathname.indexOf(navMap[route].replace('./', '').replace('.html', '')) !== -1) {
+            isToolLandingPage = true;
+            break;
+          }
+        }
+
+        // Update nav links to point to landing pages (only on homepage)
+        if (!window.location.hash || window.location.hash === '#/' || window.location.hash === '') {
+          for (var route in navMap) {
+            var navLinks = document.querySelectorAll('a[href="' + route + '"]');
+            navLinks.forEach(function(link) {
+              link.setAttribute('href', navMap[route]);
+            });
+          }
+        }
+      }
+
+      // Run multiple times as React renders
+      setTimeout(updateToolCards, 500);
+      setTimeout(updateToolCards, 1000);
+      setTimeout(updateToolCards, 2000);
+      setTimeout(updateToolCards, 3000);
+
+      // Also observe DOM changes to catch dynamic renders
+      if (typeof MutationObserver !== 'undefined') {
+        var observer = new MutationObserver(function() {
+          updateToolCards();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+        // Disconnect after 10 seconds to save performance
+        setTimeout(function() { observer.disconnect(); }, 10000);
+      }
+    })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Prompt Generator — 9,000+ Free Prompts for ChatGPT & Claude | Anglotec AI Academy</title>
+  <meta name="description" content="Browse 9,000+ optimized AI prompts across 12 categories — coding, writing, healthcare, business, marketing & more. One-click copy. Free, no signup.">
+  <link rel="canonical" href="https://tools.anglotec-ai.com/#/ai-prompt-generator">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f6f0; color: #1a1a1a; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .topbar { background: #1a3a2f; color: white; padding: 12px 0; text-align: center; font-size: 13px; }
+    .topbar a { color: #d4a843; text-decoration: none; font-weight: 600; }
+    header { background: white; border-bottom: 1px solid #e5e5e5; padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #1a3a2f; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: #1a3a2f; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #d4a843; font-size: 20px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #444; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #d4a843; }
+    .cta-btn { background: #d4862a; color: white; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: background 0.2s; }
+    .cta-btn:hover { background: #bf7520; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%); color: white; padding: 60px 0 50px; }
+    .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,168,67,0.2); border: 1px solid rgba(212,168,67,0.4); color: #d4a843; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+    .hero h1 span { color: #d4a843; }
+    .hero p { font-size: 17px; opacity: 0.85; margin-bottom: 28px; max-width: 480px; }
+    .hero-stats { display: flex; gap: 30px; margin-bottom: 28px; }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 28px; font-weight: 800; color: #d4a843; }
+    .hero-stat .label { font-size: 12px; opacity: 0.7; }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: #d4862a; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-primary:hover { background: #bf7520; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,134,42,0.3); }
+    .btn-secondary { background: rgba(255,255,255,0.1); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 1px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+    .hero-visual { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; text-align: center; }
+    .prompt-preview { background: #111; border-radius: 12px; padding: 24px; color: #eee; text-align: left; font-family: 'Courier New', monospace; }
+    .prompt-preview .prompt-tag { display: inline-block; background: #d4862a; color: white; padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 12px; }
+    .prompt-preview .prompt-text { font-size: 13px; line-height: 1.6; color: #c8e6c9; }
+    .prompt-preview .prompt-footer { margin-top: 16px; padding-top: 12px; border-top: 1px solid #333; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', sans-serif; font-size: 12px; color: #888; }
+
+    /* How It Works */
+    .how-it-works { padding: 60px 0; background: white; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 { font-size: 32px; font-weight: 800; color: #1a3a2f; margin-bottom: 12px; }
+    .section-header p { color: #666; font-size: 16px; max-width: 500px; margin: 0 auto; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .step { text-align: center; padding: 30px 20px; border-radius: 12px; background: #f8f6f0; transition: transform 0.2s; }
+    .step:hover { transform: translateY(-4px); }
+    .step-num { width: 44px; height: 44px; background: #1a3a2f; color: #d4a843; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; margin: 0 auto 16px; }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #1a3a2f; }
+    .step p { font-size: 14px; color: #666; }
+
+    /* Features */
+    .features { padding: 60px 0; background: #f8f6f0; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e8e4dc; }
+    .feature-icon { width: 48px; height: 48px; background: rgba(26,58,47,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+    .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #1a3a2f; }
+    .feature p { font-size: 14px; color: #666; }
+
+    /* Categories marquee */
+    .categories { padding: 40px 0; background: white; border-top: 1px solid #e8e4dc; border-bottom: 1px solid #e8e4dc; }
+    .cat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .cat-chip { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #f8f6f0; border-radius: 8px; font-size: 13px; font-weight: 600; color: #1a3a2f; border: 1px solid #e8e4dc; transition: all 0.2s; }
+    .cat-chip:hover { background: #1a3a2f; color: #d4a843; border-color: #1a3a2f; }
+    .cat-chip .cat-emoji { font-size: 18px; }
+
+    /* Demo Section */
+    .demo-section { padding: 60px 0; background: white; }
+    .demo-box { background: #1a3a2f; border-radius: 16px; padding: 50px; color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .demo-box h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+    .demo-box h2 span { color: #d4a843; }
+    .demo-box p { opacity: 0.85; margin-bottom: 24px; }
+    .demo-list { list-style: none; }
+    .demo-list li { padding: 8px 0; display: flex; align-items: center; gap: 10px; font-size: 15px; }
+    .demo-list li::before { content: "\2713"; color: #d4a843; font-weight: 700; }
+    .demo-visual { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+    .demo-prompt-card { background: #111; border-radius: 10px; padding: 20px; text-align: left; font-family: 'Courier New', monospace; font-size: 13px; color: #c8e6c9; line-height: 1.5; margin-bottom: 16px; }
+    .demo-prompt-card .label { font-family: 'Segoe UI', sans-serif; font-size: 11px; color: #d4a843; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block; }
+    .copy-count { font-size: 14px; opacity: 0.8; }
+
+    /* FAQ */
+    .faq { padding: 60px 0; background: #f8f6f0; }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { background: white; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #e8e4dc; }
+    .faq-q { padding: 18px 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #1a3a2f; }
+    .faq-q:hover { background: #fafafa; }
+    .faq-a { padding: 0 24px 18px; color: #666; font-size: 14px; display: none; }
+    .faq-item.active .faq-a { display: block; }
+    .faq-item.active .faq-q::after { transform: rotate(180deg); }
+    .faq-q::after { content: "\25BC"; font-size: 10px; color: #999; transition: transform 0.2s; }
+
+    /* CTA Section */
+    .cta-section { padding: 70px 0; background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%); color: white; text-align: center; }
+    .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+    .cta-section h2 span { color: #d4a843; }
+    .cta-section p { font-size: 17px; opacity: 0.85; margin-bottom: 32px; }
+
+    /* Footer */
+    footer { background: #1a1a1a; color: #999; padding: 40px 0 24px; font-size: 13px; }
+    footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    footer h4 { color: white; font-size: 14px; margin-bottom: 14px; }
+    footer a { color: #999; text-decoration: none; display: block; padding: 4px 0; transition: color 0.2s; }
+    footer a:hover { color: #d4a843; }
+    footer .brand { color: white; font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+    footer .contact { margin-top: 12px; line-height: 1.8; }
+    .copyright { border-top: 1px solid #333; margin-top: 30px; padding-top: 20px; text-align: center; color: #666; }
+
+    /* Scroll-to-top */
+    .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; background: #d4862a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; opacity: 0; transition: opacity 0.3s, transform 0.2s; z-index: 99; border: none; }
+    .scroll-top.visible { opacity: 1; }
+    .scroll-top:hover { transform: translateY(-3px); background: #bf7520; }
+
+    @media (max-width: 768px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .demo-box { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      footer .container { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    &#127891; British Council Accredited Since 1986 &nbsp;|&nbsp; 40 Years of Excellence &nbsp;|&nbsp; <a href="https://tools.anglotec-ai.com">Explore All Free Tools &#8594;</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="https://tools.anglotec-ai.com" class="logo">
+        <div class="logo-icon">A</div>
+        Anglotec AI Academy
+      </a>
+      <ul class="nav-links">
+        <li><a href="./ielts-calculator.html">IELTS Calculator</a></li>
+        <li><a href="./oet-speaking.html">OET Speaking</a></li>
+        <li><a href="./osce-practice.html">OSCE Practice</a></li>
+        <li><a href="./ai-prompts.html">AI Prompts</a></li>
+        <li><a href="./language-guide.html">Language Guide</a></li>
+      </ul>
+      <a href="https://tools.anglotec-ai.com/#/ai-prompt-generator" class="cta-btn">Try Prompt Generator &#8594;</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="hero-badge">&#9889; Free Tool -- No Signup Required</div>
+        <h1>AI Prompt <span>Generator</span></h1>
+        <p>Browse 9,000+ optimized AI prompts for coding, writing, business, healthcare, and more. Organized into 12 categories. Copy any prompt with one click and use it in ChatGPT, Claude, or any AI tool.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">9,000+</div><div class="label">AI Prompts</div></div>
+          <div class="hero-stat"><div class="num">12</div><div class="label">Categories</div></div>
+          <div class="hero-stat"><div class="num">40K+</div><div class="label">Monthly Users</div></div>
+        </div>
+        <div class="hero-buttons">
+          <a href="https://tools.anglotec-ai.com/#/ai-prompt-generator" class="btn-primary">&#128640; Browse All Prompts &#8594;</a>
+          <a href="#how-it-works" class="btn-secondary">&#8505; How It Works</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="prompt-preview">
+          <div class="prompt-tag">Healthcare</div>
+          <div class="prompt-text">"You are an experienced NHS nurse mentor. A junior nurse has just encountered a difficult patient interaction and is feeling overwhelmed. Provide a structured debrief using the Gibbs Reflective Cycle. Include: (1) a description of what happened, (2) the nurse's feelings at the time, (3) an evaluation of the experience, (4) analysis of the situation, (5) a conclusion with key learnings, and (6) an action plan for future similar situations. Use supportive, professional language throughout."</div>
+          <div class="prompt-footer">
+            <span>&#128221; Copy to clipboard</span>
+            <span>&#9889; Works with ChatGPT, Claude, Gemini</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:30px;">
+        <h2 style="font-size:24px;">12 Categories -- 750+ Prompts Each</h2>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-chip"><span class="cat-emoji">&#128187;</span> Code Generation</div>
+        <div class="cat-chip"><span class="cat-emoji">&#9997;</span> Content Creation</div>
+        <div class="cat-chip"><span class="cat-emoji">&#128200;</span> Business Strategy</div>
+        <div class="cat-chip"><span class="cat-emoji">&#128202;</span> Data Analysis</div>
+        <div class="cat-chip"><span class="cat-emoji">&#127912;</span> UI/UX Design</div>
+        <div class="cat-chip"><span class="cat-emoji">&#127891;</span> Learning & Education</div>
+        <div class="cat-chip"><span class="cat-emoji">&#128226;</span> Marketing</div>
+        <div class="cat-chip"><span class="cat-emoji">&#127973;</span> Healthcare</div>
+        <div class="cat-chip"><span class="cat-emoji">&#128176;</span> Finance</div>
+        <div class="cat-chip"><span class="cat-emoji">&#128203;</span> Project Management</div>
+        <div class="cat-chip"><span class="cat-emoji">&#128483;</span> Language Learning</div>
+        <div class="cat-chip"><span class="cat-emoji">&#128640;</span> Emerging Tech</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How the AI Prompt Generator Works</h2>
+        <p>Find the perfect prompt in 4 simple steps. No account needed -- completely free.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Choose a Category</h3>
+          <p>Select from 12 categories like Healthcare, Coding, Business, or use the search bar to find prompts by keyword.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Browse the Collection</h3>
+          <p>Explore 750+ curated prompts in each category. Every prompt is optimized and tested for best AI results.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Click to View Details</h3>
+          <p>Select any prompt to see the full text, use case description, and tips for getting the best output.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Copy & Use Instantly</h3>
+          <p>One-click copy to clipboard. Paste into ChatGPT, Claude, Gemini, or any AI tool and get instant results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Use Our AI Prompt Generator</h2>
+        <p>Everything you need to get the most out of AI tools</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">&#128221;</div>
+          <h3>9,000+ Prompts Across 12 Categories</h3>
+          <p>With 750+ prompts per category, you'll never run out of ideas. From code generation to healthcare, every use case is covered.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#127973;</div>
+          <h3>Healthcare-Specific Prompts</h3>
+          <p>Specially designed prompts for nurses, doctors, and medical professionals. Covers OSCE prep, patient communication, clinical reasoning, and more.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#128203;</div>
+          <h3>One-Click Copy to Clipboard</h3>
+          <p>No more manually selecting and copying. Click once and the full prompt is ready to paste into ChatGPT, Claude, or any AI assistant.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#128269;</div>
+          <h3>Search and Filter Functionality</h3>
+          <p>Quickly find exactly what you need. Filter by category, complexity level, or search by keyword across all 9,000+ prompts.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#128293;</div>
+          <h3>New Prompts Added Weekly</h3>
+          <p>Our collection grows constantly. Fresh prompts are added every week based on the latest AI capabilities and user requests.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#128241;</div>
+          <h3>Works on Any Device</h3>
+          <p>Access the prompt generator on desktop, tablet, or mobile. Find and copy prompts wherever you are, whenever you need them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="demo-box">
+        <div>
+          <h2>See the Prompt Generator <span>in Action</span></h2>
+          <p>Every prompt in our collection is crafted by AI experts and tested for quality. Here's what you can expect when you browse the generator.</p>
+          <ul class="demo-list">
+            <li>9,000+ professionally written and tested prompts</li>
+            <li>12 specialized categories with 750+ prompts each</li>
+            <li>Healthcare prompts for nurses, doctors & medical staff</li>
+            <li>One-click copy to use in ChatGPT, Claude, or Gemini</li>
+            <li>Search by keyword, filter by category or complexity</li>
+            <li>New prompts added every single week -- always fresh</li>
+          </ul>
+          <a href="https://tools.anglotec-ai.com/#/ai-prompt-generator" class="btn-primary" style="margin-top:20px;">Try the Prompt Generator Now &#8594;</a>
+        </div>
+        <div class="demo-visual">
+          <div class="demo-prompt-card">
+            <span class="label">Code Generation -- Advanced</span>
+            "You are a senior full-stack developer reviewing a React application. Perform a comprehensive code review covering: component architecture, state management, performance optimization, accessibility (WCAG 2.1), security best practices, and testing coverage. Provide specific refactoring suggestions with before/after code examples."
+          </div>
+          <div class="demo-prompt-card">
+            <span class="label">Business Strategy -- Intermediate</span>
+            "Act as a McKinsey strategy consultant. Analyze the market entry strategy for a SaaS startup entering the European healthcare market. Provide a Porter's Five Forces analysis, identify key risks, and recommend a phased rollout plan with milestones and KPIs."
+          </div>
+          <div class="copy-count">&#128200; 40,000+ users copy prompts every month</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about the AI Prompt Generator</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-q">What is prompt engineering?</div>
+          <div class="faq-a">Prompt engineering is the practice of designing clear, specific instructions (prompts) that help AI models like ChatGPT and Claude produce the most accurate and useful outputs. Well-crafted prompts include context, role assignments, specific constraints, and desired output formats. Our generator provides pre-engineered prompts so you don't need to learn prompt engineering yourself -- just copy and use.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are these prompts free to use?</div>
+          <div class="faq-a">Yes, all 9,000+ prompts are 100% free to use. No account creation, no credit card, no subscription required. Simply visit the generator, browse the categories, and copy any prompt you need. It's our way of supporting professionals, students, and lifelong learners.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I use these prompts for commercial work?</div>
+          <div class="faq-a">Absolutely. All prompts in our generator are free to use for both personal and commercial projects. Whether you're creating content for clients, building software, developing business strategies, or producing marketing materials -- these prompts are yours to use without restriction.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How are healthcare prompts different?</div>
+          <div class="faq-a">Our healthcare prompts are specifically designed for medical professionals -- nurses, doctors, healthcare assistants, and allied health staff. They cover clinical scenarios, patient communication, OSCE preparation, medical documentation, care planning, reflective practice, and more. Each prompt uses appropriate medical terminology and follows professional healthcare standards, including NHS guidelines where relevant.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's the best way to use these prompts?</div>
+          <div class="faq-a">For best results: (1) Choose a prompt that matches your goal, (2) Copy it with one click, (3) Paste into ChatGPT, Claude, or your preferred AI, (4) Add any specific details relevant to your situation after the prompt, and (5) Review and refine the AI's output. Think of each prompt as a starting template -- you can customize it further for your exact needs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you add new prompts regularly?</div>
+          <div class="faq-a">Yes, we add new prompts every week. Our team monitors the latest AI developments, user feedback, and emerging use cases to keep the collection fresh and relevant. With AI capabilities expanding rapidly, we're constantly creating new prompts that take advantage of the latest features from ChatGPT, Claude, Gemini, and other leading AI models.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Supercharge Your <span>AI Workflow</span>?</h2>
+      <p>9,000+ prompts. 12 categories. 100% free. No signup required.</p>
+      <a href="https://tools.anglotec-ai.com/#/ai-prompt-generator" class="btn-primary" style="font-size:18px;padding:16px 40px;">&#128640; Launch the Prompt Generator Now &#8594;</a>
+      <p style="margin-top:20px; font-size:13px; opacity:0.6;">Works with ChatGPT, Claude, Gemini, and every major AI tool</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <div class="brand">Anglotec AI Academy</div>
+        <p style="color:#999;font-size:13px;margin-bottom:12px;">British Council accredited language school since 1986. Now powering the future of medical and language education with AI.</p>
+        <div class="contact">
+          &#9993; info@anglotec.com<br>
+          &#9742; +44(0)1723 367141<br>
+          &#128205; 20 Avenue Road, Scarborough YO12 5JX, England
+        </div>
+      </div>
+      <div>
+        <h4>Free Tools</h4>
+        <a href="./ielts-calculator.html">IELTS Calculator</a>
+        <a href="./oet-speaking.html">OET Speaking</a>
+        <a href="./osce-practice.html">OSCE Practice</a>
+        <a href="./ai-prompts.html">AI Prompts</a>
+        <a href="./language-guide.html">Language Guide</a>
+      </div>
+      <div>
+        <h4>Platforms</h4>
+        <a href="https://anglotec-ai.com">AI Tutor</a>
+        <a href="https://agmp.anglotec.com">IELTS/OET Prep</a>
+        <a href="https://amcvdo.anglotec-ai.com">OSCE Training</a>
+        <a href="https://amc.anglotec-ai.com">Medical AI Tutor</a>
+        <a href="https://masterclass.anglotec-ai.com">AI Prompt Masterclass</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="mailto:info@anglotec.com">Contact Us</a>
+        <a href="https://tools.anglotec-ai.com/#/faq-prompts">FAQs</a>
+        <a href="https://tools.anglotec-ai.com">All Free Tools</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">&#169; 2026 Anglotec AI Academy. British Council Accredited Since 1986. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    // Scroll-to-top visibility
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS Band Score Calculator — Free | Anglotec AI Academy</title>
+  <meta name="description" content="Calculate your IELTS band score instantly. Input Listening, Reading, Writing, Speaking scores and get your overall band with personalized study tips. Free, no signup.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f6f0; color: #1a1a1a; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    .topbar { background: #1a3a2f; color: white; padding: 12px 0; text-align: center; font-size: 13px; }
+    .topbar a { color: #d4a843; text-decoration: none; font-weight: 600; }
+    header { background: white; border-bottom: 1px solid #e5e5e5; padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #1a3a2f; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: #1a3a2f; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #d4a843; font-size: 20px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #444; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #d4a843; }
+    .cta-btn { background: #d4862a; color: white; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: background 0.2s; }
+    .cta-btn:hover { background: #bf7520; }
+    
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%); color: white; padding: 60px 0 50px; }
+    .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,168,67,0.2); border: 1px solid rgba(212,168,67,0.4); color: #d4a843; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+    .hero h1 span { color: #d4a843; }
+    .hero p { font-size: 17px; opacity: 0.85; margin-bottom: 28px; max-width: 480px; }
+    .hero-stats { display: flex; gap: 30px; margin-bottom: 28px; }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 28px; font-weight: 800; color: #d4a843; }
+    .hero-stat .label { font-size: 12px; opacity: 0.7; }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: #d4862a; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-primary:hover { background: #bf7520; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,134,42,0.3); }
+    .btn-secondary { background: rgba(255,255,255,0.1); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 1px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+    .hero-visual { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; text-align: center; }
+    .calc-preview { background: white; border-radius: 12px; padding: 24px; color: #1a1a1a; }
+    .calc-preview h3 { font-size: 16px; margin-bottom: 16px; color: #1a3a2f; }
+    .score-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+    .score-row:last-child { border-bottom: none; font-weight: 700; color: #d4862a; font-size: 16px; margin-top: 8px; padding-top: 12px; border-top: 2px solid #1a3a2f; }
+    
+    /* How It Works */
+    .how-it-works { padding: 60px 0; background: white; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 { font-size: 32px; font-weight: 800; color: #1a3a2f; margin-bottom: 12px; }
+    .section-header p { color: #666; font-size: 16px; max-width: 500px; margin: 0 auto; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .step { text-align: center; padding: 30px 20px; border-radius: 12px; background: #f8f6f0; transition: transform 0.2s; }
+    .step:hover { transform: translateY(-4px); }
+    .step-num { width: 44px; height: 44px; background: #1a3a2f; color: #d4a843; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; margin: 0 auto 16px; }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #1a3a2f; }
+    .step p { font-size: 14px; color: #666; }
+    
+    /* Features */
+    .features { padding: 60px 0; background: #f8f6f0; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e8e4dc; }
+    .feature-icon { width: 48px; height: 48px; background: rgba(26,58,47,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+    .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #1a3a2f; }
+    .feature p { font-size: 14px; color: #666; }
+    
+    /* Video/Demo Section */
+    .demo-section { padding: 60px 0; background: white; }
+    .demo-box { background: #1a3a2f; border-radius: 16px; padding: 50px; color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .demo-box h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+    .demo-box h2 span { color: #d4a843; }
+    .demo-box p { opacity: 0.85; margin-bottom: 24px; }
+    .demo-list { list-style: none; }
+    .demo-list li { padding: 8px 0; display: flex; align-items: center; gap: 10px; font-size: 15px; }
+    .demo-list li::before { content: "✓"; color: #d4a843; font-weight: 700; }
+    .demo-visual { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+    .band-display { font-size: 64px; font-weight: 800; color: #d4a843; }
+    .band-label { font-size: 14px; opacity: 0.7; margin-top: 8px; }
+    
+    /* FAQ */
+    .faq { padding: 60px 0; background: #f8f6f0; }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { background: white; border-radius: 10px; margin-bottom: 12px; overflow: hidden; border: 1px solid #e8e4dc; }
+    .faq-q { padding: 18px 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #1a3a2f; }
+    .faq-q:hover { background: #fafafa; }
+    .faq-a { padding: 0 24px 18px; color: #666; font-size: 14px; display: none; }
+    .faq-item.active .faq-a { display: block; }
+    .faq-item.active .faq-q::after { transform: rotate(180deg); }
+    .faq-q::after { content: "▼"; font-size: 10px; color: #999; transition: transform 0.2s; }
+    
+    /* CTA Section */
+    .cta-section { padding: 70px 0; background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%); color: white; text-align: center; }
+    .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+    .cta-section h2 span { color: #d4a843; }
+    .cta-section p { font-size: 17px; opacity: 0.85; margin-bottom: 32px; }
+    
+    /* Footer */
+    footer { background: #1a1a1a; color: #999; padding: 40px 0 24px; font-size: 13px; }
+    footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    footer h4 { color: white; font-size: 14px; margin-bottom: 14px; }
+    footer a { color: #999; text-decoration: none; display: block; padding: 4px 0; transition: color 0.2s; }
+    footer a:hover { color: #d4a843; }
+    footer .brand { color: white; font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+    footer .contact { margin-top: 12px; line-height: 1.8; }
+    .copyright { border-top: 1px solid #333; margin-top: 30px; padding-top: 20px; text-align: center; color: #666; }
+    
+    @media (max-width: 768px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .demo-box { grid-template-columns: 1fr; }
+      footer .container { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    🎓 British Council Accredited Since 1986 &nbsp;|&nbsp; 40 Years of Excellence &nbsp;|&nbsp; <a href="https://tools.anglotec-ai.com">Explore All Free Tools →</a>
+  </div>
+  
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="https://tools.anglotec-ai.com" class="logo">
+        <div class="logo-icon">A</div>
+        Anglotec AI Academy
+      </a>
+      <ul class="nav-links">
+        <li><a href="./ielts-calculator.html">IELTS Calculator</a></li>
+        <li><a href="./oet-speaking.html">OET Speaking</a></li>
+        <li><a href="./osce-practice.html">OSCE Practice</a></li>
+        <li><a href="./ai-prompts.html">AI Prompts</a></li>
+        <li><a href="./language-guide.html">Language Guide</a></li>
+      </ul>
+      <a href="https://tools.anglotec-ai.com/#/ielts-calculator" class="cta-btn">Try Calculator Now →</a>
+    </div>
+  </header>
+  
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="hero-badge">📊 Free Tool — No Signup Required</div>
+        <h1>IELTS Band Score <span>Calculator</span></h1>
+        <p>Enter your Listening, Reading, Writing, and Speaking scores. Get your overall IELTS band instantly — with personalized study tips based on your strengths and weaknesses.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">50K+</div><div class="label">Monthly Users</div></div>
+          <div class="hero-stat"><div class="num">100%</div><div class="label">Free Forever</div></div>
+          <div class="hero-stat"><div class="num">4.9★</div><div class="label">User Rating</div></div>
+        </div>
+        <div class="hero-buttons">
+          <a href="https://tools.anglotec-ai.com/#/ielts-calculator" class="btn-primary">🚀 Launch Calculator →</a>
+          <a href="#how-it-works" class="btn-secondary">ℹ️ How It Works</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="calc-preview">
+          <h3>📊 Overall Band Score</h3>
+          <div class="score-row"><span>Listening</span><strong>7.0</strong></div>
+          <div class="score-row"><span>Reading</span><strong>7.5</strong></div>
+          <div class="score-row"><span>Writing</span><strong>6.5</strong></div>
+          <div class="score-row"><span>Speaking</span><strong>7.0</strong></div>
+          <div class="score-row"><span>Overall Band</span><strong style="color:#d4862a;font-size:20px;">7.0</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How the IELTS Calculator Works</h2>
+        <p>Get your band score in 4 simple steps. No account needed — completely free.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Enter Listening Score</h3>
+          <p>Use the slider to select your raw score (0-40) or estimated band (1.0-9.0) for the Listening section.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Enter Reading Score</h3>
+          <p>Select your Reading score. Choose Academic or General Training — the calculation adjusts automatically.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Enter Writing & Speaking</h3>
+          <p>Add your Writing and Speaking scores. These are assessed by examiners on a 1-9 band scale.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Get Your Overall Band</h3>
+          <p>The calculator averages all four sections and rounds to the nearest 0.5 band — exactly like the real IELTS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>What You Get</h2>
+        <p>More than just a calculator — a complete IELTS score analysis</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Band Calculation</h3>
+          <p>Enter your four section scores and see your overall band immediately. Uses the official IELTS rounding formula.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📋</div>
+          <h3>Personalized Study Tips</h3>
+          <p>Based on your lowest-scoring sections, get targeted recommendations on what to focus on for improvement.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <h3>University Requirements Match</h3>
+          <p>See how your score compares to popular UK university IELTS requirements — Nursing, Medicine, General.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <h3>Section Breakdown</h3>
+          <p>Visual bar chart showing your performance across all four sections at a glance.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📱</div>
+          <h3>Works on Any Device</h3>
+          <p>Use the calculator on your phone, tablet, or desktop. Study on the go, during breaks, anywhere.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔒</div>
+          <h3>100% Free, No Signup</h3>
+          <p>No email required. No credit card. No account creation. Just instant results, completely free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Demo -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="demo-box">
+        <div>
+          <h2>Your IELTS Score <span>Decoded</span></h2>
+          <p>Understanding your band score is the first step to improving it. Our calculator doesn't just give you a number — it shows you exactly where to focus.</p>
+          <ul class="demo-list">
+            <li>Official IELTS scoring algorithm (rounding to nearest 0.5)</li>
+            <li>Compares against NHS & university requirements</li>
+            <li>Identifies your weakest section automatically</li>
+            <li>Suggests targeted study resources for each band gap</li>
+            <li>Track your progress over multiple practice attempts</li>
+          </ul>
+          <a href="https://tools.anglotec-ai.com/#/ielts-calculator" class="btn-primary" style="margin-top:20px;">Try the Calculator Now →</a>
+        </div>
+        <div class="demo-visual">
+          <div class="band-display">7.0</div>
+          <div class="band-label">Your Estimated Overall Band</div>
+          <div style="margin-top:20px; font-size:13px; opacity:0.6;">
+            Listening: 7.0 &nbsp;|&nbsp; Reading: 7.5 &nbsp;|&nbsp; Writing: 6.5 &nbsp;|&nbsp; Speaking: 7.0
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about the IELTS Band Score Calculator</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-q">How accurate is this IELTS calculator?</div>
+          <div class="faq-a">The calculator uses the official IELTS scoring algorithm. It rounds your average to the nearest 0.5 band, exactly as the British Council and IDP do. For example, an average of 6.75 rounds up to 7.0, while 6.25 rounds down to 6.0.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I need to create an account to use it?</div>
+          <div class="faq-a">No account, email, or signup is required. The calculator is 100% free and works instantly. Just visit the page, enter your scores, and get your result.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's the difference between Academic and General Training scoring?</div>
+          <div class="faq-a">The Listening and Speaking sections use the same scoring for both tests. The Reading section is scored differently — Academic Reading is slightly harder, so you need more correct answers for the same band. The calculator lets you select which test type you're taking.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What IELTS score do I need for UK nursing registration?</div>
+          <div class="faq-a">The NMC (Nursing and Midwifery Council) requires an overall band of 7.0, with at least 7.0 in Listening, Reading, and Speaking, and 6.5 in Writing. Our calculator shows you exactly which sections need improvement to meet this requirement.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I use this calculator on my phone?</div>
+          <div class="faq-a">Yes! The calculator is fully responsive and works perfectly on mobile phones, tablets, and desktops. Study during your commute, on breaks, or anywhere.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How can I improve my IELTS score after using the calculator?</div>
+          <div class="faq-a">After calculating your band, check out our <a href="https://agmp.anglotec.com">AI-powered IELTS Prep platform</a> for personalized study plans, mock tests, speaking practice with AI feedback, and writing correction.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Calculate Your <span>IELTS Band</span>?</h2>
+      <p>Takes 30 seconds. Completely free. No signup required.</p>
+      <a href="https://tools.anglotec-ai.com/#/ielts-calculator" class="btn-primary" style="font-size:18px;padding:16px 40px;">🚀 Launch the Calculator Now →</a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <div class="brand">Anglotec AI Academy</div>
+        <p style="color:#999;font-size:13px;margin-bottom:12px;">British Council accredited language school since 1986. Now powering the future of medical and language education with AI.</p>
+        <div class="contact">
+          📧 info@anglotec.com<br>
+          📞 +44(0)1723 367141<br>
+          📍 20 Avenue Road, Scarborough YO12 5JX, England
+        </div>
+      </div>
+      <div>
+        <h4>Free Tools</h4>
+        <a href="./ielts-calculator.html">IELTS Calculator</a>
+        <a href="./oet-speaking.html">OET Speaking</a>
+        <a href="./osce-practice.html">OSCE Practice</a>
+        <a href="./ai-prompts.html">AI Prompts</a>
+        <a href="./language-guide.html">Language Guide</a>
+      </div>
+      <div>
+        <h4>Platforms</h4>
+        <a href="https://anglotec-ai.com">AI Tutor</a>
+        <a href="https://agmp.anglotec.com">IELTS/OET Prep</a>
+        <a href="https://amcvdo.anglotec-ai.com">OSCE Training</a>
+        <a href="https://amc.anglotec-ai.com">Medical AI Tutor</a>
+        <a href="https://masterclass.anglotec-ai.com">AI Prompt Masterclass</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="mailto:info@anglotec.com">Contact Us</a>
+        <a href="https://tools.anglotec-ai.com/#/faq-ielts">FAQs</a>
+        <a href="https://tools.anglotec-ai.com">All Free Tools</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">© 2026 Anglotec AI Academy. British Council Accredited Since 1986. All rights reserved.</div>
+    </div>
+  </footer>
+  
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
