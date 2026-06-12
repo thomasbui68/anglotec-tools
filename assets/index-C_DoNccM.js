@@ -40,16 +40,16 @@ function __beep(f,d,v){if(__muted)return;
     var o=__Actx.createOscillator(),g=__Actx.createGain();
     o.connect(g);g.connect(__Actx.destination);
     o.frequency.value=f||880;o.type="sine";
-    g.gain.setValueAtTime(v||0.3,__Actx.currentTime);
+    g.gain.setValueAtTime(v||0.03,__Actx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.001,__Actx.currentTime+(d||0.15));
     o.start(__Actx.currentTime);o.stop(__Actx.currentTime+(d||0.15));
   }catch(e){}
 }
-var __muted=false;try{__muted=localStorage.getItem("anglotec_muted")==="true"}catch(e){}function __isMuted(){return __muted}function __setMute(m){__muted=m;try{localStorage.setItem("anglotec_muted",m?"true":"false")}catch(e){}}function __click(){if(__muted)return;__beep(1200,0.05,0.0005)}
-function __startSound(){if(__muted)return;__beep(600,0.1,0.25);__beep(880,0.2,0.2);setTimeout(function(){__beep(1200,0.3,0.25)},120)}
-function __pauseSound(){if(__muted)return;__beep(440,0.15,0.2);setTimeout(function(){__beep(330,0.2,0.15)},100)}
-function __finishSound(){if(__muted)return;for(var i=0;i<3;i++){(function(n){setTimeout(function(){__beep(880+n*200,0.3,0.25)},n*200)})(i)}}
-function __resetSound(){if(__muted)return;__beep(660,0.1,0.15)}
+var __muted=false;try{__muted=localStorage.getItem("anglotec_muted")==="true"}catch(e){}function __isMuted(){return __muted}function __setMute(m){__muted=m;try{localStorage.setItem("anglotec_muted",m?"true":"false")}catch(e){}}function __click(){if(__muted)return;__beep(1200,0.05,0.002)}
+function __startSound(){if(__muted)return;__beep(600,0.1,0.03);__beep(880,0.2,0.03);setTimeout(function(){__beep(1200,0.3,0.03)},120)}
+function __pauseSound(){if(__muted)return;__beep(440,0.15,0.02);setTimeout(function(){__beep(330,0.2,0.02)},100)}
+function __finishSound(){if(__muted)return;for(var i=0;i<3;i++){(function(n){setTimeout(function(){__beep(880+n*200,0.3,0.04)},n*200)})(i)}}
+function __resetSound(){if(__muted)return;__beep(660,0.1,0.02)}
 function __haptic(p){try{if(navigator.vibrate)navigator.vibrate(p)}catch(e){}}
 
 function nj({timer:a}){
