@@ -177,12 +177,15 @@
     (function() {
       // ===== Web Audio API Sound Engine =====
       var audioCtx = null;
+      var __muted_global = false;
+      try { __muted_global = localStorage.getItem("anglotec_muted") === "true"; } catch(e) {}
       function getCtx() {
         if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         if (audioCtx.state === 'suspended') audioCtx.resume();
         return audioCtx;
       }
       function beep(freq, duration, vol, type) {
+        if (__muted_global) return;
         try {
           var ctx = getCtx();
           var o = ctx.createOscillator();
@@ -196,6 +199,10 @@
           o.stop(ctx.currentTime + (duration || 0.1));
         } catch(e) {}
       }
+      // Sync mute state periodically
+      setInterval(function() {
+        try { __muted_global = localStorage.getItem("anglotec_muted") === "true"; } catch(e) {}
+      }, 1000);
       // Sound presets
       function sndClick() { beep(1200, 0.06, 0.12, 'sine'); }       // Generic button click
       function sndTab() { beep(600, 0.08, 0.15, 'sine'); beep(900, 0.12, 0.12, 'sine'); }  // Tab switch
