@@ -172,5 +172,177 @@
       }
     })();
     </script>
+    <!-- GLOBAL AUDIO & HAPTIC FEEDBACK SYSTEM -->
+    <script>
+    (function() {
+      // ===== Web Audio API Sound Engine =====
+      var audioCtx = null;
+      function getCtx() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        return audioCtx;
+      }
+      function beep(freq, duration, vol, type) {
+        try {
+          var ctx = getCtx();
+          var o = ctx.createOscillator();
+          var g = ctx.createGain();
+          o.connect(g); g.connect(ctx.destination);
+          o.frequency.value = freq || 800;
+          o.type = type || 'sine';
+          g.gain.setValueAtTime(vol || 0.15, ctx.currentTime);
+          g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (duration || 0.1));
+          o.start(ctx.currentTime);
+          o.stop(ctx.currentTime + (duration || 0.1));
+        } catch(e) {}
+      }
+      // Sound presets
+      function sndClick() { beep(1200, 0.06, 0.12, 'sine'); }       // Generic button click
+      function sndTab() { beep(600, 0.08, 0.15, 'sine'); beep(900, 0.12, 0.12, 'sine'); }  // Tab switch
+      function sndToggle() { beep(500, 0.1, 0.15, 'triangle'); }     // Toggle on/off
+      function sndSuccess() {                                        // Success action
+        var ctx = getCtx();
+        [0, 150, 300].forEach(function(d) {
+          setTimeout(function() { beep(700 + d, 0.2, 0.15, 'sine'); }, d);
+        });
+      }
+      function sndTimerStart() {                                     // Timer start
+        beep(523, 0.12, 0.2, 'sine');
+        setTimeout(function() { beep(659, 0.15, 0.2, 'sine'); }, 100);
+        setTimeout(function() { beep(784, 0.25, 0.2, 'sine'); }, 200);
+      }
+      function sndTimerStop() {                                      // Timer pause/stop
+        beep(784, 0.1, 0.15, 'sine');
+        setTimeout(function() { beep(523, 0.18, 0.15, 'sine'); }, 100);
+      }
+      function sndFinish() {                                         // Timer finished
+        [0, 200, 400].forEach(function(d) {
+          setTimeout(function() { beep(880 + d * 0.5, 0.3, 0.2, 'square'); }, d);
+        });
+      }
+
+      // ===== Haptic Feedback =====
+      function haptic(pattern) {
+        try { if (navigator.vibrate) navigator.vibrate(pattern); } catch(e) {}
+      }
+      function hapticClick() { haptic(15); }
+      function hapticTab() { haptic([20, 10, 20]); }
+      function hapticToggle() { haptic([25, 5, 15]); }
+      function hapticSuccess() { haptic([30, 20, 50]); }
+      function hapticTimerStart() { haptic([40, 20, 40]); }
+      function hapticTimerStop() { haptic([30, 15]); }
+      function hapticFinish() { haptic([80, 40, 80, 40, 120]); }
+
+      // ===== Global Click Sound Handler =====
+      document.addEventListener('click', function(e) {
+        var target = e.target;
+        var btn = target.closest('button');
+        var link = target.closest('a');
+        var el = btn || link || target;
+
+        // Get the text content to determine action type
+        var text = (el.textContent || '').trim().toLowerCase();
+        var ariaLabel = (el.getAttribute('aria-label') || '').toLowerCase();
+        var className = (el.className || '').toLowerCase();
+
+        // Timer buttons
+        if (text.indexOf('push to start') !== -1 || text.indexOf('start timer') !== -1 ||
+            ariaLabel.indexOf('start') !== -1) {
+          sndTimerStart(); hapticTimerStart(); return;
+        }
+        if (text.indexOf('resume timer') !== -1) {
+          sndTimerStart(); hapticTimerStart(); return;
+        }
+        if (text.indexOf('pause') !== -1 || text.indexOf('stop') !== -1 ||
+            ariaLabel.indexOf('pause') !== -1) {
+          sndTimerStop(); hapticTimerStop(); return;
+        }
+        if (text.indexOf('reset') !== -1 || text.indexOf('restart') !== -1 ||
+            text.indexOf("time's up") !== -1 || text.indexOf('time') !== -1 && text.indexOf('up') !== -1) {
+          sndTimerStop(); hapticTimerStop(); return;
+        }
+
+        // Tab switches (role="tab" or tab-like buttons)
+        if (el.getAttribute('role') === 'tab' || className.indexOf('tab') !== -1) {
+          sndTab(); hapticTab(); return;
+        }
+
+        // Toggle switches
+        if (className.indexOf('toggle') !== -1 || el.getAttribute('role') === 'switch') {
+          sndToggle(); hapticToggle(); return;
+        }
+
+        // "New Random Scenario" or generate buttons
+        if (text.indexOf('new random') !== -1 || text.indexOf('generate') !== -1 ||
+            text.indexOf('random') !== -1) {
+          sndSuccess(); hapticSuccess(); return;
+        }
+
+        // "Copy" buttons
+        if (text.indexOf('copy') !== -1 || ariaLabel.indexOf('copy') !== -1) {
+          sndSuccess(); hapticSuccess(); return;
+        }
+
+        // "Show" / "Hide" toggles
+        if (text.indexOf('show') !== -1 || text.indexOf('hide') !== -1) {
+          sndToggle(); hapticToggle(); return;
+        }
+
+        // Generic buttons
+        if (btn) {
+          sndClick(); hapticClick(); return;
+        }
+
+        // Links (navigation)
+        if (link) {
+          sndClick(); hapticClick(); return;
+        }
+      }, true); // Use capture to catch all clicks
+
+      // ===== Timer Tick Sound =====
+      // Listen for timer display changes and play tick sounds
+      var lastTimerText = '';
+      var lastWasRunning = false;
+      setInterval(function() {
+        // Find timer display
+        var timerDisplays = document.querySelectorAll('.font-mono');
+        timerDisplays.forEach(function(display) {
+          var text = display.textContent || '';
+          var parent = display.parentElement;
+          var parentText = parent ? parent.textContent : '';
+
+          // Check if this is our timer (has "Push to Start" or time format)
+          if (parentText.indexOf('Timer') !== -1 || parentText.indexOf('Push') !== -1 ||
+              text.match(/^\d{1,2}:\d{2}$/)) {
+
+            // Detect state changes
+            var isRunning = parentText.indexOf('Running') !== -1;
+
+            // Timer just finished (text changed to "Time's Up" or similar)
+            if (lastTimerText !== '' && lastTimerText !== text &&
+                (text.indexOf('0:00') !== -1 || text.indexOf("00") !== -1 && text.length <= 5)) {
+              if (lastWasRunning) {
+                sndFinish(); hapticFinish();
+              }
+            }
+
+            lastTimerText = text;
+            lastWasRunning = isRunning;
+          }
+        });
+      }, 500);
+
+      // ===== Keyboard Feedback =====
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          var el = document.activeElement;
+          if (el && (el.tagName === 'BUTTON' || el.tagName === 'A' || el.getAttribute('role') === 'button')) {
+            sndClick(); hapticClick();
+          }
+        }
+      });
+
+    })();
+    </script>
   </body>
 </html>
