@@ -45,7 +45,7 @@ function __beep(f,d,v){if(__muted)return;
     o.start(__Actx.currentTime);o.stop(__Actx.currentTime+(d||0.15));
   }catch(e){}
 }
-var __muted=false;try{__muted=localStorage.getItem("anglotec_muted")==="true"}catch(e){}function __isMuted(){return __muted}function __setMute(m){__muted=m;try{localStorage.setItem("anglotec_muted",m?"true":"false")}catch(e){}}function __click(){if(__muted)return;__beep(1200,0.05,0.004)}
+var __muted=false;try{__muted=localStorage.getItem("anglotec_muted")==="true"}catch(e){}function __isMuted(){return __muted}function __setMute(m){__muted=m;try{localStorage.setItem("anglotec_muted",m?"true":"false")}catch(e){}}function __click(){if(__muted)return;__beep(1200,0.05,0.0005)}
 function __startSound(){if(__muted)return;__beep(600,0.1,0.25);__beep(880,0.2,0.2);setTimeout(function(){__beep(1200,0.3,0.25)},120)}
 function __pauseSound(){if(__muted)return;__beep(440,0.15,0.2);setTimeout(function(){__beep(330,0.2,0.15)},100)}
 function __finishSound(){if(__muted)return;for(var i=0;i<3;i++){(function(n){setTimeout(function(){__beep(880+n*200,0.3,0.25)},n*200)})(i)}}
