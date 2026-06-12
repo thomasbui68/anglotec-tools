@@ -10,6 +10,50 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <script type="module" crossorigin src="./assets/index-X3s5O4lc.js?v=8"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CtM-zWSe.css?v=8">
+    <!-- GLOBAL TEXT CONTRAST FIX: Force all text to be readable -->
+    <style>
+      /* Force ALL body text to dark, readable colors */
+      body { color: #1a1a1a !important; }
+      
+      /* Override all light grey text classes */
+      .text-gray-300, .text-gray-400, .text-gray-500,
+      .text-neutral-300, .text-neutral-400, .text-neutral-500,
+      .text-stone-300, .text-stone-400, .text-stone-500,
+      .text-zinc-300, .text-zinc-400, .text-zinc-500,
+      .text-slate-300, .text-slate-400, .text-slate-500 { 
+        color: #374151 !important; /* Dark grey */
+      }
+      
+      /* Paragraphs and descriptions */
+      p, span, div { 
+        color: inherit; 
+      }
+      
+      /* Force low-opacity text back to full opacity */
+      [style*="opacity:0.4"], [style*="opacity: 0.4"],
+      [style*="opacity:0.5"], [style*="opacity: 0.5"],
+      [style*="opacity:0.6"], [style*="opacity: 0.6"] {
+        opacity: 1 !important;
+      }
+      
+      /* Specific override for footer/about section text */
+      .opacity-50, .opacity-60, .opacity-70, .opacity-75,
+      [class*="opacity-50"], [class*="opacity-60"] {
+        opacity: 1 !important;
+      }
+      
+      /* Ensure all text in light sections is dark */
+      * { 
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      /* Mobile-specific: force minimum text contrast */
+      @media (max-width: 768px) {
+        .text-gray-400, .text-gray-500, .text-neutral-400, .text-neutral-500 {
+          color: #1f2937 !important; /* Even darker on mobile */
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
